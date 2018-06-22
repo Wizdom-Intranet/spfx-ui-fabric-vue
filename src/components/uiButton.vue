@@ -1,18 +1,12 @@
-<template>
-    <h1>
-        this is button
-        <input type="text" :value="count" /><button @click="count++">add</button>
-    </h1>
-</template>
-
 <script>
+import button from "office-ui-fabric-vue/src/components/button/button.vue";
 export default {
-    data(){
-        return { count : 1}
-    }
+    injectCss,
+    extends :  button
 }
 </script>
-
-<style>
-
+<style lang="scss" scoped>
+    @import 'node_modules/office-ui-fabric-core/src/sass/_Fabric.Common';
+    @import '../misc/fixThemeVars';
+    @import "node_modules/office-ui-fabric-js/src/components/Button/Button";
 </style>

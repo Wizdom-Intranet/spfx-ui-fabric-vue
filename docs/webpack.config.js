@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
     entry: {
-        button:'./doc/button.js'
+        button:'./docs/button.js'
     },
     output: {
         filename: './[name].js',
@@ -13,7 +13,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js?$/,
+                test: /\.jsx?$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',

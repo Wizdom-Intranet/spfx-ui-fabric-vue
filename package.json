@@ -8,7 +8,7 @@
     "build:watch": "rollup -c ./rollup.config.js --watch",
     "test": "cypress run",
     "test:open": "cypress open",
-    "docs": "webpack-dev-server --config ./doc/webpack.config.js",
+    "docs": "webpack-dev-server --config ./docs/webpack.config.js",
     "dev": "concurrently --kill-others \"npm run build:watch\" \"npm run docs\" \"npm run test:open\""
   },
   "repository": {

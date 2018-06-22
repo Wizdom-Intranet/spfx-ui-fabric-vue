@@ -1,10 +1,17 @@
 /// <reference types="Cypress" />
 
 context("Button", () =>{
-    beforeEach(()=>cy.visit("http://localhost:8080/doc/button.html"));
+    beforeEach(()=>cy.visit("http://localhost:8080/docs/button.html"));
 
-    it('should do something', () => {
-        cy.get(".ms-button").should('be.visible');
+    it('Default should match screenshot', () => {
+        cy.contains("Default").vrt("Button - Default");
+    });
 
+    it('Primary should match screenshot', () => {
+        cy.contains("Primary").vrt("Button - Primary");
+    });
+
+    it('Custom class should match screenshot', () => {
+        cy.contains("Custom class").vrt("Button - Custom class");
     });
 });
