@@ -6,8 +6,10 @@
   "scripts": {
     "build": "rollup -c ./rollup.config.js",
     "build:watch": "rollup -c ./rollup.config.js --watch",
+    "test": "cypress run",
+    "test:open": "cypress open",
     "docs": "webpack-dev-server --config ./doc/webpack.config.js",
-    "dev": "concurrently --kill-others \"npm run build:watch\" \"npm run docs\""
+    "dev": "concurrently --kill-others \"npm run build:watch\" \"npm run docs\" \"npm run test:open\""
   },
   "repository": {
     "type": "git",
