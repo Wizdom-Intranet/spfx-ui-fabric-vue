@@ -1,0 +1,22 @@
+{
+  "name": "@wizdom/spfx-ui-fabric-vue",
+  "version": "1.0.0",
+  "description": "Office ui fabric components made specific for SPFx.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wizdom-Intranet/spfx-ui-fabric-vue.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Wizdom-Intranet/spfx-ui-fabric-vue/issues"
+  },
+  "homepage": "https://github.com/Wizdom-Intranet/spfx-ui-fabric-vue#readme",
+  "devDependencies": {
+    "cypress": "^3.0.1"
+  }
+}
