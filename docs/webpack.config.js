@@ -2,7 +2,9 @@ const path = require('path');
 
 module.exports = {
     entry: {
-        button:'./docs/button.js'
+        button:'./docs/button.js',
+        overlay:'./docs/overlay.js',
+        dialog:'./docs/dialog.js',
     },
     output: {
         filename: './[name].js',
