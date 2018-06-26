@@ -9,11 +9,38 @@ export default {
             Dialog : fabricDialog
         };
     },
+    props : {
+        useDarkOverlay : Boolean
+    },
+    methods : {
+        ensureScopeIdForChilds(){
+            if(this.dialogInstance && this.dialogInstance._overlay && this.dialogInstance._overlay.overlayElement){
+                this.dialogInstance._overlay.overlayElement.setAttribute(this.$options._scopeId,"");
+                if(this.useDarkOverlay)
+                    this.dialogInstance._overlay.overlayElement.className += " ms-Overlay--dark";
+            }
+        },
+        ensureOverlayIsClosed(){
+            if(this.dialogInstance && this.dialogInstance._overlay && this.dialogInstance._overlay.overlayElement.parentElement)
+                this.dialogInstance._overlay.remove()
+        }
+    },
+    mounted: function () {
+        this.$nextTick(function () {
+            this.ensureScopeIdForChilds();
+        })
+    },
     watch:{
         value(newVal){
-            if(this.dialogInstance._overlay.overlayElement)
-                this.dialogInstance._overlay.overlayElement.setAttribute(this.$options._scopeId,"");
+            this.ensureScopeIdForChilds();
+
+        if(!newVal)
+            this.ensureOverlayIsClosed();
         }
+    },
+    beforeDestroy()
+    {
+        this.ensureOverlayIsClosed();
     },
     extends :  dialog
 }

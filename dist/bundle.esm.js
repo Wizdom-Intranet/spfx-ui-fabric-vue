@@ -164,6 +164,17 @@ var uiOverlay = {_scopeId: 'data-v-09ffd35c',
             Overlay : Overlay
         };
     },
+    watch:{
+        useDarkOverlay:{
+            handler: function handler(newVal){
+                
+            },
+            immediate : true
+        }
+    },
+    props : {
+        useDarkOverlay: Boolean
+    },
     extends :  overlay
 }
 
@@ -297,12 +308,38 @@ var uiDialog = {_scopeId: 'data-v-1194e8ec',
             Dialog : Dialog
         };
     },
+    props : {
+        useDarkOverlay : Boolean
+    },
+    methods : {
+        ensureScopeIdForChilds: function ensureScopeIdForChilds(){
+            if(this.dialogInstance && this.dialogInstance._overlay && this.dialogInstance._overlay.overlayElement){
+                this.dialogInstance._overlay.overlayElement.setAttribute(this.$options._scopeId,"");
+                if(this.useDarkOverlay)
+                    { this.dialogInstance._overlay.overlayElement.className += " ms-Overlay--dark"; }
+            }
+        },
+        ensureOverlayIsClosed: function ensureOverlayIsClosed(){
+            if(this.dialogInstance && this.dialogInstance._overlay && this.dialogInstance._overlay.overlayElement.parentElement)
+                { this.dialogInstance._overlay.remove(); }
+        }
+    },
+    mounted: function () {
+        this.$nextTick(function () {
+            this.ensureScopeIdForChilds();
+        });
+    },
     watch:{
         value: function value(newVal){
-            console.log("val changed", newVal);
-            if(this.dialogInstance._overlay.overlayElement)
-                { this.dialogInstance._overlay.overlayElement.setAttribute(this.$options._scopeId,""); }
+            this.ensureScopeIdForChilds();
+
+        if(!newVal)
+            { this.ensureOverlayIsClosed(); }
         }
+    },
+    beforeDestroy: function beforeDestroy()
+    {
+        this.ensureOverlayIsClosed();
     },
     extends :  dialog
 }

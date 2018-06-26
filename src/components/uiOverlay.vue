@@ -9,6 +9,17 @@ export default {
             Overlay : fabricOverlay
         };
     },
+    watch:{
+        useDarkOverlay:{
+            handler(newVal){
+                
+            },
+            immediate : true
+        }
+    },
+    props : {
+        useDarkOverlay: Boolean
+    },
     extends :  overlay
 }
 </script>

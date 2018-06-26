@@ -12,7 +12,8 @@ new Vue({
           showSimple : false,
           showLargeHeader : false,
           showBlocking : false,
-          showClosing : false
+          showClosing : false,
+          showDark : false
         };
     },
     template : `<div>
@@ -28,5 +29,7 @@ new Vue({
     <uiButton @click="showClosing=true">Show closing</uiButton>
     <uiDialog v-model='showClosing' title='closing' type='close' />
         
+    <uiButton @click="showDark=true">Show with dark overlay</uiButton>
+    <uiDialog v-model='showDark' title='dark' :useDarkOverlay='true' />
     </div>`
 });
