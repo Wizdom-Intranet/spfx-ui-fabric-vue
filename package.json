@@ -22,9 +22,9 @@
   },
   "homepage": "https://github.com/Wizdom-Intranet/spfx-ui-fabric-vue#readme",
   "dependencies": {
+    "office-ui-fabric-core": "5.0.1",
     "office-ui-fabric-js": "git+https://github.com/zonique2k/office-ui-fabric-js.git",
     "office-ui-fabric-vue": "git+https://github.com/zonique2k/office-ui-fabric-vue.git",
-    "office-ui-fabric-core": "5.0.1",
     "spfx-uifabric-themes": "^0.2.1"
   },
   "devDependencies": {

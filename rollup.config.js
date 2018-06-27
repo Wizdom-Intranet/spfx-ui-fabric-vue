@@ -3,7 +3,6 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonJS from 'rollup-plugin-commonjs';
 import buble from 'rollup-plugin-buble';
 
-
 export default
 {
     input: 'src/index.js',
