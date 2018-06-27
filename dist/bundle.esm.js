@@ -344,4 +344,442 @@ var uiDialog = {_scopeId: 'data-v-1194e8ec',
     extends :  dialog
 }
 
-export { uiButton, uiOverlay, uiDialog };
+var callout = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('div',{ref:"callout",staticClass:"ms-Callout is-hidden",class:_vm.calloutClass},[_c('div',{staticClass:"ms-Callout-main"},[(_vm.showClose)?_c('button',{staticClass:"ms-Callout-close"},[_c('i',{staticClass:"ms-Icon ms-Icon--Clear"})]):_vm._e(),_vm._v(" "),_c('div',{staticClass:"ms-Callout-header"},[_c('p',{staticClass:"ms-Callout-title"},[_vm._v(_vm._s(_vm.title))])]),_vm._v(" "),_c('div',{staticClass:"ms-Callout-inner"},[_c('div',{staticClass:"ms-Callout-content"},[(_vm.content)?_c('p',{staticClass:"ms-Callout-subText"},[_vm._v(_vm._s(_vm.content))]):_vm._t("content")],2),_vm._v(" "),_c('div',{staticClass:"ms-Callout-actions"},[_vm._t("actions")],2)])])]),_vm._v(" "),_c('span',{ref:"calloutTrigger"},[_vm._t("default")],2)])},staticRenderFns: [],
+  name: 'ou-callout',
+
+  mixins: [type('actionText', 'OOBE', 'peek')],
+
+  props: {
+    position: {
+      type: String,
+      default: 'right',
+      validator: function validator(value) {
+        return ['right', 'left', 'top', 'bottom'].includes(value);
+      }
+    },
+
+    showClose: {
+      type: Boolean,
+      default: false
+    },
+
+    title: String,
+    content: String
+  },
+  data: function data() {
+    return {
+      calloutInstance: null
+    };
+  },
+  computed: {
+    calloutClass: function calloutClass() {
+      var obj;
+
+      return ( obj = {}, obj[("ms-Callout--" + (this.type))] = !!this.type, obj['ms-Callout--close'] =  this.showClose, obj );
+    }
+  },
+
+  mounted: function mounted() {
+    this.calloutInstance = new this.$fabric.Callout(
+      this.$refs.callout,
+      this.$refs.calloutTrigger,
+      this.position
+    );
+  }
+};
+
+var CONTEXT_STATE_CLASS = "is-open";
+var MODAL_STATE_POSITIONED = "is-positioned";
+var CONTEXT_HOST_MAIN_CLASS = "ms-ContextualHost-main";
+var CONTEXT_HOST_BEAK_CLASS = "ms-ContextualHost-beak";
+var ARROW_LEFT_CLASS = "ms-ContextualHost--arrowLeft";
+var ARROW_TOP_CLASS = "ms-ContextualHost--arrowTop";
+var ARROW_BOTTOM_CLASS = "ms-ContextualHost--arrowBottom";
+var ARROW_RIGHT_CLASS = "ms-ContextualHost--arrowRight";
+var MODIFIER_BASE = "ms-ContextualHost--";
+var ARROW_SIZE = 28;
+var ARROW_OFFSET = 8;
+var ContextualHost = (function () {
+    function ContextualHost(content, direction, targetElement, hasArrow, modifiers, matchTargetWidth, disposalCallback) {
+        var this$1 = this;
+
+        if (hasArrow === void 0) { hasArrow = true; }
+        this._resizeAction = this._resizeAction.bind(this);
+        this._dismissAction = this._dismissAction.bind(this);
+        this._handleKeyUpDismiss = this._handleKeyUpDismiss.bind(this);
+        this._matchTargetWidth = matchTargetWidth || false;
+        this._direction = direction;
+        this._container = this.createContainer();
+        this._contextualHost = this._container;
+        this._contextualHostMain = this._contextualHost.getElementsByClassName(CONTEXT_HOST_MAIN_CLASS)[0];
+        this._contextualHostMain.appendChild(content);
+        this._hasArrow = hasArrow;
+        this._arrow = this._container.getElementsByClassName(CONTEXT_HOST_BEAK_CLASS)[0];
+        this._targetElement = targetElement;
+        this._openModal();
+        this._setResizeDisposal();
+        if (disposalCallback) {
+            this._disposalCallback = disposalCallback;
+        }
+        if (modifiers) {
+            for (var i = 0; i < modifiers.length; i++) {
+                this$1._container.classList.add(MODIFIER_BASE + modifiers[i]);
+            }
+        }
+        if (!ContextualHost.hosts) {
+            ContextualHost.hosts = [];
+        }
+        ContextualHost.hosts.push(this);
+    }
+    ContextualHost.prototype.disposeModal = function () {
+        if (ContextualHost.hosts.length > 0) {
+            window.removeEventListener("resize", this._resizeAction, false);
+            document.removeEventListener("click", this._dismissAction, true);
+            document.removeEventListener("keyup", this._handleKeyUpDismiss, true);
+            this._container.parentNode.removeChild(this._container);
+            if (this._disposalCallback) {
+                this._disposalCallback();
+            }
+            var index = ContextualHost.hosts.indexOf(this);
+            ContextualHost.hosts.splice(index, 1);
+            var i = ContextualHost.hosts.length;
+            while (i--) {
+                ContextualHost.hosts[i].disposeModal();
+                ContextualHost.hosts.splice(i, 1);
+            }
+        }
+    };
+    ContextualHost.prototype.setChildren = function (value) {
+        if (!this._children) {
+            this._children = [];
+        }
+        this._children.push(value);
+    };
+    ContextualHost.prototype.contains = function (value) {
+        return this._container.contains(value);
+    };
+    ContextualHost.prototype.createContainer = function () {
+        var ContextualHost0 = document.createElement("div");
+        ContextualHost0.setAttribute("class", "ms-ContextualHost");
+        ContextualHost0.innerHTML += " ";
+        var ContextualHost0c1 = document.createElement("div");
+        ContextualHost0c1.setAttribute("class", CONTEXT_HOST_MAIN_CLASS);
+        ContextualHost0c1.innerHTML += " ";
+        ContextualHost0.appendChild(ContextualHost0c1);
+        ContextualHost0.innerHTML += " ";
+        var ContextualHost0c3 = document.createElement("div");
+        ContextualHost0c3.setAttribute("class", CONTEXT_HOST_BEAK_CLASS);
+        ContextualHost0.appendChild(ContextualHost0c3);
+        ContextualHost0.innerHTML += "";
+        return ContextualHost0;
+    };
+    ContextualHost.prototype._openModal = function () {
+        var _this = this;
+        this._copyModalToBody();
+        this._saveModalSize();
+        this._findAvailablePosition();
+        this._showModal();
+        setTimeout(function () { _this._setDismissClick(); }, 100);
+    };
+    ContextualHost.prototype._findAvailablePosition = function () {
+        var _posOk;
+        switch (this._direction) {
+            case "left":
+                _posOk = this._positionOk(this._tryPosModalLeft.bind(this), this._tryPosModalRight.bind(this), this._tryPosModalBottom.bind(this), this._tryPosModalTop.bind(this));
+                this._setPosition(_posOk);
+                break;
+            case "right":
+                _posOk = this._positionOk(this._tryPosModalRight.bind(this), this._tryPosModalLeft.bind(this), this._tryPosModalBottom.bind(this), this._tryPosModalTop.bind(this));
+                this._setPosition(_posOk);
+                break;
+            case "top":
+                _posOk = this._positionOk(this._tryPosModalTop.bind(this), this._tryPosModalBottom.bind(this));
+                this._setPosition(_posOk);
+                break;
+            case "bottom":
+                _posOk = this._positionOk(this._tryPosModalBottom.bind(this), this._tryPosModalTop.bind(this));
+                this._setPosition(_posOk);
+                break;
+            default:
+                this._setPosition();
+        }
+    };
+    ContextualHost.prototype._showModal = function () {
+        this._container.classList.add(CONTEXT_STATE_CLASS);
+    };
+    ContextualHost.prototype._positionOk = function (pos1, pos2, pos3, pos4) {
+        var _posOk;
+        _posOk = pos1();
+        if (!_posOk) {
+            _posOk = pos2();
+            if (!_posOk && pos3) {
+                _posOk = pos3();
+                if (!_posOk && pos4) {
+                    _posOk = pos4();
+                }
+            }
+        }
+        return _posOk;
+    };
+    ContextualHost.prototype._calcLeft = function (mWidth, teWidth, teLeft) {
+        var mHalfWidth = mWidth / 2;
+        var teHalf = teWidth / 2;
+        var mHLeft = (teLeft + teHalf) - mHalfWidth;
+        mHLeft = (mHLeft < mHalfWidth) ? teLeft : mHLeft;
+        return mHLeft;
+    };
+    ContextualHost.prototype._calcTop = function (mHeight, teHeight, teTop) {
+        var mHalfWidth = mHeight / 2;
+        var teHalf = teHeight / 2;
+        var mHLeft = (teTop + teHalf) - mHalfWidth;
+        mHLeft = (mHLeft < mHalfWidth) ? teTop : mHLeft;
+        return mHLeft;
+    };
+    ContextualHost.prototype._setPosition = function (curDirection) {
+        var teBR = this._targetElement.getBoundingClientRect();
+        var teLeft = teBR.left;
+        var teRight = teBR.right;
+        var teTop = teBR.top;
+        var teWidth = teBR.width;
+        var teHeight = teBR.height;
+        var mHLeft;
+        var mHTop;
+        var mWidth = "";
+        var arrowTop;
+        var arrowLeft;
+        var windowX = window.scrollX ? window.scrollX : 0;
+        var windowY = window.scrollY ? window.scrollY : 0;
+        var arrowSpace = (this._hasArrow) ? ARROW_SIZE : 0;
+        if (this._matchTargetWidth) {
+            mWidth = "width: " + this._modalWidth + "px;";
+        }
+        switch (curDirection) {
+            case "left":
+                mHLeft = teLeft - this._modalWidth - arrowSpace;
+                mHTop = this._calcTop(this._modalHeight, teHeight, teTop);
+                mHTop += window.scrollY ? window.scrollY : 0;
+                this._container.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;" + mWidth);
+                this._container.classList.add(MODAL_STATE_POSITIONED);
+                if (this._hasArrow) {
+                    this._container.classList.add(ARROW_RIGHT_CLASS);
+                    arrowTop = ((teTop + windowY) - mHTop) + ARROW_OFFSET;
+                    this._arrow.setAttribute("style", "top: " + arrowTop + "px;");
+                }
+                break;
+            case "right":
+                mHTop = this._calcTop(this._modalHeight, teHeight, teTop);
+                mHTop += windowY;
+                mHLeft = teRight + arrowSpace;
+                this._container.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;" + mWidth);
+                this._container.classList.add(MODAL_STATE_POSITIONED);
+                if (this._hasArrow) {
+                    arrowTop = ((windowY + teTop) - mHTop) + ARROW_OFFSET;
+                    this._arrow.setAttribute("style", "top: " + arrowTop + "px;");
+                    this._container.classList.add(ARROW_LEFT_CLASS);
+                }
+                break;
+            case "top":
+                mHLeft = this._calcLeft(this._modalWidth, this._teWidth, teLeft);
+                mHTop = teTop - this._modalHeight - arrowSpace;
+                mHTop += windowY;
+                this._container.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;" + mWidth);
+                this._container.classList.add(MODAL_STATE_POSITIONED);
+                if (this._hasArrow) {
+                    arrowTop = this._modalHeight - (arrowSpace / 2);
+                    arrowLeft = Math.max(windowX + teLeft - mHLeft + ((teWidth - arrowSpace) / 2), ARROW_OFFSET);
+                    this._arrow.setAttribute("style", "top: " + arrowTop + "px; left: " + arrowLeft + "px;");
+                    this._container.classList.add(ARROW_BOTTOM_CLASS);
+                }
+                break;
+            case "bottom":
+                mHLeft = mHLeft = this._calcLeft(this._modalWidth, this._teWidth, teLeft);
+                mHTop = teTop + teHeight + arrowSpace;
+                mHTop += window.scrollY ? window.scrollY : 0;
+                this._container.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;" + mWidth);
+                this._container.classList.add(MODAL_STATE_POSITIONED);
+                if (this._hasArrow) {
+                    arrowLeft = Math.max(windowX + teLeft - mHLeft + ((teWidth - arrowSpace) / 2), ARROW_OFFSET);
+                    this._arrow.setAttribute("style", "left: " + arrowLeft + "px;");
+                    this._container.classList.add(ARROW_TOP_CLASS);
+                }
+                break;
+            default:
+                this._container.setAttribute("style", "top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);");
+        }
+    };
+    ContextualHost.prototype._tryPosModalLeft = function () {
+        var teLeft = this._targetElement.getBoundingClientRect().left;
+        if (teLeft < this._modalWidth) {
+            return false;
+        }
+        else {
+            return "left";
+        }
+    };
+    ContextualHost.prototype._tryPosModalRight = function () {
+        var teRight = this._targetElement.getBoundingClientRect().right;
+        var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+        if ((w - teRight) < this._modalWidth) {
+            return false;
+        }
+        else {
+            return "right";
+        }
+    };
+    ContextualHost.prototype._tryPosModalBottom = function () {
+        var teBottom = window.innerHeight - this._targetElement.getBoundingClientRect().bottom;
+        if (teBottom < this._modalHeight) {
+            return false;
+        }
+        else {
+            return "bottom";
+        }
+    };
+    ContextualHost.prototype._tryPosModalTop = function () {
+        var teTop = this._targetElement.getBoundingClientRect().top;
+        if (teTop < this._modalHeight) {
+            return false;
+        }
+        else {
+            return "top";
+        }
+    };
+    ContextualHost.prototype._copyModalToBody = function () {
+        document.body.appendChild(this._container);
+    };
+    ContextualHost.prototype._saveModalSize = function () {
+        var _modalStyles = window.getComputedStyle(this._container);
+        this._container.setAttribute("style", "opacity: 0; z-index: -1");
+        this._container.classList.add(MODAL_STATE_POSITIONED);
+        this._container.classList.add(CONTEXT_STATE_CLASS);
+        if (this._matchTargetWidth) {
+            var teStyles = window.getComputedStyle(this._targetElement);
+            this._modalWidth = this._targetElement.getBoundingClientRect().width
+                + (parseInt(teStyles.marginLeft, 10)
+                    + parseInt(teStyles.marginLeft, 10));
+        }
+        else {
+            this._modalWidth = this._container.getBoundingClientRect().width
+                + (parseInt(_modalStyles.marginLeft, 10)
+                    + parseInt(_modalStyles.marginRight, 10));
+            this._container.setAttribute("style", "");
+        }
+        this._modalHeight = this._container.getBoundingClientRect().height
+            + (parseInt(_modalStyles.marginTop, 10)
+                + parseInt(_modalStyles.marginBottom, 10));
+        this._container.classList.remove(MODAL_STATE_POSITIONED);
+        this._container.classList.remove(CONTEXT_STATE_CLASS);
+        this._teWidth = this._targetElement.getBoundingClientRect().width;
+        this._teHeight = this._targetElement.getBoundingClientRect().height;
+    };
+    ContextualHost.prototype._dismissAction = function (e) {
+        if (!this._container.contains(e.target) && e.target !== this._container) {
+            if (this._children !== undefined) {
+                var isChild_1 = false;
+                this._children.map(function (child) {
+                    if (child !== undefined) {
+                        isChild_1 = child.contains(e.target);
+                    }
+                });
+                if (!isChild_1) {
+                    this.disposeModal();
+                }
+            }
+            else {
+                this.disposeModal();
+            }
+        }
+    };
+    ContextualHost.prototype._setDismissClick = function () {
+        document.addEventListener("click", this._dismissAction, true);
+        document.addEventListener("keyup", this._handleKeyUpDismiss, true);
+    };
+    ContextualHost.prototype._handleKeyUpDismiss = function (e) {
+        if (e.keyCode === 32 || e.keyCode === 27) {
+            this._dismissAction(e);
+        }
+    };
+    ContextualHost.prototype._resizeAction = function () {
+        this.disposeModal();
+    };
+    ContextualHost.prototype._setResizeDisposal = function () {
+        window.addEventListener("resize", this._resizeAction, false);
+    };
+    return ContextualHost;
+}());
+
+var STATE_HIDDEN = "is-hidden";
+var CLOSE_BUTTON_CLASS = ".ms-Callout-close";
+var MODIFIER_OOBE_CLASS = "ms-Callout--OOBE";
+var Callout = (function () {
+    function Callout(container, addTarget, position) {
+        this._container = container;
+        this._addTarget = addTarget;
+        this._position = position;
+        this._closeButton = container.querySelector(CLOSE_BUTTON_CLASS);
+        this._setOpener();
+    }
+    Callout.prototype._setOpener = function () {
+        this._addTarget.addEventListener("click", this._clickHandler.bind(this), true);
+        this._addTarget.addEventListener("keyup", this._keyupHandler.bind(this), true);
+    };
+    Callout.prototype._openContextMenu = function () {
+        var modifiers = [];
+        if (this._hasModifier(MODIFIER_OOBE_CLASS)) {
+            modifiers.push("primaryArrow");
+        }
+        this._container.classList.remove(STATE_HIDDEN);
+        this._contextualHost = new ContextualHost(this._container, this._position, this._addTarget, true, modifiers);
+        if (this._closeButton) {
+            this._closeButton.addEventListener("click", this._closeHandler.bind(this), false);
+        }
+    };
+    Callout.prototype._hasModifier = function (modifierClass) {
+        return this._container.classList.contains(modifierClass);
+    };
+    Callout.prototype._closeHandler = function (e) {
+        if (this._contextualHost != null) {
+            this._contextualHost.disposeModal();
+        }
+        this._closeButton.removeEventListener("click", this._closeHandler.bind(this), false);
+        this._addTarget.removeEventListener("click", this._clickHandler.bind(this), true);
+        this._addTarget.removeEventListener("keyup", this._keyupHandler.bind(this), true);
+    };
+    Callout.prototype._clickHandler = function (e) {
+        this._openContextMenu();
+    };
+    Callout.prototype._keyupHandler = function (event) {
+        if (event.keyCode === 32) {
+            event.stopPropagation();
+            event.preventDefault();
+            this._openContextMenu();
+        }
+        else {
+            this._closeHandler(event);
+        }
+    };
+    return Callout;
+}());
+
+var uiCallout = {_scopeId: 'data-v-64664f3c',
+    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-Callout[data-v-64664f3c] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; width: 288px; } .ms-Callout.is-hidden[data-v-64664f3c] { display: none; } .ms-Callout-header[data-v-64664f3c] { z-index: 105; padding-top: 24px; padding-bottom: 12px; padding-left: 28px; padding-right: 28px; } .ms-Callout-title[data-v-64664f3c] { margin: 0; font-weight: 300; font-size: 21px; } .ms-Callout-subText[data-v-64664f3c] { margin: 0; font-weight: 300; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 12px; } .ms-Callout-close[data-v-64664f3c] { margin: 0; border: 0; background: none; cursor: pointer; position: absolute; top: 12px; right: 12px; padding: 8px; width: 32px; height: 32px; font-size: 14px; color: \"[theme:neutralSecondary, default: #666666]\"; z-index: 110; } .ms-Callout-link[data-v-64664f3c] { font-size: 14px; } .ms-Callout-inner[data-v-64664f3c] { height: 100%; padding-top: 0; padding-bottom: 12px; padding-left: 28px; padding-right: 28px; } .ms-Callout-actions[data-v-64664f3c] { position: relative; margin-top: 20px; width: 100%; white-space: nowrap; } .ms-Callout-actions .ms-CommandButton.ms-CommandButton--inline[data-v-64664f3c] { height: 27px; line-height: 27px; } .ms-Callout-actions .ms-CommandButton.ms-CommandButton--inline .ms-CommandButton-button[data-v-64664f3c] { height: 27px; line-height: 27px; } .ms-Callout-actions .ms-CommandButton.ms-CommandButton--inline .ms-CommandButton-label[data-v-64664f3c] { line-height: 27px; } .ms-Callout-actions .ms-CommandButton.ms-CommandButton--inline .ms-CommandButton-icon[data-v-64664f3c] { line-height: 27px; } .ms-Callout-actions .ms-CommandButton.ms-CommandButton--inline:hover .ms-Button[data-v-64664f3c], .ms-Callout-actions .ms-CommandButton.ms-CommandButton--inline:focus .ms-Button[data-v-64664f3c] { color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-Callout-actions .ms-Callout-button[data-v-64664f3c] { margin-right: 12px; } .ms-Callout.ms-Callout--OOBE .ms-Callout-header[data-v-64664f3c] { padding: 28px 24px; background-color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-Callout.ms-Callout--OOBE .ms-Callout-title[data-v-64664f3c] { font-weight: 100; font-size: 28px; color: \"[theme:white, default: #ffffff]\"; } .ms-Callout.ms-Callout--OOBE .ms-Callout-inner[data-v-64664f3c] { padding-top: 20px; } .ms-Callout.ms-Callout--OOBE .ms-Callout-subText[data-v-64664f3c] { font-size: 14px; } .ms-Callout.ms-Callout--actionText .ms-Callout-actions[data-v-64664f3c] { border-top: 1px solid \"[theme:neutralLight, default: #eaeaea]\"; padding-top: 12px; } .ms-Callout.ms-Callout--actionText .ms-Callout-inner[data-v-64664f3c] { padding-bottom: 12px; } .ms-Callout.ms-Callout--peek .ms-Callout-header[data-v-64664f3c] { padding-bottom: 0; } .ms-Callout.ms-Callout--peek .ms-Callout-title[data-v-64664f3c] { font-size: 14px; } .ms-Callout.ms-Callout--peek .ms-Callout-actions[data-v-64664f3c] { margin-top: 12px; margin-bottom: -4px; } .ms-ContextualHost[data-v-64664f3c] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; z-index: 10; margin: 16px auto; position: relative; min-width: 10px; display: none; background-color: \"[theme:white, default: #ffffff]\"; box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4); } .ms-ContextualHost.is-positioned[data-v-64664f3c] { position: absolute; margin: 0; } .ms-ContextualHost.is-open[data-v-64664f3c] { display: inline-block; } .ms-ContextualHost-beak[data-v-64664f3c] { box-shadow: 0 0 15px -5px \"[theme:neutralPrimaryAlt, default: #3c3c3c]\"; position: absolute; width: 28px; height: 28px; background: \"[theme:white, default: #ffffff]\"; border: 1px solid \"[theme:neutralLight, default: #eaeaea]\"; box-sizing: border-box; top: -6px; display: none; -webkit-transform: rotate(45deg); transform: rotate(45deg); z-index: 0; outline: 1px solid transparent; } .ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-64664f3c], .ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-64664f3c] { top: 40px; display: none; } .ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-64664f3c] { left: -10px; } .ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-64664f3c] { right: -10px; } .ms-ContextualHost.ms-ContextualHost--arrowTop .ms-ContextualHost-beak[data-v-64664f3c] { display: block; top: -10px; } .ms-ContextualHost.ms-ContextualHost--arrowBottom .ms-ContextualHost-beak[data-v-64664f3c] { display: block; bottom: -10px; } .ms-ContextualHost-main[data-v-64664f3c] { position: relative; background-color: \"[theme:white, default: #ffffff]\"; box-sizing: border-box; outline: 1px solid transparent; z-index: 5; min-height: 10px; } .ms-ContextualHost-close[data-v-64664f3c] { margin: 0; border: 0; background: none; cursor: pointer; position: absolute; top: 12px; right: 12px; padding: 8px; width: 32px; height: 32px; font-size: 14px; color: \"[theme:neutralSecondary, default: #666666]\"; z-index: 10; } .ms-ContextualHost.ms-ContextualHost--close .ms-ContextualHost-title[data-v-64664f3c] { margin-right: 20px; } .ms-ContextualHost.ms-ContextualHost--primaryArrow .ms-ContextualHost-beak[data-v-64664f3c] { background-color: \"[theme:themePrimary, default: #0078d7]\"; } @media (min-width: 480px) { .ms-ContextualHost[data-v-64664f3c] { margin: 16px; } .ms-ContextualHost.is-positioned[data-v-64664f3c] { margin: 0; } .ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-64664f3c], .ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-64664f3c] { display: block; } } ");},
+    beforeMount: function beforeMount(){
+        this.$fabric = {
+            Callout : Callout
+        };
+    },
+    mounted: function mounted(){
+        var this$1 = this;
+
+        this.$refs.calloutTrigger.addEventListener("click", function (){
+            var contextualHostElm = this$1.$refs.callout.parentElement.parentElement;
+            contextualHostElm.setAttribute(this$1.$options._scopeId,"");
+            for(var i=0;i<contextualHostElm.children.length;i++)
+                { contextualHostElm.children[i].setAttribute(this$1.$options._scopeId,""); }
+            this$1.calloutInstance._contextualHost._openModal(); // recalculate position
+        });
+    },
+    extends :  callout
+}
+
+export { uiButton, uiOverlay, uiDialog, uiCallout };

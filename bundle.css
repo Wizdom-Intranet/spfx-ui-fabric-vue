@@ -59,6 +59,88 @@
 /** Warning **/
 /** Server Warning **/
 /** Success **/
+.ms-Overlay[data-v-09ffd35c] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: "[theme:whiteTranslucent40, default: rgba(255,255,255,.4)]";
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 0;
+  display: none; }
+
+.ms-Overlay.is-visible[data-v-09ffd35c] {
+  display: block; }
+
+.ms-Overlay--dark[data-v-09ffd35c] {
+  background-color: "[theme:blackTranslucent40, default: rgba(0,0,0,.4)]"; }
+
+.ms-u-overflowHidden[data-v-09ffd35c] {
+  overflow: hidden; }
+
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+/* Theme related color values */
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes color and background styles
+*/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes only the color values
+*/
+/***
+100	Thin (Hairline)
+200	Extra Light (Ultra Light)
+300	Light
+400	Normal
+500	Medium
+600	Semi Bold (Demi Bold)
+700	Bold
+800	Extra Bold (Ultra Bold)
+900	Black (Heavy)
+**/
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
 .ms-Button[data-v-79820dd6] {
   box-sizing: border-box;
   margin: 0;
@@ -307,6 +389,258 @@
 /** Warning **/
 /** Server Warning **/
 /** Success **/
+.ms-Callout[data-v-64664f3c] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  width: 288px; }
+  .ms-Callout.is-hidden[data-v-64664f3c] {
+    display: none; }
+
+.ms-Callout-header[data-v-64664f3c] {
+  z-index: 105;
+  padding-top: 24px;
+  padding-bottom: 12px;
+  padding-left: 28px;
+  padding-right: 28px; }
+
+.ms-Callout-title[data-v-64664f3c] {
+  margin: 0;
+  font-weight: 300;
+  font-size: 21px; }
+
+.ms-Callout-subText[data-v-64664f3c] {
+  margin: 0;
+  font-weight: 300;
+  color: "[theme:neutralPrimary, default: #333333]";
+  font-size: 12px; }
+
+.ms-Callout-close[data-v-64664f3c] {
+  margin: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 8px;
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
+  color: "[theme:neutralSecondary, default: #666666]";
+  z-index: 110; }
+
+.ms-Callout-link[data-v-64664f3c] {
+  font-size: 14px; }
+
+.ms-Callout-inner[data-v-64664f3c] {
+  height: 100%;
+  padding-top: 0;
+  padding-bottom: 12px;
+  padding-left: 28px;
+  padding-right: 28px; }
+
+.ms-Callout-actions[data-v-64664f3c] {
+  position: relative;
+  margin-top: 20px;
+  width: 100%;
+  white-space: nowrap; }
+  .ms-Callout-actions .ms-CommandButton.ms-CommandButton--inline[data-v-64664f3c] {
+    height: 27px;
+    line-height: 27px; }
+    .ms-Callout-actions .ms-CommandButton.ms-CommandButton--inline .ms-CommandButton-button[data-v-64664f3c] {
+      height: 27px;
+      line-height: 27px; }
+    .ms-Callout-actions .ms-CommandButton.ms-CommandButton--inline .ms-CommandButton-label[data-v-64664f3c] {
+      line-height: 27px; }
+    .ms-Callout-actions .ms-CommandButton.ms-CommandButton--inline .ms-CommandButton-icon[data-v-64664f3c] {
+      line-height: 27px; }
+    .ms-Callout-actions .ms-CommandButton.ms-CommandButton--inline:hover .ms-Button[data-v-64664f3c],
+    .ms-Callout-actions .ms-CommandButton.ms-CommandButton--inline:focus .ms-Button[data-v-64664f3c] {
+      color: "[theme:themePrimary, default: #0078d7]"; }
+  .ms-Callout-actions .ms-Callout-button[data-v-64664f3c] {
+    margin-right: 12px; }
+
+.ms-Callout.ms-Callout--OOBE .ms-Callout-header[data-v-64664f3c] {
+  padding: 28px 24px;
+  background-color: "[theme:themePrimary, default: #0078d7]"; }
+
+.ms-Callout.ms-Callout--OOBE .ms-Callout-title[data-v-64664f3c] {
+  font-weight: 100;
+  font-size: 28px;
+  color: "[theme:white, default: #ffffff]"; }
+
+.ms-Callout.ms-Callout--OOBE .ms-Callout-inner[data-v-64664f3c] {
+  padding-top: 20px; }
+
+.ms-Callout.ms-Callout--OOBE .ms-Callout-subText[data-v-64664f3c] {
+  font-size: 14px; }
+
+.ms-Callout.ms-Callout--actionText .ms-Callout-actions[data-v-64664f3c] {
+  border-top: 1px solid "[theme:neutralLight, default: #eaeaea]";
+  padding-top: 12px; }
+
+.ms-Callout.ms-Callout--actionText .ms-Callout-inner[data-v-64664f3c] {
+  padding-bottom: 12px; }
+
+.ms-Callout.ms-Callout--peek .ms-Callout-header[data-v-64664f3c] {
+  padding-bottom: 0; }
+
+.ms-Callout.ms-Callout--peek .ms-Callout-title[data-v-64664f3c] {
+  font-size: 14px; }
+
+.ms-Callout.ms-Callout--peek .ms-Callout-actions[data-v-64664f3c] {
+  margin-top: 12px;
+  margin-bottom: -4px; }
+
+.ms-ContextualHost[data-v-64664f3c] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  z-index: 10;
+  margin: 16px auto;
+  position: relative;
+  min-width: 10px;
+  display: none;
+  background-color: "[theme:white, default: #ffffff]";
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4); }
+  .ms-ContextualHost.is-positioned[data-v-64664f3c] {
+    position: absolute;
+    margin: 0; }
+  .ms-ContextualHost.is-open[data-v-64664f3c] {
+    display: inline-block; }
+
+.ms-ContextualHost-beak[data-v-64664f3c] {
+  box-shadow: 0 0 15px -5px "[theme:neutralPrimaryAlt, default: #3c3c3c]";
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  background: "[theme:white, default: #ffffff]";
+  border: 1px solid "[theme:neutralLight, default: #eaeaea]";
+  box-sizing: border-box;
+  top: -6px;
+  display: none;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  z-index: 0;
+  outline: 1px solid transparent; }
+
+.ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-64664f3c],
+.ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-64664f3c] {
+  top: 40px;
+  display: none; }
+
+.ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-64664f3c] {
+  left: -10px; }
+
+.ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-64664f3c] {
+  right: -10px; }
+
+.ms-ContextualHost.ms-ContextualHost--arrowTop .ms-ContextualHost-beak[data-v-64664f3c] {
+  display: block;
+  top: -10px; }
+
+.ms-ContextualHost.ms-ContextualHost--arrowBottom .ms-ContextualHost-beak[data-v-64664f3c] {
+  display: block;
+  bottom: -10px; }
+
+.ms-ContextualHost-main[data-v-64664f3c] {
+  position: relative;
+  background-color: "[theme:white, default: #ffffff]";
+  box-sizing: border-box;
+  outline: 1px solid transparent;
+  z-index: 5;
+  min-height: 10px; }
+
+.ms-ContextualHost-close[data-v-64664f3c] {
+  margin: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 8px;
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
+  color: "[theme:neutralSecondary, default: #666666]";
+  z-index: 10; }
+
+.ms-ContextualHost.ms-ContextualHost--close .ms-ContextualHost-title[data-v-64664f3c] {
+  margin-right: 20px; }
+
+.ms-ContextualHost.ms-ContextualHost--primaryArrow .ms-ContextualHost-beak[data-v-64664f3c] {
+  background-color: "[theme:themePrimary, default: #0078d7]"; }
+
+@media (min-width: 480px) {
+  .ms-ContextualHost[data-v-64664f3c] {
+    margin: 16px; }
+    .ms-ContextualHost.is-positioned[data-v-64664f3c] {
+      margin: 0; }
+  .ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-64664f3c],
+  .ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-64664f3c] {
+    display: block; } }
+
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+/* Theme related color values */
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes color and background styles
+*/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes only the color values
+*/
+/***
+100	Thin (Hairline)
+200	Extra Light (Ultra Light)
+300	Light
+400	Normal
+500	Medium
+600	Semi Bold (Demi Bold)
+700	Bold
+800	Extra Bold (Ultra Bold)
+900	Black (Heavy)
+**/
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
 .ms-Dialog[data-v-1194e8ec] {
   font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -405,87 +739,5 @@
   background-color: "[theme:blackTranslucent40, default: rgba(0,0,0,.4)]"; }
 
 .ms-u-overflowHidden[data-v-1194e8ec] {
-  overflow: hidden; }
-
-/*
-  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
-*/
-/* Theme related color values */
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes color and background styles
-*/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes only the color values
-*/
-/***
-100	Thin (Hairline)
-200	Extra Light (Ultra Light)
-300	Light
-400	Normal
-500	Medium
-600	Semi Bold (Demi Bold)
-700	Bold
-800	Extra Bold (Ultra Bold)
-900	Black (Heavy)
-**/
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-.ms-Overlay[data-v-09ffd35c] {
-  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  background-color: "[theme:whiteTranslucent40, default: rgba(255,255,255,.4)]";
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  z-index: 0;
-  display: none; }
-
-.ms-Overlay.is-visible[data-v-09ffd35c] {
-  display: block; }
-
-.ms-Overlay--dark[data-v-09ffd35c] {
-  background-color: "[theme:blackTranslucent40, default: rgba(0,0,0,.4)]"; }
-
-.ms-u-overflowHidden[data-v-09ffd35c] {
   overflow: hidden; }
 
