@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 
 context("Callout", () =>{
-    beforeEach(()=>cy.visit("http://localhost:8080/docs/callout.html"));
+    beforeEach(()=>cy.visit("http://localhost:8080/docs/#callout"));
 
     it('All should be closed by default', () => {
         cy.get("body").vrt("Callout - All Default closed");
