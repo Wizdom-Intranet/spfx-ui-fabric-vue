@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 
 context("Dialog", () =>{
-    beforeEach(()=>cy.visit("http://localhost:8081/docs/dialog.html"));
+    beforeEach(()=>cy.visit("http://localhost:8080/docs/dialog.html"));
 
     it('All should be closed by default', () => {
         cy.get("body").vrt("Dialog - All Default closed");

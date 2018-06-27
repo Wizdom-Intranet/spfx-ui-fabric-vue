@@ -5,6 +5,7 @@ module.exports = {
         button:'./docs/button.js',
         overlay:'./docs/overlay.js',
         dialog:'./docs/dialog.js',
+        callout:'./docs/callout.js'
     },
     output: {
         filename: './[name].js',
