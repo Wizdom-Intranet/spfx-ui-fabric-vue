@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 
 context("Button", () =>{
-    beforeEach(()=>cy.visit("http://localhost:8080/docs/button.html"));
+    beforeEach(()=>cy.visit("http://localhost:8080/docs/#button"));
 
     it('Default should match screenshot', () => {
         cy.contains("Default").vrt("Button - Default");

@@ -29,6 +29,6 @@ export default {
 
     .ms-Icon.ms-Icon--Clear
     {
-        content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2000 2000" width="14" height="14" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M1115 1024l914 -915l-90 -90l-915 914l-915 -914l-90 90l914 915l-914 915l90 90l915 -914l915 914l90 -90z" fill="black" stroke="none"/></svg>');
+        content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2048 2048" width="14" height="14" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M1115 1024l914 -915l-90 -90l-915 914l-915 -914l-90 90l914 915l-914 915l90 90l915 -914l915 914l90 -90z" fill="black" stroke="none"/></svg>');
     }
 </style>
