@@ -2,15 +2,15 @@
 Office ui fabric components made specific for SPFx.
 
 ## Component status
-Component|Implemented | Uses ui-fabric-js | Uses ui-fabric-vue | Uses ui-fabric-core styles  | Notes
- ---           | :---: | :---: | :---: | :---: | ---
-Button         | Yes   | Yes   | Yes   | Yes
-Callout        | Yes   | Yes   | Yes   | Yes   | Close icon changed to svg
-ContextualMenu | Yes   | Yes   | Yes   | Yes   | icons changed to svgs
-Dialog         | Yes   | Yes   | Yes   | Yes   | Close icon changed to svg
-Overlay        | Yes   | Yes   | Yes   | Yes
-Searchbox      | Yes   | Yes   | Yes   | Yes   | icons changed to svgs
-Checkbox
+Component      |Implemented | Uses ui-fabric-js | Uses ui-fabric-vue | Uses ui-fabric-core styles  | Notes
+ ---           | :---:      | :---:             | :---:              | :---:                       | ---
+Button         | Yes        | Yes               | Yes                | Yes                      
+Callout        | Yes        | Yes               | Yes                | Yes                         | icons changed to svgs
+Checkbox       | Yes        | Yes               | Yes                | Yes                         | icons changed to svgs
+ContextualMenu | Yes        | Yes               | Yes                | Yes                         | icons changed to svgs
+Dialog         | Yes        | Yes               | Yes                | Yes                         | icons changed to svgs
+Overlay        | Yes        | Yes               | Yes                | Yes                      
+Searchbox      | Yes        | Yes               | Yes                | Yes                         | icons changed to svgs
 ChoiceFieldGroup
 Dropdown
 Label

@@ -8,6 +8,7 @@ module.exports = {
         callout:'./docs/callout.js',
         searchbox:'./docs/searchbox.js',
         contextualmenu:'./docs/contextualmenu.js',
+        checkbox:'./docs/checkbox.js'
     },
     output: {
         filename: './[name].js',

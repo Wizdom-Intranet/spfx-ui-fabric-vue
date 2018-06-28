@@ -1282,4 +1282,132 @@ var uiContextualMenuItem = {
     extends :  ContextualMenuItem
 }
 
-export { uiButton, uiOverlay, uiDialog, uiCallout, uiSearchbox, uiContextualMenu, uiContextualMenuItem };
+var checkbox = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"checkbox",staticClass:"ms-CheckBox"},[_c('input',{staticClass:"ms-CheckBox-input",attrs:{"tabindex":"-1","type":"checkbox"},on:{"click":_vm.toggle}}),_vm._v(" "),_c('label',{staticClass:"ms-CheckBox-field",class:{ 'is-disabled': _vm.disabled },attrs:{"role":"checkbox","tabindex":"0","aria-checked":"false","name":"checkbox"}},[_c('span',{staticClass:"ms-Label"},[_vm._t("default")],2)])])},staticRenderFns: [],
+  name: 'ou-checkbox',
+
+  mixins: [disabled],
+
+  props: {
+    value: Boolean
+  },
+
+  data: function data() {
+    return {
+      checkboxInstance: null
+    };
+  },
+
+  watch: {
+    value: function value() {
+      this.setCheck();
+    }
+  },
+
+  mounted: function mounted() {
+    this.checkboxInstance = new this.$fabric.CheckBox(this.$refs.checkbox);
+    this.setCheck();
+  },
+
+  methods: {
+    toggle: function toggle() {
+      this.$emit('input', this.checkboxInstance.getValue());
+    },
+
+    setCheck: function setCheck() {
+      this.value && !this.disabled ?
+        this.checkboxInstance.check() :
+        this.checkboxInstance.unCheck();
+    }
+  }
+};
+
+var CheckBox = (function () {
+    function CheckBox(container) {
+        this._container = container;
+        this._choiceField = this._container.querySelector(".ms-CheckBox-field");
+        this._choiceInput = this._container.querySelector(".ms-CheckBox-input");
+        if (this._choiceInput.checked) {
+            this._choiceField.setAttribute("aria-checked", "true");
+        }
+        if (this._choiceField.getAttribute("aria-checked") === "true") {
+            this._choiceField.classList.add("is-checked");
+        }
+        this._addListeners();
+    }
+    CheckBox.prototype.getValue = function () {
+        return this._choiceField.getAttribute("aria-checked") === "true" ? true : false;
+    };
+    CheckBox.prototype.toggle = function () {
+        if (this.getValue()) {
+            this.unCheck();
+        }
+        else {
+            this.check();
+        }
+        this._choiceInput.click();
+    };
+    CheckBox.prototype.check = function () {
+        this._choiceField.setAttribute("aria-checked", "true");
+        this._choiceField.classList.add("is-checked");
+    };
+    CheckBox.prototype.unCheck = function () {
+        this._choiceField.setAttribute("aria-checked", "false");
+        this._choiceField.classList.remove("is-checked");
+    };
+    CheckBox.prototype.removeListeners = function () {
+        this._choiceField.removeEventListener("focus", this._FocusHandler.bind(this));
+        this._choiceField.removeEventListener("blur", this._BlurHandler.bind(this));
+        this._choiceField.removeEventListener("click", this._ClickHandler.bind(this));
+        this._choiceField.removeEventListener("keydown", this._KeydownHandler.bind(this));
+    };
+    CheckBox.prototype._addListeners = function (events) {
+        var ignore = events && events.ignore;
+        if (!ignore || !(ignore.indexOf("focus") > -1)) {
+            this._choiceField.addEventListener("focus", this._FocusHandler.bind(this), false);
+        }
+        if (!ignore || !(ignore.indexOf("blur") > -1)) {
+            this._choiceField.addEventListener("blur", this._BlurHandler.bind(this), false);
+        }
+        if (!ignore || !(ignore.indexOf("click") > -1)) {
+            this._choiceField.addEventListener("click", this._ClickHandler.bind(this), false);
+        }
+        if (!ignore || !(ignore.indexOf("keydown") > -1)) {
+            this._choiceField.addEventListener("keydown", this._KeydownHandler.bind(this), false);
+        }
+    };
+    CheckBox.prototype._FocusHandler = function () {
+        this._choiceField.classList.add("in-focus");
+    };
+    CheckBox.prototype._BlurHandler = function () {
+        this._choiceField.classList.remove("in-focus");
+    };
+    CheckBox.prototype._ClickHandler = function (event) {
+        event.stopPropagation();
+        event.preventDefault();
+        if (!this._choiceField.classList.contains("is-disabled")) {
+            this.toggle();
+        }
+    };
+    CheckBox.prototype._KeydownHandler = function (event) {
+        if (event.keyCode === 32) {
+            event.stopPropagation();
+            event.preventDefault();
+            if (!this._choiceField.classList.contains("is-disabled")) {
+                this.toggle();
+            }
+        }
+    };
+    return CheckBox;
+}());
+
+var uiCheckbox = {_scopeId: 'data-v-75ed8232',
+    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-CheckBox[data-v-75ed8232] { box-sizing: border-box; color: \"[theme:neutralPrimary, default: #333333]\"; font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; font-size: 14px; font-weight: 400; min-height: 36px; position: relative; } .ms-CheckBox .ms-Label[data-v-75ed8232] { font-size: 14px; padding: 0 0 0 26px; cursor: pointer; display: inline-block; } .ms-CheckBox-input[data-v-75ed8232] { position: absolute; opacity: 0; } .ms-CheckBox-field[data-v-75ed8232]::before { content: ''; display: inline-block; border: 2px solid \"[theme:neutralTertiary, default: #a6a6a6]\"; width: 20px; height: 20px; cursor: pointer; font-weight: normal; position: absolute; box-sizing: border-box; transition-property: background, border, border-color; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.4, 0, 0.23, 1); } .ms-CheckBox-field[data-v-75ed8232]::after { content: \"\\E73E\"; font-family: 'FabricMDL2Icons'; display: none; position: absolute; font-weight: 900; background-color: transparent; font-size: 13px; top: 0; color: \"[theme:white, default: #ffffff]\"; line-height: 20px; width: 20px; text-align: center; } @media screen and (-ms-high-contrast: active) { .ms-CheckBox-field[data-v-75ed8232]::after { color: \"[theme:black, default: #000000]\"; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-CheckBox-field[data-v-75ed8232]::after { color: \"[theme:white, default: #ffffff]\"; } } .ms-CheckBox-field[data-v-75ed8232] { display: inline-block; cursor: pointer; margin-top: 8px; position: relative; outline: 0; vertical-align: top; } .ms-CheckBox-field[data-v-75ed8232]:hover::before, .ms-CheckBox-field[data-v-75ed8232]:focus::before { border-color: \"[theme:neutralSecondaryAlt, default: #767676]\"; } .ms-CheckBox-field:hover .ms-Label[data-v-75ed8232], .ms-CheckBox-field:focus .ms-Label[data-v-75ed8232] { color: \"[theme:black, default: #000000]\"; } .ms-CheckBox-field.is-disabled[data-v-75ed8232] { cursor: default; } .ms-CheckBox-field.is-disabled[data-v-75ed8232]::before { background-color: \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; border-color: \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; color: \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; } @media screen and (-ms-high-contrast: active) { .ms-CheckBox-field.is-disabled[data-v-75ed8232]::before { border-color: #00ff00; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-CheckBox-field.is-disabled[data-v-75ed8232]::before { border-color: #600000; } } .ms-CheckBox-field.is-disabled .ms-Label[data-v-75ed8232] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } @media screen and (-ms-high-contrast: active) { .ms-CheckBox-field.is-disabled .ms-Label[data-v-75ed8232] { color: #00ff00; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-CheckBox-field.is-disabled .ms-Label[data-v-75ed8232] { color: #600000; } } .ms-CheckBox-field.in-focus[data-v-75ed8232]::before { border-color: \"[theme:neutralSecondaryAlt, default: #767676]\"; } .ms-CheckBox-field.in-focus.is-disabled[data-v-75ed8232]::before { border-color: \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; } .ms-CheckBox-field.in-focus.is-checked[data-v-75ed8232]::before { border-color: \"[theme:themeDarkAlt, default: #106ebe]\"; } .ms-CheckBox-field.is-checked[data-v-75ed8232]::before { border: 10px solid \"[theme:themePrimary, default: #0078d7]\"; background-color: \"[theme:themePrimary, default: #0078d7]\"; } @media screen and (-ms-high-contrast: active) { .ms-CheckBox-field.is-checked[data-v-75ed8232]::before { border-color: #1AEBFF; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-CheckBox-field.is-checked[data-v-75ed8232]::before { border-color: #37006E; } } .ms-CheckBox-field.is-checked[data-v-75ed8232]::after { display: block; } .ms-CheckBox-field.is-checked[data-v-75ed8232]:hover::before, .ms-CheckBox-field.is-checked[data-v-75ed8232]:focus::before { border-color: \"[theme:themeDarkAlt, default: #106ebe]\"; } .ms-CheckBox-field[data-v-75ed8232]::after { content: url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"16\" height=\"16\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path transform=\"translate(0, 2048) scale(1, -1)\" d=\"M1837 1491l-1069 -1070l-557 558l90 90l467 -466l979 978z\" fill=\"white\" stroke=\"none\"/></svg>') !important; } ");},
+    beforeMount: function beforeMount(){ 
+        this.$fabric = { 
+            CheckBox : CheckBox 
+        }; 
+    },
+    extends :  checkbox
+}
+
+export { uiButton, uiOverlay, uiDialog, uiCallout, uiSearchbox, uiContextualMenu, uiContextualMenuItem, uiCheckbox };

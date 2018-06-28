@@ -5,3 +5,4 @@ export { default as uiCallout } from "./components/uiCallout.vue";
 export { default as uiSearchbox } from "./components/uiSearchbox.vue";
 export { default as uiContextualMenu } from "./components/uiContextualMenu.vue";
 export { default as uiContextualMenuItem } from "./components/uiContextualMenuItem.vue";
+export { default as uiCheckbox } from "./components/uiCheckbox.vue";
