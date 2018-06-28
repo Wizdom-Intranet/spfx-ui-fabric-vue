@@ -50,4 +50,12 @@ export default {
     {
         content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2048 2048" width="8" height="8" version="1.1" xmlns="http://www.w3.org/2000/svg"><path transform="translate(0, 2048) scale(1, -1)" d="M515 93l930 931l-930 931l90 90l1022 -1021l-1022 -1021z" fill="black" stroke="none"/></svg>');
     }
+
+    .ms-ContextualMenu-link.is-selected
+    {
+        &::after{
+            //content: "" !important;
+            content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2048 2048" width="10" height="10" version="1.1" xmlns="http://www.w3.org/2000/svg"><path transform="translate(0, 2048) scale(1, -1)" d="M1837 1491l-1069 -1070l-557 558l90 90l467 -466l979 978z" fill="black" stroke="none"/></svg>') !important;
+        }
+    }
 </style>
