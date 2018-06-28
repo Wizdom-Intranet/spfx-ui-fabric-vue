@@ -5,9 +5,11 @@ Office ui fabric components made specific for SPFx.
 Component|Implemented | Uses ui-fabric-js | Uses ui-fabric-vue | Uses ui-fabric-core styles  | Notes
  --- | :---: | :---: | :---: | :---: | ---
 Button | Yes | Yes | Yes | Yes
-Callout | Yes | Yes | Yes | Yes
+Callout | Yes | Yes | Yes | Yes | Close icon changed to svg
 Dialog | Yes | Yes | Yes | Yes | Close icon changed to svg
 Overlay | Yes | Yes | Yes | Yes
+Searchbox | Yes | Yes | Yes | Yes | icons changed to svgs
+ContextualMenu | Yes | Yes | Yes | Yes | icons changed to svgs
 
 ## Changes, compared to https://aidewoode.github.io/office-ui-fabric-vue/#/
 Dialog, has an extra property to show dark overlay, called useDarkOverlay (Boolean)

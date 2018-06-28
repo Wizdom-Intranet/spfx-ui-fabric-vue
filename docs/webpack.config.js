@@ -6,7 +6,8 @@ module.exports = {
         overlay:'./docs/overlay.js',
         dialog:'./docs/dialog.js',
         callout:'./docs/callout.js',
-        searchbox:'./docs/searchbox.js'
+        searchbox:'./docs/searchbox.js',
+        contextualmenu:'./docs/contextualmenu.js',
     },
     output: {
         filename: './[name].js',

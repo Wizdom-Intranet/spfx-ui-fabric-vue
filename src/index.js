@@ -3,3 +3,5 @@ export { default as uiOverlay } from "./components/uiOverlay.vue";
 export { default as uiDialog } from "./components/uiDialog.vue";
 export { default as uiCallout } from "./components/uiCallout.vue";
 export { default as uiSearchbox } from "./components/uiSearchbox.vue";
+export { default as uiContextualMenu } from "./components/uiContextualMenu.vue";
+export { default as uiContextualMenuItem } from "./components/uiContextualMenuItem.vue";
