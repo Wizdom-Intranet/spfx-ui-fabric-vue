@@ -12,6 +12,7 @@ module.exports = {
         choiceFieldGroup:'./docs/choiceFieldGroup.js',
         dropdown:'./docs/dropdown.js',
         panel:'./docs/panel.js',
+        spinner:'./docs/spinner.js',
     },
     output: {
         filename: './[name].js',

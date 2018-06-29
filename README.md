@@ -14,18 +14,18 @@ Dropdown         | Yes        | Yes               | Yes                | Yes    
 Overlay          | Yes        | Yes               | Yes                | Yes                         | TESTS MISSING
 Panel            | Yes        | Yes               | Yes                | Yes                         | TESTS MISSING
 Searchbox        | Yes        | Yes               | Yes                | Yes                         | icons changed to svgs
+Spinner          | Yes        | Yes               | Yes                | Yes                         | TESTS MISSING
 Label
 Messagebar
 Persona
-Spinner
 Textfield
 
 ## Bonus components
 No part of the normal ui fabric, but used by multiple wizdom components
-Component|Implemented|Notes
----              | :---:|---
-Imageuploader    | No   | Needs a wizdom context, see wiki for more info
-Richtexteditor   | No   | Needs a license key, see wiki for more info
+Component        |Implemented|Notes
+---              | :---:     |---
+Imageuploader    | No        | Needs a wizdom context, see wiki for more info
+Richtexteditor   | No        | Needs a license key, see wiki for more info
 TemplateSwitcher | No
 Typeahead        | No
 Multiselect      | No
