@@ -10,7 +10,7 @@ export default {
         };
     },
     mounted(){
-        var childs = this.$refs.dropdown.querySelectorAll(":not([data-v-d4b6df96])");
+        var childs = this.$refs.dropdown.querySelectorAll(":not([" + this.$options._scopeId + "])");
         Array.from(childs).map(c=>c.setAttribute(this.$options._scopeId, ""));
     },
     extends :  Dropdown

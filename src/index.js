@@ -11,3 +11,4 @@ export { default as uiChoiceFieldGroup } from "./components/uiChoiceFieldGroup.v
 export { default as uiDropdown } from "./components/uiDropdown.vue";
 export { default as uiDropdownItem } from "./components/uiDropdownItem.vue";
 export { default as uiPanel } from "./components/uiPanel.vue";
+export { default as uiSpinner } from "./components/uiSpinner.vue";
