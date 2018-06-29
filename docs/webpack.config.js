@@ -10,6 +10,7 @@ module.exports = {
         contextualmenu:'./docs/contextualmenu.js',
         checkbox:'./docs/checkbox.js',
         choiceFieldGroup:'./docs/choiceFieldGroup.js',
+        dropdown:'./docs/dropdown.js',
     },
     output: {
         filename: './[name].js',

@@ -10,17 +10,15 @@ Checkbox         | Yes        | Yes               | Yes                | Yes    
 ChoiceFieldGroup | Yes        | Yes               | Yes                | Yes 
 ContextualMenu   | Yes        | Yes               | Yes                | Yes                         | icons changed to svgs
 Dialog           | Yes        | Yes               | Yes                | Yes                         | icons changed to svgs
-Overlay          | Yes        | Yes               | Yes                | Yes                      
+Dropdown         | Yes        | Yes               | Yes                | Yes                         | icons changed to svgs, TESTS MISSING
+Overlay          | Yes        | Yes               | Yes                | Yes                         | TESTS MISSING
 Searchbox        | Yes        | Yes               | Yes                | Yes                         | icons changed to svgs
-Dropdown
 Label
 Messagebar
 Panel
 Persona
 Spinner
 Textfield
-Shimmer
-Datepicker
 
 ## Bonus components
 No part of the normal ui fabric, but used by multiple wizdom components
