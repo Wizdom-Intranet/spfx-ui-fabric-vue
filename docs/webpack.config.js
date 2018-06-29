@@ -13,6 +13,10 @@ module.exports = {
         dropdown:'./docs/dropdown.js',
         panel:'./docs/panel.js',
         spinner:'./docs/spinner.js',
+        label:'./docs/label.js',
+        messagebar:'./docs/messagebar.js',
+        textfield:'./docs/textfield.js',
+        persona:'./docs/persona.js',
     },
     output: {
         filename: './[name].js',

@@ -2313,4 +2313,632 @@ var uiSpinner = {_scopeId: 'data-v-74b796b6',
     extends :  Spinner
 }
 
-export { uiButton, uiOverlay, uiDialog, uiCallout, uiSearchbox, uiContextualMenu, uiContextualMenuItem, uiCheckbox, uiChoiceField, uiChoiceFieldGroup, uiDropdown, uiDropdownItem, uiPanel, uiSpinner };
+var label = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('label',{staticClass:"ms-Label",class:_vm.labelClass},[_vm._t("default")],2)},staticRenderFns: [],
+  name: 'ou-label',
+
+  mixins: [disabled],
+
+  props: {
+    required: {
+      type: Boolean,
+      default: false
+    }
+  },
+
+  computed: {
+    labelClass: function labelClass() {
+      return {
+        'is-disabled': this.disabled,
+        'is-required': this.required
+      };
+    }
+  }
+};
+
+var uiLabel = {_scopeId: 'data-v-2943a900',
+    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-Label[data-v-2943a900] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 12px; font-weight: 400; box-sizing: border-box; display: block; padding: 5px 0; } .ms-Label.is-required[data-v-2943a900]::after { content: ' *'; color: \"[theme:error, default: #a80000]\"; } .ms-Label.is-disabled[data-v-2943a900] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } ");},
+    extends :  label
+}
+
+var MessageBar = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-MessageBar",class:_vm.messageBarClass},[_c('div',{staticClass:"ms-MessageBar-content"},[(_vm.icon)?_c('div',{staticClass:"ms-MessageBar-icon"},[_c('i',{staticClass:"ms-Icon",class:_vm.iconClass})]):_vm._e(),_vm._v(" "),_c('div',{staticClass:"ms-MessageBar-text"},[_vm._t("default")],2)])])},staticRenderFns: [],
+  name: 'ou-message-bar',
+
+  mixins: [
+    type('success', 'error', 'blocked', 'warning', 'severeWarning'),
+    icon
+  ],
+
+  computed: {
+    messageBarClass: function messageBarClass() {
+      var obj;
+
+      return ( obj = {}, obj[("ms-MessageBar--" + (this.type))] = !!this.type, obj );
+    }
+  }
+};
+
+var uiMessagebar = {_scopeId: 'data-v-7f69de50',
+    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-MessageBar[data-v-7f69de50] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; padding: 8px; display: table; background-color: \"[theme:infoBackground, default: #f4f4f4]\"; } .ms-MessageBar .ms-Link[data-v-7f69de50] { font-size: 12px; } .ms-MessageBar-icon[data-v-7f69de50], .ms-MessageBar-text[data-v-7f69de50] { display: table-cell; vertical-align: top; } .ms-MessageBar-icon[data-v-7f69de50] { padding-right: 8px; font-size: 16px; color: \"[theme:neutralSecondaryAlt, default: #767676]\"; } .ms-MessageBar-text[data-v-7f69de50] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; font-size: 12px; font-weight: 400; } .ms-MessageBar.ms-MessageBar--warning[data-v-7f69de50] { background-color: \"[theme:warningBackground, default: #fff4ce]\"; } .ms-MessageBar.ms-MessageBar--severeWarning[data-v-7f69de50] { background-color: \"[theme:severeWarningBackground, default: #fed9cc]\"; } .ms-MessageBar.ms-MessageBar--severeWarning .ms-MessageBar-icon[data-v-7f69de50] { color: \"[theme:severeWarning, default: #d83b01]\"; } .ms-MessageBar.ms-MessageBar--error[data-v-7f69de50] { background-color: \"[theme:errorBackground, default: #fde7e9]\"; } .ms-MessageBar.ms-MessageBar--error .ms-MessageBar-icon[data-v-7f69de50] { color: \"[theme:error, default: #a80000]\"; } .ms-MessageBar.ms-MessageBar--blocked[data-v-7f69de50] { background-color: \"[theme:errorBackground, default: #fde7e9]\"; } .ms-MessageBar.ms-MessageBar--blocked .ms-MessageBar-icon[data-v-7f69de50] { color: \"[theme:error, default: #a80000]\"; } .ms-MessageBar.ms-MessageBar--success[data-v-7f69de50] { background-color: \"[theme:successBackground, default: #dff6dd]\"; } .ms-MessageBar.ms-MessageBar--success .ms-MessageBar-icon[data-v-7f69de50] { color: \"[theme:green, default: #107c10]\"; } ");},
+    extends :  MessageBar
+}
+
+var persona = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-Persona",class:_vm.personaClass},[_c('div',{staticClass:"ms-Persona-imageArea"},[(!_vm.initials)?_c('img',{staticClass:"ms-Persona-image",attrs:{"src":_vm.src}}):_c('div',{staticClass:"ms-Persona-initials",class:_vm.initialsPersonaClass},[_vm._v(_vm._s(_vm.initials.toUpperCase()))])]),_vm._v(" "),(_vm.type)?_c('div',{staticClass:"ms-Persona-presence"},[_c('i',{staticClass:"ms-Persona-presenceIcon ms-Icon",class:_vm.personaIconClass})]):_vm._e(),_vm._v(" "),_c('div',{staticClass:"ms-Persona-details"},[_c('div',{staticClass:"ms-Persona-primaryText"},[_vm._v(_vm._s(_vm.primaryText))]),_vm._v(" "),_c('div',{staticClass:"ms-Persona-secondaryText"},[_vm._v(_vm._s(_vm.secondaryText))]),_vm._v(" "),_c('div',{staticClass:"ms-Persona-tertiaryText"},[_vm._v(_vm._s(_vm.tertiaryText))]),_vm._v(" "),_c('div',{staticClass:"ms-Persona-optionalText"},[_vm._v(_vm._s(_vm.optionalText))])])])},staticRenderFns: [],
+  name: 'ou-persona',
+
+  mixins: [
+    size('tiny', 'xs', 'sm', 'lg', 'xl'),
+    type('available', 'away', 'blocked', 'busy', 'dnd', 'offline')
+  ],
+
+  data: function data() {
+    if (this.initials) {
+      var validateColor = [
+        'blue',
+        'blueLight',
+        'blueDark',
+        'teal',
+        'greenLight',
+        'green',
+        'greenDark',
+        'magentaLight',
+        'magenta',
+        'purpleLight',
+        'purple',
+        'black',
+        'orange',
+        'red',
+        'redDark'
+      ];
+
+      var initialsLetter = this.initials[0].toUpperCase();
+      var initialsIndex = initialsLetter.charCodeAt() - 65;
+
+      // get radom color from validateColor
+      return {
+        initialsColor: validateColor[Math.round((validateColor.length / 26) * initialsIndex)]
+      };
+    }
+
+    return { initialsColor: '' };
+  },
+
+  props: {
+    src: String,
+    initials: String,
+    primaryText: String,
+    secondaryText: String,
+    tertiaryText: String,
+    optionalText: String
+  },
+
+  computed: {
+    personaClass: function personaClass() {
+      var obj;
+
+      return ( obj = {}, obj[("ms-Persona--" + (this.size))] = !!this.size, obj[("ms-Persona--" + (this.type))] = !!this.type, obj );
+    },
+
+    initialsPersonaClass: function initialsPersonaClass() {
+      var obj;
+
+      return ( obj = {}, obj[("ms-Persona-initials--" + (this.initialsColor))] = !!this.initialsColor, obj );
+    },
+
+    personaIconClass: function personaIconClass() {
+      var icon = '';
+
+      switch (this.type) {
+        case 'available':
+          icon = 'SkypeCheck';
+          break;
+        case 'away':
+          icon = 'SkypeClock';
+          break;
+        case 'dnd':
+          icon = 'SkypeMinus';
+          break;
+      }
+
+      if (icon) {
+        return ("ms-Icon--" + icon);
+      }
+    }
+  }
+};
+
+var SCROLL_FRAME_RATE = 33;
+var Animate = (function () {
+    function Animate() {
+    }
+    Animate.transition = function (element, props) {
+        var obj = { element: element, props: props, transformations: {} };
+        Animate._animationObjects.push(obj);
+        Animate._parseProperties(obj);
+        Animate._createTransition(obj);
+        setTimeout(Animate._setProperties, 0, obj);
+        Animate._setCallback(obj);
+    };
+    Animate.animation = function (element, keyframes, props) {
+        var obj = { element: element, keyframes: keyframes, props: props };
+        Animate._animationObjects.push(obj);
+        Animate._parseProperties(obj);
+        Animate._createAnimation(obj);
+        Animate._setCallback(obj);
+    };
+    Animate.scrollTo = function (element, props) {
+        var obj = { element: element, props: props, step: 0 };
+        Animate._setScrollProperties(obj);
+        if (obj.props.delay) {
+            setTimeout(Animate._animationObjects, obj.props.delay * 1000, obj);
+        }
+        else {
+            Animate._animateScroll(obj);
+        }
+        Animate._animationObjects.push(obj);
+    };
+    Animate._setScrollProperties = function (obj) {
+        obj.beginTop = obj.element.scrollTop;
+        obj.change = obj.props.top - obj.beginTop;
+        obj.props.duration = obj.props.duration * 1000;
+    };
+    Animate._parseProperties = function (obj) {
+        var nonTweenProps = Animate._timeProps.concat(Animate._callbackProps);
+        obj.tweenObj = {};
+        for (var key in obj.props) {
+            if (Animate._contains(nonTweenProps, key)) {
+                obj[key] = obj.props[key];
+            }
+            else {
+                obj.tweenObj[key] = obj.props[key];
+            }
+        }
+    };
+    Animate._animateScroll = function (obj) {
+        var totalSteps = obj.props.duration / SCROLL_FRAME_RATE;
+        var top = Animate._easeOutExpo(obj.step++, obj.beginTop, obj.change, totalSteps);
+        obj.element.scrollTop = top;
+        if (obj.step >= totalSteps) {
+            obj.element.scrollTop = obj.props.top;
+            Animate._executeCallback(obj.props);
+            Animate._removeAnimationObject(obj);
+        }
+        else {
+            setTimeout(function () {
+                requestAnimationFrame(function () {
+                    Animate._animateScroll(obj);
+                });
+            }, SCROLL_FRAME_RATE);
+        }
+    };
+    Animate._createTransition = function (obj) {
+        var duration = obj.duration || 0;
+        var delay = obj.delay || 0;
+        obj.element.style.transitionProperty = Animate._getTransitionProperties(obj.tweenObj);
+        obj.element.style.transitionDuration = duration.toString() + "s";
+        obj.element.style.transitionTimingFunction = obj.ease || "linear";
+        obj.element.style.transitionDelay = delay.toString() + "s";
+    };
+    Animate._createAnimation = function (obj) {
+        var duration = obj.duration || 0;
+        var delay = obj.delay || 0;
+        obj.element.style.animationName = obj.keyframes;
+        obj.element.style.animationDuration = duration.toString() + "s";
+        obj.element.style.animationTimingFunction = obj.ease || "linear";
+        obj.element.style.animationDelay = delay.toString() + "s";
+        obj.element.style.animationFillMode = "both";
+    };
+    Animate._getTransitionProperties = function (obj) {
+        var hasTransform = false;
+        var hasFilter = false;
+        var properties = [];
+        for (var key in obj) {
+            if (Animate._contains(Animate._transformProps, key)) {
+                hasTransform = true;
+            }
+            else if (Animate._contains(Animate._filters, key)) {
+                hasFilter = true;
+            }
+            else {
+                properties.push(Animate._camelCaseToDash(key));
+            }
+        }
+        if (hasTransform) {
+            properties.push("transform");
+        }
+        if (hasFilter) {
+            properties.push("-webkit-filter");
+            properties.push("filter");
+        }
+        return properties.join(", ");
+    };
+    Animate._setProperties = function (obj) {
+        for (var key in obj.tweenObj) {
+            if (Animate._contains(Animate._transformProps, key)) {
+                Animate._setTransformValues(obj, key);
+            }
+            else if (Animate._contains(Animate._filters, key)) {
+                Animate._setFilterValues(obj, key);
+            }
+            else {
+                Animate._setRegularValues(obj, key);
+            }
+        }
+        if (obj.transformations) {
+            Animate._setTransformations(obj);
+        }
+    };
+    Animate._setRegularValues = function (obj, key) {
+        var value = obj.tweenObj[key];
+        if (value.toString().indexOf("%") === -1) {
+            value += (key !== "opacity") && (key !== "backgroundColor") && (key !== "boxShadow") ? "px" : "";
+        }
+        obj.element.style[key] = value;
+    };
+    Animate._setFilterValues = function (obj, key) {
+        var value = obj.tweenObj[key];
+        if (key === "hueRotate") {
+            value = "(" + value + "deg)";
+        }
+        else {
+            value = key === "blur" ? "(" + value + "px)" : "(" + value + "%)";
+        }
+        key = Animate._camelCaseToDash(key);
+        obj.element.style.webkitFilter = key + value;
+        obj.element.style.filter = key + value;
+    };
+    Animate._setTransformValues = function (obj, key) {
+        if (/x|y|z|scaleX|scaleY|scaleZ|rotate|rotateX|rotateY|rotateZ|skewX|skewY/.test(key)) {
+            obj.transformations[key] = obj.tweenObj[key];
+        }
+    };
+    Animate._setTransformations = function (obj) {
+        var rotate = "", scale = "", skew = "", translate = "";
+        var trans = obj.transformations;
+        translate += trans.x !== undefined && trans.x ? "translateX(" + trans.x + "px) " : "";
+        translate += trans.y !== undefined && trans.y ? "translateY(" + trans.y + "px) " : "";
+        translate += trans.z !== undefined && trans.z ? "translateZ(" + trans.z + "px) " : "";
+        rotate += trans.rotate !== undefined && trans.rotate ? "rotate(" + trans.rotate + "deg) " : "";
+        rotate += trans.rotateX !== undefined && trans.rotateX ? "rotateX(" + trans.rotateX + "deg) " : "";
+        rotate += trans.rotateY !== undefined && trans.rotateY ? "rotate(" + trans.rotateY + "deg) " : "";
+        rotate += trans.rotateZ !== undefined && trans.rotateZ ? "rotate(" + trans.rotateZ + "deg) " : "";
+        scale += trans.scaleX !== undefined && trans.scaleX ? "scaleX(" + trans.scaleX + ") " : "";
+        scale += trans.scaleY !== undefined && trans.scaleY ? "scaleY(" + trans.scaleY + ") " : "";
+        scale += trans.scaleZ !== undefined && trans.scaleZ ? "scaleZ(" + trans.scaleZ + ") " : "";
+        skew += trans.skewX !== undefined && trans.skewX ? "skewX(" + trans.skewX + "deg) " : "";
+        skew += trans.skewY !== undefined && trans.skewY ? "skewY(" + trans.skewY + "deg) " : "";
+        obj.element.style.transform = translate + rotate + scale + skew;
+    };
+    Animate._setCallback = function (obj) {
+        obj.element.addEventListener("webkitTransitionEnd", Animate._complete, false);
+        obj.element.addEventListener("transitionend", Animate._complete, false);
+        obj.element.addEventListener("webkitAnimationEnd", Animate._complete, false);
+        obj.element.addEventListener("animationend", Animate._complete, false);
+    };
+    Animate._complete = function (event) {
+        event.target.removeEventListener("webkitTransitionEnd", Animate._complete);
+        event.target.removeEventListener("transitionend", Animate._complete);
+        event.target.removeEventListener("webkitAnimationEnd", Animate._complete);
+        event.target.removeEventListener("animationend", Animate._complete);
+        var obj = Animate._getAnimationObjByElement(event.target);
+        Animate._executeCallback(obj);
+        Animate._removeAnimationObject(obj);
+    };
+    Animate._getAnimationObjByElement = function (element) {
+        var i = Animate._animationObjects.length;
+        while (i--) {
+            if (Animate._animationObjects[i].element === element) {
+                return Animate._animationObjects[i];
+            }
+        }
+        return null;
+    };
+    Animate._removeAnimationObject = function (obj) {
+        var i = Animate._animationObjects.length;
+        while (i--) {
+            if (Animate._animationObjects[i] === obj) {
+                Animate._animationObjects.splice(i, 1);
+            }
+        }
+    };
+    Animate._executeCallback = function (obj) {
+        if (obj.onEnd) {
+            var endArgs = obj.onEndArgs || [];
+            obj.onEnd.apply(null, endArgs);
+        }
+    };
+    Animate._contains = function (array, value) {
+        var i = array.length;
+        while (i--) {
+            if (value === array[i]) {
+                return true;
+            }
+        }
+        return false;
+    };
+    Animate._camelCaseToDash = function (value) {
+        return value.replace(/\W+/g, "-").replace(/([a-z\d])([A-Z])/g, "$1-$2").toLowerCase();
+    };
+    Animate._easeOutExpo = function (time, begin, change, duration) {
+        return (time === duration) ? begin + change : change * (-Math.pow(2, -10 * time / duration) + 1) + begin;
+    };
+    Animate._transformProps = [
+        "x",
+        "y",
+        "z",
+        "scaleX",
+        "scaleY",
+        "scaleZ",
+        "rotate",
+        "rotateX",
+        "rotateY",
+        "rotateZ",
+        "skewX",
+        "skewY"
+    ];
+    Animate._filters = [
+        "blur",
+        "brightness",
+        "contrast",
+        "dropShadow",
+        "grayscale",
+        "hueRotate",
+        "invert",
+        "saturate",
+        "sepia"
+    ];
+    Animate._timeProps = ["duration", "ease", "delay"];
+    Animate._callbackProps = ["onEnd", "onEndArgs"];
+    Animate._animationObjects = [];
+    return Animate;
+}());
+
+var Ease = (function () {
+    function Ease() {
+    }
+    Ease.CB = "cubic-bezier";
+    Ease.QUAD_EASE_IN = Ease.CB + "(0.550, 0.085, 0.680, 0.530)";
+    Ease.CUBIC_EASE_IN = Ease.CB + "(0.550, 0.055, 0.675, 0.190)";
+    Ease.QUART_EASE_IN = Ease.CB + "(0.895, 0.030, 0.685, 0.220)";
+    Ease.QUINT_EASE_IN = Ease.CB + "(0.755, 0.050, 0.855, 0.060)";
+    Ease.SINE_EASE_IN = Ease.CB + "(0.470, 0, 0.745, 0.715)";
+    Ease.EXPO_EASE_IN = Ease.CB + "(0.950, 0.050, 0.795, 0.035)";
+    Ease.CIRC_EASE_IN = Ease.CB + "(0.600, 0.040, 0.980, 0.335)";
+    Ease.BACK_EASE_IN = Ease.CB + "(0.600, 0.040, 0.980, 0.335)";
+    Ease.QUAD_EASE_OUT = Ease.CB + "(0.250, 0.460, 0.450, 0.940)";
+    Ease.CUBIC_EASE_OUT = Ease.CB + "(0.215, 0.610, 0.355, 1)";
+    Ease.QUART_EASE_OUT = Ease.CB + "(0.165, 0.840, 0.440, 1)";
+    Ease.QUINT_EASE_OUT = Ease.CB + "(0.230, 1, 0.320, 1)";
+    Ease.SINE_EASE_OUT = Ease.CB + "(0.390, 0.575, 0.565, 1)";
+    Ease.EXPO_EASE_OUT = Ease.CB + "(0.190, 1, 0.220, 1)";
+    Ease.CIRC_EASE_OUT = Ease.CB + "(0.075, 0.820, 0.165, 1)";
+    Ease.BACK_EASE_OUT = Ease.CB + "(0.175, 0.885, 0.320, 1.275)";
+    Ease.QUAD_EASE_IN_OUT = Ease.CB + "(0.455, 0.030, 0.515, 0.955)";
+    Ease.CUBIC_EASE_IN_OUT = Ease.CB + "(0.645, 0.045, 0.355, 1)";
+    Ease.QUART_EASE_IN_OUT = Ease.CB + "(0.770, 0, 0.175, 1)";
+    Ease.QUINT_EASE_IN_OUT = Ease.CB + "(0.860, 0, 0.070, 1)";
+    Ease.SINE_EASE_IN_OUT = Ease.CB + "(0.445, 0.050, 0.550, 0.950)";
+    Ease.EXPO_EASE_IN_OUT = Ease.CB + "(1, 0, 0, 1)";
+    Ease.CIRC_EASE_IN_OUT = Ease.CB + "(0.785, 0.135, 0.150, 0.860)";
+    Ease.BACK_EASE_IN_OUT = Ease.CB + "(0.680, -0.550, 0.265, 1.550)";
+    return Ease;
+}());
+
+var PersonaCard = (function () {
+    function PersonaCard(container) {
+        this._container = container;
+        var activeElement = this._container.querySelector(".ms-PersonaCard-action.is-active");
+        var activeId = activeElement.getAttribute("data-action-id");
+        this._actions = this._container.querySelector(".ms-PersonaCard-actions");
+        this._expander = this._container.querySelector(".ms-PersonaCard-detailExpander");
+        this._actionDetailBox = this._container.querySelector(".ms-PersonaCard-actionDetailBox");
+        this._setDetail(activeId);
+        this._boundOnActionClick = this._onActionClick.bind(this);
+        this._boundOnExpanderClick = this._onExpanderClick.bind(this);
+        this._boundOnTab = this._onTab.bind(this);
+        this._addListeners();
+    }
+    PersonaCard.prototype.removeListeners = function () {
+        this._actions.removeEventListener("click", this._boundOnActionClick);
+        this._expander.removeEventListener("click", this._boundOnExpanderClick);
+        this._container.removeEventListener("keydown", this._boundOnTab);
+    };
+    PersonaCard.prototype._addListeners = function () {
+        this._actions.addEventListener("click", this._boundOnActionClick, false);
+        this._expander.addEventListener("click", this._boundOnExpanderClick, false);
+        this._container.addEventListener("keydown", this._boundOnTab, false);
+    };
+    PersonaCard.prototype._onTab = function (event) {
+        var target = event.target;
+        if (event.keyCode === 9 && target.classList.contains("ms-PersonaCard-action")) {
+            this._onActionClick(event);
+        }
+    };
+    PersonaCard.prototype._onExpanderClick = function (event) {
+        var parent = event.target.parentElement;
+        if (parent.classList.contains("is-collapsed")) {
+            parent.classList.remove("is-collapsed");
+        }
+        else {
+            parent.classList.add("is-collapsed");
+        }
+        var parentHeight = parent.clientHeight;
+        this._animateDetail(parentHeight);
+    };
+    PersonaCard.prototype._onActionClick = function (event) {
+        var target = event.target;
+        var actionId = target.getAttribute("data-action-id");
+        if (actionId && target.className.indexOf("is-active") === -1) {
+            this._setAction(target);
+            this._setDetail(actionId);
+        }
+    };
+    PersonaCard.prototype._setAction = function (target) {
+        var activeElement = this._container.querySelector(".ms-PersonaCard-action.is-active");
+        activeElement.classList.remove("is-active");
+        target.classList.add("is-active");
+    };
+    PersonaCard.prototype._setDetail = function (activeId) {
+        var selector = ".ms-PersonaCard-details[data-detail-id='" + activeId + "']";
+        var lastDetail = this._container.querySelector(".ms-PersonaCard-details.is-active");
+        var activeDetail = this._container.querySelector(selector);
+        if (lastDetail) {
+            lastDetail.classList.remove("is-active");
+        }
+        activeDetail.classList.add("is-active");
+        var detailHeight = activeDetail.clientHeight;
+        this._animateDetail(detailHeight);
+    };
+    PersonaCard.prototype._animateDetail = function (height) {
+        var _this = this;
+        this._actionDetailBox.style.overflowY = "hidden";
+        Animate.transition(this._actionDetailBox, {
+            height: height,
+            duration: 0.25,
+            ease: Ease.SINE_EASE_OUT,
+            onEnd: function () {
+                _this._actionDetailBox.style.overflowY = "auto";
+            }
+        });
+    };
+    return PersonaCard;
+}());
+
+var MODAL_POSITION$1 = "top";
+var Persona = (function () {
+    function Persona(container) {
+        this._persona = container;
+        this._personaCard = this._persona.querySelector(".ms-PersonaCard");
+        if (this._personaCard) {
+            this._assignEvents();
+            this._personaCard.setAttribute("style", "display: none;");
+            this._createPersonaCard();
+        }
+    }
+    Persona.prototype._createPersonaCard = function () {
+        this._personaCardInstance = new PersonaCard(this._personaCard);
+    };
+    Persona.prototype._createContextualHostInstance = function () {
+        this._personaCard.setAttribute("style", "display: block;");
+        this._contextualHostInstance = new ContextualHost(this._personaCard, MODAL_POSITION$1, this._persona);
+    };
+    Persona.prototype._personaEventHandler = function () {
+        this._createContextualHostInstance();
+    };
+    Persona.prototype._assignEvents = function () {
+        var _this = this;
+        this._persona.addEventListener("click", this._personaEventHandler.bind(this), false);
+        this._persona.addEventListener("keyup", function (e) { return (e.keyCode === 32) ? _this._personaEventHandler() : null; }, false);
+    };
+    return Persona;
+}());
+
+var uiPersona = {_scopeId: 'data-v-08ee50b8',
+    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-Persona[data-v-08ee50b8] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 14px; font-weight: 400; line-height: 1; position: relative; width: 100%; height: 48px; display: table; table-layout: fixed; border-collapse: separate; } .ms-Persona .ms-ContextualHost[data-v-08ee50b8] { display: none; } .ms-Persona-imageArea[data-v-08ee50b8] { position: absolute; overflow: hidden; text-align: center; max-width: 48px; height: 48px; border-radius: 50%; z-index: 0; width: 100%; top: 0; left: 0; } @media screen and (-ms-high-contrast: active) { .ms-Persona-imageArea[data-v-08ee50b8] { border: 1px solid \"[theme:white, default: #ffffff]\"; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-Persona-imageArea[data-v-08ee50b8] { border: 1px solid \"[theme:black, default: #000000]\"; } } .ms-Persona-placeholder[data-v-08ee50b8] { color: \"[theme:white, default: #ffffff]\"; position: absolute; right: 0; left: 0; font-size: 47px; top: 9px; z-index: 5; } .ms-Persona-initials[data-v-08ee50b8] { color: \"[theme:white, default: #ffffff]\"; font-size: 17px; font-weight: 100; line-height: 48px; } .ms-Persona-initials.ms-Persona-initials--blueLight[data-v-08ee50b8] { background-color: \"[theme:blueLight, default: #00bcf2]\"; } .ms-Persona-initials.ms-Persona-initials--blue[data-v-08ee50b8] { background-color: \"[theme:blue, default: #0078d7]\"; } .ms-Persona-initials.ms-Persona-initials--blueDark[data-v-08ee50b8] { background-color: \"[theme:blueDark, default: #002050]\"; } .ms-Persona-initials.ms-Persona-initials--teal[data-v-08ee50b8] { background-color: \"[theme:teal, default: #008272]\"; } .ms-Persona-initials.ms-Persona-initials--greenLight[data-v-08ee50b8] { background-color: \"[theme:greenLight, default: #bad80a]\"; } .ms-Persona-initials.ms-Persona-initials--green[data-v-08ee50b8] { background-color: \"[theme:green, default: #107c10]\"; } .ms-Persona-initials.ms-Persona-initials--greenDark[data-v-08ee50b8] { background-color: \"[theme:greenDark, default: #004b1c]\"; } .ms-Persona-initials.ms-Persona-initials--magentaLight[data-v-08ee50b8] { background-color: \"[theme:magentaLight, default: #e3008c]\"; } .ms-Persona-initials.ms-Persona-initials--magenta[data-v-08ee50b8] { background-color: \"[theme:magenta, default: #b4009e]\"; } .ms-Persona-initials.ms-Persona-initials--purpleLight[data-v-08ee50b8] { background-color: \"[theme:purpleLight, default: #b4a0ff]\"; } .ms-Persona-initials.ms-Persona-initials--purple[data-v-08ee50b8] { background-color: \"[theme:purple, default: #5c2d91]\"; } .ms-Persona-initials.ms-Persona-initials--black[data-v-08ee50b8] { background-color: \"[theme:black, default: #000000]\"; } .ms-Persona-initials.ms-Persona-initials--orange[data-v-08ee50b8] { background-color: \"[theme:orange, default: #d83b01]\"; } .ms-Persona-initials.ms-Persona-initials--red[data-v-08ee50b8] { background-color: \"[theme:red, default: #e81123]\"; } .ms-Persona-initials.ms-Persona-initials--redDark[data-v-08ee50b8] { background-color: \"[theme:redDark, default: #a80000]\"; } .ms-Persona-image[data-v-08ee50b8] { position: absolute; top: 0; left: 0; height: 48px; z-index: 10; width: 100%; } .ms-Persona-image[src=''][data-v-08ee50b8] { display: none; } .ms-Persona-presence[data-v-08ee50b8] { background-color: #7FBA00; position: absolute; height: 12px; width: 12px; border-radius: 50%; top: auto; left: 34px; bottom: -1px; border: 2px solid \"[theme:white, default: #ffffff]\"; text-align: center; } @media screen and (-ms-high-contrast: active) { .ms-Persona-presence[data-v-08ee50b8] { border-color: \"[theme:black, default: #000000]\"; box-shadow: 0 0 0 1px #1AEBFF inset; color: \"[theme:black, default: #000000]\"; background-color: \"[theme:white, default: #ffffff]\"; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-Persona-presence[data-v-08ee50b8] { border-color: \"[theme:white, default: #ffffff]\"; box-shadow: 0 0 0 1px #37006E inset; color: \"[theme:white, default: #ffffff]\"; background-color: \"[theme:black, default: #000000]\"; } } .ms-Persona-presenceIcon[data-v-08ee50b8] { color: \"[theme:white, default: #ffffff]\"; font-size: 8px; line-height: 12px; vertical-align: top; } .ms-Persona-details[data-v-08ee50b8] { padding: 0 12px; vertical-align: middle; overflow: hidden; text-align: left; padding-left: 60px; display: table-cell; width: 100%; } .ms-Persona-primaryText[data-v-08ee50b8], .ms-Persona-secondaryText[data-v-08ee50b8], .ms-Persona-tertiaryText[data-v-08ee50b8], .ms-Persona-optionalText[data-v-08ee50b8] { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis; } .ms-Persona-primaryText[data-v-08ee50b8] { color: \"[theme:neutralPrimary, default: #333333]\"; font-weight: 400; font-size: 17px; margin-top: -3px; line-height: 1.4; } .ms-Persona-secondaryText[data-v-08ee50b8], .ms-Persona-tertiaryText[data-v-08ee50b8], .ms-Persona-optionalText[data-v-08ee50b8] { color: \"[theme:neutralSecondary, default: #666666]\"; font-weight: 400; font-size: 12px; white-space: nowrap; line-height: 1.3; } .ms-Persona-secondaryText[data-v-08ee50b8] { padding-top: 3px; } .ms-Persona-tertiaryText[data-v-08ee50b8], .ms-Persona-optionalText[data-v-08ee50b8] { padding-top: 5px; display: none; } .ms-Persona.ms-Persona--tiny[data-v-08ee50b8] { height: 30px; display: inline-block; } .ms-Persona.ms-Persona--tiny .ms-Persona-imageArea[data-v-08ee50b8] { overflow: visible; display: none; } .ms-Persona.ms-Persona--tiny .ms-Persona-presence[data-v-08ee50b8] { right: auto; top: 10px; left: 0; border: 0; } @media screen and (-ms-high-contrast: active) { .ms-Persona.ms-Persona--tiny .ms-Persona-presence[data-v-08ee50b8] { top: 9px; border: 1px solid \"[theme:white, default: #ffffff]\"; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-Persona.ms-Persona--tiny .ms-Persona-presence[data-v-08ee50b8] { border: 1px solid \"[theme:black, default: #000000]\"; } } .ms-Persona.ms-Persona--tiny .ms-Persona-details[data-v-08ee50b8] { padding-left: 20px; } .ms-Persona.ms-Persona--tiny .ms-Persona-primaryText[data-v-08ee50b8] { font-size: 14px; padding-top: 9px; } .ms-Persona.ms-Persona--tiny .ms-Persona-secondaryText[data-v-08ee50b8] { display: none; } .ms-Persona.ms-Persona--tiny.ms-Persona--readonly[data-v-08ee50b8] { padding: 0; background-color: transparent; } .ms-Persona.ms-Persona--tiny.ms-Persona--readonly .ms-Persona-primaryText[data-v-08ee50b8]::after { content: ';'; } .ms-Persona.ms-Persona--xs[data-v-08ee50b8], .ms-Persona.ms-Persona--facePile[data-v-08ee50b8], .ms-Persona.ms-Persona--token[data-v-08ee50b8] { height: 32px; } .ms-Persona.ms-Persona--xs .ms-Persona-imageArea[data-v-08ee50b8], .ms-Persona.ms-Persona--xs .ms-Persona-image[data-v-08ee50b8], .ms-Persona.ms-Persona--facePile .ms-Persona-imageArea[data-v-08ee50b8], .ms-Persona.ms-Persona--facePile .ms-Persona-image[data-v-08ee50b8], .ms-Persona.ms-Persona--token .ms-Persona-imageArea[data-v-08ee50b8], .ms-Persona.ms-Persona--token .ms-Persona-image[data-v-08ee50b8] { max-width: 32px; height: 32px; } .ms-Persona.ms-Persona--xs .ms-Persona-placeholder[data-v-08ee50b8], .ms-Persona.ms-Persona--facePile .ms-Persona-placeholder[data-v-08ee50b8], .ms-Persona.ms-Persona--token .ms-Persona-placeholder[data-v-08ee50b8] { font-size: 28px; top: 6px; } .ms-Persona.ms-Persona--xs .ms-Persona-initials[data-v-08ee50b8], .ms-Persona.ms-Persona--facePile .ms-Persona-initials[data-v-08ee50b8], .ms-Persona.ms-Persona--token .ms-Persona-initials[data-v-08ee50b8] { font-size: 12px; line-height: 32px; } .ms-Persona.ms-Persona--xs .ms-Persona-presence[data-v-08ee50b8], .ms-Persona.ms-Persona--facePile .ms-Persona-presence[data-v-08ee50b8], .ms-Persona.ms-Persona--token .ms-Persona-presence[data-v-08ee50b8] { left: 19px; } .ms-Persona.ms-Persona--xs .ms-Persona-details[data-v-08ee50b8], .ms-Persona.ms-Persona--facePile .ms-Persona-details[data-v-08ee50b8], .ms-Persona.ms-Persona--token .ms-Persona-details[data-v-08ee50b8] { padding-left: 40px; } .ms-Persona.ms-Persona--xs .ms-Persona-primaryText[data-v-08ee50b8], .ms-Persona.ms-Persona--facePile .ms-Persona-primaryText[data-v-08ee50b8], .ms-Persona.ms-Persona--token .ms-Persona-primaryText[data-v-08ee50b8] { font-size: 14px; padding-top: 3px; } .ms-Persona.ms-Persona--xs .ms-Persona-secondaryText[data-v-08ee50b8], .ms-Persona.ms-Persona--facePile .ms-Persona-secondaryText[data-v-08ee50b8], .ms-Persona.ms-Persona--token .ms-Persona-secondaryText[data-v-08ee50b8] { display: none; } .ms-Persona.ms-Persona--sm[data-v-08ee50b8] { height: 40px; } .ms-Persona.ms-Persona--sm .ms-Persona-imageArea[data-v-08ee50b8], .ms-Persona.ms-Persona--sm .ms-Persona-image[data-v-08ee50b8] { max-width: 40px; height: 40px; } .ms-Persona.ms-Persona--sm .ms-Persona-placeholder[data-v-08ee50b8] { font-size: 38px; top: 5px; } .ms-Persona.ms-Persona--sm .ms-Persona-initials[data-v-08ee50b8] { font-size: 14px; line-height: 40px; } .ms-Persona.ms-Persona--sm .ms-Persona-presence[data-v-08ee50b8] { left: 27px; } .ms-Persona.ms-Persona--sm .ms-Persona-details[data-v-08ee50b8] { padding-left: 48px; } .ms-Persona.ms-Persona--sm .ms-Persona-primaryText[data-v-08ee50b8] { font-size: 14px; } .ms-Persona.ms-Persona--sm .ms-Persona-primaryText[data-v-08ee50b8], .ms-Persona.ms-Persona--sm .ms-Persona-secondaryText[data-v-08ee50b8] { padding-top: 1px; } .ms-Persona.ms-Persona--lg[data-v-08ee50b8] { height: 72px; } .ms-Persona.ms-Persona--lg .ms-Persona-imageArea[data-v-08ee50b8], .ms-Persona.ms-Persona--lg .ms-Persona-image[data-v-08ee50b8] { max-width: 72px; height: 72px; } .ms-Persona.ms-Persona--lg .ms-Persona-placeholder[data-v-08ee50b8] { font-size: 67px; top: 10px; } .ms-Persona.ms-Persona--lg .ms-Persona-initials[data-v-08ee50b8] { font-size: 28px; line-height: 72px; } .ms-Persona.ms-Persona--lg .ms-Persona-presence[data-v-08ee50b8] { left: 49px; height: 20px; width: 20px; border-width: 3px; } .ms-Persona.ms-Persona--lg .ms-Persona-presenceIcon[data-v-08ee50b8] { line-height: 20px; font-size: 14px; } .ms-Persona.ms-Persona--lg .ms-Persona-details[data-v-08ee50b8] { padding-left: 84px; } .ms-Persona.ms-Persona--lg .ms-Persona-secondaryText[data-v-08ee50b8] { padding-top: 3px; } .ms-Persona.ms-Persona--lg .ms-Persona-tertiaryText[data-v-08ee50b8] { padding-top: 5px; display: block; } .ms-Persona.ms-Persona--xl[data-v-08ee50b8] { height: 100px; } .ms-Persona.ms-Persona--xl .ms-Persona-imageArea[data-v-08ee50b8], .ms-Persona.ms-Persona--xl .ms-Persona-image[data-v-08ee50b8] { max-width: 100px; height: 100px; } .ms-Persona.ms-Persona--xl .ms-Persona-placeholder[data-v-08ee50b8] { font-size: 95px; top: 12px; } .ms-Persona.ms-Persona--xl .ms-Persona-initials[data-v-08ee50b8] { font-size: 42px; line-height: 100px; } .ms-Persona.ms-Persona--xl .ms-Persona-presence[data-v-08ee50b8] { height: 28px; width: 28px; left: 71px; border-width: 4px; } .ms-Persona.ms-Persona--xl .ms-Persona-presenceIcon[data-v-08ee50b8] { line-height: 28px; font-size: 21px; position: relative; top: 1px; } .ms-Persona.ms-Persona--xl .ms-Persona-details[data-v-08ee50b8] { padding-left: 120px; } .ms-Persona.ms-Persona--xl .ms-Persona-primaryText[data-v-08ee50b8] { font-size: 21px; font-weight: 300; margin-top: 0; } .ms-Persona.ms-Persona--xl .ms-Persona-secondaryText[data-v-08ee50b8] { padding-top: 2px; } .ms-Persona.ms-Persona--xl .ms-Persona-tertiaryText[data-v-08ee50b8], .ms-Persona.ms-Persona--xl .ms-Persona-optionalText[data-v-08ee50b8] { padding-top: 5px; display: block; } .ms-Persona.ms-Persona--darkText .ms-Persona-primaryText[data-v-08ee50b8] { color: \"[theme:neutralDark, default: #212121]\"; } .ms-Persona.ms-Persona--darkText .ms-Persona-secondaryText[data-v-08ee50b8], .ms-Persona.ms-Persona--darkText .ms-Persona-tertiaryText[data-v-08ee50b8], .ms-Persona.ms-Persona--darkText .ms-Persona-optionalText[data-v-08ee50b8] { color: \"[theme:neutralPrimary, default: #333333]\"; } .ms-Persona.ms-Persona--selectable[data-v-08ee50b8] { cursor: pointer; padding: 0 10px; } .ms-Persona.ms-Persona--selectable[data-v-08ee50b8]:not(.ms-Persona--xl):hover, .ms-Persona.ms-Persona--selectable[data-v-08ee50b8]:not(.ms-Persona--xl):focus { background-color: \"[theme:themeLighter, default: #deecf9]\"; outline: 1px solid transparent; } .ms-Persona.ms-Persona--available .ms-Persona-presence[data-v-08ee50b8] { background-color: #7FBA00; } .ms-Persona.ms-Persona--away .ms-Persona-presence[data-v-08ee50b8] { background-color: #FCD116; } .ms-Persona.ms-Persona--away .ms-Persona-presenceIcon[data-v-08ee50b8] { position: relative; left: 1px; } .ms-Persona.ms-Persona--blocked .ms-Persona-presence[data-v-08ee50b8] { background-color: \"[theme:white, default: #ffffff]\"; } .ms-Persona.ms-Persona--blocked .ms-Persona-presence[data-v-08ee50b8]::before { content: ''; width: 100%; height: 100%; position: absolute; top: 0; left: 0; box-shadow: 0 0 0 2px #D93B3B inset; border-radius: 50%; } .ms-Persona.ms-Persona--blocked .ms-Persona-presence[data-v-08ee50b8]::after { content: ''; width: 100%; height: 2px; background-color: #D93B3B; transform: rotate(-45deg); position: absolute; top: 5px; left: 0; } .ms-Persona.ms-Persona--blocked.ms-Persona--lg .ms-Persona-presence[data-v-08ee50b8]::after { top: 9px; } .ms-Persona.ms-Persona--blocked.ms-Persona--xl .ms-Persona-presence[data-v-08ee50b8]::after { top: 13px; } .ms-Persona.ms-Persona--busy .ms-Persona-presence[data-v-08ee50b8] { background-color: #D93B3B; } @media screen and (-ms-high-contrast: active) { .ms-Persona.ms-Persona--busy .ms-Persona-presence[data-v-08ee50b8] { background-color: #1AEBFF; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-Persona.ms-Persona--busy .ms-Persona-presence[data-v-08ee50b8] { background-color: #37006E; } } .ms-Persona.ms-Persona--dnd .ms-Persona-presence[data-v-08ee50b8] { background-color: #E81123; } .ms-Persona.ms-Persona--offline .ms-Persona-presence[data-v-08ee50b8] { background-color: #93ABBD; } @media screen and (-ms-high-contrast: active) { .ms-Persona.ms-Persona--offline .ms-Persona-presence[data-v-08ee50b8] { background-color: \"[theme:black, default: #000000]\"; box-shadow: 0 0 0 1px \"[theme:white, default: #ffffff]\" inset; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-Persona.ms-Persona--offline .ms-Persona-presence[data-v-08ee50b8] { background-color: \"[theme:white, default: #ffffff]\"; box-shadow: 0 0 0 1px \"[theme:black, default: #000000]\" inset; } } .ms-Persona.ms-Persona--facePile[data-v-08ee50b8] { display: inline-block; width: auto; } .ms-Persona.ms-Persona--facePile[data-v-08ee50b8]:hover { cursor: pointer; } .ms-Persona.ms-Persona--facePile .ms-Persona-imageArea[data-v-08ee50b8] { position: relative; width: 100%; min-width: 32px; } .ms-Persona.ms-Persona--facePile .ms-Persona-initials[data-v-08ee50b8] { position: relative; } .ms-Persona.ms-Persona--facePile .ms-Persona-details[data-v-08ee50b8] { display: none; } .ms-Persona.ms-Persona--facePile .ms-Persona-presence[data-v-08ee50b8] { display: none; } .ms-Persona.ms-Persona--token[data-v-08ee50b8] { display: inline-flex; width: auto; background-color: \"[theme:neutralLighter, default: #f4f4f4]\"; border-radius: 20px; margin: 4px; } .ms-Persona.ms-Persona--token[data-v-08ee50b8]:hover { cursor: pointer; } .ms-Persona.ms-Persona--token .ms-Persona-actionIcon[data-v-08ee50b8] { border-radius: 20px; display: inline-block; width: 32px; height: 32px; padding: 0; line-height: 30px; transition: background-color 0.167s cubic-bezier(0.1, 0.9, 0.2, 1); text-align: center; } .ms-Persona.ms-Persona--token .ms-Persona-actionIcon[data-v-08ee50b8]:hover { background-color: \"[theme:neutralLight, default: #eaeaea]\"; } .ms-Persona.ms-Persona--token .ms-Persona-imageArea[data-v-08ee50b8] { width: 100%; min-width: 32px; } .ms-Persona.ms-Persona--token .ms-Persona-details[data-v-08ee50b8] { height: 30px; display: inline-block; width: auto; padding-right: 8px; } .ms-Persona.ms-Persona--token .ms-Persona-primaryText[data-v-08ee50b8] { padding-top: 0; line-height: 34px; } .ms-Persona.ms-Persona--token .ms-Persona-initials[data-v-08ee50b8] { position: relative; } ");},
+    beforeMount: function beforeMount(){
+        this.$fabric = {
+            Persona : Persona
+        };
+    },
+    extends :  persona
+}
+
+var textField = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"textField",staticClass:"ms-TextField",class:_vm.textFieldClass},[_c('label',{staticClass:"ms-Label"},[_vm._v(_vm._s(_vm.label))]),_vm._v(" "),(_vm.type == 'multiline')?_c('textarea',{staticClass:"ms-TextField-field",attrs:{"placeholder":_vm.placeholder,"type":"text","disabled":_vm.disabled},domProps:{"value":_vm.value},on:{"input":_vm.updateValue}}):_c('input',{staticClass:"ms-TextField-field",attrs:{"placeholder":_vm.placeholder,"type":_vm.inputType,"disabled":_vm.disabled},domProps:{"value":_vm.value},on:{"input":_vm.updateValue}})])},staticRenderFns: [],
+  name: 'ou-text-field',
+
+  mixins: [type('multiline', 'underlined'), disabled],
+
+  props: {
+    value: String,
+    label: String,
+    placeholder: String,
+    inputType: {
+      type: String,
+      default: 'text',
+      validator: function validator(value) {
+        return ['text', 'password', 'file'].includes(value);
+      }
+    }
+  },
+
+  computed: {
+    textFieldClass: function textFieldClass() {
+      var obj;
+
+      return ( obj = {}, obj[("ms-TextField--" + (this.type))] = !!this.type, obj['is-disabled'] =  this.disabled, obj );
+    }
+  },
+
+  mounted: function mounted() {
+    new this.$fabric.TextField(this.$refs.textField);
+  },
+
+  methods: {
+    updateValue: function updateValue(event) {
+      this.$emit('input', event.target.value);
+    }
+  }
+};
+
+var TextFieldConsts;
+(function (TextFieldConsts) {
+    var Type;
+    (function (Type) {
+        Type[Type["Placeholder"] = 0] = "Placeholder";
+        Type[Type["Underlined"] = 1] = "Underlined";
+    })(Type = TextFieldConsts.Type || (TextFieldConsts.Type = {}));
+})(TextFieldConsts || (TextFieldConsts = {}));
+var TextField = (function () {
+    function TextField(container) {
+        this._container = container;
+        this._type = [];
+        this._textField = this._container.querySelector(".ms-TextField-field");
+        this._textFieldLabel = this._container.querySelector(".ms-Label");
+        this._setTextFieldType();
+        this._addListeners();
+    }
+    TextField.prototype._setTextFieldType = function () {
+        if (this._container.classList.contains("ms-TextField--placeholder")) {
+            this._type.push(TextFieldConsts.Type.Placeholder);
+        }
+        if (this._container.classList.contains("ms-TextField--underlined")) {
+            this._type.push(TextFieldConsts.Type.Underlined);
+        }
+    };
+    TextField.prototype._addListeners = function () {
+        var _this = this;
+        this._textFieldLabel.addEventListener("click", function (event) {
+            _this._textField.focus();
+        });
+        if (this._type.indexOf(TextFieldConsts.Type.Placeholder) >= 0) {
+            this._textField.addEventListener("focus", function (event) {
+                _this._textFieldLabel.style.display = "none";
+            });
+            this._textField.addEventListener("blur", function (event) {
+                if (_this._textField.value.length === 0) {
+                    _this._textFieldLabel.style.display = "block";
+                }
+            });
+        }
+        if (this._type.indexOf(TextFieldConsts.Type.Underlined) >= 0) {
+            this._textField.addEventListener("focus", function (event) {
+                _this._container.classList.add("is-active");
+            });
+            this._textField.addEventListener("blur", function (event) {
+                _this._container.classList.remove("is-active");
+            });
+        }
+    };
+    return TextField;
+}());
+
+var uiTextfield = {_scopeId: 'data-v-9e6e890e',
+    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-Label[data-v-9e6e890e] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 12px; font-weight: 400; box-sizing: border-box; display: block; padding: 5px 0; } .ms-Label.is-required[data-v-9e6e890e]::after { content: ' *'; color: \"[theme:error, default: #a80000]\"; } .ms-Label.is-disabled[data-v-9e6e890e] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-TextField[data-v-9e6e890e] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 14px; font-weight: 400; margin-bottom: 8px; } .ms-TextField .ms-Label[data-v-9e6e890e] { font-size: 14px; font-weight: 600; } .ms-TextField.is-disabled .ms-TextField-field[data-v-9e6e890e] { background-color: \"[theme:neutralLighter, default: #f4f4f4]\"; border-color: \"[theme:neutralLighter, default: #f4f4f4]\"; pointer-events: none; cursor: default; } .ms-TextField.is-disabled[data-v-9e6e890e]::-webkit-input-placeholder { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-TextField.is-disabled[data-v-9e6e890e]::-moz-placeholder { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-TextField.is-disabled[data-v-9e6e890e]:-moz-placeholder { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-TextField.is-disabled[data-v-9e6e890e]:-ms-input-placeholder { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-TextField.is-required .ms-Label[data-v-9e6e890e]::after { content: ' *'; color: \"[theme:error, default: #a80000]\"; } .ms-TextField.is-required[data-v-9e6e890e]::-webkit-input-placeholder::after { content: ' *'; color: \"[theme:error, default: #a80000]\"; } .ms-TextField.is-required[data-v-9e6e890e]::-moz-placeholder::after { content: ' *'; color: \"[theme:error, default: #a80000]\"; } .ms-TextField.is-required[data-v-9e6e890e]:-moz-placeholder::after { content: ' *'; color: \"[theme:error, default: #a80000]\"; } .ms-TextField.is-required[data-v-9e6e890e]:-ms-input-placeholder::after { content: ' *'; color: \"[theme:error, default: #a80000]\"; } .ms-TextField.is-active[data-v-9e6e890e] { border-color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-TextField-field[data-v-9e6e890e] { box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; border: 1px solid \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; border-radius: 0; font-weight: 300; font-size: 14px; color: \"[theme:neutralPrimary, default: #333333]\"; height: 32px; padding: 6px 12px 7px; width: 100%; min-width: 180px; outline: 0; text-overflow: ellipsis; } .ms-TextField-field[data-v-9e6e890e]:hover { border-color: \"[theme:neutralSecondaryAlt, default: #767676]\"; } .ms-TextField-field[data-v-9e6e890e]:focus { border-color: \"[theme:themePrimary, default: #0078d7]\"; } @media screen and (-ms-high-contrast: active) { .ms-TextField-field[data-v-9e6e890e]:hover, .ms-TextField-field[data-v-9e6e890e]:focus { border-color: #1AEBFF; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-TextField-field[data-v-9e6e890e]:hover, .ms-TextField-field[data-v-9e6e890e]:focus { border-color: #37006E; } } .ms-TextField-field[disabled][data-v-9e6e890e] { background-color: \"[theme:neutralLighter, default: #f4f4f4]\"; border-color: \"[theme:neutralLighter, default: #f4f4f4]\"; pointer-events: none; cursor: default; } .ms-TextField-field[data-v-9e6e890e]::-webkit-input-placeholder { color: \"[theme:neutralSecondary, default: #666666]\"; } .ms-TextField-field[data-v-9e6e890e]::-moz-placeholder { color: \"[theme:neutralSecondary, default: #666666]\"; } .ms-TextField-field[data-v-9e6e890e]:-moz-placeholder { color: \"[theme:neutralSecondary, default: #666666]\"; } .ms-TextField-field[data-v-9e6e890e]:-ms-input-placeholder { color: \"[theme:neutralSecondary, default: #666666]\"; } .ms-TextField-description[data-v-9e6e890e] { color: \"[theme:neutralSecondaryAlt, default: #767676]\"; font-size: 11px; } .ms-TextField.ms-TextField--placeholder[data-v-9e6e890e] { position: relative; background-color: \"[theme:white, default: #ffffff]\"; } .ms-TextField.ms-TextField--placeholder .ms-TextField-field[data-v-9e6e890e] { position: relative; background-color: transparent; z-index: 5; } .ms-TextField.ms-TextField--placeholder .ms-Label[data-v-9e6e890e] { position: absolute; font-weight: 300; font-size: 14px; color: \"[theme:neutralSecondary, default: #666666]\"; padding: 6px 12px 7px; pointer-events: none; z-index: 0; } .ms-TextField.ms-TextField--placeholder.is-disabled[data-v-9e6e890e] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-TextField.ms-TextField--placeholder.is-disabled .ms-Label[data-v-9e6e890e] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-TextField.ms-TextField--underlined[data-v-9e6e890e] { border-bottom: 1px solid \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; display: table; width: 100%; min-width: 180px; } .ms-TextField.ms-TextField--underlined[data-v-9e6e890e]:hover { border-color: \"[theme:neutralSecondaryAlt, default: #767676]\"; } @media screen and (-ms-high-contrast: active) { .ms-TextField.ms-TextField--underlined[data-v-9e6e890e]:hover { border-color: #1AEBFF; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-TextField.ms-TextField--underlined[data-v-9e6e890e]:hover { border-color: #37006E; } } .ms-TextField.ms-TextField--underlined[data-v-9e6e890e]:active, .ms-TextField.ms-TextField--underlined[data-v-9e6e890e]:focus { border-color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-TextField.ms-TextField--underlined .ms-Label[data-v-9e6e890e] { font-size: 14px; margin-right: 8px; display: table-cell; vertical-align: top; padding-left: 12px; padding-top: 9px; height: 32px; width: 1%; white-space: nowrap; } .ms-TextField.ms-TextField--underlined .ms-TextField-field[data-v-9e6e890e] { border: 0; float: left; display: table-cell; text-align: left; padding-top: 8px; padding-bottom: 3px; } .ms-TextField.ms-TextField--underlined .ms-TextField-field[data-v-9e6e890e]:active, .ms-TextField.ms-TextField--underlined .ms-TextField-field[data-v-9e6e890e]:focus, .ms-TextField.ms-TextField--underlined .ms-TextField-field[data-v-9e6e890e]:hover { outline: 0; } .ms-TextField.ms-TextField--underlined.is-disabled[data-v-9e6e890e] { border-bottom-color: \"[theme:neutralLight, default: #eaeaea]\"; } .ms-TextField.ms-TextField--underlined.is-disabled .ms-Label[data-v-9e6e890e] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-TextField.ms-TextField--underlined.is-disabled .ms-TextField-field[data-v-9e6e890e] { background-color: transparent; color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-TextField.ms-TextField--underlined.is-active[data-v-9e6e890e] { border-color: \"[theme:themePrimary, default: #0078d7]\"; } @media screen and (-ms-high-contrast: active) { .ms-TextField.ms-TextField--underlined.is-active[data-v-9e6e890e] { border-color: #1AEBFF; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-TextField.ms-TextField--underlined.is-active[data-v-9e6e890e] { border-color: #37006E; } } .ms-TextField.ms-TextField--multiline .ms-TextField-field[data-v-9e6e890e] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; color: \"[theme:neutralSecondary, default: #666666]\"; font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; font-size: 14px; font-weight: 400; line-height: 17px; min-height: 60px; min-width: 260px; padding-top: 6px; overflow: auto; } ");},
+    beforeMount: function beforeMount(){
+        this.$fabric = {
+            TextField : TextField
+        };
+    },
+    extends :  textField
+}
+
+export { uiButton, uiOverlay, uiDialog, uiCallout, uiSearchbox, uiContextualMenu, uiContextualMenuItem, uiCheckbox, uiChoiceField, uiChoiceFieldGroup, uiDropdown, uiDropdownItem, uiPanel, uiSpinner, uiLabel, uiMessagebar, uiPersona, uiTextfield };

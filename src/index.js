@@ -12,3 +12,7 @@ export { default as uiDropdown } from "./components/uiDropdown.vue";
 export { default as uiDropdownItem } from "./components/uiDropdownItem.vue";
 export { default as uiPanel } from "./components/uiPanel.vue";
 export { default as uiSpinner } from "./components/uiSpinner.vue";
+export { default as uiLabel } from "./components/uiLabel.vue";
+export { default as uiMessagebar } from "./components/uiMessagebar.vue";
+export { default as uiPersona } from "./components/uiPersona.vue";
+export { default as uiTextfield } from "./components/uiTextfield.vue";
