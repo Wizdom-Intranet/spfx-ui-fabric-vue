@@ -12,10 +12,10 @@ ContextualMenu   | Yes        | Yes               | Yes                | Yes    
 Dialog           | Yes        | Yes               | Yes                | Yes                         | icons changed to svgs
 Dropdown         | Yes        | Yes               | Yes                | Yes                         | icons changed to svgs, TESTS MISSING
 Overlay          | Yes        | Yes               | Yes                | Yes                         | TESTS MISSING
+Panel            | Yes        | Yes               | Yes                | Yes                         | TESTS MISSING
 Searchbox        | Yes        | Yes               | Yes                | Yes                         | icons changed to svgs
 Label
 Messagebar
-Panel
 Persona
 Spinner
 Textfield
