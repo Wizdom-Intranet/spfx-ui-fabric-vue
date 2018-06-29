@@ -59,88 +59,6 @@
 /** Warning **/
 /** Server Warning **/
 /** Success **/
-.ms-Overlay[data-v-09ffd35c] {
-  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  background-color: "[theme:whiteTranslucent40, default: rgba(255,255,255,.4)]";
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  z-index: 0;
-  display: none; }
-
-.ms-Overlay.is-visible[data-v-09ffd35c] {
-  display: block; }
-
-.ms-Overlay--dark[data-v-09ffd35c] {
-  background-color: "[theme:blackTranslucent40, default: rgba(0,0,0,.4)]"; }
-
-.ms-u-overflowHidden[data-v-09ffd35c] {
-  overflow: hidden; }
-
-/*
-  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
-*/
-/* Theme related color values */
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes color and background styles
-*/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes only the color values
-*/
-/***
-100	Thin (Hairline)
-200	Extra Light (Ultra Light)
-300	Light
-400	Normal
-500	Medium
-600	Semi Bold (Demi Bold)
-700	Bold
-800	Extra Bold (Ultra Bold)
-900	Black (Heavy)
-**/
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
 .ms-Button[data-v-79820dd6] {
   box-sizing: border-box;
   margin: 0;
@@ -327,742 +245,6 @@
     .ms-Button.ms-Button--compound.is-disabled:focus .ms-Button-description[data-v-79820dd6], .ms-Button.ms-Button--compound.is-disabled:active .ms-Button-label[data-v-79820dd6],
     .ms-Button.ms-Button--compound.is-disabled:active .ms-Button-description[data-v-79820dd6] {
       color: "[theme:neutralTertiary, default: #a6a6a6]"; }
-
-/*
-  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
-*/
-/* Theme related color values */
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes color and background styles
-*/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes only the color values
-*/
-/***
-100	Thin (Hairline)
-200	Extra Light (Ultra Light)
-300	Light
-400	Normal
-500	Medium
-600	Semi Bold (Demi Bold)
-700	Bold
-800	Extra Bold (Ultra Bold)
-900	Black (Heavy)
-**/
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-.ms-Dropdown[data-v-d4b6df96] {
-  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  color: "[theme:neutralPrimary, default: #333333]";
-  font-size: 14px;
-  font-weight: 400;
-  margin-bottom: 10px;
-  position: relative;
-  outline: 0; }
-  .ms-Dropdown:hover .ms-Dropdown-title[data-v-d4b6df96],
-  .ms-Dropdown:hover .ms-Dropdown-caretDown[data-v-d4b6df96], .ms-Dropdown:focus .ms-Dropdown-title[data-v-d4b6df96],
-  .ms-Dropdown:focus .ms-Dropdown-caretDown[data-v-d4b6df96], .ms-Dropdown:active .ms-Dropdown-title[data-v-d4b6df96],
-  .ms-Dropdown:active .ms-Dropdown-caretDown[data-v-d4b6df96] {
-    color: "[theme:black, default: #000000]"; }
-  .ms-Dropdown:hover .ms-Dropdown-title[data-v-d4b6df96], .ms-Dropdown:active .ms-Dropdown-title[data-v-d4b6df96] {
-    border-color: "[theme:neutralSecondaryAlt, default: #767676]"; }
-  .ms-Dropdown:focus .ms-Dropdown-title[data-v-d4b6df96] {
-    border-color: "[theme:themePrimary, default: #0078d7]"; }
-  .ms-Dropdown .ms-Label[data-v-d4b6df96] {
-    display: inline-block;
-    margin-bottom: 8px; }
-
-.ms-Dropdown.is-disabled .ms-Dropdown-title[data-v-d4b6df96] {
-  background-color: "[theme:neutralLighter, default: #f4f4f4]";
-  border-color: "[theme:neutralLighter, default: #f4f4f4]";
-  color: "[theme:neutralTertiary, default: #a6a6a6]";
-  cursor: default; }
-  @media screen and (-ms-high-contrast: active) {
-    .ms-Dropdown.is-disabled .ms-Dropdown-title[data-v-d4b6df96] {
-      border-color: #00ff00;
-      color: #00ff00; } }
-  @media screen and (-ms-high-contrast: black-on-white) {
-    .ms-Dropdown.is-disabled .ms-Dropdown-title[data-v-d4b6df96] {
-      border-color: #600000;
-      color: #600000; } }
-
-.ms-Dropdown.is-disabled .ms-Dropdown-caretDown[data-v-d4b6df96] {
-  color: "[theme:neutralTertiary, default: #a6a6a6]"; }
-  @media screen and (-ms-high-contrast: active) {
-    .ms-Dropdown.is-disabled .ms-Dropdown-caretDown[data-v-d4b6df96] {
-      color: #00ff00; } }
-  @media screen and (-ms-high-contrast: black-on-white) {
-    .ms-Dropdown.is-disabled .ms-Dropdown-caretDown[data-v-d4b6df96] {
-      color: #600000; } }
-
-.ms-Dropdown.is-open .ms-Dropdown-items[data-v-d4b6df96] {
-  display: block;
-  position: absolute; }
-
-.ms-Panel .ms-Dropdown-items[data-v-d4b6df96] {
-  box-shadow: none;
-  overflow-y: auto;
-  padding-top: 4px;
-  max-height: 100%; }
-  .ms-Panel .ms-Dropdown-items .ms-Dropdown-item[data-v-d4b6df96] {
-    padding: 7px 16px;
-    overflow: hidden;
-    text-overflow: ellipsis; }
-  .ms-Panel .ms-Dropdown-items[data-v-d4b6df96]::before {
-    content: none;
-    border: 0; }
-
-.ms-Dropdown-select[data-v-d4b6df96] {
-  display: none; }
-
-.ms-Dropdown-caretDown[data-v-d4b6df96] {
-  color: "[theme:neutralDark, default: #212121]";
-  font-size: 12px;
-  position: absolute;
-  right: 13px;
-  bottom: 9px;
-  z-index: 1;
-  pointer-events: none; }
-
-.ms-Dropdown-title[data-v-d4b6df96] {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  background: "[theme:white, default: #ffffff]";
-  border: 1px solid "[theme:neutralTertiaryAlt, default: #c8c8c8]";
-  cursor: pointer;
-  display: block;
-  height: 32px;
-  padding: 5px 32px 0 10px;
-  position: relative;
-  overflow: hidden; }
-  .ms-Dropdown-title.ms-Dropdown-truncator[data-v-d4b6df96] {
-    height: auto;
-    display: block;
-    position: absolute;
-    visibility: hidden; }
-
-.ms-Dropdown-items[data-v-d4b6df96] {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
-  background-color: "[theme:white, default: #ffffff]";
-  display: none;
-  list-style-type: none;
-  position: absolute;
-  width: 100%;
-  max-height: 200px;
-  z-index: 400;
-  overflow-y: scroll;
-  top: auto;
-  right: auto;
-  bottom: auto;
-  left: auto;
-  max-width: 100%; }
-  .ms-Dropdown-items[data-v-d4b6df96]::before {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border: 1px solid "[theme:neutralLight, default: #eaeaea]"; }
-  @media screen and (-ms-high-contrast: active) {
-    .ms-Dropdown-items[data-v-d4b6df96] {
-      border: 1px solid "[theme:white, default: #ffffff]"; } }
-  @media screen and (-ms-high-contrast: black-on-white) {
-    .ms-Dropdown-items[data-v-d4b6df96] {
-      border: 1px solid "[theme:black, default: #000000]"; } }
-
-.ms-Dropdown-item[data-v-d4b6df96] {
-  box-sizing: border-box;
-  cursor: pointer;
-  display: block;
-  height: 36px;
-  padding: 7px 10px;
-  position: relative;
-  border: 1px solid transparent;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis; }
-  @media screen and (-ms-high-contrast: active) {
-    .ms-Dropdown-item[data-v-d4b6df96] {
-      border-color: "[theme:black, default: #000000]"; } }
-  @media screen and (-ms-high-contrast: black-on-white) {
-    .ms-Dropdown-item[data-v-d4b6df96] {
-      border-color: "[theme:white, default: #ffffff]"; } }
-  .ms-Dropdown-item[data-v-d4b6df96]:hover {
-    background-color: "[theme:neutralLight, default: #eaeaea]";
-    color: "[theme:black, default: #000000]"; }
-    @media screen and (-ms-high-contrast: active) {
-      .ms-Dropdown-item[data-v-d4b6df96]:hover {
-        background-color: #1AEBFF;
-        border-color: #1AEBFF;
-        color: "[theme:black, default: #000000]"; }
-        .ms-Dropdown-item[data-v-d4b6df96]:hover:focus {
-          border-color: "[theme:black, default: #000000]"; } }
-    @media screen and (-ms-high-contrast: black-on-white) {
-      .ms-Dropdown-item[data-v-d4b6df96]:hover {
-        background-color: #37006E;
-        border-color: #37006E;
-        color: "[theme:white, default: #ffffff]"; } }
-  .ms-Dropdown-item[data-v-d4b6df96]:active {
-    background-color: "[theme:neutralLight, default: #eaeaea]";
-    border-color: "[theme:themePrimary, default: #0078d7]";
-    color: "[theme:black, default: #000000]"; }
-  .ms-Dropdown-item.is-disabled[data-v-d4b6df96] {
-    background: "[theme:white, default: #ffffff]";
-    color: "[theme:neutralTertiary, default: #a6a6a6]";
-    cursor: default; }
-
-.ms-Dropdown-item.is-selected[data-v-d4b6df96],
-.ms-Dropdown-item.ms-Dropdown-item--selected[data-v-d4b6df96] {
-  background-color: "[theme:themeLight, default: #c7e0f4]";
-  color: "[theme:black, default: #000000]"; }
-  .ms-Dropdown-item.is-selected[data-v-d4b6df96]:hover,
-  .ms-Dropdown-item.ms-Dropdown-item--selected[data-v-d4b6df96]:hover {
-    background-color: "[theme:themeLight, default: #c7e0f4]"; }
-  @media screen and (-ms-high-contrast: active) {
-    .ms-Dropdown-item.is-selected[data-v-d4b6df96],
-    .ms-Dropdown-item.ms-Dropdown-item--selected[data-v-d4b6df96] {
-      background-color: #1AEBFF;
-      border-color: #1AEBFF;
-      color: "[theme:black, default: #000000]"; }
-      .ms-Dropdown-item.is-selected[data-v-d4b6df96]:focus,
-      .ms-Dropdown-item.ms-Dropdown-item--selected[data-v-d4b6df96]:focus {
-        border-color: "[theme:black, default: #000000]"; } }
-  @media screen and (-ms-high-contrast: black-on-white) {
-    .ms-Dropdown-item.is-selected[data-v-d4b6df96],
-    .ms-Dropdown-item.ms-Dropdown-item--selected[data-v-d4b6df96] {
-      background-color: #37006E;
-      border-color: #37006E;
-      color: "[theme:white, default: #ffffff]"; } }
-
-.ms-Dropdown-caretDown[data-v-d4b6df96] {
-  bottom: 7px; }
-  .ms-Dropdown-caretDown.ms-Icon.ms-Icon--ChevronDown[data-v-d4b6df96]::before {
-    content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2048 2048" width="12" height="12" version="1.1" xmlns="http://www.w3.org/2000/svg"><path transform="translate(0, 2048) scale(1, -1)" d="M1939 1581l90 -90l-1005 -1005l-1005 1005l90 90l915 -915z" fill="black" stroke="none"/></svg>'); }
-
-/*
-  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
-*/
-/* Theme related color values */
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes color and background styles
-*/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes only the color values
-*/
-/***
-100	Thin (Hairline)
-200	Extra Light (Ultra Light)
-300	Light
-400	Normal
-500	Medium
-600	Semi Bold (Demi Bold)
-700	Bold
-800	Extra Bold (Ultra Bold)
-900	Black (Heavy)
-**/
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-.ms-ContextualMenu[data-v-94d26018] {
-  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  color: "[theme:neutralPrimary, default: #333333]";
-  font-size: 14px;
-  font-weight: 400;
-  display: block;
-  min-width: 180px;
-  max-width: 220px;
-  list-style-type: none;
-  position: relative;
-  background-color: "[theme:white, default: #ffffff]"; }
-  .ms-ContextualMenu.is-hidden[data-v-94d26018] {
-    display: none; }
-
-.ms-ContextualMenu-item[data-v-94d26018] {
-  position: relative; }
-
-.ms-ContextualMenu-link[data-v-94d26018] {
-  box-sizing: border-box;
-  text-decoration: none;
-  color: "[theme:neutralPrimary, default: #333333]";
-  border: 1px solid transparent;
-  cursor: pointer;
-  display: block;
-  height: 36px;
-  overflow: hidden;
-  line-height: 34px;
-  padding: 0 16px 0 25px;
-  position: relative;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
-  .ms-ContextualMenu-link[data-v-94d26018]:hover, .ms-ContextualMenu-link[data-v-94d26018]:active, .ms-ContextualMenu-link[data-v-94d26018]:focus {
-    background-color: "[theme:neutralLighter, default: #f4f4f4]";
-    color: "[theme:neutralDark, default: #212121]"; }
-    .ms-ContextualMenu-link:hover .ms-ContextualMenu-subMenuIcon[data-v-94d26018], .ms-ContextualMenu-link:active .ms-ContextualMenu-subMenuIcon[data-v-94d26018], .ms-ContextualMenu-link:focus .ms-ContextualMenu-subMenuIcon[data-v-94d26018] {
-      color: "[theme:neutralDark, default: #212121]"; }
-  .ms-ContextualMenu-link[data-v-94d26018]:focus {
-    outline: transparent;
-    border: 1px solid "[theme:neutralSecondary, default: #666666]"; }
-  .ms-ContextualMenu-link.is-selected[data-v-94d26018] {
-    background-color: "[theme:neutralQuaternaryAlt, default: #dadada]";
-    color: "[theme:black, default: #000000]";
-    font-weight: 600; }
-    .ms-ContextualMenu-link.is-selected ~ .ms-ContextualMenu-subMenuIcon[data-v-94d26018] {
-      color: "[theme:black, default: #000000]"; }
-    .ms-ContextualMenu-link.is-selected[data-v-94d26018]:hover {
-      background-color: "[theme:neutralQuaternary, default: #d0d0d0]"; }
-  .ms-ContextualMenu-link.is-disabled[data-v-94d26018] {
-    color: "[theme:neutralTertiary, default: #a6a6a6]";
-    background-color: "[theme:white, default: #ffffff]";
-    pointer-events: none; }
-    .ms-ContextualMenu-link.is-disabled[data-v-94d26018]:active, .ms-ContextualMenu-link.is-disabled[data-v-94d26018]:focus {
-      border-color: "[theme:white, default: #ffffff]"; }
-    .ms-ContextualMenu-link.is-disabled .ms-Icon[data-v-94d26018] {
-      color: "[theme:neutralTertiary, default: #a6a6a6]";
-      pointer-events: none;
-      cursor: default; }
-
-.ms-ContextualMenu-item.ms-ContextualMenu-item--divider[data-v-94d26018] {
-  cursor: default;
-  display: block;
-  height: 1px;
-  background-color: "[theme:neutralLight, default: #eaeaea]";
-  position: relative; }
-
-.ms-ContextualMenu-item.ms-ContextualMenu-item--header[data-v-94d26018] {
-  color: "[theme:themePrimary, default: #0078d7]";
-  font-size: 12px;
-  text-transform: uppercase;
-  height: 36px;
-  line-height: 36px;
-  padding: 0 18px; }
-
-.ms-ContextualMenu-item.ms-ContextualMenu-item--hasMenu .ms-ContextualMenu[data-v-94d26018] {
-  position: absolute;
-  top: -1px;
-  left: 178px; }
-
-.ms-ContextualMenu-subMenuIcon[data-v-94d26018],
-.ms-ContextualMenu-caretRight[data-v-94d26018] {
-  color: "[theme:neutralPrimary, default: #333333]";
-  font-size: 8px;
-  font-weight: 600;
-  width: 24px;
-  height: 36px;
-  line-height: 36px;
-  position: absolute;
-  text-align: center;
-  top: 0;
-  right: 0;
-  z-index: 1;
-  pointer-events: none; }
-
-.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-item.ms-ContextualMenu-item--header[data-v-94d26018] {
-  padding: 0 16px 0 26px; }
-
-.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018] {
-  background-color: "[theme:white, default: #ffffff]";
-  font-weight: 600;
-  color: "[theme:neutralPrimary, default: #333333]"; }
-  .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]::after {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    display: inline-block;
-    font-family: 'FabricMDL2Icons';
-    font-style: normal;
-    font-weight: normal;
-    speak: none;
-    color: "[theme:neutralPrimary, default: #333333]";
-    content: '\E73E';
-    font-size: 10px;
-    font-weight: 800;
-    height: 36px;
-    line-height: 36px;
-    position: absolute;
-    left: 7px; }
-  .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:hover, .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:focus {
-    color: "[theme:neutralDark, default: #212121]";
-    background-color: "[theme:neutralLighter, default: #f4f4f4]"; }
-    .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:hover::after, .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:focus::after {
-      color: "[theme:neutralDark, default: #212121]"; }
-  .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:active {
-    color: "[theme:black, default: #000000]";
-    background-color: "[theme:neutralQuaternary, default: #d0d0d0]"; }
-    .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:active::after {
-      color: "[theme:black, default: #000000]"; }
-
-.ms-ContextualMenu.ms-ContextualMenu--hasIcons .ms-ContextualMenu-link[data-v-94d26018],
-.ms-ContextualMenu.ms-ContextualMenu--hasChecks .ms-ContextualMenu-link[data-v-94d26018] {
-  padding-left: 40px; }
-
-.ms-ContextualMenu.ms-ContextualMenu--hasIcons .ms-Icon[data-v-94d26018],
-.ms-ContextualMenu.ms-ContextualMenu--hasChecks .ms-Icon[data-v-94d26018] {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  text-align: center; }
-
-.ms-ContextualMenu.ms-ContextualMenu--hasIcons[data-v-94d26018] {
-  width: 220px; }
-
-.ms-ContextualHost[data-v-94d26018] {
-  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  z-index: 10;
-  margin: 16px auto;
-  position: relative;
-  min-width: 10px;
-  display: none;
-  background-color: "[theme:white, default: #ffffff]";
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4); }
-  .ms-ContextualHost.is-positioned[data-v-94d26018] {
-    position: absolute;
-    margin: 0; }
-  .ms-ContextualHost.is-open[data-v-94d26018] {
-    display: inline-block; }
-
-.ms-ContextualHost-beak[data-v-94d26018] {
-  box-shadow: 0 0 15px -5px "[theme:neutralPrimaryAlt, default: #3c3c3c]";
-  position: absolute;
-  width: 28px;
-  height: 28px;
-  background: "[theme:white, default: #ffffff]";
-  border: 1px solid "[theme:neutralLight, default: #eaeaea]";
-  box-sizing: border-box;
-  top: -6px;
-  display: none;
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-  z-index: 0;
-  outline: 1px solid transparent; }
-
-.ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-94d26018],
-.ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-94d26018] {
-  top: 40px;
-  display: none; }
-
-.ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-94d26018] {
-  left: -10px; }
-
-.ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-94d26018] {
-  right: -10px; }
-
-.ms-ContextualHost.ms-ContextualHost--arrowTop .ms-ContextualHost-beak[data-v-94d26018] {
-  display: block;
-  top: -10px; }
-
-.ms-ContextualHost.ms-ContextualHost--arrowBottom .ms-ContextualHost-beak[data-v-94d26018] {
-  display: block;
-  bottom: -10px; }
-
-.ms-ContextualHost-main[data-v-94d26018] {
-  position: relative;
-  background-color: "[theme:white, default: #ffffff]";
-  box-sizing: border-box;
-  outline: 1px solid transparent;
-  z-index: 5;
-  min-height: 10px; }
-
-.ms-ContextualHost-close[data-v-94d26018] {
-  margin: 0;
-  border: 0;
-  background: none;
-  cursor: pointer;
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  padding: 8px;
-  width: 32px;
-  height: 32px;
-  font-size: 14px;
-  color: "[theme:neutralSecondary, default: #666666]";
-  z-index: 10; }
-
-.ms-ContextualHost.ms-ContextualHost--close .ms-ContextualHost-title[data-v-94d26018] {
-  margin-right: 20px; }
-
-.ms-ContextualHost.ms-ContextualHost--primaryArrow .ms-ContextualHost-beak[data-v-94d26018] {
-  background-color: "[theme:themePrimary, default: #0078d7]"; }
-
-@media (min-width: 480px) {
-  .ms-ContextualHost[data-v-94d26018] {
-    margin: 16px; }
-    .ms-ContextualHost.is-positioned[data-v-94d26018] {
-      margin: 0; }
-  .ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-94d26018],
-  .ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-94d26018] {
-    display: block; } }
-
-.ms-Icon.ms-Icon--ChevronRight[data-v-94d26018]::before {
-  content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2048 2048" width="8" height="8" version="1.1" xmlns="http://www.w3.org/2000/svg"><path transform="translate(0, 2048) scale(1, -1)" d="M515 93l930 931l-930 931l90 90l1022 -1021l-1022 -1021z" fill="black" stroke="none"/></svg>'); }
-
-.ms-ContextualMenu-link.is-selected[data-v-94d26018]::after {
-  content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2048 2048" width="10" height="10" version="1.1" xmlns="http://www.w3.org/2000/svg"><path transform="translate(0, 2048) scale(1, -1)" d="M1837 1491l-1069 -1070l-557 558l90 90l467 -466l979 978z" fill="black" stroke="none"/></svg>') !important; }
-
-/*
-  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
-*/
-/* Theme related color values */
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes color and background styles
-*/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes only the color values
-*/
-/***
-100	Thin (Hairline)
-200	Extra Light (Ultra Light)
-300	Light
-400	Normal
-500	Medium
-600	Semi Bold (Demi Bold)
-700	Bold
-800	Extra Bold (Ultra Bold)
-900	Black (Heavy)
-**/
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-.ms-Dialog[data-v-1194e8ec] {
-  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
-  background-color: "[theme:white, default: #ffffff]";
-  display: none;
-  height: auto;
-  min-width: 220px;
-  max-width: 340px;
-  padding: 28px 24px;
-  z-index: 10;
-  position: fixed;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  top: 50%; }
-
-.ms-Dialog.is-open[data-v-1194e8ec] {
-  display: block; }
-
-.ms-Dialog-title[data-v-1194e8ec] {
-  font-size: 21px;
-  font-weight: 100;
-  margin-bottom: 24px; }
-
-.ms-Dialog-content[data-v-1194e8ec] {
-  position: relative; }
-
-.ms-Dialog-subText[data-v-1194e8ec] {
-  color: "[theme:neutralPrimary, default: #333333]";
-  font-size: 12px;
-  font-weight: 300;
-  line-height: 1.5; }
-
-.ms-Dialog-actions[data-v-1194e8ec] {
-  margin-top: 24px;
-  text-align: right; }
-
-.ms-Dialog--multiline .ms-Dialog-title[data-v-1194e8ec] {
-  font-size: 28px; }
-
-.ms-Dialog.ms-Dialog--lgHeader .ms-Dialog-title[data-v-1194e8ec] {
-  background-color: "[theme:themePrimary, default: #0078d7]";
-  color: "[theme:white, default: #ffffff]";
-  font-size: 28px;
-  font-weight: 100;
-  padding: 28px 24px;
-  margin-top: -28px;
-  margin-left: -24px;
-  margin-right: -24px; }
-
-.ms-Dialog-buttonClose[data-v-1194e8ec] {
-  background: none;
-  border: 0;
-  cursor: pointer;
-  margin: 0;
-  padding: 4px;
-  position: absolute;
-  right: 12px;
-  top: 12px;
-  z-index: 10; }
-  .ms-Dialog-buttonClose .ms-Icon.ms-Icon--Cancel[data-v-1194e8ec] {
-    color: "[theme:neutralSecondary, default: #666666]";
-    font-size: 16px; }
-
-.ms-Button.ms-Button--compound[data-v-1194e8ec]:not(:last-child) {
-  margin-bottom: 20px; }
-
-.ms-Dialog.ms-Dialog--close:not(.ms-Dialog--lgHeader) .ms-Dialog-title[data-v-1194e8ec] {
-  margin-right: 20px; }
-
-.ms-Dialog.ms-Dialog--close:not(.ms-Dialog--lgHeader) .ms-Dialog-button.ms-Dialog-buttonClose[data-v-1194e8ec] {
-  display: block; }
-
-@media (min-width: 480px) {
-  .ms-Dialog-main[data-v-1194e8ec] {
-    width: auto;
-    min-width: 288px;
-    max-width: 340px; } }
-
-.ms-Overlay[data-v-1194e8ec] {
-  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  background-color: "[theme:whiteTranslucent40, default: rgba(255,255,255,.4)]";
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  z-index: 0;
-  display: none; }
-
-.ms-Overlay.is-visible[data-v-1194e8ec] {
-  display: block; }
-
-.ms-Overlay--dark[data-v-1194e8ec] {
-  background-color: "[theme:blackTranslucent40, default: rgba(0,0,0,.4)]"; }
-
-.ms-u-overflowHidden[data-v-1194e8ec] {
-  overflow: hidden; }
-
-.ms-Icon.ms-Icon--Cancel[data-v-1194e8ec] {
-  content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2048 2048" width="16" height="16" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M1115 1024l690 -691l-90 -90l-691 690l-691 -690l-90 90l690 691l-690 691l90 90l691 -690l691 690l90 -90z" fill="black" stroke="none"/></svg>'); }
 
 /*
   Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
@@ -1380,6 +562,88 @@
 /** Warning **/
 /** Server Warning **/
 /** Success **/
+.ms-Overlay[data-v-09ffd35c] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: "[theme:whiteTranslucent40, default: rgba(255,255,255,.4)]";
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 0;
+  display: none; }
+
+.ms-Overlay.is-visible[data-v-09ffd35c] {
+  display: block; }
+
+.ms-Overlay--dark[data-v-09ffd35c] {
+  background-color: "[theme:blackTranslucent40, default: rgba(0,0,0,.4)]"; }
+
+.ms-u-overflowHidden[data-v-09ffd35c] {
+  overflow: hidden; }
+
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+/* Theme related color values */
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes color and background styles
+*/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes only the color values
+*/
+/***
+100	Thin (Hairline)
+200	Extra Light (Ultra Light)
+300	Light
+400	Normal
+500	Medium
+600	Semi Bold (Demi Bold)
+700	Bold
+800	Extra Bold (Ultra Bold)
+900	Black (Heavy)
+**/
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
 .ms-CheckBox[data-v-75ed8232] {
   box-sizing: border-box;
   color: "[theme:neutralPrimary, default: #333333]";
@@ -1488,6 +752,170 @@
 
 .ms-CheckBox-field[data-v-75ed8232]::after {
   content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2048 2048" width="16" height="16" version="1.1" xmlns="http://www.w3.org/2000/svg"><path transform="translate(0, 2048) scale(1, -1)" d="M1837 1491l-1069 -1070l-557 558l90 90l467 -466l979 978z" fill="white" stroke="none"/></svg>') !important; }
+
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+/* Theme related color values */
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes color and background styles
+*/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes only the color values
+*/
+/***
+100	Thin (Hairline)
+200	Extra Light (Ultra Light)
+300	Light
+400	Normal
+500	Medium
+600	Semi Bold (Demi Bold)
+700	Bold
+800	Extra Bold (Ultra Bold)
+900	Black (Heavy)
+**/
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+.ms-Dialog[data-v-1194e8ec] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
+  background-color: "[theme:white, default: #ffffff]";
+  display: none;
+  height: auto;
+  min-width: 220px;
+  max-width: 340px;
+  padding: 28px 24px;
+  z-index: 10;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%; }
+
+.ms-Dialog.is-open[data-v-1194e8ec] {
+  display: block; }
+
+.ms-Dialog-title[data-v-1194e8ec] {
+  font-size: 21px;
+  font-weight: 100;
+  margin-bottom: 24px; }
+
+.ms-Dialog-content[data-v-1194e8ec] {
+  position: relative; }
+
+.ms-Dialog-subText[data-v-1194e8ec] {
+  color: "[theme:neutralPrimary, default: #333333]";
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.5; }
+
+.ms-Dialog-actions[data-v-1194e8ec] {
+  margin-top: 24px;
+  text-align: right; }
+
+.ms-Dialog--multiline .ms-Dialog-title[data-v-1194e8ec] {
+  font-size: 28px; }
+
+.ms-Dialog.ms-Dialog--lgHeader .ms-Dialog-title[data-v-1194e8ec] {
+  background-color: "[theme:themePrimary, default: #0078d7]";
+  color: "[theme:white, default: #ffffff]";
+  font-size: 28px;
+  font-weight: 100;
+  padding: 28px 24px;
+  margin-top: -28px;
+  margin-left: -24px;
+  margin-right: -24px; }
+
+.ms-Dialog-buttonClose[data-v-1194e8ec] {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  margin: 0;
+  padding: 4px;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  z-index: 10; }
+  .ms-Dialog-buttonClose .ms-Icon.ms-Icon--Cancel[data-v-1194e8ec] {
+    color: "[theme:neutralSecondary, default: #666666]";
+    font-size: 16px; }
+
+.ms-Button.ms-Button--compound[data-v-1194e8ec]:not(:last-child) {
+  margin-bottom: 20px; }
+
+.ms-Dialog.ms-Dialog--close:not(.ms-Dialog--lgHeader) .ms-Dialog-title[data-v-1194e8ec] {
+  margin-right: 20px; }
+
+.ms-Dialog.ms-Dialog--close:not(.ms-Dialog--lgHeader) .ms-Dialog-button.ms-Dialog-buttonClose[data-v-1194e8ec] {
+  display: block; }
+
+@media (min-width: 480px) {
+  .ms-Dialog-main[data-v-1194e8ec] {
+    width: auto;
+    min-width: 288px;
+    max-width: 340px; } }
+
+.ms-Overlay[data-v-1194e8ec] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: "[theme:whiteTranslucent40, default: rgba(255,255,255,.4)]";
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 0;
+  display: none; }
+
+.ms-Overlay.is-visible[data-v-1194e8ec] {
+  display: block; }
+
+.ms-Overlay--dark[data-v-1194e8ec] {
+  background-color: "[theme:blackTranslucent40, default: rgba(0,0,0,.4)]"; }
+
+.ms-u-overflowHidden[data-v-1194e8ec] {
+  overflow: hidden; }
+
+.ms-Icon.ms-Icon--Cancel[data-v-1194e8ec] {
+  content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2048 2048" width="16" height="16" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M1115 1024l690 -691l-90 -90l-691 690l-691 -690l-90 90l690 691l-690 691l90 90l691 -690l691 690l90 -90z" fill="black" stroke="none"/></svg>'); }
 
 /*
   Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
@@ -2089,6 +1517,310 @@
 /** Warning **/
 /** Server Warning **/
 /** Success **/
+.ms-ContextualMenu[data-v-94d26018] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  color: "[theme:neutralPrimary, default: #333333]";
+  font-size: 14px;
+  font-weight: 400;
+  display: block;
+  min-width: 180px;
+  max-width: 220px;
+  list-style-type: none;
+  position: relative;
+  background-color: "[theme:white, default: #ffffff]"; }
+  .ms-ContextualMenu.is-hidden[data-v-94d26018] {
+    display: none; }
+
+.ms-ContextualMenu-item[data-v-94d26018] {
+  position: relative; }
+
+.ms-ContextualMenu-link[data-v-94d26018] {
+  box-sizing: border-box;
+  text-decoration: none;
+  color: "[theme:neutralPrimary, default: #333333]";
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: block;
+  height: 36px;
+  overflow: hidden;
+  line-height: 34px;
+  padding: 0 16px 0 25px;
+  position: relative;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+  .ms-ContextualMenu-link[data-v-94d26018]:hover, .ms-ContextualMenu-link[data-v-94d26018]:active, .ms-ContextualMenu-link[data-v-94d26018]:focus {
+    background-color: "[theme:neutralLighter, default: #f4f4f4]";
+    color: "[theme:neutralDark, default: #212121]"; }
+    .ms-ContextualMenu-link:hover .ms-ContextualMenu-subMenuIcon[data-v-94d26018], .ms-ContextualMenu-link:active .ms-ContextualMenu-subMenuIcon[data-v-94d26018], .ms-ContextualMenu-link:focus .ms-ContextualMenu-subMenuIcon[data-v-94d26018] {
+      color: "[theme:neutralDark, default: #212121]"; }
+  .ms-ContextualMenu-link[data-v-94d26018]:focus {
+    outline: transparent;
+    border: 1px solid "[theme:neutralSecondary, default: #666666]"; }
+  .ms-ContextualMenu-link.is-selected[data-v-94d26018] {
+    background-color: "[theme:neutralQuaternaryAlt, default: #dadada]";
+    color: "[theme:black, default: #000000]";
+    font-weight: 600; }
+    .ms-ContextualMenu-link.is-selected ~ .ms-ContextualMenu-subMenuIcon[data-v-94d26018] {
+      color: "[theme:black, default: #000000]"; }
+    .ms-ContextualMenu-link.is-selected[data-v-94d26018]:hover {
+      background-color: "[theme:neutralQuaternary, default: #d0d0d0]"; }
+  .ms-ContextualMenu-link.is-disabled[data-v-94d26018] {
+    color: "[theme:neutralTertiary, default: #a6a6a6]";
+    background-color: "[theme:white, default: #ffffff]";
+    pointer-events: none; }
+    .ms-ContextualMenu-link.is-disabled[data-v-94d26018]:active, .ms-ContextualMenu-link.is-disabled[data-v-94d26018]:focus {
+      border-color: "[theme:white, default: #ffffff]"; }
+    .ms-ContextualMenu-link.is-disabled .ms-Icon[data-v-94d26018] {
+      color: "[theme:neutralTertiary, default: #a6a6a6]";
+      pointer-events: none;
+      cursor: default; }
+
+.ms-ContextualMenu-item.ms-ContextualMenu-item--divider[data-v-94d26018] {
+  cursor: default;
+  display: block;
+  height: 1px;
+  background-color: "[theme:neutralLight, default: #eaeaea]";
+  position: relative; }
+
+.ms-ContextualMenu-item.ms-ContextualMenu-item--header[data-v-94d26018] {
+  color: "[theme:themePrimary, default: #0078d7]";
+  font-size: 12px;
+  text-transform: uppercase;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 18px; }
+
+.ms-ContextualMenu-item.ms-ContextualMenu-item--hasMenu .ms-ContextualMenu[data-v-94d26018] {
+  position: absolute;
+  top: -1px;
+  left: 178px; }
+
+.ms-ContextualMenu-subMenuIcon[data-v-94d26018],
+.ms-ContextualMenu-caretRight[data-v-94d26018] {
+  color: "[theme:neutralPrimary, default: #333333]";
+  font-size: 8px;
+  font-weight: 600;
+  width: 24px;
+  height: 36px;
+  line-height: 36px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  pointer-events: none; }
+
+.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-item.ms-ContextualMenu-item--header[data-v-94d26018] {
+  padding: 0 16px 0 26px; }
+
+.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018] {
+  background-color: "[theme:white, default: #ffffff]";
+  font-weight: 600;
+  color: "[theme:neutralPrimary, default: #333333]"; }
+  .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]::after {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-family: 'FabricMDL2Icons';
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    color: "[theme:neutralPrimary, default: #333333]";
+    content: '\E73E';
+    font-size: 10px;
+    font-weight: 800;
+    height: 36px;
+    line-height: 36px;
+    position: absolute;
+    left: 7px; }
+  .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:hover, .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:focus {
+    color: "[theme:neutralDark, default: #212121]";
+    background-color: "[theme:neutralLighter, default: #f4f4f4]"; }
+    .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:hover::after, .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:focus::after {
+      color: "[theme:neutralDark, default: #212121]"; }
+  .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:active {
+    color: "[theme:black, default: #000000]";
+    background-color: "[theme:neutralQuaternary, default: #d0d0d0]"; }
+    .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:active::after {
+      color: "[theme:black, default: #000000]"; }
+
+.ms-ContextualMenu.ms-ContextualMenu--hasIcons .ms-ContextualMenu-link[data-v-94d26018],
+.ms-ContextualMenu.ms-ContextualMenu--hasChecks .ms-ContextualMenu-link[data-v-94d26018] {
+  padding-left: 40px; }
+
+.ms-ContextualMenu.ms-ContextualMenu--hasIcons .ms-Icon[data-v-94d26018],
+.ms-ContextualMenu.ms-ContextualMenu--hasChecks .ms-Icon[data-v-94d26018] {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  text-align: center; }
+
+.ms-ContextualMenu.ms-ContextualMenu--hasIcons[data-v-94d26018] {
+  width: 220px; }
+
+.ms-ContextualHost[data-v-94d26018] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  z-index: 10;
+  margin: 16px auto;
+  position: relative;
+  min-width: 10px;
+  display: none;
+  background-color: "[theme:white, default: #ffffff]";
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4); }
+  .ms-ContextualHost.is-positioned[data-v-94d26018] {
+    position: absolute;
+    margin: 0; }
+  .ms-ContextualHost.is-open[data-v-94d26018] {
+    display: inline-block; }
+
+.ms-ContextualHost-beak[data-v-94d26018] {
+  box-shadow: 0 0 15px -5px "[theme:neutralPrimaryAlt, default: #3c3c3c]";
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  background: "[theme:white, default: #ffffff]";
+  border: 1px solid "[theme:neutralLight, default: #eaeaea]";
+  box-sizing: border-box;
+  top: -6px;
+  display: none;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  z-index: 0;
+  outline: 1px solid transparent; }
+
+.ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-94d26018],
+.ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-94d26018] {
+  top: 40px;
+  display: none; }
+
+.ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-94d26018] {
+  left: -10px; }
+
+.ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-94d26018] {
+  right: -10px; }
+
+.ms-ContextualHost.ms-ContextualHost--arrowTop .ms-ContextualHost-beak[data-v-94d26018] {
+  display: block;
+  top: -10px; }
+
+.ms-ContextualHost.ms-ContextualHost--arrowBottom .ms-ContextualHost-beak[data-v-94d26018] {
+  display: block;
+  bottom: -10px; }
+
+.ms-ContextualHost-main[data-v-94d26018] {
+  position: relative;
+  background-color: "[theme:white, default: #ffffff]";
+  box-sizing: border-box;
+  outline: 1px solid transparent;
+  z-index: 5;
+  min-height: 10px; }
+
+.ms-ContextualHost-close[data-v-94d26018] {
+  margin: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 8px;
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
+  color: "[theme:neutralSecondary, default: #666666]";
+  z-index: 10; }
+
+.ms-ContextualHost.ms-ContextualHost--close .ms-ContextualHost-title[data-v-94d26018] {
+  margin-right: 20px; }
+
+.ms-ContextualHost.ms-ContextualHost--primaryArrow .ms-ContextualHost-beak[data-v-94d26018] {
+  background-color: "[theme:themePrimary, default: #0078d7]"; }
+
+@media (min-width: 480px) {
+  .ms-ContextualHost[data-v-94d26018] {
+    margin: 16px; }
+    .ms-ContextualHost.is-positioned[data-v-94d26018] {
+      margin: 0; }
+  .ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-94d26018],
+  .ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-94d26018] {
+    display: block; } }
+
+.ms-Icon.ms-Icon--ChevronRight[data-v-94d26018]::before {
+  content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2048 2048" width="8" height="8" version="1.1" xmlns="http://www.w3.org/2000/svg"><path transform="translate(0, 2048) scale(1, -1)" d="M515 93l930 931l-930 931l90 90l1022 -1021l-1022 -1021z" fill="black" stroke="none"/></svg>'); }
+
+.ms-ContextualMenu-link.is-selected[data-v-94d26018]::after {
+  content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2048 2048" width="10" height="10" version="1.1" xmlns="http://www.w3.org/2000/svg"><path transform="translate(0, 2048) scale(1, -1)" d="M1837 1491l-1069 -1070l-557 558l90 90l467 -466l979 978z" fill="black" stroke="none"/></svg>') !important; }
+
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+/* Theme related color values */
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes color and background styles
+*/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes only the color values
+*/
+/***
+100	Thin (Hairline)
+200	Extra Light (Ultra Light)
+300	Light
+400	Normal
+500	Medium
+600	Semi Bold (Demi Bold)
+700	Bold
+800	Extra Bold (Ultra Bold)
+900	Black (Heavy)
+**/
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
 .ms-RadioButton[data-v-9afc786c] {
   font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -2220,6 +1952,1509 @@
 
 
 /*# sourceMappingURL=uiDropdownItem.vue.map */
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+/* Theme related color values */
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes color and background styles
+*/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes only the color values
+*/
+/***
+100	Thin (Hairline)
+200	Extra Light (Ultra Light)
+300	Light
+400	Normal
+500	Medium
+600	Semi Bold (Demi Bold)
+700	Bold
+800	Extra Bold (Ultra Bold)
+900	Black (Heavy)
+**/
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+.ms-Dropdown[data-v-d4b6df96] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  color: "[theme:neutralPrimary, default: #333333]";
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  position: relative;
+  outline: 0; }
+  .ms-Dropdown:hover .ms-Dropdown-title[data-v-d4b6df96],
+  .ms-Dropdown:hover .ms-Dropdown-caretDown[data-v-d4b6df96], .ms-Dropdown:focus .ms-Dropdown-title[data-v-d4b6df96],
+  .ms-Dropdown:focus .ms-Dropdown-caretDown[data-v-d4b6df96], .ms-Dropdown:active .ms-Dropdown-title[data-v-d4b6df96],
+  .ms-Dropdown:active .ms-Dropdown-caretDown[data-v-d4b6df96] {
+    color: "[theme:black, default: #000000]"; }
+  .ms-Dropdown:hover .ms-Dropdown-title[data-v-d4b6df96], .ms-Dropdown:active .ms-Dropdown-title[data-v-d4b6df96] {
+    border-color: "[theme:neutralSecondaryAlt, default: #767676]"; }
+  .ms-Dropdown:focus .ms-Dropdown-title[data-v-d4b6df96] {
+    border-color: "[theme:themePrimary, default: #0078d7]"; }
+  .ms-Dropdown .ms-Label[data-v-d4b6df96] {
+    display: inline-block;
+    margin-bottom: 8px; }
+
+.ms-Dropdown.is-disabled .ms-Dropdown-title[data-v-d4b6df96] {
+  background-color: "[theme:neutralLighter, default: #f4f4f4]";
+  border-color: "[theme:neutralLighter, default: #f4f4f4]";
+  color: "[theme:neutralTertiary, default: #a6a6a6]";
+  cursor: default; }
+  @media screen and (-ms-high-contrast: active) {
+    .ms-Dropdown.is-disabled .ms-Dropdown-title[data-v-d4b6df96] {
+      border-color: #00ff00;
+      color: #00ff00; } }
+  @media screen and (-ms-high-contrast: black-on-white) {
+    .ms-Dropdown.is-disabled .ms-Dropdown-title[data-v-d4b6df96] {
+      border-color: #600000;
+      color: #600000; } }
+
+.ms-Dropdown.is-disabled .ms-Dropdown-caretDown[data-v-d4b6df96] {
+  color: "[theme:neutralTertiary, default: #a6a6a6]"; }
+  @media screen and (-ms-high-contrast: active) {
+    .ms-Dropdown.is-disabled .ms-Dropdown-caretDown[data-v-d4b6df96] {
+      color: #00ff00; } }
+  @media screen and (-ms-high-contrast: black-on-white) {
+    .ms-Dropdown.is-disabled .ms-Dropdown-caretDown[data-v-d4b6df96] {
+      color: #600000; } }
+
+.ms-Dropdown.is-open .ms-Dropdown-items[data-v-d4b6df96] {
+  display: block;
+  position: absolute; }
+
+.ms-Panel .ms-Dropdown-items[data-v-d4b6df96] {
+  box-shadow: none;
+  overflow-y: auto;
+  padding-top: 4px;
+  max-height: 100%; }
+  .ms-Panel .ms-Dropdown-items .ms-Dropdown-item[data-v-d4b6df96] {
+    padding: 7px 16px;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+  .ms-Panel .ms-Dropdown-items[data-v-d4b6df96]::before {
+    content: none;
+    border: 0; }
+
+.ms-Dropdown-select[data-v-d4b6df96] {
+  display: none; }
+
+.ms-Dropdown-caretDown[data-v-d4b6df96] {
+  color: "[theme:neutralDark, default: #212121]";
+  font-size: 12px;
+  position: absolute;
+  right: 13px;
+  bottom: 9px;
+  z-index: 1;
+  pointer-events: none; }
+
+.ms-Dropdown-title[data-v-d4b6df96] {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background: "[theme:white, default: #ffffff]";
+  border: 1px solid "[theme:neutralTertiaryAlt, default: #c8c8c8]";
+  cursor: pointer;
+  display: block;
+  height: 32px;
+  padding: 5px 32px 0 10px;
+  position: relative;
+  overflow: hidden; }
+  .ms-Dropdown-title.ms-Dropdown-truncator[data-v-d4b6df96] {
+    height: auto;
+    display: block;
+    position: absolute;
+    visibility: hidden; }
+
+.ms-Dropdown-items[data-v-d4b6df96] {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
+  background-color: "[theme:white, default: #ffffff]";
+  display: none;
+  list-style-type: none;
+  position: absolute;
+  width: 100%;
+  max-height: 200px;
+  z-index: 400;
+  overflow-y: scroll;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  max-width: 100%; }
+  .ms-Dropdown-items[data-v-d4b6df96]::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid "[theme:neutralLight, default: #eaeaea]"; }
+  @media screen and (-ms-high-contrast: active) {
+    .ms-Dropdown-items[data-v-d4b6df96] {
+      border: 1px solid "[theme:white, default: #ffffff]"; } }
+  @media screen and (-ms-high-contrast: black-on-white) {
+    .ms-Dropdown-items[data-v-d4b6df96] {
+      border: 1px solid "[theme:black, default: #000000]"; } }
+
+.ms-Dropdown-item[data-v-d4b6df96] {
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  height: 36px;
+  padding: 7px 10px;
+  position: relative;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+  @media screen and (-ms-high-contrast: active) {
+    .ms-Dropdown-item[data-v-d4b6df96] {
+      border-color: "[theme:black, default: #000000]"; } }
+  @media screen and (-ms-high-contrast: black-on-white) {
+    .ms-Dropdown-item[data-v-d4b6df96] {
+      border-color: "[theme:white, default: #ffffff]"; } }
+  .ms-Dropdown-item[data-v-d4b6df96]:hover {
+    background-color: "[theme:neutralLight, default: #eaeaea]";
+    color: "[theme:black, default: #000000]"; }
+    @media screen and (-ms-high-contrast: active) {
+      .ms-Dropdown-item[data-v-d4b6df96]:hover {
+        background-color: #1AEBFF;
+        border-color: #1AEBFF;
+        color: "[theme:black, default: #000000]"; }
+        .ms-Dropdown-item[data-v-d4b6df96]:hover:focus {
+          border-color: "[theme:black, default: #000000]"; } }
+    @media screen and (-ms-high-contrast: black-on-white) {
+      .ms-Dropdown-item[data-v-d4b6df96]:hover {
+        background-color: #37006E;
+        border-color: #37006E;
+        color: "[theme:white, default: #ffffff]"; } }
+  .ms-Dropdown-item[data-v-d4b6df96]:active {
+    background-color: "[theme:neutralLight, default: #eaeaea]";
+    border-color: "[theme:themePrimary, default: #0078d7]";
+    color: "[theme:black, default: #000000]"; }
+  .ms-Dropdown-item.is-disabled[data-v-d4b6df96] {
+    background: "[theme:white, default: #ffffff]";
+    color: "[theme:neutralTertiary, default: #a6a6a6]";
+    cursor: default; }
+
+.ms-Dropdown-item.is-selected[data-v-d4b6df96],
+.ms-Dropdown-item.ms-Dropdown-item--selected[data-v-d4b6df96] {
+  background-color: "[theme:themeLight, default: #c7e0f4]";
+  color: "[theme:black, default: #000000]"; }
+  .ms-Dropdown-item.is-selected[data-v-d4b6df96]:hover,
+  .ms-Dropdown-item.ms-Dropdown-item--selected[data-v-d4b6df96]:hover {
+    background-color: "[theme:themeLight, default: #c7e0f4]"; }
+  @media screen and (-ms-high-contrast: active) {
+    .ms-Dropdown-item.is-selected[data-v-d4b6df96],
+    .ms-Dropdown-item.ms-Dropdown-item--selected[data-v-d4b6df96] {
+      background-color: #1AEBFF;
+      border-color: #1AEBFF;
+      color: "[theme:black, default: #000000]"; }
+      .ms-Dropdown-item.is-selected[data-v-d4b6df96]:focus,
+      .ms-Dropdown-item.ms-Dropdown-item--selected[data-v-d4b6df96]:focus {
+        border-color: "[theme:black, default: #000000]"; } }
+  @media screen and (-ms-high-contrast: black-on-white) {
+    .ms-Dropdown-item.is-selected[data-v-d4b6df96],
+    .ms-Dropdown-item.ms-Dropdown-item--selected[data-v-d4b6df96] {
+      background-color: #37006E;
+      border-color: #37006E;
+      color: "[theme:white, default: #ffffff]"; } }
+
+.ms-Dropdown-caretDown[data-v-d4b6df96] {
+  bottom: 7px; }
+  .ms-Dropdown-caretDown.ms-Icon.ms-Icon--ChevronDown[data-v-d4b6df96]::before {
+    content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2048 2048" width="12" height="12" version="1.1" xmlns="http://www.w3.org/2000/svg"><path transform="translate(0, 2048) scale(1, -1)" d="M1939 1581l90 -90l-1005 -1005l-1005 1005l90 90l915 -915z" fill="black" stroke="none"/></svg>'); }
+
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+.ms-u-slideRightIn10[data-v-15bfa7e0] {
+  -webkit-animation-name: fadeIn, slideRightIn10;
+  -moz-animation-name: fadeIn, slideRightIn10;
+  -ms-animation-name: fadeIn, slideRightIn10;
+  -o-animation-name: fadeIn, slideRightIn10;
+  animation-name: fadeIn, slideRightIn10;
+  -webkit-animation-duration: 0.367s;
+  -moz-animation-duration: 0.367s;
+  -ms-animation-duration: 0.367s;
+  -o-animation-duration: 0.367s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes slideRightIn10 {
+  from {
+    -webkit-transform: translate3d(-10px, 0px, 0px); }
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px); } }
+
+@keyframes slideRightIn10 {
+  from {
+    transform: translate3d(-10px, 0px, 0px); }
+  to {
+    transform: translate3d(0px, 0px, 0px); } }
+
+.ms-u-slideRightIn20[data-v-15bfa7e0] {
+  -webkit-animation-name: fadeIn, slideRightIn20;
+  -moz-animation-name: fadeIn, slideRightIn20;
+  -ms-animation-name: fadeIn, slideRightIn20;
+  -o-animation-name: fadeIn, slideRightIn20;
+  animation-name: fadeIn, slideRightIn20;
+  -webkit-animation-duration: 0.367s;
+  -moz-animation-duration: 0.367s;
+  -ms-animation-duration: 0.367s;
+  -o-animation-duration: 0.367s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes slideRightIn20 {
+  from {
+    -webkit-transform: translate3d(-20px, 0px, 0px); }
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px); } }
+
+@keyframes slideRightIn20 {
+  from {
+    transform: translate3d(-20px, 0px, 0px); }
+  to {
+    transform: translate3d(0px, 0px, 0px); } }
+
+.ms-u-slideRightIn40[data-v-15bfa7e0] {
+  -webkit-animation-name: fadeIn, slideRightIn40;
+  -moz-animation-name: fadeIn, slideRightIn40;
+  -ms-animation-name: fadeIn, slideRightIn40;
+  -o-animation-name: fadeIn, slideRightIn40;
+  animation-name: fadeIn, slideRightIn40;
+  -webkit-animation-duration: 0.367s;
+  -moz-animation-duration: 0.367s;
+  -ms-animation-duration: 0.367s;
+  -o-animation-duration: 0.367s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes slideRightIn40 {
+  from {
+    -webkit-transform: translate3d(-40px, 0px, 0px); }
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px); } }
+
+@keyframes slideRightIn40 {
+  from {
+    transform: translate3d(-40px, 0px, 0px); }
+  to {
+    transform: translate3d(0px, 0px, 0px); } }
+
+.ms-u-slideLeftIn10[data-v-15bfa7e0] {
+  -webkit-animation-name: fadeIn, slideLeftIn10;
+  -moz-animation-name: fadeIn, slideLeftIn10;
+  -ms-animation-name: fadeIn, slideLeftIn10;
+  -o-animation-name: fadeIn, slideLeftIn10;
+  animation-name: fadeIn, slideLeftIn10;
+  -webkit-animation-duration: 0.367s;
+  -moz-animation-duration: 0.367s;
+  -ms-animation-duration: 0.367s;
+  -o-animation-duration: 0.367s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes slideLeftIn10 {
+  from {
+    -webkit-transform: translate3d(10px, 0px, 0px); }
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px); } }
+
+@keyframes slideLeftIn10 {
+  from {
+    transform: translate3d(10px, 0px, 0px); }
+  to {
+    transform: translate3d(0px, 0px, 0px); } }
+
+.ms-u-slideLeftIn20[data-v-15bfa7e0] {
+  -webkit-animation-name: fadeIn, slideLeftIn20;
+  -moz-animation-name: fadeIn, slideLeftIn20;
+  -ms-animation-name: fadeIn, slideLeftIn20;
+  -o-animation-name: fadeIn, slideLeftIn20;
+  animation-name: fadeIn, slideLeftIn20;
+  -webkit-animation-duration: 0.367s;
+  -moz-animation-duration: 0.367s;
+  -ms-animation-duration: 0.367s;
+  -o-animation-duration: 0.367s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes slideLeftIn20 {
+  from {
+    -webkit-transform: translate3d(20px, 0px, 0px); }
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px); } }
+
+@keyframes slideLeftIn20 {
+  from {
+    transform: translate3d(20px, 0px, 0px); }
+  to {
+    transform: translate3d(0px, 0px, 0px); } }
+
+.ms-u-slideLeftIn40[data-v-15bfa7e0] {
+  -webkit-animation-name: fadeIn, slideLeftIn40;
+  -moz-animation-name: fadeIn, slideLeftIn40;
+  -ms-animation-name: fadeIn, slideLeftIn40;
+  -o-animation-name: fadeIn, slideLeftIn40;
+  animation-name: fadeIn, slideLeftIn40;
+  -webkit-animation-duration: 0.367s;
+  -moz-animation-duration: 0.367s;
+  -ms-animation-duration: 0.367s;
+  -o-animation-duration: 0.367s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes slideLeftIn40 {
+  from {
+    -webkit-transform: translate3d(40px, 0px, 0px); }
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px); } }
+
+@keyframes slideLeftIn40 {
+  from {
+    transform: translate3d(40px, 0px, 0px); }
+  to {
+    transform: translate3d(0px, 0px, 0px); } }
+
+.ms-u-slideRightIn400[data-v-15bfa7e0] {
+  -webkit-animation-name: fadeIn, slideRightIn400;
+  -moz-animation-name: fadeIn, slideRightIn400;
+  -ms-animation-name: fadeIn, slideRightIn400;
+  -o-animation-name: fadeIn, slideRightIn400;
+  animation-name: fadeIn, slideRightIn400;
+  -webkit-animation-duration: 0.367s;
+  -moz-animation-duration: 0.367s;
+  -ms-animation-duration: 0.367s;
+  -o-animation-duration: 0.367s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes slideRightIn400 {
+  from {
+    -webkit-transform: translate3d(-400px, 0px, 0px); }
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px); } }
+
+@keyframes slideRightIn400 {
+  from {
+    transform: translate3d(-400px, 0px, 0px); }
+  to {
+    transform: translate3d(0px, 0px, 0px); } }
+
+.ms-u-slideLeftIn400[data-v-15bfa7e0] {
+  -webkit-animation-name: fadeIn, slideLeft400;
+  -moz-animation-name: fadeIn, slideLeft400;
+  -ms-animation-name: fadeIn, slideLeft400;
+  -o-animation-name: fadeIn, slideLeft400;
+  animation-name: fadeIn, slideLeft400;
+  -webkit-animation-duration: 0.367s;
+  -moz-animation-duration: 0.367s;
+  -ms-animation-duration: 0.367s;
+  -o-animation-duration: 0.367s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes slideLeft400 {
+  from {
+    -webkit-transform: translate3d(400px, 0px, 0px); }
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px); } }
+
+@keyframes slideLeft400 {
+  from {
+    transform: translate3d(400px, 0px, 0px); }
+  to {
+    transform: translate3d(0px, 0px, 0px); } }
+
+.ms-u-slideUpIn20[data-v-15bfa7e0] {
+  -webkit-animation-name: fadeIn, slideUpIn20;
+  -moz-animation-name: fadeIn, slideUpIn20;
+  -ms-animation-name: fadeIn, slideUpIn20;
+  -o-animation-name: fadeIn, slideUpIn20;
+  animation-name: fadeIn, slideUpIn20;
+  -webkit-animation-duration: 0.367s;
+  -moz-animation-duration: 0.367s;
+  -ms-animation-duration: 0.367s;
+  -o-animation-duration: 0.367s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes slideUpIn20 {
+  from {
+    -webkit-transform: translate3d(0px, 20px, 0px); }
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px); } }
+
+@keyframes slideUpIn20 {
+  from {
+    transform: translate3d(0px, 20px, 0px); }
+  to {
+    transform: translate3d(0px, 0px, 0px); } }
+
+.ms-u-slideUpIn10[data-v-15bfa7e0] {
+  -webkit-animation-name: fadeIn, slideUpIn10;
+  -moz-animation-name: fadeIn, slideUpIn10;
+  -ms-animation-name: fadeIn, slideUpIn10;
+  -o-animation-name: fadeIn, slideUpIn10;
+  animation-name: fadeIn, slideUpIn10;
+  -webkit-animation-duration: 0.167s;
+  -moz-animation-duration: 0.167s;
+  -ms-animation-duration: 0.167s;
+  -o-animation-duration: 0.167s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes slideUpIn10 {
+  from {
+    -webkit-transform: translate3d(0px, 10px, 0px); }
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px); } }
+
+@keyframes slideUpIn10 {
+  from {
+    transform: translate3d(0px, 10px, 0px); }
+  to {
+    transform: translate3d(0px, 0px, 0px); } }
+
+.ms-u-slideDownIn20[data-v-15bfa7e0] {
+  -webkit-animation-name: fadeIn, slideDownIn20;
+  -moz-animation-name: fadeIn, slideDownIn20;
+  -ms-animation-name: fadeIn, slideDownIn20;
+  -o-animation-name: fadeIn, slideDownIn20;
+  animation-name: fadeIn, slideDownIn20;
+  -webkit-animation-duration: 0.367s;
+  -moz-animation-duration: 0.367s;
+  -ms-animation-duration: 0.367s;
+  -o-animation-duration: 0.367s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes slideDownIn20 {
+  from {
+    -webkit-transform: translate3d(0px, -20px, 0px); }
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px); } }
+
+@keyframes slideDownIn20 {
+  from {
+    transform: translate3d(0px, -20px, 0px); }
+  to {
+    transform: translate3d(0px, 0px, 0px); } }
+
+.ms-u-slideDownIn10[data-v-15bfa7e0] {
+  -webkit-animation-name: fadeIn, slideDownIn10;
+  -moz-animation-name: fadeIn, slideDownIn10;
+  -ms-animation-name: fadeIn, slideDownIn10;
+  -o-animation-name: fadeIn, slideDownIn10;
+  animation-name: fadeIn, slideDownIn10;
+  -webkit-animation-duration: 0.167s;
+  -moz-animation-duration: 0.167s;
+  -ms-animation-duration: 0.167s;
+  -o-animation-duration: 0.167s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes slideDownIn10 {
+  from {
+    -webkit-transform: translate3d(0px, -10px, 0px); }
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px); } }
+
+@keyframes slideDownIn10 {
+  from {
+    transform: translate3d(0px, -10px, 0px); }
+  to {
+    transform: translate3d(0px, 0px, 0px); } }
+
+.ms-u-slideRightOut40[data-v-15bfa7e0] {
+  -webkit-animation-name: fadeOut, slideRightOut40;
+  -moz-animation-name: fadeOut, slideRightOut40;
+  -ms-animation-name: fadeOut, slideRightOut40;
+  -o-animation-name: fadeOut, slideRightOut40;
+  animation-name: fadeOut, slideRightOut40;
+  -webkit-animation-duration: 0.167s;
+  -moz-animation-duration: 0.167s;
+  -ms-animation-duration: 0.167s;
+  -o-animation-duration: 0.167s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes slideRightOut40 {
+  from {
+    -webkit-transform: translate3d(0px, 0px, 0px); }
+  to {
+    -webkit-transform: translate3d(40px, 0px, 0px); } }
+
+@keyframes slideRightOut40 {
+  from {
+    transform: translate3d(0px, 0px, 0px); }
+  to {
+    transform: translate3d(40px, 0px, 0px); } }
+
+.ms-u-slideLeftOut40[data-v-15bfa7e0] {
+  -webkit-animation-name: fadeOut, slideLeftOut40;
+  -moz-animation-name: fadeOut, slideLeftOut40;
+  -ms-animation-name: fadeOut, slideLeftOut40;
+  -o-animation-name: fadeOut, slideLeftOut40;
+  animation-name: fadeOut, slideLeftOut40;
+  -webkit-animation-duration: 0.167s;
+  -moz-animation-duration: 0.167s;
+  -ms-animation-duration: 0.167s;
+  -o-animation-duration: 0.167s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes slideLeftOut40 {
+  from {
+    -webkit-transform: translate3d(0, 0px, 0px); }
+  to {
+    -webkit-transform: translate3d(-40px, 0px, 0px); } }
+
+@keyframes slideLeftOut40 {
+  from {
+    transform: translate3d(0, 0px, 0px); }
+  to {
+    transform: translate3d(-40px, 0px, 0px); } }
+
+.ms-u-slideRightOut400[data-v-15bfa7e0] {
+  -webkit-animation-name: fadeOut, slideRightOut400;
+  -moz-animation-name: fadeOut, slideRightOut400;
+  -ms-animation-name: fadeOut, slideRightOut400;
+  -o-animation-name: fadeOut, slideRightOut400;
+  animation-name: fadeOut, slideRightOut400;
+  -webkit-animation-duration: 0.167s;
+  -moz-animation-duration: 0.167s;
+  -ms-animation-duration: 0.167s;
+  -o-animation-duration: 0.167s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes slideRightOut400 {
+  from {
+    -webkit-transform: translate3d(0, 0px, 0px); }
+  to {
+    -webkit-transform: translate3d(400px, 0px, 0px); } }
+
+@keyframes slideRightOut400 {
+  from {
+    transform: translate3d(0, 0px, 0px); }
+  to {
+    transform: translate3d(400px, 0px, 0px); } }
+
+.ms-u-slideLeftOut400[data-v-15bfa7e0] {
+  -webkit-animation-name: fadeOut, slideLeftOut400;
+  -moz-animation-name: fadeOut, slideLeftOut400;
+  -ms-animation-name: fadeOut, slideLeftOut400;
+  -o-animation-name: fadeOut, slideLeftOut400;
+  animation-name: fadeOut, slideLeftOut400;
+  -webkit-animation-duration: 0.167s;
+  -moz-animation-duration: 0.167s;
+  -ms-animation-duration: 0.167s;
+  -o-animation-duration: 0.167s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes slideLeftOut400 {
+  from {
+    -webkit-transform: translate3d(0, 0px, 0px); }
+  to {
+    -webkit-transform: translate3d(-400px, 0px, 0px); } }
+
+@keyframes slideLeftOut400 {
+  from {
+    transform: translate3d(0, 0px, 0px); }
+  to {
+    transform: translate3d(-400px, 0px, 0px); } }
+
+.ms-u-slideUpOut20[data-v-15bfa7e0] {
+  -webkit-animation-name: fadeOut, slideUpOut20;
+  -moz-animation-name: fadeOut, slideUpOut20;
+  -ms-animation-name: fadeOut, slideUpOut20;
+  -o-animation-name: fadeOut, slideUpOut20;
+  animation-name: fadeOut, slideUpOut20;
+  -webkit-animation-duration: 0.167s;
+  -moz-animation-duration: 0.167s;
+  -ms-animation-duration: 0.167s;
+  -o-animation-duration: 0.167s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes slideUpOut20 {
+  from {
+    -webkit-transform: translate3d(0px, 0, 0px); }
+  to {
+    -webkit-transform: translate3d(0px, -20px, 0px); } }
+
+@keyframes slideUpOut20 {
+  from {
+    transform: translate3d(0px, 0, 0px); }
+  to {
+    transform: translate3d(0px, -20px, 0px); } }
+
+.ms-u-slideUpOut10[data-v-15bfa7e0] {
+  -webkit-animation-name: fadeOut, slideUpOut10;
+  -moz-animation-name: fadeOut, slideUpOut10;
+  -ms-animation-name: fadeOut, slideUpOut10;
+  -o-animation-name: fadeOut, slideUpOut10;
+  animation-name: fadeOut, slideUpOut10;
+  -webkit-animation-duration: 0.167s;
+  -moz-animation-duration: 0.167s;
+  -ms-animation-duration: 0.167s;
+  -o-animation-duration: 0.167s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes slideUpOut10 {
+  from {
+    -webkit-transform: translate3d(0px, 0, 0px); }
+  to {
+    -webkit-transform: translate3d(0px, -10px, 0px); } }
+
+@keyframes slideUpOut10 {
+  from {
+    transform: translate3d(0px, 0, 0px); }
+  to {
+    transform: translate3d(0px, -10px, 0px); } }
+
+.ms-u-slideDownOut20[data-v-15bfa7e0] {
+  -webkit-animation-name: fadeOut, slideDownOut20;
+  -moz-animation-name: fadeOut, slideDownOut20;
+  -ms-animation-name: fadeOut, slideDownOut20;
+  -o-animation-name: fadeOut, slideDownOut20;
+  animation-name: fadeOut, slideDownOut20;
+  -webkit-animation-duration: 0.167s;
+  -moz-animation-duration: 0.167s;
+  -ms-animation-duration: 0.167s;
+  -o-animation-duration: 0.167s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes slideDownOut20 {
+  from {
+    -webkit-transform: translate3d(0px, 0, 0px); }
+  to {
+    -webkit-transform: translate3d(0px, 20px, 0px); } }
+
+@keyframes slideDownOut20 {
+  from {
+    transform: translate3d(0px, 0, 0px); }
+  to {
+    transform: translate3d(0px, 20px, 0px); } }
+
+.ms-u-slideDownOut10[data-v-15bfa7e0] {
+  -webkit-animation-name: fadeOut, slideDownOut10;
+  -moz-animation-name: fadeOut, slideDownOut10;
+  -ms-animation-name: fadeOut, slideDownOut10;
+  -o-animation-name: fadeOut, slideDownOut10;
+  animation-name: fadeOut, slideDownOut10;
+  -webkit-animation-duration: 0.167s;
+  -moz-animation-duration: 0.167s;
+  -ms-animation-duration: 0.167s;
+  -o-animation-duration: 0.167s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes slideDownOut10 {
+  from {
+    -webkit-transform: translate3d(0px, 0, 0px); }
+  to {
+    -webkit-transform: translate3d(0px, 10px, 0px); } }
+
+@keyframes slideDownOut10 {
+  from {
+    transform: translate3d(0px, 0, 0px); }
+  to {
+    transform: translate3d(0px, 10px, 0px); } }
+
+.ms-u-scaleUpIn100[data-v-15bfa7e0] {
+  -webkit-animation-name: fadeIn, scaleUp100;
+  -moz-animation-name: fadeIn, scaleUp100;
+  -ms-animation-name: fadeIn, scaleUp100;
+  -o-animation-name: fadeIn, scaleUp100;
+  animation-name: fadeIn, scaleUp100;
+  -webkit-animation-duration: 0.367s;
+  -moz-animation-duration: 0.367s;
+  -ms-animation-duration: 0.367s;
+  -o-animation-duration: 0.367s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes scaleUp100 {
+  from {
+    -webkit-transform: scale3d(0.98, 0.98, 1); }
+  to {
+    -webkit-transform: scale3d(1, 1, 1); } }
+
+@keyframes scaleUp100 {
+  from {
+    transform: scale3d(0.98, 0.98, 1); }
+  to {
+    transform: scale3d(1, 1, 1); } }
+
+.ms-u-scaleDownIn100[data-v-15bfa7e0] {
+  -webkit-animation-name: fadeIn, scaleDown100;
+  -moz-animation-name: fadeIn, scaleDown100;
+  -ms-animation-name: fadeIn, scaleDown100;
+  -o-animation-name: fadeIn, scaleDown100;
+  animation-name: fadeIn, scaleDown100;
+  -webkit-animation-duration: 0.367s;
+  -moz-animation-duration: 0.367s;
+  -ms-animation-duration: 0.367s;
+  -o-animation-duration: 0.367s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes scaleDown100 {
+  from {
+    -webkit-transform: scale3d(1.03, 1.03, 1); }
+  to {
+    -webkit-transform: scale3d(1, 1, 1); } }
+
+@keyframes scaleDown100 {
+  from {
+    transform: scale3d(1.03, 1.03, 1); }
+  to {
+    transform: scale3d(1, 1, 1); } }
+
+.ms-u-scaleUpOut103[data-v-15bfa7e0] {
+  -webkit-animation-name: fadeOut, scaleUp103;
+  -moz-animation-name: fadeOut, scaleUp103;
+  -ms-animation-name: fadeOut, scaleUp103;
+  -o-animation-name: fadeOut, scaleUp103;
+  animation-name: fadeOut, scaleUp103;
+  -webkit-animation-duration: 0.167s;
+  -moz-animation-duration: 0.167s;
+  -ms-animation-duration: 0.167s;
+  -o-animation-duration: 0.167s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes scaleUp103 {
+  from {
+    -webkit-transform: scale3d(1, 1, 1); }
+  to {
+    -webkit-transform: scale3d(1.03, 1.03, 1); } }
+
+@keyframes scaleUp103 {
+  from {
+    transform: scale3d(1, 1, 1); }
+  to {
+    transform: scale3d(1.03, 1.03, 1); } }
+
+.ms-u-scaleDownOut98[data-v-15bfa7e0] {
+  -webkit-animation-name: fadeOut, scaleDown98;
+  -moz-animation-name: fadeOut, scaleDown98;
+  -ms-animation-name: fadeOut, scaleDown98;
+  -o-animation-name: fadeOut, scaleDown98;
+  animation-name: fadeOut, scaleDown98;
+  -webkit-animation-duration: 0.167s;
+  -moz-animation-duration: 0.167s;
+  -ms-animation-duration: 0.167s;
+  -o-animation-duration: 0.167s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes scaleDown98 {
+  from {
+    -webkit-transform: scale3d(1, 1, 1); }
+  to {
+    -webkit-transform: scale3d(0.98, 0.98, 1); } }
+
+@keyframes scaleDown98 {
+  from {
+    transform: scale3d(1, 1, 1); }
+  to {
+    transform: scale3d(0.98, 0.98, 1); } }
+
+.ms-u-fadeIn400[data-v-15bfa7e0] {
+  -webkit-animation-duration: 0.367s;
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-fill-mode: both;
+  animation-duration: 0.367s;
+  animation-name: fadeIn;
+  animation-fill-mode: both; }
+
+.ms-u-fadeIn100[data-v-15bfa7e0] {
+  -webkit-animation-duration: 0.367s;
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-fill-mode: both;
+  animation-duration: 0.367s;
+  animation-name: fadeIn;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 0.167s;
+  animation-duration: 0.167s; }
+
+.ms-u-fadeIn200[data-v-15bfa7e0] {
+  -webkit-animation-duration: 0.367s;
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-fill-mode: both;
+  animation-duration: 0.367s;
+  animation-name: fadeIn;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 0.267s;
+  animation-duration: 0.267s; }
+
+.ms-u-fadeIn500[data-v-15bfa7e0] {
+  -webkit-animation-duration: 0.367s;
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-fill-mode: both;
+  animation-duration: 0.367s;
+  animation-name: fadeIn;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 0.467s;
+  animation-duration: 0.467s; }
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+    -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); }
+  to {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); }
+  to {
+    opacity: 1; } }
+
+.ms-u-fadeOut400[data-v-15bfa7e0] {
+  -webkit-animation-duration: 0.367s;
+  -webkit-animation-name: fadeOut;
+  -webkit-animation-fill-mode: both;
+  animation-duration: 0.367s;
+  animation-name: fadeOut;
+  animation-fill-mode: both; }
+
+.ms-u-fadeOut100[data-v-15bfa7e0] {
+  -webkit-animation-duration: 0.367s;
+  -webkit-animation-name: fadeOut;
+  -webkit-animation-fill-mode: both;
+  animation-duration: 0.367s;
+  animation-name: fadeOut;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 0.1s;
+  animation-duration: 0.1s; }
+
+.ms-u-fadeOut200[data-v-15bfa7e0] {
+  -webkit-animation-duration: 0.367s;
+  -webkit-animation-name: fadeOut;
+  -webkit-animation-fill-mode: both;
+  animation-duration: 0.367s;
+  animation-name: fadeOut;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 0.167s;
+  animation-duration: 0.167s; }
+
+.ms-u-fadeOut500[data-v-15bfa7e0] {
+  -webkit-animation-duration: 0.367s;
+  -webkit-animation-name: fadeOut;
+  -webkit-animation-fill-mode: both;
+  animation-duration: 0.367s;
+  animation-name: fadeOut;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 0.467s;
+  animation-duration: 0.467s; }
+
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+    -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); }
+  to {
+    opacity: 0; } }
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); }
+  to {
+    opacity: 0; } }
+
+.ms-u-rotate90deg[data-v-15bfa7e0] {
+  -webkit-animation-name: rotate90;
+  -moz-animation-name: rotate90;
+  -ms-animation-name: rotate90;
+  -o-animation-name: rotate90;
+  animation-name: rotate90;
+  -webkit-animation-duration: 0.1s;
+  -moz-animation-duration: 0.1s;
+  -ms-animation-duration: 0.1s;
+  -o-animation-duration: 0.1s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes rotate90 {
+  from {
+    -webkit-transform: rotateZ(0deg); }
+  to {
+    -webkit-transform: rotateZ(90deg); } }
+
+@keyframes rotate90 {
+  from {
+    transform: rotateZ(0deg); }
+  to {
+    transform: rotateZ(90deg); } }
+
+.ms-u-rotateN90deg[data-v-15bfa7e0] {
+  -webkit-animation-name: rotateN90;
+  -moz-animation-name: rotateN90;
+  -ms-animation-name: rotateN90;
+  -o-animation-name: rotateN90;
+  animation-name: rotateN90;
+  -webkit-animation-duration: 0.1s;
+  -moz-animation-duration: 0.1s;
+  -ms-animation-duration: 0.1s;
+  -o-animation-duration: 0.1s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes rotateN90 {
+  from {
+    -webkit-transform: rotateZ(90deg); }
+  to {
+    -webkit-transform: rotateZ(0deg); } }
+
+@keyframes rotateN90 {
+  from {
+    transform: rotateZ(90deg); }
+  to {
+    transform: rotateZ(0deg); } }
+
+.ms-u-expandCollapse400[data-v-15bfa7e0] {
+  -webkit-transition: height 0.367s cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  transition: height 0.367s cubic-bezier(0.1, 0.25, 0.75, 0.9); }
+
+.ms-u-expandCollapse200[data-v-15bfa7e0] {
+  -webkit-transition: height 0.167s cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  transition: height 0.167s cubic-bezier(0.1, 0.25, 0.75, 0.9); }
+
+.ms-u-expandCollapse100[data-v-15bfa7e0] {
+  -webkit-transition: height 0.1s cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  transition: height 0.1s cubic-bezier(0.1, 0.25, 0.75, 0.9); }
+
+.ms-u-delay100[data-v-15bfa7e0] {
+  -webkit-animation-delay: 0.167s;
+  animation-delay: 0.167s; }
+
+.ms-u-delay200[data-v-15bfa7e0] {
+  -webkit-animation-delay: 0.267s;
+  animation-delay: 0.267s; }
+
+/* Theme related color values */
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes color and background styles
+*/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes only the color values
+*/
+/***
+100	Thin (Hairline)
+200	Extra Light (Ultra Light)
+300	Light
+400	Normal
+500	Medium
+600	Semi Bold (Demi Bold)
+700	Bold
+800	Extra Bold (Ultra Bold)
+900	Black (Heavy)
+**/
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+.ms-Panel[data-v-15bfa7e0] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: "[theme:white, default: #ffffff]";
+  width: 100%;
+  max-width: 340px;
+  box-shadow: -30px 0 30px -30px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  display: none;
+  height: 100%; }
+  .ms-Panel.animate-in[data-v-15bfa7e0] {
+    -webkit-animation-name: fadeIn, slideLeftIn40;
+    -moz-animation-name: fadeIn, slideLeftIn40;
+    -ms-animation-name: fadeIn, slideLeftIn40;
+    -o-animation-name: fadeIn, slideLeftIn40;
+    animation-name: fadeIn, slideLeftIn40;
+    -webkit-animation-duration: 0.367s;
+    -moz-animation-duration: 0.367s;
+    -ms-animation-duration: 0.367s;
+    -o-animation-duration: 0.367s;
+    -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+    -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+    -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+    -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+    animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both; }
+  .ms-Panel.animate-out[data-v-15bfa7e0] {
+    -webkit-animation-name: fadeOut, slideRightOut40;
+    -moz-animation-name: fadeOut, slideRightOut40;
+    -ms-animation-name: fadeOut, slideRightOut40;
+    -o-animation-name: fadeOut, slideRightOut40;
+    animation-name: fadeOut, slideRightOut40;
+    -webkit-animation-duration: 0.167s;
+    -moz-animation-duration: 0.167s;
+    -ms-animation-duration: 0.167s;
+    -o-animation-duration: 0.167s;
+    -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+    -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+    -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+    -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+    animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both; }
+  .ms-Panel.is-open[data-v-15bfa7e0] {
+    display: block; }
+  .ms-Panel .ms-CommandBar[data-v-15bfa7e0] {
+    padding-right: 0;
+    padding-left: 8px; }
+
+.ms-Panel.ms-Panel--md[data-v-15bfa7e0] {
+  max-width: 340px; }
+
+.ms-Panel.ms-Panel--lg[data-v-15bfa7e0] {
+  max-width: 644px; }
+
+.ms-Panel.ms-Panel--xl[data-v-15bfa7e0] {
+  max-width: 940px; }
+
+.ms-Panel.ms-Panel--xxl[data-v-15bfa7e0] {
+  max-width: 1192px; }
+
+.ms-Panel--left[data-v-15bfa7e0] {
+  box-shadow: -30px 0 30px 30px rgba(0, 0, 0, 0.2);
+  left: 0;
+  right: auto; }
+  .ms-Panel--left.animate-in[data-v-15bfa7e0] {
+    -webkit-animation-name: fadeIn, slideRightIn40;
+    -moz-animation-name: fadeIn, slideRightIn40;
+    -ms-animation-name: fadeIn, slideRightIn40;
+    -o-animation-name: fadeIn, slideRightIn40;
+    animation-name: fadeIn, slideRightIn40;
+    -webkit-animation-duration: 0.367s;
+    -moz-animation-duration: 0.367s;
+    -ms-animation-duration: 0.367s;
+    -o-animation-duration: 0.367s;
+    -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+    -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+    -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+    -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+    animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both; }
+  .ms-Panel--left.animate-out[data-v-15bfa7e0] {
+    -webkit-animation-name: fadeOut, slideLeftOut40;
+    -moz-animation-name: fadeOut, slideLeftOut40;
+    -ms-animation-name: fadeOut, slideLeftOut40;
+    -o-animation-name: fadeOut, slideLeftOut40;
+    animation-name: fadeOut, slideLeftOut40;
+    -webkit-animation-duration: 0.167s;
+    -moz-animation-duration: 0.167s;
+    -ms-animation-duration: 0.167s;
+    -o-animation-duration: 0.167s;
+    -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+    -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+    -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+    -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+    animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both; }
+
+.ms-Panel-closeButton[data-v-15bfa7e0] {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 6px;
+  top: 0;
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  outline: 0;
+  padding: 0;
+  color: "[theme:neutralSecondary, default: #666666]";
+  font-size: 16px; }
+  .ms-Panel-closeButton[data-v-15bfa7e0]:hover {
+    color: "[theme:neutralPrimary, default: #333333]"; }
+  .ms-Panel-closeButton .ms-Icon--Cancel[data-v-15bfa7e0] {
+    margin-top: 2px; }
+  @media (max-width: 639px) {
+    .ms-Panel-closeButton[data-v-15bfa7e0] {
+      font-size: 20px;
+      line-height: 20px;
+      height: 44px;
+      right: 4px; } }
+
+.ms-Panel-contentInner[data-v-15bfa7e0] {
+  margin-top: 40px;
+  padding: 0 16px 20px;
+  overflow-y: auto;
+  height: 100%; }
+  @media (min-width: 640px) {
+    .ms-Panel-contentInner[data-v-15bfa7e0] {
+      padding: 0 32px 20px; } }
+  @media (min-width: 1366px) {
+    .ms-Panel-contentInner[data-v-15bfa7e0] {
+      padding: 0 40px 20px; } }
+
+.ms-Panel-headerText[data-v-15bfa7e0] {
+  font-weight: 100;
+  font-size: 21px;
+  color: "[theme:neutralPrimary, default: #333333]";
+  margin: 10px 0;
+  padding: 4px 0;
+  line-height: 1;
+  text-overflow: ellipsis;
+  overflow: hidden; }
+  @media (min-width: 1024px) {
+    .ms-Panel-headerText[data-v-15bfa7e0] {
+      margin-top: 30px; } }
+
+.ms-Overlay[data-v-15bfa7e0] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: "[theme:whiteTranslucent40, default: rgba(255,255,255,.4)]";
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 0;
+  display: none; }
+
+.ms-Overlay.is-visible[data-v-15bfa7e0] {
+  display: block; }
+
+.ms-Overlay--dark[data-v-15bfa7e0] {
+  background-color: "[theme:blackTranslucent40, default: rgba(0,0,0,.4)]"; }
+
+.ms-u-overflowHidden[data-v-15bfa7e0] {
+  overflow: hidden; }
+
 
 
 

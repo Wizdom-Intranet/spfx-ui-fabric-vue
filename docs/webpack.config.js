@@ -11,6 +11,7 @@ module.exports = {
         checkbox:'./docs/checkbox.js',
         choiceFieldGroup:'./docs/choiceFieldGroup.js',
         dropdown:'./docs/dropdown.js',
+        panel:'./docs/panel.js',
     },
     output: {
         filename: './[name].js',
