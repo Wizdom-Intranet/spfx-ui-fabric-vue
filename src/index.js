@@ -6,3 +6,5 @@ export { default as uiSearchbox } from "./components/uiSearchbox.vue";
 export { default as uiContextualMenu } from "./components/uiContextualMenu.vue";
 export { default as uiContextualMenuItem } from "./components/uiContextualMenuItem.vue";
 export { default as uiCheckbox } from "./components/uiCheckbox.vue";
+export { default as uiChoiceField } from "./components/uiChoiceField.vue";
+export { default as uiChoiceFieldGroup } from "./components/uiChoiceFieldGroup.vue";
