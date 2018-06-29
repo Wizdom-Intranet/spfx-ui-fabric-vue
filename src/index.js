@@ -8,3 +8,5 @@ export { default as uiContextualMenuItem } from "./components/uiContextualMenuIt
 export { default as uiCheckbox } from "./components/uiCheckbox.vue";
 export { default as uiChoiceField } from "./components/uiChoiceField.vue";
 export { default as uiChoiceFieldGroup } from "./components/uiChoiceFieldGroup.vue";
+export { default as uiDropdown } from "./components/uiDropdown.vue";
+export { default as uiDropdownItem } from "./components/uiDropdownItem.vue";

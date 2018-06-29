@@ -1621,4 +1621,390 @@ var uiChoiceFieldGroup = {_scopeId: 'data-v-9afc786c',
     extends :  ChoiceFieldGroup
 }
 
-export { uiButton, uiOverlay, uiDialog, uiCallout, uiSearchbox, uiContextualMenu, uiContextualMenuItem, uiCheckbox, uiChoiceField, uiChoiceFieldGroup };
+var Dropdown = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"dropdown",staticClass:"ms-Dropdown",class:{ 'is-disabled': _vm.disabled }},[(_vm.label)?_c('label',{staticClass:"ms-Label"},[_vm._v(_vm._s(_vm.label))]):_vm._e(),_vm._v(" "),_c('i',{staticClass:"ms-Dropdown-caretDown ms-Icon ms-Icon--ChevronDown"}),_vm._v(" "),_c('select',{ref:"dropdownSelect",staticClass:"ms-Dropdown-select",on:{"change":_vm.getCurrentSelected}},[_vm._t("default")],2)])},staticRenderFns: [],
+  name: 'ou-dropdown',
+
+  mixins: [disabled, eventHub],
+
+  props: {
+    label: String,
+    value: [String, Number],
+
+    placeholder: {
+      type: String,
+      default: 'Please select'
+    }
+  },
+
+  watch: {
+    value: function value() {
+      this.setSelectedItem();
+    }
+  },
+
+  created: function created() {
+    this.eventHub.$on('setSelectedStatus', this.setSelectedStatus);
+  },
+
+  beforeDestroy: function beforeDestroy() {
+    this.eventHub.$off('setSelectedStatus', this.setSelectedStatus);
+  },
+
+  mounted: function mounted() {
+    new this.$fabric.Dropdown(this.$refs.dropdown);
+
+    this.setDropdownTitle(this.placeholder);
+    this.setSelectedItem();
+  },
+
+  methods: {
+    setDropdownTitle: function setDropdownTitle(title) {
+      this.$refs.dropdown.querySelector('.ms-Dropdown-title').textContent = title;
+    },
+
+    // Because the office ui js dropdown component don't have selected class to set
+    // selected dropdown item, So write some hack code to set dropdown item selected.
+    // Maybe next version of office ui js will fix this problem, So this code sould be
+    // rewrite.
+    setSelectedItem: function setSelectedItem() {
+      this.eventHub.$emit('setSelectedItem', this.value);
+    },
+
+    setSelectedStatus: function setSelectedStatus(content) {
+      var this$1 = this;
+
+      this.$refs.dropdown.querySelectorAll('.ms-Dropdown-item').forEach(function (item) {
+        if (item.textContent == content) {
+          item.classList.add('is-selected');
+          this$1.setDropdownTitle(content);
+        } else {
+          item.classList.remove('is-selected');
+        }
+      });
+    },
+
+    getCurrentSelected: function getCurrentSelected() {
+      var dropdownSelect = this.$refs.dropdownSelect;
+      this.$emit('input', dropdownSelect.options[dropdownSelect.selectedIndex].value);
+    }
+  }
+};
+
+var PANEL_HOST_CLASS = "ms-PanelHost";
+var PanelHost = (function () {
+    function PanelHost(layer, callBack) {
+        this._layer = layer;
+        this._callBack = callBack;
+        this._createElements();
+        this._renderElements();
+    }
+    PanelHost.prototype.dismiss = function () {
+        this.overlay.hide();
+        document.body.removeChild(this.panelHost);
+    };
+    PanelHost.prototype.update = function (layer, callBack) {
+        this.panelHost.replaceChild(layer, this._layer);
+        if (callBack) {
+            callBack();
+        }
+    };
+    PanelHost.prototype._renderElements = function () {
+        document.body.appendChild(this.panelHost);
+        if (this._callBack) {
+            this._callBack(this._layer);
+        }
+    };
+    PanelHost.prototype._createElements = function () {
+        this.panelHost = document.createElement("div");
+        this.panelHost.classList.add(PANEL_HOST_CLASS);
+        this.panelHost.appendChild(this._layer);
+        this.overlay = new Overlay(this._overlayContainer);
+        this.overlay.show();
+        this.panelHost.appendChild(this.overlay.overlayElement);
+    };
+    return PanelHost;
+}());
+
+var ANIMATE_IN_STATE = "animate-in";
+var ANIMATE_OUT_STATE = "animate-out";
+var ANIMATION_END = 400;
+var Panel = (function () {
+    function Panel(panel, direction, animateOverlay) {
+        this._panel = panel;
+        this._direction = direction || "right";
+        this._animateOverlay = animateOverlay || true;
+        this.panelHost = new PanelHost(this._panel, this._animateInPanel);
+        this._closeButton = this._panel.querySelector(".ms-PanelAction-close");
+        this._clickHandler = this.dismiss.bind(this, null);
+        this._setEvents();
+        document.body.setAttribute("style", "height: 100%; overflow: hidden;");
+    }
+    Panel.prototype.dismiss = function (callBack) {
+        var _this = this;
+        this._panel.classList.add(ANIMATE_OUT_STATE);
+        setTimeout(function () {
+            _this._panel.classList.remove(ANIMATE_OUT_STATE);
+            _this._panel.classList.remove("is-open");
+            _this.panelHost.dismiss();
+            if (callBack) {
+                callBack();
+            }
+            document.body.setAttribute("style", "");
+        }, ANIMATION_END);
+        if (this._closeButton !== null) {
+            this._closeButton.removeEventListener("click", this._clickHandler);
+        }
+    };
+    Panel.prototype._setEvents = function () {
+        this.panelHost.overlay.overlayElement.addEventListener("click", this._clickHandler);
+        if (this._closeButton !== null) {
+            this._closeButton.addEventListener("click", this._clickHandler);
+        }
+    };
+    Panel.prototype._animateInPanel = function (layer) {
+        layer.classList.add(ANIMATE_IN_STATE);
+        layer.classList.add("is-open");
+        setTimeout(function () {
+            layer.classList.remove(ANIMATE_IN_STATE);
+        }, ANIMATION_END);
+    };
+    return Panel;
+}());
+
+var DROPDOWN_CLASS = "ms-Dropdown";
+var DROPDOWN_TITLE_CLASS = "ms-Dropdown-title";
+var DROPDOWN_LABEL_HELPER = "ms-Dropdown-truncator";
+var DROPDOWN_ITEMS_CLASS = "ms-Dropdown-items";
+var DROPDOWN_ITEM_CLASS = "ms-Dropdown-item";
+var DROPDOWN_SELECT_CLASS_SELECTOR = ".ms-Dropdown-select";
+var PANEL_CLASS = "ms-Panel";
+var IS_OPEN_CLASS = "is-open";
+var IS_DISABLED_CLASS = "is-disabled";
+var IS_SELECTED_CLASS = "is-selected";
+var ANIMATE_IN_CLASS = "animate-in";
+var SMALL_MAX_WIDTH = 479;
+var Dropdown$1 = (function () {
+    function Dropdown(container) {
+        var this$1 = this;
+
+        this._container = container;
+        this._dropdownLabelHelper = document.createElement("span");
+        this._dropdownLabelHelper.classList.add(DROPDOWN_LABEL_HELPER);
+        this._dropdownLabelHelper.classList.add(DROPDOWN_TITLE_CLASS);
+        this._newDropdownLabel = document.createElement("span");
+        this._newDropdownLabel.classList.add(DROPDOWN_TITLE_CLASS);
+        this._newDropdown = document.createElement("ul");
+        this._newDropdown.classList.add(DROPDOWN_ITEMS_CLASS);
+        this._dropdownItems = [];
+        this._originalDropdown = container.querySelector(DROPDOWN_SELECT_CLASS_SELECTOR);
+        var _originalOptions = this._originalDropdown.querySelectorAll("option");
+        this._onCloseDropdown = this._onCloseDropdown.bind(this);
+        this._onItemSelection = this._onItemSelection.bind(this);
+        this._onOpenDropdown = this._onOpenDropdown.bind(this);
+        for (var i = 0; i < _originalOptions.length; ++i) {
+            var option = _originalOptions[i];
+            if (option.selected) {
+                this$1._newDropdownLabel.innerHTML = option.text;
+            }
+            var newItem = document.createElement("li");
+            newItem.classList.add(DROPDOWN_ITEM_CLASS);
+            if (option.disabled) {
+                newItem.classList.add(IS_DISABLED_CLASS);
+            }
+            if (option.selected) {
+                newItem.classList.add(IS_SELECTED_CLASS);
+            }
+            newItem.innerHTML = option.text;
+            newItem.addEventListener("click", this$1._onItemSelection);
+            this$1._newDropdown.appendChild(newItem);
+            this$1._dropdownItems.push({
+                oldOption: option,
+                newItem: newItem
+            });
+        }
+        container.appendChild(this._newDropdownLabel);
+        container.appendChild(this._newDropdown);
+        container.appendChild(this._dropdownLabelHelper);
+        this._newDropdownLabel.addEventListener("click", this._onOpenDropdown);
+        this._checkTruncation();
+        this._setWindowEvent();
+    }
+    Dropdown.prototype._setWindowEvent = function () {
+        var _this = this;
+        window.addEventListener("resize", function () {
+            _this._doResize();
+            _this._checkTruncation();
+        }, false);
+    };
+    Dropdown.prototype._checkTruncation = function () {
+        var this$1 = this;
+
+        var selected = this._newDropdown.querySelector("." + IS_SELECTED_CLASS);
+        var origText = (selected ?
+            selected.textContent :
+            this._newDropdown.querySelectorAll("." + DROPDOWN_ITEM_CLASS)[0].textContent);
+        this._dropdownLabelHelper.textContent = origText;
+        if (this._dropdownLabelHelper.offsetHeight > this._newDropdownLabel.offsetHeight) {
+            var i = 0;
+            var ellipsis = "...";
+            var newText = void 0;
+            do {
+                i--;
+                newText = origText.slice(0, i);
+                this$1._dropdownLabelHelper.textContent = newText + ellipsis;
+            } while (this._dropdownLabelHelper.offsetHeight > this._newDropdownLabel.offsetHeight);
+        }
+        this._newDropdownLabel.textContent = this._dropdownLabelHelper.textContent;
+    };
+    Dropdown.prototype._getScreenSize = function () {
+        var w = window;
+        var wSize = {
+            x: 0,
+            y: 0
+        };
+        var d = document, e = d.documentElement, g = d.getElementsByTagName("body")[0];
+        wSize.x = w.innerWidth || e.clientWidth || g.clientWidth;
+        wSize.y = w.innerHeight || e.clientHeight || g.clientHeight;
+        return wSize;
+    };
+    Dropdown.prototype._doResize = function () {
+        var isOpen = this._container.classList.contains(IS_OPEN_CLASS);
+        if (!isOpen) {
+            return;
+        }
+        var screenSize = this._getScreenSize().x;
+        if (screenSize <= SMALL_MAX_WIDTH) {
+            this._openDropdownAsPanel();
+        }
+        else {
+            this._removeDropdownAsPanel();
+        }
+    };
+    Dropdown.prototype._openDropdownAsPanel = function () {
+        if (this._panel === undefined) {
+            this._panelContainer = document.createElement("div");
+            this._panelContainer.classList.add(PANEL_CLASS);
+            this._panelContainer.classList.add(DROPDOWN_CLASS);
+            this._panelContainer.classList.add(IS_OPEN_CLASS);
+            this._panelContainer.classList.add(ANIMATE_IN_CLASS);
+            this._panelContainer.appendChild(this._newDropdown);
+            this._panel = new Panel(this._panelContainer);
+        }
+    };
+    Dropdown.prototype._removeDropdownAsPanel = function (evt) {
+        var _this = this;
+        if (this._panel !== undefined) {
+            if (evt && evt.target === this._panel.panelHost.overlay.overlayElement) {
+                this._container.appendChild(this._newDropdown);
+            }
+            else {
+                this._panel.dismiss(function () {
+                    _this._container.appendChild(_this._newDropdown);
+                });
+            }
+            this._panel = undefined;
+        }
+    };
+    Dropdown.prototype._onOpenDropdown = function (evt) {
+        var isDisabled = this._container.classList.contains(IS_DISABLED_CLASS);
+        var isOpen = this._container.classList.contains(IS_OPEN_CLASS);
+        if (!isDisabled && !isOpen) {
+            evt.stopPropagation();
+            this._closeOtherDropdowns();
+            this._container.classList.add(IS_OPEN_CLASS);
+            document.addEventListener("click", this._onCloseDropdown);
+            var screenSize = this._getScreenSize().x;
+            if (screenSize <= SMALL_MAX_WIDTH) {
+                this._openDropdownAsPanel();
+            }
+        }
+    };
+    Dropdown.prototype._closeOtherDropdowns = function () {
+        var dropdowns = document.querySelectorAll("." + DROPDOWN_CLASS + "." + IS_OPEN_CLASS);
+        for (var i = 0; i < dropdowns.length; i++) {
+            dropdowns[i].classList.remove(IS_OPEN_CLASS);
+        }
+    };
+    Dropdown.prototype._onCloseDropdown = function (evt) {
+        this._removeDropdownAsPanel(evt);
+        this._container.classList.remove(IS_OPEN_CLASS);
+        document.removeEventListener("click", this._onCloseDropdown);
+    };
+    Dropdown.prototype._onItemSelection = function (evt) {
+        var this$1 = this;
+
+        var item = evt.target;
+        var isDropdownDisabled = this._container.classList.contains(IS_DISABLED_CLASS);
+        var isOptionDisabled = item.classList.contains(IS_DISABLED_CLASS);
+        if (!isDropdownDisabled && !isOptionDisabled) {
+            for (var i = 0; i < this._dropdownItems.length; ++i) {
+                if (this$1._dropdownItems[i].newItem === item) {
+                    this$1._dropdownItems[i].newItem.classList.add(IS_SELECTED_CLASS);
+                    this$1._dropdownItems[i].oldOption.selected = true;
+                }
+                else {
+                    this$1._dropdownItems[i].newItem.classList.remove(IS_SELECTED_CLASS);
+                    this$1._dropdownItems[i].oldOption.selected = false;
+                }
+            }
+            this._newDropdownLabel.innerHTML = item.textContent;
+            this._checkTruncation();
+            var changeEvent = document.createEvent("HTMLEvents");
+            changeEvent.initEvent("change", false, true);
+            this._originalDropdown.dispatchEvent(changeEvent);
+        }
+    };
+    return Dropdown;
+}());
+
+var uiDropdown = {_scopeId: 'data-v-d4b6df96',
+    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-Dropdown[data-v-d4b6df96] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 14px; font-weight: 400; margin-bottom: 10px; position: relative; outline: 0; } .ms-Dropdown:hover .ms-Dropdown-title[data-v-d4b6df96], .ms-Dropdown:hover .ms-Dropdown-caretDown[data-v-d4b6df96], .ms-Dropdown:focus .ms-Dropdown-title[data-v-d4b6df96], .ms-Dropdown:focus .ms-Dropdown-caretDown[data-v-d4b6df96], .ms-Dropdown:active .ms-Dropdown-title[data-v-d4b6df96], .ms-Dropdown:active .ms-Dropdown-caretDown[data-v-d4b6df96] { color: \"[theme:black, default: #000000]\"; } .ms-Dropdown:hover .ms-Dropdown-title[data-v-d4b6df96], .ms-Dropdown:active .ms-Dropdown-title[data-v-d4b6df96] { border-color: \"[theme:neutralSecondaryAlt, default: #767676]\"; } .ms-Dropdown:focus .ms-Dropdown-title[data-v-d4b6df96] { border-color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-Dropdown .ms-Label[data-v-d4b6df96] { display: inline-block; margin-bottom: 8px; } .ms-Dropdown.is-disabled .ms-Dropdown-title[data-v-d4b6df96] { background-color: \"[theme:neutralLighter, default: #f4f4f4]\"; border-color: \"[theme:neutralLighter, default: #f4f4f4]\"; color: \"[theme:neutralTertiary, default: #a6a6a6]\"; cursor: default; } @media screen and (-ms-high-contrast: active) { .ms-Dropdown.is-disabled .ms-Dropdown-title[data-v-d4b6df96] { border-color: #00ff00; color: #00ff00; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-Dropdown.is-disabled .ms-Dropdown-title[data-v-d4b6df96] { border-color: #600000; color: #600000; } } .ms-Dropdown.is-disabled .ms-Dropdown-caretDown[data-v-d4b6df96] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } @media screen and (-ms-high-contrast: active) { .ms-Dropdown.is-disabled .ms-Dropdown-caretDown[data-v-d4b6df96] { color: #00ff00; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-Dropdown.is-disabled .ms-Dropdown-caretDown[data-v-d4b6df96] { color: #600000; } } .ms-Dropdown.is-open .ms-Dropdown-items[data-v-d4b6df96] { display: block; position: absolute; } .ms-Panel .ms-Dropdown-items[data-v-d4b6df96] { box-shadow: none; overflow-y: auto; padding-top: 4px; max-height: 100%; } .ms-Panel .ms-Dropdown-items .ms-Dropdown-item[data-v-d4b6df96] { padding: 7px 16px; overflow: hidden; text-overflow: ellipsis; } .ms-Panel .ms-Dropdown-items[data-v-d4b6df96]::before { content: none; border: 0; } .ms-Dropdown-select[data-v-d4b6df96] { display: none; } .ms-Dropdown-caretDown[data-v-d4b6df96] { color: \"[theme:neutralDark, default: #212121]\"; font-size: 12px; position: absolute; right: 13px; bottom: 9px; z-index: 1; pointer-events: none; } .ms-Dropdown-title[data-v-d4b6df96] { box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; background: \"[theme:white, default: #ffffff]\"; border: 1px solid \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; cursor: pointer; display: block; height: 32px; padding: 5px 32px 0 10px; position: relative; overflow: hidden; } .ms-Dropdown-title.ms-Dropdown-truncator[data-v-d4b6df96] { height: auto; display: block; position: absolute; visibility: hidden; } .ms-Dropdown-items[data-v-d4b6df96] { box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4); background-color: \"[theme:white, default: #ffffff]\"; display: none; list-style-type: none; position: absolute; width: 100%; max-height: 200px; z-index: 400; overflow-y: scroll; top: auto; right: auto; bottom: auto; left: auto; max-width: 100%; } .ms-Dropdown-items[data-v-d4b6df96]::before { content: ''; position: absolute; z-index: -1; top: 0; left: 0; right: 0; bottom: 0; border: 1px solid \"[theme:neutralLight, default: #eaeaea]\"; } @media screen and (-ms-high-contrast: active) { .ms-Dropdown-items[data-v-d4b6df96] { border: 1px solid \"[theme:white, default: #ffffff]\"; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-Dropdown-items[data-v-d4b6df96] { border: 1px solid \"[theme:black, default: #000000]\"; } } .ms-Dropdown-item[data-v-d4b6df96] { box-sizing: border-box; cursor: pointer; display: block; height: 36px; padding: 7px 10px; position: relative; border: 1px solid transparent; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; } @media screen and (-ms-high-contrast: active) { .ms-Dropdown-item[data-v-d4b6df96] { border-color: \"[theme:black, default: #000000]\"; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-Dropdown-item[data-v-d4b6df96] { border-color: \"[theme:white, default: #ffffff]\"; } } .ms-Dropdown-item[data-v-d4b6df96]:hover { background-color: \"[theme:neutralLight, default: #eaeaea]\"; color: \"[theme:black, default: #000000]\"; } @media screen and (-ms-high-contrast: active) { .ms-Dropdown-item[data-v-d4b6df96]:hover { background-color: #1AEBFF; border-color: #1AEBFF; color: \"[theme:black, default: #000000]\"; } .ms-Dropdown-item[data-v-d4b6df96]:hover:focus { border-color: \"[theme:black, default: #000000]\"; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-Dropdown-item[data-v-d4b6df96]:hover { background-color: #37006E; border-color: #37006E; color: \"[theme:white, default: #ffffff]\"; } } .ms-Dropdown-item[data-v-d4b6df96]:active { background-color: \"[theme:neutralLight, default: #eaeaea]\"; border-color: \"[theme:themePrimary, default: #0078d7]\"; color: \"[theme:black, default: #000000]\"; } .ms-Dropdown-item.is-disabled[data-v-d4b6df96] { background: \"[theme:white, default: #ffffff]\"; color: \"[theme:neutralTertiary, default: #a6a6a6]\"; cursor: default; } .ms-Dropdown-item.is-selected[data-v-d4b6df96], .ms-Dropdown-item.ms-Dropdown-item--selected[data-v-d4b6df96] { background-color: \"[theme:themeLight, default: #c7e0f4]\"; color: \"[theme:black, default: #000000]\"; } .ms-Dropdown-item.is-selected[data-v-d4b6df96]:hover, .ms-Dropdown-item.ms-Dropdown-item--selected[data-v-d4b6df96]:hover { background-color: \"[theme:themeLight, default: #c7e0f4]\"; } @media screen and (-ms-high-contrast: active) { .ms-Dropdown-item.is-selected[data-v-d4b6df96], .ms-Dropdown-item.ms-Dropdown-item--selected[data-v-d4b6df96] { background-color: #1AEBFF; border-color: #1AEBFF; color: \"[theme:black, default: #000000]\"; } .ms-Dropdown-item.is-selected[data-v-d4b6df96]:focus, .ms-Dropdown-item.ms-Dropdown-item--selected[data-v-d4b6df96]:focus { border-color: \"[theme:black, default: #000000]\"; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-Dropdown-item.is-selected[data-v-d4b6df96], .ms-Dropdown-item.ms-Dropdown-item--selected[data-v-d4b6df96] { background-color: #37006E; border-color: #37006E; color: \"[theme:white, default: #ffffff]\"; } } .ms-Dropdown-caretDown[data-v-d4b6df96] { bottom: 7px; } .ms-Dropdown-caretDown.ms-Icon.ms-Icon--ChevronDown[data-v-d4b6df96]::before { content: url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"12\" height=\"12\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path transform=\"translate(0, 2048) scale(1, -1)\" d=\"M1939 1581l90 -90l-1005 -1005l-1005 1005l90 90l915 -915z\" fill=\"black\" stroke=\"none\"/></svg>'); } ");},
+    beforeMount: function beforeMount(){
+        this.$fabric = {
+            Dropdown : Dropdown$1
+        };
+    },
+    mounted: function mounted(){
+        var this$1 = this;
+
+        var childs = this.$refs.dropdown.querySelectorAll(":not([data-v-d4b6df96])");
+        Array.from(childs).map(function (c){ return c.setAttribute(this$1.$options._scopeId, ""); });
+    },
+    extends :  Dropdown
+}
+
+var dropdownitem = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('option',{domProps:{"value":_vm.value}},[_vm._t("default")],2)},staticRenderFns: [],
+  name: 'ou-dropdown-item',
+
+  inject: ['eventHub'],
+
+  props: {
+    value: [String, Number]
+  },
+
+  created: function created() {
+    this.eventHub.$on('setSelectedItem', this.setSelectedItem);
+  },
+
+  beforeDestroy: function beforeDestroy() {
+    this.eventHub.$off('setSelectedItem', this.setSelectedItem);
+  },
+
+  methods: {
+    setSelectedItem: function setSelectedItem(value) {
+      if (value === this.value) {
+        this.eventHub.$emit('setSelectedStatus', this.$slots.default[0].text);
+      }
+    }
+  }
+};
+
+var uiDropdownItem = {_scopeId: 'data-v-f816d130',
+    beforeCreate: function beforeCreate(){ loadStyles(" /*# sourceMappingURL=uiDropdownItem.vue.map */");},
+    extends :  dropdownitem,
+    created: function created(){
+        this.$options._scopeId = this.$parent.$options._scopeId;
+    }
+}
+
+export { uiButton, uiOverlay, uiDialog, uiCallout, uiSearchbox, uiContextualMenu, uiContextualMenuItem, uiCheckbox, uiChoiceField, uiChoiceFieldGroup, uiDropdown, uiDropdownItem };
