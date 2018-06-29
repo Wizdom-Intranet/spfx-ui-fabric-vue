@@ -2941,4 +2941,12 @@ var uiTextfield = {_scopeId: 'data-v-9e6e890e',
     extends :  textField
 }
 
-export { uiButton, uiOverlay, uiDialog, uiCallout, uiSearchbox, uiContextualMenu, uiContextualMenuItem, uiCheckbox, uiChoiceField, uiChoiceFieldGroup, uiDropdown, uiDropdownItem, uiPanel, uiSpinner, uiLabel, uiMessagebar, uiPersona, uiTextfield };
+function GetIcon(unicode, bundle)
+{
+    
+}
+var DeleteRowsMirrored = GetIcon("F650",14);
+var CaretLeftSolid8 = GetIcon("EDD9", 6);
+var CaretRightSolid8 = GetIcon("EDDA", 6);
+
+export { uiButton, uiOverlay, uiDialog, uiCallout, uiSearchbox, uiContextualMenu, uiContextualMenuItem, uiCheckbox, uiChoiceField, uiChoiceFieldGroup, uiDropdown, uiDropdownItem, uiPanel, uiSpinner, uiLabel, uiMessagebar, uiPersona, uiTextfield, DeleteRowsMirrored, CaretLeftSolid8, CaretRightSolid8 };

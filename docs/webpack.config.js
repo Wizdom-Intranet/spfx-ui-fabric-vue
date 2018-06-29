@@ -24,9 +24,11 @@ module.exports = {
         path: path.resolve(__dirname, 'dist')
     },
     mode: "development",
+    // mode: "production",
     module: {
         rules: [
             {
+                sideEffects : false,
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
                 use: {
@@ -37,6 +39,9 @@ module.exports = {
                 }
             }
         ]
+    },
+    externals: {
+        // vue: 'Vue'
     },
     resolve: {
         alias: {
