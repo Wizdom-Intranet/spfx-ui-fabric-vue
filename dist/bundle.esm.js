@@ -1410,4 +1410,215 @@ var uiCheckbox = {_scopeId: 'data-v-75ed8232',
     extends :  checkbox
 }
 
-export { uiButton, uiOverlay, uiDialog, uiCallout, uiSearchbox, uiContextualMenu, uiContextualMenuItem, uiCheckbox };
+var ChoiceField = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('li',{staticClass:"ms-RadioButton"},[_c('input',{staticClass:"ms-RadioButton-input",attrs:{"tabindex":"-1","type":"radio"}}),_vm._v(" "),_c('label',{ref:"radioLabel",staticClass:"ms-RadioButton-field",class:{ 'is-disabled': _vm.disabled },attrs:{"role":"radio","tabindex":"0","aria-checked":"false","name":"choicefieldgroup"},on:{"click":_vm.updateParentValue}},[_c('span',{staticClass:"ms-Label"},[_vm._t("default")],2)])])},staticRenderFns: [],
+  name: 'ou-choice-field',
+
+  mixins: [disabled],
+
+  inject: ['eventHub'],
+
+  props: {
+    value: [String, Number]
+  },
+
+  created: function created() {
+    this.eventHub.$on('setChoiceField', this.setChoiceField);
+  },
+
+  beforeDestroy: function beforeDestroy() {
+    this.eventHub.$off('setChoiceField', this.setChoiceField);
+  },
+
+  methods: {
+    updateParentValue: function updateParentValue() {
+      if (!this.disabled) {
+        this.eventHub.$emit('updateValue', this.value);
+      }
+    },
+
+    setChoiceField: function setChoiceField(value) {
+      if (this.disabled) { return; }
+
+      if (this.value == value) {
+        this.$refs.radioLabel.classList.add('is-checked');
+      } else {
+        this.$refs.radioLabel.classList.remove('is-checked');
+      }
+    }
+  }
+};
+
+var uiChoiceField = {
+    extends :  ChoiceField,
+    created: function created(){
+        this.$options._scopeId = this.$parent.$options._scopeId;
+    }
+}
+
+var ChoiceFieldGroup = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"choiceFieldGroup",staticClass:"ms-ChoiceFieldGroup",attrs:{"id":"choicefieldgroup","role":"radiogroup"}},[_c('div',{staticClass:"ms-ChoiceFieldGroup-title"},[_vm._t("title")],2),_vm._v(" "),_c('ul',{staticClass:"ms-ChoiceFieldGroup-list"},[_vm._t("default")],2)])},staticRenderFns: [],
+  name: 'ou-choice-field-group',
+
+  mixins: [eventHub],
+
+  props: {
+    value: [String, Number]
+  },
+
+  watch: {
+    value: function value() {
+      this.setChoiceFields();
+    }
+  },
+
+  created: function created() {
+    this.eventHub.$on('updateValue', this.updateValue);
+  },
+
+  beforeDestroy: function beforeDestroy() {
+    this.eventHub.$off('updateValue', this.updateValue);
+  },
+
+  mounted: function mounted() {
+    this.setChoiceFields();
+    new this.$fabric.ChoiceFieldGroup(this.$refs.choiceFieldGroup);
+  },
+
+  methods: {
+    updateValue: function updateValue(value) {
+      this.$emit('input', value);
+    },
+
+    setChoiceFields: function setChoiceFields() {
+      if (typeof this.value != 'undefined') {
+        this.eventHub.$emit('setChoiceField', this.value);
+      }
+    }
+  }
+};
+
+var RadioButton = (function () {
+    function RadioButton(container) {
+        this._container = container;
+        this._choiceField = this._container.querySelector(".ms-RadioButton-field");
+        this._choiceInput = this._container.querySelector(".ms-RadioButton-input");
+        if (this._choiceField.getAttribute("aria-checked") === "true") {
+            this._choiceField.classList.add("is-checked");
+        }
+        this._addListeners();
+    }
+    RadioButton.prototype.getValue = function () {
+        return this._choiceField.getAttribute("aria-checked") === "true" ? true : false;
+    };
+    RadioButton.prototype.toggle = function () {
+        if (this.getValue()) {
+            this.unCheck();
+        }
+        else {
+            this.check();
+        }
+    };
+    RadioButton.prototype.check = function () {
+        this._choiceField.setAttribute("aria-checked", "true");
+        this._choiceField.classList.add("is-checked");
+        this._choiceInput.checked = true;
+    };
+    RadioButton.prototype.unCheck = function () {
+        this._choiceField.setAttribute("aria-checked", "false");
+        this._choiceField.classList.remove("is-checked");
+        this._choiceInput.checked = false;
+    };
+    RadioButton.prototype.removeListeners = function () {
+        this._choiceField.removeEventListener("focus", this._FocusHandler.bind(this));
+        this._choiceField.removeEventListener("blur", this._BlurHandler.bind(this));
+        this._choiceField.removeEventListener("click", this._RadioClickHandler.bind(this));
+        this._choiceField.addEventListener("keydown", this._RadioKeydownHandler.bind(this));
+    };
+    RadioButton.prototype._addListeners = function () {
+        this._choiceField.addEventListener("focus", this._FocusHandler.bind(this), false);
+        this._choiceField.addEventListener("blur", this._BlurHandler.bind(this), false);
+        this._choiceField.addEventListener("click", this._RadioClickHandler.bind(this), false);
+        this._choiceField.addEventListener("keydown", this._RadioKeydownHandler.bind(this), false);
+    };
+    RadioButton.prototype._RadioClickHandler = function (event) {
+        event.stopPropagation();
+        event.preventDefault();
+        if (!this._choiceField.classList.contains("is-disabled")) {
+            this._dispatchSelectEvent();
+        }
+    };
+    RadioButton.prototype._dispatchSelectEvent = function () {
+        var objDict = {
+            bubbles: true,
+            cancelable: true,
+            detail: {
+                name: this._choiceField.getAttribute("name"),
+                item: this
+            }
+        };
+        this._choiceField.dispatchEvent(new CustomEvent("msChoicefield", objDict));
+    };
+    RadioButton.prototype._RadioKeydownHandler = function (event) {
+        if (event.keyCode === 32) {
+            event.stopPropagation();
+            event.preventDefault();
+            if (!this._choiceField.classList.contains("is-disabled")) {
+                this._dispatchSelectEvent();
+            }
+        }
+    };
+    RadioButton.prototype._FocusHandler = function () {
+        this._choiceField.classList.add("in-focus");
+    };
+    RadioButton.prototype._BlurHandler = function () {
+        this._choiceField.classList.remove("in-focus");
+    };
+    return RadioButton;
+}());
+
+var ChoiceFieldGroup$1 = (function () {
+    function ChoiceFieldGroup(container) {
+        this._choiceFieldGroup = container;
+        this._choiceFieldComponents = [];
+        this._initalSetup();
+        this._addListeners();
+    }
+    ChoiceFieldGroup.prototype.removeListeners = function () {
+        this._choiceFieldGroup.removeEventListener("msChoicefield", this._ChoiceFieldHandler.bind(this));
+    };
+    ChoiceFieldGroup.prototype._initalSetup = function () {
+        var this$1 = this;
+
+        var choiceFieldElements = this._choiceFieldGroup.querySelectorAll(".ms-RadioButton");
+        for (var i = 0; i < choiceFieldElements.length; i++) {
+            this$1._choiceFieldComponents[i] = new RadioButton(choiceFieldElements[i]);
+        }
+    };
+    ChoiceFieldGroup.prototype._addListeners = function () {
+        document.addEventListener("msChoicefield", this._ChoiceFieldHandler.bind(this), false);
+    };
+    ChoiceFieldGroup.prototype._ChoiceFieldHandler = function (event) {
+        var this$1 = this;
+
+        var name = event.detail.name;
+        var selectedChoice = event.detail.item;
+        if (this._choiceFieldGroup.id === name) {
+            for (var i = 0; i < this._choiceFieldComponents.length; i++) {
+                this$1._choiceFieldComponents[i].unCheck();
+            }
+            selectedChoice.check();
+        }
+    };
+    return ChoiceFieldGroup;
+}());
+
+var uiChoiceFieldGroup = {_scopeId: 'data-v-9afc786c',
+    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-RadioButton[data-v-9afc786c] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 14px; font-weight: 400; min-height: 36px; position: relative; } .ms-RadioButton .ms-Label[data-v-9afc786c] { font-size: 14px; padding: 0 0 0 26px; cursor: pointer; display: inline-block; } .ms-RadioButton-input[data-v-9afc786c] { position: absolute; opacity: 0; } .ms-RadioButton-field[data-v-9afc786c]::before { content: ''; display: inline-block; border: 2px solid \"[theme:neutralTertiary, default: #a6a6a6]\"; width: 20px; height: 20px; cursor: pointer; font-weight: normal; position: absolute; box-sizing: border-box; transition-property: border-color; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.4, 0, 0.23, 1); border-radius: 50%; } .ms-RadioButton-field[data-v-9afc786c]::after { content: ''; width: 0; height: 0; border-radius: 50%; position: absolute; top: 8px; left: 8px; bottom: 0; right: 0; transition-property: top, left, width, height; transition-duration: 150ms; transition-timing-function: cubic-bezier(0.4, 0, 0.23, 1); box-sizing: border-box; } @media screen and (-ms-high-contrast: active) { .ms-RadioButton-field[data-v-9afc786c]::after { color: #00ff00; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-RadioButton-field[data-v-9afc786c]::after { color: #600000; } } .ms-RadioButton-field[data-v-9afc786c] { display: inline-block; cursor: pointer; margin-top: 8px; position: relative; outline: 0; vertical-align: top; } .ms-RadioButton-field[data-v-9afc786c]:hover::before, .ms-RadioButton-field[data-v-9afc786c]:focus::before { border-color: \"[theme:neutralSecondaryAlt, default: #767676]\"; } .ms-RadioButton-field:hover .ms-Label[data-v-9afc786c], .ms-RadioButton-field:focus .ms-Label[data-v-9afc786c] { color: \"[theme:black, default: #000000]\"; } .ms-RadioButton-field.is-disabled[data-v-9afc786c] { cursor: default; } .ms-RadioButton-field.is-disabled[data-v-9afc786c]::before { background-color: \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; border-color: \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; color: \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; } @media screen and (-ms-high-contrast: active) { .ms-RadioButton-field.is-disabled[data-v-9afc786c]::before { border-color: #00ff00; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-RadioButton-field.is-disabled[data-v-9afc786c]::before { border-color: #600000; } } .ms-RadioButton-field.is-disabled .ms-Label[data-v-9afc786c] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } @media screen and (-ms-high-contrast: active) { .ms-RadioButton-field.is-disabled .ms-Label[data-v-9afc786c] { color: #00ff00; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-RadioButton-field.is-disabled .ms-Label[data-v-9afc786c] { color: #600000; } } .ms-RadioButton-field.is-disabled[data-v-9afc786c]:hover::before, .ms-RadioButton-field.is-disabled[data-v-9afc786c]:focus::before { border-color: \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; } .ms-RadioButton-field.in-focus[data-v-9afc786c]::before { border-color: \"[theme:neutralSecondaryAlt, default: #767676]\"; } .ms-RadioButton-field.is-checked[data-v-9afc786c]::before { border: 2px solid \"[theme:themePrimary, default: #0078d7]\"; background-color: transparent; } @media screen and (-ms-high-contrast: active) { .ms-RadioButton-field.is-checked[data-v-9afc786c]::before { border-color: #1AEBFF; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-RadioButton-field.is-checked[data-v-9afc786c]::before { border-color: #37006E; } } .ms-RadioButton-field.is-checked[data-v-9afc786c]::after { background-color: \"[theme:themePrimary, default: #0078d7]\"; top: 5px; left: 5px; width: 10px; height: 10px; } @media screen and (-ms-high-contrast: active) { .ms-RadioButton-field.is-checked[data-v-9afc786c]::after { background-color: #1AEBFF; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-RadioButton-field.is-checked[data-v-9afc786c]::after { background-color: #37006E; } } .ms-RadioButton-field.is-checked[data-v-9afc786c]:hover::before, .ms-RadioButton-field.is-checked[data-v-9afc786c]:focus::before { border-color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-RadioButton-field.is-checked.in-focus[data-v-9afc786c]::before { border-color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-ChoiceFieldGroup[data-v-9afc786c] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; margin-bottom: 4px; } .ms-ChoiceFieldGroup .ms-ChoiceFieldGroup-list[data-v-9afc786c] { padding: 0; margin: 0; list-style: none; } ");},
+    beforeMount: function beforeMount(){ 
+        this.$fabric = { 
+            ChoiceFieldGroup : ChoiceFieldGroup$1 
+        }; 
+    },
+    extends :  ChoiceFieldGroup
+}
+
+export { uiButton, uiOverlay, uiDialog, uiCallout, uiSearchbox, uiContextualMenu, uiContextualMenuItem, uiCheckbox, uiChoiceField, uiChoiceFieldGroup };
