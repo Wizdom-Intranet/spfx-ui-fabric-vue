@@ -19,6 +19,7 @@ Persona          | Yes        | Yes               | Yes                | Yes    
 Searchbox        | Yes        | Yes               | Yes                | Yes                         | icons changed to svgs
 Spinner          | Yes        | Yes               | Yes                | Yes                         | TESTS MISSING
 Textfield        | Yes        | Yes               | Yes                | Yes                         | TESTS MISSING
+Icons            | Yes        | No                | No                 | No                          |
 Breadcrumb       | No         | Yes               | Yes                | Yes                         | 
 Commandbar       | No         | Yes               | Yes                | Yes                         | 
 CommandButton    | No         | Yes               | Yes                | Yes                         | 

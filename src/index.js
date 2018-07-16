@@ -16,3 +16,5 @@ export { default as uiLabel } from "./components/uiLabel.vue";
 export { default as uiMessagebar } from "./components/uiMessagebar.vue";
 export { default as uiPersona } from "./components/uiPersona.vue";
 export { default as uiTextfield } from "./components/uiTextfield.vue";
+
+export *  from "./components/uiIcon";

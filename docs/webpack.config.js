@@ -17,6 +17,7 @@ module.exports = {
         messagebar:'./docs/messagebar.js',
         textfield:'./docs/textfield.js',
         persona:'./docs/persona.js',
+        icon:'./docs/icon.js',
     },
     output: {
         filename: './[name].js',
@@ -24,19 +25,26 @@ module.exports = {
         path: path.resolve(__dirname, 'dist')
     },
     mode: "development",
+    // mode: "production",
     module: {
         rules: [
             {
+                sideEffects : false,
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['es2015']
+                        presets: [
+                            ['env', {modules:"umd"}]
+                        ]
                     }
                 }
             }
         ]
+    },
+    externals: {
+        // vue: 'Vue'
     },
     resolve: {
         alias: {
