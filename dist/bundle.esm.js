@@ -2941,12 +2941,21 @@ var uiTextfield = {_scopeId: 'data-v-9e6e890e',
     extends :  textField
 }
 
-function GetIcon(unicode, bundle)
+var baseUrl = "https://spoprod-a.akamaihd.net/files/fabric/assets/icons"; // this is the baseUrl used by MS!
+var scopeId = "f04906fd";
+function GetIcon(name, unicode, bundle)
 {
-    
+    // *please not, we manually scope the css
+    return function (resolve){ //factory: https://vuejs.org/v2/guide/components-dynamic-async.html#Handling-Loading-State
+        loadStyles(("\n            @font-face{\n                font-family:fabricmdl2icons" + scopeId + bundle + ";\n                src: url(" + baseUrl + "/fabric-icons-" + bundle + ".woff) format(\"woff\")\n            }\n            .ms-Icon[data-v-" + scopeId + "]{display:inline-block;font-style:normal;font-weight:400;speak:none}\n            .ms-Icon--" + name + "[data-v-" + scopeId + "]:before{font-family:fabricmdl2icons" + scopeId + bundle + "; content:\"" + unicode + "\"}\n        "));
+        resolve({template : ("<i data-v-" + scopeId + " class='ms-Icon ms-Icon--" + name + "'></i>")});
+    };
 }
-var DeleteRowsMirrored = GetIcon("F650",14);
-var CaretLeftSolid8 = GetIcon("EDD9", 6);
-var CaretRightSolid8 = GetIcon("EDDA", 6);
 
-export { uiButton, uiOverlay, uiDialog, uiCallout, uiSearchbox, uiContextualMenu, uiContextualMenuItem, uiCheckbox, uiChoiceField, uiChoiceFieldGroup, uiDropdown, uiDropdownItem, uiPanel, uiSpinner, uiLabel, uiMessagebar, uiPersona, uiTextfield, DeleteRowsMirrored, CaretLeftSolid8, CaretRightSolid8 };
+var uiIconAdd = GetIcon("Add", "\uE710", "a13498cf");
+var uiIconCancel = GetIcon("Cancel", "\uE711", "a13498cf");
+var uiIconMore = GetIcon("More", "\uE712", "a13498cf");
+
+var uiIconFerry = GetIcon("Ferry", "\uE7E3", "1-a653c37c");
+
+export { uiButton, uiOverlay, uiDialog, uiCallout, uiSearchbox, uiContextualMenu, uiContextualMenuItem, uiCheckbox, uiChoiceField, uiChoiceFieldGroup, uiDropdown, uiDropdownItem, uiPanel, uiSpinner, uiLabel, uiMessagebar, uiPersona, uiTextfield, uiIconAdd, uiIconCancel, uiIconMore, uiIconFerry };
