@@ -21,8 +21,8 @@ Spinner          | Yes        | Yes               | Yes                | Yes    
 Textfield        | Yes        | Yes               | Yes                | Yes                         | TESTS MISSING
 Icons            | Yes        | No                | No                 | No                          |
 Breadcrumb       | No         | Yes               | Yes                | Yes                         | 
-Commandbar       | No         | Yes               | Yes                | Yes                         | 
-CommandButton    | No         | Yes               | Yes                | Yes                         | 
+Commandbar       | No         | Yes               | Yes                | Yes                         | Not to happy about the implementation, consider using the react version instead. Contextual menu, when items get collapsed, is not working as intended yet! TESTS MISSING
+CommandButton    | No         | Yes               | Yes                | Yes                         | icon is no longer a property, but instead a slot called "icon"
 Link             | No         | Yes               | Yes                | Yes                         | 
 List             | No         | Yes               | Yes                | Yes                         | 
 ListItem         | No         | Yes               | Yes                | Yes                         | 
@@ -41,10 +41,10 @@ Table            | No         | Yes               | No                 | Yes    
 
 ## Bonus components
 No part of the normal ui fabric, but used by multiple wizdom components
-Component        |Implemented|Notes
----              | :---:     |---
-Imageuploader    | No        | Needs a wizdom context, see wiki for more info
-Richtexteditor   | No        | Needs a license key, see wiki for more info
+Component        | Implemented | Notes
+---              | :---:       | ---
+Imageuploader    | No          | Needs a wizdom context, see wiki for more info
+Richtexteditor   | No          | Needs a license key, see wiki for more info
 TemplateSwitcher | No
 Typeahead        | No
 Multiselect      | No
