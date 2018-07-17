@@ -18,5 +18,6 @@ export { default as uiPersona } from "./components/uiPersona.vue";
 export { default as uiTextfield } from "./components/uiTextfield.vue";
 export { default as uiCommandBar } from "./components/uiCommandBar.vue";
 export { default as uiCommandButton } from "./components/uiCommandButton.vue";
+export { default as uiLink } from "./components/uiLink.vue";
 
 export *  from "./components/uiIcon";

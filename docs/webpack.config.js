@@ -20,6 +20,7 @@ module.exports = {
         icon:'./docs/icon.js',
         commandbar: './docs/commandbar.js',
         commandbutton: './docs/commandbutton.js',
+        link: './docs/link.js',
     },
     output: {
         filename: './[name].js',
