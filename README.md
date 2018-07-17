@@ -23,7 +23,7 @@ Icons            | Yes        | No                | No                 | No     
 Breadcrumb       | No         | Yes               | Yes                | Yes                         | 
 Commandbar       | *Yes       | Yes               | Yes                | Yes                         | Not to happy about the implementation, consider using the react version instead. *Contextual menu, when items get collapsed, is not working as intended yet! TESTS MISSING
 CommandButton    | Yes        | Yes               | Yes                | Yes                         | icon is no longer a property, but instead a slot called "icon"
-Link             | No         | Yes               | Yes                | Yes                         | 
+Link             | Yes        | Yes               | Yes                | Yes                         | TESTS MISSING
 List             | No         | Yes               | Yes                | Yes                         | 
 ListItem         | No         | Yes               | Yes                | Yes                         | 
 MessageBanner    | No         | Yes               | Yes                | Yes                         | 
