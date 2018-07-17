@@ -16,5 +16,6 @@ new Vue({
             <uiDropdownItem value='duck'>Duck quacking</uiDropdownItem>
             <uiDropdownItem value='cow'>Cow mooing</uiDropdownItem>
         </uiDropdown>
+        selected: {{select}}
     </div>`
 });

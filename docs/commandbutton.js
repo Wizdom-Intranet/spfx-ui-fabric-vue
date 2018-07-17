@@ -5,13 +5,13 @@ new Vue({
     el: '#app',
     components : { uiCommandButton, uiContextualMenu, uiContextualMenuItem, uiIconAdd },
     template : `<div>
-        <ui-command-button>Command</ui-command-button>
+        <ui-command-button>Simple command</ui-command-button>
 
         <br>
 
         <ui-command-button icon='CircleRing'>
             <div slot="icon"><uiIconAdd /></div>
-            Command
+            Command with icon
         </ui-command-button>
 
         <br>
@@ -23,16 +23,14 @@ new Vue({
         <br>
 
         <ui-command-button disabled>
-            <div slot="icon"><uiIconAdd /></div>
-            Command
+            Disabled command
         </ui-command-button>
 
         <br>
 
         <ui-contextual-menu>
             <ui-command-button type='dropdown'>
-                <div slot="icon"><uiIconAdd /></div>
-                New
+                With contextual menu
             </ui-command-button>
             <div slot='list'>
                 <ui-contextual-menu-item name='Animals' />

@@ -10,22 +10,22 @@ Checkbox         | Yes        | Yes               | Yes                | Yes    
 ChoiceFieldGroup | Yes        | Yes               | Yes                | Yes 
 ContextualMenu   | Yes        | Yes               | Yes                | Yes                         | icons changed to svgs
 Dialog           | Yes        | Yes               | Yes                | Yes                         | icons changed to svgs
-Dropdown         | Yes        | Yes               | Yes                | Yes                         | icons changed to svgs, TESTS MISSING
-Label            | Yes        | Yes               | Yes                | Yes                         | TESTS MISSING
-Messagebar       | Yes        | Yes               | Yes                | Yes                         | TESTS MISSING
-Overlay          | Yes        | Yes               | Yes                | Yes                         | TESTS MISSING
-Panel            | Yes        | Yes               | Yes                | Yes                         | TESTS MISSING
-Persona          | Yes        | Yes               | Yes                | Yes                         | TESTS MISSING
+Dropdown         | Yes        | Yes               | Yes                | Yes                         | icons changed to svgs, 
+Label            | Yes        | Yes               | Yes                | Yes                         | 
+Messagebar       | Yes        | Yes               | Yes                | Yes                         | icon is no longer a property, but instead a slot called "icon"
+Overlay          | Yes        | Yes               | Yes                | Yes                         | 
+Panel            | Yes        | Yes               | Yes                | Yes                         | 
+Persona          | Yes        | Yes               | Yes                | Yes                         | 
 Searchbox        | Yes        | Yes               | Yes                | Yes                         | icons changed to svgs
-Spinner          | Yes        | Yes               | Yes                | Yes                         | TESTS MISSING
-Textfield        | Yes        | Yes               | Yes                | Yes                         | TESTS MISSING
+Spinner          | Yes        | Yes               | Yes                | Yes                         | TESTS MISSING, moving, so not possible to test with screenshots!
+Textfield        | Yes        | Yes               | Yes                | Yes                         | 
 Icons            | Yes        | No                | No                 | No                          |
 Breadcrumb       | No         | Yes               | Yes                | Yes                         | 
 Commandbar       | *Yes       | Yes               | Yes                | Yes                         | Not to happy about the implementation, consider using the react version instead. *Contextual menu, when items get collapsed, is not working as intended yet! TESTS MISSING
 CommandButton    | Yes        | Yes               | Yes                | Yes                         | icon is no longer a property, but instead a slot called "icon"
-Link             | Yes        | Yes               | Yes                | Yes                         | TESTS MISSING
-List             | No         | Yes               | Yes                | Yes                         | 
-ListItem         | No         | Yes               | Yes                | Yes                         | 
+Link             | Yes        | Yes               | Yes                | Yes                         | 
+List             | No         | Yes               | No                 | Yes                         | 
+ListItem         | No         | Yes               | No                 | Yes                         | 
 MessageBanner    | No         | Yes               | Yes                | Yes                         | 
 OrgChart         | No         | Yes               | Yes                | Yes                         | 
 Pivot            | No         | Yes               | Yes                | Yes                         | 
