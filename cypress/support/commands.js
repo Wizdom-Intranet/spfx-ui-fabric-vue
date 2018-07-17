@@ -35,8 +35,10 @@ Cypress.Commands.add('vrt', { prevSubject: true }, (prevSubject, ssName) => {
             cy.exec(cmd , { failOnNonZeroExit : false}).then((result)=>{
                 var errorPercent = result.stdout.split('error: ')[1].split('%')[0] * 1;
                 if(errorPercent<0.1)
+                {
                     cy.task("delete", diffFile);
-                cy.task("delete", ssFile);
+                    cy.task("delete", ssFile);
+                }
                 cy.then(()=>{
                     assert(errorPercent < 0.1, "Visual comparison: '" + ssName + "' are " + errorPercent + "% different");
                 })
