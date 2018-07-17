@@ -19,5 +19,7 @@ export { default as uiTextfield } from "./components/uiTextfield.vue";
 export { default as uiCommandBar } from "./components/uiCommandBar.vue";
 export { default as uiCommandButton } from "./components/uiCommandButton.vue";
 export { default as uiLink } from "./components/uiLink.vue";
+export { default as uiPivot } from "./components/uiPivot.vue";
+export { default as uiPivotItem } from "./components/uiPivotItem.vue";
 
 export *  from "./components/uiIcon";

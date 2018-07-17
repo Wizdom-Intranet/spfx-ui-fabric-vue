@@ -28,7 +28,7 @@ List             | No         | Yes               | No                 | Yes    
 ListItem         | No         | Yes               | No                 | Yes                         | 
 MessageBanner    | No         | Yes               | Yes                | Yes                         | 
 OrgChart         | No         | Yes               | Yes                | Yes                         | 
-Pivot            | No         | Yes               | Yes                | Yes                         | 
+Pivot            | Yes        | Yes               | Yes                | Yes                         | 
 ProgressIndicator| No         | Yes               | Yes                | Yes                         | 
 Toggle           | No         | Yes               | Yes                | Yes                         | 
 Facepile         | No         | Yes               | No                 | Yes                         |
