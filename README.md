@@ -21,8 +21,8 @@ Spinner          | Yes        | Yes               | Yes                | Yes    
 Textfield        | Yes        | Yes               | Yes                | Yes                         | TESTS MISSING
 Icons            | Yes        | No                | No                 | No                          |
 Breadcrumb       | No         | Yes               | Yes                | Yes                         | 
-Commandbar       | No         | Yes               | Yes                | Yes                         | Not to happy about the implementation, consider using the react version instead. Contextual menu, when items get collapsed, is not working as intended yet! TESTS MISSING
-CommandButton    | No         | Yes               | Yes                | Yes                         | icon is no longer a property, but instead a slot called "icon"
+Commandbar       | *Yes       | Yes               | Yes                | Yes                         | Not to happy about the implementation, consider using the react version instead. *Contextual menu, when items get collapsed, is not working as intended yet! TESTS MISSING
+CommandButton    | Yes        | Yes               | Yes                | Yes                         | icon is no longer a property, but instead a slot called "icon"
 Link             | No         | Yes               | Yes                | Yes                         | 
 List             | No         | Yes               | Yes                | Yes                         | 
 ListItem         | No         | Yes               | Yes                | Yes                         | 
