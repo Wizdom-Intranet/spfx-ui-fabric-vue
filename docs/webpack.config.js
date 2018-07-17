@@ -18,6 +18,8 @@ module.exports = {
         textfield:'./docs/textfield.js',
         persona:'./docs/persona.js',
         icon:'./docs/icon.js',
+        commandbar: './docs/commandbar.js',
+        commandbutton: './docs/commandbutton.js',
     },
     output: {
         filename: './[name].js',

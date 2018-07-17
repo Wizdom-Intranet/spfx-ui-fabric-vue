@@ -59,6 +59,509 @@
 /** Warning **/
 /** Server Warning **/
 /** Success **/
+.ms-Callout[data-v-64664f3c] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  width: 288px; }
+  .ms-Callout.is-hidden[data-v-64664f3c] {
+    display: none; }
+
+.ms-Callout-header[data-v-64664f3c] {
+  z-index: 105;
+  padding-top: 24px;
+  padding-bottom: 12px;
+  padding-left: 28px;
+  padding-right: 28px; }
+
+.ms-Callout-title[data-v-64664f3c] {
+  margin: 0;
+  font-weight: 300;
+  font-size: 21px; }
+
+.ms-Callout-subText[data-v-64664f3c] {
+  margin: 0;
+  font-weight: 300;
+  color: "[theme:neutralPrimary, default: #333333]";
+  font-size: 12px; }
+
+.ms-Callout-close[data-v-64664f3c] {
+  margin: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 8px;
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
+  color: "[theme:neutralSecondary, default: #666666]";
+  z-index: 110; }
+
+.ms-Callout-link[data-v-64664f3c] {
+  font-size: 14px; }
+
+.ms-Callout-inner[data-v-64664f3c] {
+  height: 100%;
+  padding-top: 0;
+  padding-bottom: 12px;
+  padding-left: 28px;
+  padding-right: 28px; }
+
+.ms-Callout-actions[data-v-64664f3c] {
+  position: relative;
+  margin-top: 20px;
+  width: 100%;
+  white-space: nowrap; }
+  .ms-Callout-actions .ms-CommandButton.ms-CommandButton--inline[data-v-64664f3c] {
+    height: 27px;
+    line-height: 27px; }
+    .ms-Callout-actions .ms-CommandButton.ms-CommandButton--inline .ms-CommandButton-button[data-v-64664f3c] {
+      height: 27px;
+      line-height: 27px; }
+    .ms-Callout-actions .ms-CommandButton.ms-CommandButton--inline .ms-CommandButton-label[data-v-64664f3c] {
+      line-height: 27px; }
+    .ms-Callout-actions .ms-CommandButton.ms-CommandButton--inline .ms-CommandButton-icon[data-v-64664f3c] {
+      line-height: 27px; }
+    .ms-Callout-actions .ms-CommandButton.ms-CommandButton--inline:hover .ms-Button[data-v-64664f3c],
+    .ms-Callout-actions .ms-CommandButton.ms-CommandButton--inline:focus .ms-Button[data-v-64664f3c] {
+      color: "[theme:themePrimary, default: #0078d7]"; }
+  .ms-Callout-actions .ms-Callout-button[data-v-64664f3c] {
+    margin-right: 12px; }
+
+.ms-Callout.ms-Callout--OOBE .ms-Callout-header[data-v-64664f3c] {
+  padding: 28px 24px;
+  background-color: "[theme:themePrimary, default: #0078d7]"; }
+
+.ms-Callout.ms-Callout--OOBE .ms-Callout-title[data-v-64664f3c] {
+  font-weight: 100;
+  font-size: 28px;
+  color: "[theme:white, default: #ffffff]"; }
+
+.ms-Callout.ms-Callout--OOBE .ms-Callout-inner[data-v-64664f3c] {
+  padding-top: 20px; }
+
+.ms-Callout.ms-Callout--OOBE .ms-Callout-subText[data-v-64664f3c] {
+  font-size: 14px; }
+
+.ms-Callout.ms-Callout--actionText .ms-Callout-actions[data-v-64664f3c] {
+  border-top: 1px solid "[theme:neutralLight, default: #eaeaea]";
+  padding-top: 12px; }
+
+.ms-Callout.ms-Callout--actionText .ms-Callout-inner[data-v-64664f3c] {
+  padding-bottom: 12px; }
+
+.ms-Callout.ms-Callout--peek .ms-Callout-header[data-v-64664f3c] {
+  padding-bottom: 0; }
+
+.ms-Callout.ms-Callout--peek .ms-Callout-title[data-v-64664f3c] {
+  font-size: 14px; }
+
+.ms-Callout.ms-Callout--peek .ms-Callout-actions[data-v-64664f3c] {
+  margin-top: 12px;
+  margin-bottom: -4px; }
+
+.ms-ContextualHost[data-v-64664f3c] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  z-index: 10;
+  margin: 16px auto;
+  position: relative;
+  min-width: 10px;
+  display: none;
+  background-color: "[theme:white, default: #ffffff]";
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4); }
+  .ms-ContextualHost.is-positioned[data-v-64664f3c] {
+    position: absolute;
+    margin: 0; }
+  .ms-ContextualHost.is-open[data-v-64664f3c] {
+    display: inline-block; }
+
+.ms-ContextualHost-beak[data-v-64664f3c] {
+  box-shadow: 0 0 15px -5px "[theme:neutralPrimaryAlt, default: #3c3c3c]";
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  background: "[theme:white, default: #ffffff]";
+  border: 1px solid "[theme:neutralLight, default: #eaeaea]";
+  box-sizing: border-box;
+  top: -6px;
+  display: none;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  z-index: 0;
+  outline: 1px solid transparent; }
+
+.ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-64664f3c],
+.ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-64664f3c] {
+  top: 40px;
+  display: none; }
+
+.ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-64664f3c] {
+  left: -10px; }
+
+.ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-64664f3c] {
+  right: -10px; }
+
+.ms-ContextualHost.ms-ContextualHost--arrowTop .ms-ContextualHost-beak[data-v-64664f3c] {
+  display: block;
+  top: -10px; }
+
+.ms-ContextualHost.ms-ContextualHost--arrowBottom .ms-ContextualHost-beak[data-v-64664f3c] {
+  display: block;
+  bottom: -10px; }
+
+.ms-ContextualHost-main[data-v-64664f3c] {
+  position: relative;
+  background-color: "[theme:white, default: #ffffff]";
+  box-sizing: border-box;
+  outline: 1px solid transparent;
+  z-index: 5;
+  min-height: 10px; }
+
+.ms-ContextualHost-close[data-v-64664f3c] {
+  margin: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 8px;
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
+  color: "[theme:neutralSecondary, default: #666666]";
+  z-index: 10; }
+
+.ms-ContextualHost.ms-ContextualHost--close .ms-ContextualHost-title[data-v-64664f3c] {
+  margin-right: 20px; }
+
+.ms-ContextualHost.ms-ContextualHost--primaryArrow .ms-ContextualHost-beak[data-v-64664f3c] {
+  background-color: "[theme:themePrimary, default: #0078d7]"; }
+
+@media (min-width: 480px) {
+  .ms-ContextualHost[data-v-64664f3c] {
+    margin: 16px; }
+    .ms-ContextualHost.is-positioned[data-v-64664f3c] {
+      margin: 0; }
+  .ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-64664f3c],
+  .ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-64664f3c] {
+    display: block; } }
+
+.ms-Icon.ms-Icon--Clear[data-v-64664f3c] {
+  content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2048 2048" width="14" height="14" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M1115 1024l914 -915l-90 -90l-915 914l-915 -914l-90 90l914 915l-914 915l90 90l915 -914l915 914l90 -90z" fill="black" stroke="none"/></svg>'); }
+
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+/* Theme related color values */
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes color and background styles
+*/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes only the color values
+*/
+/***
+100	Thin (Hairline)
+200	Extra Light (Ultra Light)
+300	Light
+400	Normal
+500	Medium
+600	Semi Bold (Demi Bold)
+700	Bold
+800	Extra Bold (Ultra Bold)
+900	Black (Heavy)
+**/
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+.ms-Button[data-v-79820dd6] {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: "[theme:neutralPrimary, default: #333333]";
+  font-size: 14px;
+  font-weight: 400;
+  background-color: "[theme:neutralLighter, default: #f4f4f4]";
+  border: 1px solid "[theme:neutralLighter, default: #f4f4f4]";
+  cursor: pointer;
+  display: inline-block;
+  height: 32px;
+  min-width: 80px;
+  padding: 4px 20px 6px; }
+  .ms-Button.is-hidden[data-v-79820dd6] {
+    display: none; }
+  .ms-Button[data-v-79820dd6]:hover {
+    background-color: "[theme:neutralLight, default: #eaeaea]";
+    border-color: "[theme:neutralLight, default: #eaeaea]"; }
+    .ms-Button:hover .ms-Button-label[data-v-79820dd6] {
+      color: "[theme:black, default: #000000]"; }
+    @media screen and (-ms-high-contrast: active) {
+      .ms-Button[data-v-79820dd6]:hover {
+        color: #1AEBFF;
+        border-color: #1AEBFF; } }
+    @media screen and (-ms-high-contrast: black-on-white) {
+      .ms-Button[data-v-79820dd6]:hover {
+        color: #37006E;
+        border-color: #37006E; } }
+  .ms-Button[data-v-79820dd6]:focus {
+    background-color: "[theme:neutralLight, default: #eaeaea]";
+    border-color: "[theme:themePrimary, default: #0078d7]";
+    outline: 1px solid transparent; }
+    .ms-Button:focus .ms-Button-label[data-v-79820dd6] {
+      color: "[theme:black, default: #000000]"; }
+  .ms-Button[data-v-79820dd6]:active {
+    background-color: "[theme:themePrimary, default: #0078d7]";
+    border-color: "[theme:themePrimary, default: #0078d7]"; }
+    .ms-Button:active .ms-Button-label[data-v-79820dd6] {
+      color: "[theme:white, default: #ffffff]"; }
+  .ms-Button[data-v-79820dd6]:disabled, .ms-Button.is-disabled[data-v-79820dd6] {
+    background-color: "[theme:neutralLighter, default: #f4f4f4]";
+    border-color: "[theme:neutralLighter, default: #f4f4f4]";
+    cursor: default; }
+    .ms-Button:disabled .ms-Button-label[data-v-79820dd6], .ms-Button.is-disabled .ms-Button-label[data-v-79820dd6] {
+      color: "[theme:neutralTertiary, default: #a6a6a6]"; }
+    .ms-Button[data-v-79820dd6]:disabled:hover, .ms-Button[data-v-79820dd6]:disabled:focus, .ms-Button.is-disabled[data-v-79820dd6]:hover, .ms-Button.is-disabled[data-v-79820dd6]:focus {
+      outline: 0; }
+
+.ms-Button-label[data-v-79820dd6] {
+  color: "[theme:neutralPrimary, default: #333333]";
+  font-weight: 600;
+  font-size: 14px; }
+
+.ms-Button-icon[data-v-79820dd6],
+.ms-Button-description[data-v-79820dd6] {
+  display: none; }
+
+.ms-Button.ms-Button--primary[data-v-79820dd6] {
+  background-color: "[theme:themePrimary, default: #0078d7]";
+  border-color: "[theme:themePrimary, default: #0078d7]"; }
+  .ms-Button.ms-Button--primary .ms-Button-label[data-v-79820dd6] {
+    color: "[theme:white, default: #ffffff]"; }
+  .ms-Button.ms-Button--primary[data-v-79820dd6]:hover {
+    background-color: "[theme:themeDark, default: #005a9e]";
+    border-color: "[theme:themeDark, default: #005a9e]"; }
+  .ms-Button.ms-Button--primary[data-v-79820dd6]:focus {
+    background-color: "[theme:themeDark, default: #005a9e]";
+    border-color: "[theme:themeDarker, default: #004578]"; }
+  .ms-Button.ms-Button--primary[data-v-79820dd6]:active {
+    background-color: "[theme:themePrimary, default: #0078d7]";
+    border-color: "[theme:themePrimary, default: #0078d7]"; }
+  .ms-Button.ms-Button--primary[data-v-79820dd6]:disabled, .ms-Button.ms-Button--primary.is-disabled[data-v-79820dd6] {
+    background-color: "[theme:neutralLighter, default: #f4f4f4]";
+    border-color: "[theme:neutralLighter, default: #f4f4f4]"; }
+    .ms-Button.ms-Button--primary:disabled .ms-Button-label[data-v-79820dd6], .ms-Button.ms-Button--primary.is-disabled .ms-Button-label[data-v-79820dd6] {
+      color: "[theme:neutralTertiary, default: #a6a6a6]"; }
+
+.ms-Button.ms-Button--small[data-v-79820dd6] {
+  min-width: 60px;
+  min-height: 24px;
+  height: auto;
+  padding-top: 0;
+  padding-bottom: 4px; }
+  .ms-Button.ms-Button--small .ms-Button-label[data-v-79820dd6] {
+    font-weight: 400;
+    font-size: 12px; }
+
+.ms-Button.ms-Button--hero[data-v-79820dd6] {
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  position: relative; }
+  .ms-Button.ms-Button--hero .ms-Button-icon[data-v-79820dd6] {
+    color: "[theme:themePrimary, default: #0078d7]";
+    display: inline-block;
+    font-size: 12px;
+    margin-right: 4px;
+    padding-top: 5px;
+    text-align: center; }
+    .ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon[data-v-79820dd6] {
+      border-radius: 18px;
+      border: 1px solid "[theme:themePrimary, default: #0078d7]";
+      font-size: 12px;
+      height: 18px;
+      line-height: 18px;
+      width: 18px; }
+  .ms-Button.ms-Button--hero .ms-Button-label[data-v-79820dd6] {
+    color: "[theme:themePrimary, default: #0078d7]";
+    font-size: 21px;
+    font-weight: 100;
+    position: relative;
+    text-decoration: none;
+    vertical-align: top; }
+  .ms-Button.ms-Button--hero:hover .ms-Button-icon[data-v-79820dd6], .ms-Button.ms-Button--hero:focus .ms-Button-icon[data-v-79820dd6] {
+    color: "[theme:themeDark, default: #005a9e]"; }
+    .ms-Button.ms-Button--hero:hover .ms-Button-icon .ms-Icon[data-v-79820dd6], .ms-Button.ms-Button--hero:focus .ms-Button-icon .ms-Icon[data-v-79820dd6] {
+      border: 1px solid "[theme:themeDark, default: #005a9e]"; }
+  .ms-Button.ms-Button--hero:hover .ms-Button-label[data-v-79820dd6], .ms-Button.ms-Button--hero:focus .ms-Button-label[data-v-79820dd6] {
+    color: "[theme:themeDarker, default: #004578]"; }
+  .ms-Button.ms-Button--hero:active .ms-Button-icon[data-v-79820dd6] {
+    color: "[theme:themePrimary, default: #0078d7]"; }
+    .ms-Button.ms-Button--hero:active .ms-Button-icon .ms-Icon[data-v-79820dd6] {
+      border: 1px solid "[theme:themePrimary, default: #0078d7]"; }
+  .ms-Button.ms-Button--hero:active .ms-Button-label[data-v-79820dd6] {
+    color: "[theme:themePrimary, default: #0078d7]"; }
+  .ms-Button.ms-Button--hero:disabled .ms-Button-icon[data-v-79820dd6], .ms-Button.ms-Button--hero.is-disabled .ms-Button-icon[data-v-79820dd6] {
+    color: "[theme:neutralTertiaryAlt, default: #c8c8c8]"; }
+    .ms-Button.ms-Button--hero:disabled .ms-Button-icon .ms-Icon[data-v-79820dd6], .ms-Button.ms-Button--hero.is-disabled .ms-Button-icon .ms-Icon[data-v-79820dd6] {
+      border: 1px solid "[theme:neutralTertiaryAlt, default: #c8c8c8]"; }
+  .ms-Button.ms-Button--hero:disabled .ms-Button-label[data-v-79820dd6], .ms-Button.ms-Button--hero.is-disabled .ms-Button-label[data-v-79820dd6] {
+    color: "[theme:neutralTertiary, default: #a6a6a6]"; }
+
+.ms-Button.ms-Button--compound[data-v-79820dd6] {
+  display: block;
+  height: auto;
+  max-width: 280px;
+  min-height: 72px;
+  padding: 20px; }
+  .ms-Button.ms-Button--compound .ms-Button-label[data-v-79820dd6] {
+    display: block;
+    font-weight: 600;
+    position: relative;
+    text-align: left;
+    margin-top: -5px; }
+  .ms-Button.ms-Button--compound .ms-Button-description[data-v-79820dd6] {
+    color: "[theme:neutralSecondary, default: #666666]";
+    display: block;
+    font-weight: 400;
+    font-size: 12px;
+    position: relative;
+    text-align: left;
+    top: 3px; }
+  .ms-Button.ms-Button--compound:hover .ms-Button-description[data-v-79820dd6] {
+    color: "[theme:neutralDark, default: #212121]"; }
+  .ms-Button.ms-Button--compound[data-v-79820dd6]:focus {
+    border-color: "[theme:themePrimary, default: #0078d7]";
+    background-color: "[theme:neutralLighter, default: #f4f4f4]"; }
+    .ms-Button.ms-Button--compound:focus .ms-Button-label[data-v-79820dd6] {
+      color: "[theme:neutralPrimary, default: #333333]"; }
+    .ms-Button.ms-Button--compound:focus .ms-Button-description[data-v-79820dd6] {
+      color: "[theme:neutralSecondary, default: #666666]"; }
+  .ms-Button.ms-Button--compound[data-v-79820dd6]:active {
+    background-color: "[theme:themePrimary, default: #0078d7]"; }
+    .ms-Button.ms-Button--compound:active .ms-Button-description[data-v-79820dd6],
+    .ms-Button.ms-Button--compound:active .ms-Button-label[data-v-79820dd6] {
+      color: "[theme:white, default: #ffffff]"; }
+  .ms-Button.ms-Button--compound:disabled .ms-Button-label[data-v-79820dd6],
+  .ms-Button.ms-Button--compound:disabled .ms-Button-description[data-v-79820dd6], .ms-Button.ms-Button--compound.is-disabled .ms-Button-label[data-v-79820dd6],
+  .ms-Button.ms-Button--compound.is-disabled .ms-Button-description[data-v-79820dd6] {
+    color: "[theme:neutralTertiary, default: #a6a6a6]"; }
+  .ms-Button.ms-Button--compound[data-v-79820dd6]:disabled:focus, .ms-Button.ms-Button--compound[data-v-79820dd6]:disabled:active, .ms-Button.ms-Button--compound.is-disabled[data-v-79820dd6]:focus, .ms-Button.ms-Button--compound.is-disabled[data-v-79820dd6]:active {
+    border-color: "[theme:neutralLighter, default: #f4f4f4]";
+    background-color: "[theme:neutralLighter, default: #f4f4f4]"; }
+    .ms-Button.ms-Button--compound:disabled:focus .ms-Button-label[data-v-79820dd6],
+    .ms-Button.ms-Button--compound:disabled:focus .ms-Button-description[data-v-79820dd6], .ms-Button.ms-Button--compound:disabled:active .ms-Button-label[data-v-79820dd6],
+    .ms-Button.ms-Button--compound:disabled:active .ms-Button-description[data-v-79820dd6], .ms-Button.ms-Button--compound.is-disabled:focus .ms-Button-label[data-v-79820dd6],
+    .ms-Button.ms-Button--compound.is-disabled:focus .ms-Button-description[data-v-79820dd6], .ms-Button.ms-Button--compound.is-disabled:active .ms-Button-label[data-v-79820dd6],
+    .ms-Button.ms-Button--compound.is-disabled:active .ms-Button-description[data-v-79820dd6] {
+      color: "[theme:neutralTertiary, default: #a6a6a6]"; }
+
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+/* Theme related color values */
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes color and background styles
+*/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes only the color values
+*/
+/***
+100	Thin (Hairline)
+200	Extra Light (Ultra Light)
+300	Light
+400	Normal
+500	Medium
+600	Semi Bold (Demi Bold)
+700	Bold
+800	Extra Bold (Ultra Bold)
+900	Black (Heavy)
+**/
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
 .ms-Label[data-v-880410a2] {
   font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -680,813 +1183,6 @@
 /** Warning **/
 /** Server Warning **/
 /** Success **/
-.ms-ContextualMenu[data-v-94d26018] {
-  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  color: "[theme:neutralPrimary, default: #333333]";
-  font-size: 14px;
-  font-weight: 400;
-  display: block;
-  min-width: 180px;
-  max-width: 220px;
-  list-style-type: none;
-  position: relative;
-  background-color: "[theme:white, default: #ffffff]"; }
-  .ms-ContextualMenu.is-hidden[data-v-94d26018] {
-    display: none; }
-
-.ms-ContextualMenu-item[data-v-94d26018] {
-  position: relative; }
-
-.ms-ContextualMenu-link[data-v-94d26018] {
-  box-sizing: border-box;
-  text-decoration: none;
-  color: "[theme:neutralPrimary, default: #333333]";
-  border: 1px solid transparent;
-  cursor: pointer;
-  display: block;
-  height: 36px;
-  overflow: hidden;
-  line-height: 34px;
-  padding: 0 16px 0 25px;
-  position: relative;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
-  .ms-ContextualMenu-link[data-v-94d26018]:hover, .ms-ContextualMenu-link[data-v-94d26018]:active, .ms-ContextualMenu-link[data-v-94d26018]:focus {
-    background-color: "[theme:neutralLighter, default: #f4f4f4]";
-    color: "[theme:neutralDark, default: #212121]"; }
-    .ms-ContextualMenu-link:hover .ms-ContextualMenu-subMenuIcon[data-v-94d26018], .ms-ContextualMenu-link:active .ms-ContextualMenu-subMenuIcon[data-v-94d26018], .ms-ContextualMenu-link:focus .ms-ContextualMenu-subMenuIcon[data-v-94d26018] {
-      color: "[theme:neutralDark, default: #212121]"; }
-  .ms-ContextualMenu-link[data-v-94d26018]:focus {
-    outline: transparent;
-    border: 1px solid "[theme:neutralSecondary, default: #666666]"; }
-  .ms-ContextualMenu-link.is-selected[data-v-94d26018] {
-    background-color: "[theme:neutralQuaternaryAlt, default: #dadada]";
-    color: "[theme:black, default: #000000]";
-    font-weight: 600; }
-    .ms-ContextualMenu-link.is-selected ~ .ms-ContextualMenu-subMenuIcon[data-v-94d26018] {
-      color: "[theme:black, default: #000000]"; }
-    .ms-ContextualMenu-link.is-selected[data-v-94d26018]:hover {
-      background-color: "[theme:neutralQuaternary, default: #d0d0d0]"; }
-  .ms-ContextualMenu-link.is-disabled[data-v-94d26018] {
-    color: "[theme:neutralTertiary, default: #a6a6a6]";
-    background-color: "[theme:white, default: #ffffff]";
-    pointer-events: none; }
-    .ms-ContextualMenu-link.is-disabled[data-v-94d26018]:active, .ms-ContextualMenu-link.is-disabled[data-v-94d26018]:focus {
-      border-color: "[theme:white, default: #ffffff]"; }
-    .ms-ContextualMenu-link.is-disabled .ms-Icon[data-v-94d26018] {
-      color: "[theme:neutralTertiary, default: #a6a6a6]";
-      pointer-events: none;
-      cursor: default; }
-
-.ms-ContextualMenu-item.ms-ContextualMenu-item--divider[data-v-94d26018] {
-  cursor: default;
-  display: block;
-  height: 1px;
-  background-color: "[theme:neutralLight, default: #eaeaea]";
-  position: relative; }
-
-.ms-ContextualMenu-item.ms-ContextualMenu-item--header[data-v-94d26018] {
-  color: "[theme:themePrimary, default: #0078d7]";
-  font-size: 12px;
-  text-transform: uppercase;
-  height: 36px;
-  line-height: 36px;
-  padding: 0 18px; }
-
-.ms-ContextualMenu-item.ms-ContextualMenu-item--hasMenu .ms-ContextualMenu[data-v-94d26018] {
-  position: absolute;
-  top: -1px;
-  left: 178px; }
-
-.ms-ContextualMenu-subMenuIcon[data-v-94d26018],
-.ms-ContextualMenu-caretRight[data-v-94d26018] {
-  color: "[theme:neutralPrimary, default: #333333]";
-  font-size: 8px;
-  font-weight: 600;
-  width: 24px;
-  height: 36px;
-  line-height: 36px;
-  position: absolute;
-  text-align: center;
-  top: 0;
-  right: 0;
-  z-index: 1;
-  pointer-events: none; }
-
-.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-item.ms-ContextualMenu-item--header[data-v-94d26018] {
-  padding: 0 16px 0 26px; }
-
-.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018] {
-  background-color: "[theme:white, default: #ffffff]";
-  font-weight: 600;
-  color: "[theme:neutralPrimary, default: #333333]"; }
-  .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]::after {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    display: inline-block;
-    font-family: 'FabricMDL2Icons';
-    font-style: normal;
-    font-weight: normal;
-    speak: none;
-    color: "[theme:neutralPrimary, default: #333333]";
-    content: '\E73E';
-    font-size: 10px;
-    font-weight: 800;
-    height: 36px;
-    line-height: 36px;
-    position: absolute;
-    left: 7px; }
-  .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:hover, .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:focus {
-    color: "[theme:neutralDark, default: #212121]";
-    background-color: "[theme:neutralLighter, default: #f4f4f4]"; }
-    .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:hover::after, .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:focus::after {
-      color: "[theme:neutralDark, default: #212121]"; }
-  .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:active {
-    color: "[theme:black, default: #000000]";
-    background-color: "[theme:neutralQuaternary, default: #d0d0d0]"; }
-    .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:active::after {
-      color: "[theme:black, default: #000000]"; }
-
-.ms-ContextualMenu.ms-ContextualMenu--hasIcons .ms-ContextualMenu-link[data-v-94d26018],
-.ms-ContextualMenu.ms-ContextualMenu--hasChecks .ms-ContextualMenu-link[data-v-94d26018] {
-  padding-left: 40px; }
-
-.ms-ContextualMenu.ms-ContextualMenu--hasIcons .ms-Icon[data-v-94d26018],
-.ms-ContextualMenu.ms-ContextualMenu--hasChecks .ms-Icon[data-v-94d26018] {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  text-align: center; }
-
-.ms-ContextualMenu.ms-ContextualMenu--hasIcons[data-v-94d26018] {
-  width: 220px; }
-
-.ms-ContextualHost[data-v-94d26018] {
-  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  z-index: 10;
-  margin: 16px auto;
-  position: relative;
-  min-width: 10px;
-  display: none;
-  background-color: "[theme:white, default: #ffffff]";
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4); }
-  .ms-ContextualHost.is-positioned[data-v-94d26018] {
-    position: absolute;
-    margin: 0; }
-  .ms-ContextualHost.is-open[data-v-94d26018] {
-    display: inline-block; }
-
-.ms-ContextualHost-beak[data-v-94d26018] {
-  box-shadow: 0 0 15px -5px "[theme:neutralPrimaryAlt, default: #3c3c3c]";
-  position: absolute;
-  width: 28px;
-  height: 28px;
-  background: "[theme:white, default: #ffffff]";
-  border: 1px solid "[theme:neutralLight, default: #eaeaea]";
-  box-sizing: border-box;
-  top: -6px;
-  display: none;
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-  z-index: 0;
-  outline: 1px solid transparent; }
-
-.ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-94d26018],
-.ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-94d26018] {
-  top: 40px;
-  display: none; }
-
-.ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-94d26018] {
-  left: -10px; }
-
-.ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-94d26018] {
-  right: -10px; }
-
-.ms-ContextualHost.ms-ContextualHost--arrowTop .ms-ContextualHost-beak[data-v-94d26018] {
-  display: block;
-  top: -10px; }
-
-.ms-ContextualHost.ms-ContextualHost--arrowBottom .ms-ContextualHost-beak[data-v-94d26018] {
-  display: block;
-  bottom: -10px; }
-
-.ms-ContextualHost-main[data-v-94d26018] {
-  position: relative;
-  background-color: "[theme:white, default: #ffffff]";
-  box-sizing: border-box;
-  outline: 1px solid transparent;
-  z-index: 5;
-  min-height: 10px; }
-
-.ms-ContextualHost-close[data-v-94d26018] {
-  margin: 0;
-  border: 0;
-  background: none;
-  cursor: pointer;
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  padding: 8px;
-  width: 32px;
-  height: 32px;
-  font-size: 14px;
-  color: "[theme:neutralSecondary, default: #666666]";
-  z-index: 10; }
-
-.ms-ContextualHost.ms-ContextualHost--close .ms-ContextualHost-title[data-v-94d26018] {
-  margin-right: 20px; }
-
-.ms-ContextualHost.ms-ContextualHost--primaryArrow .ms-ContextualHost-beak[data-v-94d26018] {
-  background-color: "[theme:themePrimary, default: #0078d7]"; }
-
-@media (min-width: 480px) {
-  .ms-ContextualHost[data-v-94d26018] {
-    margin: 16px; }
-    .ms-ContextualHost.is-positioned[data-v-94d26018] {
-      margin: 0; }
-  .ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-94d26018],
-  .ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-94d26018] {
-    display: block; } }
-
-.ms-Icon.ms-Icon--ChevronRight[data-v-94d26018]::before {
-  content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2048 2048" width="8" height="8" version="1.1" xmlns="http://www.w3.org/2000/svg"><path transform="translate(0, 2048) scale(1, -1)" d="M515 93l930 931l-930 931l90 90l1022 -1021l-1022 -1021z" fill="black" stroke="none"/></svg>'); }
-
-.ms-ContextualMenu-link.is-selected[data-v-94d26018]::after {
-  content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2048 2048" width="10" height="10" version="1.1" xmlns="http://www.w3.org/2000/svg"><path transform="translate(0, 2048) scale(1, -1)" d="M1837 1491l-1069 -1070l-557 558l90 90l467 -466l979 978z" fill="black" stroke="none"/></svg>') !important; }
-
-/*
-  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
-*/
-/* Theme related color values */
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes color and background styles
-*/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes only the color values
-*/
-/***
-100	Thin (Hairline)
-200	Extra Light (Ultra Light)
-300	Light
-400	Normal
-500	Medium
-600	Semi Bold (Demi Bold)
-700	Bold
-800	Extra Bold (Ultra Bold)
-900	Black (Heavy)
-**/
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-.ms-Button[data-v-79820dd6] {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  color: "[theme:neutralPrimary, default: #333333]";
-  font-size: 14px;
-  font-weight: 400;
-  background-color: "[theme:neutralLighter, default: #f4f4f4]";
-  border: 1px solid "[theme:neutralLighter, default: #f4f4f4]";
-  cursor: pointer;
-  display: inline-block;
-  height: 32px;
-  min-width: 80px;
-  padding: 4px 20px 6px; }
-  .ms-Button.is-hidden[data-v-79820dd6] {
-    display: none; }
-  .ms-Button[data-v-79820dd6]:hover {
-    background-color: "[theme:neutralLight, default: #eaeaea]";
-    border-color: "[theme:neutralLight, default: #eaeaea]"; }
-    .ms-Button:hover .ms-Button-label[data-v-79820dd6] {
-      color: "[theme:black, default: #000000]"; }
-    @media screen and (-ms-high-contrast: active) {
-      .ms-Button[data-v-79820dd6]:hover {
-        color: #1AEBFF;
-        border-color: #1AEBFF; } }
-    @media screen and (-ms-high-contrast: black-on-white) {
-      .ms-Button[data-v-79820dd6]:hover {
-        color: #37006E;
-        border-color: #37006E; } }
-  .ms-Button[data-v-79820dd6]:focus {
-    background-color: "[theme:neutralLight, default: #eaeaea]";
-    border-color: "[theme:themePrimary, default: #0078d7]";
-    outline: 1px solid transparent; }
-    .ms-Button:focus .ms-Button-label[data-v-79820dd6] {
-      color: "[theme:black, default: #000000]"; }
-  .ms-Button[data-v-79820dd6]:active {
-    background-color: "[theme:themePrimary, default: #0078d7]";
-    border-color: "[theme:themePrimary, default: #0078d7]"; }
-    .ms-Button:active .ms-Button-label[data-v-79820dd6] {
-      color: "[theme:white, default: #ffffff]"; }
-  .ms-Button[data-v-79820dd6]:disabled, .ms-Button.is-disabled[data-v-79820dd6] {
-    background-color: "[theme:neutralLighter, default: #f4f4f4]";
-    border-color: "[theme:neutralLighter, default: #f4f4f4]";
-    cursor: default; }
-    .ms-Button:disabled .ms-Button-label[data-v-79820dd6], .ms-Button.is-disabled .ms-Button-label[data-v-79820dd6] {
-      color: "[theme:neutralTertiary, default: #a6a6a6]"; }
-    .ms-Button[data-v-79820dd6]:disabled:hover, .ms-Button[data-v-79820dd6]:disabled:focus, .ms-Button.is-disabled[data-v-79820dd6]:hover, .ms-Button.is-disabled[data-v-79820dd6]:focus {
-      outline: 0; }
-
-.ms-Button-label[data-v-79820dd6] {
-  color: "[theme:neutralPrimary, default: #333333]";
-  font-weight: 600;
-  font-size: 14px; }
-
-.ms-Button-icon[data-v-79820dd6],
-.ms-Button-description[data-v-79820dd6] {
-  display: none; }
-
-.ms-Button.ms-Button--primary[data-v-79820dd6] {
-  background-color: "[theme:themePrimary, default: #0078d7]";
-  border-color: "[theme:themePrimary, default: #0078d7]"; }
-  .ms-Button.ms-Button--primary .ms-Button-label[data-v-79820dd6] {
-    color: "[theme:white, default: #ffffff]"; }
-  .ms-Button.ms-Button--primary[data-v-79820dd6]:hover {
-    background-color: "[theme:themeDark, default: #005a9e]";
-    border-color: "[theme:themeDark, default: #005a9e]"; }
-  .ms-Button.ms-Button--primary[data-v-79820dd6]:focus {
-    background-color: "[theme:themeDark, default: #005a9e]";
-    border-color: "[theme:themeDarker, default: #004578]"; }
-  .ms-Button.ms-Button--primary[data-v-79820dd6]:active {
-    background-color: "[theme:themePrimary, default: #0078d7]";
-    border-color: "[theme:themePrimary, default: #0078d7]"; }
-  .ms-Button.ms-Button--primary[data-v-79820dd6]:disabled, .ms-Button.ms-Button--primary.is-disabled[data-v-79820dd6] {
-    background-color: "[theme:neutralLighter, default: #f4f4f4]";
-    border-color: "[theme:neutralLighter, default: #f4f4f4]"; }
-    .ms-Button.ms-Button--primary:disabled .ms-Button-label[data-v-79820dd6], .ms-Button.ms-Button--primary.is-disabled .ms-Button-label[data-v-79820dd6] {
-      color: "[theme:neutralTertiary, default: #a6a6a6]"; }
-
-.ms-Button.ms-Button--small[data-v-79820dd6] {
-  min-width: 60px;
-  min-height: 24px;
-  height: auto;
-  padding-top: 0;
-  padding-bottom: 4px; }
-  .ms-Button.ms-Button--small .ms-Button-label[data-v-79820dd6] {
-    font-weight: 400;
-    font-size: 12px; }
-
-.ms-Button.ms-Button--hero[data-v-79820dd6] {
-  align-items: center;
-  background-color: transparent;
-  border: 0;
-  padding: 0;
-  position: relative; }
-  .ms-Button.ms-Button--hero .ms-Button-icon[data-v-79820dd6] {
-    color: "[theme:themePrimary, default: #0078d7]";
-    display: inline-block;
-    font-size: 12px;
-    margin-right: 4px;
-    padding-top: 5px;
-    text-align: center; }
-    .ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon[data-v-79820dd6] {
-      border-radius: 18px;
-      border: 1px solid "[theme:themePrimary, default: #0078d7]";
-      font-size: 12px;
-      height: 18px;
-      line-height: 18px;
-      width: 18px; }
-  .ms-Button.ms-Button--hero .ms-Button-label[data-v-79820dd6] {
-    color: "[theme:themePrimary, default: #0078d7]";
-    font-size: 21px;
-    font-weight: 100;
-    position: relative;
-    text-decoration: none;
-    vertical-align: top; }
-  .ms-Button.ms-Button--hero:hover .ms-Button-icon[data-v-79820dd6], .ms-Button.ms-Button--hero:focus .ms-Button-icon[data-v-79820dd6] {
-    color: "[theme:themeDark, default: #005a9e]"; }
-    .ms-Button.ms-Button--hero:hover .ms-Button-icon .ms-Icon[data-v-79820dd6], .ms-Button.ms-Button--hero:focus .ms-Button-icon .ms-Icon[data-v-79820dd6] {
-      border: 1px solid "[theme:themeDark, default: #005a9e]"; }
-  .ms-Button.ms-Button--hero:hover .ms-Button-label[data-v-79820dd6], .ms-Button.ms-Button--hero:focus .ms-Button-label[data-v-79820dd6] {
-    color: "[theme:themeDarker, default: #004578]"; }
-  .ms-Button.ms-Button--hero:active .ms-Button-icon[data-v-79820dd6] {
-    color: "[theme:themePrimary, default: #0078d7]"; }
-    .ms-Button.ms-Button--hero:active .ms-Button-icon .ms-Icon[data-v-79820dd6] {
-      border: 1px solid "[theme:themePrimary, default: #0078d7]"; }
-  .ms-Button.ms-Button--hero:active .ms-Button-label[data-v-79820dd6] {
-    color: "[theme:themePrimary, default: #0078d7]"; }
-  .ms-Button.ms-Button--hero:disabled .ms-Button-icon[data-v-79820dd6], .ms-Button.ms-Button--hero.is-disabled .ms-Button-icon[data-v-79820dd6] {
-    color: "[theme:neutralTertiaryAlt, default: #c8c8c8]"; }
-    .ms-Button.ms-Button--hero:disabled .ms-Button-icon .ms-Icon[data-v-79820dd6], .ms-Button.ms-Button--hero.is-disabled .ms-Button-icon .ms-Icon[data-v-79820dd6] {
-      border: 1px solid "[theme:neutralTertiaryAlt, default: #c8c8c8]"; }
-  .ms-Button.ms-Button--hero:disabled .ms-Button-label[data-v-79820dd6], .ms-Button.ms-Button--hero.is-disabled .ms-Button-label[data-v-79820dd6] {
-    color: "[theme:neutralTertiary, default: #a6a6a6]"; }
-
-.ms-Button.ms-Button--compound[data-v-79820dd6] {
-  display: block;
-  height: auto;
-  max-width: 280px;
-  min-height: 72px;
-  padding: 20px; }
-  .ms-Button.ms-Button--compound .ms-Button-label[data-v-79820dd6] {
-    display: block;
-    font-weight: 600;
-    position: relative;
-    text-align: left;
-    margin-top: -5px; }
-  .ms-Button.ms-Button--compound .ms-Button-description[data-v-79820dd6] {
-    color: "[theme:neutralSecondary, default: #666666]";
-    display: block;
-    font-weight: 400;
-    font-size: 12px;
-    position: relative;
-    text-align: left;
-    top: 3px; }
-  .ms-Button.ms-Button--compound:hover .ms-Button-description[data-v-79820dd6] {
-    color: "[theme:neutralDark, default: #212121]"; }
-  .ms-Button.ms-Button--compound[data-v-79820dd6]:focus {
-    border-color: "[theme:themePrimary, default: #0078d7]";
-    background-color: "[theme:neutralLighter, default: #f4f4f4]"; }
-    .ms-Button.ms-Button--compound:focus .ms-Button-label[data-v-79820dd6] {
-      color: "[theme:neutralPrimary, default: #333333]"; }
-    .ms-Button.ms-Button--compound:focus .ms-Button-description[data-v-79820dd6] {
-      color: "[theme:neutralSecondary, default: #666666]"; }
-  .ms-Button.ms-Button--compound[data-v-79820dd6]:active {
-    background-color: "[theme:themePrimary, default: #0078d7]"; }
-    .ms-Button.ms-Button--compound:active .ms-Button-description[data-v-79820dd6],
-    .ms-Button.ms-Button--compound:active .ms-Button-label[data-v-79820dd6] {
-      color: "[theme:white, default: #ffffff]"; }
-  .ms-Button.ms-Button--compound:disabled .ms-Button-label[data-v-79820dd6],
-  .ms-Button.ms-Button--compound:disabled .ms-Button-description[data-v-79820dd6], .ms-Button.ms-Button--compound.is-disabled .ms-Button-label[data-v-79820dd6],
-  .ms-Button.ms-Button--compound.is-disabled .ms-Button-description[data-v-79820dd6] {
-    color: "[theme:neutralTertiary, default: #a6a6a6]"; }
-  .ms-Button.ms-Button--compound[data-v-79820dd6]:disabled:focus, .ms-Button.ms-Button--compound[data-v-79820dd6]:disabled:active, .ms-Button.ms-Button--compound.is-disabled[data-v-79820dd6]:focus, .ms-Button.ms-Button--compound.is-disabled[data-v-79820dd6]:active {
-    border-color: "[theme:neutralLighter, default: #f4f4f4]";
-    background-color: "[theme:neutralLighter, default: #f4f4f4]"; }
-    .ms-Button.ms-Button--compound:disabled:focus .ms-Button-label[data-v-79820dd6],
-    .ms-Button.ms-Button--compound:disabled:focus .ms-Button-description[data-v-79820dd6], .ms-Button.ms-Button--compound:disabled:active .ms-Button-label[data-v-79820dd6],
-    .ms-Button.ms-Button--compound:disabled:active .ms-Button-description[data-v-79820dd6], .ms-Button.ms-Button--compound.is-disabled:focus .ms-Button-label[data-v-79820dd6],
-    .ms-Button.ms-Button--compound.is-disabled:focus .ms-Button-description[data-v-79820dd6], .ms-Button.ms-Button--compound.is-disabled:active .ms-Button-label[data-v-79820dd6],
-    .ms-Button.ms-Button--compound.is-disabled:active .ms-Button-description[data-v-79820dd6] {
-      color: "[theme:neutralTertiary, default: #a6a6a6]"; }
-
-/*
-  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
-*/
-/* Theme related color values */
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes color and background styles
-*/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes only the color values
-*/
-/***
-100	Thin (Hairline)
-200	Extra Light (Ultra Light)
-300	Light
-400	Normal
-500	Medium
-600	Semi Bold (Demi Bold)
-700	Bold
-800	Extra Bold (Ultra Bold)
-900	Black (Heavy)
-**/
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-.ms-Callout[data-v-64664f3c] {
-  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  width: 288px; }
-  .ms-Callout.is-hidden[data-v-64664f3c] {
-    display: none; }
-
-.ms-Callout-header[data-v-64664f3c] {
-  z-index: 105;
-  padding-top: 24px;
-  padding-bottom: 12px;
-  padding-left: 28px;
-  padding-right: 28px; }
-
-.ms-Callout-title[data-v-64664f3c] {
-  margin: 0;
-  font-weight: 300;
-  font-size: 21px; }
-
-.ms-Callout-subText[data-v-64664f3c] {
-  margin: 0;
-  font-weight: 300;
-  color: "[theme:neutralPrimary, default: #333333]";
-  font-size: 12px; }
-
-.ms-Callout-close[data-v-64664f3c] {
-  margin: 0;
-  border: 0;
-  background: none;
-  cursor: pointer;
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  padding: 8px;
-  width: 32px;
-  height: 32px;
-  font-size: 14px;
-  color: "[theme:neutralSecondary, default: #666666]";
-  z-index: 110; }
-
-.ms-Callout-link[data-v-64664f3c] {
-  font-size: 14px; }
-
-.ms-Callout-inner[data-v-64664f3c] {
-  height: 100%;
-  padding-top: 0;
-  padding-bottom: 12px;
-  padding-left: 28px;
-  padding-right: 28px; }
-
-.ms-Callout-actions[data-v-64664f3c] {
-  position: relative;
-  margin-top: 20px;
-  width: 100%;
-  white-space: nowrap; }
-  .ms-Callout-actions .ms-CommandButton.ms-CommandButton--inline[data-v-64664f3c] {
-    height: 27px;
-    line-height: 27px; }
-    .ms-Callout-actions .ms-CommandButton.ms-CommandButton--inline .ms-CommandButton-button[data-v-64664f3c] {
-      height: 27px;
-      line-height: 27px; }
-    .ms-Callout-actions .ms-CommandButton.ms-CommandButton--inline .ms-CommandButton-label[data-v-64664f3c] {
-      line-height: 27px; }
-    .ms-Callout-actions .ms-CommandButton.ms-CommandButton--inline .ms-CommandButton-icon[data-v-64664f3c] {
-      line-height: 27px; }
-    .ms-Callout-actions .ms-CommandButton.ms-CommandButton--inline:hover .ms-Button[data-v-64664f3c],
-    .ms-Callout-actions .ms-CommandButton.ms-CommandButton--inline:focus .ms-Button[data-v-64664f3c] {
-      color: "[theme:themePrimary, default: #0078d7]"; }
-  .ms-Callout-actions .ms-Callout-button[data-v-64664f3c] {
-    margin-right: 12px; }
-
-.ms-Callout.ms-Callout--OOBE .ms-Callout-header[data-v-64664f3c] {
-  padding: 28px 24px;
-  background-color: "[theme:themePrimary, default: #0078d7]"; }
-
-.ms-Callout.ms-Callout--OOBE .ms-Callout-title[data-v-64664f3c] {
-  font-weight: 100;
-  font-size: 28px;
-  color: "[theme:white, default: #ffffff]"; }
-
-.ms-Callout.ms-Callout--OOBE .ms-Callout-inner[data-v-64664f3c] {
-  padding-top: 20px; }
-
-.ms-Callout.ms-Callout--OOBE .ms-Callout-subText[data-v-64664f3c] {
-  font-size: 14px; }
-
-.ms-Callout.ms-Callout--actionText .ms-Callout-actions[data-v-64664f3c] {
-  border-top: 1px solid "[theme:neutralLight, default: #eaeaea]";
-  padding-top: 12px; }
-
-.ms-Callout.ms-Callout--actionText .ms-Callout-inner[data-v-64664f3c] {
-  padding-bottom: 12px; }
-
-.ms-Callout.ms-Callout--peek .ms-Callout-header[data-v-64664f3c] {
-  padding-bottom: 0; }
-
-.ms-Callout.ms-Callout--peek .ms-Callout-title[data-v-64664f3c] {
-  font-size: 14px; }
-
-.ms-Callout.ms-Callout--peek .ms-Callout-actions[data-v-64664f3c] {
-  margin-top: 12px;
-  margin-bottom: -4px; }
-
-.ms-ContextualHost[data-v-64664f3c] {
-  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  z-index: 10;
-  margin: 16px auto;
-  position: relative;
-  min-width: 10px;
-  display: none;
-  background-color: "[theme:white, default: #ffffff]";
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4); }
-  .ms-ContextualHost.is-positioned[data-v-64664f3c] {
-    position: absolute;
-    margin: 0; }
-  .ms-ContextualHost.is-open[data-v-64664f3c] {
-    display: inline-block; }
-
-.ms-ContextualHost-beak[data-v-64664f3c] {
-  box-shadow: 0 0 15px -5px "[theme:neutralPrimaryAlt, default: #3c3c3c]";
-  position: absolute;
-  width: 28px;
-  height: 28px;
-  background: "[theme:white, default: #ffffff]";
-  border: 1px solid "[theme:neutralLight, default: #eaeaea]";
-  box-sizing: border-box;
-  top: -6px;
-  display: none;
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-  z-index: 0;
-  outline: 1px solid transparent; }
-
-.ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-64664f3c],
-.ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-64664f3c] {
-  top: 40px;
-  display: none; }
-
-.ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-64664f3c] {
-  left: -10px; }
-
-.ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-64664f3c] {
-  right: -10px; }
-
-.ms-ContextualHost.ms-ContextualHost--arrowTop .ms-ContextualHost-beak[data-v-64664f3c] {
-  display: block;
-  top: -10px; }
-
-.ms-ContextualHost.ms-ContextualHost--arrowBottom .ms-ContextualHost-beak[data-v-64664f3c] {
-  display: block;
-  bottom: -10px; }
-
-.ms-ContextualHost-main[data-v-64664f3c] {
-  position: relative;
-  background-color: "[theme:white, default: #ffffff]";
-  box-sizing: border-box;
-  outline: 1px solid transparent;
-  z-index: 5;
-  min-height: 10px; }
-
-.ms-ContextualHost-close[data-v-64664f3c] {
-  margin: 0;
-  border: 0;
-  background: none;
-  cursor: pointer;
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  padding: 8px;
-  width: 32px;
-  height: 32px;
-  font-size: 14px;
-  color: "[theme:neutralSecondary, default: #666666]";
-  z-index: 10; }
-
-.ms-ContextualHost.ms-ContextualHost--close .ms-ContextualHost-title[data-v-64664f3c] {
-  margin-right: 20px; }
-
-.ms-ContextualHost.ms-ContextualHost--primaryArrow .ms-ContextualHost-beak[data-v-64664f3c] {
-  background-color: "[theme:themePrimary, default: #0078d7]"; }
-
-@media (min-width: 480px) {
-  .ms-ContextualHost[data-v-64664f3c] {
-    margin: 16px; }
-    .ms-ContextualHost.is-positioned[data-v-64664f3c] {
-      margin: 0; }
-  .ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-64664f3c],
-  .ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-64664f3c] {
-    display: block; } }
-
-.ms-Icon.ms-Icon--Clear[data-v-64664f3c] {
-  content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2048 2048" width="14" height="14" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M1115 1024l914 -915l-90 -90l-915 914l-915 -914l-90 90l914 915l-914 915l90 90l915 -914l915 914l90 -90z" fill="black" stroke="none"/></svg>'); }
-
-/*
-  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
-*/
-/* Theme related color values */
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes color and background styles
-*/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes only the color values
-*/
-/***
-100	Thin (Hairline)
-200	Extra Light (Ultra Light)
-300	Light
-400	Normal
-500	Medium
-600	Semi Bold (Demi Bold)
-700	Bold
-800	Extra Bold (Ultra Bold)
-900	Black (Heavy)
-**/
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
 .ms-Dialog[data-v-1194e8ec] {
   font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -1589,444 +1285,6 @@
 
 .ms-Icon.ms-Icon--Cancel[data-v-1194e8ec] {
   content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2048 2048" width="16" height="16" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M1115 1024l690 -691l-90 -90l-691 690l-691 -690l-90 90l690 691l-690 691l90 90l691 -690l691 690l90 -90z" fill="black" stroke="none"/></svg>'); }
-
-/*
-  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
-*/
-/* Theme related color values */
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes color and background styles
-*/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes only the color values
-*/
-/***
-100	Thin (Hairline)
-200	Extra Light (Ultra Light)
-300	Light
-400	Normal
-500	Medium
-600	Semi Bold (Demi Bold)
-700	Bold
-800	Extra Bold (Ultra Bold)
-900	Black (Heavy)
-**/
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-.ms-Dropdown[data-v-d4b6df96] {
-  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  color: "[theme:neutralPrimary, default: #333333]";
-  font-size: 14px;
-  font-weight: 400;
-  margin-bottom: 10px;
-  position: relative;
-  outline: 0; }
-  .ms-Dropdown:hover .ms-Dropdown-title[data-v-d4b6df96],
-  .ms-Dropdown:hover .ms-Dropdown-caretDown[data-v-d4b6df96], .ms-Dropdown:focus .ms-Dropdown-title[data-v-d4b6df96],
-  .ms-Dropdown:focus .ms-Dropdown-caretDown[data-v-d4b6df96], .ms-Dropdown:active .ms-Dropdown-title[data-v-d4b6df96],
-  .ms-Dropdown:active .ms-Dropdown-caretDown[data-v-d4b6df96] {
-    color: "[theme:black, default: #000000]"; }
-  .ms-Dropdown:hover .ms-Dropdown-title[data-v-d4b6df96], .ms-Dropdown:active .ms-Dropdown-title[data-v-d4b6df96] {
-    border-color: "[theme:neutralSecondaryAlt, default: #767676]"; }
-  .ms-Dropdown:focus .ms-Dropdown-title[data-v-d4b6df96] {
-    border-color: "[theme:themePrimary, default: #0078d7]"; }
-  .ms-Dropdown .ms-Label[data-v-d4b6df96] {
-    display: inline-block;
-    margin-bottom: 8px; }
-
-.ms-Dropdown.is-disabled .ms-Dropdown-title[data-v-d4b6df96] {
-  background-color: "[theme:neutralLighter, default: #f4f4f4]";
-  border-color: "[theme:neutralLighter, default: #f4f4f4]";
-  color: "[theme:neutralTertiary, default: #a6a6a6]";
-  cursor: default; }
-  @media screen and (-ms-high-contrast: active) {
-    .ms-Dropdown.is-disabled .ms-Dropdown-title[data-v-d4b6df96] {
-      border-color: #00ff00;
-      color: #00ff00; } }
-  @media screen and (-ms-high-contrast: black-on-white) {
-    .ms-Dropdown.is-disabled .ms-Dropdown-title[data-v-d4b6df96] {
-      border-color: #600000;
-      color: #600000; } }
-
-.ms-Dropdown.is-disabled .ms-Dropdown-caretDown[data-v-d4b6df96] {
-  color: "[theme:neutralTertiary, default: #a6a6a6]"; }
-  @media screen and (-ms-high-contrast: active) {
-    .ms-Dropdown.is-disabled .ms-Dropdown-caretDown[data-v-d4b6df96] {
-      color: #00ff00; } }
-  @media screen and (-ms-high-contrast: black-on-white) {
-    .ms-Dropdown.is-disabled .ms-Dropdown-caretDown[data-v-d4b6df96] {
-      color: #600000; } }
-
-.ms-Dropdown.is-open .ms-Dropdown-items[data-v-d4b6df96] {
-  display: block;
-  position: absolute; }
-
-.ms-Panel .ms-Dropdown-items[data-v-d4b6df96] {
-  box-shadow: none;
-  overflow-y: auto;
-  padding-top: 4px;
-  max-height: 100%; }
-  .ms-Panel .ms-Dropdown-items .ms-Dropdown-item[data-v-d4b6df96] {
-    padding: 7px 16px;
-    overflow: hidden;
-    text-overflow: ellipsis; }
-  .ms-Panel .ms-Dropdown-items[data-v-d4b6df96]::before {
-    content: none;
-    border: 0; }
-
-.ms-Dropdown-select[data-v-d4b6df96] {
-  display: none; }
-
-.ms-Dropdown-caretDown[data-v-d4b6df96] {
-  color: "[theme:neutralDark, default: #212121]";
-  font-size: 12px;
-  position: absolute;
-  right: 13px;
-  bottom: 9px;
-  z-index: 1;
-  pointer-events: none; }
-
-.ms-Dropdown-title[data-v-d4b6df96] {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  background: "[theme:white, default: #ffffff]";
-  border: 1px solid "[theme:neutralTertiaryAlt, default: #c8c8c8]";
-  cursor: pointer;
-  display: block;
-  height: 32px;
-  padding: 5px 32px 0 10px;
-  position: relative;
-  overflow: hidden; }
-  .ms-Dropdown-title.ms-Dropdown-truncator[data-v-d4b6df96] {
-    height: auto;
-    display: block;
-    position: absolute;
-    visibility: hidden; }
-
-.ms-Dropdown-items[data-v-d4b6df96] {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
-  background-color: "[theme:white, default: #ffffff]";
-  display: none;
-  list-style-type: none;
-  position: absolute;
-  width: 100%;
-  max-height: 200px;
-  z-index: 400;
-  overflow-y: scroll;
-  top: auto;
-  right: auto;
-  bottom: auto;
-  left: auto;
-  max-width: 100%; }
-  .ms-Dropdown-items[data-v-d4b6df96]::before {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border: 1px solid "[theme:neutralLight, default: #eaeaea]"; }
-  @media screen and (-ms-high-contrast: active) {
-    .ms-Dropdown-items[data-v-d4b6df96] {
-      border: 1px solid "[theme:white, default: #ffffff]"; } }
-  @media screen and (-ms-high-contrast: black-on-white) {
-    .ms-Dropdown-items[data-v-d4b6df96] {
-      border: 1px solid "[theme:black, default: #000000]"; } }
-
-.ms-Dropdown-item[data-v-d4b6df96] {
-  box-sizing: border-box;
-  cursor: pointer;
-  display: block;
-  height: 36px;
-  padding: 7px 10px;
-  position: relative;
-  border: 1px solid transparent;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis; }
-  @media screen and (-ms-high-contrast: active) {
-    .ms-Dropdown-item[data-v-d4b6df96] {
-      border-color: "[theme:black, default: #000000]"; } }
-  @media screen and (-ms-high-contrast: black-on-white) {
-    .ms-Dropdown-item[data-v-d4b6df96] {
-      border-color: "[theme:white, default: #ffffff]"; } }
-  .ms-Dropdown-item[data-v-d4b6df96]:hover {
-    background-color: "[theme:neutralLight, default: #eaeaea]";
-    color: "[theme:black, default: #000000]"; }
-    @media screen and (-ms-high-contrast: active) {
-      .ms-Dropdown-item[data-v-d4b6df96]:hover {
-        background-color: #1AEBFF;
-        border-color: #1AEBFF;
-        color: "[theme:black, default: #000000]"; }
-        .ms-Dropdown-item[data-v-d4b6df96]:hover:focus {
-          border-color: "[theme:black, default: #000000]"; } }
-    @media screen and (-ms-high-contrast: black-on-white) {
-      .ms-Dropdown-item[data-v-d4b6df96]:hover {
-        background-color: #37006E;
-        border-color: #37006E;
-        color: "[theme:white, default: #ffffff]"; } }
-  .ms-Dropdown-item[data-v-d4b6df96]:active {
-    background-color: "[theme:neutralLight, default: #eaeaea]";
-    border-color: "[theme:themePrimary, default: #0078d7]";
-    color: "[theme:black, default: #000000]"; }
-  .ms-Dropdown-item.is-disabled[data-v-d4b6df96] {
-    background: "[theme:white, default: #ffffff]";
-    color: "[theme:neutralTertiary, default: #a6a6a6]";
-    cursor: default; }
-
-.ms-Dropdown-item.is-selected[data-v-d4b6df96],
-.ms-Dropdown-item.ms-Dropdown-item--selected[data-v-d4b6df96] {
-  background-color: "[theme:themeLight, default: #c7e0f4]";
-  color: "[theme:black, default: #000000]"; }
-  .ms-Dropdown-item.is-selected[data-v-d4b6df96]:hover,
-  .ms-Dropdown-item.ms-Dropdown-item--selected[data-v-d4b6df96]:hover {
-    background-color: "[theme:themeLight, default: #c7e0f4]"; }
-  @media screen and (-ms-high-contrast: active) {
-    .ms-Dropdown-item.is-selected[data-v-d4b6df96],
-    .ms-Dropdown-item.ms-Dropdown-item--selected[data-v-d4b6df96] {
-      background-color: #1AEBFF;
-      border-color: #1AEBFF;
-      color: "[theme:black, default: #000000]"; }
-      .ms-Dropdown-item.is-selected[data-v-d4b6df96]:focus,
-      .ms-Dropdown-item.ms-Dropdown-item--selected[data-v-d4b6df96]:focus {
-        border-color: "[theme:black, default: #000000]"; } }
-  @media screen and (-ms-high-contrast: black-on-white) {
-    .ms-Dropdown-item.is-selected[data-v-d4b6df96],
-    .ms-Dropdown-item.ms-Dropdown-item--selected[data-v-d4b6df96] {
-      background-color: #37006E;
-      border-color: #37006E;
-      color: "[theme:white, default: #ffffff]"; } }
-
-.ms-Dropdown-caretDown[data-v-d4b6df96] {
-  bottom: 7px; }
-  .ms-Dropdown-caretDown.ms-Icon.ms-Icon--ChevronDown[data-v-d4b6df96]::before {
-    content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2048 2048" width="12" height="12" version="1.1" xmlns="http://www.w3.org/2000/svg"><path transform="translate(0, 2048) scale(1, -1)" d="M1939 1581l90 -90l-1005 -1005l-1005 1005l90 90l915 -915z" fill="black" stroke="none"/></svg>'); }
-
-/*
-  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
-*/
-/* Theme related color values */
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes color and background styles
-*/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes only the color values
-*/
-/***
-100	Thin (Hairline)
-200	Extra Light (Ultra Light)
-300	Light
-400	Normal
-500	Medium
-600	Semi Bold (Demi Bold)
-700	Bold
-800	Extra Bold (Ultra Bold)
-900	Black (Heavy)
-**/
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-.ms-CheckBox[data-v-75ed8232] {
-  box-sizing: border-box;
-  color: "[theme:neutralPrimary, default: #333333]";
-  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  min-height: 36px;
-  position: relative; }
-  .ms-CheckBox .ms-Label[data-v-75ed8232] {
-    font-size: 14px;
-    padding: 0 0 0 26px;
-    cursor: pointer;
-    display: inline-block; }
-
-.ms-CheckBox-input[data-v-75ed8232] {
-  position: absolute;
-  opacity: 0; }
-
-.ms-CheckBox-field[data-v-75ed8232]::before {
-  content: '';
-  display: inline-block;
-  border: 2px solid "[theme:neutralTertiary, default: #a6a6a6]";
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-  font-weight: normal;
-  position: absolute;
-  box-sizing: border-box;
-  transition-property: background, border, border-color;
-  transition-duration: 200ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.23, 1); }
-
-.ms-CheckBox-field[data-v-75ed8232]::after {
-  content: "\E73E";
-  font-family: 'FabricMDL2Icons';
-  display: none;
-  position: absolute;
-  font-weight: 900;
-  background-color: transparent;
-  font-size: 13px;
-  top: 0;
-  color: "[theme:white, default: #ffffff]";
-  line-height: 20px;
-  width: 20px;
-  text-align: center; }
-  @media screen and (-ms-high-contrast: active) {
-    .ms-CheckBox-field[data-v-75ed8232]::after {
-      color: "[theme:black, default: #000000]"; } }
-  @media screen and (-ms-high-contrast: black-on-white) {
-    .ms-CheckBox-field[data-v-75ed8232]::after {
-      color: "[theme:white, default: #ffffff]"; } }
-
-.ms-CheckBox-field[data-v-75ed8232] {
-  display: inline-block;
-  cursor: pointer;
-  margin-top: 8px;
-  position: relative;
-  outline: 0;
-  vertical-align: top; }
-  .ms-CheckBox-field[data-v-75ed8232]:hover::before, .ms-CheckBox-field[data-v-75ed8232]:focus::before {
-    border-color: "[theme:neutralSecondaryAlt, default: #767676]"; }
-  .ms-CheckBox-field:hover .ms-Label[data-v-75ed8232], .ms-CheckBox-field:focus .ms-Label[data-v-75ed8232] {
-    color: "[theme:black, default: #000000]"; }
-  .ms-CheckBox-field.is-disabled[data-v-75ed8232] {
-    cursor: default; }
-    .ms-CheckBox-field.is-disabled[data-v-75ed8232]::before {
-      background-color: "[theme:neutralTertiaryAlt, default: #c8c8c8]";
-      border-color: "[theme:neutralTertiaryAlt, default: #c8c8c8]";
-      color: "[theme:neutralTertiaryAlt, default: #c8c8c8]"; }
-      @media screen and (-ms-high-contrast: active) {
-        .ms-CheckBox-field.is-disabled[data-v-75ed8232]::before {
-          border-color: #00ff00; } }
-      @media screen and (-ms-high-contrast: black-on-white) {
-        .ms-CheckBox-field.is-disabled[data-v-75ed8232]::before {
-          border-color: #600000; } }
-    .ms-CheckBox-field.is-disabled .ms-Label[data-v-75ed8232] {
-      color: "[theme:neutralTertiary, default: #a6a6a6]"; }
-      @media screen and (-ms-high-contrast: active) {
-        .ms-CheckBox-field.is-disabled .ms-Label[data-v-75ed8232] {
-          color: #00ff00; } }
-      @media screen and (-ms-high-contrast: black-on-white) {
-        .ms-CheckBox-field.is-disabled .ms-Label[data-v-75ed8232] {
-          color: #600000; } }
-  .ms-CheckBox-field.in-focus[data-v-75ed8232]::before {
-    border-color: "[theme:neutralSecondaryAlt, default: #767676]"; }
-  .ms-CheckBox-field.in-focus.is-disabled[data-v-75ed8232]::before {
-    border-color: "[theme:neutralTertiaryAlt, default: #c8c8c8]"; }
-  .ms-CheckBox-field.in-focus.is-checked[data-v-75ed8232]::before {
-    border-color: "[theme:themeDarkAlt, default: #106ebe]"; }
-
-.ms-CheckBox-field.is-checked[data-v-75ed8232]::before {
-  border: 10px solid "[theme:themePrimary, default: #0078d7]";
-  background-color: "[theme:themePrimary, default: #0078d7]"; }
-  @media screen and (-ms-high-contrast: active) {
-    .ms-CheckBox-field.is-checked[data-v-75ed8232]::before {
-      border-color: #1AEBFF; } }
-  @media screen and (-ms-high-contrast: black-on-white) {
-    .ms-CheckBox-field.is-checked[data-v-75ed8232]::before {
-      border-color: #37006E; } }
-
-.ms-CheckBox-field.is-checked[data-v-75ed8232]::after {
-  display: block; }
-
-.ms-CheckBox-field.is-checked[data-v-75ed8232]:hover::before, .ms-CheckBox-field.is-checked[data-v-75ed8232]:focus::before {
-  border-color: "[theme:themeDarkAlt, default: #106ebe]"; }
-
-.ms-CheckBox-field[data-v-75ed8232]::after {
-  content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2048 2048" width="16" height="16" version="1.1" xmlns="http://www.w3.org/2000/svg"><path transform="translate(0, 2048) scale(1, -1)" d="M1837 1491l-1069 -1070l-557 558l90 90l467 -466l979 978z" fill="white" stroke="none"/></svg>') !important; }
 
 /*
   Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
@@ -2373,7 +1631,7 @@
 /** Warning **/
 /** Server Warning **/
 /** Success **/
-.ms-Label[data-v-2943a900] {
+.ms-Dropdown[data-v-d4b6df96] {
   font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
@@ -2383,16 +1641,202 @@
   -moz-box-shadow: none;
   box-shadow: none;
   color: "[theme:neutralPrimary, default: #333333]";
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
-  box-sizing: border-box;
+  margin-bottom: 10px;
+  position: relative;
+  outline: 0; }
+  .ms-Dropdown:hover .ms-Dropdown-title[data-v-d4b6df96],
+  .ms-Dropdown:hover .ms-Dropdown-caretDown[data-v-d4b6df96], .ms-Dropdown:focus .ms-Dropdown-title[data-v-d4b6df96],
+  .ms-Dropdown:focus .ms-Dropdown-caretDown[data-v-d4b6df96], .ms-Dropdown:active .ms-Dropdown-title[data-v-d4b6df96],
+  .ms-Dropdown:active .ms-Dropdown-caretDown[data-v-d4b6df96] {
+    color: "[theme:black, default: #000000]"; }
+  .ms-Dropdown:hover .ms-Dropdown-title[data-v-d4b6df96], .ms-Dropdown:active .ms-Dropdown-title[data-v-d4b6df96] {
+    border-color: "[theme:neutralSecondaryAlt, default: #767676]"; }
+  .ms-Dropdown:focus .ms-Dropdown-title[data-v-d4b6df96] {
+    border-color: "[theme:themePrimary, default: #0078d7]"; }
+  .ms-Dropdown .ms-Label[data-v-d4b6df96] {
+    display: inline-block;
+    margin-bottom: 8px; }
+
+.ms-Dropdown.is-disabled .ms-Dropdown-title[data-v-d4b6df96] {
+  background-color: "[theme:neutralLighter, default: #f4f4f4]";
+  border-color: "[theme:neutralLighter, default: #f4f4f4]";
+  color: "[theme:neutralTertiary, default: #a6a6a6]";
+  cursor: default; }
+  @media screen and (-ms-high-contrast: active) {
+    .ms-Dropdown.is-disabled .ms-Dropdown-title[data-v-d4b6df96] {
+      border-color: #00ff00;
+      color: #00ff00; } }
+  @media screen and (-ms-high-contrast: black-on-white) {
+    .ms-Dropdown.is-disabled .ms-Dropdown-title[data-v-d4b6df96] {
+      border-color: #600000;
+      color: #600000; } }
+
+.ms-Dropdown.is-disabled .ms-Dropdown-caretDown[data-v-d4b6df96] {
+  color: "[theme:neutralTertiary, default: #a6a6a6]"; }
+  @media screen and (-ms-high-contrast: active) {
+    .ms-Dropdown.is-disabled .ms-Dropdown-caretDown[data-v-d4b6df96] {
+      color: #00ff00; } }
+  @media screen and (-ms-high-contrast: black-on-white) {
+    .ms-Dropdown.is-disabled .ms-Dropdown-caretDown[data-v-d4b6df96] {
+      color: #600000; } }
+
+.ms-Dropdown.is-open .ms-Dropdown-items[data-v-d4b6df96] {
   display: block;
-  padding: 5px 0; }
-  .ms-Label.is-required[data-v-2943a900]::after {
-    content: ' *';
-    color: "[theme:error, default: #a80000]"; }
-  .ms-Label.is-disabled[data-v-2943a900] {
-    color: "[theme:neutralTertiary, default: #a6a6a6]"; }
+  position: absolute; }
+
+.ms-Panel .ms-Dropdown-items[data-v-d4b6df96] {
+  box-shadow: none;
+  overflow-y: auto;
+  padding-top: 4px;
+  max-height: 100%; }
+  .ms-Panel .ms-Dropdown-items .ms-Dropdown-item[data-v-d4b6df96] {
+    padding: 7px 16px;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+  .ms-Panel .ms-Dropdown-items[data-v-d4b6df96]::before {
+    content: none;
+    border: 0; }
+
+.ms-Dropdown-select[data-v-d4b6df96] {
+  display: none; }
+
+.ms-Dropdown-caretDown[data-v-d4b6df96] {
+  color: "[theme:neutralDark, default: #212121]";
+  font-size: 12px;
+  position: absolute;
+  right: 13px;
+  bottom: 9px;
+  z-index: 1;
+  pointer-events: none; }
+
+.ms-Dropdown-title[data-v-d4b6df96] {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background: "[theme:white, default: #ffffff]";
+  border: 1px solid "[theme:neutralTertiaryAlt, default: #c8c8c8]";
+  cursor: pointer;
+  display: block;
+  height: 32px;
+  padding: 5px 32px 0 10px;
+  position: relative;
+  overflow: hidden; }
+  .ms-Dropdown-title.ms-Dropdown-truncator[data-v-d4b6df96] {
+    height: auto;
+    display: block;
+    position: absolute;
+    visibility: hidden; }
+
+.ms-Dropdown-items[data-v-d4b6df96] {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
+  background-color: "[theme:white, default: #ffffff]";
+  display: none;
+  list-style-type: none;
+  position: absolute;
+  width: 100%;
+  max-height: 200px;
+  z-index: 400;
+  overflow-y: scroll;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  max-width: 100%; }
+  .ms-Dropdown-items[data-v-d4b6df96]::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid "[theme:neutralLight, default: #eaeaea]"; }
+  @media screen and (-ms-high-contrast: active) {
+    .ms-Dropdown-items[data-v-d4b6df96] {
+      border: 1px solid "[theme:white, default: #ffffff]"; } }
+  @media screen and (-ms-high-contrast: black-on-white) {
+    .ms-Dropdown-items[data-v-d4b6df96] {
+      border: 1px solid "[theme:black, default: #000000]"; } }
+
+.ms-Dropdown-item[data-v-d4b6df96] {
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  height: 36px;
+  padding: 7px 10px;
+  position: relative;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+  @media screen and (-ms-high-contrast: active) {
+    .ms-Dropdown-item[data-v-d4b6df96] {
+      border-color: "[theme:black, default: #000000]"; } }
+  @media screen and (-ms-high-contrast: black-on-white) {
+    .ms-Dropdown-item[data-v-d4b6df96] {
+      border-color: "[theme:white, default: #ffffff]"; } }
+  .ms-Dropdown-item[data-v-d4b6df96]:hover {
+    background-color: "[theme:neutralLight, default: #eaeaea]";
+    color: "[theme:black, default: #000000]"; }
+    @media screen and (-ms-high-contrast: active) {
+      .ms-Dropdown-item[data-v-d4b6df96]:hover {
+        background-color: #1AEBFF;
+        border-color: #1AEBFF;
+        color: "[theme:black, default: #000000]"; }
+        .ms-Dropdown-item[data-v-d4b6df96]:hover:focus {
+          border-color: "[theme:black, default: #000000]"; } }
+    @media screen and (-ms-high-contrast: black-on-white) {
+      .ms-Dropdown-item[data-v-d4b6df96]:hover {
+        background-color: #37006E;
+        border-color: #37006E;
+        color: "[theme:white, default: #ffffff]"; } }
+  .ms-Dropdown-item[data-v-d4b6df96]:active {
+    background-color: "[theme:neutralLight, default: #eaeaea]";
+    border-color: "[theme:themePrimary, default: #0078d7]";
+    color: "[theme:black, default: #000000]"; }
+  .ms-Dropdown-item.is-disabled[data-v-d4b6df96] {
+    background: "[theme:white, default: #ffffff]";
+    color: "[theme:neutralTertiary, default: #a6a6a6]";
+    cursor: default; }
+
+.ms-Dropdown-item.is-selected[data-v-d4b6df96],
+.ms-Dropdown-item.ms-Dropdown-item--selected[data-v-d4b6df96] {
+  background-color: "[theme:themeLight, default: #c7e0f4]";
+  color: "[theme:black, default: #000000]"; }
+  .ms-Dropdown-item.is-selected[data-v-d4b6df96]:hover,
+  .ms-Dropdown-item.ms-Dropdown-item--selected[data-v-d4b6df96]:hover {
+    background-color: "[theme:themeLight, default: #c7e0f4]"; }
+  @media screen and (-ms-high-contrast: active) {
+    .ms-Dropdown-item.is-selected[data-v-d4b6df96],
+    .ms-Dropdown-item.ms-Dropdown-item--selected[data-v-d4b6df96] {
+      background-color: #1AEBFF;
+      border-color: #1AEBFF;
+      color: "[theme:black, default: #000000]"; }
+      .ms-Dropdown-item.is-selected[data-v-d4b6df96]:focus,
+      .ms-Dropdown-item.ms-Dropdown-item--selected[data-v-d4b6df96]:focus {
+        border-color: "[theme:black, default: #000000]"; } }
+  @media screen and (-ms-high-contrast: black-on-white) {
+    .ms-Dropdown-item.is-selected[data-v-d4b6df96],
+    .ms-Dropdown-item.ms-Dropdown-item--selected[data-v-d4b6df96] {
+      background-color: #37006E;
+      border-color: #37006E;
+      color: "[theme:white, default: #ffffff]"; } }
+
+.ms-Dropdown-caretDown[data-v-d4b6df96] {
+  bottom: 7px; }
+  .ms-Dropdown-caretDown.ms-Icon.ms-Icon--ChevronDown[data-v-d4b6df96]::before {
+    content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2048 2048" width="12" height="12" version="1.1" xmlns="http://www.w3.org/2000/svg"><path transform="translate(0, 2048) scale(1, -1)" d="M1939 1581l90 -90l-1005 -1005l-1005 1005l90 90l915 -915z" fill="black" stroke="none"/></svg>'); }
 
 /*
   Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
@@ -3625,8 +3069,1087 @@
 .ms-u-overflowHidden[data-v-15bfa7e0] {
   overflow: hidden; }
 
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+/* Theme related color values */
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes color and background styles
+*/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes only the color values
+*/
+/***
+100	Thin (Hairline)
+200	Extra Light (Ultra Light)
+300	Light
+400	Normal
+500	Medium
+600	Semi Bold (Demi Bold)
+700	Bold
+800	Extra Bold (Ultra Bold)
+900	Black (Heavy)
+**/
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+.ms-Label[data-v-2943a900] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  color: "[theme:neutralPrimary, default: #333333]";
+  font-size: 12px;
+  font-weight: 400;
+  box-sizing: border-box;
+  display: block;
+  padding: 5px 0; }
+  .ms-Label.is-required[data-v-2943a900]::after {
+    content: ' *';
+    color: "[theme:error, default: #a80000]"; }
+  .ms-Label.is-disabled[data-v-2943a900] {
+    color: "[theme:neutralTertiary, default: #a6a6a6]"; }
+
 
 /*# sourceMappingURL=uiDropdownItem.vue.map */
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+/* Theme related color values */
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes color and background styles
+*/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes only the color values
+*/
+/***
+100	Thin (Hairline)
+200	Extra Light (Ultra Light)
+300	Light
+400	Normal
+500	Medium
+600	Semi Bold (Demi Bold)
+700	Bold
+800	Extra Bold (Ultra Bold)
+900	Black (Heavy)
+**/
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+.ms-ContextualMenu[data-v-94d26018] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  color: "[theme:neutralPrimary, default: #333333]";
+  font-size: 14px;
+  font-weight: 400;
+  display: block;
+  min-width: 180px;
+  max-width: 220px;
+  list-style-type: none;
+  position: relative;
+  background-color: "[theme:white, default: #ffffff]"; }
+  .ms-ContextualMenu.is-hidden[data-v-94d26018] {
+    display: none; }
+
+.ms-ContextualMenu-item[data-v-94d26018] {
+  position: relative; }
+
+.ms-ContextualMenu-link[data-v-94d26018] {
+  box-sizing: border-box;
+  text-decoration: none;
+  color: "[theme:neutralPrimary, default: #333333]";
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: block;
+  height: 36px;
+  overflow: hidden;
+  line-height: 34px;
+  padding: 0 16px 0 25px;
+  position: relative;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+  .ms-ContextualMenu-link[data-v-94d26018]:hover, .ms-ContextualMenu-link[data-v-94d26018]:active, .ms-ContextualMenu-link[data-v-94d26018]:focus {
+    background-color: "[theme:neutralLighter, default: #f4f4f4]";
+    color: "[theme:neutralDark, default: #212121]"; }
+    .ms-ContextualMenu-link:hover .ms-ContextualMenu-subMenuIcon[data-v-94d26018], .ms-ContextualMenu-link:active .ms-ContextualMenu-subMenuIcon[data-v-94d26018], .ms-ContextualMenu-link:focus .ms-ContextualMenu-subMenuIcon[data-v-94d26018] {
+      color: "[theme:neutralDark, default: #212121]"; }
+  .ms-ContextualMenu-link[data-v-94d26018]:focus {
+    outline: transparent;
+    border: 1px solid "[theme:neutralSecondary, default: #666666]"; }
+  .ms-ContextualMenu-link.is-selected[data-v-94d26018] {
+    background-color: "[theme:neutralQuaternaryAlt, default: #dadada]";
+    color: "[theme:black, default: #000000]";
+    font-weight: 600; }
+    .ms-ContextualMenu-link.is-selected ~ .ms-ContextualMenu-subMenuIcon[data-v-94d26018] {
+      color: "[theme:black, default: #000000]"; }
+    .ms-ContextualMenu-link.is-selected[data-v-94d26018]:hover {
+      background-color: "[theme:neutralQuaternary, default: #d0d0d0]"; }
+  .ms-ContextualMenu-link.is-disabled[data-v-94d26018] {
+    color: "[theme:neutralTertiary, default: #a6a6a6]";
+    background-color: "[theme:white, default: #ffffff]";
+    pointer-events: none; }
+    .ms-ContextualMenu-link.is-disabled[data-v-94d26018]:active, .ms-ContextualMenu-link.is-disabled[data-v-94d26018]:focus {
+      border-color: "[theme:white, default: #ffffff]"; }
+    .ms-ContextualMenu-link.is-disabled .ms-Icon[data-v-94d26018] {
+      color: "[theme:neutralTertiary, default: #a6a6a6]";
+      pointer-events: none;
+      cursor: default; }
+
+.ms-ContextualMenu-item.ms-ContextualMenu-item--divider[data-v-94d26018] {
+  cursor: default;
+  display: block;
+  height: 1px;
+  background-color: "[theme:neutralLight, default: #eaeaea]";
+  position: relative; }
+
+.ms-ContextualMenu-item.ms-ContextualMenu-item--header[data-v-94d26018] {
+  color: "[theme:themePrimary, default: #0078d7]";
+  font-size: 12px;
+  text-transform: uppercase;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 18px; }
+
+.ms-ContextualMenu-item.ms-ContextualMenu-item--hasMenu .ms-ContextualMenu[data-v-94d26018] {
+  position: absolute;
+  top: -1px;
+  left: 178px; }
+
+.ms-ContextualMenu-subMenuIcon[data-v-94d26018],
+.ms-ContextualMenu-caretRight[data-v-94d26018] {
+  color: "[theme:neutralPrimary, default: #333333]";
+  font-size: 8px;
+  font-weight: 600;
+  width: 24px;
+  height: 36px;
+  line-height: 36px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  pointer-events: none; }
+
+.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-item.ms-ContextualMenu-item--header[data-v-94d26018] {
+  padding: 0 16px 0 26px; }
+
+.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018] {
+  background-color: "[theme:white, default: #ffffff]";
+  font-weight: 600;
+  color: "[theme:neutralPrimary, default: #333333]"; }
+  .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]::after {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-family: 'FabricMDL2Icons';
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    color: "[theme:neutralPrimary, default: #333333]";
+    content: '\E73E';
+    font-size: 10px;
+    font-weight: 800;
+    height: 36px;
+    line-height: 36px;
+    position: absolute;
+    left: 7px; }
+  .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:hover, .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:focus {
+    color: "[theme:neutralDark, default: #212121]";
+    background-color: "[theme:neutralLighter, default: #f4f4f4]"; }
+    .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:hover::after, .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:focus::after {
+      color: "[theme:neutralDark, default: #212121]"; }
+  .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:active {
+    color: "[theme:black, default: #000000]";
+    background-color: "[theme:neutralQuaternary, default: #d0d0d0]"; }
+    .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:active::after {
+      color: "[theme:black, default: #000000]"; }
+
+.ms-ContextualMenu.ms-ContextualMenu--hasIcons .ms-ContextualMenu-link[data-v-94d26018],
+.ms-ContextualMenu.ms-ContextualMenu--hasChecks .ms-ContextualMenu-link[data-v-94d26018] {
+  padding-left: 40px; }
+
+.ms-ContextualMenu.ms-ContextualMenu--hasIcons .ms-Icon[data-v-94d26018],
+.ms-ContextualMenu.ms-ContextualMenu--hasChecks .ms-Icon[data-v-94d26018] {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  text-align: center; }
+
+.ms-ContextualMenu.ms-ContextualMenu--hasIcons[data-v-94d26018] {
+  width: 220px; }
+
+.ms-ContextualHost[data-v-94d26018] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  z-index: 10;
+  margin: 16px auto;
+  position: relative;
+  min-width: 10px;
+  display: none;
+  background-color: "[theme:white, default: #ffffff]";
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4); }
+  .ms-ContextualHost.is-positioned[data-v-94d26018] {
+    position: absolute;
+    margin: 0; }
+  .ms-ContextualHost.is-open[data-v-94d26018] {
+    display: inline-block; }
+
+.ms-ContextualHost-beak[data-v-94d26018] {
+  box-shadow: 0 0 15px -5px "[theme:neutralPrimaryAlt, default: #3c3c3c]";
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  background: "[theme:white, default: #ffffff]";
+  border: 1px solid "[theme:neutralLight, default: #eaeaea]";
+  box-sizing: border-box;
+  top: -6px;
+  display: none;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  z-index: 0;
+  outline: 1px solid transparent; }
+
+.ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-94d26018],
+.ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-94d26018] {
+  top: 40px;
+  display: none; }
+
+.ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-94d26018] {
+  left: -10px; }
+
+.ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-94d26018] {
+  right: -10px; }
+
+.ms-ContextualHost.ms-ContextualHost--arrowTop .ms-ContextualHost-beak[data-v-94d26018] {
+  display: block;
+  top: -10px; }
+
+.ms-ContextualHost.ms-ContextualHost--arrowBottom .ms-ContextualHost-beak[data-v-94d26018] {
+  display: block;
+  bottom: -10px; }
+
+.ms-ContextualHost-main[data-v-94d26018] {
+  position: relative;
+  background-color: "[theme:white, default: #ffffff]";
+  box-sizing: border-box;
+  outline: 1px solid transparent;
+  z-index: 5;
+  min-height: 10px; }
+
+.ms-ContextualHost-close[data-v-94d26018] {
+  margin: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 8px;
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
+  color: "[theme:neutralSecondary, default: #666666]";
+  z-index: 10; }
+
+.ms-ContextualHost.ms-ContextualHost--close .ms-ContextualHost-title[data-v-94d26018] {
+  margin-right: 20px; }
+
+.ms-ContextualHost.ms-ContextualHost--primaryArrow .ms-ContextualHost-beak[data-v-94d26018] {
+  background-color: "[theme:themePrimary, default: #0078d7]"; }
+
+@media (min-width: 480px) {
+  .ms-ContextualHost[data-v-94d26018] {
+    margin: 16px; }
+    .ms-ContextualHost.is-positioned[data-v-94d26018] {
+      margin: 0; }
+  .ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-94d26018],
+  .ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-94d26018] {
+    display: block; } }
+
+.ms-Icon.ms-Icon--ChevronRight[data-v-94d26018]::before {
+  content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2048 2048" width="8" height="8" version="1.1" xmlns="http://www.w3.org/2000/svg"><path transform="translate(0, 2048) scale(1, -1)" d="M515 93l930 931l-930 931l90 90l1022 -1021l-1022 -1021z" fill="black" stroke="none"/></svg>'); }
+
+.ms-ContextualMenu-link.is-selected[data-v-94d26018]::after {
+  content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2048 2048" width="10" height="10" version="1.1" xmlns="http://www.w3.org/2000/svg"><path transform="translate(0, 2048) scale(1, -1)" d="M1837 1491l-1069 -1070l-557 558l90 90l467 -466l979 978z" fill="black" stroke="none"/></svg>') !important; }
+
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+/* Theme related color values */
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes color and background styles
+*/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes only the color values
+*/
+/***
+100	Thin (Hairline)
+200	Extra Light (Ultra Light)
+300	Light
+400	Normal
+500	Medium
+600	Semi Bold (Demi Bold)
+700	Bold
+800	Extra Bold (Ultra Bold)
+900	Black (Heavy)
+**/
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+.ms-CommandBar {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: "[theme:neutralLighter, default: #f4f4f4]";
+  height: 40px;
+  white-space: nowrap;
+  padding-left: 0;
+  border: 0;
+  position: relative; }
+  .ms-CommandBar:focus {
+    outline: none; }
+  .ms-CommandBar .ms-CommandButton--actionButton {
+    border-right: 1px solid "[theme:neutralLight, default: #eaeaea]"; }
+  .ms-CommandBar .ms-Button {
+    height: 100%; }
+    .ms-CommandBar .ms-Button.ms-Button--noLabel .ms-Button-icon {
+      padding-right: 0; }
+    .ms-CommandBar .ms-Button.is-hidden {
+      display: none; }
+  .ms-CommandBar .ms-SearchBox,
+  .ms-CommandBar .ms-SearchBox-field,
+  .ms-CommandBar .ms-SearchBox-label {
+    height: 100%; }
+  .ms-CommandBar .ms-SearchBox {
+    display: inline-block;
+    vertical-align: top;
+    transition: margin-right 0.267s; }
+  .ms-CommandBar .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active {
+    width: 220px; }
+    @media only screen and (max-width: 639px) {
+      .ms-CommandBar .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 10; } }
+  .ms-CommandBar .ms-CommandBar-overflowButton .ms-CommandButton-button {
+    font-size: 18px;
+    padding: 0 11px; }
+  @media only screen and (min-width: 1024px) {
+    .ms-CommandBar .ms-SearchBox {
+      margin-right: 24px; } }
+  @media only screen and (max-width: 639px) {
+    .ms-CommandBar {
+      height: 44px; } }
+  @media only screen and (min-width: 640px) {
+    .ms-CommandBar.search-expanded .ms-SearchBox {
+      margin-right: 8px; }
+    .ms-CommandBar .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed {
+      transition: none; } }
+
+.ms-CommandBar-mainArea {
+  overflow-x: hidden;
+  display: block;
+  height: 100%;
+  overflow: hidden; }
+
+.ms-CommandBar-sideCommands {
+  float: right;
+  text-align: right;
+  width: auto;
+  padding-right: 4px;
+  height: 100%; }
+  .ms-CommandBar-sideCommands .ms-Button:last-child {
+    margin-right: 0; }
+  @media only screen and (min-width: 640px) {
+    .ms-CommandBar-sideCommands {
+      min-width: 128px; } }
+  @media only screen and (min-width: 1024px) {
+    .ms-CommandBar-sideCommands {
+      padding-right: 20px; } }
+
+.ms-CommandButton {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  position: relative;
+  vertical-align: top; }
+  .ms-CommandButton.is-hidden {
+    display: none; }
+  .ms-CommandButton:disabled .ms-CommandButton-button, .ms-CommandButton.is-disabled .ms-CommandButton-button {
+    cursor: default; }
+    .ms-CommandButton:disabled .ms-CommandButton-button:hover, .ms-CommandButton.is-disabled .ms-CommandButton-button:hover {
+      background-color: "[theme:themeLighterAlt, default: #eff6fc]"; }
+    .ms-CommandButton:disabled .ms-CommandButton-button .ms-CommandButton-label, .ms-CommandButton.is-disabled .ms-CommandButton-button .ms-CommandButton-label {
+      color: "[theme:neutralTertiary, default: #a6a6a6]"; }
+    .ms-CommandButton:disabled .ms-CommandButton-button .ms-CommandButton-icon, .ms-CommandButton.is-disabled .ms-CommandButton-button .ms-CommandButton-icon {
+      color: "[theme:neutralTertiary, default: #a6a6a6]"; }
+  .ms-CommandButton .ms-ContextualMenu {
+    display: none; }
+
+.ms-CommandButton-button,
+.ms-CommandButton-splitIcon {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  color: "[theme:neutralPrimary, default: #333333]";
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  outline: 1px solid transparent;
+  padding: 0 8px;
+  position: relative;
+  vertical-align: top;
+  background: transparent; }
+  .ms-CommandButton-button:hover,
+  .ms-CommandButton-splitIcon:hover {
+    background-color: "[theme:neutralLight, default: #eaeaea]"; }
+    .ms-CommandButton-button:hover .ms-CommandButton-label,
+    .ms-CommandButton-splitIcon:hover .ms-CommandButton-label {
+      color: "[theme:neutralDark, default: #212121]"; }
+  .ms-CommandButton-button:active,
+  .ms-CommandButton-splitIcon:active {
+    background-color: "[theme:neutralLight, default: #eaeaea]"; }
+  .ms-CommandButton-button:focus::before,
+  .ms-CommandButton-splitIcon:focus::before {
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    border: 1px solid "[theme:neutralPrimary, default: #333333]";
+    position: absolute;
+    z-index: 10;
+    content: '';
+    outline: none; }
+  .ms-CommandButton-button:focus,
+  .ms-CommandButton-splitIcon:focus {
+    outline: 0; }
+  @media only screen and (max-width: 639px) {
+    .ms-CommandButton-button,
+    .ms-CommandButton-splitIcon {
+      height: 44px; }
+      .ms-CommandButton-button .ms-CommandButton-icon,
+      .ms-CommandButton-splitIcon .ms-CommandButton-icon {
+        font-size: 20px; }
+      .ms-CommandButton-button .ms-CommandButton-label,
+      .ms-CommandButton-splitIcon .ms-CommandButton-label {
+        line-height: 44px; } }
+
+.ms-CommandButton-button {
+  border: 0;
+  margin: 0; }
+
+.ms-CommandButton + .ms-CommandButton {
+  margin-left: 8px; }
+  @media only screen and (max-width: 639px) {
+    .ms-CommandButton + .ms-CommandButton {
+      margin-left: 4px; } }
+
+.ms-CommandButton-icon {
+  display: inline-block;
+  margin-right: 8px;
+  position: relative;
+  font-size: 16px;
+  min-width: 16px;
+  height: 100%; }
+  .ms-CommandButton-icon .ms-Icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+
+.ms-CommandButton-label {
+  font-size: 14px;
+  font-weight: 400;
+  color: "[theme:neutralPrimary, default: #333333]";
+  line-height: 40px;
+  height: 100%;
+  display: inline-block;
+  vertical-align: top; }
+  .ms-CommandButton-label:hover {
+    color: "[theme:neutralDark, default: #212121]"; }
+
+.ms-CommandButton-dropdownIcon,
+.ms-CommandButton-splitIcon {
+  display: inline-block;
+  position: relative;
+  color: "[theme:neutralPrimary, default: #333333]";
+  font-size: 12px;
+  font-weight: 300;
+  min-width: 12px;
+  height: 100%;
+  vertical-align: top;
+  margin-left: 8px; }
+  .ms-CommandButton-dropdownIcon .ms-Icon,
+  .ms-CommandButton-splitIcon .ms-Icon {
+    line-height: normal;
+    padding-top: 16px; }
+  .ms-CommandButton-dropdownIcon:focus::before,
+  .ms-CommandButton-splitIcon:focus::before {
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    border: 1px solid "[theme:neutralPrimary, default: #333333]";
+    position: absolute;
+    z-index: 10;
+    content: '';
+    outline: none; }
+  @media only screen and (max-width: 639px) {
+    .ms-CommandButton-dropdownIcon,
+    .ms-CommandButton-splitIcon {
+      display: none; } }
+
+.ms-CommandButton-splitIcon {
+  margin-left: -2px;
+  width: 27px;
+  border: 0; }
+  .ms-CommandButton-splitIcon .ms-Icon {
+    margin-left: -1px;
+    position: relative;
+    padding-top: 16px; }
+    .ms-CommandButton-splitIcon .ms-Icon::after {
+      position: absolute;
+      content: ' ';
+      width: 1px;
+      height: 16px;
+      top: 12px;
+      left: -8px;
+      border-left: 1px solid "[theme:neutralTertiaryAlt, default: #c8c8c8]"; }
+
+.ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-icon {
+  margin-right: 0; }
+
+.ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-label {
+  display: none; }
+
+.ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-button {
+  padding: 0 12px; }
+
+.ms-CommandButton.ms-CommandButton--inline .ms-CommandButton-button {
+  background: none; }
+
+.ms-CommandButton.ms-CommandButton--actionButton .ms-CommandButton-button {
+  width: 50px;
+  height: 40px; }
+
+.ms-CommandButton.ms-CommandButton--actionButton .ms-CommandButton-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  padding-right: 0; }
+
+.ms-CommandButton.ms-CommandButton--pivot.is-active::before {
+  content: '';
+  height: 2px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: "[theme:themePrimary, default: #0078d7]";
+  bottom: 0;
+  z-index: 5; }
+
+.ms-CommandButton.ms-CommandButton--pivot:hover::before {
+  content: '';
+  height: 2px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: "[theme:themePrimary, default: #0078d7]";
+  bottom: 0;
+  z-index: 5; }
+
+.ms-CommandButton.ms-CommandButton--textOnly .ms-CommandButton-label,
+.ms-CommandButton.ms-CommandButton--pivot .ms-CommandButton-label {
+  display: inline-block; }
+  @media only screen and (max-width: 479px) {
+    .ms-CommandButton.ms-CommandButton--textOnly .ms-CommandButton-label,
+    .ms-CommandButton.ms-CommandButton--pivot .ms-CommandButton-label {
+      font-size: 16px; } }
+
+.ms-ContextualMenu {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  color: "[theme:neutralPrimary, default: #333333]";
+  font-size: 14px;
+  font-weight: 400;
+  display: block;
+  min-width: 180px;
+  max-width: 220px;
+  list-style-type: none;
+  position: relative;
+  background-color: "[theme:white, default: #ffffff]"; }
+  .ms-ContextualMenu.is-hidden {
+    display: none; }
+
+.ms-ContextualMenu-item {
+  position: relative; }
+
+.ms-ContextualMenu-link {
+  box-sizing: border-box;
+  text-decoration: none;
+  color: "[theme:neutralPrimary, default: #333333]";
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: block;
+  height: 36px;
+  overflow: hidden;
+  line-height: 34px;
+  padding: 0 16px 0 25px;
+  position: relative;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+  .ms-ContextualMenu-link:hover, .ms-ContextualMenu-link:active, .ms-ContextualMenu-link:focus {
+    background-color: "[theme:neutralLighter, default: #f4f4f4]";
+    color: "[theme:neutralDark, default: #212121]"; }
+    .ms-ContextualMenu-link:hover .ms-ContextualMenu-subMenuIcon, .ms-ContextualMenu-link:active .ms-ContextualMenu-subMenuIcon, .ms-ContextualMenu-link:focus .ms-ContextualMenu-subMenuIcon {
+      color: "[theme:neutralDark, default: #212121]"; }
+  .ms-ContextualMenu-link:focus {
+    outline: transparent;
+    border: 1px solid "[theme:neutralSecondary, default: #666666]"; }
+  .ms-ContextualMenu-link.is-selected {
+    background-color: "[theme:neutralQuaternaryAlt, default: #dadada]";
+    color: "[theme:black, default: #000000]";
+    font-weight: 600; }
+    .ms-ContextualMenu-link.is-selected ~ .ms-ContextualMenu-subMenuIcon {
+      color: "[theme:black, default: #000000]"; }
+    .ms-ContextualMenu-link.is-selected:hover {
+      background-color: "[theme:neutralQuaternary, default: #d0d0d0]"; }
+  .ms-ContextualMenu-link.is-disabled {
+    color: "[theme:neutralTertiary, default: #a6a6a6]";
+    background-color: "[theme:white, default: #ffffff]";
+    pointer-events: none; }
+    .ms-ContextualMenu-link.is-disabled:active, .ms-ContextualMenu-link.is-disabled:focus {
+      border-color: "[theme:white, default: #ffffff]"; }
+    .ms-ContextualMenu-link.is-disabled .ms-Icon {
+      color: "[theme:neutralTertiary, default: #a6a6a6]";
+      pointer-events: none;
+      cursor: default; }
+
+.ms-ContextualMenu-item.ms-ContextualMenu-item--divider {
+  cursor: default;
+  display: block;
+  height: 1px;
+  background-color: "[theme:neutralLight, default: #eaeaea]";
+  position: relative; }
+
+.ms-ContextualMenu-item.ms-ContextualMenu-item--header {
+  color: "[theme:themePrimary, default: #0078d7]";
+  font-size: 12px;
+  text-transform: uppercase;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 18px; }
+
+.ms-ContextualMenu-item.ms-ContextualMenu-item--hasMenu .ms-ContextualMenu {
+  position: absolute;
+  top: -1px;
+  left: 178px; }
+
+.ms-ContextualMenu-subMenuIcon,
+.ms-ContextualMenu-caretRight {
+  color: "[theme:neutralPrimary, default: #333333]";
+  font-size: 8px;
+  font-weight: 600;
+  width: 24px;
+  height: 36px;
+  line-height: 36px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  pointer-events: none; }
+
+.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-item.ms-ContextualMenu-item--header {
+  padding: 0 16px 0 26px; }
+
+.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected {
+  background-color: "[theme:white, default: #ffffff]";
+  font-weight: 600;
+  color: "[theme:neutralPrimary, default: #333333]"; }
+  .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected::after {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-family: 'FabricMDL2Icons';
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    color: "[theme:neutralPrimary, default: #333333]";
+    content: '\E73E';
+    font-size: 10px;
+    font-weight: 800;
+    height: 36px;
+    line-height: 36px;
+    position: absolute;
+    left: 7px; }
+  .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected:hover, .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected:focus {
+    color: "[theme:neutralDark, default: #212121]";
+    background-color: "[theme:neutralLighter, default: #f4f4f4]"; }
+    .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected:hover::after, .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected:focus::after {
+      color: "[theme:neutralDark, default: #212121]"; }
+  .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected:active {
+    color: "[theme:black, default: #000000]";
+    background-color: "[theme:neutralQuaternary, default: #d0d0d0]"; }
+    .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected:active::after {
+      color: "[theme:black, default: #000000]"; }
+
+.ms-ContextualMenu.ms-ContextualMenu--hasIcons .ms-ContextualMenu-link,
+.ms-ContextualMenu.ms-ContextualMenu--hasChecks .ms-ContextualMenu-link {
+  padding-left: 40px; }
+
+.ms-ContextualMenu.ms-ContextualMenu--hasIcons .ms-Icon,
+.ms-ContextualMenu.ms-ContextualMenu--hasChecks .ms-Icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  text-align: center; }
+
+.ms-ContextualMenu.ms-ContextualMenu--hasIcons {
+  width: 220px; }
+
+.ms-ContextualHost {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  z-index: 10;
+  margin: 16px auto;
+  position: relative;
+  min-width: 10px;
+  display: none;
+  background-color: "[theme:white, default: #ffffff]";
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4); }
+  .ms-ContextualHost.is-positioned {
+    position: absolute;
+    margin: 0; }
+  .ms-ContextualHost.is-open {
+    display: inline-block; }
+
+.ms-ContextualHost-beak {
+  box-shadow: 0 0 15px -5px "[theme:neutralPrimaryAlt, default: #3c3c3c]";
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  background: "[theme:white, default: #ffffff]";
+  border: 1px solid "[theme:neutralLight, default: #eaeaea]";
+  box-sizing: border-box;
+  top: -6px;
+  display: none;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  z-index: 0;
+  outline: 1px solid transparent; }
+
+.ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak,
+.ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak {
+  top: 40px;
+  display: none; }
+
+.ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak {
+  left: -10px; }
+
+.ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak {
+  right: -10px; }
+
+.ms-ContextualHost.ms-ContextualHost--arrowTop .ms-ContextualHost-beak {
+  display: block;
+  top: -10px; }
+
+.ms-ContextualHost.ms-ContextualHost--arrowBottom .ms-ContextualHost-beak {
+  display: block;
+  bottom: -10px; }
+
+.ms-ContextualHost-main {
+  position: relative;
+  background-color: "[theme:white, default: #ffffff]";
+  box-sizing: border-box;
+  outline: 1px solid transparent;
+  z-index: 5;
+  min-height: 10px; }
+
+.ms-ContextualHost-close {
+  margin: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 8px;
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
+  color: "[theme:neutralSecondary, default: #666666]";
+  z-index: 10; }
+
+.ms-ContextualHost.ms-ContextualHost--close .ms-ContextualHost-title {
+  margin-right: 20px; }
+
+.ms-ContextualHost.ms-ContextualHost--primaryArrow .ms-ContextualHost-beak {
+  background-color: "[theme:themePrimary, default: #0078d7]"; }
+
+@media (min-width: 480px) {
+  .ms-ContextualHost {
+    margin: 16px; }
+    .ms-ContextualHost.is-positioned {
+      margin: 0; }
+  .ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak,
+  .ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak {
+    display: block; } }
+
+.inline-block {
+  display: inline-block; }
+
+.ms-Icon.ms-Icon--More {
+  content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2048 2048" width="14" height="14" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M256 1152q27 0 50 -10t40.5 -27.5t27.5 -40.5t10 -50t-10 -50t-27.5 -40.5t-40.5 -27.5t-50 -10t-50 10t-40.5 27.5t-27.5 40.5t-10 50t10 50t27.5 40.5t40.5 27.5t50 10zM1024 1152q27 0 50 -10t40.5 -27.5t27.5 -40.5t10 -50t-10 -50t-27.5 -40.5t-40.5 -27.5t-50 -10t-50 10t-40.5 27.5t-27.5 40.5t-10 50t10 50t27.5 40.5t40.5 27.5t50 10zM1792 1152q27 0 50 -10t40.5 -27.5t27.5 -40.5t10 -50t-10 -50t-27.5 -40.5t-40.5 -27.5t-50 -10t-50 10t-40.5 27.5t-27.5 40.5t-10 50t10 50t27.5 40.5t40.5 27.5t50 10z" fill="black" stroke="none"/></svg>'); }
+
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+/* Theme related color values */
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes color and background styles
+*/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes only the color values
+*/
+/***
+100	Thin (Hairline)
+200	Extra Light (Ultra Light)
+300	Light
+400	Normal
+500	Medium
+600	Semi Bold (Demi Bold)
+700	Bold
+800	Extra Bold (Ultra Bold)
+900	Black (Heavy)
+**/
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+.ms-MessageBar[data-v-7f69de50] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  padding: 8px;
+  display: table;
+  background-color: "[theme:infoBackground, default: #f4f4f4]"; }
+  .ms-MessageBar .ms-Link[data-v-7f69de50] {
+    font-size: 12px; }
+
+.ms-MessageBar-icon[data-v-7f69de50],
+.ms-MessageBar-text[data-v-7f69de50] {
+  display: table-cell;
+  vertical-align: top; }
+
+.ms-MessageBar-icon[data-v-7f69de50] {
+  padding-right: 8px;
+  font-size: 16px;
+  color: "[theme:neutralSecondaryAlt, default: #767676]"; }
+
+.ms-MessageBar-text[data-v-7f69de50] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 12px;
+  font-weight: 400; }
+
+.ms-MessageBar.ms-MessageBar--warning[data-v-7f69de50] {
+  background-color: "[theme:warningBackground, default: #fff4ce]"; }
+
+.ms-MessageBar.ms-MessageBar--severeWarning[data-v-7f69de50] {
+  background-color: "[theme:severeWarningBackground, default: #fed9cc]"; }
+  .ms-MessageBar.ms-MessageBar--severeWarning .ms-MessageBar-icon[data-v-7f69de50] {
+    color: "[theme:severeWarning, default: #d83b01]"; }
+
+.ms-MessageBar.ms-MessageBar--error[data-v-7f69de50] {
+  background-color: "[theme:errorBackground, default: #fde7e9]"; }
+  .ms-MessageBar.ms-MessageBar--error .ms-MessageBar-icon[data-v-7f69de50] {
+    color: "[theme:error, default: #a80000]"; }
+
+.ms-MessageBar.ms-MessageBar--blocked[data-v-7f69de50] {
+  background-color: "[theme:errorBackground, default: #fde7e9]"; }
+  .ms-MessageBar.ms-MessageBar--blocked .ms-MessageBar-icon[data-v-7f69de50] {
+    color: "[theme:error, default: #a80000]"; }
+
+.ms-MessageBar.ms-MessageBar--success[data-v-7f69de50] {
+  background-color: "[theme:successBackground, default: #dff6dd]"; }
+  .ms-MessageBar.ms-MessageBar--success .ms-MessageBar-icon[data-v-7f69de50] {
+    color: "[theme:green, default: #107c10]"; }
+
 /*
   Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
 */
@@ -4200,115 +4723,6 @@
 /** Warning **/
 /** Server Warning **/
 /** Success **/
-.ms-MessageBar[data-v-7f69de50] {
-  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  padding: 8px;
-  display: table;
-  background-color: "[theme:infoBackground, default: #f4f4f4]"; }
-  .ms-MessageBar .ms-Link[data-v-7f69de50] {
-    font-size: 12px; }
-
-.ms-MessageBar-icon[data-v-7f69de50],
-.ms-MessageBar-text[data-v-7f69de50] {
-  display: table-cell;
-  vertical-align: top; }
-
-.ms-MessageBar-icon[data-v-7f69de50] {
-  padding-right: 8px;
-  font-size: 16px;
-  color: "[theme:neutralSecondaryAlt, default: #767676]"; }
-
-.ms-MessageBar-text[data-v-7f69de50] {
-  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  font-size: 12px;
-  font-weight: 400; }
-
-.ms-MessageBar.ms-MessageBar--warning[data-v-7f69de50] {
-  background-color: "[theme:warningBackground, default: #fff4ce]"; }
-
-.ms-MessageBar.ms-MessageBar--severeWarning[data-v-7f69de50] {
-  background-color: "[theme:severeWarningBackground, default: #fed9cc]"; }
-  .ms-MessageBar.ms-MessageBar--severeWarning .ms-MessageBar-icon[data-v-7f69de50] {
-    color: "[theme:severeWarning, default: #d83b01]"; }
-
-.ms-MessageBar.ms-MessageBar--error[data-v-7f69de50] {
-  background-color: "[theme:errorBackground, default: #fde7e9]"; }
-  .ms-MessageBar.ms-MessageBar--error .ms-MessageBar-icon[data-v-7f69de50] {
-    color: "[theme:error, default: #a80000]"; }
-
-.ms-MessageBar.ms-MessageBar--blocked[data-v-7f69de50] {
-  background-color: "[theme:errorBackground, default: #fde7e9]"; }
-  .ms-MessageBar.ms-MessageBar--blocked .ms-MessageBar-icon[data-v-7f69de50] {
-    color: "[theme:error, default: #a80000]"; }
-
-.ms-MessageBar.ms-MessageBar--success[data-v-7f69de50] {
-  background-color: "[theme:successBackground, default: #dff6dd]"; }
-  .ms-MessageBar.ms-MessageBar--success .ms-MessageBar-icon[data-v-7f69de50] {
-    color: "[theme:green, default: #107c10]"; }
-
-/*
-  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
-*/
-/* Theme related color values */
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes color and background styles
-*/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes only the color values
-*/
-/***
-100	Thin (Hairline)
-200	Extra Light (Ultra Light)
-300	Light
-400	Normal
-500	Medium
-600	Semi Bold (Demi Bold)
-700	Bold
-800	Extra Bold (Ultra Bold)
-900	Black (Heavy)
-**/
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
 .ms-Label[data-v-9e6e890e] {
   font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -4516,6 +4930,445 @@
   min-width: 260px;
   padding-top: 6px;
   overflow: auto; }
+
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+/* Theme related color values */
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes color and background styles
+*/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes only the color values
+*/
+/***
+100	Thin (Hairline)
+200	Extra Light (Ultra Light)
+300	Light
+400	Normal
+500	Medium
+600	Semi Bold (Demi Bold)
+700	Bold
+800	Extra Bold (Ultra Bold)
+900	Black (Heavy)
+**/
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+.ms-CheckBox[data-v-75ed8232] {
+  box-sizing: border-box;
+  color: "[theme:neutralPrimary, default: #333333]";
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  min-height: 36px;
+  position: relative; }
+  .ms-CheckBox .ms-Label[data-v-75ed8232] {
+    font-size: 14px;
+    padding: 0 0 0 26px;
+    cursor: pointer;
+    display: inline-block; }
+
+.ms-CheckBox-input[data-v-75ed8232] {
+  position: absolute;
+  opacity: 0; }
+
+.ms-CheckBox-field[data-v-75ed8232]::before {
+  content: '';
+  display: inline-block;
+  border: 2px solid "[theme:neutralTertiary, default: #a6a6a6]";
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  font-weight: normal;
+  position: absolute;
+  box-sizing: border-box;
+  transition-property: background, border, border-color;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.23, 1); }
+
+.ms-CheckBox-field[data-v-75ed8232]::after {
+  content: "\E73E";
+  font-family: 'FabricMDL2Icons';
+  display: none;
+  position: absolute;
+  font-weight: 900;
+  background-color: transparent;
+  font-size: 13px;
+  top: 0;
+  color: "[theme:white, default: #ffffff]";
+  line-height: 20px;
+  width: 20px;
+  text-align: center; }
+  @media screen and (-ms-high-contrast: active) {
+    .ms-CheckBox-field[data-v-75ed8232]::after {
+      color: "[theme:black, default: #000000]"; } }
+  @media screen and (-ms-high-contrast: black-on-white) {
+    .ms-CheckBox-field[data-v-75ed8232]::after {
+      color: "[theme:white, default: #ffffff]"; } }
+
+.ms-CheckBox-field[data-v-75ed8232] {
+  display: inline-block;
+  cursor: pointer;
+  margin-top: 8px;
+  position: relative;
+  outline: 0;
+  vertical-align: top; }
+  .ms-CheckBox-field[data-v-75ed8232]:hover::before, .ms-CheckBox-field[data-v-75ed8232]:focus::before {
+    border-color: "[theme:neutralSecondaryAlt, default: #767676]"; }
+  .ms-CheckBox-field:hover .ms-Label[data-v-75ed8232], .ms-CheckBox-field:focus .ms-Label[data-v-75ed8232] {
+    color: "[theme:black, default: #000000]"; }
+  .ms-CheckBox-field.is-disabled[data-v-75ed8232] {
+    cursor: default; }
+    .ms-CheckBox-field.is-disabled[data-v-75ed8232]::before {
+      background-color: "[theme:neutralTertiaryAlt, default: #c8c8c8]";
+      border-color: "[theme:neutralTertiaryAlt, default: #c8c8c8]";
+      color: "[theme:neutralTertiaryAlt, default: #c8c8c8]"; }
+      @media screen and (-ms-high-contrast: active) {
+        .ms-CheckBox-field.is-disabled[data-v-75ed8232]::before {
+          border-color: #00ff00; } }
+      @media screen and (-ms-high-contrast: black-on-white) {
+        .ms-CheckBox-field.is-disabled[data-v-75ed8232]::before {
+          border-color: #600000; } }
+    .ms-CheckBox-field.is-disabled .ms-Label[data-v-75ed8232] {
+      color: "[theme:neutralTertiary, default: #a6a6a6]"; }
+      @media screen and (-ms-high-contrast: active) {
+        .ms-CheckBox-field.is-disabled .ms-Label[data-v-75ed8232] {
+          color: #00ff00; } }
+      @media screen and (-ms-high-contrast: black-on-white) {
+        .ms-CheckBox-field.is-disabled .ms-Label[data-v-75ed8232] {
+          color: #600000; } }
+  .ms-CheckBox-field.in-focus[data-v-75ed8232]::before {
+    border-color: "[theme:neutralSecondaryAlt, default: #767676]"; }
+  .ms-CheckBox-field.in-focus.is-disabled[data-v-75ed8232]::before {
+    border-color: "[theme:neutralTertiaryAlt, default: #c8c8c8]"; }
+  .ms-CheckBox-field.in-focus.is-checked[data-v-75ed8232]::before {
+    border-color: "[theme:themeDarkAlt, default: #106ebe]"; }
+
+.ms-CheckBox-field.is-checked[data-v-75ed8232]::before {
+  border: 10px solid "[theme:themePrimary, default: #0078d7]";
+  background-color: "[theme:themePrimary, default: #0078d7]"; }
+  @media screen and (-ms-high-contrast: active) {
+    .ms-CheckBox-field.is-checked[data-v-75ed8232]::before {
+      border-color: #1AEBFF; } }
+  @media screen and (-ms-high-contrast: black-on-white) {
+    .ms-CheckBox-field.is-checked[data-v-75ed8232]::before {
+      border-color: #37006E; } }
+
+.ms-CheckBox-field.is-checked[data-v-75ed8232]::after {
+  display: block; }
+
+.ms-CheckBox-field.is-checked[data-v-75ed8232]:hover::before, .ms-CheckBox-field.is-checked[data-v-75ed8232]:focus::before {
+  border-color: "[theme:themeDarkAlt, default: #106ebe]"; }
+
+.ms-CheckBox-field[data-v-75ed8232]::after {
+  content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2048 2048" width="16" height="16" version="1.1" xmlns="http://www.w3.org/2000/svg"><path transform="translate(0, 2048) scale(1, -1)" d="M1837 1491l-1069 -1070l-557 558l90 90l467 -466l979 978z" fill="white" stroke="none"/></svg>') !important; }
+
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+/* Theme related color values */
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes color and background styles
+*/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes only the color values
+*/
+/***
+100	Thin (Hairline)
+200	Extra Light (Ultra Light)
+300	Light
+400	Normal
+500	Medium
+600	Semi Bold (Demi Bold)
+700	Bold
+800	Extra Bold (Ultra Bold)
+900	Black (Heavy)
+**/
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+.ms-CommandButton[data-v-6b2aa7e9] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  position: relative;
+  vertical-align: top; }
+  .ms-CommandButton.is-hidden[data-v-6b2aa7e9] {
+    display: none; }
+  .ms-CommandButton:disabled .ms-CommandButton-button[data-v-6b2aa7e9], .ms-CommandButton.is-disabled .ms-CommandButton-button[data-v-6b2aa7e9] {
+    cursor: default; }
+    .ms-CommandButton:disabled .ms-CommandButton-button[data-v-6b2aa7e9]:hover, .ms-CommandButton.is-disabled .ms-CommandButton-button[data-v-6b2aa7e9]:hover {
+      background-color: "[theme:themeLighterAlt, default: #eff6fc]"; }
+    .ms-CommandButton:disabled .ms-CommandButton-button .ms-CommandButton-label[data-v-6b2aa7e9], .ms-CommandButton.is-disabled .ms-CommandButton-button .ms-CommandButton-label[data-v-6b2aa7e9] {
+      color: "[theme:neutralTertiary, default: #a6a6a6]"; }
+    .ms-CommandButton:disabled .ms-CommandButton-button .ms-CommandButton-icon[data-v-6b2aa7e9], .ms-CommandButton.is-disabled .ms-CommandButton-button .ms-CommandButton-icon[data-v-6b2aa7e9] {
+      color: "[theme:neutralTertiary, default: #a6a6a6]"; }
+  .ms-CommandButton .ms-ContextualMenu[data-v-6b2aa7e9] {
+    display: none; }
+
+.ms-CommandButton-button[data-v-6b2aa7e9],
+.ms-CommandButton-splitIcon[data-v-6b2aa7e9] {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  color: "[theme:neutralPrimary, default: #333333]";
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  outline: 1px solid transparent;
+  padding: 0 8px;
+  position: relative;
+  vertical-align: top;
+  background: transparent; }
+  .ms-CommandButton-button[data-v-6b2aa7e9]:hover,
+  .ms-CommandButton-splitIcon[data-v-6b2aa7e9]:hover {
+    background-color: "[theme:neutralLight, default: #eaeaea]"; }
+    .ms-CommandButton-button:hover .ms-CommandButton-label[data-v-6b2aa7e9],
+    .ms-CommandButton-splitIcon:hover .ms-CommandButton-label[data-v-6b2aa7e9] {
+      color: "[theme:neutralDark, default: #212121]"; }
+  .ms-CommandButton-button[data-v-6b2aa7e9]:active,
+  .ms-CommandButton-splitIcon[data-v-6b2aa7e9]:active {
+    background-color: "[theme:neutralLight, default: #eaeaea]"; }
+  .ms-CommandButton-button[data-v-6b2aa7e9]:focus::before,
+  .ms-CommandButton-splitIcon[data-v-6b2aa7e9]:focus::before {
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    border: 1px solid "[theme:neutralPrimary, default: #333333]";
+    position: absolute;
+    z-index: 10;
+    content: '';
+    outline: none; }
+  .ms-CommandButton-button[data-v-6b2aa7e9]:focus,
+  .ms-CommandButton-splitIcon[data-v-6b2aa7e9]:focus {
+    outline: 0; }
+  @media only screen and (max-width: 639px) {
+    .ms-CommandButton-button[data-v-6b2aa7e9],
+    .ms-CommandButton-splitIcon[data-v-6b2aa7e9] {
+      height: 44px; }
+      .ms-CommandButton-button .ms-CommandButton-icon[data-v-6b2aa7e9],
+      .ms-CommandButton-splitIcon .ms-CommandButton-icon[data-v-6b2aa7e9] {
+        font-size: 20px; }
+      .ms-CommandButton-button .ms-CommandButton-label[data-v-6b2aa7e9],
+      .ms-CommandButton-splitIcon .ms-CommandButton-label[data-v-6b2aa7e9] {
+        line-height: 44px; } }
+
+.ms-CommandButton-button[data-v-6b2aa7e9] {
+  border: 0;
+  margin: 0; }
+
+.ms-CommandButton + .ms-CommandButton[data-v-6b2aa7e9] {
+  margin-left: 8px; }
+  @media only screen and (max-width: 639px) {
+    .ms-CommandButton + .ms-CommandButton[data-v-6b2aa7e9] {
+      margin-left: 4px; } }
+
+.ms-CommandButton-icon[data-v-6b2aa7e9] {
+  display: inline-block;
+  margin-right: 8px;
+  position: relative;
+  font-size: 16px;
+  min-width: 16px;
+  height: 100%; }
+  .ms-CommandButton-icon .ms-Icon[data-v-6b2aa7e9] {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+
+.ms-CommandButton-label[data-v-6b2aa7e9] {
+  font-size: 14px;
+  font-weight: 400;
+  color: "[theme:neutralPrimary, default: #333333]";
+  line-height: 40px;
+  height: 100%;
+  display: inline-block;
+  vertical-align: top; }
+  .ms-CommandButton-label[data-v-6b2aa7e9]:hover {
+    color: "[theme:neutralDark, default: #212121]"; }
+
+.ms-CommandButton-dropdownIcon[data-v-6b2aa7e9],
+.ms-CommandButton-splitIcon[data-v-6b2aa7e9] {
+  display: inline-block;
+  position: relative;
+  color: "[theme:neutralPrimary, default: #333333]";
+  font-size: 12px;
+  font-weight: 300;
+  min-width: 12px;
+  height: 100%;
+  vertical-align: top;
+  margin-left: 8px; }
+  .ms-CommandButton-dropdownIcon .ms-Icon[data-v-6b2aa7e9],
+  .ms-CommandButton-splitIcon .ms-Icon[data-v-6b2aa7e9] {
+    line-height: normal;
+    padding-top: 16px; }
+  .ms-CommandButton-dropdownIcon[data-v-6b2aa7e9]:focus::before,
+  .ms-CommandButton-splitIcon[data-v-6b2aa7e9]:focus::before {
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    border: 1px solid "[theme:neutralPrimary, default: #333333]";
+    position: absolute;
+    z-index: 10;
+    content: '';
+    outline: none; }
+  @media only screen and (max-width: 639px) {
+    .ms-CommandButton-dropdownIcon[data-v-6b2aa7e9],
+    .ms-CommandButton-splitIcon[data-v-6b2aa7e9] {
+      display: none; } }
+
+.ms-CommandButton-splitIcon[data-v-6b2aa7e9] {
+  margin-left: -2px;
+  width: 27px;
+  border: 0; }
+  .ms-CommandButton-splitIcon .ms-Icon[data-v-6b2aa7e9] {
+    margin-left: -1px;
+    position: relative;
+    padding-top: 16px; }
+    .ms-CommandButton-splitIcon .ms-Icon[data-v-6b2aa7e9]::after {
+      position: absolute;
+      content: ' ';
+      width: 1px;
+      height: 16px;
+      top: 12px;
+      left: -8px;
+      border-left: 1px solid "[theme:neutralTertiaryAlt, default: #c8c8c8]"; }
+
+.ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-icon[data-v-6b2aa7e9] {
+  margin-right: 0; }
+
+.ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-label[data-v-6b2aa7e9] {
+  display: none; }
+
+.ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-button[data-v-6b2aa7e9] {
+  padding: 0 12px; }
+
+.ms-CommandButton.ms-CommandButton--inline .ms-CommandButton-button[data-v-6b2aa7e9] {
+  background: none; }
+
+.ms-CommandButton.ms-CommandButton--actionButton .ms-CommandButton-button[data-v-6b2aa7e9] {
+  width: 50px;
+  height: 40px; }
+
+.ms-CommandButton.ms-CommandButton--actionButton .ms-CommandButton-icon[data-v-6b2aa7e9] {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  padding-right: 0; }
+
+.ms-CommandButton.ms-CommandButton--pivot.is-active[data-v-6b2aa7e9]::before {
+  content: '';
+  height: 2px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: "[theme:themePrimary, default: #0078d7]";
+  bottom: 0;
+  z-index: 5; }
+
+.ms-CommandButton.ms-CommandButton--pivot[data-v-6b2aa7e9]:hover::before {
+  content: '';
+  height: 2px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: "[theme:themePrimary, default: #0078d7]";
+  bottom: 0;
+  z-index: 5; }
+
+.ms-CommandButton.ms-CommandButton--textOnly .ms-CommandButton-label[data-v-6b2aa7e9],
+.ms-CommandButton.ms-CommandButton--pivot .ms-CommandButton-label[data-v-6b2aa7e9] {
+  display: inline-block; }
+  @media only screen and (max-width: 479px) {
+    .ms-CommandButton.ms-CommandButton--textOnly .ms-CommandButton-label[data-v-6b2aa7e9],
+    .ms-CommandButton.ms-CommandButton--pivot .ms-CommandButton-label[data-v-6b2aa7e9] {
+      font-size: 16px; } }
 
 
 

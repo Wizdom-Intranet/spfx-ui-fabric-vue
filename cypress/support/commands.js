@@ -34,8 +34,12 @@ Cypress.Commands.add('vrt', { prevSubject: true }, (prevSubject, ssName) => {
             var cmd = ".\\node_modules\\.bin\\pixelmatch \"" + baseFile + "\" \"" + ssFile + "\" \"" + diffFile + "\" 0.1";
             cy.exec(cmd , { failOnNonZeroExit : false}).then((result)=>{
                 var errorPercent = result.stdout.split('error: ')[1].split('%')[0] * 1;
-
-                assert(errorPercent < 0.1, "Visual comparison: '" + ssName + "' are " + errorPercent + "% different");
+                if(errorPercent<0.1)
+                    cy.task("delete", diffFile);
+                cy.task("delete", ssFile);
+                cy.then(()=>{
+                    assert(errorPercent < 0.1, "Visual comparison: '" + ssName + "' are " + errorPercent + "% different");
+                })
             });
         })
 });
