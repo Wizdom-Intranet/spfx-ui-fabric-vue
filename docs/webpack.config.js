@@ -22,6 +22,7 @@ module.exports = {
         commandbutton: './docs/commandbutton.js',
         link: './docs/link.js',
         pivot: './docs/pivot.js',
+        list: './docs/list.js',
     },
     output: {
         filename: './[name].js',
