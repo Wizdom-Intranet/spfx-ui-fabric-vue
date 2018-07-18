@@ -3,10 +3,8 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonJS from 'rollup-plugin-commonjs';
 import buble from 'rollup-plugin-buble';
 
-export default
-{
+export default {
     input: 'src/index.js',
-
     output:{
         format:"es",
         file : "./dist/bundle.esm.js",

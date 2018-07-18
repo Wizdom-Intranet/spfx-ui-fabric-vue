@@ -58,3 +58,6 @@ Dialog, has an extra property to show dark overlay, called useDarkOverlay (Boole
  - ES Modules! every component can be used indivudually. No need to load a huge bundle, just to show ex. a button
  - Styles are automatically loaded and respect SPFX themes
  - Font files are only needed for the Icon component. All other components uses svgs instead for their icons
+
+ ## Todo:
+ Maybe use small inline fonts instead of SVG's? http://stephenscaff.com/articles/2013/09/font-face-and-base64-data-uri/

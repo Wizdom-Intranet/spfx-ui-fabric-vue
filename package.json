@@ -1,8 +1,9 @@
 {
-  "name": "@wizdom/spfx-ui-fabric-vue",
-  "version": "1.0.0",
+  "name": "@wizdom-intranet/spfx-ui-fabric-vue",
+  "version": "1.0.1",
   "description": "Office ui fabric components made specific for SPFx.",
-  "main": "index.js",
+  "main": "dist/bundle.esm.js",
+  "module": "dist/bundle.esm.js",
   "scripts": {
     "build": "rollup -c ./rollup.config.js",
     "build:watch": "rollup -c ./rollup.config.js --watch",
