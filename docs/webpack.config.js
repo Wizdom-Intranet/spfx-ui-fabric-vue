@@ -24,6 +24,7 @@ module.exports = {
         pivot: './docs/pivot.js',
         list: './docs/list.js',
         toggle: './docs/toggle.js',
+        progressIndicator: './docs/progressIndicator.js',
     },
     output: {
         filename: './[name].js',
