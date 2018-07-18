@@ -22,6 +22,7 @@ export { default as uiPanel } from "./components/uiPanel.vue";
 export { default as uiPersona } from "./components/uiPersona.vue";
 export { default as uiPivot } from "./components/uiPivot.vue";
 export { default as uiPivotItem } from "./components/uiPivotItem.vue";
+export { default as uiProgressIndicator } from "./components/uiProgressIndicator.vue";
 export { default as uiSearchBox } from "./components/uiSearchbox.vue";
 export { default as uiSpinner } from "./components/uiSpinner.vue";
 export { default as uiTextfield } from "./components/uiTextfield.vue";
