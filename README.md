@@ -25,15 +25,14 @@ CommandButton    | Yes               | Yes                | Yes                 
 Link             | Yes               | Yes                | Yes                         | 
 Pivot            | Yes               | Yes                | Yes                         | 
 List             | Yes               | Yes                | Yes                         |
+Toggle           | Yes               | Yes                | Yes                         |
 
 ## Component status - Todo
 Component         | Notes
  ---              | ---
-
 ListItem          | 
 MessageBanner     | 
 ProgressIndicator | 
-Toggle            | 
 Facepile          |
 PeoplePicker      |
 PersonaCard       |
@@ -43,13 +42,14 @@ Breadcrumb        |
 
 ## Bonus components
 No part of the normal ui fabric, but used by multiple wizdom components
+
 Component        | Implemented | Notes
 ---              | :---:       | ---
 Imageuploader    | No          | Needs a wizdom context, see wiki for more info
 Richtexteditor   | No          | Needs a license key, see wiki for more info
-TemplateSwitcher | No
-Typeahead        | No
-Multiselect      | No
+TemplateSwitcher | No          |
+Typeahead        | No          |
+Multiselect      | No          |
 
 ## Changes, compared to https://aidewoode.github.io/office-ui-fabric-vue/#/
 Dialog, has an extra property to show dark overlay, called useDarkOverlay (Boolean)
