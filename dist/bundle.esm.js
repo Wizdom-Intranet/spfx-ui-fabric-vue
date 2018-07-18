@@ -76,275 +76,6 @@ var uiButton = {_scopeId: 'data-v-79820dd6',
     extends :  button
 }
 
-var overlay = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"overlay",staticClass:"ms-Overlay",class:_vm.overlayClass})},staticRenderFns: [],
-  name: 'ou-overlay',
-
-  mixins: [type('dark')],
-
-  props: {
-    value: Boolean
-  },
-
-  data: function data() {
-    return {
-      overlayInstance: null
-    };
-  },
-
-  watch: {
-    value: function value() {
-      this.setOverlayVisibility();
-    }
-  },
-
-  computed: {
-    overlayClass: function overlayClass() {
-      var obj;
-
-      return ( obj = {}, obj[("ms-Overlay--" + (this.type))] = !!this.type, obj );
-    }
-  },
-
-  mounted: function mounted() {
-    this.overlayInstance = new this.$fabric.Overlay(this.$refs.overlay);
-
-    this.setOverlayVisibility();
-    this.bindOverlayCloseEvent();
-  },
-
-  methods: {
-    setOverlayVisibility: function setOverlayVisibility() {
-      this.value ? this.overlayInstance.show() : this.overlayInstance.hide();
-    },
-
-    bindOverlayCloseEvent: function bindOverlayCloseEvent() {
-      var this$1 = this;
-
-      // Because the overlay component don't have callback when overlay closed,
-      // So add a click event when click the overlay to set the value to false
-      var overlayElement = this.$refs.overlay;
-      var closeOverlay = function () {
-        this$1.$emit('input', false);
-      };
-
-      overlayElement.addEventListener('click', closeOverlay);
-    }
-  }
-};
-
-var Overlay = (function () {
-    function Overlay(overlayElement) {
-        if (overlayElement) {
-            this.overlayElement = overlayElement;
-        }
-        else {
-            var overlayContainer = document.createElement("div");
-            overlayContainer.setAttribute("class", "ms-Overlay");
-            this.overlayElement = overlayContainer;
-        }
-        this.overlayElement.addEventListener("click", this.hide.bind(this), false);
-    }
-    Overlay.prototype.remove = function () {
-        this.overlayElement.parentElement.removeChild(this.overlayElement);
-    };
-    Overlay.prototype.show = function () {
-        this.overlayElement.classList.add("is-visible");
-        document.body.classList.add("ms-u-overflowHidden");
-    };
-    Overlay.prototype.hide = function () {
-        this.overlayElement.classList.remove("is-visible");
-        document.body.classList.remove("ms-u-overflowHidden");
-    };
-    return Overlay;
-}());
-
-var uiOverlay = {_scopeId: 'data-v-09ffd35c',
-    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-Overlay[data-v-09ffd35c] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; background-color: \"[theme:whiteTranslucent40, default: rgba(255,255,255,.4)]\"; position: fixed; bottom: 0; left: 0; right: 0; top: 0; z-index: 0; display: none; } .ms-Overlay.is-visible[data-v-09ffd35c] { display: block; } .ms-Overlay--dark[data-v-09ffd35c] { background-color: \"[theme:blackTranslucent40, default: rgba(0,0,0,.4)]\"; } .ms-u-overflowHidden[data-v-09ffd35c] { overflow: hidden; } ");},
-    beforeMount: function beforeMount(){
-        this.$fabric = {
-            Overlay : Overlay
-        };
-    },
-    watch:{
-        useDarkOverlay:{
-            handler: function handler(newVal){
-                
-            },
-            immediate : true
-        }
-    },
-    props : {
-        useDarkOverlay: Boolean
-    },
-    extends :  overlay
-}
-
-var dialog = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"dialog",staticClass:"ms-Dialog",class:_vm.dialogClass},[(_vm.type == 'close')?_c('button',{staticClass:"ms-Dialog-button ms-Dialog-buttonClose",on:{"click":_vm.closeDialog}},[_c('i',{staticClass:"ms-Icon ms-Icon--Cancel"})]):_vm._e(),_vm._v(" "),_c('div',{staticClass:"ms-Dialog-title"},[_vm._v(_vm._s(_vm.title))]),_vm._v(" "),_c('div',{staticClass:"ms-Dialog-content"},[_c('p',{staticClass:"ms-Dialog-subText"},[_vm._v(_vm._s(_vm.subText))]),_vm._v(" "),_vm._t("default")],2),_vm._v(" "),_c('div',{staticClass:"ms-Dialog-actions"},[_vm._t("actions")],2)])},staticRenderFns: [],
-  name: 'ou-dialog',
-
-  mixins: [type('multiline', 'lgHeader', 'blocking', 'close')],
-
-  props: {
-    title: String,
-    subText: String,
-
-    value: {
-      type: Boolean,
-      default: false
-    }
-  },
-
-  data: function data() {
-    return {
-      dialogInstance: null
-    };
-  },
-
-  computed: {
-    dialogClass: function dialogClass() {
-      var obj;
-
-      return ( obj = {}, obj[("ms-Dialog--" + (this.type))] = !!this.type, obj );
-    }
-  },
-
-  watch: {
-    value: function value(value$1) {
-      this.setDialogVisibility(value$1);
-    }
-  },
-
-  mounted: function mounted() {
-    this.dialogInstance = new this.$fabric.Dialog(this.$refs.dialog);
-    this.setDialogVisibility(this.value);
-  },
-
-  methods: {
-    setDialogVisibility: function setDialogVisibility(value) {
-      if (value) {
-        this.dialogInstance.open();
-
-        // Because the office ui fabric js don't support on_close or on_open event in dialog
-        // component, So I have to write some hacking code to change the visible status when
-        // click the overlay. Otherwise the visible status can't change, when click the overlay
-        // to close the dialog.
-        this.bindOverlayCloseEvent();
-      } else if (this.isOpen()) {
-        // Avoid to destroy overlay element twice, and get errors, so determine if the dialog
-        // was opened before close it.
-        this.dialogInstance.close();
-      }
-    },
-
-    bindOverlayCloseEvent: function bindOverlayCloseEvent() {
-      var this$1 = this;
-
-      if (this.dialogInstance._overlay) {
-        var overlayElement = this.dialogInstance._overlay.overlayElement;
-
-        var closeOverlay = function () {
-          overlayElement.removeEventListener('click', closeOverlay);
-          this$1.$emit('input', false);
-        };
-
-        overlayElement.addEventListener('click', closeOverlay);
-      }
-    },
-
-    isOpen: function isOpen() {
-      // When the dialog is shown, the dialog element add a class name of 'is-open',
-      // So use this to determine the dialog if was opened.
-      return this.$refs.dialog.classList.contains('is-open');
-    },
-
-    closeDialog: function closeDialog(event) {
-      this.$emit('input', false);
-
-
-      // Because the original close button element have the click event to close the dialog,
-      // when I fire the click event, the original click event function will fire behind it,
-      // So stop the original click event, when I fire the click event.
-      event.stopImmediatePropagation();
-    }
-  }
-};
-
-var Dialog = (function () {
-    function Dialog(dialog) {
-        var this$1 = this;
-
-        this._dialog = dialog;
-        this._closeButtonElement = this._dialog.querySelector(".ms-Dialog-buttonClose");
-        this._actionButtonElements = this._dialog.querySelectorAll(".ms-Dialog-action");
-        if (this._closeButtonElement) {
-            this._closeButtonElement.addEventListener("click", this.close.bind(this), false);
-        }
-        for (var i = 0; i < this._actionButtonElements.length; i++) {
-            this$1._actionButtonElements[i].addEventListener("click", this$1.close.bind(this$1), false);
-        }
-    }
-    Dialog.prototype.close = function () {
-        this._overlay.remove();
-        this._dialog.classList.remove("is-open");
-        document.body.classList.remove("ms-u-overflowHidden");
-        this._overlay.overlayElement.removeEventListener("click", this.close.bind(this));
-    };
-    Dialog.prototype.open = function () {
-        this._dialog.classList.add("is-open");
-        this._overlay = new Overlay();
-        if (!this._dialog.classList.contains("ms-Dialog--blocking")) {
-            this._overlay.overlayElement.addEventListener("click", this.close.bind(this), false);
-            this._overlay.show();
-            document.body.classList.add("ms-u-overflowHidden");
-        }
-        this._dialog.parentElement.appendChild(this._overlay.overlayElement);
-    };
-    return Dialog;
-}());
-
-var uiDialog = {_scopeId: 'data-v-1194e8ec',
-    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-Dialog[data-v-1194e8ec] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4); background-color: \"[theme:white, default: #ffffff]\"; display: none; height: auto; min-width: 220px; max-width: 340px; padding: 28px 24px; z-index: 10; position: fixed; transform: translate(-50%, -50%); left: 50%; top: 50%; } .ms-Dialog.is-open[data-v-1194e8ec] { display: block; } .ms-Dialog-title[data-v-1194e8ec] { font-size: 21px; font-weight: 100; margin-bottom: 24px; } .ms-Dialog-content[data-v-1194e8ec] { position: relative; } .ms-Dialog-subText[data-v-1194e8ec] { color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 12px; font-weight: 300; line-height: 1.5; } .ms-Dialog-actions[data-v-1194e8ec] { margin-top: 24px; text-align: right; } .ms-Dialog--multiline .ms-Dialog-title[data-v-1194e8ec] { font-size: 28px; } .ms-Dialog.ms-Dialog--lgHeader .ms-Dialog-title[data-v-1194e8ec] { background-color: \"[theme:themePrimary, default: #0078d7]\"; color: \"[theme:white, default: #ffffff]\"; font-size: 28px; font-weight: 100; padding: 28px 24px; margin-top: -28px; margin-left: -24px; margin-right: -24px; } .ms-Dialog-buttonClose[data-v-1194e8ec] { background: none; border: 0; cursor: pointer; margin: 0; padding: 4px; position: absolute; right: 12px; top: 12px; z-index: 10; } .ms-Dialog-buttonClose .ms-Icon.ms-Icon--Cancel[data-v-1194e8ec] { color: \"[theme:neutralSecondary, default: #666666]\"; font-size: 16px; } .ms-Button.ms-Button--compound[data-v-1194e8ec]:not(:last-child) { margin-bottom: 20px; } .ms-Dialog.ms-Dialog--close:not(.ms-Dialog--lgHeader) .ms-Dialog-title[data-v-1194e8ec] { margin-right: 20px; } .ms-Dialog.ms-Dialog--close:not(.ms-Dialog--lgHeader) .ms-Dialog-button.ms-Dialog-buttonClose[data-v-1194e8ec] { display: block; } @media (min-width: 480px) { .ms-Dialog-main[data-v-1194e8ec] { width: auto; min-width: 288px; max-width: 340px; } } .ms-Overlay[data-v-1194e8ec] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; background-color: \"[theme:whiteTranslucent40, default: rgba(255,255,255,.4)]\"; position: fixed; bottom: 0; left: 0; right: 0; top: 0; z-index: 0; display: none; } .ms-Overlay.is-visible[data-v-1194e8ec] { display: block; } .ms-Overlay--dark[data-v-1194e8ec] { background-color: \"[theme:blackTranslucent40, default: rgba(0,0,0,.4)]\"; } .ms-u-overflowHidden[data-v-1194e8ec] { overflow: hidden; } .ms-Icon.ms-Icon--Cancel[data-v-1194e8ec] { content: url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"16\" height=\"16\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M1115 1024l690 -691l-90 -90l-691 690l-691 -690l-90 90l690 691l-690 691l90 90l691 -690l691 690l90 -90z\" fill=\"black\" stroke=\"none\"/></svg>'); } ");},
-    beforeMount: function beforeMount(){
-        this.$fabric = {
-            Dialog : Dialog
-        };
-    },
-    props : {
-        useDarkOverlay : Boolean
-    },
-    methods : {
-        ensureScopeIdForChilds: function ensureScopeIdForChilds(){
-            if(this.dialogInstance && this.dialogInstance._overlay && this.dialogInstance._overlay.overlayElement){
-                this.dialogInstance._overlay.overlayElement.setAttribute(this.$options._scopeId,"");
-                if(this.useDarkOverlay)
-                    { this.dialogInstance._overlay.overlayElement.className += " ms-Overlay--dark"; }
-            }
-        },
-        ensureOverlayIsClosed: function ensureOverlayIsClosed(){
-            if(this.dialogInstance && this.dialogInstance._overlay && this.dialogInstance._overlay.overlayElement.parentElement)
-                { this.dialogInstance._overlay.remove(); }
-        }
-    },
-    mounted: function () {
-        this.$nextTick(function () {
-            this.ensureScopeIdForChilds();
-        });
-    },
-    watch:{
-        value: function value(newVal){
-            this.ensureScopeIdForChilds();
-
-        if(!newVal)
-            { this.ensureOverlayIsClosed(); }
-        }
-    },
-    beforeDestroy: function beforeDestroy()
-    {
-        this.ensureOverlayIsClosed();
-    },
-    extends :  dialog
-}
-
 var callout = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('div',{ref:"callout",staticClass:"ms-Callout is-hidden",class:_vm.calloutClass},[_c('div',{staticClass:"ms-Callout-main"},[(_vm.showClose)?_c('button',{staticClass:"ms-Callout-close"},[_c('i',{staticClass:"ms-Icon ms-Icon--Clear"})]):_vm._e(),_vm._v(" "),_c('div',{staticClass:"ms-Callout-header"},[_c('p',{staticClass:"ms-Callout-title"},[_vm._v(_vm._s(_vm.title))])]),_vm._v(" "),_c('div',{staticClass:"ms-Callout-inner"},[_c('div',{staticClass:"ms-Callout-content"},[(_vm.content)?_c('p',{staticClass:"ms-Callout-subText"},[_vm._v(_vm._s(_vm.content))]):_vm._t("content")],2),_vm._v(" "),_c('div',{staticClass:"ms-Callout-actions"},[_vm._t("actions")],2)])])]),_vm._v(" "),_c('span',{ref:"calloutTrigger"},[_vm._t("default")],2)])},staticRenderFns: [],
   name: 'ou-callout',
 
@@ -783,225 +514,177 @@ var uiCallout = {_scopeId: 'data-v-64664f3c',
     extends :  callout
 }
 
-var searchBox = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"searchBox",staticClass:"ms-SearchBox",class:_vm.searchBoxClass},[_c('input',{ref:"searchBoxInput",staticClass:"ms-SearchBox-field",attrs:{"type":"text"},domProps:{"value":_vm.value},on:{"input":_vm.updateValue}}),_vm._v(" "),_c('label',{staticClass:"ms-SearchBox-label"},[_c('i',{staticClass:"ms-SearchBox-icon ms-Icon ms-Icon--Search"}),_vm._v(" "),(!_vm.hasValue)?_c('span',{staticClass:"ms-SearchBox-text"},[_vm._v(_vm._s(_vm.placeholder))]):_vm._e()]),_vm._v(" "),_c('div',{staticClass:"ms-CommandButton ms-SearchBox-clear ms-CommandButton--noLabel",on:{"mousedown":_vm.clearValue}},[_vm._m(0)])])},staticRenderFns: [function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('button',{staticClass:"ms-CommandButton-button"},[_c('span',{staticClass:"ms-CommandButton-icon"},[_c('i',{staticClass:"ms-Icon ms-Icon--Clear"})]),_vm._v(" "),_c('span',{staticClass:"ms-CommandButton-label"})])}],
-  name: 'ou-search-box',
+var checkbox = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"checkbox",staticClass:"ms-CheckBox"},[_c('input',{staticClass:"ms-CheckBox-input",attrs:{"tabindex":"-1","type":"checkbox"},on:{"click":_vm.toggle}}),_vm._v(" "),_c('label',{staticClass:"ms-CheckBox-field",class:{ 'is-disabled': _vm.disabled },attrs:{"role":"checkbox","tabindex":"0","aria-checked":"false","name":"checkbox"}},[_c('span',{staticClass:"ms-Label"},[_vm._t("default")],2)])])},staticRenderFns: [],
+  name: 'ou-checkbox',
 
-  mixins: [type('commandBar')],
+  mixins: [disabled],
 
   props: {
-    value: String,
-    placeholder: String,
-
-    collapsed: {
-      type: Boolean,
-      default: false
-    }
+    value: Boolean
   },
 
   data: function data() {
     return {
-      hasValue: !!this.value,
-      searchBoxInstance: null
+      checkboxInstance: null
     };
   },
 
-  computed: {
-    searchBoxClass: function searchBoxClass() {
-      var obj;
-
-      return ( obj = {}, obj[("ms-SearchBox--" + (this.type))] = !!this.type, obj['is-collapsed'] =  this.collapsed, obj );
+  watch: {
+    value: function value() {
+      this.setCheck();
     }
   },
 
   mounted: function mounted() {
-    this.searchBoxInstance = new this.$fabric.SearchBox(this.$refs.searchBox);
-
-    // Overwrite the default blur event on searchBoxField
-    // to prevent lose content when searchBox blur.
-    // You can see here https://github.com/OfficeDev/office-ui-fabric-js/issues/301
-    this.searchBoxInstance._searchBoxField.removeEventListener('blur', this.searchBoxInstance._boundHandleBlur, true);
-    this.searchBoxInstance._searchBoxField.addEventListener('blur', this.blurEvent, true);
+    this.checkboxInstance = new this.$fabric.CheckBox(this.$refs.checkbox);
+    this.setCheck();
   },
 
   methods: {
-    updateValue: function updateValue(event) {
-      this.$emit('input', event.target.value);
+    toggle: function toggle() {
+      this.$emit('input', this.checkboxInstance.getValue());
     },
 
-    clearValue: function clearValue() {
-      this.$emit('input', '');
-    },
-
-    blurEvent: function blurEvent() {
-      var self = this.searchBoxInstance;
-
-      if (!self._clearOnly) {
-        self._searchBox.removeEventListener('keyup', self._boundEnableClose);
-        setTimeout(function () {
-          if (!self._searchBox.contains(document.activeElement) && self._searchBoxField.value == '') {
-            self._clearSearchBox();
-            self._collapseSearchBox();
-            self.setCollapsedListeners();
-          }
-        }, 10);
-      } else {
-        self._searchBoxField.focus();
-      }
-
-      self._clearOnly = false;
+    setCheck: function setCheck() {
+      this.value && !this.disabled ?
+        this.checkboxInstance.check() :
+        this.checkboxInstance.unCheck();
     }
   }
 };
 
-var SB_FIELD = ".ms-SearchBox-field";
-var SB_CLEAR_BUTTON = ".ms-SearchBox-clear";
-var SB_EXIT_BUTTON = ".ms-SearchBox-exit";
-var SB_HAS_TEXT = "has-text";
-var SB_IS_ACTIVE = "is-active";
-var SB_IS_ANIMATED = "is-animated";
-var SearchBox = (function () {
-    function SearchBox(container) {
-        var _this = this;
+var CheckBox = (function () {
+    function CheckBox(container) {
         this._container = container;
-        this._saveDOMRefs(this._container);
-        this._boundExpandSearchHandler = this._expandSearchHandler.bind(this);
-        this._boundEnableClose = this._enableClose.bind(this);
-        this._boundCollapseSearchBox = this._collapseSearchBox.bind(this);
-        this._boundClearSearchBox = this._clearSearchBox.bind(this);
-        this._boundHandleBlur = this._handleBlur.bind(this);
-        this._boundExitSearchBox = this._exitSearchBox.bind(this);
-        this._setHasText();
-        this._setFocusAction(this._container);
-        this._setClearButtonAction();
-        this._setBlurAction();
-        this._clearOnly = false;
-        setTimeout(function () {
-            _this._checkState();
-            _this._addAnimation();
-        }, 10);
+        this._choiceField = this._container.querySelector(".ms-CheckBox-field");
+        this._choiceInput = this._container.querySelector(".ms-CheckBox-input");
+        if (this._choiceInput.checked) {
+            this._choiceField.setAttribute("aria-checked", "true");
+        }
+        if (this._choiceField.getAttribute("aria-checked") === "true") {
+            this._choiceField.classList.add("is-checked");
+        }
+        this._addListeners();
     }
-    SearchBox.prototype.setCollapsedListeners = function () {
-        this._disposeListeners();
-        this._searchBox.addEventListener("click", this._boundExpandSearchHandler, false);
-        this._searchBoxField.addEventListener("focus", this._boundExpandSearchHandler, true);
+    CheckBox.prototype.getValue = function () {
+        return this._choiceField.getAttribute("aria-checked") === "true" ? true : false;
     };
-    SearchBox.prototype.getInputField = function () {
-        return this._searchBoxField;
+    CheckBox.prototype.toggle = function () {
+        if (this.getValue()) {
+            this.unCheck();
+        }
+        else {
+            this.check();
+        }
+        this._choiceInput.click();
     };
-    SearchBox.prototype._saveDOMRefs = function (context) {
-        this._searchBox = context;
-        this._searchBoxField = this._searchBox.querySelector(SB_FIELD);
-        this._searchBoxClearButton = this._searchBox.querySelector(SB_CLEAR_BUTTON);
-        this._searchBoxExitButton = this._searchBox.querySelector(SB_EXIT_BUTTON);
+    CheckBox.prototype.check = function () {
+        this._choiceField.setAttribute("aria-checked", "true");
+        this._choiceField.classList.add("is-checked");
     };
-    SearchBox.prototype._disposeListeners = function () {
-        this._searchBox.removeEventListener("click", this._boundExpandSearchHandler);
-        this._searchBoxField.removeEventListener("focus", this._boundExpandSearchHandler);
+    CheckBox.prototype.unCheck = function () {
+        this._choiceField.setAttribute("aria-checked", "false");
+        this._choiceField.classList.remove("is-checked");
     };
-    SearchBox.prototype._exitSearchBox = function (event) {
+    CheckBox.prototype.removeListeners = function () {
+        this._choiceField.removeEventListener("focus", this._FocusHandler.bind(this));
+        this._choiceField.removeEventListener("blur", this._BlurHandler.bind(this));
+        this._choiceField.removeEventListener("click", this._ClickHandler.bind(this));
+        this._choiceField.removeEventListener("keydown", this._KeydownHandler.bind(this));
+    };
+    CheckBox.prototype._addListeners = function (events) {
+        var ignore = events && events.ignore;
+        if (!ignore || !(ignore.indexOf("focus") > -1)) {
+            this._choiceField.addEventListener("focus", this._FocusHandler.bind(this), false);
+        }
+        if (!ignore || !(ignore.indexOf("blur") > -1)) {
+            this._choiceField.addEventListener("blur", this._BlurHandler.bind(this), false);
+        }
+        if (!ignore || !(ignore.indexOf("click") > -1)) {
+            this._choiceField.addEventListener("click", this._ClickHandler.bind(this), false);
+        }
+        if (!ignore || !(ignore.indexOf("keydown") > -1)) {
+            this._choiceField.addEventListener("keydown", this._KeydownHandler.bind(this), false);
+        }
+    };
+    CheckBox.prototype._FocusHandler = function () {
+        this._choiceField.classList.add("in-focus");
+    };
+    CheckBox.prototype._BlurHandler = function () {
+        this._choiceField.classList.remove("in-focus");
+    };
+    CheckBox.prototype._ClickHandler = function (event) {
         event.stopPropagation();
-        event.target.blur();
-        this._clearSearchBox();
-        this._collapseSearchBox();
-        this._searchBox.removeEventListener("keyup", this._boundEnableClose);
-        this.setCollapsedListeners();
-    };
-    SearchBox.prototype._collapseSearchBox = function () {
-        this._searchBox.classList.remove("is-active");
-        var event = document.createEvent("Event");
-        event.initEvent("searchCollapse", true, true);
-        this._searchBoxField.dispatchEvent(event);
-    };
-    SearchBox.prototype._expandSearchHandler = function () {
-        this._disposeListeners();
-        this._searchBox.classList.add("is-active");
-        this._searchBoxField.focus();
-    };
-    SearchBox.prototype._enableClose = function () {
-        this._setHasText();
-    };
-    SearchBox.prototype._setHasText = function () {
-        if (this._searchBoxField.value.length > 0) {
-            this._searchBox.classList.add(SB_HAS_TEXT);
-        }
-        else {
-            this._searchBox.classList.remove(SB_HAS_TEXT);
+        event.preventDefault();
+        if (!this._choiceField.classList.contains("is-disabled")) {
+            this.toggle();
         }
     };
-    SearchBox.prototype._setFocusAction = function (context) {
-        var _this = this;
-        this._searchBoxField.addEventListener("focus", function () {
-            _this._setHasText();
-            _this._searchBox.addEventListener("keyup", _this._boundEnableClose, false);
-            _this._searchBox.classList.add(SB_IS_ACTIVE);
-            _this._searchBox.classList.add(SB_IS_ACTIVE);
-        }, true);
-    };
-    SearchBox.prototype._clearSearchBox = function (event) {
-        var _this = this;
-        this._clearOnly = true;
-        this._searchBoxField.value = "";
-        this._setHasText();
-        setTimeout(function () {
-            _this._clearOnly = false;
-        }, 10);
-    };
-    SearchBox.prototype._setClearButtonAction = function () {
-        var _this = this;
-        if (this._searchBoxExitButton) {
-            this._searchBoxExitButton.addEventListener("click", this._boundExitSearchBox, false);
-        }
-        this._searchBoxClearButton.addEventListener("mousedown", this._boundClearSearchBox, false);
-        this._searchBoxClearButton.addEventListener("keydown", function (e) {
-            var keyCode = e.keyCode;
-            if (keyCode === 13) {
-                _this._clearSearchBox(e);
+    CheckBox.prototype._KeydownHandler = function (event) {
+        if (event.keyCode === 32) {
+            event.stopPropagation();
+            event.preventDefault();
+            if (!this._choiceField.classList.contains("is-disabled")) {
+                this.toggle();
             }
-        }, false);
-    };
-    SearchBox.prototype._handleBlur = function (event) {
-        var _this = this;
-        console.log("_handleBlur");
-        if (this._searchBox.classList.contains("ignoreBlur"))
-            { return; }
-        if (!this._clearOnly) {
-            this._searchBox.removeEventListener("keyup", this._boundEnableClose);
-            setTimeout(function () {
-                if (!_this._searchBox.contains(document.activeElement)) {
-                    _this._clearSearchBox();
-                    _this._collapseSearchBox();
-                    _this.setCollapsedListeners();
-                }
-            }, 10);
-        }
-        else {
-            this._searchBoxField.focus();
-        }
-        this._clearOnly = false;
-    };
-    SearchBox.prototype._setBlurAction = function () {
-        this._searchBoxField.addEventListener("blur", this._boundHandleBlur, true);
-        this._searchBoxClearButton.addEventListener("blur", this._boundHandleBlur, true);
-    };
-    SearchBox.prototype._checkState = function () {
-        if (this._searchBox.classList.contains("is-collapsed")) {
-            this.setCollapsedListeners();
         }
     };
-    SearchBox.prototype._addAnimation = function () {
-        this._container.classList.add(SB_IS_ANIMATED);
-    };
-    return SearchBox;
+    return CheckBox;
 }());
 
-var uiSearchbox = {_scopeId: 'data-v-880410a2',
-    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-Label[data-v-880410a2] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 12px; font-weight: 400; box-sizing: border-box; display: block; padding: 5px 0; } .ms-Label.is-required[data-v-880410a2]::after { content: ' *'; color: \"[theme:error, default: #a80000]\"; } .ms-Label.is-disabled[data-v-880410a2] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } /* searchbox uses mixins from label */ .ms-CommandButton[data-v-880410a2] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; display: inline-block; position: relative; vertical-align: top; } .ms-CommandButton.is-hidden[data-v-880410a2] { display: none; } .ms-CommandButton:disabled .ms-CommandButton-button[data-v-880410a2], .ms-CommandButton.is-disabled .ms-CommandButton-button[data-v-880410a2] { cursor: default; } .ms-CommandButton:disabled .ms-CommandButton-button[data-v-880410a2]:hover, .ms-CommandButton.is-disabled .ms-CommandButton-button[data-v-880410a2]:hover { background-color: \"[theme:themeLighterAlt, default: #eff6fc]\"; } .ms-CommandButton:disabled .ms-CommandButton-button .ms-CommandButton-label[data-v-880410a2], .ms-CommandButton.is-disabled .ms-CommandButton-button .ms-CommandButton-label[data-v-880410a2] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-CommandButton:disabled .ms-CommandButton-button .ms-CommandButton-icon[data-v-880410a2], .ms-CommandButton.is-disabled .ms-CommandButton-button .ms-CommandButton-icon[data-v-880410a2] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-CommandButton .ms-ContextualMenu[data-v-880410a2] { display: none; } .ms-CommandButton-button[data-v-880410a2], .ms-CommandButton-splitIcon[data-v-880410a2] { box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 14px; font-weight: 400; cursor: pointer; display: inline-block; height: 40px; line-height: 40px; outline: 1px solid transparent; padding: 0 8px; position: relative; vertical-align: top; background: transparent; } .ms-CommandButton-button[data-v-880410a2]:hover, .ms-CommandButton-splitIcon[data-v-880410a2]:hover { background-color: \"[theme:neutralLight, default: #eaeaea]\"; } .ms-CommandButton-button:hover .ms-CommandButton-label[data-v-880410a2], .ms-CommandButton-splitIcon:hover .ms-CommandButton-label[data-v-880410a2] { color: \"[theme:neutralDark, default: #212121]\"; } .ms-CommandButton-button[data-v-880410a2]:active, .ms-CommandButton-splitIcon[data-v-880410a2]:active { background-color: \"[theme:neutralLight, default: #eaeaea]\"; } .ms-CommandButton-button[data-v-880410a2]:focus::before, .ms-CommandButton-splitIcon[data-v-880410a2]:focus::before { top: 3px; left: 3px; right: 3px; bottom: 3px; border: 1px solid \"[theme:neutralPrimary, default: #333333]\"; position: absolute; z-index: 10; content: ''; outline: none; } .ms-CommandButton-button[data-v-880410a2]:focus, .ms-CommandButton-splitIcon[data-v-880410a2]:focus { outline: 0; } @media only screen and (max-width: 639px) { .ms-CommandButton-button[data-v-880410a2], .ms-CommandButton-splitIcon[data-v-880410a2] { height: 44px; } .ms-CommandButton-button .ms-CommandButton-icon[data-v-880410a2], .ms-CommandButton-splitIcon .ms-CommandButton-icon[data-v-880410a2] { font-size: 20px; } .ms-CommandButton-button .ms-CommandButton-label[data-v-880410a2], .ms-CommandButton-splitIcon .ms-CommandButton-label[data-v-880410a2] { line-height: 44px; } } .ms-CommandButton-button[data-v-880410a2] { border: 0; margin: 0; } .ms-CommandButton + .ms-CommandButton[data-v-880410a2] { margin-left: 8px; } @media only screen and (max-width: 639px) { .ms-CommandButton + .ms-CommandButton[data-v-880410a2] { margin-left: 4px; } } .ms-CommandButton-icon[data-v-880410a2] { display: inline-block; margin-right: 8px; position: relative; font-size: 16px; min-width: 16px; height: 100%; } .ms-CommandButton-icon .ms-Icon[data-v-880410a2] { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); } .ms-CommandButton-label[data-v-880410a2] { font-size: 14px; font-weight: 400; color: \"[theme:neutralPrimary, default: #333333]\"; line-height: 40px; height: 100%; display: inline-block; vertical-align: top; } .ms-CommandButton-label[data-v-880410a2]:hover { color: \"[theme:neutralDark, default: #212121]\"; } .ms-CommandButton-dropdownIcon[data-v-880410a2], .ms-CommandButton-splitIcon[data-v-880410a2] { display: inline-block; position: relative; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 12px; font-weight: 300; min-width: 12px; height: 100%; vertical-align: top; margin-left: 8px; } .ms-CommandButton-dropdownIcon .ms-Icon[data-v-880410a2], .ms-CommandButton-splitIcon .ms-Icon[data-v-880410a2] { line-height: normal; padding-top: 16px; } .ms-CommandButton-dropdownIcon[data-v-880410a2]:focus::before, .ms-CommandButton-splitIcon[data-v-880410a2]:focus::before { top: 3px; left: 3px; right: 3px; bottom: 3px; border: 1px solid \"[theme:neutralPrimary, default: #333333]\"; position: absolute; z-index: 10; content: ''; outline: none; } @media only screen and (max-width: 639px) { .ms-CommandButton-dropdownIcon[data-v-880410a2], .ms-CommandButton-splitIcon[data-v-880410a2] { display: none; } } .ms-CommandButton-splitIcon[data-v-880410a2] { margin-left: -2px; width: 27px; border: 0; } .ms-CommandButton-splitIcon .ms-Icon[data-v-880410a2] { margin-left: -1px; position: relative; padding-top: 16px; } .ms-CommandButton-splitIcon .ms-Icon[data-v-880410a2]::after { position: absolute; content: ' '; width: 1px; height: 16px; top: 12px; left: -8px; border-left: 1px solid \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; } .ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-icon[data-v-880410a2] { margin-right: 0; } .ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-label[data-v-880410a2] { display: none; } .ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-button[data-v-880410a2] { padding: 0 12px; } .ms-CommandButton.ms-CommandButton--inline .ms-CommandButton-button[data-v-880410a2] { background: none; } .ms-CommandButton.ms-CommandButton--actionButton .ms-CommandButton-button[data-v-880410a2] { width: 50px; height: 40px; } .ms-CommandButton.ms-CommandButton--actionButton .ms-CommandButton-icon[data-v-880410a2] { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 16px; height: 16px; padding-right: 0; } .ms-CommandButton.ms-CommandButton--pivot.is-active[data-v-880410a2]::before { content: ''; height: 2px; position: absolute; left: 0; right: 0; background-color: \"[theme:themePrimary, default: #0078d7]\"; bottom: 0; z-index: 5; } .ms-CommandButton.ms-CommandButton--pivot[data-v-880410a2]:hover::before { content: ''; height: 2px; position: absolute; left: 0; right: 0; background-color: \"[theme:themePrimary, default: #0078d7]\"; bottom: 0; z-index: 5; } .ms-CommandButton.ms-CommandButton--textOnly .ms-CommandButton-label[data-v-880410a2], .ms-CommandButton.ms-CommandButton--pivot .ms-CommandButton-label[data-v-880410a2] { display: inline-block; } @media only screen and (max-width: 479px) { .ms-CommandButton.ms-CommandButton--textOnly .ms-CommandButton-label[data-v-880410a2], .ms-CommandButton.ms-CommandButton--pivot .ms-CommandButton-label[data-v-880410a2] { font-size: 16px; } } /* searchbox uses classes from CommandButton */ .ms-SearchBox[data-v-880410a2] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; height: 36px; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 14px; font-weight: 400; position: relative; margin-bottom: 10px; display: inline-block; overflow: hidden; background-color: \"[theme:white, default: #ffffff]\"; } .ms-SearchBox.is-active[data-v-880410a2] { z-index: 10; } .ms-SearchBox.is-active .ms-SearchBox-label[data-v-880410a2] { display: none; } .ms-SearchBox.is-active .ms-SearchBox-clear[data-v-880410a2] { display: block; } .ms-SearchBox[data-v-880410a2]:hover { background-color: \"[theme:themeLighter, default: #deecf9]\"; } .ms-SearchBox:hover .ms-SearchBox-label[data-v-880410a2] { color: \"[theme:black, default: #000000]\"; } .ms-SearchBox:hover .ms-SearchBox-label .ms-Icon[data-v-880410a2] { color: \"[theme:neutralPrimary, default: #333333]\"; } .ms-SearchBox.is-disabled[data-v-880410a2] { background-color: #F4F4F4; pointer-events: none; } .ms-SearchBox.is-disabled .ms-SearchBox-label[data-v-880410a2] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-SearchBox.is-disabled .ms-SearchBox-icon[data-v-880410a2] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-SearchBox.is-disabled .ms-SearchBox-field[data-v-880410a2] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; background-color: transparent; border-color: \"[theme:neutralLighter, default: #f4f4f4]\"; cursor: default; } .ms-SearchBox-clear[data-v-880410a2] { display: none; position: absolute; top: 0; right: 0; z-index: 10; } .ms-SearchBox-clear .ms-CommandButton-button[data-v-880410a2] { background-color: \"[theme:themePrimary, default: #0078d7]\"; color: \"[theme:white, default: #ffffff]\"; height: 36px; } .ms-SearchBox-clear .ms-CommandButton-icon[data-v-880410a2] { color: \"[theme:white, default: #ffffff]\"; } .ms-SearchBox-icon[data-v-880410a2] { position: relative; top: 50%; transform: translateY(-50%); display: inline-block; font-size: 16px; width: 16px; margin-left: 12px; margin-right: 6px; color: \"[theme:themePrimary, default: #0078d7]\"; vertical-align: top; } .ms-SearchBox-field[data-v-880410a2] { position: relative; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; border: 1px solid \"[theme:themeTertiary, default: #71afe5]\"; outline: transparent 1px solid; font-weight: 300; font-size: 14px; color: \"[theme:black, default: #000000]\"; height: 36px; padding: 6px 3px 7px 45px; width: 208px; background-color: transparent; z-index: 5; transition: padding-left 0.167s; } .ms-SearchBox-field[data-v-880410a2]:focus { padding: 6px 32px 7px 10px; border-color: \"[theme:themePrimary, default: #0078d7]\"; background-color: \"[theme:themeLighter, default: #deecf9]\"; } .ms-SearchBox-field[data-v-880410a2]::-ms-clear { display: none; } .ms-SearchBox-label[data-v-880410a2] { position: absolute; top: 0; left: 0; height: 36px; line-height: 36px; color: \"[theme:neutralSecondary, default: #666666]\"; } .ms-SearchBox.ms-SearchBox--commandBar[data-v-880410a2] { background-color: \"[theme:white, default: #ffffff]\"; width: 208px; height: 40px; } .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-field[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-label[data-v-880410a2] { height: 40px; } .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-field[data-v-880410a2] { transition: none; border: 0; } .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-field[data-v-880410a2]:focus { background-color: transparent; padding: 6px 3px 7px 45px; } .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-clear[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-filter[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-exit[data-v-880410a2] { display: none; position: absolute; top: 0; z-index: 10; color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-clear .ms-CommandButton-button[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-filter .ms-CommandButton-button[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-exit .ms-CommandButton-button[data-v-880410a2] { height: 40px; background-color: transparent; } .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-clear[data-v-880410a2] { right: 8px; } .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-filter[data-v-880410a2] { right: 8px; } .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-filter .ms-CommandButton-icon[data-v-880410a2] { color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-SearchBox.ms-SearchBox--commandBar[data-v-880410a2]::before { position: absolute; content: ' '; right: 0; bottom: 0; left: 0; margin: 0 8px; border-bottom: 1px solid \"[theme:neutralLight, default: #eaeaea]\"; } .ms-SearchBox.ms-SearchBox--commandBar[data-v-880410a2]:hover { background-color: \"[theme:white, default: #ffffff]\"; } .ms-SearchBox.ms-SearchBox--commandBar:hover .ms-SearchBox-label[data-v-880410a2] { color: \"[theme:neutralDark, default: #212121]\"; } .ms-SearchBox.ms-SearchBox--commandBar:hover .ms-SearchBox-icon[data-v-880410a2] { color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-SearchBox.ms-SearchBox--commandBar[data-v-880410a2]:focus { background-color: transparent; } .ms-SearchBox.ms-SearchBox--commandBar.is-active .ms-CommandButton .ms-SearchBox-exit[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar.is-active .ms-CommandButton .ms-SearchBox-filter[data-v-880410a2] { display: block; } .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed[data-v-880410a2] { width: 50px; min-height: 40px; z-index: 0; background-color: #F4F4F4; } .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed .ms-SearchBox-text[data-v-880410a2] { display: none; } .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed .ms-SearchBox-field[data-v-880410a2] { cursor: pointer; width: calc(100% - 50px); } .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed[data-v-880410a2]::before { visibility: hidden; } .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active[data-v-880410a2] { width: 100%; } .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active .ms-SearchBox-field[data-v-880410a2] { display: block; cursor: text; } .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active .ms-SearchBox-text[data-v-880410a2] { display: inline-block; } @media only screen and (max-width: 639px) { .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active[data-v-880410a2] { width: 100%; } .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active .ms-SearchBox-clear[data-v-880410a2] { display: inline-block; right: 58px; } .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active .ms-SearchBox-filter[data-v-880410a2] { display: inline-block; } .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active.is-animated[data-v-880410a2] { transition: width 0.167s cubic-bezier(0.1, 0.9, 0.2, 1); } } .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active[data-v-880410a2]::before { visibility: visible; } .ms-SearchBox.ms-SearchBox--commandBar.has-text .ms-SearchBox-clear[data-v-880410a2] { display: inline-block; } .ms-SearchBox.ms-SearchBox--commandBar.has-text .ms-SearchBox-clear .ms-CommandButton-icon[data-v-880410a2] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-SearchBox.ms-SearchBox--commandBar.has-text .ms-SearchBox-clear .ms-CommandButton-icon[data-v-880410a2]:active { color: \"[theme:themePrimary, default: #0078d7]\"; } @media only screen and (min-width: 1024px) { .ms-SearchBox.ms-SearchBox--commandBar[data-v-880410a2] { background-color: \"[theme:white, default: #ffffff]\"; border-right: 1px solid \"[theme:neutralLight, default: #eaeaea]\"; } } @media only screen and (max-width: 639px) { .ms-SearchBox.ms-SearchBox--commandBar[data-v-880410a2] { height: 44px; } .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-icon[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-exit[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-field[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-label[data-v-880410a2] { height: 44px; line-height: 44px; } .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-icon[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-exit[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-filter[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-clear[data-v-880410a2] { font-size: 20px; } .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-icon .ms-CommandButton-button[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-exit .ms-CommandButton-button[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-filter .ms-CommandButton-button[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-clear .ms-CommandButton-button[data-v-880410a2] { height: 44px; } .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-field[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-label[data-v-880410a2] { font-size: 16px; } } .ms-SearchBox.ms-SearchBox--commandBar.is-active[data-v-880410a2] { background-color: \"[theme:white, default: #ffffff]\"; } .ms-SearchBox.ms-SearchBox--commandBar.is-active .ms-SearchBox-label[data-v-880410a2] { display: block; line-height: 40px; height: 40px; } .ms-SearchBox.ms-SearchBox--commandBar.is-active .ms-SearchBox-label .ms-SearchBox-text[data-v-880410a2] { display: none; } .ms-SearchBox.ms-SearchBox--commandBar.is-active[data-v-880410a2]::before { visibility: visible; } @media only screen and (max-width: 639px) { .ms-SearchBox.ms-SearchBox--commandBar.is-active .ms-SearchBox-field[data-v-880410a2] { width: 100%; padding-right: 100px; } .ms-SearchBox.ms-SearchBox--commandBar.is-active .ms-SearchBox-icon[data-v-880410a2] { display: none; } .ms-SearchBox.ms-SearchBox--commandBar.is-active .ms-SearchBox-exit[data-v-880410a2] { display: inline-block; } .ms-SearchBox.ms-SearchBox--commandBar.is-active.has-text .ms-SearchBox-filter .ms-CommandButton-icon[data-v-880410a2] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } } .ms-Icon.ms-Icon--Search[data-v-880410a2] { content: url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"16\" height=\"16\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path fill=\"#0078d7\" stroke=\"none\" transform=\"translate(0, 2048) scale(1, -1)\" d=\"M1344 2048q97 0 187 -25t168 -71t142.5 -110.5t110.5 -142.5t71 -168t25 -187t-25 -187t-71 -168t-110.5 -142.5t-142.5 -110.5t-168 -71t-187 -25q-125 0 -239.5 42t-210.5 121l-785 -784q-19 -19 -45 -19t-45 19t-19 45t19 45l784 785q-79 96 -121 210.5t-42 239.5q0 97 25 187t71 168t110.5 142.5t142.5 110.5t168 71t187 25zM1344 768q119 0 224 45.5t183 123.5t123.5 183t45.5 224t-45.5 224t-123.5 183t-183 123.5t-224 45.5t-224 -45.5t-183 -123.5t-123.5 -183t-45.5 -224t45.5 -224t123.5 -183t183 -123.5t224 -45.5z\"/></svg>'); } .ms-Icon.ms-Icon--Clear[data-v-880410a2] { content: url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"14\" height=\"14\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path fill=\"white\" stroke=\"none\" d=\"M1115 1024l914 -915l-90 -90l-915 914l-915 -914l-90 90l914 915l-914 915l90 90l915 -914l915 914l90 -90z\"/></svg>'); } .ms-SearchBox--commandBar .ms-Icon.ms-Icon--Clear[data-v-880410a2] { content: url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"14\" height=\"14\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path fill=\"#a6a6a6\" stroke=\"none\" d=\"M1115 1024l914 -915l-90 -90l-915 914l-915 -914l-90 90l914 915l-914 915l90 90l915 -914l915 914l90 -90z\"/></svg>'); } ");},
-    beforeMount: function beforeMount(){
-        this.$fabric = {
-            SearchBox : SearchBox
-        };
+var uiCheckbox = {_scopeId: 'data-v-75ed8232',
+    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-CheckBox[data-v-75ed8232] { box-sizing: border-box; color: \"[theme:neutralPrimary, default: #333333]\"; font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; font-size: 14px; font-weight: 400; min-height: 36px; position: relative; } .ms-CheckBox .ms-Label[data-v-75ed8232] { font-size: 14px; padding: 0 0 0 26px; cursor: pointer; display: inline-block; } .ms-CheckBox-input[data-v-75ed8232] { position: absolute; opacity: 0; } .ms-CheckBox-field[data-v-75ed8232]::before { content: ''; display: inline-block; border: 2px solid \"[theme:neutralTertiary, default: #a6a6a6]\"; width: 20px; height: 20px; cursor: pointer; font-weight: normal; position: absolute; box-sizing: border-box; transition-property: background, border, border-color; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.4, 0, 0.23, 1); } .ms-CheckBox-field[data-v-75ed8232]::after { content: \"\\E73E\"; font-family: 'FabricMDL2Icons'; display: none; position: absolute; font-weight: 900; background-color: transparent; font-size: 13px; top: 0; color: \"[theme:white, default: #ffffff]\"; line-height: 20px; width: 20px; text-align: center; } @media screen and (-ms-high-contrast: active) { .ms-CheckBox-field[data-v-75ed8232]::after { color: \"[theme:black, default: #000000]\"; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-CheckBox-field[data-v-75ed8232]::after { color: \"[theme:white, default: #ffffff]\"; } } .ms-CheckBox-field[data-v-75ed8232] { display: inline-block; cursor: pointer; margin-top: 8px; position: relative; outline: 0; vertical-align: top; } .ms-CheckBox-field[data-v-75ed8232]:hover::before, .ms-CheckBox-field[data-v-75ed8232]:focus::before { border-color: \"[theme:neutralSecondaryAlt, default: #767676]\"; } .ms-CheckBox-field:hover .ms-Label[data-v-75ed8232], .ms-CheckBox-field:focus .ms-Label[data-v-75ed8232] { color: \"[theme:black, default: #000000]\"; } .ms-CheckBox-field.is-disabled[data-v-75ed8232] { cursor: default; } .ms-CheckBox-field.is-disabled[data-v-75ed8232]::before { background-color: \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; border-color: \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; color: \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; } @media screen and (-ms-high-contrast: active) { .ms-CheckBox-field.is-disabled[data-v-75ed8232]::before { border-color: #00ff00; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-CheckBox-field.is-disabled[data-v-75ed8232]::before { border-color: #600000; } } .ms-CheckBox-field.is-disabled .ms-Label[data-v-75ed8232] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } @media screen and (-ms-high-contrast: active) { .ms-CheckBox-field.is-disabled .ms-Label[data-v-75ed8232] { color: #00ff00; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-CheckBox-field.is-disabled .ms-Label[data-v-75ed8232] { color: #600000; } } .ms-CheckBox-field.in-focus[data-v-75ed8232]::before { border-color: \"[theme:neutralSecondaryAlt, default: #767676]\"; } .ms-CheckBox-field.in-focus.is-disabled[data-v-75ed8232]::before { border-color: \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; } .ms-CheckBox-field.in-focus.is-checked[data-v-75ed8232]::before { border-color: \"[theme:themeDarkAlt, default: #106ebe]\"; } .ms-CheckBox-field.is-checked[data-v-75ed8232]::before { border: 10px solid \"[theme:themePrimary, default: #0078d7]\"; background-color: \"[theme:themePrimary, default: #0078d7]\"; } @media screen and (-ms-high-contrast: active) { .ms-CheckBox-field.is-checked[data-v-75ed8232]::before { border-color: #1AEBFF; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-CheckBox-field.is-checked[data-v-75ed8232]::before { border-color: #37006E; } } .ms-CheckBox-field.is-checked[data-v-75ed8232]::after { display: block; } .ms-CheckBox-field.is-checked[data-v-75ed8232]:hover::before, .ms-CheckBox-field.is-checked[data-v-75ed8232]:focus::before { border-color: \"[theme:themeDarkAlt, default: #106ebe]\"; } .ms-CheckBox-field[data-v-75ed8232]::after { content: url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"16\" height=\"16\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path transform=\"translate(0, 2048) scale(1, -1)\" d=\"M1837 1491l-1069 -1070l-557 558l90 90l467 -466l979 978z\" fill=\"white\" stroke=\"none\"/></svg>') !important; } ");},
+    beforeMount: function beforeMount(){ 
+        this.$fabric = { 
+            CheckBox : CheckBox 
+        }; 
     },
-    extends :  searchBox
+    extends :  checkbox
+}
+
+var ChoiceField = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('li',{staticClass:"ms-RadioButton"},[_c('input',{staticClass:"ms-RadioButton-input",attrs:{"tabindex":"-1","type":"radio"}}),_vm._v(" "),_c('label',{ref:"radioLabel",staticClass:"ms-RadioButton-field",class:{ 'is-disabled': _vm.disabled },attrs:{"role":"radio","tabindex":"0","aria-checked":"false","name":"choicefieldgroup"},on:{"click":_vm.updateParentValue}},[_c('span',{staticClass:"ms-Label"},[_vm._t("default")],2)])])},staticRenderFns: [],
+  name: 'ou-choice-field',
+
+  mixins: [disabled],
+
+  inject: ['eventHub'],
+
+  props: {
+    value: [String, Number]
+  },
+
+  created: function created() {
+    this.eventHub.$on('setChoiceField', this.setChoiceField);
+  },
+
+  beforeDestroy: function beforeDestroy() {
+    this.eventHub.$off('setChoiceField', this.setChoiceField);
+  },
+
+  methods: {
+    updateParentValue: function updateParentValue() {
+      if (!this.disabled) {
+        this.eventHub.$emit('updateValue', this.value);
+      }
+    },
+
+    setChoiceField: function setChoiceField(value) {
+      if (this.disabled) { return; }
+
+      if (this.value == value) {
+        this.$refs.radioLabel.classList.add('is-checked');
+      } else {
+        this.$refs.radioLabel.classList.remove('is-checked');
+      }
+    }
+  }
+};
+
+var uiChoiceField = {
+    extends :  ChoiceField,
+    created: function created(){
+        this.$options._scopeId = this.$parent.$options._scopeId;
+    }
 }
 
 var eventHub = {
@@ -1017,6 +700,172 @@ var eventHub = {
     };
   }
 };
+
+var ChoiceFieldGroup = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"choiceFieldGroup",staticClass:"ms-ChoiceFieldGroup",attrs:{"id":"choicefieldgroup","role":"radiogroup"}},[_c('div',{staticClass:"ms-ChoiceFieldGroup-title"},[_vm._t("title")],2),_vm._v(" "),_c('ul',{staticClass:"ms-ChoiceFieldGroup-list"},[_vm._t("default")],2)])},staticRenderFns: [],
+  name: 'ou-choice-field-group',
+
+  mixins: [eventHub],
+
+  props: {
+    value: [String, Number]
+  },
+
+  watch: {
+    value: function value() {
+      this.setChoiceFields();
+    }
+  },
+
+  created: function created() {
+    this.eventHub.$on('updateValue', this.updateValue);
+  },
+
+  beforeDestroy: function beforeDestroy() {
+    this.eventHub.$off('updateValue', this.updateValue);
+  },
+
+  mounted: function mounted() {
+    this.setChoiceFields();
+    new this.$fabric.ChoiceFieldGroup(this.$refs.choiceFieldGroup);
+  },
+
+  methods: {
+    updateValue: function updateValue(value) {
+      this.$emit('input', value);
+    },
+
+    setChoiceFields: function setChoiceFields() {
+      if (typeof this.value != 'undefined') {
+        this.eventHub.$emit('setChoiceField', this.value);
+      }
+    }
+  }
+};
+
+var RadioButton = (function () {
+    function RadioButton(container) {
+        this._container = container;
+        this._choiceField = this._container.querySelector(".ms-RadioButton-field");
+        this._choiceInput = this._container.querySelector(".ms-RadioButton-input");
+        if (this._choiceField.getAttribute("aria-checked") === "true") {
+            this._choiceField.classList.add("is-checked");
+        }
+        this._addListeners();
+    }
+    RadioButton.prototype.getValue = function () {
+        return this._choiceField.getAttribute("aria-checked") === "true" ? true : false;
+    };
+    RadioButton.prototype.toggle = function () {
+        if (this.getValue()) {
+            this.unCheck();
+        }
+        else {
+            this.check();
+        }
+    };
+    RadioButton.prototype.check = function () {
+        this._choiceField.setAttribute("aria-checked", "true");
+        this._choiceField.classList.add("is-checked");
+        this._choiceInput.checked = true;
+    };
+    RadioButton.prototype.unCheck = function () {
+        this._choiceField.setAttribute("aria-checked", "false");
+        this._choiceField.classList.remove("is-checked");
+        this._choiceInput.checked = false;
+    };
+    RadioButton.prototype.removeListeners = function () {
+        this._choiceField.removeEventListener("focus", this._FocusHandler.bind(this));
+        this._choiceField.removeEventListener("blur", this._BlurHandler.bind(this));
+        this._choiceField.removeEventListener("click", this._RadioClickHandler.bind(this));
+        this._choiceField.addEventListener("keydown", this._RadioKeydownHandler.bind(this));
+    };
+    RadioButton.prototype._addListeners = function () {
+        this._choiceField.addEventListener("focus", this._FocusHandler.bind(this), false);
+        this._choiceField.addEventListener("blur", this._BlurHandler.bind(this), false);
+        this._choiceField.addEventListener("click", this._RadioClickHandler.bind(this), false);
+        this._choiceField.addEventListener("keydown", this._RadioKeydownHandler.bind(this), false);
+    };
+    RadioButton.prototype._RadioClickHandler = function (event) {
+        event.stopPropagation();
+        event.preventDefault();
+        if (!this._choiceField.classList.contains("is-disabled")) {
+            this._dispatchSelectEvent();
+        }
+    };
+    RadioButton.prototype._dispatchSelectEvent = function () {
+        var objDict = {
+            bubbles: true,
+            cancelable: true,
+            detail: {
+                name: this._choiceField.getAttribute("name"),
+                item: this
+            }
+        };
+        this._choiceField.dispatchEvent(new CustomEvent("msChoicefield", objDict));
+    };
+    RadioButton.prototype._RadioKeydownHandler = function (event) {
+        if (event.keyCode === 32) {
+            event.stopPropagation();
+            event.preventDefault();
+            if (!this._choiceField.classList.contains("is-disabled")) {
+                this._dispatchSelectEvent();
+            }
+        }
+    };
+    RadioButton.prototype._FocusHandler = function () {
+        this._choiceField.classList.add("in-focus");
+    };
+    RadioButton.prototype._BlurHandler = function () {
+        this._choiceField.classList.remove("in-focus");
+    };
+    return RadioButton;
+}());
+
+var ChoiceFieldGroup$1 = (function () {
+    function ChoiceFieldGroup(container) {
+        this._choiceFieldGroup = container;
+        this._choiceFieldComponents = [];
+        this._initalSetup();
+        this._addListeners();
+    }
+    ChoiceFieldGroup.prototype.removeListeners = function () {
+        this._choiceFieldGroup.removeEventListener("msChoicefield", this._ChoiceFieldHandler.bind(this));
+    };
+    ChoiceFieldGroup.prototype._initalSetup = function () {
+        var this$1 = this;
+
+        var choiceFieldElements = this._choiceFieldGroup.querySelectorAll(".ms-RadioButton");
+        for (var i = 0; i < choiceFieldElements.length; i++) {
+            this$1._choiceFieldComponents[i] = new RadioButton(choiceFieldElements[i]);
+        }
+    };
+    ChoiceFieldGroup.prototype._addListeners = function () {
+        document.addEventListener("msChoicefield", this._ChoiceFieldHandler.bind(this), false);
+    };
+    ChoiceFieldGroup.prototype._ChoiceFieldHandler = function (event) {
+        var this$1 = this;
+
+        var name = event.detail.name;
+        var selectedChoice = event.detail.item;
+        if (this._choiceFieldGroup.id === name) {
+            for (var i = 0; i < this._choiceFieldComponents.length; i++) {
+                this$1._choiceFieldComponents[i].unCheck();
+            }
+            selectedChoice.check();
+        }
+    };
+    return ChoiceFieldGroup;
+}());
+
+var uiChoiceFieldGroup = {_scopeId: 'data-v-9afc786c',
+    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-RadioButton[data-v-9afc786c] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 14px; font-weight: 400; min-height: 36px; position: relative; } .ms-RadioButton .ms-Label[data-v-9afc786c] { font-size: 14px; padding: 0 0 0 26px; cursor: pointer; display: inline-block; } .ms-RadioButton-input[data-v-9afc786c] { position: absolute; opacity: 0; } .ms-RadioButton-field[data-v-9afc786c]::before { content: ''; display: inline-block; border: 2px solid \"[theme:neutralTertiary, default: #a6a6a6]\"; width: 20px; height: 20px; cursor: pointer; font-weight: normal; position: absolute; box-sizing: border-box; transition-property: border-color; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.4, 0, 0.23, 1); border-radius: 50%; } .ms-RadioButton-field[data-v-9afc786c]::after { content: ''; width: 0; height: 0; border-radius: 50%; position: absolute; top: 8px; left: 8px; bottom: 0; right: 0; transition-property: top, left, width, height; transition-duration: 150ms; transition-timing-function: cubic-bezier(0.4, 0, 0.23, 1); box-sizing: border-box; } @media screen and (-ms-high-contrast: active) { .ms-RadioButton-field[data-v-9afc786c]::after { color: #00ff00; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-RadioButton-field[data-v-9afc786c]::after { color: #600000; } } .ms-RadioButton-field[data-v-9afc786c] { display: inline-block; cursor: pointer; margin-top: 8px; position: relative; outline: 0; vertical-align: top; } .ms-RadioButton-field[data-v-9afc786c]:hover::before, .ms-RadioButton-field[data-v-9afc786c]:focus::before { border-color: \"[theme:neutralSecondaryAlt, default: #767676]\"; } .ms-RadioButton-field:hover .ms-Label[data-v-9afc786c], .ms-RadioButton-field:focus .ms-Label[data-v-9afc786c] { color: \"[theme:black, default: #000000]\"; } .ms-RadioButton-field.is-disabled[data-v-9afc786c] { cursor: default; } .ms-RadioButton-field.is-disabled[data-v-9afc786c]::before { background-color: \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; border-color: \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; color: \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; } @media screen and (-ms-high-contrast: active) { .ms-RadioButton-field.is-disabled[data-v-9afc786c]::before { border-color: #00ff00; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-RadioButton-field.is-disabled[data-v-9afc786c]::before { border-color: #600000; } } .ms-RadioButton-field.is-disabled .ms-Label[data-v-9afc786c] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } @media screen and (-ms-high-contrast: active) { .ms-RadioButton-field.is-disabled .ms-Label[data-v-9afc786c] { color: #00ff00; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-RadioButton-field.is-disabled .ms-Label[data-v-9afc786c] { color: #600000; } } .ms-RadioButton-field.is-disabled[data-v-9afc786c]:hover::before, .ms-RadioButton-field.is-disabled[data-v-9afc786c]:focus::before { border-color: \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; } .ms-RadioButton-field.in-focus[data-v-9afc786c]::before { border-color: \"[theme:neutralSecondaryAlt, default: #767676]\"; } .ms-RadioButton-field.is-checked[data-v-9afc786c]::before { border: 2px solid \"[theme:themePrimary, default: #0078d7]\"; background-color: transparent; } @media screen and (-ms-high-contrast: active) { .ms-RadioButton-field.is-checked[data-v-9afc786c]::before { border-color: #1AEBFF; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-RadioButton-field.is-checked[data-v-9afc786c]::before { border-color: #37006E; } } .ms-RadioButton-field.is-checked[data-v-9afc786c]::after { background-color: \"[theme:themePrimary, default: #0078d7]\"; top: 5px; left: 5px; width: 10px; height: 10px; } @media screen and (-ms-high-contrast: active) { .ms-RadioButton-field.is-checked[data-v-9afc786c]::after { background-color: #1AEBFF; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-RadioButton-field.is-checked[data-v-9afc786c]::after { background-color: #37006E; } } .ms-RadioButton-field.is-checked[data-v-9afc786c]:hover::before, .ms-RadioButton-field.is-checked[data-v-9afc786c]:focus::before { border-color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-RadioButton-field.is-checked.in-focus[data-v-9afc786c]::before { border-color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-ChoiceFieldGroup[data-v-9afc786c] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; margin-bottom: 4px; } .ms-ChoiceFieldGroup .ms-ChoiceFieldGroup-list[data-v-9afc786c] { padding: 0; margin: 0; list-style: none; } ");},
+    beforeMount: function beforeMount(){ 
+        this.$fabric = { 
+            ChoiceFieldGroup : ChoiceFieldGroup$1 
+        }; 
+    },
+    extends :  ChoiceFieldGroup
+}
 
 var ContextualMenu = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"inline-block"},[_c('span',{ref:"contextualMenuTrigger",staticClass:"inline-block"},[_vm._t("default")],2),_vm._v(" "),_c('ul',{ref:"contextualMenu",staticClass:"ms-ContextualMenu is-hidden",class:_vm.contextualMenuClass},[_vm._t("list")],2)])},staticRenderFns: [],_scopeId: 'data-v-4d60802a',
     name: 'ou-contextual-menu',
@@ -1308,343 +1157,812 @@ var uiContextualMenuItem = {
     extends :  ContextualMenuItem
 }
 
-var checkbox = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"checkbox",staticClass:"ms-CheckBox"},[_c('input',{staticClass:"ms-CheckBox-input",attrs:{"tabindex":"-1","type":"checkbox"},on:{"click":_vm.toggle}}),_vm._v(" "),_c('label',{staticClass:"ms-CheckBox-field",class:{ 'is-disabled': _vm.disabled },attrs:{"role":"checkbox","tabindex":"0","aria-checked":"false","name":"checkbox"}},[_c('span',{staticClass:"ms-Label"},[_vm._t("default")],2)])])},staticRenderFns: [],
-  name: 'ou-checkbox',
+var commandbar = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"commandBar",staticClass:"ms-CommandBar"},[_c('div',{staticClass:"ms-CommandBar-sideCommands"},[_vm._t("side")],2),_vm._v(" "),_c('div',{staticClass:"ms-CommandBar-mainArea"},[_vm._t("main"),_vm._v(" "),_vm._m(0)],2)])},staticRenderFns: [function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-CommandButton ms-CommandBar-overflowButton ms-CommandButton--noLabel"},[_c('button',{staticClass:"ms-CommandButton-button"},[_c('span',{staticClass:"ms-CommandButton-icon"},[_c('i',{staticClass:"ms-Icon ms-Icon--More"})]),_vm._v(" "),_c('span',{staticClass:"ms-CommandButton-label"})]),_vm._v(" "),_c('ul',{staticClass:"ms-ContextualMenu is-opened ms-ContextualMenu--hasIcons"},[_c('li',{staticClass:"ms-ContextualMenu-item"},[_c('a',{staticClass:"ms-ContextualMenu-link"}),_vm._v(" "),_c('i',{staticClass:"ms-Icon ms-Icon--folder"})])])])}],
+  name: 'ou-command-bar',
 
-  mixins: [disabled],
+  mounted: function mounted() {
+    new this.$fabric.CommandBar(this.$refs.commandBar);
+  }
+};
+
+var SB_FIELD = ".ms-SearchBox-field";
+var SB_CLEAR_BUTTON = ".ms-SearchBox-clear";
+var SB_EXIT_BUTTON = ".ms-SearchBox-exit";
+var SB_HAS_TEXT = "has-text";
+var SB_IS_ACTIVE = "is-active";
+var SB_IS_ANIMATED = "is-animated";
+var SearchBox = (function () {
+    function SearchBox(container) {
+        var _this = this;
+        this._container = container;
+        this._saveDOMRefs(this._container);
+        this._boundExpandSearchHandler = this._expandSearchHandler.bind(this);
+        this._boundEnableClose = this._enableClose.bind(this);
+        this._boundCollapseSearchBox = this._collapseSearchBox.bind(this);
+        this._boundClearSearchBox = this._clearSearchBox.bind(this);
+        this._boundHandleBlur = this._handleBlur.bind(this);
+        this._boundExitSearchBox = this._exitSearchBox.bind(this);
+        this._setHasText();
+        this._setFocusAction(this._container);
+        this._setClearButtonAction();
+        this._setBlurAction();
+        this._clearOnly = false;
+        setTimeout(function () {
+            _this._checkState();
+            _this._addAnimation();
+        }, 10);
+    }
+    SearchBox.prototype.setCollapsedListeners = function () {
+        this._disposeListeners();
+        this._searchBox.addEventListener("click", this._boundExpandSearchHandler, false);
+        this._searchBoxField.addEventListener("focus", this._boundExpandSearchHandler, true);
+    };
+    SearchBox.prototype.getInputField = function () {
+        return this._searchBoxField;
+    };
+    SearchBox.prototype._saveDOMRefs = function (context) {
+        this._searchBox = context;
+        this._searchBoxField = this._searchBox.querySelector(SB_FIELD);
+        this._searchBoxClearButton = this._searchBox.querySelector(SB_CLEAR_BUTTON);
+        this._searchBoxExitButton = this._searchBox.querySelector(SB_EXIT_BUTTON);
+    };
+    SearchBox.prototype._disposeListeners = function () {
+        this._searchBox.removeEventListener("click", this._boundExpandSearchHandler);
+        this._searchBoxField.removeEventListener("focus", this._boundExpandSearchHandler);
+    };
+    SearchBox.prototype._exitSearchBox = function (event) {
+        event.stopPropagation();
+        event.target.blur();
+        this._clearSearchBox();
+        this._collapseSearchBox();
+        this._searchBox.removeEventListener("keyup", this._boundEnableClose);
+        this.setCollapsedListeners();
+    };
+    SearchBox.prototype._collapseSearchBox = function () {
+        this._searchBox.classList.remove("is-active");
+        var event = document.createEvent("Event");
+        event.initEvent("searchCollapse", true, true);
+        this._searchBoxField.dispatchEvent(event);
+    };
+    SearchBox.prototype._expandSearchHandler = function () {
+        this._disposeListeners();
+        this._searchBox.classList.add("is-active");
+        this._searchBoxField.focus();
+    };
+    SearchBox.prototype._enableClose = function () {
+        this._setHasText();
+    };
+    SearchBox.prototype._setHasText = function () {
+        if (this._searchBoxField.value.length > 0) {
+            this._searchBox.classList.add(SB_HAS_TEXT);
+        }
+        else {
+            this._searchBox.classList.remove(SB_HAS_TEXT);
+        }
+    };
+    SearchBox.prototype._setFocusAction = function (context) {
+        var _this = this;
+        this._searchBoxField.addEventListener("focus", function () {
+            _this._setHasText();
+            _this._searchBox.addEventListener("keyup", _this._boundEnableClose, false);
+            _this._searchBox.classList.add(SB_IS_ACTIVE);
+            _this._searchBox.classList.add(SB_IS_ACTIVE);
+        }, true);
+    };
+    SearchBox.prototype._clearSearchBox = function (event) {
+        var _this = this;
+        this._clearOnly = true;
+        this._searchBoxField.value = "";
+        this._setHasText();
+        setTimeout(function () {
+            _this._clearOnly = false;
+        }, 10);
+    };
+    SearchBox.prototype._setClearButtonAction = function () {
+        var _this = this;
+        if (this._searchBoxExitButton) {
+            this._searchBoxExitButton.addEventListener("click", this._boundExitSearchBox, false);
+        }
+        this._searchBoxClearButton.addEventListener("mousedown", this._boundClearSearchBox, false);
+        this._searchBoxClearButton.addEventListener("keydown", function (e) {
+            var keyCode = e.keyCode;
+            if (keyCode === 13) {
+                _this._clearSearchBox(e);
+            }
+        }, false);
+    };
+    SearchBox.prototype._handleBlur = function (event) {
+        var _this = this;
+        console.log("_handleBlur");
+        if (this._searchBox.classList.contains("ignoreBlur"))
+            { return; }
+        if (!this._clearOnly) {
+            this._searchBox.removeEventListener("keyup", this._boundEnableClose);
+            setTimeout(function () {
+                if (!_this._searchBox.contains(document.activeElement)) {
+                    _this._clearSearchBox();
+                    _this._collapseSearchBox();
+                    _this.setCollapsedListeners();
+                }
+            }, 10);
+        }
+        else {
+            this._searchBoxField.focus();
+        }
+        this._clearOnly = false;
+    };
+    SearchBox.prototype._setBlurAction = function () {
+        this._searchBoxField.addEventListener("blur", this._boundHandleBlur, true);
+        this._searchBoxClearButton.addEventListener("blur", this._boundHandleBlur, true);
+    };
+    SearchBox.prototype._checkState = function () {
+        if (this._searchBox.classList.contains("is-collapsed")) {
+            this.setCollapsedListeners();
+        }
+    };
+    SearchBox.prototype._addAnimation = function () {
+        this._container.classList.add(SB_IS_ANIMATED);
+    };
+    return SearchBox;
+}());
+
+var CONTEXT_CLASS = ".ms-ContextualMenu";
+var CB_SPLIT_CLASS = ".ms-CommandButton-splitIcon";
+var CB_BUTTON_CLASS = ".ms-CommandButton-button";
+var MODAL_POSITION$1 = "bottom";
+var CommandButton = (function () {
+    function CommandButton(container, contextMenu) {
+        this._container = container;
+        this._command = this._container;
+        this._commandButton = this._command.querySelector(CB_BUTTON_CLASS);
+        this._splitButton = this._command.querySelector(CB_SPLIT_CLASS);
+        if (contextMenu) {
+            this._contextualMenu = contextMenu;
+        }
+        else {
+            this._contextualMenu = this._container.querySelector(CONTEXT_CLASS);
+        }
+        this._checkForMenu();
+    }
+    CommandButton.prototype._createModalHostView = function () {
+        this._modalHostView = new ContextualHost(this._contextualMenu, MODAL_POSITION$1, this._command, false);
+    };
+    CommandButton.prototype._setClick = function () {
+        if (this._splitButton) {
+            this._splitButton.addEventListener("click", this._createModalHostView.bind(this), false);
+        }
+        else {
+            this._commandButton.addEventListener("click", this._createModalHostView.bind(this), false);
+        }
+    };
+    CommandButton.prototype._checkForMenu = function () {
+        if (this._contextualMenu) {
+            this._setClick();
+        }
+    };
+    return CommandButton;
+}());
+
+var CONTEXTUAL_MENU = ".ms-ContextualMenu";
+var CONTEXTUAL_MENU_ITEM = ".ms-ContextualMenu-item";
+var CONTEXTUAL_MENU_LINK = ".ms-ContextualMenu-link";
+var CB_SEARCH_BOX = ".ms-SearchBox";
+var CB_MAIN_AREA = ".ms-CommandBar-mainArea";
+var CB_SIDE_COMMAND_AREA = ".ms-CommandBar-sideCommands";
+var CB_ITEM_OVERFLOW = ".ms-CommandBar-overflowButton";
+var CB_NO_LABEL_CLASS = "ms-CommandButton--noLabel";
+var SEARCH_BOX_CLOSE = ".ms-SearchBox-closeField";
+var COMMAND_BUTTON = ".ms-CommandButton";
+var COMMAND_BUTTON_LABEL = ".ms-CommandButton-label";
+var ICON = ".ms-Icon";
+var OVERFLOW_WIDTH = 40;
+var OVERFLOW_LEFT_RIGHT_PADDING = 30;
+var CommandBar = (function () {
+    function CommandBar(container) {
+        this.responsiveSizes = {
+            "sm-min": 320,
+            "md-min": 480,
+            "lg-min": 640,
+            "xl-min": 1024,
+            "xxl-min": 1366,
+            "xxxl-min": 1920
+        };
+        this.visibleCommands = [];
+        this.commandWidths = [];
+        this.overflowCommands = [];
+        this.itemCollection = [];
+        this._sideAreaCollection = [];
+        this.breakpoint = "sm";
+        this._container = container;
+        this.responsiveSizes["sm-max"] = this.responsiveSizes["md-min"] - 1;
+        this.responsiveSizes["md-max"] = this.responsiveSizes["lg-min"] - 1;
+        this.responsiveSizes["lg-max"] = this.responsiveSizes["xl-min"] - 1;
+        this.responsiveSizes["xl-max"] = this.responsiveSizes["xxl-min"] - 1;
+        this.responsiveSizes["xxl-max"] = this.responsiveSizes["xxxl-min"] - 1;
+        this._setElements();
+        this._setBreakpoint();
+        if (this._elements.overflowCommand) {
+            this._initOverflow();
+        }
+        this._setUIState();
+    }
+    CommandBar.prototype._runsSearchBox = function (state) {
+        if (state === void 0) { state = "add"; }
+        this._changeSearchState("is-collapsed", state);
+    };
+    CommandBar.prototype._runOverflow = function () {
+        if (this._elements.overflowCommand) {
+            this._saveCommandWidths();
+            this._redrawMenu();
+            this._updateCommands();
+            this._drawCommands();
+            this._checkOverflow();
+        }
+    };
+    CommandBar.prototype._initOverflow = function () {
+        this._createContextualRef();
+        this._createItemCollection(this.itemCollection, CB_MAIN_AREA);
+        this._createItemCollection(this._sideAreaCollection, CB_SIDE_COMMAND_AREA);
+        this._saveCommandWidths();
+        this._updateCommands();
+        this._drawCommands();
+        this._setWindowEvent();
+        this._checkOverflow();
+    };
+    CommandBar.prototype._hasClass = function (element, cls) {
+        return (" " + element.className + " ").indexOf(" " + cls + " ") > -1;
+    };
+    CommandBar.prototype._onSearchExpand = function () {
+        if (this.breakpoint === "lg") {
+            this._container.classList.add("search-expanded");
+            this._doResize();
+        }
+    };
+    CommandBar.prototype._onSearchCollapse = function () {
+        if (this.breakpoint === "lg") {
+            this._container.classList.remove("search-expanded");
+            this._doResize();
+        }
+    };
+    CommandBar.prototype._getScreenSize = function () {
+        var w = window;
+        var wSize = {
+            x: 0,
+            y: 0
+        };
+        var d = document, e = d.documentElement, g = d.getElementsByTagName("body")[0];
+        wSize.x = w.innerWidth || e.clientWidth || g.clientWidth;
+        wSize.y = w.innerHeight || e.clientHeight || g.clientHeight;
+        return wSize;
+    };
+    CommandBar.prototype._setBreakpoint = function () {
+        var screenSize = this._getScreenSize().x;
+        switch (true) {
+            case (screenSize <= this.responsiveSizes["sm-max"]):
+                this.breakpoint = "sm";
+                break;
+            case (screenSize >= this.responsiveSizes["md-min"] && screenSize <= this.responsiveSizes["md-max"]):
+                this.breakpoint = "md";
+                break;
+            case (screenSize >= this.responsiveSizes["lg-min"] && screenSize <= this.responsiveSizes["lg-max"]):
+                this.breakpoint = "lg";
+                break;
+            case (screenSize >= this.responsiveSizes["xl-min"] && screenSize <= this.responsiveSizes["xl-max"]):
+                this.breakpoint = "xl";
+                break;
+            case (screenSize >= this.responsiveSizes["xxl-min"] && screenSize <= this.responsiveSizes["xxl-max"]):
+                this.breakpoint = "xxl";
+                break;
+            case (screenSize >= this.responsiveSizes["xxxl-min"]):
+                this.breakpoint = "xxxl";
+                break;
+        }
+    };
+    CommandBar.prototype._createSearchInstance = function () {
+        if (this._elements.searchBox) {
+            return new SearchBox(this._elements.searchBox);
+        }
+        else {
+            return false;
+        }
+    };
+    CommandBar.prototype._changeSearchState = function (state, action) {
+        if (this._elements.searchBox) {
+            switch (action) {
+                case "remove":
+                    this._elements.searchBox.classList.remove(state);
+                    break;
+                case "add":
+                    this._elements.searchBox.classList.add(state);
+                    break;
+                default:
+                    break;
+            }
+        }
+    };
+    CommandBar.prototype._setElements = function () {
+        var _this = this;
+        this._elements = {
+            mainArea: this._container.querySelector(CB_MAIN_AREA)
+        };
+        if (this._container.querySelector(CB_SIDE_COMMAND_AREA)) {
+            this._elements.sideCommandArea = this._container.querySelector(CB_SIDE_COMMAND_AREA);
+        }
+        if (this._container.querySelector(CB_ITEM_OVERFLOW)) {
+            this._elements.overflowCommand = this._container.querySelector(CB_ITEM_OVERFLOW);
+            this._elements.contextMenu = this._container.querySelector(CB_ITEM_OVERFLOW).querySelector(CONTEXTUAL_MENU);
+        }
+        if (this._container.querySelector(CB_MAIN_AREA + " " + CB_SEARCH_BOX)) {
+            this._elements.searchBox = this._container.querySelector(CB_MAIN_AREA + " " + CB_SEARCH_BOX);
+            this._elements.searchBoxClose = this._container.querySelector(SEARCH_BOX_CLOSE);
+            this.searchBoxInstance = this._createSearchInstance();
+            this.searchBoxInstance.getInputField().addEventListener("focus", function () { _this._onSearchExpand(); }, false);
+            this.searchBoxInstance.getInputField().addEventListener("searchCollapse", function () { _this._onSearchCollapse(); }, false);
+        }
+    };
+    CommandBar.prototype._createItemCollection = function (iCollection, areaClass) {
+        var item, label, iconClasses, splitClasses, items = this._container.querySelectorAll(areaClass + " > " + COMMAND_BUTTON + ":not(" + CB_ITEM_OVERFLOW + ")");
+        this._commandButtonInstance = new CommandButton(this._elements.overflowCommand);
+        for (var i = 0; i < items.length; i++) {
+            item = items[i];
+            label = item.querySelector(COMMAND_BUTTON_LABEL).textContent;
+            var icon = item.querySelector(ICON);
+            if (icon) {
+                iconClasses = icon.className;
+                splitClasses = iconClasses.split(" ");
+                for (var o = 0; o < splitClasses.length; o++) {
+                    if (splitClasses[o].indexOf(ICON.replace(".", "") + "--") > -1) {
+                        icon = splitClasses[o];
+                        break;
+                    }
+                }
+            }
+            iCollection.push({
+                item: item,
+                label: label,
+                icon: icon,
+                isCollapsed: (item.classList.contains(CB_NO_LABEL_CLASS)) ? true : false,
+                commandButtonRef: new CommandButton(item)
+            });
+        }
+        return;
+    };
+    CommandBar.prototype._createContextualRef = function () {
+        this.contextualItemContainerRef = this._elements.contextMenu.querySelector(CONTEXTUAL_MENU_ITEM).cloneNode(true);
+        this.contextualItemLink = this._elements.contextMenu.querySelector(CONTEXTUAL_MENU_LINK).cloneNode(false);
+        this.contextualItemIcon = this._elements.contextMenu.querySelector(".ms-Icon").cloneNode(false);
+        this._elements.contextMenu.innerHTML = "";
+    };
+    CommandBar.prototype._getElementWidth = function (element) {
+        var width, styles;
+        if (element.offsetParent === null) {
+            element.setAttribute("style", "position: absolute; opacity: 0; display: block;");
+        }
+        width = element.getBoundingClientRect().width;
+        styles = window.getComputedStyle(element);
+        width += parseInt(styles.marginLeft, 10) + parseInt(styles.marginRight, 10);
+        element.setAttribute("style", "");
+        return width;
+    };
+    CommandBar.prototype._saveCommandWidths = function () {
+        var this$1 = this;
+
+        for (var i = 0; i < this.itemCollection.length; i++) {
+            var item = this$1.itemCollection[i].item;
+            var width = this$1._getElementWidth(item);
+            this$1.commandWidths[i] = width;
+        }
+    };
+    CommandBar.prototype._updateCommands = function () {
+        var this$1 = this;
+
+        var searchCommandWidth = 0;
+        var mainAreaWidth = this._elements.mainArea.getBoundingClientRect().width;
+        if (this._elements.searchBox) {
+            searchCommandWidth = this._getElementWidth(this._elements.searchBox);
+        }
+        var offset = searchCommandWidth + OVERFLOW_WIDTH + OVERFLOW_LEFT_RIGHT_PADDING;
+        var totalAreaWidth = mainAreaWidth - offset;
+        this.visibleCommands = [];
+        this.overflowCommands = [];
+        var totalWidths = 0;
+        for (var i = 0; i < this.itemCollection.length; i++) {
+            totalWidths += this$1.commandWidths[i];
+            if (totalWidths < totalAreaWidth) {
+                this$1.visibleCommands.push(this$1.itemCollection[i]);
+            }
+            else {
+                this$1.overflowCommands.push(this$1.itemCollection[i]);
+            }
+        }
+    };
+    CommandBar.prototype._drawCommands = function () {
+        var this$1 = this;
+
+        this._elements.contextMenu.innerHTML = "";
+        for (var i = 0; i < this.overflowCommands.length; i++) {
+            this$1.overflowCommands[i].item.classList.add("is-hidden");
+            var newCItem = this$1.contextualItemContainerRef.cloneNode(false);
+            var newClink = this$1.contextualItemLink.cloneNode(false);
+            var iconClass = this$1.overflowCommands[i].icon;
+            newClink.innerText = this$1.overflowCommands[i].label;
+            newCItem.appendChild(newClink);
+            if (iconClass) {
+                var newIcon = this$1.contextualItemIcon.cloneNode(false);
+                newIcon.className = ICON.replace(".", "") + " " + iconClass;
+                newCItem.appendChild(newIcon);
+            }
+            this$1._elements.contextMenu.appendChild(newCItem);
+        }
+        for (var x = 0; x < this.visibleCommands.length; x++) {
+            this$1.visibleCommands[x].item.classList.remove("is-hidden");
+        }
+    };
+    CommandBar.prototype._setWindowEvent = function () {
+        var _this = this;
+        window.addEventListener("resize", function () {
+            _this._doResize();
+        }, false);
+    };
+    CommandBar.prototype._processCollapsedClasses = function (type) {
+        var this$1 = this;
+
+        for (var i = 0; i < this.itemCollection.length; i++) {
+            var thisItem = this$1.itemCollection[i];
+            if (!thisItem.isCollapsed) {
+                if (type === "add") {
+                    thisItem.item.classList.add(CB_NO_LABEL_CLASS);
+                }
+                else {
+                    thisItem.item.classList.remove(CB_NO_LABEL_CLASS);
+                }
+            }
+        }
+        for (var i = 0; i < this._sideAreaCollection.length; i++) {
+            var thisItem = this$1._sideAreaCollection[i];
+            if (!thisItem.isCollapsed) {
+                if (type === "add") {
+                    thisItem.item.classList.add(CB_NO_LABEL_CLASS);
+                }
+                else {
+                    thisItem.item.classList.remove(CB_NO_LABEL_CLASS);
+                }
+            }
+        }
+    };
+    CommandBar.prototype._setUIState = function () {
+        switch (this.breakpoint) {
+            case "sm":
+                this._runsSearchBox();
+                this._processCollapsedClasses("add");
+                this._runOverflow();
+                break;
+            case "md":
+                this._runsSearchBox();
+                this._processCollapsedClasses("add");
+                this._runOverflow();
+                break;
+            case "lg":
+                this._runsSearchBox();
+                this._processCollapsedClasses("remove");
+                this._runOverflow();
+                break;
+            case "xl":
+                this._runsSearchBox("remove");
+                this._processCollapsedClasses("remove");
+                this._runOverflow();
+                break;
+            default:
+                this._runsSearchBox("remove");
+                this._processCollapsedClasses("remove");
+                this._runOverflow();
+                break;
+        }
+    };
+    CommandBar.prototype._checkOverflow = function () {
+        if (this.overflowCommands.length > 0) {
+            this._elements.overflowCommand.classList.remove("is-hidden");
+        }
+        else {
+            this._elements.overflowCommand.classList.add("is-hidden");
+            if (this.activeCommand === this._elements.overflowCommand) {
+                this._elements.contextMenu.classList.remove("is-open");
+            }
+        }
+    };
+    CommandBar.prototype._redrawMenu = function () {
+        var left;
+        if (this._hasClass(this._elements.contextMenu, "is-open")) {
+            left = this.activeCommand.getBoundingClientRect().left;
+            this._drawOverflowMenu(left);
+        }
+    };
+    CommandBar.prototype._drawOverflowMenu = function (left) {
+        this._elements.contextMenu.setAttribute("style", "left: " + left + "px; transform: translateX(-50%)");
+    };
+    CommandBar.prototype._doResize = function () {
+        this._setBreakpoint();
+        this._setUIState();
+    };
+    return CommandBar;
+}());
+
+var uiCommandBar = {
+    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-CommandBar { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; background-color: \"[theme:neutralLighter, default: #f4f4f4]\"; height: 40px; white-space: nowrap; padding-left: 0; border: 0; position: relative; } .ms-CommandBar:focus { outline: none; } .ms-CommandBar .ms-CommandButton--actionButton { border-right: 1px solid \"[theme:neutralLight, default: #eaeaea]\"; } .ms-CommandBar .ms-Button { height: 100%; } .ms-CommandBar .ms-Button.ms-Button--noLabel .ms-Button-icon { padding-right: 0; } .ms-CommandBar .ms-Button.is-hidden { display: none; } .ms-CommandBar .ms-SearchBox, .ms-CommandBar .ms-SearchBox-field, .ms-CommandBar .ms-SearchBox-label { height: 100%; } .ms-CommandBar .ms-SearchBox { display: inline-block; vertical-align: top; transition: margin-right 0.267s; } .ms-CommandBar .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active { width: 220px; } @media only screen and (max-width: 639px) { .ms-CommandBar .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active { width: 100%; position: absolute; left: 0; right: 0; z-index: 10; } } .ms-CommandBar .ms-CommandBar-overflowButton .ms-CommandButton-button { font-size: 18px; padding: 0 11px; } @media only screen and (min-width: 1024px) { .ms-CommandBar .ms-SearchBox { margin-right: 24px; } } @media only screen and (max-width: 639px) { .ms-CommandBar { height: 44px; } } @media only screen and (min-width: 640px) { .ms-CommandBar.search-expanded .ms-SearchBox { margin-right: 8px; } .ms-CommandBar .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed { transition: none; } } .ms-CommandBar-mainArea { overflow-x: hidden; display: block; height: 100%; overflow: hidden; } .ms-CommandBar-sideCommands { float: right; text-align: right; width: auto; padding-right: 4px; height: 100%; } .ms-CommandBar-sideCommands .ms-Button:last-child { margin-right: 0; } @media only screen and (min-width: 640px) { .ms-CommandBar-sideCommands { min-width: 128px; } } @media only screen and (min-width: 1024px) { .ms-CommandBar-sideCommands { padding-right: 20px; } } .ms-CommandButton { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; display: inline-block; position: relative; vertical-align: top; } .ms-CommandButton.is-hidden { display: none; } .ms-CommandButton:disabled .ms-CommandButton-button, .ms-CommandButton.is-disabled .ms-CommandButton-button { cursor: default; } .ms-CommandButton:disabled .ms-CommandButton-button:hover, .ms-CommandButton.is-disabled .ms-CommandButton-button:hover { background-color: \"[theme:themeLighterAlt, default: #eff6fc]\"; } .ms-CommandButton:disabled .ms-CommandButton-button .ms-CommandButton-label, .ms-CommandButton.is-disabled .ms-CommandButton-button .ms-CommandButton-label { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-CommandButton:disabled .ms-CommandButton-button .ms-CommandButton-icon, .ms-CommandButton.is-disabled .ms-CommandButton-button .ms-CommandButton-icon { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-CommandButton .ms-ContextualMenu { display: none; } .ms-CommandButton-button, .ms-CommandButton-splitIcon { box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 14px; font-weight: 400; cursor: pointer; display: inline-block; height: 40px; line-height: 40px; outline: 1px solid transparent; padding: 0 8px; position: relative; vertical-align: top; background: transparent; } .ms-CommandButton-button:hover, .ms-CommandButton-splitIcon:hover { background-color: \"[theme:neutralLight, default: #eaeaea]\"; } .ms-CommandButton-button:hover .ms-CommandButton-label, .ms-CommandButton-splitIcon:hover .ms-CommandButton-label { color: \"[theme:neutralDark, default: #212121]\"; } .ms-CommandButton-button:active, .ms-CommandButton-splitIcon:active { background-color: \"[theme:neutralLight, default: #eaeaea]\"; } .ms-CommandButton-button:focus::before, .ms-CommandButton-splitIcon:focus::before { top: 3px; left: 3px; right: 3px; bottom: 3px; border: 1px solid \"[theme:neutralPrimary, default: #333333]\"; position: absolute; z-index: 10; content: ''; outline: none; } .ms-CommandButton-button:focus, .ms-CommandButton-splitIcon:focus { outline: 0; } @media only screen and (max-width: 639px) { .ms-CommandButton-button, .ms-CommandButton-splitIcon { height: 44px; } .ms-CommandButton-button .ms-CommandButton-icon, .ms-CommandButton-splitIcon .ms-CommandButton-icon { font-size: 20px; } .ms-CommandButton-button .ms-CommandButton-label, .ms-CommandButton-splitIcon .ms-CommandButton-label { line-height: 44px; } } .ms-CommandButton-button { border: 0; margin: 0; } .ms-CommandButton + .ms-CommandButton { margin-left: 8px; } @media only screen and (max-width: 639px) { .ms-CommandButton + .ms-CommandButton { margin-left: 4px; } } .ms-CommandButton-icon { display: inline-block; margin-right: 8px; position: relative; font-size: 16px; min-width: 16px; height: 100%; } .ms-CommandButton-icon .ms-Icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); } .ms-CommandButton-label { font-size: 14px; font-weight: 400; color: \"[theme:neutralPrimary, default: #333333]\"; line-height: 40px; height: 100%; display: inline-block; vertical-align: top; } .ms-CommandButton-label:hover { color: \"[theme:neutralDark, default: #212121]\"; } .ms-CommandButton-dropdownIcon, .ms-CommandButton-splitIcon { display: inline-block; position: relative; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 12px; font-weight: 300; min-width: 12px; height: 100%; vertical-align: top; margin-left: 8px; } .ms-CommandButton-dropdownIcon .ms-Icon, .ms-CommandButton-splitIcon .ms-Icon { line-height: normal; padding-top: 16px; } .ms-CommandButton-dropdownIcon:focus::before, .ms-CommandButton-splitIcon:focus::before { top: 3px; left: 3px; right: 3px; bottom: 3px; border: 1px solid \"[theme:neutralPrimary, default: #333333]\"; position: absolute; z-index: 10; content: ''; outline: none; } @media only screen and (max-width: 639px) { .ms-CommandButton-dropdownIcon, .ms-CommandButton-splitIcon { display: none; } } .ms-CommandButton-splitIcon { margin-left: -2px; width: 27px; border: 0; } .ms-CommandButton-splitIcon .ms-Icon { margin-left: -1px; position: relative; padding-top: 16px; } .ms-CommandButton-splitIcon .ms-Icon::after { position: absolute; content: ' '; width: 1px; height: 16px; top: 12px; left: -8px; border-left: 1px solid \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; } .ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-icon { margin-right: 0; } .ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-label { display: none; } .ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-button { padding: 0 12px; } .ms-CommandButton.ms-CommandButton--inline .ms-CommandButton-button { background: none; } .ms-CommandButton.ms-CommandButton--actionButton .ms-CommandButton-button { width: 50px; height: 40px; } .ms-CommandButton.ms-CommandButton--actionButton .ms-CommandButton-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 16px; height: 16px; padding-right: 0; } .ms-CommandButton.ms-CommandButton--pivot.is-active::before { content: ''; height: 2px; position: absolute; left: 0; right: 0; background-color: \"[theme:themePrimary, default: #0078d7]\"; bottom: 0; z-index: 5; } .ms-CommandButton.ms-CommandButton--pivot:hover::before { content: ''; height: 2px; position: absolute; left: 0; right: 0; background-color: \"[theme:themePrimary, default: #0078d7]\"; bottom: 0; z-index: 5; } .ms-CommandButton.ms-CommandButton--textOnly .ms-CommandButton-label, .ms-CommandButton.ms-CommandButton--pivot .ms-CommandButton-label { display: inline-block; } @media only screen and (max-width: 479px) { .ms-CommandButton.ms-CommandButton--textOnly .ms-CommandButton-label, .ms-CommandButton.ms-CommandButton--pivot .ms-CommandButton-label { font-size: 16px; } } .ms-ContextualMenu { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 14px; font-weight: 400; display: block; min-width: 180px; max-width: 220px; list-style-type: none; position: relative; background-color: \"[theme:white, default: #ffffff]\"; } .ms-ContextualMenu.is-hidden { display: none; } .ms-ContextualMenu-item { position: relative; } .ms-ContextualMenu-link { box-sizing: border-box; text-decoration: none; color: \"[theme:neutralPrimary, default: #333333]\"; border: 1px solid transparent; cursor: pointer; display: block; height: 36px; overflow: hidden; line-height: 34px; padding: 0 16px 0 25px; position: relative; text-overflow: ellipsis; white-space: nowrap; } .ms-ContextualMenu-link:hover, .ms-ContextualMenu-link:active, .ms-ContextualMenu-link:focus { background-color: \"[theme:neutralLighter, default: #f4f4f4]\"; color: \"[theme:neutralDark, default: #212121]\"; } .ms-ContextualMenu-link:hover .ms-ContextualMenu-subMenuIcon, .ms-ContextualMenu-link:active .ms-ContextualMenu-subMenuIcon, .ms-ContextualMenu-link:focus .ms-ContextualMenu-subMenuIcon { color: \"[theme:neutralDark, default: #212121]\"; } .ms-ContextualMenu-link:focus { outline: transparent; border: 1px solid \"[theme:neutralSecondary, default: #666666]\"; } .ms-ContextualMenu-link.is-selected { background-color: \"[theme:neutralQuaternaryAlt, default: #dadada]\"; color: \"[theme:black, default: #000000]\"; font-weight: 600; } .ms-ContextualMenu-link.is-selected ~ .ms-ContextualMenu-subMenuIcon { color: \"[theme:black, default: #000000]\"; } .ms-ContextualMenu-link.is-selected:hover { background-color: \"[theme:neutralQuaternary, default: #d0d0d0]\"; } .ms-ContextualMenu-link.is-disabled { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; background-color: \"[theme:white, default: #ffffff]\"; pointer-events: none; } .ms-ContextualMenu-link.is-disabled:active, .ms-ContextualMenu-link.is-disabled:focus { border-color: \"[theme:white, default: #ffffff]\"; } .ms-ContextualMenu-link.is-disabled .ms-Icon { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; pointer-events: none; cursor: default; } .ms-ContextualMenu-item.ms-ContextualMenu-item--divider { cursor: default; display: block; height: 1px; background-color: \"[theme:neutralLight, default: #eaeaea]\"; position: relative; } .ms-ContextualMenu-item.ms-ContextualMenu-item--header { color: \"[theme:themePrimary, default: #0078d7]\"; font-size: 12px; text-transform: uppercase; height: 36px; line-height: 36px; padding: 0 18px; } .ms-ContextualMenu-item.ms-ContextualMenu-item--hasMenu .ms-ContextualMenu { position: absolute; top: -1px; left: 178px; } .ms-ContextualMenu-subMenuIcon, .ms-ContextualMenu-caretRight { color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 8px; font-weight: 600; width: 24px; height: 36px; line-height: 36px; position: absolute; text-align: center; top: 0; right: 0; z-index: 1; pointer-events: none; } .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-item.ms-ContextualMenu-item--header { padding: 0 16px 0 26px; } .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected { background-color: \"[theme:white, default: #ffffff]\"; font-weight: 600; color: \"[theme:neutralPrimary, default: #333333]\"; } .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected::after { -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; display: inline-block; font-family: 'FabricMDL2Icons'; font-style: normal; font-weight: normal; speak: none; color: \"[theme:neutralPrimary, default: #333333]\"; content: '\\E73E'; font-size: 10px; font-weight: 800; height: 36px; line-height: 36px; position: absolute; left: 7px; } .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected:hover, .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected:focus { color: \"[theme:neutralDark, default: #212121]\"; background-color: \"[theme:neutralLighter, default: #f4f4f4]\"; } .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected:hover::after, .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected:focus::after { color: \"[theme:neutralDark, default: #212121]\"; } .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected:active { color: \"[theme:black, default: #000000]\"; background-color: \"[theme:neutralQuaternary, default: #d0d0d0]\"; } .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected:active::after { color: \"[theme:black, default: #000000]\"; } .ms-ContextualMenu.ms-ContextualMenu--hasIcons .ms-ContextualMenu-link, .ms-ContextualMenu.ms-ContextualMenu--hasChecks .ms-ContextualMenu-link { padding-left: 40px; } .ms-ContextualMenu.ms-ContextualMenu--hasIcons .ms-Icon, .ms-ContextualMenu.ms-ContextualMenu--hasChecks .ms-Icon { position: absolute; top: 50%; transform: translateY(-50%); width: 40px; text-align: center; } .ms-ContextualMenu.ms-ContextualMenu--hasIcons { width: 220px; } .ms-ContextualHost { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; z-index: 10; margin: 16px auto; position: relative; min-width: 10px; display: none; background-color: \"[theme:white, default: #ffffff]\"; box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4); } .ms-ContextualHost.is-positioned { position: absolute; margin: 0; } .ms-ContextualHost.is-open { display: inline-block; } .ms-ContextualHost-beak { box-shadow: 0 0 15px -5px \"[theme:neutralPrimaryAlt, default: #3c3c3c]\"; position: absolute; width: 28px; height: 28px; background: \"[theme:white, default: #ffffff]\"; border: 1px solid \"[theme:neutralLight, default: #eaeaea]\"; box-sizing: border-box; top: -6px; display: none; -webkit-transform: rotate(45deg); transform: rotate(45deg); z-index: 0; outline: 1px solid transparent; } .ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak, .ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak { top: 40px; display: none; } .ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak { left: -10px; } .ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak { right: -10px; } .ms-ContextualHost.ms-ContextualHost--arrowTop .ms-ContextualHost-beak { display: block; top: -10px; } .ms-ContextualHost.ms-ContextualHost--arrowBottom .ms-ContextualHost-beak { display: block; bottom: -10px; } .ms-ContextualHost-main { position: relative; background-color: \"[theme:white, default: #ffffff]\"; box-sizing: border-box; outline: 1px solid transparent; z-index: 5; min-height: 10px; } .ms-ContextualHost-close { margin: 0; border: 0; background: none; cursor: pointer; position: absolute; top: 12px; right: 12px; padding: 8px; width: 32px; height: 32px; font-size: 14px; color: \"[theme:neutralSecondary, default: #666666]\"; z-index: 10; } .ms-ContextualHost.ms-ContextualHost--close .ms-ContextualHost-title { margin-right: 20px; } .ms-ContextualHost.ms-ContextualHost--primaryArrow .ms-ContextualHost-beak { background-color: \"[theme:themePrimary, default: #0078d7]\"; } @media (min-width: 480px) { .ms-ContextualHost { margin: 16px; } .ms-ContextualHost.is-positioned { margin: 0; } .ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak, .ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak { display: block; } } .inline-block { display: inline-block; } .ms-Icon.ms-Icon--More { content: url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"14\" height=\"14\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M256 1152q27 0 50 -10t40.5 -27.5t27.5 -40.5t10 -50t-10 -50t-27.5 -40.5t-40.5 -27.5t-50 -10t-50 10t-40.5 27.5t-27.5 40.5t-10 50t10 50t27.5 40.5t40.5 27.5t50 10zM1024 1152q27 0 50 -10t40.5 -27.5t27.5 -40.5t10 -50t-10 -50t-27.5 -40.5t-40.5 -27.5t-50 -10t-50 10t-40.5 27.5t-27.5 40.5t-10 50t10 50t27.5 40.5t40.5 27.5t50 10zM1792 1152q27 0 50 -10t40.5 -27.5t27.5 -40.5t10 -50t-10 -50t-27.5 -40.5t-40.5 -27.5t-50 -10t-50 10t-40.5 27.5t-27.5 40.5t-10 50t10 50t27.5 40.5t40.5 27.5t50 10z\" fill=\"black\" stroke=\"none\"/></svg>'); } ");},
+    beforeMount: function beforeMount(){ 
+        this.$fabric = { 
+            CommandBar : CommandBar 
+        }; 
+    },
+    extends :  commandbar
+}
+
+var commandbutton = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-CommandButton",class:_vm.commandButtonClass,on:{"click":_vm.clickEvent}},[_c('button',{staticClass:"ms-CommandButton-button"},[(_vm.icon)?_c('span',{staticClass:"ms-CommandButton-icon ms-fontColor-themePrimary"},[_c('i',{staticClass:"ms-Icon",class:_vm.iconClass})]):_vm._e(),_vm._v(" "),_c('span',{staticClass:"ms-CommandButton-label"},[_vm._t("default")],2),_vm._v(" "),(_vm.type == 'dropdown')?_c('span',{staticClass:"ms-CommandButton-dropdownIcon"},[_c('i',{staticClass:"ms-Icon ms-Icon--ChevronDown"})]):_vm._e()])])},staticRenderFns: [],
+  name: 'ou-command-button',
+
+  mixins: [
+    type('noLabel', 'inline', 'dropdown'),
+    disabled,
+    icon
+  ],
+
+  computed: {
+    commandButtonClass: function commandButtonClass() {
+      var obj;
+
+      return ( obj = {}, obj[("ms-CommandButton--" + (this.type))] = !!this.type, obj['is-disabled'] =  this.disabled, obj );
+    }
+  },
+
+  methods: {
+    clickEvent: function clickEvent() {
+      if (!this.disabled) { this.$emit('click'); }
+    }
+  }
+};
+
+var CONTEXT_CLASS$1 = ".ms-ContextualMenu";
+var CB_SPLIT_CLASS$1 = ".ms-CommandButton-splitIcon";
+var CB_BUTTON_CLASS$1 = ".ms-CommandButton-button";
+var MODAL_POSITION$2 = "bottom";
+var CommandButton$1 = (function () {
+    function CommandButton(container, contextMenu) {
+        this._container = container;
+        this._command = this._container;
+        this._commandButton = this._command.querySelector(CB_BUTTON_CLASS$1);
+        this._splitButton = this._command.querySelector(CB_SPLIT_CLASS$1);
+        if (contextMenu) {
+            this._contextualMenu = contextMenu;
+        }
+        else {
+            this._contextualMenu = this._container.querySelector(CONTEXT_CLASS$1);
+        }
+        this._checkForMenu();
+    }
+    CommandButton.prototype._createModalHostView = function () {
+        this._modalHostView = new ContextualHost(this._contextualMenu, MODAL_POSITION$2, this._command, false);
+    };
+    CommandButton.prototype._setClick = function () {
+        if (this._splitButton) {
+            this._splitButton.addEventListener("click", this._createModalHostView.bind(this), false);
+        }
+        else {
+            this._commandButton.addEventListener("click", this._createModalHostView.bind(this), false);
+        }
+    };
+    CommandButton.prototype._checkForMenu = function () {
+        if (this._contextualMenu) {
+            this._setClick();
+        }
+    };
+    return CommandButton;
+}());
+
+var uiCommandButton = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-CommandButton",class:_vm.commandButtonClass,on:{"click":_vm.clickEvent}},[_c('button',{staticClass:"ms-CommandButton-button"},[(_vm.hasIcon)?_c('span',{staticClass:"ms-CommandButton-icon ms-fontColor-themePrimary"},[_vm._t("icon")],2):_vm._e(),_vm._v(" "),_c('span',{staticClass:"ms-CommandButton-label"},[_vm._t("default")],2),_vm._v(" "),(_vm.type == 'dropdown')?_c('span',{staticClass:"ms-CommandButton-dropdownIcon"},[_c('i',{staticClass:"ms-Icon ms-Icon--ChevronDown"})]):_vm._e()])])},staticRenderFns: [],_scopeId: 'data-v-6b2aa7e9',
+    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-CommandButton[data-v-6b2aa7e9] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; display: inline-block; position: relative; vertical-align: top; } .ms-CommandButton.is-hidden[data-v-6b2aa7e9] { display: none; } .ms-CommandButton:disabled .ms-CommandButton-button[data-v-6b2aa7e9], .ms-CommandButton.is-disabled .ms-CommandButton-button[data-v-6b2aa7e9] { cursor: default; } .ms-CommandButton:disabled .ms-CommandButton-button[data-v-6b2aa7e9]:hover, .ms-CommandButton.is-disabled .ms-CommandButton-button[data-v-6b2aa7e9]:hover { background-color: \"[theme:themeLighterAlt, default: #eff6fc]\"; } .ms-CommandButton:disabled .ms-CommandButton-button .ms-CommandButton-label[data-v-6b2aa7e9], .ms-CommandButton.is-disabled .ms-CommandButton-button .ms-CommandButton-label[data-v-6b2aa7e9] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-CommandButton:disabled .ms-CommandButton-button .ms-CommandButton-icon[data-v-6b2aa7e9], .ms-CommandButton.is-disabled .ms-CommandButton-button .ms-CommandButton-icon[data-v-6b2aa7e9] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-CommandButton .ms-ContextualMenu[data-v-6b2aa7e9] { display: none; } .ms-CommandButton-button[data-v-6b2aa7e9], .ms-CommandButton-splitIcon[data-v-6b2aa7e9] { box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 14px; font-weight: 400; cursor: pointer; display: inline-block; height: 40px; line-height: 40px; outline: 1px solid transparent; padding: 0 8px; position: relative; vertical-align: top; background: transparent; } .ms-CommandButton-button[data-v-6b2aa7e9]:hover, .ms-CommandButton-splitIcon[data-v-6b2aa7e9]:hover { background-color: \"[theme:neutralLight, default: #eaeaea]\"; } .ms-CommandButton-button:hover .ms-CommandButton-label[data-v-6b2aa7e9], .ms-CommandButton-splitIcon:hover .ms-CommandButton-label[data-v-6b2aa7e9] { color: \"[theme:neutralDark, default: #212121]\"; } .ms-CommandButton-button[data-v-6b2aa7e9]:active, .ms-CommandButton-splitIcon[data-v-6b2aa7e9]:active { background-color: \"[theme:neutralLight, default: #eaeaea]\"; } .ms-CommandButton-button[data-v-6b2aa7e9]:focus::before, .ms-CommandButton-splitIcon[data-v-6b2aa7e9]:focus::before { top: 3px; left: 3px; right: 3px; bottom: 3px; border: 1px solid \"[theme:neutralPrimary, default: #333333]\"; position: absolute; z-index: 10; content: ''; outline: none; } .ms-CommandButton-button[data-v-6b2aa7e9]:focus, .ms-CommandButton-splitIcon[data-v-6b2aa7e9]:focus { outline: 0; } @media only screen and (max-width: 639px) { .ms-CommandButton-button[data-v-6b2aa7e9], .ms-CommandButton-splitIcon[data-v-6b2aa7e9] { height: 44px; } .ms-CommandButton-button .ms-CommandButton-icon[data-v-6b2aa7e9], .ms-CommandButton-splitIcon .ms-CommandButton-icon[data-v-6b2aa7e9] { font-size: 20px; } .ms-CommandButton-button .ms-CommandButton-label[data-v-6b2aa7e9], .ms-CommandButton-splitIcon .ms-CommandButton-label[data-v-6b2aa7e9] { line-height: 44px; } } .ms-CommandButton-button[data-v-6b2aa7e9] { border: 0; margin: 0; } .ms-CommandButton + .ms-CommandButton[data-v-6b2aa7e9] { margin-left: 8px; } @media only screen and (max-width: 639px) { .ms-CommandButton + .ms-CommandButton[data-v-6b2aa7e9] { margin-left: 4px; } } .ms-CommandButton-icon[data-v-6b2aa7e9] { display: inline-block; margin-right: 8px; position: relative; font-size: 16px; min-width: 16px; height: 100%; } .ms-CommandButton-icon .ms-Icon[data-v-6b2aa7e9] { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); } .ms-CommandButton-label[data-v-6b2aa7e9] { font-size: 14px; font-weight: 400; color: \"[theme:neutralPrimary, default: #333333]\"; line-height: 40px; height: 100%; display: inline-block; vertical-align: top; } .ms-CommandButton-label[data-v-6b2aa7e9]:hover { color: \"[theme:neutralDark, default: #212121]\"; } .ms-CommandButton-dropdownIcon[data-v-6b2aa7e9], .ms-CommandButton-splitIcon[data-v-6b2aa7e9] { display: inline-block; position: relative; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 12px; font-weight: 300; min-width: 12px; height: 100%; vertical-align: top; margin-left: 8px; } .ms-CommandButton-dropdownIcon .ms-Icon[data-v-6b2aa7e9], .ms-CommandButton-splitIcon .ms-Icon[data-v-6b2aa7e9] { line-height: normal; padding-top: 16px; } .ms-CommandButton-dropdownIcon[data-v-6b2aa7e9]:focus::before, .ms-CommandButton-splitIcon[data-v-6b2aa7e9]:focus::before { top: 3px; left: 3px; right: 3px; bottom: 3px; border: 1px solid \"[theme:neutralPrimary, default: #333333]\"; position: absolute; z-index: 10; content: ''; outline: none; } @media only screen and (max-width: 639px) { .ms-CommandButton-dropdownIcon[data-v-6b2aa7e9], .ms-CommandButton-splitIcon[data-v-6b2aa7e9] { display: none; } } .ms-CommandButton-splitIcon[data-v-6b2aa7e9] { margin-left: -2px; width: 27px; border: 0; } .ms-CommandButton-splitIcon .ms-Icon[data-v-6b2aa7e9] { margin-left: -1px; position: relative; padding-top: 16px; } .ms-CommandButton-splitIcon .ms-Icon[data-v-6b2aa7e9]::after { position: absolute; content: ' '; width: 1px; height: 16px; top: 12px; left: -8px; border-left: 1px solid \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; } .ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-icon[data-v-6b2aa7e9] { margin-right: 0; } .ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-label[data-v-6b2aa7e9] { display: none; } .ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-button[data-v-6b2aa7e9] { padding: 0 12px; } .ms-CommandButton.ms-CommandButton--inline .ms-CommandButton-button[data-v-6b2aa7e9] { background: none; } .ms-CommandButton.ms-CommandButton--actionButton .ms-CommandButton-button[data-v-6b2aa7e9] { width: 50px; height: 40px; } .ms-CommandButton.ms-CommandButton--actionButton .ms-CommandButton-icon[data-v-6b2aa7e9] { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 16px; height: 16px; padding-right: 0; } .ms-CommandButton.ms-CommandButton--pivot.is-active[data-v-6b2aa7e9]::before { content: ''; height: 2px; position: absolute; left: 0; right: 0; background-color: \"[theme:themePrimary, default: #0078d7]\"; bottom: 0; z-index: 5; } .ms-CommandButton.ms-CommandButton--pivot[data-v-6b2aa7e9]:hover::before { content: ''; height: 2px; position: absolute; left: 0; right: 0; background-color: \"[theme:themePrimary, default: #0078d7]\"; bottom: 0; z-index: 5; } .ms-CommandButton.ms-CommandButton--textOnly .ms-CommandButton-label[data-v-6b2aa7e9], .ms-CommandButton.ms-CommandButton--pivot .ms-CommandButton-label[data-v-6b2aa7e9] { display: inline-block; } @media only screen and (max-width: 479px) { .ms-CommandButton.ms-CommandButton--textOnly .ms-CommandButton-label[data-v-6b2aa7e9], .ms-CommandButton.ms-CommandButton--pivot .ms-CommandButton-label[data-v-6b2aa7e9] { font-size: 16px; } } ");},
+    computed: {
+        hasIcon: function hasIcon () {
+            return !!this.$slots['icon']
+        }
+    },
+    beforeMount: function beforeMount(){ 
+        this.$fabric = { 
+            CommandButton : CommandButton$1 
+        }; 
+    },
+    extends :  commandbutton
+}
+
+var dialog = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"dialog",staticClass:"ms-Dialog",class:_vm.dialogClass},[(_vm.type == 'close')?_c('button',{staticClass:"ms-Dialog-button ms-Dialog-buttonClose",on:{"click":_vm.closeDialog}},[_c('i',{staticClass:"ms-Icon ms-Icon--Cancel"})]):_vm._e(),_vm._v(" "),_c('div',{staticClass:"ms-Dialog-title"},[_vm._v(_vm._s(_vm.title))]),_vm._v(" "),_c('div',{staticClass:"ms-Dialog-content"},[_c('p',{staticClass:"ms-Dialog-subText"},[_vm._v(_vm._s(_vm.subText))]),_vm._v(" "),_vm._t("default")],2),_vm._v(" "),_c('div',{staticClass:"ms-Dialog-actions"},[_vm._t("actions")],2)])},staticRenderFns: [],
+  name: 'ou-dialog',
+
+  mixins: [type('multiline', 'lgHeader', 'blocking', 'close')],
 
   props: {
-    value: Boolean
+    title: String,
+    subText: String,
+
+    value: {
+      type: Boolean,
+      default: false
+    }
   },
 
   data: function data() {
     return {
-      checkboxInstance: null
+      dialogInstance: null
     };
   },
 
+  computed: {
+    dialogClass: function dialogClass() {
+      var obj;
+
+      return ( obj = {}, obj[("ms-Dialog--" + (this.type))] = !!this.type, obj );
+    }
+  },
+
   watch: {
-    value: function value() {
-      this.setCheck();
+    value: function value(value$1) {
+      this.setDialogVisibility(value$1);
     }
   },
 
   mounted: function mounted() {
-    this.checkboxInstance = new this.$fabric.CheckBox(this.$refs.checkbox);
-    this.setCheck();
+    this.dialogInstance = new this.$fabric.Dialog(this.$refs.dialog);
+    this.setDialogVisibility(this.value);
   },
 
   methods: {
-    toggle: function toggle() {
-      this.$emit('input', this.checkboxInstance.getValue());
-    },
+    setDialogVisibility: function setDialogVisibility(value) {
+      if (value) {
+        this.dialogInstance.open();
 
-    setCheck: function setCheck() {
-      this.value && !this.disabled ?
-        this.checkboxInstance.check() :
-        this.checkboxInstance.unCheck();
-    }
-  }
-};
-
-var CheckBox = (function () {
-    function CheckBox(container) {
-        this._container = container;
-        this._choiceField = this._container.querySelector(".ms-CheckBox-field");
-        this._choiceInput = this._container.querySelector(".ms-CheckBox-input");
-        if (this._choiceInput.checked) {
-            this._choiceField.setAttribute("aria-checked", "true");
-        }
-        if (this._choiceField.getAttribute("aria-checked") === "true") {
-            this._choiceField.classList.add("is-checked");
-        }
-        this._addListeners();
-    }
-    CheckBox.prototype.getValue = function () {
-        return this._choiceField.getAttribute("aria-checked") === "true" ? true : false;
-    };
-    CheckBox.prototype.toggle = function () {
-        if (this.getValue()) {
-            this.unCheck();
-        }
-        else {
-            this.check();
-        }
-        this._choiceInput.click();
-    };
-    CheckBox.prototype.check = function () {
-        this._choiceField.setAttribute("aria-checked", "true");
-        this._choiceField.classList.add("is-checked");
-    };
-    CheckBox.prototype.unCheck = function () {
-        this._choiceField.setAttribute("aria-checked", "false");
-        this._choiceField.classList.remove("is-checked");
-    };
-    CheckBox.prototype.removeListeners = function () {
-        this._choiceField.removeEventListener("focus", this._FocusHandler.bind(this));
-        this._choiceField.removeEventListener("blur", this._BlurHandler.bind(this));
-        this._choiceField.removeEventListener("click", this._ClickHandler.bind(this));
-        this._choiceField.removeEventListener("keydown", this._KeydownHandler.bind(this));
-    };
-    CheckBox.prototype._addListeners = function (events) {
-        var ignore = events && events.ignore;
-        if (!ignore || !(ignore.indexOf("focus") > -1)) {
-            this._choiceField.addEventListener("focus", this._FocusHandler.bind(this), false);
-        }
-        if (!ignore || !(ignore.indexOf("blur") > -1)) {
-            this._choiceField.addEventListener("blur", this._BlurHandler.bind(this), false);
-        }
-        if (!ignore || !(ignore.indexOf("click") > -1)) {
-            this._choiceField.addEventListener("click", this._ClickHandler.bind(this), false);
-        }
-        if (!ignore || !(ignore.indexOf("keydown") > -1)) {
-            this._choiceField.addEventListener("keydown", this._KeydownHandler.bind(this), false);
-        }
-    };
-    CheckBox.prototype._FocusHandler = function () {
-        this._choiceField.classList.add("in-focus");
-    };
-    CheckBox.prototype._BlurHandler = function () {
-        this._choiceField.classList.remove("in-focus");
-    };
-    CheckBox.prototype._ClickHandler = function (event) {
-        event.stopPropagation();
-        event.preventDefault();
-        if (!this._choiceField.classList.contains("is-disabled")) {
-            this.toggle();
-        }
-    };
-    CheckBox.prototype._KeydownHandler = function (event) {
-        if (event.keyCode === 32) {
-            event.stopPropagation();
-            event.preventDefault();
-            if (!this._choiceField.classList.contains("is-disabled")) {
-                this.toggle();
-            }
-        }
-    };
-    return CheckBox;
-}());
-
-var uiCheckbox = {_scopeId: 'data-v-75ed8232',
-    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-CheckBox[data-v-75ed8232] { box-sizing: border-box; color: \"[theme:neutralPrimary, default: #333333]\"; font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; font-size: 14px; font-weight: 400; min-height: 36px; position: relative; } .ms-CheckBox .ms-Label[data-v-75ed8232] { font-size: 14px; padding: 0 0 0 26px; cursor: pointer; display: inline-block; } .ms-CheckBox-input[data-v-75ed8232] { position: absolute; opacity: 0; } .ms-CheckBox-field[data-v-75ed8232]::before { content: ''; display: inline-block; border: 2px solid \"[theme:neutralTertiary, default: #a6a6a6]\"; width: 20px; height: 20px; cursor: pointer; font-weight: normal; position: absolute; box-sizing: border-box; transition-property: background, border, border-color; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.4, 0, 0.23, 1); } .ms-CheckBox-field[data-v-75ed8232]::after { content: \"\\E73E\"; font-family: 'FabricMDL2Icons'; display: none; position: absolute; font-weight: 900; background-color: transparent; font-size: 13px; top: 0; color: \"[theme:white, default: #ffffff]\"; line-height: 20px; width: 20px; text-align: center; } @media screen and (-ms-high-contrast: active) { .ms-CheckBox-field[data-v-75ed8232]::after { color: \"[theme:black, default: #000000]\"; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-CheckBox-field[data-v-75ed8232]::after { color: \"[theme:white, default: #ffffff]\"; } } .ms-CheckBox-field[data-v-75ed8232] { display: inline-block; cursor: pointer; margin-top: 8px; position: relative; outline: 0; vertical-align: top; } .ms-CheckBox-field[data-v-75ed8232]:hover::before, .ms-CheckBox-field[data-v-75ed8232]:focus::before { border-color: \"[theme:neutralSecondaryAlt, default: #767676]\"; } .ms-CheckBox-field:hover .ms-Label[data-v-75ed8232], .ms-CheckBox-field:focus .ms-Label[data-v-75ed8232] { color: \"[theme:black, default: #000000]\"; } .ms-CheckBox-field.is-disabled[data-v-75ed8232] { cursor: default; } .ms-CheckBox-field.is-disabled[data-v-75ed8232]::before { background-color: \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; border-color: \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; color: \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; } @media screen and (-ms-high-contrast: active) { .ms-CheckBox-field.is-disabled[data-v-75ed8232]::before { border-color: #00ff00; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-CheckBox-field.is-disabled[data-v-75ed8232]::before { border-color: #600000; } } .ms-CheckBox-field.is-disabled .ms-Label[data-v-75ed8232] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } @media screen and (-ms-high-contrast: active) { .ms-CheckBox-field.is-disabled .ms-Label[data-v-75ed8232] { color: #00ff00; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-CheckBox-field.is-disabled .ms-Label[data-v-75ed8232] { color: #600000; } } .ms-CheckBox-field.in-focus[data-v-75ed8232]::before { border-color: \"[theme:neutralSecondaryAlt, default: #767676]\"; } .ms-CheckBox-field.in-focus.is-disabled[data-v-75ed8232]::before { border-color: \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; } .ms-CheckBox-field.in-focus.is-checked[data-v-75ed8232]::before { border-color: \"[theme:themeDarkAlt, default: #106ebe]\"; } .ms-CheckBox-field.is-checked[data-v-75ed8232]::before { border: 10px solid \"[theme:themePrimary, default: #0078d7]\"; background-color: \"[theme:themePrimary, default: #0078d7]\"; } @media screen and (-ms-high-contrast: active) { .ms-CheckBox-field.is-checked[data-v-75ed8232]::before { border-color: #1AEBFF; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-CheckBox-field.is-checked[data-v-75ed8232]::before { border-color: #37006E; } } .ms-CheckBox-field.is-checked[data-v-75ed8232]::after { display: block; } .ms-CheckBox-field.is-checked[data-v-75ed8232]:hover::before, .ms-CheckBox-field.is-checked[data-v-75ed8232]:focus::before { border-color: \"[theme:themeDarkAlt, default: #106ebe]\"; } .ms-CheckBox-field[data-v-75ed8232]::after { content: url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"16\" height=\"16\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path transform=\"translate(0, 2048) scale(1, -1)\" d=\"M1837 1491l-1069 -1070l-557 558l90 90l467 -466l979 978z\" fill=\"white\" stroke=\"none\"/></svg>') !important; } ");},
-    beforeMount: function beforeMount(){ 
-        this.$fabric = { 
-            CheckBox : CheckBox 
-        }; 
-    },
-    extends :  checkbox
-}
-
-var ChoiceField = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('li',{staticClass:"ms-RadioButton"},[_c('input',{staticClass:"ms-RadioButton-input",attrs:{"tabindex":"-1","type":"radio"}}),_vm._v(" "),_c('label',{ref:"radioLabel",staticClass:"ms-RadioButton-field",class:{ 'is-disabled': _vm.disabled },attrs:{"role":"radio","tabindex":"0","aria-checked":"false","name":"choicefieldgroup"},on:{"click":_vm.updateParentValue}},[_c('span',{staticClass:"ms-Label"},[_vm._t("default")],2)])])},staticRenderFns: [],
-  name: 'ou-choice-field',
-
-  mixins: [disabled],
-
-  inject: ['eventHub'],
-
-  props: {
-    value: [String, Number]
-  },
-
-  created: function created() {
-    this.eventHub.$on('setChoiceField', this.setChoiceField);
-  },
-
-  beforeDestroy: function beforeDestroy() {
-    this.eventHub.$off('setChoiceField', this.setChoiceField);
-  },
-
-  methods: {
-    updateParentValue: function updateParentValue() {
-      if (!this.disabled) {
-        this.eventHub.$emit('updateValue', this.value);
+        // Because the office ui fabric js don't support on_close or on_open event in dialog
+        // component, So I have to write some hacking code to change the visible status when
+        // click the overlay. Otherwise the visible status can't change, when click the overlay
+        // to close the dialog.
+        this.bindOverlayCloseEvent();
+      } else if (this.isOpen()) {
+        // Avoid to destroy overlay element twice, and get errors, so determine if the dialog
+        // was opened before close it.
+        this.dialogInstance.close();
       }
     },
 
-    setChoiceField: function setChoiceField(value) {
-      if (this.disabled) { return; }
+    bindOverlayCloseEvent: function bindOverlayCloseEvent() {
+      var this$1 = this;
 
-      if (this.value == value) {
-        this.$refs.radioLabel.classList.add('is-checked');
-      } else {
-        this.$refs.radioLabel.classList.remove('is-checked');
-      }
-    }
-  }
-};
+      if (this.dialogInstance._overlay) {
+        var overlayElement = this.dialogInstance._overlay.overlayElement;
 
-var uiChoiceField = {
-    extends :  ChoiceField,
-    created: function created(){
-        this.$options._scopeId = this.$parent.$options._scopeId;
-    }
-}
-
-var ChoiceFieldGroup = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"choiceFieldGroup",staticClass:"ms-ChoiceFieldGroup",attrs:{"id":"choicefieldgroup","role":"radiogroup"}},[_c('div',{staticClass:"ms-ChoiceFieldGroup-title"},[_vm._t("title")],2),_vm._v(" "),_c('ul',{staticClass:"ms-ChoiceFieldGroup-list"},[_vm._t("default")],2)])},staticRenderFns: [],
-  name: 'ou-choice-field-group',
-
-  mixins: [eventHub],
-
-  props: {
-    value: [String, Number]
-  },
-
-  watch: {
-    value: function value() {
-      this.setChoiceFields();
-    }
-  },
-
-  created: function created() {
-    this.eventHub.$on('updateValue', this.updateValue);
-  },
-
-  beforeDestroy: function beforeDestroy() {
-    this.eventHub.$off('updateValue', this.updateValue);
-  },
-
-  mounted: function mounted() {
-    this.setChoiceFields();
-    new this.$fabric.ChoiceFieldGroup(this.$refs.choiceFieldGroup);
-  },
-
-  methods: {
-    updateValue: function updateValue(value) {
-      this.$emit('input', value);
-    },
-
-    setChoiceFields: function setChoiceFields() {
-      if (typeof this.value != 'undefined') {
-        this.eventHub.$emit('setChoiceField', this.value);
-      }
-    }
-  }
-};
-
-var RadioButton = (function () {
-    function RadioButton(container) {
-        this._container = container;
-        this._choiceField = this._container.querySelector(".ms-RadioButton-field");
-        this._choiceInput = this._container.querySelector(".ms-RadioButton-input");
-        if (this._choiceField.getAttribute("aria-checked") === "true") {
-            this._choiceField.classList.add("is-checked");
-        }
-        this._addListeners();
-    }
-    RadioButton.prototype.getValue = function () {
-        return this._choiceField.getAttribute("aria-checked") === "true" ? true : false;
-    };
-    RadioButton.prototype.toggle = function () {
-        if (this.getValue()) {
-            this.unCheck();
-        }
-        else {
-            this.check();
-        }
-    };
-    RadioButton.prototype.check = function () {
-        this._choiceField.setAttribute("aria-checked", "true");
-        this._choiceField.classList.add("is-checked");
-        this._choiceInput.checked = true;
-    };
-    RadioButton.prototype.unCheck = function () {
-        this._choiceField.setAttribute("aria-checked", "false");
-        this._choiceField.classList.remove("is-checked");
-        this._choiceInput.checked = false;
-    };
-    RadioButton.prototype.removeListeners = function () {
-        this._choiceField.removeEventListener("focus", this._FocusHandler.bind(this));
-        this._choiceField.removeEventListener("blur", this._BlurHandler.bind(this));
-        this._choiceField.removeEventListener("click", this._RadioClickHandler.bind(this));
-        this._choiceField.addEventListener("keydown", this._RadioKeydownHandler.bind(this));
-    };
-    RadioButton.prototype._addListeners = function () {
-        this._choiceField.addEventListener("focus", this._FocusHandler.bind(this), false);
-        this._choiceField.addEventListener("blur", this._BlurHandler.bind(this), false);
-        this._choiceField.addEventListener("click", this._RadioClickHandler.bind(this), false);
-        this._choiceField.addEventListener("keydown", this._RadioKeydownHandler.bind(this), false);
-    };
-    RadioButton.prototype._RadioClickHandler = function (event) {
-        event.stopPropagation();
-        event.preventDefault();
-        if (!this._choiceField.classList.contains("is-disabled")) {
-            this._dispatchSelectEvent();
-        }
-    };
-    RadioButton.prototype._dispatchSelectEvent = function () {
-        var objDict = {
-            bubbles: true,
-            cancelable: true,
-            detail: {
-                name: this._choiceField.getAttribute("name"),
-                item: this
-            }
+        var closeOverlay = function () {
+          overlayElement.removeEventListener('click', closeOverlay);
+          this$1.$emit('input', false);
         };
-        this._choiceField.dispatchEvent(new CustomEvent("msChoicefield", objDict));
-    };
-    RadioButton.prototype._RadioKeydownHandler = function (event) {
-        if (event.keyCode === 32) {
-            event.stopPropagation();
-            event.preventDefault();
-            if (!this._choiceField.classList.contains("is-disabled")) {
-                this._dispatchSelectEvent();
-            }
-        }
-    };
-    RadioButton.prototype._FocusHandler = function () {
-        this._choiceField.classList.add("in-focus");
-    };
-    RadioButton.prototype._BlurHandler = function () {
-        this._choiceField.classList.remove("in-focus");
-    };
-    return RadioButton;
-}());
 
-var ChoiceFieldGroup$1 = (function () {
-    function ChoiceFieldGroup(container) {
-        this._choiceFieldGroup = container;
-        this._choiceFieldComponents = [];
-        this._initalSetup();
-        this._addListeners();
-    }
-    ChoiceFieldGroup.prototype.removeListeners = function () {
-        this._choiceFieldGroup.removeEventListener("msChoicefield", this._ChoiceFieldHandler.bind(this));
-    };
-    ChoiceFieldGroup.prototype._initalSetup = function () {
-        var this$1 = this;
-
-        var choiceFieldElements = this._choiceFieldGroup.querySelectorAll(".ms-RadioButton");
-        for (var i = 0; i < choiceFieldElements.length; i++) {
-            this$1._choiceFieldComponents[i] = new RadioButton(choiceFieldElements[i]);
-        }
-    };
-    ChoiceFieldGroup.prototype._addListeners = function () {
-        document.addEventListener("msChoicefield", this._ChoiceFieldHandler.bind(this), false);
-    };
-    ChoiceFieldGroup.prototype._ChoiceFieldHandler = function (event) {
-        var this$1 = this;
-
-        var name = event.detail.name;
-        var selectedChoice = event.detail.item;
-        if (this._choiceFieldGroup.id === name) {
-            for (var i = 0; i < this._choiceFieldComponents.length; i++) {
-                this$1._choiceFieldComponents[i].unCheck();
-            }
-            selectedChoice.check();
-        }
-    };
-    return ChoiceFieldGroup;
-}());
-
-var uiChoiceFieldGroup = {_scopeId: 'data-v-9afc786c',
-    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-RadioButton[data-v-9afc786c] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 14px; font-weight: 400; min-height: 36px; position: relative; } .ms-RadioButton .ms-Label[data-v-9afc786c] { font-size: 14px; padding: 0 0 0 26px; cursor: pointer; display: inline-block; } .ms-RadioButton-input[data-v-9afc786c] { position: absolute; opacity: 0; } .ms-RadioButton-field[data-v-9afc786c]::before { content: ''; display: inline-block; border: 2px solid \"[theme:neutralTertiary, default: #a6a6a6]\"; width: 20px; height: 20px; cursor: pointer; font-weight: normal; position: absolute; box-sizing: border-box; transition-property: border-color; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.4, 0, 0.23, 1); border-radius: 50%; } .ms-RadioButton-field[data-v-9afc786c]::after { content: ''; width: 0; height: 0; border-radius: 50%; position: absolute; top: 8px; left: 8px; bottom: 0; right: 0; transition-property: top, left, width, height; transition-duration: 150ms; transition-timing-function: cubic-bezier(0.4, 0, 0.23, 1); box-sizing: border-box; } @media screen and (-ms-high-contrast: active) { .ms-RadioButton-field[data-v-9afc786c]::after { color: #00ff00; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-RadioButton-field[data-v-9afc786c]::after { color: #600000; } } .ms-RadioButton-field[data-v-9afc786c] { display: inline-block; cursor: pointer; margin-top: 8px; position: relative; outline: 0; vertical-align: top; } .ms-RadioButton-field[data-v-9afc786c]:hover::before, .ms-RadioButton-field[data-v-9afc786c]:focus::before { border-color: \"[theme:neutralSecondaryAlt, default: #767676]\"; } .ms-RadioButton-field:hover .ms-Label[data-v-9afc786c], .ms-RadioButton-field:focus .ms-Label[data-v-9afc786c] { color: \"[theme:black, default: #000000]\"; } .ms-RadioButton-field.is-disabled[data-v-9afc786c] { cursor: default; } .ms-RadioButton-field.is-disabled[data-v-9afc786c]::before { background-color: \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; border-color: \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; color: \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; } @media screen and (-ms-high-contrast: active) { .ms-RadioButton-field.is-disabled[data-v-9afc786c]::before { border-color: #00ff00; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-RadioButton-field.is-disabled[data-v-9afc786c]::before { border-color: #600000; } } .ms-RadioButton-field.is-disabled .ms-Label[data-v-9afc786c] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } @media screen and (-ms-high-contrast: active) { .ms-RadioButton-field.is-disabled .ms-Label[data-v-9afc786c] { color: #00ff00; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-RadioButton-field.is-disabled .ms-Label[data-v-9afc786c] { color: #600000; } } .ms-RadioButton-field.is-disabled[data-v-9afc786c]:hover::before, .ms-RadioButton-field.is-disabled[data-v-9afc786c]:focus::before { border-color: \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; } .ms-RadioButton-field.in-focus[data-v-9afc786c]::before { border-color: \"[theme:neutralSecondaryAlt, default: #767676]\"; } .ms-RadioButton-field.is-checked[data-v-9afc786c]::before { border: 2px solid \"[theme:themePrimary, default: #0078d7]\"; background-color: transparent; } @media screen and (-ms-high-contrast: active) { .ms-RadioButton-field.is-checked[data-v-9afc786c]::before { border-color: #1AEBFF; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-RadioButton-field.is-checked[data-v-9afc786c]::before { border-color: #37006E; } } .ms-RadioButton-field.is-checked[data-v-9afc786c]::after { background-color: \"[theme:themePrimary, default: #0078d7]\"; top: 5px; left: 5px; width: 10px; height: 10px; } @media screen and (-ms-high-contrast: active) { .ms-RadioButton-field.is-checked[data-v-9afc786c]::after { background-color: #1AEBFF; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-RadioButton-field.is-checked[data-v-9afc786c]::after { background-color: #37006E; } } .ms-RadioButton-field.is-checked[data-v-9afc786c]:hover::before, .ms-RadioButton-field.is-checked[data-v-9afc786c]:focus::before { border-color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-RadioButton-field.is-checked.in-focus[data-v-9afc786c]::before { border-color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-ChoiceFieldGroup[data-v-9afc786c] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; margin-bottom: 4px; } .ms-ChoiceFieldGroup .ms-ChoiceFieldGroup-list[data-v-9afc786c] { padding: 0; margin: 0; list-style: none; } ");},
-    beforeMount: function beforeMount(){ 
-        this.$fabric = { 
-            ChoiceFieldGroup : ChoiceFieldGroup$1 
-        }; 
+        overlayElement.addEventListener('click', closeOverlay);
+      }
     },
-    extends :  ChoiceFieldGroup
+
+    isOpen: function isOpen() {
+      // When the dialog is shown, the dialog element add a class name of 'is-open',
+      // So use this to determine the dialog if was opened.
+      return this.$refs.dialog.classList.contains('is-open');
+    },
+
+    closeDialog: function closeDialog(event) {
+      this.$emit('input', false);
+
+
+      // Because the original close button element have the click event to close the dialog,
+      // when I fire the click event, the original click event function will fire behind it,
+      // So stop the original click event, when I fire the click event.
+      event.stopImmediatePropagation();
+    }
+  }
+};
+
+var Overlay = (function () {
+    function Overlay(overlayElement) {
+        if (overlayElement) {
+            this.overlayElement = overlayElement;
+        }
+        else {
+            var overlayContainer = document.createElement("div");
+            overlayContainer.setAttribute("class", "ms-Overlay");
+            this.overlayElement = overlayContainer;
+        }
+        this.overlayElement.addEventListener("click", this.hide.bind(this), false);
+    }
+    Overlay.prototype.remove = function () {
+        this.overlayElement.parentElement.removeChild(this.overlayElement);
+    };
+    Overlay.prototype.show = function () {
+        this.overlayElement.classList.add("is-visible");
+        document.body.classList.add("ms-u-overflowHidden");
+    };
+    Overlay.prototype.hide = function () {
+        this.overlayElement.classList.remove("is-visible");
+        document.body.classList.remove("ms-u-overflowHidden");
+    };
+    return Overlay;
+}());
+
+var Dialog = (function () {
+    function Dialog(dialog) {
+        var this$1 = this;
+
+        this._dialog = dialog;
+        this._closeButtonElement = this._dialog.querySelector(".ms-Dialog-buttonClose");
+        this._actionButtonElements = this._dialog.querySelectorAll(".ms-Dialog-action");
+        if (this._closeButtonElement) {
+            this._closeButtonElement.addEventListener("click", this.close.bind(this), false);
+        }
+        for (var i = 0; i < this._actionButtonElements.length; i++) {
+            this$1._actionButtonElements[i].addEventListener("click", this$1.close.bind(this$1), false);
+        }
+    }
+    Dialog.prototype.close = function () {
+        this._overlay.remove();
+        this._dialog.classList.remove("is-open");
+        document.body.classList.remove("ms-u-overflowHidden");
+        this._overlay.overlayElement.removeEventListener("click", this.close.bind(this));
+    };
+    Dialog.prototype.open = function () {
+        this._dialog.classList.add("is-open");
+        this._overlay = new Overlay();
+        if (!this._dialog.classList.contains("ms-Dialog--blocking")) {
+            this._overlay.overlayElement.addEventListener("click", this.close.bind(this), false);
+            this._overlay.show();
+            document.body.classList.add("ms-u-overflowHidden");
+        }
+        this._dialog.parentElement.appendChild(this._overlay.overlayElement);
+    };
+    return Dialog;
+}());
+
+var uiDialog = {_scopeId: 'data-v-1194e8ec',
+    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-Dialog[data-v-1194e8ec] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4); background-color: \"[theme:white, default: #ffffff]\"; display: none; height: auto; min-width: 220px; max-width: 340px; padding: 28px 24px; z-index: 10; position: fixed; transform: translate(-50%, -50%); left: 50%; top: 50%; } .ms-Dialog.is-open[data-v-1194e8ec] { display: block; } .ms-Dialog-title[data-v-1194e8ec] { font-size: 21px; font-weight: 100; margin-bottom: 24px; } .ms-Dialog-content[data-v-1194e8ec] { position: relative; } .ms-Dialog-subText[data-v-1194e8ec] { color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 12px; font-weight: 300; line-height: 1.5; } .ms-Dialog-actions[data-v-1194e8ec] { margin-top: 24px; text-align: right; } .ms-Dialog--multiline .ms-Dialog-title[data-v-1194e8ec] { font-size: 28px; } .ms-Dialog.ms-Dialog--lgHeader .ms-Dialog-title[data-v-1194e8ec] { background-color: \"[theme:themePrimary, default: #0078d7]\"; color: \"[theme:white, default: #ffffff]\"; font-size: 28px; font-weight: 100; padding: 28px 24px; margin-top: -28px; margin-left: -24px; margin-right: -24px; } .ms-Dialog-buttonClose[data-v-1194e8ec] { background: none; border: 0; cursor: pointer; margin: 0; padding: 4px; position: absolute; right: 12px; top: 12px; z-index: 10; } .ms-Dialog-buttonClose .ms-Icon.ms-Icon--Cancel[data-v-1194e8ec] { color: \"[theme:neutralSecondary, default: #666666]\"; font-size: 16px; } .ms-Button.ms-Button--compound[data-v-1194e8ec]:not(:last-child) { margin-bottom: 20px; } .ms-Dialog.ms-Dialog--close:not(.ms-Dialog--lgHeader) .ms-Dialog-title[data-v-1194e8ec] { margin-right: 20px; } .ms-Dialog.ms-Dialog--close:not(.ms-Dialog--lgHeader) .ms-Dialog-button.ms-Dialog-buttonClose[data-v-1194e8ec] { display: block; } @media (min-width: 480px) { .ms-Dialog-main[data-v-1194e8ec] { width: auto; min-width: 288px; max-width: 340px; } } .ms-Overlay[data-v-1194e8ec] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; background-color: \"[theme:whiteTranslucent40, default: rgba(255,255,255,.4)]\"; position: fixed; bottom: 0; left: 0; right: 0; top: 0; z-index: 0; display: none; } .ms-Overlay.is-visible[data-v-1194e8ec] { display: block; } .ms-Overlay--dark[data-v-1194e8ec] { background-color: \"[theme:blackTranslucent40, default: rgba(0,0,0,.4)]\"; } .ms-u-overflowHidden[data-v-1194e8ec] { overflow: hidden; } .ms-Icon.ms-Icon--Cancel[data-v-1194e8ec] { content: url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"16\" height=\"16\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M1115 1024l690 -691l-90 -90l-691 690l-691 -690l-90 90l690 691l-690 691l90 90l691 -690l691 690l90 -90z\" fill=\"black\" stroke=\"none\"/></svg>'); } ");},
+    beforeMount: function beforeMount(){
+        this.$fabric = {
+            Dialog : Dialog
+        };
+    },
+    props : {
+        useDarkOverlay : Boolean
+    },
+    methods : {
+        ensureScopeIdForChilds: function ensureScopeIdForChilds(){
+            if(this.dialogInstance && this.dialogInstance._overlay && this.dialogInstance._overlay.overlayElement){
+                this.dialogInstance._overlay.overlayElement.setAttribute(this.$options._scopeId,"");
+                if(this.useDarkOverlay)
+                    { this.dialogInstance._overlay.overlayElement.className += " ms-Overlay--dark"; }
+            }
+        },
+        ensureOverlayIsClosed: function ensureOverlayIsClosed(){
+            if(this.dialogInstance && this.dialogInstance._overlay && this.dialogInstance._overlay.overlayElement.parentElement)
+                { this.dialogInstance._overlay.remove(); }
+        }
+    },
+    mounted: function () {
+        this.$nextTick(function () {
+            this.ensureScopeIdForChilds();
+        });
+    },
+    watch:{
+        value: function value(newVal){
+            this.ensureScopeIdForChilds();
+
+        if(!newVal)
+            { this.ensureOverlayIsClosed(); }
+        }
+    },
+    beforeDestroy: function beforeDestroy()
+    {
+        this.ensureOverlayIsClosed();
+    },
+    extends :  dialog
 }
 
 var Dropdown = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"dropdown",staticClass:"ms-Dropdown",class:{ 'is-disabled': _vm.disabled }},[(_vm.label)?_c('label',{staticClass:"ms-Label"},[_vm._v(_vm._s(_vm.label))]):_vm._e(),_vm._v(" "),_c('i',{staticClass:"ms-Dropdown-caretDown ms-Icon ms-Icon--ChevronDown"}),_vm._v(" "),_c('select',{ref:"dropdownSelect",staticClass:"ms-Dropdown-select",on:{"change":_vm.getCurrentSelected}},[_vm._t("default")],2)])},staticRenderFns: [],
@@ -2033,6 +2351,241 @@ var uiDropdownItem = {_scopeId: 'data-v-f816d130',
     }
 }
 
+var label = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('label',{staticClass:"ms-Label",class:_vm.labelClass},[_vm._t("default")],2)},staticRenderFns: [],
+  name: 'ou-label',
+
+  mixins: [disabled],
+
+  props: {
+    required: {
+      type: Boolean,
+      default: false
+    }
+  },
+
+  computed: {
+    labelClass: function labelClass() {
+      return {
+        'is-disabled': this.disabled,
+        'is-required': this.required
+      };
+    }
+  }
+};
+
+var uiLabel = {_scopeId: 'data-v-2943a900',
+    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-Label[data-v-2943a900] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 12px; font-weight: 400; box-sizing: border-box; display: block; padding: 5px 0; } .ms-Label.is-required[data-v-2943a900]::after { content: ' *'; color: \"[theme:error, default: #a80000]\"; } .ms-Label.is-disabled[data-v-2943a900] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } ");},
+    extends :  label
+}
+
+var link = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('a',{staticClass:"ms-Link",attrs:{"href":_vm.href,"title":_vm.title},on:{"click":_vm.clickEvent}},[_vm._t("default")],2)},staticRenderFns: [],
+  name: 'ou-link',
+
+  props: {
+    href: String,
+    title: String,
+  },
+
+  methods: {
+    clickEvent: function clickEvent() {
+      this.$emit('click');
+    }
+  }
+};
+
+var uiLink = {_scopeId: 'data-v-078cc59e',
+    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-Link[data-v-078cc59e] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; font-weight: 400; color: \"[theme:themePrimary, default: #0078d7]\"; text-decoration: none; cursor: pointer; outline: none; } .ms-Link[data-v-078cc59e]:hover, .ms-Link[data-v-078cc59e]:focus { color: \"[theme:themeDarker, default: #004578]\"; } .ms-Link[data-v-078cc59e]:active { color: \"[theme:themePrimary, default: #0078d7]\"; } ");},
+    extends :  link
+}
+
+var List = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('ul',{ref:"list",staticClass:"ms-List"},[_vm._t("default")],2)},staticRenderFns: [],
+  name: 'ou-list'
+};
+
+var uiList = {_scopeId: 'data-v-1093d442',
+    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-List[data-v-1093d442] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 14px; font-weight: 400; list-style-type: none; } ");},
+    extends :  List
+}
+
+var ListActions = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-ListItem-actions"},[_vm._t("default")],2)},staticRenderFns: [],
+  name: 'ou-list-actions'
+};
+
+var uiListActions = {
+    beforeCreate: function beforeCreate(){ loadStyles("");},
+    extends :  ListActions,
+    created: function created(){
+        this.$options._scopeId = this.$parent.$options._scopeId;
+    }
+}
+
+var ListActionItem = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-ListItem-action",on:{"click":function($event){$event.stopPropagation();return _vm.clickEvent($event)}}},[_c('i',{staticClass:"ms-Icon",class:_vm.iconClass})])},staticRenderFns: [],
+  name: 'ou-list-action-item',
+  mixins: [icon],
+
+  methods: {
+    clickEvent: function clickEvent() {
+      this.$emit('click');
+    }
+  }
+};
+
+var uiListActionItem = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-ListItem-action",on:{"click":function($event){$event.stopPropagation();return _vm.clickEvent($event)}}},[_vm._t("icon")],2)},staticRenderFns: [],
+    beforeCreate: function beforeCreate(){ loadStyles("");},
+    extends :  ListActionItem,
+    created: function created(){
+        this.$options._scopeId = this.$parent.$options._scopeId;
+    }
+}
+
+var ListItem = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('li',{ref:"listItem",staticClass:"ms-ListItem",class:_vm.listItemClass,on:{"click":_vm.clickEvent}},[(_vm.type == 'image')?_c('img',{staticClass:"ms-ListItem-image",attrs:{"src":_vm.imageSrc}}):_vm._e(),_vm._v(" "),(_vm.primaryText)?_c('span',{staticClass:"ms-ListItem-primaryText"},[_vm._v(_vm._s(_vm.primaryText))]):_vm._e(),_vm._v(" "),(_vm.secondaryText)?_c('span',{staticClass:"ms-ListItem-secondaryText"},[_vm._v(_vm._s(_vm.secondaryText))]):_vm._e(),_vm._v(" "),(_vm.tertiaryText)?_c('span',{staticClass:"ms-ListItem-tertiaryText"},[_vm._v(_vm._s(_vm.tertiaryText))]):_vm._e(),_vm._v(" "),(_vm.metaText)?_c('span',{staticClass:"ms-ListItem-metaText"},[_vm._v(_vm._s(_vm.metaText))]):_vm._e(),_vm._v(" "),(_vm.isSelectable)?_c('div',{staticClass:"ms-ListItem-selectionTarget",on:{"click":function($event){$event.stopPropagation();return _vm.toggle($event)}}}):_vm._e(),_vm._v(" "),_vm._t("default")],2)},staticRenderFns: [],
+  name: 'ou-list-item',
+
+  mixins: [type('image', 'document')],
+
+  props: {
+    isUnread: Boolean,
+    isSelectable: Boolean,
+    isUnseen: Boolean,
+    value: Boolean,
+
+    imageSrc: String,
+    primaryText: String,
+    secondaryText: String,
+    tertiaryText: String,
+    metaText: String
+  },
+
+  computed: {
+    listItemClass: function listItemClass() {
+      var obj;
+
+      return ( obj = {}, obj[("ms-ListItem--" + (this.type))] = !!this.type, obj['is-selectable'] =  this.isSelectable, obj['is-selected'] =  this.value, obj['is-unread'] =  this.isUnread, obj['is-unseen'] =  this.isUnseen, obj );
+    }
+  },
+
+  methods: {
+    toggle: function toggle() {
+      if (this.isSelectable) {
+        this.$emit('input', !this.value);
+      }
+    },
+
+    clickEvent: function clickEvent() {
+      this.$emit('click');
+    }
+  }
+};
+
+var uiListItem = {_scopeId: 'data-v-a34de616',
+    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-ListItem[data-v-a34de616] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; *zoom: 1; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 14px; font-weight: 400; padding: 9px 28px 3px; position: relative; display: block; } .ms-ListItem[data-v-a34de616]::before, .ms-ListItem[data-v-a34de616]::after { display: table; content: \"\"; line-height: 0; } .ms-ListItem[data-v-a34de616]::after { clear: both; } .ms-ListItem-primaryText[data-v-a34de616], .ms-ListItem-secondaryText[data-v-a34de616], .ms-ListItem-tertiaryText[data-v-a34de616] { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: block; } .ms-ListItem-primaryText[data-v-a34de616] { color: \"[theme:neutralDark, default: #212121]\"; font-weight: 300; font-size: 21px; padding-right: 80px; position: relative; top: -4px; } .ms-ListItem-secondaryText[data-v-a34de616] { color: \"[theme:neutralPrimary, default: #333333]\"; font-weight: 400; font-size: 14px; line-height: 25px; position: relative; top: -7px; padding-right: 30px; } .ms-ListItem-tertiaryText[data-v-a34de616] { color: \"[theme:neutralSecondaryAlt, default: #767676]\"; font-weight: 300; font-size: 14px; position: relative; top: -9px; margin-bottom: -4px; padding-right: 30px; } .ms-ListItem-metaText[data-v-a34de616] { color: \"[theme:neutralPrimary, default: #333333]\"; font-weight: 300; font-size: 11px; position: absolute; right: 30px; top: 39px; } .ms-ListItem-image[data-v-a34de616] { float: left; height: 70px; margin-left: -8px; margin-right: 10px; width: 70px; background-color: \"[theme:neutralPrimary, default: #333333]\"; } .ms-ListItem-selectionTarget[data-v-a34de616] { display: none; } .ms-ListItem-actions[data-v-a34de616] { max-width: 80px; position: absolute; right: 30px; text-align: right; top: 10px; } .ms-ListItem-action[data-v-a34de616] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; display: inline-block; font-size: 15px; position: relative; text-align: center; top: 3px; cursor: pointer; height: 16px; width: 16px; } .ms-ListItem-action .ms-Icon[data-v-a34de616] { vertical-align: top; } .ms-ListItem-action[data-v-a34de616]:hover { color: \"[theme:neutralSecondary, default: #666666]\"; outline: 1px solid transparent; } .ms-ListItem.is-unread[data-v-a34de616] { border-left: 3px solid \"[theme:themePrimary, default: #0078d7]\"; padding-left: 27px; } .ms-ListItem.is-unread .ms-ListItem-secondaryText[data-v-a34de616], .ms-ListItem.is-unread .ms-ListItem-metaText[data-v-a34de616] { color: \"[theme:themePrimary, default: #0078d7]\"; font-weight: 600; } .ms-ListItem.is-unseen[data-v-a34de616]::after { border-right: 10px solid transparent; border-top: 10px solid \"[theme:themePrimary, default: #0078d7]\"; left: 0; position: absolute; top: 0; } .ms-ListItem.is-selectable .ms-ListItem-selectionTarget[data-v-a34de616] { display: block; height: 20px; left: 6px; position: absolute; top: 13px; width: 20px; } .ms-ListItem.is-selectable .ms-ListItem-image[data-v-a34de616] { margin-left: 0; } .ms-ListItem.is-selectable[data-v-a34de616]:hover { background-color: \"[theme:neutralLight, default: #eaeaea]\"; cursor: pointer; outline: 1px solid transparent; } .ms-ListItem.is-selectable[data-v-a34de616]:hover::before { -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; display: inline-block; font-family: 'FabricMDL2Icons'; font-style: normal; font-weight: normal; speak: none; position: absolute; top: 14px; left: 7px; height: 15px; width: 15px; border: 1px solid \"[theme:neutralSecondaryAlt, default: #767676]\"; } .ms-ListItem.is-selected[data-v-a34de616]::before { border: 1px solid transparent; } .ms-ListItem.is-selected[data-v-a34de616]::before, .ms-ListItem.is-selected[data-v-a34de616]:hover::before { -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; display: inline-block; font-family: 'FabricMDL2Icons'; font-style: normal; font-weight: normal; speak: none; content: '\\e73A'; font-size: 17px; color: \"[theme:neutralSecondaryAlt, default: #767676]\"; position: absolute; top: 23px; left: 7px; border: 0; } .ms-ListItem.is-selected[data-v-a34de616]:hover { background-color: \"[theme:themeLight, default: #c7e0f4]\"; outline: 1px solid transparent; } .ms-ListItem.ms-ListItem--document[data-v-a34de616] { padding: 0; } .ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon[data-v-a34de616] { width: 70px; height: 70px; float: left; text-align: center; } .ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon .ms-Icon[data-v-a34de616] { font-size: 38px; line-height: 70px; color: \"[theme:neutralSecondary, default: #666666]\"; } .ms-ListItem.ms-ListItem--document .ms-ListItem-primaryText[data-v-a34de616] { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 14px; padding-top: 15px; padding-right: 0; position: static; } .ms-ListItem.ms-ListItem--document .ms-ListItem-secondaryText[data-v-a34de616] { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: \"[theme:neutralSecondary, default: #666666]\"; font-weight: 400; font-size: 11px; padding-top: 6px; } .ms-ListItem.is-selected[data-v-a34de616]::before, .ms-ListItem.is-selected[data-v-a34de616]:hover::before { top: 14px; content: url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"17\" height=\"17\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path transform=\"translate(0, 2048) scale(1, -1)\" d=\"M2048 2048v-2048h-2048v2048h2048zM1920 1920h-1792v-1792h1792v1792zM768 421l-429 430l90 90l339 -338l851 850l90 -90z\" fill=\"black\" stroke=\"none\"/></svg>'); } ");},
+    extends :  ListItem
+}
+
+var MessageBar = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-MessageBar",class:_vm.messageBarClass},[_c('div',{staticClass:"ms-MessageBar-content"},[(_vm.icon)?_c('div',{staticClass:"ms-MessageBar-icon"},[_c('i',{staticClass:"ms-Icon",class:_vm.iconClass})]):_vm._e(),_vm._v(" "),_c('div',{staticClass:"ms-MessageBar-text"},[_vm._t("default")],2)])])},staticRenderFns: [],
+  name: 'ou-message-bar',
+
+  mixins: [
+    type('success', 'error', 'blocked', 'warning', 'severeWarning'),
+    icon
+  ],
+
+  computed: {
+    messageBarClass: function messageBarClass() {
+      var obj;
+
+      return ( obj = {}, obj[("ms-MessageBar--" + (this.type))] = !!this.type, obj );
+    }
+  }
+};
+
+var uiMessagebar = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-MessageBar",class:_vm.messageBarClass},[_c('div',{staticClass:"ms-MessageBar-content"},[(_vm.hasIcon)?_c('div',{staticClass:"ms-MessageBar-icon"},[_vm._t("icon")],2):_vm._e(),_vm._v(" "),_c('div',{staticClass:"ms-MessageBar-text"},[_vm._t("default")],2)])])},staticRenderFns: [],_scopeId: 'data-v-7f69de50',
+    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-MessageBar[data-v-7f69de50] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; padding: 8px; display: table; background-color: \"[theme:infoBackground, default: #f4f4f4]\"; } .ms-MessageBar .ms-Link[data-v-7f69de50] { font-size: 12px; } .ms-MessageBar-icon[data-v-7f69de50], .ms-MessageBar-text[data-v-7f69de50] { display: table-cell; vertical-align: top; } .ms-MessageBar-icon[data-v-7f69de50] { padding-right: 8px; font-size: 16px; color: \"[theme:neutralSecondaryAlt, default: #767676]\"; } .ms-MessageBar-text[data-v-7f69de50] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; font-size: 12px; font-weight: 400; } .ms-MessageBar.ms-MessageBar--warning[data-v-7f69de50] { background-color: \"[theme:warningBackground, default: #fff4ce]\"; } .ms-MessageBar.ms-MessageBar--severeWarning[data-v-7f69de50] { background-color: \"[theme:severeWarningBackground, default: #fed9cc]\"; } .ms-MessageBar.ms-MessageBar--severeWarning .ms-MessageBar-icon[data-v-7f69de50] { color: \"[theme:severeWarning, default: #d83b01]\"; } .ms-MessageBar.ms-MessageBar--error[data-v-7f69de50] { background-color: \"[theme:errorBackground, default: #fde7e9]\"; } .ms-MessageBar.ms-MessageBar--error .ms-MessageBar-icon[data-v-7f69de50] { color: \"[theme:error, default: #a80000]\"; } .ms-MessageBar.ms-MessageBar--blocked[data-v-7f69de50] { background-color: \"[theme:errorBackground, default: #fde7e9]\"; } .ms-MessageBar.ms-MessageBar--blocked .ms-MessageBar-icon[data-v-7f69de50] { color: \"[theme:error, default: #a80000]\"; } .ms-MessageBar.ms-MessageBar--success[data-v-7f69de50] { background-color: \"[theme:successBackground, default: #dff6dd]\"; } .ms-MessageBar.ms-MessageBar--success .ms-MessageBar-icon[data-v-7f69de50] { color: \"[theme:green, default: #107c10]\"; } ");},
+    computed: {
+        hasIcon: function hasIcon () {
+            return !!this.$slots['icon']
+        }
+    },
+    extends :  MessageBar
+}
+
+var overlay = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"overlay",staticClass:"ms-Overlay",class:_vm.overlayClass})},staticRenderFns: [],
+  name: 'ou-overlay',
+
+  mixins: [type('dark')],
+
+  props: {
+    value: Boolean
+  },
+
+  data: function data() {
+    return {
+      overlayInstance: null
+    };
+  },
+
+  watch: {
+    value: function value() {
+      this.setOverlayVisibility();
+    }
+  },
+
+  computed: {
+    overlayClass: function overlayClass() {
+      var obj;
+
+      return ( obj = {}, obj[("ms-Overlay--" + (this.type))] = !!this.type, obj );
+    }
+  },
+
+  mounted: function mounted() {
+    this.overlayInstance = new this.$fabric.Overlay(this.$refs.overlay);
+
+    this.setOverlayVisibility();
+    this.bindOverlayCloseEvent();
+  },
+
+  methods: {
+    setOverlayVisibility: function setOverlayVisibility() {
+      this.value ? this.overlayInstance.show() : this.overlayInstance.hide();
+    },
+
+    bindOverlayCloseEvent: function bindOverlayCloseEvent() {
+      var this$1 = this;
+
+      // Because the overlay component don't have callback when overlay closed,
+      // So add a click event when click the overlay to set the value to false
+      var overlayElement = this.$refs.overlay;
+      var closeOverlay = function () {
+        this$1.$emit('input', false);
+      };
+
+      overlayElement.addEventListener('click', closeOverlay);
+    }
+  }
+};
+
+var uiOverlay = {_scopeId: 'data-v-09ffd35c',
+    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-Overlay[data-v-09ffd35c] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; background-color: \"[theme:whiteTranslucent40, default: rgba(255,255,255,.4)]\"; position: fixed; bottom: 0; left: 0; right: 0; top: 0; z-index: 0; display: none; } .ms-Overlay.is-visible[data-v-09ffd35c] { display: block; } .ms-Overlay--dark[data-v-09ffd35c] { background-color: \"[theme:blackTranslucent40, default: rgba(0,0,0,.4)]\"; } .ms-u-overflowHidden[data-v-09ffd35c] { overflow: hidden; } ");},
+    beforeMount: function beforeMount(){
+        this.$fabric = {
+            Overlay : Overlay
+        };
+    },
+    watch:{
+        useDarkOverlay:{
+            handler: function handler(newVal){
+                
+            },
+            immediate : true
+        }
+    },
+    props : {
+        useDarkOverlay: Boolean
+    },
+    extends :  overlay
+}
+
 function size () {
   var size = [], len = arguments.length;
   while ( len-- ) size[ len ] = arguments[ len ];
@@ -2187,210 +2740,6 @@ var uiPanel = {_scopeId: 'data-v-15bfa7e0',
         }
     },
     extends :  panel
-}
-
-var Spinner = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"spinner",staticClass:"ms-Spinner",class:_vm.spinnerClass},[(_vm.label)?_c('div',{staticClass:"ms-Spinner-label"},[_vm._v(_vm._s(_vm.label))]):_vm._e()])},staticRenderFns: [],
-  name: 'ou-spinner',
-
-  mixins: [type('large')],
-
-  props: {
-    label: String
-  },
-
-  computed: {
-    spinnerClass: function spinnerClass() {
-      var obj;
-
-      return ( obj = {}, obj[("ms-Spinner--" + (this.type))] = !!this.type, obj );
-    }
-  },
-
-  mounted: function mounted() {
-    new this.$fabric.Spinner(this.$refs.spinner);
-  }
-};
-
-var CircleObject = (function () {
-    function CircleObject(element, j) {
-        this.element = element;
-        this.j = j;
-    }
-    return CircleObject;
-}());
-var Spinner$1 = (function () {
-    function Spinner(container) {
-        this.eightSize = 0.2;
-        this.animationSpeed = 90;
-        this.parentSize = 20;
-        this.fadeIncrement = 0;
-        this.circleObjects = [];
-        this._target = container;
-        this._init();
-    }
-    Spinner.prototype.start = function () {
-        var _this = this;
-        this.stop();
-        this.interval = setInterval(function () {
-            var i = _this.circleObjects.length;
-            while (i--) {
-                _this._fade(_this.circleObjects[i]);
-            }
-        }, this.animationSpeed);
-    };
-    Spinner.prototype.stop = function () {
-        clearInterval(this.interval);
-    };
-    Spinner.prototype._init = function () {
-        this._setTargetElement();
-        this._setPropertiesForSize();
-        this._createCirclesAndArrange();
-        this._initializeOpacities();
-        this.start();
-    };
-    Spinner.prototype._setPropertiesForSize = function () {
-        if (this.spinner.className.indexOf("large") > -1) {
-            this.parentSize = 28;
-            this.eightSize = 0.179;
-        }
-        this.offsetSize = this.eightSize;
-        this.numCircles = 8;
-    };
-    Spinner.prototype._setTargetElement = function () {
-        if (this._target.className.indexOf("ms-Spinner") === -1) {
-            this.spinner = document.createElement("div");
-            this.spinner.className = "ms-Spinner";
-            this._target.appendChild(this.spinner);
-        }
-        else {
-            this.spinner = this._target;
-        }
-    };
-    Spinner.prototype._initializeOpacities = function () {
-        var this$1 = this;
-
-        var i = 0;
-        var j = 1;
-        var opacity;
-        this.fadeIncrement = 1 / this.numCircles;
-        for (i; i < this.numCircles; i++) {
-            var circleObject = this$1.circleObjects[i];
-            opacity = (this$1.fadeIncrement * j++);
-            this$1._setOpacity(circleObject.element, opacity);
-        }
-    };
-    Spinner.prototype._fade = function (circleObject) {
-        var opacity = this._getOpacity(circleObject.element) - this.fadeIncrement;
-        if (opacity <= 0) {
-            opacity = 1;
-        }
-        this._setOpacity(circleObject.element, opacity);
-    };
-    Spinner.prototype._getOpacity = function (element) {
-        return parseFloat(window.getComputedStyle(element).getPropertyValue("opacity"));
-    };
-    Spinner.prototype._setOpacity = function (element, opacity) {
-        element.style.opacity = opacity.toString();
-    };
-    Spinner.prototype._createCircle = function () {
-        var circle = document.createElement("div");
-        circle.className = "ms-Spinner-circle";
-        circle.style.width = circle.style.height = this.parentSize * this.offsetSize + "px";
-        return circle;
-    };
-    Spinner.prototype._createCirclesAndArrange = function () {
-        var this$1 = this;
-
-        var angle = 0;
-        var offset = this.parentSize * this.offsetSize;
-        var step = (2 * Math.PI) / this.numCircles;
-        var i = this.numCircles;
-        var circleObject;
-        var radius = (this.parentSize - offset) * 0.5;
-        while (i--) {
-            var circle = this$1._createCircle();
-            var x = Math.round(this$1.parentSize * 0.5 + radius * Math.cos(angle) - circle.clientWidth * 0.5) - offset * 0.5;
-            var y = Math.round(this$1.parentSize * 0.5 + radius * Math.sin(angle) - circle.clientHeight * 0.5) - offset * 0.5;
-            this$1.spinner.appendChild(circle);
-            circle.style.left = x + "px";
-            circle.style.top = y + "px";
-            angle += step;
-            circleObject = new CircleObject(circle, i);
-            this$1.circleObjects.push(circleObject);
-        }
-    };
-    return Spinner;
-}());
-
-var uiSpinner = {_scopeId: 'data-v-74b796b6',
-    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-Spinner[data-v-74b796b6] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; position: relative; height: 20px; } .ms-Spinner.ms-Spinner--large[data-v-74b796b6] { height: 28px; } .ms-Spinner.ms-Spinner--large .ms-Spinner-label[data-v-74b796b6] { left: 34px; top: 6px; } .ms-Spinner-circle[data-v-74b796b6] { position: absolute; border-radius: 100px; background-color: \"[theme:themePrimary, default: #0078d7]\"; opacity: 0; } @media screen and (-ms-high-contrast: active) { .ms-Spinner-circle[data-v-74b796b6] { background-color: \"[theme:white, default: #ffffff]\"; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-Spinner-circle[data-v-74b796b6] { background-color: \"[theme:black, default: #000000]\"; } } .ms-Spinner-label[data-v-74b796b6] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; position: relative; font-size: 12px; font-weight: 400; color: \"[theme:themePrimary, default: #0078d7]\"; left: 28px; top: 2px; } ");},
-    beforeMount: function beforeMount(){
-        this.$fabric = {
-            Spinner : Spinner$1
-        };
-    },
-    mounted: function mounted() {
-        var this$1 = this;
-
-        // console.log("spin", this.$refs.spinner);
-        var childs = this.$refs.spinner.querySelectorAll(":not([" + this.$options._scopeId + "])");
-        Array.from(childs).map(function (c){ return c.setAttribute(this$1.$options._scopeId, ""); });
-    },
-    extends :  Spinner
-}
-
-var label = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('label',{staticClass:"ms-Label",class:_vm.labelClass},[_vm._t("default")],2)},staticRenderFns: [],
-  name: 'ou-label',
-
-  mixins: [disabled],
-
-  props: {
-    required: {
-      type: Boolean,
-      default: false
-    }
-  },
-
-  computed: {
-    labelClass: function labelClass() {
-      return {
-        'is-disabled': this.disabled,
-        'is-required': this.required
-      };
-    }
-  }
-};
-
-var uiLabel = {_scopeId: 'data-v-2943a900',
-    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-Label[data-v-2943a900] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 12px; font-weight: 400; box-sizing: border-box; display: block; padding: 5px 0; } .ms-Label.is-required[data-v-2943a900]::after { content: ' *'; color: \"[theme:error, default: #a80000]\"; } .ms-Label.is-disabled[data-v-2943a900] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } ");},
-    extends :  label
-}
-
-var MessageBar = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-MessageBar",class:_vm.messageBarClass},[_c('div',{staticClass:"ms-MessageBar-content"},[(_vm.icon)?_c('div',{staticClass:"ms-MessageBar-icon"},[_c('i',{staticClass:"ms-Icon",class:_vm.iconClass})]):_vm._e(),_vm._v(" "),_c('div',{staticClass:"ms-MessageBar-text"},[_vm._t("default")],2)])])},staticRenderFns: [],
-  name: 'ou-message-bar',
-
-  mixins: [
-    type('success', 'error', 'blocked', 'warning', 'severeWarning'),
-    icon
-  ],
-
-  computed: {
-    messageBarClass: function messageBarClass() {
-      var obj;
-
-      return ( obj = {}, obj[("ms-MessageBar--" + (this.type))] = !!this.type, obj );
-    }
-  }
-};
-
-var uiMessagebar = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-MessageBar",class:_vm.messageBarClass},[_c('div',{staticClass:"ms-MessageBar-content"},[(_vm.hasIcon)?_c('div',{staticClass:"ms-MessageBar-icon"},[_vm._t("icon")],2):_vm._e(),_vm._v(" "),_c('div',{staticClass:"ms-MessageBar-text"},[_vm._t("default")],2)])])},staticRenderFns: [],_scopeId: 'data-v-7f69de50',
-    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-MessageBar[data-v-7f69de50] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; padding: 8px; display: table; background-color: \"[theme:infoBackground, default: #f4f4f4]\"; } .ms-MessageBar .ms-Link[data-v-7f69de50] { font-size: 12px; } .ms-MessageBar-icon[data-v-7f69de50], .ms-MessageBar-text[data-v-7f69de50] { display: table-cell; vertical-align: top; } .ms-MessageBar-icon[data-v-7f69de50] { padding-right: 8px; font-size: 16px; color: \"[theme:neutralSecondaryAlt, default: #767676]\"; } .ms-MessageBar-text[data-v-7f69de50] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; font-size: 12px; font-weight: 400; } .ms-MessageBar.ms-MessageBar--warning[data-v-7f69de50] { background-color: \"[theme:warningBackground, default: #fff4ce]\"; } .ms-MessageBar.ms-MessageBar--severeWarning[data-v-7f69de50] { background-color: \"[theme:severeWarningBackground, default: #fed9cc]\"; } .ms-MessageBar.ms-MessageBar--severeWarning .ms-MessageBar-icon[data-v-7f69de50] { color: \"[theme:severeWarning, default: #d83b01]\"; } .ms-MessageBar.ms-MessageBar--error[data-v-7f69de50] { background-color: \"[theme:errorBackground, default: #fde7e9]\"; } .ms-MessageBar.ms-MessageBar--error .ms-MessageBar-icon[data-v-7f69de50] { color: \"[theme:error, default: #a80000]\"; } .ms-MessageBar.ms-MessageBar--blocked[data-v-7f69de50] { background-color: \"[theme:errorBackground, default: #fde7e9]\"; } .ms-MessageBar.ms-MessageBar--blocked .ms-MessageBar-icon[data-v-7f69de50] { color: \"[theme:error, default: #a80000]\"; } .ms-MessageBar.ms-MessageBar--success[data-v-7f69de50] { background-color: \"[theme:successBackground, default: #dff6dd]\"; } .ms-MessageBar.ms-MessageBar--success .ms-MessageBar-icon[data-v-7f69de50] { color: \"[theme:green, default: #107c10]\"; } ");},
-    computed: {
-        hasIcon: function hasIcon () {
-            return !!this.$slots['icon']
-        }
-    },
-    extends :  MessageBar
 }
 
 var persona = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-Persona",class:_vm.personaClass},[_c('div',{staticClass:"ms-Persona-imageArea"},[(!_vm.initials)?_c('img',{staticClass:"ms-Persona-image",attrs:{"src":_vm.src}}):_c('div',{staticClass:"ms-Persona-initials",class:_vm.initialsPersonaClass},[_vm._v(_vm._s(_vm.initials.toUpperCase()))])]),_vm._v(" "),(_vm.type)?_c('div',{staticClass:"ms-Persona-presence"},[_c('i',{staticClass:"ms-Persona-presenceIcon ms-Icon",class:_vm.personaIconClass})]):_vm._e(),_vm._v(" "),_c('div',{staticClass:"ms-Persona-details"},[_c('div',{staticClass:"ms-Persona-primaryText"},[_vm._v(_vm._s(_vm.primaryText))]),_vm._v(" "),_c('div',{staticClass:"ms-Persona-secondaryText"},[_vm._v(_vm._s(_vm.secondaryText))]),_vm._v(" "),_c('div',{staticClass:"ms-Persona-tertiaryText"},[_vm._v(_vm._s(_vm.tertiaryText))]),_vm._v(" "),_c('div',{staticClass:"ms-Persona-optionalText"},[_vm._v(_vm._s(_vm.optionalText))])])])},staticRenderFns: [],
@@ -2834,7 +3183,7 @@ var PersonaCard = (function () {
     return PersonaCard;
 }());
 
-var MODAL_POSITION$1 = "top";
+var MODAL_POSITION$3 = "top";
 var Persona = (function () {
     function Persona(container) {
         this._persona = container;
@@ -2850,7 +3199,7 @@ var Persona = (function () {
     };
     Persona.prototype._createContextualHostInstance = function () {
         this._personaCard.setAttribute("style", "display: block;");
-        this._contextualHostInstance = new ContextualHost(this._personaCard, MODAL_POSITION$1, this._persona);
+        this._contextualHostInstance = new ContextualHost(this._personaCard, MODAL_POSITION$3, this._persona);
     };
     Persona.prototype._personaEventHandler = function () {
         this._createContextualHostInstance();
@@ -2871,604 +3220,6 @@ var uiPersona = {_scopeId: 'data-v-08ee50b8',
         };
     },
     extends :  persona
-}
-
-var textField = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"textField",staticClass:"ms-TextField",class:_vm.textFieldClass},[_c('label',{staticClass:"ms-Label"},[_vm._v(_vm._s(_vm.label))]),_vm._v(" "),(_vm.type == 'multiline')?_c('textarea',{staticClass:"ms-TextField-field",attrs:{"placeholder":_vm.placeholder,"type":"text","disabled":_vm.disabled},domProps:{"value":_vm.value},on:{"input":_vm.updateValue,"change":_vm.changeEvent}}):_c('input',{staticClass:"ms-TextField-field",attrs:{"placeholder":_vm.placeholder,"type":_vm.inputType,"disabled":_vm.disabled},domProps:{"value":_vm.value},on:{"input":_vm.updateValue,"change":_vm.changeEvent}})])},staticRenderFns: [],
-  name: 'ou-text-field',
-
-  mixins: [type('multiline', 'underlined'), disabled],
-
-  props: {
-    value: String,
-    label: String,
-    placeholder: String,
-    inputType: {
-      type: String,
-      default: 'text',
-      validator: function validator(value) {
-        return ['text', 'password', 'file'].includes(value);
-      }
-    }
-  },
-
-  computed: {
-    textFieldClass: function textFieldClass() {
-      var obj;
-
-      return ( obj = {}, obj[("ms-TextField--" + (this.type))] = !!this.type, obj['is-disabled'] =  this.disabled, obj );
-    }
-  },
-
-  mounted: function mounted() {
-    new this.$fabric.TextField(this.$refs.textField);
-  },
-
-  methods: {
-    updateValue: function updateValue(event) {
-      this.$emit('input', event.target.value);
-    },
-
-    changeEvent: function changeEvent(event) {
-      this.$emit('change', event.target.value);
-    }
-  }
-};
-
-var TextFieldConsts;
-(function (TextFieldConsts) {
-    var Type;
-    (function (Type) {
-        Type[Type["Placeholder"] = 0] = "Placeholder";
-        Type[Type["Underlined"] = 1] = "Underlined";
-    })(Type = TextFieldConsts.Type || (TextFieldConsts.Type = {}));
-})(TextFieldConsts || (TextFieldConsts = {}));
-var TextField = (function () {
-    function TextField(container) {
-        this._container = container;
-        this._type = [];
-        this._textField = this._container.querySelector(".ms-TextField-field");
-        this._textFieldLabel = this._container.querySelector(".ms-Label");
-        this._setTextFieldType();
-        this._addListeners();
-    }
-    TextField.prototype._setTextFieldType = function () {
-        if (this._container.classList.contains("ms-TextField--placeholder")) {
-            this._type.push(TextFieldConsts.Type.Placeholder);
-        }
-        if (this._container.classList.contains("ms-TextField--underlined")) {
-            this._type.push(TextFieldConsts.Type.Underlined);
-        }
-    };
-    TextField.prototype._addListeners = function () {
-        var _this = this;
-        this._textFieldLabel.addEventListener("click", function (event) {
-            _this._textField.focus();
-        });
-        if (this._type.indexOf(TextFieldConsts.Type.Placeholder) >= 0) {
-            this._textField.addEventListener("focus", function (event) {
-                _this._textFieldLabel.style.display = "none";
-            });
-            this._textField.addEventListener("blur", function (event) {
-                if (_this._textField.value.length === 0) {
-                    _this._textFieldLabel.style.display = "block";
-                }
-            });
-        }
-        if (this._type.indexOf(TextFieldConsts.Type.Underlined) >= 0) {
-            this._textField.addEventListener("focus", function (event) {
-                _this._container.classList.add("is-active");
-            });
-            this._textField.addEventListener("blur", function (event) {
-                _this._container.classList.remove("is-active");
-            });
-        }
-    };
-    return TextField;
-}());
-
-var uiTextfield = {_scopeId: 'data-v-9e6e890e',
-    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-Label[data-v-9e6e890e] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 12px; font-weight: 400; box-sizing: border-box; display: block; padding: 5px 0; } .ms-Label.is-required[data-v-9e6e890e]::after { content: ' *'; color: \"[theme:error, default: #a80000]\"; } .ms-Label.is-disabled[data-v-9e6e890e] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-TextField[data-v-9e6e890e] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 14px; font-weight: 400; margin-bottom: 8px; } .ms-TextField .ms-Label[data-v-9e6e890e] { font-size: 14px; font-weight: 600; } .ms-TextField.is-disabled .ms-TextField-field[data-v-9e6e890e] { background-color: \"[theme:neutralLighter, default: #f4f4f4]\"; border-color: \"[theme:neutralLighter, default: #f4f4f4]\"; pointer-events: none; cursor: default; } .ms-TextField.is-disabled[data-v-9e6e890e]::-webkit-input-placeholder { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-TextField.is-disabled[data-v-9e6e890e]::-moz-placeholder { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-TextField.is-disabled[data-v-9e6e890e]:-moz-placeholder { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-TextField.is-disabled[data-v-9e6e890e]:-ms-input-placeholder { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-TextField.is-required .ms-Label[data-v-9e6e890e]::after { content: ' *'; color: \"[theme:error, default: #a80000]\"; } .ms-TextField.is-required[data-v-9e6e890e]::-webkit-input-placeholder::after { content: ' *'; color: \"[theme:error, default: #a80000]\"; } .ms-TextField.is-required[data-v-9e6e890e]::-moz-placeholder::after { content: ' *'; color: \"[theme:error, default: #a80000]\"; } .ms-TextField.is-required[data-v-9e6e890e]:-moz-placeholder::after { content: ' *'; color: \"[theme:error, default: #a80000]\"; } .ms-TextField.is-required[data-v-9e6e890e]:-ms-input-placeholder::after { content: ' *'; color: \"[theme:error, default: #a80000]\"; } .ms-TextField.is-active[data-v-9e6e890e] { border-color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-TextField-field[data-v-9e6e890e] { box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; border: 1px solid \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; border-radius: 0; font-weight: 300; font-size: 14px; color: \"[theme:neutralPrimary, default: #333333]\"; height: 32px; padding: 6px 12px 7px; width: 100%; min-width: 180px; outline: 0; text-overflow: ellipsis; } .ms-TextField-field[data-v-9e6e890e]:hover { border-color: \"[theme:neutralSecondaryAlt, default: #767676]\"; } .ms-TextField-field[data-v-9e6e890e]:focus { border-color: \"[theme:themePrimary, default: #0078d7]\"; } @media screen and (-ms-high-contrast: active) { .ms-TextField-field[data-v-9e6e890e]:hover, .ms-TextField-field[data-v-9e6e890e]:focus { border-color: #1AEBFF; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-TextField-field[data-v-9e6e890e]:hover, .ms-TextField-field[data-v-9e6e890e]:focus { border-color: #37006E; } } .ms-TextField-field[disabled][data-v-9e6e890e] { background-color: \"[theme:neutralLighter, default: #f4f4f4]\"; border-color: \"[theme:neutralLighter, default: #f4f4f4]\"; pointer-events: none; cursor: default; } .ms-TextField-field[data-v-9e6e890e]::-webkit-input-placeholder { color: \"[theme:neutralSecondary, default: #666666]\"; } .ms-TextField-field[data-v-9e6e890e]::-moz-placeholder { color: \"[theme:neutralSecondary, default: #666666]\"; } .ms-TextField-field[data-v-9e6e890e]:-moz-placeholder { color: \"[theme:neutralSecondary, default: #666666]\"; } .ms-TextField-field[data-v-9e6e890e]:-ms-input-placeholder { color: \"[theme:neutralSecondary, default: #666666]\"; } .ms-TextField-description[data-v-9e6e890e] { color: \"[theme:neutralSecondaryAlt, default: #767676]\"; font-size: 11px; } .ms-TextField.ms-TextField--placeholder[data-v-9e6e890e] { position: relative; background-color: \"[theme:white, default: #ffffff]\"; } .ms-TextField.ms-TextField--placeholder .ms-TextField-field[data-v-9e6e890e] { position: relative; background-color: transparent; z-index: 5; } .ms-TextField.ms-TextField--placeholder .ms-Label[data-v-9e6e890e] { position: absolute; font-weight: 300; font-size: 14px; color: \"[theme:neutralSecondary, default: #666666]\"; padding: 6px 12px 7px; pointer-events: none; z-index: 0; } .ms-TextField.ms-TextField--placeholder.is-disabled[data-v-9e6e890e] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-TextField.ms-TextField--placeholder.is-disabled .ms-Label[data-v-9e6e890e] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-TextField.ms-TextField--underlined[data-v-9e6e890e] { border-bottom: 1px solid \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; display: table; width: 100%; min-width: 180px; } .ms-TextField.ms-TextField--underlined[data-v-9e6e890e]:hover { border-color: \"[theme:neutralSecondaryAlt, default: #767676]\"; } @media screen and (-ms-high-contrast: active) { .ms-TextField.ms-TextField--underlined[data-v-9e6e890e]:hover { border-color: #1AEBFF; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-TextField.ms-TextField--underlined[data-v-9e6e890e]:hover { border-color: #37006E; } } .ms-TextField.ms-TextField--underlined[data-v-9e6e890e]:active, .ms-TextField.ms-TextField--underlined[data-v-9e6e890e]:focus { border-color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-TextField.ms-TextField--underlined .ms-Label[data-v-9e6e890e] { font-size: 14px; margin-right: 8px; display: table-cell; vertical-align: top; padding-left: 12px; padding-top: 9px; height: 32px; width: 1%; white-space: nowrap; } .ms-TextField.ms-TextField--underlined .ms-TextField-field[data-v-9e6e890e] { border: 0; float: left; display: table-cell; text-align: left; padding-top: 8px; padding-bottom: 3px; } .ms-TextField.ms-TextField--underlined .ms-TextField-field[data-v-9e6e890e]:active, .ms-TextField.ms-TextField--underlined .ms-TextField-field[data-v-9e6e890e]:focus, .ms-TextField.ms-TextField--underlined .ms-TextField-field[data-v-9e6e890e]:hover { outline: 0; } .ms-TextField.ms-TextField--underlined.is-disabled[data-v-9e6e890e] { border-bottom-color: \"[theme:neutralLight, default: #eaeaea]\"; } .ms-TextField.ms-TextField--underlined.is-disabled .ms-Label[data-v-9e6e890e] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-TextField.ms-TextField--underlined.is-disabled .ms-TextField-field[data-v-9e6e890e] { background-color: transparent; color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-TextField.ms-TextField--underlined.is-active[data-v-9e6e890e] { border-color: \"[theme:themePrimary, default: #0078d7]\"; } @media screen and (-ms-high-contrast: active) { .ms-TextField.ms-TextField--underlined.is-active[data-v-9e6e890e] { border-color: #1AEBFF; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-TextField.ms-TextField--underlined.is-active[data-v-9e6e890e] { border-color: #37006E; } } .ms-TextField.ms-TextField--multiline .ms-TextField-field[data-v-9e6e890e] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; color: \"[theme:neutralSecondary, default: #666666]\"; font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; font-size: 14px; font-weight: 400; line-height: 17px; min-height: 60px; min-width: 260px; padding-top: 6px; overflow: auto; } ");},
-    beforeMount: function beforeMount(){
-        this.$fabric = {
-            TextField : TextField
-        };
-    },
-    extends :  textField
-}
-
-var commandbar = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"commandBar",staticClass:"ms-CommandBar"},[_c('div',{staticClass:"ms-CommandBar-sideCommands"},[_vm._t("side")],2),_vm._v(" "),_c('div',{staticClass:"ms-CommandBar-mainArea"},[_vm._t("main"),_vm._v(" "),_vm._m(0)],2)])},staticRenderFns: [function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-CommandButton ms-CommandBar-overflowButton ms-CommandButton--noLabel"},[_c('button',{staticClass:"ms-CommandButton-button"},[_c('span',{staticClass:"ms-CommandButton-icon"},[_c('i',{staticClass:"ms-Icon ms-Icon--More"})]),_vm._v(" "),_c('span',{staticClass:"ms-CommandButton-label"})]),_vm._v(" "),_c('ul',{staticClass:"ms-ContextualMenu is-opened ms-ContextualMenu--hasIcons"},[_c('li',{staticClass:"ms-ContextualMenu-item"},[_c('a',{staticClass:"ms-ContextualMenu-link"}),_vm._v(" "),_c('i',{staticClass:"ms-Icon ms-Icon--folder"})])])])}],
-  name: 'ou-command-bar',
-
-  mounted: function mounted() {
-    new this.$fabric.CommandBar(this.$refs.commandBar);
-  }
-};
-
-var CONTEXT_CLASS = ".ms-ContextualMenu";
-var CB_SPLIT_CLASS = ".ms-CommandButton-splitIcon";
-var CB_BUTTON_CLASS = ".ms-CommandButton-button";
-var MODAL_POSITION$2 = "bottom";
-var CommandButton = (function () {
-    function CommandButton(container, contextMenu) {
-        this._container = container;
-        this._command = this._container;
-        this._commandButton = this._command.querySelector(CB_BUTTON_CLASS);
-        this._splitButton = this._command.querySelector(CB_SPLIT_CLASS);
-        if (contextMenu) {
-            this._contextualMenu = contextMenu;
-        }
-        else {
-            this._contextualMenu = this._container.querySelector(CONTEXT_CLASS);
-        }
-        this._checkForMenu();
-    }
-    CommandButton.prototype._createModalHostView = function () {
-        this._modalHostView = new ContextualHost(this._contextualMenu, MODAL_POSITION$2, this._command, false);
-    };
-    CommandButton.prototype._setClick = function () {
-        if (this._splitButton) {
-            this._splitButton.addEventListener("click", this._createModalHostView.bind(this), false);
-        }
-        else {
-            this._commandButton.addEventListener("click", this._createModalHostView.bind(this), false);
-        }
-    };
-    CommandButton.prototype._checkForMenu = function () {
-        if (this._contextualMenu) {
-            this._setClick();
-        }
-    };
-    return CommandButton;
-}());
-
-var CONTEXTUAL_MENU = ".ms-ContextualMenu";
-var CONTEXTUAL_MENU_ITEM = ".ms-ContextualMenu-item";
-var CONTEXTUAL_MENU_LINK = ".ms-ContextualMenu-link";
-var CB_SEARCH_BOX = ".ms-SearchBox";
-var CB_MAIN_AREA = ".ms-CommandBar-mainArea";
-var CB_SIDE_COMMAND_AREA = ".ms-CommandBar-sideCommands";
-var CB_ITEM_OVERFLOW = ".ms-CommandBar-overflowButton";
-var CB_NO_LABEL_CLASS = "ms-CommandButton--noLabel";
-var SEARCH_BOX_CLOSE = ".ms-SearchBox-closeField";
-var COMMAND_BUTTON = ".ms-CommandButton";
-var COMMAND_BUTTON_LABEL = ".ms-CommandButton-label";
-var ICON = ".ms-Icon";
-var OVERFLOW_WIDTH = 40;
-var OVERFLOW_LEFT_RIGHT_PADDING = 30;
-var CommandBar = (function () {
-    function CommandBar(container) {
-        this.responsiveSizes = {
-            "sm-min": 320,
-            "md-min": 480,
-            "lg-min": 640,
-            "xl-min": 1024,
-            "xxl-min": 1366,
-            "xxxl-min": 1920
-        };
-        this.visibleCommands = [];
-        this.commandWidths = [];
-        this.overflowCommands = [];
-        this.itemCollection = [];
-        this._sideAreaCollection = [];
-        this.breakpoint = "sm";
-        this._container = container;
-        this.responsiveSizes["sm-max"] = this.responsiveSizes["md-min"] - 1;
-        this.responsiveSizes["md-max"] = this.responsiveSizes["lg-min"] - 1;
-        this.responsiveSizes["lg-max"] = this.responsiveSizes["xl-min"] - 1;
-        this.responsiveSizes["xl-max"] = this.responsiveSizes["xxl-min"] - 1;
-        this.responsiveSizes["xxl-max"] = this.responsiveSizes["xxxl-min"] - 1;
-        this._setElements();
-        this._setBreakpoint();
-        if (this._elements.overflowCommand) {
-            this._initOverflow();
-        }
-        this._setUIState();
-    }
-    CommandBar.prototype._runsSearchBox = function (state) {
-        if (state === void 0) { state = "add"; }
-        this._changeSearchState("is-collapsed", state);
-    };
-    CommandBar.prototype._runOverflow = function () {
-        if (this._elements.overflowCommand) {
-            this._saveCommandWidths();
-            this._redrawMenu();
-            this._updateCommands();
-            this._drawCommands();
-            this._checkOverflow();
-        }
-    };
-    CommandBar.prototype._initOverflow = function () {
-        this._createContextualRef();
-        this._createItemCollection(this.itemCollection, CB_MAIN_AREA);
-        this._createItemCollection(this._sideAreaCollection, CB_SIDE_COMMAND_AREA);
-        this._saveCommandWidths();
-        this._updateCommands();
-        this._drawCommands();
-        this._setWindowEvent();
-        this._checkOverflow();
-    };
-    CommandBar.prototype._hasClass = function (element, cls) {
-        return (" " + element.className + " ").indexOf(" " + cls + " ") > -1;
-    };
-    CommandBar.prototype._onSearchExpand = function () {
-        if (this.breakpoint === "lg") {
-            this._container.classList.add("search-expanded");
-            this._doResize();
-        }
-    };
-    CommandBar.prototype._onSearchCollapse = function () {
-        if (this.breakpoint === "lg") {
-            this._container.classList.remove("search-expanded");
-            this._doResize();
-        }
-    };
-    CommandBar.prototype._getScreenSize = function () {
-        var w = window;
-        var wSize = {
-            x: 0,
-            y: 0
-        };
-        var d = document, e = d.documentElement, g = d.getElementsByTagName("body")[0];
-        wSize.x = w.innerWidth || e.clientWidth || g.clientWidth;
-        wSize.y = w.innerHeight || e.clientHeight || g.clientHeight;
-        return wSize;
-    };
-    CommandBar.prototype._setBreakpoint = function () {
-        var screenSize = this._getScreenSize().x;
-        switch (true) {
-            case (screenSize <= this.responsiveSizes["sm-max"]):
-                this.breakpoint = "sm";
-                break;
-            case (screenSize >= this.responsiveSizes["md-min"] && screenSize <= this.responsiveSizes["md-max"]):
-                this.breakpoint = "md";
-                break;
-            case (screenSize >= this.responsiveSizes["lg-min"] && screenSize <= this.responsiveSizes["lg-max"]):
-                this.breakpoint = "lg";
-                break;
-            case (screenSize >= this.responsiveSizes["xl-min"] && screenSize <= this.responsiveSizes["xl-max"]):
-                this.breakpoint = "xl";
-                break;
-            case (screenSize >= this.responsiveSizes["xxl-min"] && screenSize <= this.responsiveSizes["xxl-max"]):
-                this.breakpoint = "xxl";
-                break;
-            case (screenSize >= this.responsiveSizes["xxxl-min"]):
-                this.breakpoint = "xxxl";
-                break;
-        }
-    };
-    CommandBar.prototype._createSearchInstance = function () {
-        if (this._elements.searchBox) {
-            return new SearchBox(this._elements.searchBox);
-        }
-        else {
-            return false;
-        }
-    };
-    CommandBar.prototype._changeSearchState = function (state, action) {
-        if (this._elements.searchBox) {
-            switch (action) {
-                case "remove":
-                    this._elements.searchBox.classList.remove(state);
-                    break;
-                case "add":
-                    this._elements.searchBox.classList.add(state);
-                    break;
-                default:
-                    break;
-            }
-        }
-    };
-    CommandBar.prototype._setElements = function () {
-        var _this = this;
-        this._elements = {
-            mainArea: this._container.querySelector(CB_MAIN_AREA)
-        };
-        if (this._container.querySelector(CB_SIDE_COMMAND_AREA)) {
-            this._elements.sideCommandArea = this._container.querySelector(CB_SIDE_COMMAND_AREA);
-        }
-        if (this._container.querySelector(CB_ITEM_OVERFLOW)) {
-            this._elements.overflowCommand = this._container.querySelector(CB_ITEM_OVERFLOW);
-            this._elements.contextMenu = this._container.querySelector(CB_ITEM_OVERFLOW).querySelector(CONTEXTUAL_MENU);
-        }
-        if (this._container.querySelector(CB_MAIN_AREA + " " + CB_SEARCH_BOX)) {
-            this._elements.searchBox = this._container.querySelector(CB_MAIN_AREA + " " + CB_SEARCH_BOX);
-            this._elements.searchBoxClose = this._container.querySelector(SEARCH_BOX_CLOSE);
-            this.searchBoxInstance = this._createSearchInstance();
-            this.searchBoxInstance.getInputField().addEventListener("focus", function () { _this._onSearchExpand(); }, false);
-            this.searchBoxInstance.getInputField().addEventListener("searchCollapse", function () { _this._onSearchCollapse(); }, false);
-        }
-    };
-    CommandBar.prototype._createItemCollection = function (iCollection, areaClass) {
-        var item, label, iconClasses, splitClasses, items = this._container.querySelectorAll(areaClass + " > " + COMMAND_BUTTON + ":not(" + CB_ITEM_OVERFLOW + ")");
-        this._commandButtonInstance = new CommandButton(this._elements.overflowCommand);
-        for (var i = 0; i < items.length; i++) {
-            item = items[i];
-            label = item.querySelector(COMMAND_BUTTON_LABEL).textContent;
-            var icon = item.querySelector(ICON);
-            if (icon) {
-                iconClasses = icon.className;
-                splitClasses = iconClasses.split(" ");
-                for (var o = 0; o < splitClasses.length; o++) {
-                    if (splitClasses[o].indexOf(ICON.replace(".", "") + "--") > -1) {
-                        icon = splitClasses[o];
-                        break;
-                    }
-                }
-            }
-            iCollection.push({
-                item: item,
-                label: label,
-                icon: icon,
-                isCollapsed: (item.classList.contains(CB_NO_LABEL_CLASS)) ? true : false,
-                commandButtonRef: new CommandButton(item)
-            });
-        }
-        return;
-    };
-    CommandBar.prototype._createContextualRef = function () {
-        this.contextualItemContainerRef = this._elements.contextMenu.querySelector(CONTEXTUAL_MENU_ITEM).cloneNode(true);
-        this.contextualItemLink = this._elements.contextMenu.querySelector(CONTEXTUAL_MENU_LINK).cloneNode(false);
-        this.contextualItemIcon = this._elements.contextMenu.querySelector(".ms-Icon").cloneNode(false);
-        this._elements.contextMenu.innerHTML = "";
-    };
-    CommandBar.prototype._getElementWidth = function (element) {
-        var width, styles;
-        if (element.offsetParent === null) {
-            element.setAttribute("style", "position: absolute; opacity: 0; display: block;");
-        }
-        width = element.getBoundingClientRect().width;
-        styles = window.getComputedStyle(element);
-        width += parseInt(styles.marginLeft, 10) + parseInt(styles.marginRight, 10);
-        element.setAttribute("style", "");
-        return width;
-    };
-    CommandBar.prototype._saveCommandWidths = function () {
-        var this$1 = this;
-
-        for (var i = 0; i < this.itemCollection.length; i++) {
-            var item = this$1.itemCollection[i].item;
-            var width = this$1._getElementWidth(item);
-            this$1.commandWidths[i] = width;
-        }
-    };
-    CommandBar.prototype._updateCommands = function () {
-        var this$1 = this;
-
-        var searchCommandWidth = 0;
-        var mainAreaWidth = this._elements.mainArea.getBoundingClientRect().width;
-        if (this._elements.searchBox) {
-            searchCommandWidth = this._getElementWidth(this._elements.searchBox);
-        }
-        var offset = searchCommandWidth + OVERFLOW_WIDTH + OVERFLOW_LEFT_RIGHT_PADDING;
-        var totalAreaWidth = mainAreaWidth - offset;
-        this.visibleCommands = [];
-        this.overflowCommands = [];
-        var totalWidths = 0;
-        for (var i = 0; i < this.itemCollection.length; i++) {
-            totalWidths += this$1.commandWidths[i];
-            if (totalWidths < totalAreaWidth) {
-                this$1.visibleCommands.push(this$1.itemCollection[i]);
-            }
-            else {
-                this$1.overflowCommands.push(this$1.itemCollection[i]);
-            }
-        }
-    };
-    CommandBar.prototype._drawCommands = function () {
-        var this$1 = this;
-
-        this._elements.contextMenu.innerHTML = "";
-        for (var i = 0; i < this.overflowCommands.length; i++) {
-            this$1.overflowCommands[i].item.classList.add("is-hidden");
-            var newCItem = this$1.contextualItemContainerRef.cloneNode(false);
-            var newClink = this$1.contextualItemLink.cloneNode(false);
-            var iconClass = this$1.overflowCommands[i].icon;
-            newClink.innerText = this$1.overflowCommands[i].label;
-            newCItem.appendChild(newClink);
-            if (iconClass) {
-                var newIcon = this$1.contextualItemIcon.cloneNode(false);
-                newIcon.className = ICON.replace(".", "") + " " + iconClass;
-                newCItem.appendChild(newIcon);
-            }
-            this$1._elements.contextMenu.appendChild(newCItem);
-        }
-        for (var x = 0; x < this.visibleCommands.length; x++) {
-            this$1.visibleCommands[x].item.classList.remove("is-hidden");
-        }
-    };
-    CommandBar.prototype._setWindowEvent = function () {
-        var _this = this;
-        window.addEventListener("resize", function () {
-            _this._doResize();
-        }, false);
-    };
-    CommandBar.prototype._processCollapsedClasses = function (type) {
-        var this$1 = this;
-
-        for (var i = 0; i < this.itemCollection.length; i++) {
-            var thisItem = this$1.itemCollection[i];
-            if (!thisItem.isCollapsed) {
-                if (type === "add") {
-                    thisItem.item.classList.add(CB_NO_LABEL_CLASS);
-                }
-                else {
-                    thisItem.item.classList.remove(CB_NO_LABEL_CLASS);
-                }
-            }
-        }
-        for (var i = 0; i < this._sideAreaCollection.length; i++) {
-            var thisItem = this$1._sideAreaCollection[i];
-            if (!thisItem.isCollapsed) {
-                if (type === "add") {
-                    thisItem.item.classList.add(CB_NO_LABEL_CLASS);
-                }
-                else {
-                    thisItem.item.classList.remove(CB_NO_LABEL_CLASS);
-                }
-            }
-        }
-    };
-    CommandBar.prototype._setUIState = function () {
-        switch (this.breakpoint) {
-            case "sm":
-                this._runsSearchBox();
-                this._processCollapsedClasses("add");
-                this._runOverflow();
-                break;
-            case "md":
-                this._runsSearchBox();
-                this._processCollapsedClasses("add");
-                this._runOverflow();
-                break;
-            case "lg":
-                this._runsSearchBox();
-                this._processCollapsedClasses("remove");
-                this._runOverflow();
-                break;
-            case "xl":
-                this._runsSearchBox("remove");
-                this._processCollapsedClasses("remove");
-                this._runOverflow();
-                break;
-            default:
-                this._runsSearchBox("remove");
-                this._processCollapsedClasses("remove");
-                this._runOverflow();
-                break;
-        }
-    };
-    CommandBar.prototype._checkOverflow = function () {
-        if (this.overflowCommands.length > 0) {
-            this._elements.overflowCommand.classList.remove("is-hidden");
-        }
-        else {
-            this._elements.overflowCommand.classList.add("is-hidden");
-            if (this.activeCommand === this._elements.overflowCommand) {
-                this._elements.contextMenu.classList.remove("is-open");
-            }
-        }
-    };
-    CommandBar.prototype._redrawMenu = function () {
-        var left;
-        if (this._hasClass(this._elements.contextMenu, "is-open")) {
-            left = this.activeCommand.getBoundingClientRect().left;
-            this._drawOverflowMenu(left);
-        }
-    };
-    CommandBar.prototype._drawOverflowMenu = function (left) {
-        this._elements.contextMenu.setAttribute("style", "left: " + left + "px; transform: translateX(-50%)");
-    };
-    CommandBar.prototype._doResize = function () {
-        this._setBreakpoint();
-        this._setUIState();
-    };
-    return CommandBar;
-}());
-
-var uiCommandBar = {
-    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-CommandBar { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; background-color: \"[theme:neutralLighter, default: #f4f4f4]\"; height: 40px; white-space: nowrap; padding-left: 0; border: 0; position: relative; } .ms-CommandBar:focus { outline: none; } .ms-CommandBar .ms-CommandButton--actionButton { border-right: 1px solid \"[theme:neutralLight, default: #eaeaea]\"; } .ms-CommandBar .ms-Button { height: 100%; } .ms-CommandBar .ms-Button.ms-Button--noLabel .ms-Button-icon { padding-right: 0; } .ms-CommandBar .ms-Button.is-hidden { display: none; } .ms-CommandBar .ms-SearchBox, .ms-CommandBar .ms-SearchBox-field, .ms-CommandBar .ms-SearchBox-label { height: 100%; } .ms-CommandBar .ms-SearchBox { display: inline-block; vertical-align: top; transition: margin-right 0.267s; } .ms-CommandBar .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active { width: 220px; } @media only screen and (max-width: 639px) { .ms-CommandBar .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active { width: 100%; position: absolute; left: 0; right: 0; z-index: 10; } } .ms-CommandBar .ms-CommandBar-overflowButton .ms-CommandButton-button { font-size: 18px; padding: 0 11px; } @media only screen and (min-width: 1024px) { .ms-CommandBar .ms-SearchBox { margin-right: 24px; } } @media only screen and (max-width: 639px) { .ms-CommandBar { height: 44px; } } @media only screen and (min-width: 640px) { .ms-CommandBar.search-expanded .ms-SearchBox { margin-right: 8px; } .ms-CommandBar .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed { transition: none; } } .ms-CommandBar-mainArea { overflow-x: hidden; display: block; height: 100%; overflow: hidden; } .ms-CommandBar-sideCommands { float: right; text-align: right; width: auto; padding-right: 4px; height: 100%; } .ms-CommandBar-sideCommands .ms-Button:last-child { margin-right: 0; } @media only screen and (min-width: 640px) { .ms-CommandBar-sideCommands { min-width: 128px; } } @media only screen and (min-width: 1024px) { .ms-CommandBar-sideCommands { padding-right: 20px; } } .ms-CommandButton { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; display: inline-block; position: relative; vertical-align: top; } .ms-CommandButton.is-hidden { display: none; } .ms-CommandButton:disabled .ms-CommandButton-button, .ms-CommandButton.is-disabled .ms-CommandButton-button { cursor: default; } .ms-CommandButton:disabled .ms-CommandButton-button:hover, .ms-CommandButton.is-disabled .ms-CommandButton-button:hover { background-color: \"[theme:themeLighterAlt, default: #eff6fc]\"; } .ms-CommandButton:disabled .ms-CommandButton-button .ms-CommandButton-label, .ms-CommandButton.is-disabled .ms-CommandButton-button .ms-CommandButton-label { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-CommandButton:disabled .ms-CommandButton-button .ms-CommandButton-icon, .ms-CommandButton.is-disabled .ms-CommandButton-button .ms-CommandButton-icon { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-CommandButton .ms-ContextualMenu { display: none; } .ms-CommandButton-button, .ms-CommandButton-splitIcon { box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 14px; font-weight: 400; cursor: pointer; display: inline-block; height: 40px; line-height: 40px; outline: 1px solid transparent; padding: 0 8px; position: relative; vertical-align: top; background: transparent; } .ms-CommandButton-button:hover, .ms-CommandButton-splitIcon:hover { background-color: \"[theme:neutralLight, default: #eaeaea]\"; } .ms-CommandButton-button:hover .ms-CommandButton-label, .ms-CommandButton-splitIcon:hover .ms-CommandButton-label { color: \"[theme:neutralDark, default: #212121]\"; } .ms-CommandButton-button:active, .ms-CommandButton-splitIcon:active { background-color: \"[theme:neutralLight, default: #eaeaea]\"; } .ms-CommandButton-button:focus::before, .ms-CommandButton-splitIcon:focus::before { top: 3px; left: 3px; right: 3px; bottom: 3px; border: 1px solid \"[theme:neutralPrimary, default: #333333]\"; position: absolute; z-index: 10; content: ''; outline: none; } .ms-CommandButton-button:focus, .ms-CommandButton-splitIcon:focus { outline: 0; } @media only screen and (max-width: 639px) { .ms-CommandButton-button, .ms-CommandButton-splitIcon { height: 44px; } .ms-CommandButton-button .ms-CommandButton-icon, .ms-CommandButton-splitIcon .ms-CommandButton-icon { font-size: 20px; } .ms-CommandButton-button .ms-CommandButton-label, .ms-CommandButton-splitIcon .ms-CommandButton-label { line-height: 44px; } } .ms-CommandButton-button { border: 0; margin: 0; } .ms-CommandButton + .ms-CommandButton { margin-left: 8px; } @media only screen and (max-width: 639px) { .ms-CommandButton + .ms-CommandButton { margin-left: 4px; } } .ms-CommandButton-icon { display: inline-block; margin-right: 8px; position: relative; font-size: 16px; min-width: 16px; height: 100%; } .ms-CommandButton-icon .ms-Icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); } .ms-CommandButton-label { font-size: 14px; font-weight: 400; color: \"[theme:neutralPrimary, default: #333333]\"; line-height: 40px; height: 100%; display: inline-block; vertical-align: top; } .ms-CommandButton-label:hover { color: \"[theme:neutralDark, default: #212121]\"; } .ms-CommandButton-dropdownIcon, .ms-CommandButton-splitIcon { display: inline-block; position: relative; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 12px; font-weight: 300; min-width: 12px; height: 100%; vertical-align: top; margin-left: 8px; } .ms-CommandButton-dropdownIcon .ms-Icon, .ms-CommandButton-splitIcon .ms-Icon { line-height: normal; padding-top: 16px; } .ms-CommandButton-dropdownIcon:focus::before, .ms-CommandButton-splitIcon:focus::before { top: 3px; left: 3px; right: 3px; bottom: 3px; border: 1px solid \"[theme:neutralPrimary, default: #333333]\"; position: absolute; z-index: 10; content: ''; outline: none; } @media only screen and (max-width: 639px) { .ms-CommandButton-dropdownIcon, .ms-CommandButton-splitIcon { display: none; } } .ms-CommandButton-splitIcon { margin-left: -2px; width: 27px; border: 0; } .ms-CommandButton-splitIcon .ms-Icon { margin-left: -1px; position: relative; padding-top: 16px; } .ms-CommandButton-splitIcon .ms-Icon::after { position: absolute; content: ' '; width: 1px; height: 16px; top: 12px; left: -8px; border-left: 1px solid \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; } .ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-icon { margin-right: 0; } .ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-label { display: none; } .ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-button { padding: 0 12px; } .ms-CommandButton.ms-CommandButton--inline .ms-CommandButton-button { background: none; } .ms-CommandButton.ms-CommandButton--actionButton .ms-CommandButton-button { width: 50px; height: 40px; } .ms-CommandButton.ms-CommandButton--actionButton .ms-CommandButton-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 16px; height: 16px; padding-right: 0; } .ms-CommandButton.ms-CommandButton--pivot.is-active::before { content: ''; height: 2px; position: absolute; left: 0; right: 0; background-color: \"[theme:themePrimary, default: #0078d7]\"; bottom: 0; z-index: 5; } .ms-CommandButton.ms-CommandButton--pivot:hover::before { content: ''; height: 2px; position: absolute; left: 0; right: 0; background-color: \"[theme:themePrimary, default: #0078d7]\"; bottom: 0; z-index: 5; } .ms-CommandButton.ms-CommandButton--textOnly .ms-CommandButton-label, .ms-CommandButton.ms-CommandButton--pivot .ms-CommandButton-label { display: inline-block; } @media only screen and (max-width: 479px) { .ms-CommandButton.ms-CommandButton--textOnly .ms-CommandButton-label, .ms-CommandButton.ms-CommandButton--pivot .ms-CommandButton-label { font-size: 16px; } } .ms-ContextualMenu { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 14px; font-weight: 400; display: block; min-width: 180px; max-width: 220px; list-style-type: none; position: relative; background-color: \"[theme:white, default: #ffffff]\"; } .ms-ContextualMenu.is-hidden { display: none; } .ms-ContextualMenu-item { position: relative; } .ms-ContextualMenu-link { box-sizing: border-box; text-decoration: none; color: \"[theme:neutralPrimary, default: #333333]\"; border: 1px solid transparent; cursor: pointer; display: block; height: 36px; overflow: hidden; line-height: 34px; padding: 0 16px 0 25px; position: relative; text-overflow: ellipsis; white-space: nowrap; } .ms-ContextualMenu-link:hover, .ms-ContextualMenu-link:active, .ms-ContextualMenu-link:focus { background-color: \"[theme:neutralLighter, default: #f4f4f4]\"; color: \"[theme:neutralDark, default: #212121]\"; } .ms-ContextualMenu-link:hover .ms-ContextualMenu-subMenuIcon, .ms-ContextualMenu-link:active .ms-ContextualMenu-subMenuIcon, .ms-ContextualMenu-link:focus .ms-ContextualMenu-subMenuIcon { color: \"[theme:neutralDark, default: #212121]\"; } .ms-ContextualMenu-link:focus { outline: transparent; border: 1px solid \"[theme:neutralSecondary, default: #666666]\"; } .ms-ContextualMenu-link.is-selected { background-color: \"[theme:neutralQuaternaryAlt, default: #dadada]\"; color: \"[theme:black, default: #000000]\"; font-weight: 600; } .ms-ContextualMenu-link.is-selected ~ .ms-ContextualMenu-subMenuIcon { color: \"[theme:black, default: #000000]\"; } .ms-ContextualMenu-link.is-selected:hover { background-color: \"[theme:neutralQuaternary, default: #d0d0d0]\"; } .ms-ContextualMenu-link.is-disabled { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; background-color: \"[theme:white, default: #ffffff]\"; pointer-events: none; } .ms-ContextualMenu-link.is-disabled:active, .ms-ContextualMenu-link.is-disabled:focus { border-color: \"[theme:white, default: #ffffff]\"; } .ms-ContextualMenu-link.is-disabled .ms-Icon { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; pointer-events: none; cursor: default; } .ms-ContextualMenu-item.ms-ContextualMenu-item--divider { cursor: default; display: block; height: 1px; background-color: \"[theme:neutralLight, default: #eaeaea]\"; position: relative; } .ms-ContextualMenu-item.ms-ContextualMenu-item--header { color: \"[theme:themePrimary, default: #0078d7]\"; font-size: 12px; text-transform: uppercase; height: 36px; line-height: 36px; padding: 0 18px; } .ms-ContextualMenu-item.ms-ContextualMenu-item--hasMenu .ms-ContextualMenu { position: absolute; top: -1px; left: 178px; } .ms-ContextualMenu-subMenuIcon, .ms-ContextualMenu-caretRight { color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 8px; font-weight: 600; width: 24px; height: 36px; line-height: 36px; position: absolute; text-align: center; top: 0; right: 0; z-index: 1; pointer-events: none; } .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-item.ms-ContextualMenu-item--header { padding: 0 16px 0 26px; } .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected { background-color: \"[theme:white, default: #ffffff]\"; font-weight: 600; color: \"[theme:neutralPrimary, default: #333333]\"; } .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected::after { -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; display: inline-block; font-family: 'FabricMDL2Icons'; font-style: normal; font-weight: normal; speak: none; color: \"[theme:neutralPrimary, default: #333333]\"; content: '\\E73E'; font-size: 10px; font-weight: 800; height: 36px; line-height: 36px; position: absolute; left: 7px; } .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected:hover, .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected:focus { color: \"[theme:neutralDark, default: #212121]\"; background-color: \"[theme:neutralLighter, default: #f4f4f4]\"; } .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected:hover::after, .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected:focus::after { color: \"[theme:neutralDark, default: #212121]\"; } .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected:active { color: \"[theme:black, default: #000000]\"; background-color: \"[theme:neutralQuaternary, default: #d0d0d0]\"; } .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected:active::after { color: \"[theme:black, default: #000000]\"; } .ms-ContextualMenu.ms-ContextualMenu--hasIcons .ms-ContextualMenu-link, .ms-ContextualMenu.ms-ContextualMenu--hasChecks .ms-ContextualMenu-link { padding-left: 40px; } .ms-ContextualMenu.ms-ContextualMenu--hasIcons .ms-Icon, .ms-ContextualMenu.ms-ContextualMenu--hasChecks .ms-Icon { position: absolute; top: 50%; transform: translateY(-50%); width: 40px; text-align: center; } .ms-ContextualMenu.ms-ContextualMenu--hasIcons { width: 220px; } .ms-ContextualHost { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; z-index: 10; margin: 16px auto; position: relative; min-width: 10px; display: none; background-color: \"[theme:white, default: #ffffff]\"; box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4); } .ms-ContextualHost.is-positioned { position: absolute; margin: 0; } .ms-ContextualHost.is-open { display: inline-block; } .ms-ContextualHost-beak { box-shadow: 0 0 15px -5px \"[theme:neutralPrimaryAlt, default: #3c3c3c]\"; position: absolute; width: 28px; height: 28px; background: \"[theme:white, default: #ffffff]\"; border: 1px solid \"[theme:neutralLight, default: #eaeaea]\"; box-sizing: border-box; top: -6px; display: none; -webkit-transform: rotate(45deg); transform: rotate(45deg); z-index: 0; outline: 1px solid transparent; } .ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak, .ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak { top: 40px; display: none; } .ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak { left: -10px; } .ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak { right: -10px; } .ms-ContextualHost.ms-ContextualHost--arrowTop .ms-ContextualHost-beak { display: block; top: -10px; } .ms-ContextualHost.ms-ContextualHost--arrowBottom .ms-ContextualHost-beak { display: block; bottom: -10px; } .ms-ContextualHost-main { position: relative; background-color: \"[theme:white, default: #ffffff]\"; box-sizing: border-box; outline: 1px solid transparent; z-index: 5; min-height: 10px; } .ms-ContextualHost-close { margin: 0; border: 0; background: none; cursor: pointer; position: absolute; top: 12px; right: 12px; padding: 8px; width: 32px; height: 32px; font-size: 14px; color: \"[theme:neutralSecondary, default: #666666]\"; z-index: 10; } .ms-ContextualHost.ms-ContextualHost--close .ms-ContextualHost-title { margin-right: 20px; } .ms-ContextualHost.ms-ContextualHost--primaryArrow .ms-ContextualHost-beak { background-color: \"[theme:themePrimary, default: #0078d7]\"; } @media (min-width: 480px) { .ms-ContextualHost { margin: 16px; } .ms-ContextualHost.is-positioned { margin: 0; } .ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak, .ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak { display: block; } } .inline-block { display: inline-block; } .ms-Icon.ms-Icon--More { content: url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"14\" height=\"14\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M256 1152q27 0 50 -10t40.5 -27.5t27.5 -40.5t10 -50t-10 -50t-27.5 -40.5t-40.5 -27.5t-50 -10t-50 10t-40.5 27.5t-27.5 40.5t-10 50t10 50t27.5 40.5t40.5 27.5t50 10zM1024 1152q27 0 50 -10t40.5 -27.5t27.5 -40.5t10 -50t-10 -50t-27.5 -40.5t-40.5 -27.5t-50 -10t-50 10t-40.5 27.5t-27.5 40.5t-10 50t10 50t27.5 40.5t40.5 27.5t50 10zM1792 1152q27 0 50 -10t40.5 -27.5t27.5 -40.5t10 -50t-10 -50t-27.5 -40.5t-40.5 -27.5t-50 -10t-50 10t-40.5 27.5t-27.5 40.5t-10 50t10 50t27.5 40.5t40.5 27.5t50 10z\" fill=\"black\" stroke=\"none\"/></svg>'); } ");},
-    beforeMount: function beforeMount(){ 
-        this.$fabric = { 
-            CommandBar : CommandBar 
-        }; 
-    },
-    extends :  commandbar
-}
-
-var commandbutton = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-CommandButton",class:_vm.commandButtonClass,on:{"click":_vm.clickEvent}},[_c('button',{staticClass:"ms-CommandButton-button"},[(_vm.icon)?_c('span',{staticClass:"ms-CommandButton-icon ms-fontColor-themePrimary"},[_c('i',{staticClass:"ms-Icon",class:_vm.iconClass})]):_vm._e(),_vm._v(" "),_c('span',{staticClass:"ms-CommandButton-label"},[_vm._t("default")],2),_vm._v(" "),(_vm.type == 'dropdown')?_c('span',{staticClass:"ms-CommandButton-dropdownIcon"},[_c('i',{staticClass:"ms-Icon ms-Icon--ChevronDown"})]):_vm._e()])])},staticRenderFns: [],
-  name: 'ou-command-button',
-
-  mixins: [
-    type('noLabel', 'inline', 'dropdown'),
-    disabled,
-    icon
-  ],
-
-  computed: {
-    commandButtonClass: function commandButtonClass() {
-      var obj;
-
-      return ( obj = {}, obj[("ms-CommandButton--" + (this.type))] = !!this.type, obj['is-disabled'] =  this.disabled, obj );
-    }
-  },
-
-  methods: {
-    clickEvent: function clickEvent() {
-      if (!this.disabled) { this.$emit('click'); }
-    }
-  }
-};
-
-var CONTEXT_CLASS$1 = ".ms-ContextualMenu";
-var CB_SPLIT_CLASS$1 = ".ms-CommandButton-splitIcon";
-var CB_BUTTON_CLASS$1 = ".ms-CommandButton-button";
-var MODAL_POSITION$3 = "bottom";
-var CommandButton$1 = (function () {
-    function CommandButton(container, contextMenu) {
-        this._container = container;
-        this._command = this._container;
-        this._commandButton = this._command.querySelector(CB_BUTTON_CLASS$1);
-        this._splitButton = this._command.querySelector(CB_SPLIT_CLASS$1);
-        if (contextMenu) {
-            this._contextualMenu = contextMenu;
-        }
-        else {
-            this._contextualMenu = this._container.querySelector(CONTEXT_CLASS$1);
-        }
-        this._checkForMenu();
-    }
-    CommandButton.prototype._createModalHostView = function () {
-        this._modalHostView = new ContextualHost(this._contextualMenu, MODAL_POSITION$3, this._command, false);
-    };
-    CommandButton.prototype._setClick = function () {
-        if (this._splitButton) {
-            this._splitButton.addEventListener("click", this._createModalHostView.bind(this), false);
-        }
-        else {
-            this._commandButton.addEventListener("click", this._createModalHostView.bind(this), false);
-        }
-    };
-    CommandButton.prototype._checkForMenu = function () {
-        if (this._contextualMenu) {
-            this._setClick();
-        }
-    };
-    return CommandButton;
-}());
-
-var uiCommandButton = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-CommandButton",class:_vm.commandButtonClass,on:{"click":_vm.clickEvent}},[_c('button',{staticClass:"ms-CommandButton-button"},[(_vm.hasIcon)?_c('span',{staticClass:"ms-CommandButton-icon ms-fontColor-themePrimary"},[_vm._t("icon")],2):_vm._e(),_vm._v(" "),_c('span',{staticClass:"ms-CommandButton-label"},[_vm._t("default")],2),_vm._v(" "),(_vm.type == 'dropdown')?_c('span',{staticClass:"ms-CommandButton-dropdownIcon"},[_c('i',{staticClass:"ms-Icon ms-Icon--ChevronDown"})]):_vm._e()])])},staticRenderFns: [],_scopeId: 'data-v-6b2aa7e9',
-    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-CommandButton[data-v-6b2aa7e9] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; display: inline-block; position: relative; vertical-align: top; } .ms-CommandButton.is-hidden[data-v-6b2aa7e9] { display: none; } .ms-CommandButton:disabled .ms-CommandButton-button[data-v-6b2aa7e9], .ms-CommandButton.is-disabled .ms-CommandButton-button[data-v-6b2aa7e9] { cursor: default; } .ms-CommandButton:disabled .ms-CommandButton-button[data-v-6b2aa7e9]:hover, .ms-CommandButton.is-disabled .ms-CommandButton-button[data-v-6b2aa7e9]:hover { background-color: \"[theme:themeLighterAlt, default: #eff6fc]\"; } .ms-CommandButton:disabled .ms-CommandButton-button .ms-CommandButton-label[data-v-6b2aa7e9], .ms-CommandButton.is-disabled .ms-CommandButton-button .ms-CommandButton-label[data-v-6b2aa7e9] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-CommandButton:disabled .ms-CommandButton-button .ms-CommandButton-icon[data-v-6b2aa7e9], .ms-CommandButton.is-disabled .ms-CommandButton-button .ms-CommandButton-icon[data-v-6b2aa7e9] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-CommandButton .ms-ContextualMenu[data-v-6b2aa7e9] { display: none; } .ms-CommandButton-button[data-v-6b2aa7e9], .ms-CommandButton-splitIcon[data-v-6b2aa7e9] { box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 14px; font-weight: 400; cursor: pointer; display: inline-block; height: 40px; line-height: 40px; outline: 1px solid transparent; padding: 0 8px; position: relative; vertical-align: top; background: transparent; } .ms-CommandButton-button[data-v-6b2aa7e9]:hover, .ms-CommandButton-splitIcon[data-v-6b2aa7e9]:hover { background-color: \"[theme:neutralLight, default: #eaeaea]\"; } .ms-CommandButton-button:hover .ms-CommandButton-label[data-v-6b2aa7e9], .ms-CommandButton-splitIcon:hover .ms-CommandButton-label[data-v-6b2aa7e9] { color: \"[theme:neutralDark, default: #212121]\"; } .ms-CommandButton-button[data-v-6b2aa7e9]:active, .ms-CommandButton-splitIcon[data-v-6b2aa7e9]:active { background-color: \"[theme:neutralLight, default: #eaeaea]\"; } .ms-CommandButton-button[data-v-6b2aa7e9]:focus::before, .ms-CommandButton-splitIcon[data-v-6b2aa7e9]:focus::before { top: 3px; left: 3px; right: 3px; bottom: 3px; border: 1px solid \"[theme:neutralPrimary, default: #333333]\"; position: absolute; z-index: 10; content: ''; outline: none; } .ms-CommandButton-button[data-v-6b2aa7e9]:focus, .ms-CommandButton-splitIcon[data-v-6b2aa7e9]:focus { outline: 0; } @media only screen and (max-width: 639px) { .ms-CommandButton-button[data-v-6b2aa7e9], .ms-CommandButton-splitIcon[data-v-6b2aa7e9] { height: 44px; } .ms-CommandButton-button .ms-CommandButton-icon[data-v-6b2aa7e9], .ms-CommandButton-splitIcon .ms-CommandButton-icon[data-v-6b2aa7e9] { font-size: 20px; } .ms-CommandButton-button .ms-CommandButton-label[data-v-6b2aa7e9], .ms-CommandButton-splitIcon .ms-CommandButton-label[data-v-6b2aa7e9] { line-height: 44px; } } .ms-CommandButton-button[data-v-6b2aa7e9] { border: 0; margin: 0; } .ms-CommandButton + .ms-CommandButton[data-v-6b2aa7e9] { margin-left: 8px; } @media only screen and (max-width: 639px) { .ms-CommandButton + .ms-CommandButton[data-v-6b2aa7e9] { margin-left: 4px; } } .ms-CommandButton-icon[data-v-6b2aa7e9] { display: inline-block; margin-right: 8px; position: relative; font-size: 16px; min-width: 16px; height: 100%; } .ms-CommandButton-icon .ms-Icon[data-v-6b2aa7e9] { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); } .ms-CommandButton-label[data-v-6b2aa7e9] { font-size: 14px; font-weight: 400; color: \"[theme:neutralPrimary, default: #333333]\"; line-height: 40px; height: 100%; display: inline-block; vertical-align: top; } .ms-CommandButton-label[data-v-6b2aa7e9]:hover { color: \"[theme:neutralDark, default: #212121]\"; } .ms-CommandButton-dropdownIcon[data-v-6b2aa7e9], .ms-CommandButton-splitIcon[data-v-6b2aa7e9] { display: inline-block; position: relative; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 12px; font-weight: 300; min-width: 12px; height: 100%; vertical-align: top; margin-left: 8px; } .ms-CommandButton-dropdownIcon .ms-Icon[data-v-6b2aa7e9], .ms-CommandButton-splitIcon .ms-Icon[data-v-6b2aa7e9] { line-height: normal; padding-top: 16px; } .ms-CommandButton-dropdownIcon[data-v-6b2aa7e9]:focus::before, .ms-CommandButton-splitIcon[data-v-6b2aa7e9]:focus::before { top: 3px; left: 3px; right: 3px; bottom: 3px; border: 1px solid \"[theme:neutralPrimary, default: #333333]\"; position: absolute; z-index: 10; content: ''; outline: none; } @media only screen and (max-width: 639px) { .ms-CommandButton-dropdownIcon[data-v-6b2aa7e9], .ms-CommandButton-splitIcon[data-v-6b2aa7e9] { display: none; } } .ms-CommandButton-splitIcon[data-v-6b2aa7e9] { margin-left: -2px; width: 27px; border: 0; } .ms-CommandButton-splitIcon .ms-Icon[data-v-6b2aa7e9] { margin-left: -1px; position: relative; padding-top: 16px; } .ms-CommandButton-splitIcon .ms-Icon[data-v-6b2aa7e9]::after { position: absolute; content: ' '; width: 1px; height: 16px; top: 12px; left: -8px; border-left: 1px solid \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; } .ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-icon[data-v-6b2aa7e9] { margin-right: 0; } .ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-label[data-v-6b2aa7e9] { display: none; } .ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-button[data-v-6b2aa7e9] { padding: 0 12px; } .ms-CommandButton.ms-CommandButton--inline .ms-CommandButton-button[data-v-6b2aa7e9] { background: none; } .ms-CommandButton.ms-CommandButton--actionButton .ms-CommandButton-button[data-v-6b2aa7e9] { width: 50px; height: 40px; } .ms-CommandButton.ms-CommandButton--actionButton .ms-CommandButton-icon[data-v-6b2aa7e9] { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 16px; height: 16px; padding-right: 0; } .ms-CommandButton.ms-CommandButton--pivot.is-active[data-v-6b2aa7e9]::before { content: ''; height: 2px; position: absolute; left: 0; right: 0; background-color: \"[theme:themePrimary, default: #0078d7]\"; bottom: 0; z-index: 5; } .ms-CommandButton.ms-CommandButton--pivot[data-v-6b2aa7e9]:hover::before { content: ''; height: 2px; position: absolute; left: 0; right: 0; background-color: \"[theme:themePrimary, default: #0078d7]\"; bottom: 0; z-index: 5; } .ms-CommandButton.ms-CommandButton--textOnly .ms-CommandButton-label[data-v-6b2aa7e9], .ms-CommandButton.ms-CommandButton--pivot .ms-CommandButton-label[data-v-6b2aa7e9] { display: inline-block; } @media only screen and (max-width: 479px) { .ms-CommandButton.ms-CommandButton--textOnly .ms-CommandButton-label[data-v-6b2aa7e9], .ms-CommandButton.ms-CommandButton--pivot .ms-CommandButton-label[data-v-6b2aa7e9] { font-size: 16px; } } ");},
-    computed: {
-        hasIcon: function hasIcon () {
-            return !!this.$slots['icon']
-        }
-    },
-    beforeMount: function beforeMount(){ 
-        this.$fabric = { 
-            CommandButton : CommandButton$1 
-        }; 
-    },
-    extends :  commandbutton
-}
-
-var link = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('a',{staticClass:"ms-Link",attrs:{"href":_vm.href,"title":_vm.title},on:{"click":_vm.clickEvent}},[_vm._t("default")],2)},staticRenderFns: [],
-  name: 'ou-link',
-
-  props: {
-    href: String,
-    title: String,
-  },
-
-  methods: {
-    clickEvent: function clickEvent() {
-      this.$emit('click');
-    }
-  }
-};
-
-var uiLink = {_scopeId: 'data-v-078cc59e',
-    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-Link[data-v-078cc59e] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; font-weight: 400; color: \"[theme:themePrimary, default: #0078d7]\"; text-decoration: none; cursor: pointer; outline: none; } .ms-Link[data-v-078cc59e]:hover, .ms-Link[data-v-078cc59e]:focus { color: \"[theme:themeDarker, default: #004578]\"; } .ms-Link[data-v-078cc59e]:active { color: \"[theme:themePrimary, default: #0078d7]\"; } ");},
-    extends :  link
 }
 
 var pivot = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"pivot",staticClass:"ms-Pivot",class:_vm.pivotClass},[_c('ul',{staticClass:"ms-Pivot-links"},_vm._l((_vm.pivotItems),function(item,index){return _c('li',{staticClass:"ms-Pivot-link",class:{ 'is-selected': index == 0 },attrs:{"tabindex":"1","data-content":item,"title":item}},[_vm._v(" "+_vm._s(item)+" ")])})),_vm._v(" "),_vm._t("default")],2)},staticRenderFns: [],
@@ -3594,88 +3345,400 @@ var uiPivotItem = {
     extends :  PivotItem
 }
 
-var List = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('ul',{ref:"list",staticClass:"ms-List"},[_vm._t("default")],2)},staticRenderFns: [],
-  name: 'ou-list'
-};
+var searchBox = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"searchBox",staticClass:"ms-SearchBox",class:_vm.searchBoxClass},[_c('input',{ref:"searchBoxInput",staticClass:"ms-SearchBox-field",attrs:{"type":"text"},domProps:{"value":_vm.value},on:{"input":_vm.updateValue}}),_vm._v(" "),_c('label',{staticClass:"ms-SearchBox-label"},[_c('i',{staticClass:"ms-SearchBox-icon ms-Icon ms-Icon--Search"}),_vm._v(" "),(!_vm.hasValue)?_c('span',{staticClass:"ms-SearchBox-text"},[_vm._v(_vm._s(_vm.placeholder))]):_vm._e()]),_vm._v(" "),_c('div',{staticClass:"ms-CommandButton ms-SearchBox-clear ms-CommandButton--noLabel",on:{"mousedown":_vm.clearValue}},[_vm._m(0)])])},staticRenderFns: [function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('button',{staticClass:"ms-CommandButton-button"},[_c('span',{staticClass:"ms-CommandButton-icon"},[_c('i',{staticClass:"ms-Icon ms-Icon--Clear"})]),_vm._v(" "),_c('span',{staticClass:"ms-CommandButton-label"})])}],
+  name: 'ou-search-box',
 
-var uiList = {_scopeId: 'data-v-1093d442',
-    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-List[data-v-1093d442] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 14px; font-weight: 400; list-style-type: none; } ");},
-    extends :  List
-}
-
-var ListItem = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('li',{ref:"listItem",staticClass:"ms-ListItem",class:_vm.listItemClass,on:{"click":_vm.clickEvent}},[(_vm.type == 'image')?_c('img',{staticClass:"ms-ListItem-image",attrs:{"src":_vm.imageSrc}}):_vm._e(),_vm._v(" "),(_vm.primaryText)?_c('span',{staticClass:"ms-ListItem-primaryText"},[_vm._v(_vm._s(_vm.primaryText))]):_vm._e(),_vm._v(" "),(_vm.secondaryText)?_c('span',{staticClass:"ms-ListItem-secondaryText"},[_vm._v(_vm._s(_vm.secondaryText))]):_vm._e(),_vm._v(" "),(_vm.tertiaryText)?_c('span',{staticClass:"ms-ListItem-tertiaryText"},[_vm._v(_vm._s(_vm.tertiaryText))]):_vm._e(),_vm._v(" "),(_vm.metaText)?_c('span',{staticClass:"ms-ListItem-metaText"},[_vm._v(_vm._s(_vm.metaText))]):_vm._e(),_vm._v(" "),(_vm.isSelectable)?_c('div',{staticClass:"ms-ListItem-selectionTarget",on:{"click":function($event){$event.stopPropagation();return _vm.toggle($event)}}}):_vm._e(),_vm._v(" "),_vm._t("default")],2)},staticRenderFns: [],
-  name: 'ou-list-item',
-
-  mixins: [type('image', 'document')],
+  mixins: [type('commandBar')],
 
   props: {
-    isUnread: Boolean,
-    isSelectable: Boolean,
-    isUnseen: Boolean,
-    value: Boolean,
+    value: String,
+    placeholder: String,
 
-    imageSrc: String,
-    primaryText: String,
-    secondaryText: String,
-    tertiaryText: String,
-    metaText: String
+    collapsed: {
+      type: Boolean,
+      default: false
+    }
+  },
+
+  data: function data() {
+    return {
+      hasValue: !!this.value,
+      searchBoxInstance: null
+    };
   },
 
   computed: {
-    listItemClass: function listItemClass() {
+    searchBoxClass: function searchBoxClass() {
       var obj;
 
-      return ( obj = {}, obj[("ms-ListItem--" + (this.type))] = !!this.type, obj['is-selectable'] =  this.isSelectable, obj['is-selected'] =  this.value, obj['is-unread'] =  this.isUnread, obj['is-unseen'] =  this.isUnseen, obj );
+      return ( obj = {}, obj[("ms-SearchBox--" + (this.type))] = !!this.type, obj['is-collapsed'] =  this.collapsed, obj );
     }
+  },
+
+  mounted: function mounted() {
+    this.searchBoxInstance = new this.$fabric.SearchBox(this.$refs.searchBox);
+
+    // Overwrite the default blur event on searchBoxField
+    // to prevent lose content when searchBox blur.
+    // You can see here https://github.com/OfficeDev/office-ui-fabric-js/issues/301
+    this.searchBoxInstance._searchBoxField.removeEventListener('blur', this.searchBoxInstance._boundHandleBlur, true);
+    this.searchBoxInstance._searchBoxField.addEventListener('blur', this.blurEvent, true);
+  },
+
+  methods: {
+    updateValue: function updateValue(event) {
+      this.$emit('input', event.target.value);
+    },
+
+    clearValue: function clearValue() {
+      this.$emit('input', '');
+    },
+
+    blurEvent: function blurEvent() {
+      var self = this.searchBoxInstance;
+
+      if (!self._clearOnly) {
+        self._searchBox.removeEventListener('keyup', self._boundEnableClose);
+        setTimeout(function () {
+          if (!self._searchBox.contains(document.activeElement) && self._searchBoxField.value == '') {
+            self._clearSearchBox();
+            self._collapseSearchBox();
+            self.setCollapsedListeners();
+          }
+        }, 10);
+      } else {
+        self._searchBoxField.focus();
+      }
+
+      self._clearOnly = false;
+    }
+  }
+};
+
+var uiSearchbox = {_scopeId: 'data-v-880410a2',
+    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-Label[data-v-880410a2] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 12px; font-weight: 400; box-sizing: border-box; display: block; padding: 5px 0; } .ms-Label.is-required[data-v-880410a2]::after { content: ' *'; color: \"[theme:error, default: #a80000]\"; } .ms-Label.is-disabled[data-v-880410a2] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } /* searchbox uses mixins from label */ .ms-CommandButton[data-v-880410a2] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; display: inline-block; position: relative; vertical-align: top; } .ms-CommandButton.is-hidden[data-v-880410a2] { display: none; } .ms-CommandButton:disabled .ms-CommandButton-button[data-v-880410a2], .ms-CommandButton.is-disabled .ms-CommandButton-button[data-v-880410a2] { cursor: default; } .ms-CommandButton:disabled .ms-CommandButton-button[data-v-880410a2]:hover, .ms-CommandButton.is-disabled .ms-CommandButton-button[data-v-880410a2]:hover { background-color: \"[theme:themeLighterAlt, default: #eff6fc]\"; } .ms-CommandButton:disabled .ms-CommandButton-button .ms-CommandButton-label[data-v-880410a2], .ms-CommandButton.is-disabled .ms-CommandButton-button .ms-CommandButton-label[data-v-880410a2] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-CommandButton:disabled .ms-CommandButton-button .ms-CommandButton-icon[data-v-880410a2], .ms-CommandButton.is-disabled .ms-CommandButton-button .ms-CommandButton-icon[data-v-880410a2] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-CommandButton .ms-ContextualMenu[data-v-880410a2] { display: none; } .ms-CommandButton-button[data-v-880410a2], .ms-CommandButton-splitIcon[data-v-880410a2] { box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 14px; font-weight: 400; cursor: pointer; display: inline-block; height: 40px; line-height: 40px; outline: 1px solid transparent; padding: 0 8px; position: relative; vertical-align: top; background: transparent; } .ms-CommandButton-button[data-v-880410a2]:hover, .ms-CommandButton-splitIcon[data-v-880410a2]:hover { background-color: \"[theme:neutralLight, default: #eaeaea]\"; } .ms-CommandButton-button:hover .ms-CommandButton-label[data-v-880410a2], .ms-CommandButton-splitIcon:hover .ms-CommandButton-label[data-v-880410a2] { color: \"[theme:neutralDark, default: #212121]\"; } .ms-CommandButton-button[data-v-880410a2]:active, .ms-CommandButton-splitIcon[data-v-880410a2]:active { background-color: \"[theme:neutralLight, default: #eaeaea]\"; } .ms-CommandButton-button[data-v-880410a2]:focus::before, .ms-CommandButton-splitIcon[data-v-880410a2]:focus::before { top: 3px; left: 3px; right: 3px; bottom: 3px; border: 1px solid \"[theme:neutralPrimary, default: #333333]\"; position: absolute; z-index: 10; content: ''; outline: none; } .ms-CommandButton-button[data-v-880410a2]:focus, .ms-CommandButton-splitIcon[data-v-880410a2]:focus { outline: 0; } @media only screen and (max-width: 639px) { .ms-CommandButton-button[data-v-880410a2], .ms-CommandButton-splitIcon[data-v-880410a2] { height: 44px; } .ms-CommandButton-button .ms-CommandButton-icon[data-v-880410a2], .ms-CommandButton-splitIcon .ms-CommandButton-icon[data-v-880410a2] { font-size: 20px; } .ms-CommandButton-button .ms-CommandButton-label[data-v-880410a2], .ms-CommandButton-splitIcon .ms-CommandButton-label[data-v-880410a2] { line-height: 44px; } } .ms-CommandButton-button[data-v-880410a2] { border: 0; margin: 0; } .ms-CommandButton + .ms-CommandButton[data-v-880410a2] { margin-left: 8px; } @media only screen and (max-width: 639px) { .ms-CommandButton + .ms-CommandButton[data-v-880410a2] { margin-left: 4px; } } .ms-CommandButton-icon[data-v-880410a2] { display: inline-block; margin-right: 8px; position: relative; font-size: 16px; min-width: 16px; height: 100%; } .ms-CommandButton-icon .ms-Icon[data-v-880410a2] { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); } .ms-CommandButton-label[data-v-880410a2] { font-size: 14px; font-weight: 400; color: \"[theme:neutralPrimary, default: #333333]\"; line-height: 40px; height: 100%; display: inline-block; vertical-align: top; } .ms-CommandButton-label[data-v-880410a2]:hover { color: \"[theme:neutralDark, default: #212121]\"; } .ms-CommandButton-dropdownIcon[data-v-880410a2], .ms-CommandButton-splitIcon[data-v-880410a2] { display: inline-block; position: relative; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 12px; font-weight: 300; min-width: 12px; height: 100%; vertical-align: top; margin-left: 8px; } .ms-CommandButton-dropdownIcon .ms-Icon[data-v-880410a2], .ms-CommandButton-splitIcon .ms-Icon[data-v-880410a2] { line-height: normal; padding-top: 16px; } .ms-CommandButton-dropdownIcon[data-v-880410a2]:focus::before, .ms-CommandButton-splitIcon[data-v-880410a2]:focus::before { top: 3px; left: 3px; right: 3px; bottom: 3px; border: 1px solid \"[theme:neutralPrimary, default: #333333]\"; position: absolute; z-index: 10; content: ''; outline: none; } @media only screen and (max-width: 639px) { .ms-CommandButton-dropdownIcon[data-v-880410a2], .ms-CommandButton-splitIcon[data-v-880410a2] { display: none; } } .ms-CommandButton-splitIcon[data-v-880410a2] { margin-left: -2px; width: 27px; border: 0; } .ms-CommandButton-splitIcon .ms-Icon[data-v-880410a2] { margin-left: -1px; position: relative; padding-top: 16px; } .ms-CommandButton-splitIcon .ms-Icon[data-v-880410a2]::after { position: absolute; content: ' '; width: 1px; height: 16px; top: 12px; left: -8px; border-left: 1px solid \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; } .ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-icon[data-v-880410a2] { margin-right: 0; } .ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-label[data-v-880410a2] { display: none; } .ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-button[data-v-880410a2] { padding: 0 12px; } .ms-CommandButton.ms-CommandButton--inline .ms-CommandButton-button[data-v-880410a2] { background: none; } .ms-CommandButton.ms-CommandButton--actionButton .ms-CommandButton-button[data-v-880410a2] { width: 50px; height: 40px; } .ms-CommandButton.ms-CommandButton--actionButton .ms-CommandButton-icon[data-v-880410a2] { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 16px; height: 16px; padding-right: 0; } .ms-CommandButton.ms-CommandButton--pivot.is-active[data-v-880410a2]::before { content: ''; height: 2px; position: absolute; left: 0; right: 0; background-color: \"[theme:themePrimary, default: #0078d7]\"; bottom: 0; z-index: 5; } .ms-CommandButton.ms-CommandButton--pivot[data-v-880410a2]:hover::before { content: ''; height: 2px; position: absolute; left: 0; right: 0; background-color: \"[theme:themePrimary, default: #0078d7]\"; bottom: 0; z-index: 5; } .ms-CommandButton.ms-CommandButton--textOnly .ms-CommandButton-label[data-v-880410a2], .ms-CommandButton.ms-CommandButton--pivot .ms-CommandButton-label[data-v-880410a2] { display: inline-block; } @media only screen and (max-width: 479px) { .ms-CommandButton.ms-CommandButton--textOnly .ms-CommandButton-label[data-v-880410a2], .ms-CommandButton.ms-CommandButton--pivot .ms-CommandButton-label[data-v-880410a2] { font-size: 16px; } } /* searchbox uses classes from CommandButton */ .ms-SearchBox[data-v-880410a2] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; height: 36px; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 14px; font-weight: 400; position: relative; margin-bottom: 10px; display: inline-block; overflow: hidden; background-color: \"[theme:white, default: #ffffff]\"; } .ms-SearchBox.is-active[data-v-880410a2] { z-index: 10; } .ms-SearchBox.is-active .ms-SearchBox-label[data-v-880410a2] { display: none; } .ms-SearchBox.is-active .ms-SearchBox-clear[data-v-880410a2] { display: block; } .ms-SearchBox[data-v-880410a2]:hover { background-color: \"[theme:themeLighter, default: #deecf9]\"; } .ms-SearchBox:hover .ms-SearchBox-label[data-v-880410a2] { color: \"[theme:black, default: #000000]\"; } .ms-SearchBox:hover .ms-SearchBox-label .ms-Icon[data-v-880410a2] { color: \"[theme:neutralPrimary, default: #333333]\"; } .ms-SearchBox.is-disabled[data-v-880410a2] { background-color: #F4F4F4; pointer-events: none; } .ms-SearchBox.is-disabled .ms-SearchBox-label[data-v-880410a2] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-SearchBox.is-disabled .ms-SearchBox-icon[data-v-880410a2] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-SearchBox.is-disabled .ms-SearchBox-field[data-v-880410a2] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; background-color: transparent; border-color: \"[theme:neutralLighter, default: #f4f4f4]\"; cursor: default; } .ms-SearchBox-clear[data-v-880410a2] { display: none; position: absolute; top: 0; right: 0; z-index: 10; } .ms-SearchBox-clear .ms-CommandButton-button[data-v-880410a2] { background-color: \"[theme:themePrimary, default: #0078d7]\"; color: \"[theme:white, default: #ffffff]\"; height: 36px; } .ms-SearchBox-clear .ms-CommandButton-icon[data-v-880410a2] { color: \"[theme:white, default: #ffffff]\"; } .ms-SearchBox-icon[data-v-880410a2] { position: relative; top: 50%; transform: translateY(-50%); display: inline-block; font-size: 16px; width: 16px; margin-left: 12px; margin-right: 6px; color: \"[theme:themePrimary, default: #0078d7]\"; vertical-align: top; } .ms-SearchBox-field[data-v-880410a2] { position: relative; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; border: 1px solid \"[theme:themeTertiary, default: #71afe5]\"; outline: transparent 1px solid; font-weight: 300; font-size: 14px; color: \"[theme:black, default: #000000]\"; height: 36px; padding: 6px 3px 7px 45px; width: 208px; background-color: transparent; z-index: 5; transition: padding-left 0.167s; } .ms-SearchBox-field[data-v-880410a2]:focus { padding: 6px 32px 7px 10px; border-color: \"[theme:themePrimary, default: #0078d7]\"; background-color: \"[theme:themeLighter, default: #deecf9]\"; } .ms-SearchBox-field[data-v-880410a2]::-ms-clear { display: none; } .ms-SearchBox-label[data-v-880410a2] { position: absolute; top: 0; left: 0; height: 36px; line-height: 36px; color: \"[theme:neutralSecondary, default: #666666]\"; } .ms-SearchBox.ms-SearchBox--commandBar[data-v-880410a2] { background-color: \"[theme:white, default: #ffffff]\"; width: 208px; height: 40px; } .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-field[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-label[data-v-880410a2] { height: 40px; } .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-field[data-v-880410a2] { transition: none; border: 0; } .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-field[data-v-880410a2]:focus { background-color: transparent; padding: 6px 3px 7px 45px; } .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-clear[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-filter[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-exit[data-v-880410a2] { display: none; position: absolute; top: 0; z-index: 10; color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-clear .ms-CommandButton-button[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-filter .ms-CommandButton-button[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-exit .ms-CommandButton-button[data-v-880410a2] { height: 40px; background-color: transparent; } .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-clear[data-v-880410a2] { right: 8px; } .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-filter[data-v-880410a2] { right: 8px; } .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-filter .ms-CommandButton-icon[data-v-880410a2] { color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-SearchBox.ms-SearchBox--commandBar[data-v-880410a2]::before { position: absolute; content: ' '; right: 0; bottom: 0; left: 0; margin: 0 8px; border-bottom: 1px solid \"[theme:neutralLight, default: #eaeaea]\"; } .ms-SearchBox.ms-SearchBox--commandBar[data-v-880410a2]:hover { background-color: \"[theme:white, default: #ffffff]\"; } .ms-SearchBox.ms-SearchBox--commandBar:hover .ms-SearchBox-label[data-v-880410a2] { color: \"[theme:neutralDark, default: #212121]\"; } .ms-SearchBox.ms-SearchBox--commandBar:hover .ms-SearchBox-icon[data-v-880410a2] { color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-SearchBox.ms-SearchBox--commandBar[data-v-880410a2]:focus { background-color: transparent; } .ms-SearchBox.ms-SearchBox--commandBar.is-active .ms-CommandButton .ms-SearchBox-exit[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar.is-active .ms-CommandButton .ms-SearchBox-filter[data-v-880410a2] { display: block; } .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed[data-v-880410a2] { width: 50px; min-height: 40px; z-index: 0; background-color: #F4F4F4; } .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed .ms-SearchBox-text[data-v-880410a2] { display: none; } .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed .ms-SearchBox-field[data-v-880410a2] { cursor: pointer; width: calc(100% - 50px); } .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed[data-v-880410a2]::before { visibility: hidden; } .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active[data-v-880410a2] { width: 100%; } .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active .ms-SearchBox-field[data-v-880410a2] { display: block; cursor: text; } .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active .ms-SearchBox-text[data-v-880410a2] { display: inline-block; } @media only screen and (max-width: 639px) { .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active[data-v-880410a2] { width: 100%; } .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active .ms-SearchBox-clear[data-v-880410a2] { display: inline-block; right: 58px; } .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active .ms-SearchBox-filter[data-v-880410a2] { display: inline-block; } .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active.is-animated[data-v-880410a2] { transition: width 0.167s cubic-bezier(0.1, 0.9, 0.2, 1); } } .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active[data-v-880410a2]::before { visibility: visible; } .ms-SearchBox.ms-SearchBox--commandBar.has-text .ms-SearchBox-clear[data-v-880410a2] { display: inline-block; } .ms-SearchBox.ms-SearchBox--commandBar.has-text .ms-SearchBox-clear .ms-CommandButton-icon[data-v-880410a2] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-SearchBox.ms-SearchBox--commandBar.has-text .ms-SearchBox-clear .ms-CommandButton-icon[data-v-880410a2]:active { color: \"[theme:themePrimary, default: #0078d7]\"; } @media only screen and (min-width: 1024px) { .ms-SearchBox.ms-SearchBox--commandBar[data-v-880410a2] { background-color: \"[theme:white, default: #ffffff]\"; border-right: 1px solid \"[theme:neutralLight, default: #eaeaea]\"; } } @media only screen and (max-width: 639px) { .ms-SearchBox.ms-SearchBox--commandBar[data-v-880410a2] { height: 44px; } .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-icon[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-exit[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-field[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-label[data-v-880410a2] { height: 44px; line-height: 44px; } .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-icon[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-exit[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-filter[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-clear[data-v-880410a2] { font-size: 20px; } .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-icon .ms-CommandButton-button[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-exit .ms-CommandButton-button[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-filter .ms-CommandButton-button[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-clear .ms-CommandButton-button[data-v-880410a2] { height: 44px; } .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-field[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-label[data-v-880410a2] { font-size: 16px; } } .ms-SearchBox.ms-SearchBox--commandBar.is-active[data-v-880410a2] { background-color: \"[theme:white, default: #ffffff]\"; } .ms-SearchBox.ms-SearchBox--commandBar.is-active .ms-SearchBox-label[data-v-880410a2] { display: block; line-height: 40px; height: 40px; } .ms-SearchBox.ms-SearchBox--commandBar.is-active .ms-SearchBox-label .ms-SearchBox-text[data-v-880410a2] { display: none; } .ms-SearchBox.ms-SearchBox--commandBar.is-active[data-v-880410a2]::before { visibility: visible; } @media only screen and (max-width: 639px) { .ms-SearchBox.ms-SearchBox--commandBar.is-active .ms-SearchBox-field[data-v-880410a2] { width: 100%; padding-right: 100px; } .ms-SearchBox.ms-SearchBox--commandBar.is-active .ms-SearchBox-icon[data-v-880410a2] { display: none; } .ms-SearchBox.ms-SearchBox--commandBar.is-active .ms-SearchBox-exit[data-v-880410a2] { display: inline-block; } .ms-SearchBox.ms-SearchBox--commandBar.is-active.has-text .ms-SearchBox-filter .ms-CommandButton-icon[data-v-880410a2] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } } .ms-Icon.ms-Icon--Search[data-v-880410a2] { content: url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"16\" height=\"16\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path fill=\"#0078d7\" stroke=\"none\" transform=\"translate(0, 2048) scale(1, -1)\" d=\"M1344 2048q97 0 187 -25t168 -71t142.5 -110.5t110.5 -142.5t71 -168t25 -187t-25 -187t-71 -168t-110.5 -142.5t-142.5 -110.5t-168 -71t-187 -25q-125 0 -239.5 42t-210.5 121l-785 -784q-19 -19 -45 -19t-45 19t-19 45t19 45l784 785q-79 96 -121 210.5t-42 239.5q0 97 25 187t71 168t110.5 142.5t142.5 110.5t168 71t187 25zM1344 768q119 0 224 45.5t183 123.5t123.5 183t45.5 224t-45.5 224t-123.5 183t-183 123.5t-224 45.5t-224 -45.5t-183 -123.5t-123.5 -183t-45.5 -224t45.5 -224t123.5 -183t183 -123.5t224 -45.5z\"/></svg>'); } .ms-Icon.ms-Icon--Clear[data-v-880410a2] { content: url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"14\" height=\"14\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path fill=\"white\" stroke=\"none\" d=\"M1115 1024l914 -915l-90 -90l-915 914l-915 -914l-90 90l914 915l-914 915l90 90l915 -914l915 914l90 -90z\"/></svg>'); } .ms-SearchBox--commandBar .ms-Icon.ms-Icon--Clear[data-v-880410a2] { content: url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"14\" height=\"14\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path fill=\"#a6a6a6\" stroke=\"none\" d=\"M1115 1024l914 -915l-90 -90l-915 914l-915 -914l-90 90l914 915l-914 915l90 90l915 -914l915 914l90 -90z\"/></svg>'); } ");},
+    beforeMount: function beforeMount(){
+        this.$fabric = {
+            SearchBox : SearchBox
+        };
+    },
+    extends :  searchBox
+}
+
+var Spinner = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"spinner",staticClass:"ms-Spinner",class:_vm.spinnerClass},[(_vm.label)?_c('div',{staticClass:"ms-Spinner-label"},[_vm._v(_vm._s(_vm.label))]):_vm._e()])},staticRenderFns: [],
+  name: 'ou-spinner',
+
+  mixins: [type('large')],
+
+  props: {
+    label: String
+  },
+
+  computed: {
+    spinnerClass: function spinnerClass() {
+      var obj;
+
+      return ( obj = {}, obj[("ms-Spinner--" + (this.type))] = !!this.type, obj );
+    }
+  },
+
+  mounted: function mounted() {
+    new this.$fabric.Spinner(this.$refs.spinner);
+  }
+};
+
+var CircleObject = (function () {
+    function CircleObject(element, j) {
+        this.element = element;
+        this.j = j;
+    }
+    return CircleObject;
+}());
+var Spinner$1 = (function () {
+    function Spinner(container) {
+        this.eightSize = 0.2;
+        this.animationSpeed = 90;
+        this.parentSize = 20;
+        this.fadeIncrement = 0;
+        this.circleObjects = [];
+        this._target = container;
+        this._init();
+    }
+    Spinner.prototype.start = function () {
+        var _this = this;
+        this.stop();
+        this.interval = setInterval(function () {
+            var i = _this.circleObjects.length;
+            while (i--) {
+                _this._fade(_this.circleObjects[i]);
+            }
+        }, this.animationSpeed);
+    };
+    Spinner.prototype.stop = function () {
+        clearInterval(this.interval);
+    };
+    Spinner.prototype._init = function () {
+        this._setTargetElement();
+        this._setPropertiesForSize();
+        this._createCirclesAndArrange();
+        this._initializeOpacities();
+        this.start();
+    };
+    Spinner.prototype._setPropertiesForSize = function () {
+        if (this.spinner.className.indexOf("large") > -1) {
+            this.parentSize = 28;
+            this.eightSize = 0.179;
+        }
+        this.offsetSize = this.eightSize;
+        this.numCircles = 8;
+    };
+    Spinner.prototype._setTargetElement = function () {
+        if (this._target.className.indexOf("ms-Spinner") === -1) {
+            this.spinner = document.createElement("div");
+            this.spinner.className = "ms-Spinner";
+            this._target.appendChild(this.spinner);
+        }
+        else {
+            this.spinner = this._target;
+        }
+    };
+    Spinner.prototype._initializeOpacities = function () {
+        var this$1 = this;
+
+        var i = 0;
+        var j = 1;
+        var opacity;
+        this.fadeIncrement = 1 / this.numCircles;
+        for (i; i < this.numCircles; i++) {
+            var circleObject = this$1.circleObjects[i];
+            opacity = (this$1.fadeIncrement * j++);
+            this$1._setOpacity(circleObject.element, opacity);
+        }
+    };
+    Spinner.prototype._fade = function (circleObject) {
+        var opacity = this._getOpacity(circleObject.element) - this.fadeIncrement;
+        if (opacity <= 0) {
+            opacity = 1;
+        }
+        this._setOpacity(circleObject.element, opacity);
+    };
+    Spinner.prototype._getOpacity = function (element) {
+        return parseFloat(window.getComputedStyle(element).getPropertyValue("opacity"));
+    };
+    Spinner.prototype._setOpacity = function (element, opacity) {
+        element.style.opacity = opacity.toString();
+    };
+    Spinner.prototype._createCircle = function () {
+        var circle = document.createElement("div");
+        circle.className = "ms-Spinner-circle";
+        circle.style.width = circle.style.height = this.parentSize * this.offsetSize + "px";
+        return circle;
+    };
+    Spinner.prototype._createCirclesAndArrange = function () {
+        var this$1 = this;
+
+        var angle = 0;
+        var offset = this.parentSize * this.offsetSize;
+        var step = (2 * Math.PI) / this.numCircles;
+        var i = this.numCircles;
+        var circleObject;
+        var radius = (this.parentSize - offset) * 0.5;
+        while (i--) {
+            var circle = this$1._createCircle();
+            var x = Math.round(this$1.parentSize * 0.5 + radius * Math.cos(angle) - circle.clientWidth * 0.5) - offset * 0.5;
+            var y = Math.round(this$1.parentSize * 0.5 + radius * Math.sin(angle) - circle.clientHeight * 0.5) - offset * 0.5;
+            this$1.spinner.appendChild(circle);
+            circle.style.left = x + "px";
+            circle.style.top = y + "px";
+            angle += step;
+            circleObject = new CircleObject(circle, i);
+            this$1.circleObjects.push(circleObject);
+        }
+    };
+    return Spinner;
+}());
+
+var uiSpinner = {_scopeId: 'data-v-74b796b6',
+    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-Spinner[data-v-74b796b6] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; position: relative; height: 20px; } .ms-Spinner.ms-Spinner--large[data-v-74b796b6] { height: 28px; } .ms-Spinner.ms-Spinner--large .ms-Spinner-label[data-v-74b796b6] { left: 34px; top: 6px; } .ms-Spinner-circle[data-v-74b796b6] { position: absolute; border-radius: 100px; background-color: \"[theme:themePrimary, default: #0078d7]\"; opacity: 0; } @media screen and (-ms-high-contrast: active) { .ms-Spinner-circle[data-v-74b796b6] { background-color: \"[theme:white, default: #ffffff]\"; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-Spinner-circle[data-v-74b796b6] { background-color: \"[theme:black, default: #000000]\"; } } .ms-Spinner-label[data-v-74b796b6] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; position: relative; font-size: 12px; font-weight: 400; color: \"[theme:themePrimary, default: #0078d7]\"; left: 28px; top: 2px; } ");},
+    beforeMount: function beforeMount(){
+        this.$fabric = {
+            Spinner : Spinner$1
+        };
+    },
+    mounted: function mounted() {
+        var this$1 = this;
+
+        // console.log("spin", this.$refs.spinner);
+        var childs = this.$refs.spinner.querySelectorAll(":not([" + this.$options._scopeId + "])");
+        Array.from(childs).map(function (c){ return c.setAttribute(this$1.$options._scopeId, ""); });
+    },
+    extends :  Spinner
+}
+
+var textField = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"textField",staticClass:"ms-TextField",class:_vm.textFieldClass},[_c('label',{staticClass:"ms-Label"},[_vm._v(_vm._s(_vm.label))]),_vm._v(" "),(_vm.type == 'multiline')?_c('textarea',{staticClass:"ms-TextField-field",attrs:{"placeholder":_vm.placeholder,"type":"text","disabled":_vm.disabled},domProps:{"value":_vm.value},on:{"input":_vm.updateValue,"change":_vm.changeEvent}}):_c('input',{staticClass:"ms-TextField-field",attrs:{"placeholder":_vm.placeholder,"type":_vm.inputType,"disabled":_vm.disabled},domProps:{"value":_vm.value},on:{"input":_vm.updateValue,"change":_vm.changeEvent}})])},staticRenderFns: [],
+  name: 'ou-text-field',
+
+  mixins: [type('multiline', 'underlined'), disabled],
+
+  props: {
+    value: String,
+    label: String,
+    placeholder: String,
+    inputType: {
+      type: String,
+      default: 'text',
+      validator: function validator(value) {
+        return ['text', 'password', 'file'].includes(value);
+      }
+    }
+  },
+
+  computed: {
+    textFieldClass: function textFieldClass() {
+      var obj;
+
+      return ( obj = {}, obj[("ms-TextField--" + (this.type))] = !!this.type, obj['is-disabled'] =  this.disabled, obj );
+    }
+  },
+
+  mounted: function mounted() {
+    new this.$fabric.TextField(this.$refs.textField);
+  },
+
+  methods: {
+    updateValue: function updateValue(event) {
+      this.$emit('input', event.target.value);
+    },
+
+    changeEvent: function changeEvent(event) {
+      this.$emit('change', event.target.value);
+    }
+  }
+};
+
+var TextFieldConsts;
+(function (TextFieldConsts) {
+    var Type;
+    (function (Type) {
+        Type[Type["Placeholder"] = 0] = "Placeholder";
+        Type[Type["Underlined"] = 1] = "Underlined";
+    })(Type = TextFieldConsts.Type || (TextFieldConsts.Type = {}));
+})(TextFieldConsts || (TextFieldConsts = {}));
+var TextField = (function () {
+    function TextField(container) {
+        this._container = container;
+        this._type = [];
+        this._textField = this._container.querySelector(".ms-TextField-field");
+        this._textFieldLabel = this._container.querySelector(".ms-Label");
+        this._setTextFieldType();
+        this._addListeners();
+    }
+    TextField.prototype._setTextFieldType = function () {
+        if (this._container.classList.contains("ms-TextField--placeholder")) {
+            this._type.push(TextFieldConsts.Type.Placeholder);
+        }
+        if (this._container.classList.contains("ms-TextField--underlined")) {
+            this._type.push(TextFieldConsts.Type.Underlined);
+        }
+    };
+    TextField.prototype._addListeners = function () {
+        var _this = this;
+        this._textFieldLabel.addEventListener("click", function (event) {
+            _this._textField.focus();
+        });
+        if (this._type.indexOf(TextFieldConsts.Type.Placeholder) >= 0) {
+            this._textField.addEventListener("focus", function (event) {
+                _this._textFieldLabel.style.display = "none";
+            });
+            this._textField.addEventListener("blur", function (event) {
+                if (_this._textField.value.length === 0) {
+                    _this._textFieldLabel.style.display = "block";
+                }
+            });
+        }
+        if (this._type.indexOf(TextFieldConsts.Type.Underlined) >= 0) {
+            this._textField.addEventListener("focus", function (event) {
+                _this._container.classList.add("is-active");
+            });
+            this._textField.addEventListener("blur", function (event) {
+                _this._container.classList.remove("is-active");
+            });
+        }
+    };
+    return TextField;
+}());
+
+var uiTextfield = {_scopeId: 'data-v-9e6e890e',
+    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-Label[data-v-9e6e890e] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 12px; font-weight: 400; box-sizing: border-box; display: block; padding: 5px 0; } .ms-Label.is-required[data-v-9e6e890e]::after { content: ' *'; color: \"[theme:error, default: #a80000]\"; } .ms-Label.is-disabled[data-v-9e6e890e] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-TextField[data-v-9e6e890e] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 14px; font-weight: 400; margin-bottom: 8px; } .ms-TextField .ms-Label[data-v-9e6e890e] { font-size: 14px; font-weight: 600; } .ms-TextField.is-disabled .ms-TextField-field[data-v-9e6e890e] { background-color: \"[theme:neutralLighter, default: #f4f4f4]\"; border-color: \"[theme:neutralLighter, default: #f4f4f4]\"; pointer-events: none; cursor: default; } .ms-TextField.is-disabled[data-v-9e6e890e]::-webkit-input-placeholder { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-TextField.is-disabled[data-v-9e6e890e]::-moz-placeholder { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-TextField.is-disabled[data-v-9e6e890e]:-moz-placeholder { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-TextField.is-disabled[data-v-9e6e890e]:-ms-input-placeholder { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-TextField.is-required .ms-Label[data-v-9e6e890e]::after { content: ' *'; color: \"[theme:error, default: #a80000]\"; } .ms-TextField.is-required[data-v-9e6e890e]::-webkit-input-placeholder::after { content: ' *'; color: \"[theme:error, default: #a80000]\"; } .ms-TextField.is-required[data-v-9e6e890e]::-moz-placeholder::after { content: ' *'; color: \"[theme:error, default: #a80000]\"; } .ms-TextField.is-required[data-v-9e6e890e]:-moz-placeholder::after { content: ' *'; color: \"[theme:error, default: #a80000]\"; } .ms-TextField.is-required[data-v-9e6e890e]:-ms-input-placeholder::after { content: ' *'; color: \"[theme:error, default: #a80000]\"; } .ms-TextField.is-active[data-v-9e6e890e] { border-color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-TextField-field[data-v-9e6e890e] { box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; border: 1px solid \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; border-radius: 0; font-weight: 300; font-size: 14px; color: \"[theme:neutralPrimary, default: #333333]\"; height: 32px; padding: 6px 12px 7px; width: 100%; min-width: 180px; outline: 0; text-overflow: ellipsis; } .ms-TextField-field[data-v-9e6e890e]:hover { border-color: \"[theme:neutralSecondaryAlt, default: #767676]\"; } .ms-TextField-field[data-v-9e6e890e]:focus { border-color: \"[theme:themePrimary, default: #0078d7]\"; } @media screen and (-ms-high-contrast: active) { .ms-TextField-field[data-v-9e6e890e]:hover, .ms-TextField-field[data-v-9e6e890e]:focus { border-color: #1AEBFF; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-TextField-field[data-v-9e6e890e]:hover, .ms-TextField-field[data-v-9e6e890e]:focus { border-color: #37006E; } } .ms-TextField-field[disabled][data-v-9e6e890e] { background-color: \"[theme:neutralLighter, default: #f4f4f4]\"; border-color: \"[theme:neutralLighter, default: #f4f4f4]\"; pointer-events: none; cursor: default; } .ms-TextField-field[data-v-9e6e890e]::-webkit-input-placeholder { color: \"[theme:neutralSecondary, default: #666666]\"; } .ms-TextField-field[data-v-9e6e890e]::-moz-placeholder { color: \"[theme:neutralSecondary, default: #666666]\"; } .ms-TextField-field[data-v-9e6e890e]:-moz-placeholder { color: \"[theme:neutralSecondary, default: #666666]\"; } .ms-TextField-field[data-v-9e6e890e]:-ms-input-placeholder { color: \"[theme:neutralSecondary, default: #666666]\"; } .ms-TextField-description[data-v-9e6e890e] { color: \"[theme:neutralSecondaryAlt, default: #767676]\"; font-size: 11px; } .ms-TextField.ms-TextField--placeholder[data-v-9e6e890e] { position: relative; background-color: \"[theme:white, default: #ffffff]\"; } .ms-TextField.ms-TextField--placeholder .ms-TextField-field[data-v-9e6e890e] { position: relative; background-color: transparent; z-index: 5; } .ms-TextField.ms-TextField--placeholder .ms-Label[data-v-9e6e890e] { position: absolute; font-weight: 300; font-size: 14px; color: \"[theme:neutralSecondary, default: #666666]\"; padding: 6px 12px 7px; pointer-events: none; z-index: 0; } .ms-TextField.ms-TextField--placeholder.is-disabled[data-v-9e6e890e] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-TextField.ms-TextField--placeholder.is-disabled .ms-Label[data-v-9e6e890e] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-TextField.ms-TextField--underlined[data-v-9e6e890e] { border-bottom: 1px solid \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; display: table; width: 100%; min-width: 180px; } .ms-TextField.ms-TextField--underlined[data-v-9e6e890e]:hover { border-color: \"[theme:neutralSecondaryAlt, default: #767676]\"; } @media screen and (-ms-high-contrast: active) { .ms-TextField.ms-TextField--underlined[data-v-9e6e890e]:hover { border-color: #1AEBFF; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-TextField.ms-TextField--underlined[data-v-9e6e890e]:hover { border-color: #37006E; } } .ms-TextField.ms-TextField--underlined[data-v-9e6e890e]:active, .ms-TextField.ms-TextField--underlined[data-v-9e6e890e]:focus { border-color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-TextField.ms-TextField--underlined .ms-Label[data-v-9e6e890e] { font-size: 14px; margin-right: 8px; display: table-cell; vertical-align: top; padding-left: 12px; padding-top: 9px; height: 32px; width: 1%; white-space: nowrap; } .ms-TextField.ms-TextField--underlined .ms-TextField-field[data-v-9e6e890e] { border: 0; float: left; display: table-cell; text-align: left; padding-top: 8px; padding-bottom: 3px; } .ms-TextField.ms-TextField--underlined .ms-TextField-field[data-v-9e6e890e]:active, .ms-TextField.ms-TextField--underlined .ms-TextField-field[data-v-9e6e890e]:focus, .ms-TextField.ms-TextField--underlined .ms-TextField-field[data-v-9e6e890e]:hover { outline: 0; } .ms-TextField.ms-TextField--underlined.is-disabled[data-v-9e6e890e] { border-bottom-color: \"[theme:neutralLight, default: #eaeaea]\"; } .ms-TextField.ms-TextField--underlined.is-disabled .ms-Label[data-v-9e6e890e] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-TextField.ms-TextField--underlined.is-disabled .ms-TextField-field[data-v-9e6e890e] { background-color: transparent; color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-TextField.ms-TextField--underlined.is-active[data-v-9e6e890e] { border-color: \"[theme:themePrimary, default: #0078d7]\"; } @media screen and (-ms-high-contrast: active) { .ms-TextField.ms-TextField--underlined.is-active[data-v-9e6e890e] { border-color: #1AEBFF; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-TextField.ms-TextField--underlined.is-active[data-v-9e6e890e] { border-color: #37006E; } } .ms-TextField.ms-TextField--multiline .ms-TextField-field[data-v-9e6e890e] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; color: \"[theme:neutralSecondary, default: #666666]\"; font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; font-size: 14px; font-weight: 400; line-height: 17px; min-height: 60px; min-width: 260px; padding-top: 6px; overflow: auto; } ");},
+    beforeMount: function beforeMount(){
+        this.$fabric = {
+            TextField : TextField
+        };
+    },
+    extends :  textField
+}
+
+var toggle = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"toggle",staticClass:"ms-Toggle",class:_vm.toggleClass},[(_vm.description)?_c('span',{staticClass:"ms-Toggle-description"},[_vm._v(" "+_vm._s(_vm.description)+" ")]):_vm._e(),_vm._v(" "),_c('input',{staticClass:"ms-Toggle-input",attrs:{"type":"checkbox"}}),_vm._v(" "),_c('span',{staticClass:"ms-Toggle-trigger",on:{"click":_vm.toggle}},[_c('label',{ref:"toggleLabel",staticClass:"ms-Toggle-field",class:{ 'is-selected': _vm.value },attrs:{"tabindex":"0"}},[_c('span',{staticClass:"ms-Label ms-Label--off"},[_vm._v(_vm._s(_vm.offLabel))]),_vm._v(" "),_c('span',{staticClass:"ms-Label ms-Label--on"},[_vm._v(_vm._s(_vm.onLabel))])])])])},staticRenderFns: [],
+  name: 'ou-toggle',
+
+  mixins: [type('textLeft'), disabled],
+
+  props: {
+    value: Boolean,
+    onLabel: String,
+    offLabel: String,
+    description: String
+  },
+
+  computed: {
+    toggleClass: function toggleClass() {
+      var obj;
+
+      return ( obj = {}, obj[("ms-Toggle--" + (this.type))] = !!this.type, obj['is-disabled'] =  this.disabled, obj );
+    }
+  },
+
+  mounted: function mounted() {
+    new this.$fabric.Toggle(this.$refs.toggle);
   },
 
   methods: {
     toggle: function toggle() {
-      if (this.isSelectable) {
+      if (!this.disabled) {
         this.$emit('input', !this.value);
       }
+    }
+  }
+};
+
+var Toggle = (function () {
+    function Toggle(container) {
+        this._container = container;
+        this._toggleField = this._container.querySelector(".ms-Toggle-field");
+        this._addListeners();
+    }
+    Toggle.prototype.removeListeners = function () {
+        this._toggleField.removeEventListener("click", this._toggleHandler.bind(this));
+    };
+    Toggle.prototype._addListeners = function () {
+        var _this = this;
+        this._toggleField.addEventListener("click", this._toggleHandler.bind(this), false);
+        this._toggleField.addEventListener("keyup", function (e) { return (e.keyCode === 32) ? _this._toggleHandler() : null; }, false);
+    };
+    Toggle.prototype._toggleHandler = function () {
+        this._toggleField.classList.toggle("is-selected");
+    };
+    return Toggle;
+}());
+
+var uiToggle = {_scopeId: 'data-v-3153c0f8',
+    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-Label[data-v-3153c0f8] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 12px; font-weight: 400; box-sizing: border-box; display: block; padding: 5px 0; } .ms-Label.is-required[data-v-3153c0f8]::after { content: ' *'; color: \"[theme:error, default: #a80000]\"; } .ms-Label.is-disabled[data-v-3153c0f8] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-Toggle[data-v-3153c0f8] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; font-weight: 400; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; position: relative; display: block; margin-bottom: 26px; } .ms-Toggle .ms-Label[data-v-3153c0f8] { position: relative; top: -2px; padding: 0 0 0 50px; } .ms-Toggle .ms-Toggle-field[data-v-3153c0f8]::before { position: absolute; top: 3px; width: 10px; height: 10px; border-radius: 10px; content: ''; left: 4px; background-color: \"[theme:neutralSecondary, default: #666666]\"; outline: 1px solid transparent; transition-property: background, left; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0, 0.23, 1); } @media screen and (-ms-high-contrast: active) { .ms-Toggle .ms-Toggle-field[data-v-3153c0f8]::before { border: 2.5px solid \"[theme:white, default: #ffffff]\"; height: 15px; outline: 0; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-Toggle .ms-Toggle-field[data-v-3153c0f8]::before { border-color: \"[theme:black, default: #000000]\"; } } .ms-Toggle .ms-Toggle-field[data-v-3153c0f8]::before { right: auto; } .ms-Toggle .ms-Toggle-field .ms-Label--off[data-v-3153c0f8] { display: block; } .ms-Toggle .ms-Toggle-field .ms-Label--on[data-v-3153c0f8] { display: none; } .ms-Toggle .ms-Toggle-field.is-selected[data-v-3153c0f8] { background-color: \"[theme:themePrimary, default: #0078d7]\"; border-color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-Toggle .ms-Toggle-field.is-selected[data-v-3153c0f8]::before { position: absolute; top: 3px; width: 10px; height: 10px; border-radius: 10px; content: ''; right: 4px; background-color: \"[theme:neutralSecondary, default: #666666]\"; outline: 1px solid transparent; transition-property: background, left; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0, 0.23, 1); } @media screen and (-ms-high-contrast: active) { .ms-Toggle .ms-Toggle-field.is-selected[data-v-3153c0f8]::before { border: 2.5px solid \"[theme:white, default: #ffffff]\"; height: 15px; outline: 0; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-Toggle .ms-Toggle-field.is-selected[data-v-3153c0f8]::before { border-color: \"[theme:black, default: #000000]\"; } } .ms-Toggle .ms-Toggle-field.is-selected[data-v-3153c0f8]::before { background-color: \"[theme:white, default: #ffffff]\"; left: 28px; } .ms-Toggle .ms-Toggle-field.is-selected .ms-Label--off[data-v-3153c0f8] { display: none; } .ms-Toggle .ms-Toggle-field.is-selected .ms-Label--on[data-v-3153c0f8] { display: block; } @media screen and (-ms-high-contrast: active) { .ms-Toggle .ms-Toggle-field.is-selected[data-v-3153c0f8] { background-color: \"[theme:white, default: #ffffff]\"; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-Toggle .ms-Toggle-field.is-selected[data-v-3153c0f8] { background-color: \"[theme:black, default: #000000]\"; } } .ms-Toggle:focus + .ms-Toggle-field[data-v-3153c0f8], .ms-Toggle:hover + .ms-Toggle-field[data-v-3153c0f8] { border-color: \"[theme:neutralSecondary, default: #666666]\"; } .ms-Toggle:focus + .ms-Toggle-field[data-v-3153c0f8]::before, .ms-Toggle:hover + .ms-Toggle-field[data-v-3153c0f8]::before { background-color: \"[theme:neutralPrimary, default: #333333]\"; } .ms-Toggle:focus:checked + .ms-Toggle-field[data-v-3153c0f8], .ms-Toggle:hover:checked + .ms-Toggle-field[data-v-3153c0f8] { background-color: \"[theme:themeDarkAlt, default: #106ebe]\"; border-color: \"[theme:themeDarkAlt, default: #106ebe]\"; } .ms-Toggle:focus:checked + .ms-Toggle-field[data-v-3153c0f8]::before, .ms-Toggle:hover:checked + .ms-Toggle-field[data-v-3153c0f8]::before { background-color: \"[theme:white, default: #ffffff]\"; } .ms-Toggle:active:checked + .ms-Toggle-field[data-v-3153c0f8] { background-color: \"[theme:themeDark, default: #005a9e]\"; border-color: \"[theme:themeDark, default: #005a9e]\"; } .ms-Toggle .ms-Toggle-field[data-v-3153c0f8]:focus, .ms-Toggle .ms-Toggle-field[data-v-3153c0f8]:hover { border-color: \"[theme:neutralPrimary, default: #333333]\"; } .ms-Toggle .ms-Toggle-field.is-selected[data-v-3153c0f8]:focus, .ms-Toggle .ms-Toggle-field.is-selected[data-v-3153c0f8]:hover { background-color: \"[theme:themeDarkAlt, default: #106ebe]\"; border-color: \"[theme:themeDarkAlt, default: #106ebe]\"; } .ms-Toggle .ms-Toggle-field .ms-Label[data-v-3153c0f8] { color: \"[theme:black, default: #000000]\"; user-select: none; } .ms-Toggle .ms-Toggle-field:hover .ms-Label[data-v-3153c0f8] { color: \"[theme:black, default: #000000]\"; } .ms-Toggle .ms-Toggle-field:active .ms-Label[data-v-3153c0f8] { color: \"[theme:neutralPrimary, default: #333333]\"; } .ms-Toggle.is-disabled .ms-Label[data-v-3153c0f8] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-Toggle.is-disabled .ms-Toggle-field[data-v-3153c0f8] { background-color: \"[theme:white, default: #ffffff]\"; border-color: \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; pointer-events: none; cursor: default; } .ms-Toggle.is-disabled .ms-Toggle-field[data-v-3153c0f8]::before { background-color: \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; } @media screen and (-ms-high-contrast: active) { .ms-Toggle.is-disabled .ms-Toggle-field[data-v-3153c0f8], .ms-Toggle.is-disabled .ms-Toggle-field[data-v-3153c0f8]::before { border-color: #00ff00; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-Toggle.is-disabled .ms-Toggle-field[data-v-3153c0f8], .ms-Toggle.is-disabled .ms-Toggle-field[data-v-3153c0f8]::before { border-color: #600000; } } .ms-Toggle-description[data-v-3153c0f8] { position: relative; font-size: 14px; vertical-align: top; display: block; margin-bottom: 8px; } .ms-Toggle-field[data-v-3153c0f8] { position: relative; display: inline-block; width: 45px; height: 20px; box-sizing: border-box; border: 2px solid \"[theme:neutralTertiary, default: #a6a6a6]\"; border-radius: 20px; cursor: pointer; transition-property: background, left, border-color; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0, 0.23, 1); outline: 0; } .ms-Toggle-field[data-v-3153c0f8]:hover, .ms-Toggle-field[data-v-3153c0f8]:focus { border-color: \"[theme:neutralSecondary, default: #666666]\"; } .ms-Toggle-input[data-v-3153c0f8] { display: none; } .ms-Toggle.ms-Toggle--textLeft[data-v-3153c0f8] { width: 225px; margin-bottom: 40px; } .ms-Toggle.ms-Toggle--textLeft .ms-Toggle-description[data-v-3153c0f8] { display: inline-block; max-width: 150px; top: -3px; margin-bottom: 0; } .ms-Toggle.ms-Toggle--textLeft .ms-Toggle-field[data-v-3153c0f8] { float: right; } ");},
+    beforeMount: function beforeMount(){
+        this.$fabric = {
+            Toggle : Toggle
+        };
     },
-
-    clickEvent: function clickEvent() {
-      this.$emit('click');
-    }
-  }
-};
-
-var uiListItem = {_scopeId: 'data-v-a34de616',
-    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-ListItem[data-v-a34de616] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; *zoom: 1; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 14px; font-weight: 400; padding: 9px 28px 3px; position: relative; display: block; } .ms-ListItem[data-v-a34de616]::before, .ms-ListItem[data-v-a34de616]::after { display: table; content: \"\"; line-height: 0; } .ms-ListItem[data-v-a34de616]::after { clear: both; } .ms-ListItem-primaryText[data-v-a34de616], .ms-ListItem-secondaryText[data-v-a34de616], .ms-ListItem-tertiaryText[data-v-a34de616] { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: block; } .ms-ListItem-primaryText[data-v-a34de616] { color: \"[theme:neutralDark, default: #212121]\"; font-weight: 300; font-size: 21px; padding-right: 80px; position: relative; top: -4px; } .ms-ListItem-secondaryText[data-v-a34de616] { color: \"[theme:neutralPrimary, default: #333333]\"; font-weight: 400; font-size: 14px; line-height: 25px; position: relative; top: -7px; padding-right: 30px; } .ms-ListItem-tertiaryText[data-v-a34de616] { color: \"[theme:neutralSecondaryAlt, default: #767676]\"; font-weight: 300; font-size: 14px; position: relative; top: -9px; margin-bottom: -4px; padding-right: 30px; } .ms-ListItem-metaText[data-v-a34de616] { color: \"[theme:neutralPrimary, default: #333333]\"; font-weight: 300; font-size: 11px; position: absolute; right: 30px; top: 39px; } .ms-ListItem-image[data-v-a34de616] { float: left; height: 70px; margin-left: -8px; margin-right: 10px; width: 70px; background-color: \"[theme:neutralPrimary, default: #333333]\"; } .ms-ListItem-selectionTarget[data-v-a34de616] { display: none; } .ms-ListItem-actions[data-v-a34de616] { max-width: 80px; position: absolute; right: 30px; text-align: right; top: 10px; } .ms-ListItem-action[data-v-a34de616] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; display: inline-block; font-size: 15px; position: relative; text-align: center; top: 3px; cursor: pointer; height: 16px; width: 16px; } .ms-ListItem-action .ms-Icon[data-v-a34de616] { vertical-align: top; } .ms-ListItem-action[data-v-a34de616]:hover { color: \"[theme:neutralSecondary, default: #666666]\"; outline: 1px solid transparent; } .ms-ListItem.is-unread[data-v-a34de616] { border-left: 3px solid \"[theme:themePrimary, default: #0078d7]\"; padding-left: 27px; } .ms-ListItem.is-unread .ms-ListItem-secondaryText[data-v-a34de616], .ms-ListItem.is-unread .ms-ListItem-metaText[data-v-a34de616] { color: \"[theme:themePrimary, default: #0078d7]\"; font-weight: 600; } .ms-ListItem.is-unseen[data-v-a34de616]::after { border-right: 10px solid transparent; border-top: 10px solid \"[theme:themePrimary, default: #0078d7]\"; left: 0; position: absolute; top: 0; } .ms-ListItem.is-selectable .ms-ListItem-selectionTarget[data-v-a34de616] { display: block; height: 20px; left: 6px; position: absolute; top: 13px; width: 20px; } .ms-ListItem.is-selectable .ms-ListItem-image[data-v-a34de616] { margin-left: 0; } .ms-ListItem.is-selectable[data-v-a34de616]:hover { background-color: \"[theme:neutralLight, default: #eaeaea]\"; cursor: pointer; outline: 1px solid transparent; } .ms-ListItem.is-selectable[data-v-a34de616]:hover::before { -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; display: inline-block; font-family: 'FabricMDL2Icons'; font-style: normal; font-weight: normal; speak: none; position: absolute; top: 14px; left: 7px; height: 15px; width: 15px; border: 1px solid \"[theme:neutralSecondaryAlt, default: #767676]\"; } .ms-ListItem.is-selected[data-v-a34de616]::before { border: 1px solid transparent; } .ms-ListItem.is-selected[data-v-a34de616]::before, .ms-ListItem.is-selected[data-v-a34de616]:hover::before { -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; display: inline-block; font-family: 'FabricMDL2Icons'; font-style: normal; font-weight: normal; speak: none; content: '\\e73A'; font-size: 17px; color: \"[theme:neutralSecondaryAlt, default: #767676]\"; position: absolute; top: 23px; left: 7px; border: 0; } .ms-ListItem.is-selected[data-v-a34de616]:hover { background-color: \"[theme:themeLight, default: #c7e0f4]\"; outline: 1px solid transparent; } .ms-ListItem.ms-ListItem--document[data-v-a34de616] { padding: 0; } .ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon[data-v-a34de616] { width: 70px; height: 70px; float: left; text-align: center; } .ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon .ms-Icon[data-v-a34de616] { font-size: 38px; line-height: 70px; color: \"[theme:neutralSecondary, default: #666666]\"; } .ms-ListItem.ms-ListItem--document .ms-ListItem-primaryText[data-v-a34de616] { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 14px; padding-top: 15px; padding-right: 0; position: static; } .ms-ListItem.ms-ListItem--document .ms-ListItem-secondaryText[data-v-a34de616] { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: \"[theme:neutralSecondary, default: #666666]\"; font-weight: 400; font-size: 11px; padding-top: 6px; } .ms-ListItem.is-selected[data-v-a34de616]::before, .ms-ListItem.is-selected[data-v-a34de616]:hover::before { top: 14px; content: url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"17\" height=\"17\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path transform=\"translate(0, 2048) scale(1, -1)\" d=\"M2048 2048v-2048h-2048v2048h2048zM1920 1920h-1792v-1792h1792v1792zM768 421l-429 430l90 90l339 -338l851 850l90 -90z\" fill=\"black\" stroke=\"none\"/></svg>'); } ");},
-    extends :  ListItem
-}
-
-var ListActions = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-ListItem-actions"},[_vm._t("default")],2)},staticRenderFns: [],
-  name: 'ou-list-actions'
-};
-
-var uiListActions = {
-    beforeCreate: function beforeCreate(){ loadStyles("");},
-    extends :  ListActions,
-    created: function created(){
-        this.$options._scopeId = this.$parent.$options._scopeId;
-    }
-}
-
-var ListActionItem = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-ListItem-action",on:{"click":function($event){$event.stopPropagation();return _vm.clickEvent($event)}}},[_c('i',{staticClass:"ms-Icon",class:_vm.iconClass})])},staticRenderFns: [],
-  name: 'ou-list-action-item',
-  mixins: [icon],
-
-  methods: {
-    clickEvent: function clickEvent() {
-      this.$emit('click');
-    }
-  }
-};
-
-var uiListActionItem = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-ListItem-action",on:{"click":function($event){$event.stopPropagation();return _vm.clickEvent($event)}}},[_vm._t("icon")],2)},staticRenderFns: [],
-    beforeCreate: function beforeCreate(){ loadStyles("");},
-    extends :  ListActionItem,
-    created: function created(){
-        this.$options._scopeId = this.$parent.$options._scopeId;
-    }
+    extends :  toggle
 }
 
 var baseUrl = "https://spoprod-a.akamaihd.net/files/fabric/assets/icons"; // this is the baseUrl used by MS!
@@ -5185,4 +5248,4 @@ var uiIconOfficeChat = GetIcon("OfficeChat", "\uF70F", "14-eb4d1150");
 var uiIconOfficeChatSolid = GetIcon("OfficeChatSolid", "\uF710", "14-eb4d1150");
 var uiIconMailSchedule = GetIcon("MailSchedule", "\uF72E", "14-eb4d1150");
 
-export { uiButton, uiOverlay, uiDialog, uiCallout, uiSearchbox as uiSearchBox, uiContextualMenu, uiContextualMenuItem, uiCheckbox, uiChoiceField, uiChoiceFieldGroup, uiDropdown, uiDropdownItem, uiPanel, uiSpinner, uiLabel, uiMessagebar, uiPersona, uiTextfield, uiCommandBar, uiCommandButton, uiLink, uiPivot, uiPivotItem, uiList, uiListItem, uiListActions, uiListActionItem, uiIconGlobalNavButton, uiIconChevronDown, uiIconChevronUp, uiIconEdit, uiIconAdd, uiIconCancel, uiIconMore, uiIconSettings, uiIconMail, uiIconFilter, uiIconSearch, uiIconShare, uiIconBlockedSite, uiIconFavoriteStar, uiIconFavoriteStarFill, uiIconCheckMark, uiIconDelete, uiIconChevronLeft, uiIconChevronRight, uiIconCalendar, uiIconMegaphone, uiIconUndo, uiIconFlag, uiIconPage, uiIconPinned, uiIconView, uiIconClear, uiIconDownload, uiIconUpload, uiIconFolder, uiIconSort, uiIconAlignRight, uiIconAlignLeft, uiIconTag, uiIconAddFriend, uiIconInfo, uiIconSortLines, uiIconList, uiIconCircleRing, uiIconHeart, uiIconHeartFill, uiIconTiles, uiIconEmbed, uiIconGlimmer, uiIconAscending, uiIconDescending, uiIconSortUp, uiIconSortDown, uiIconSyncToPC, uiIconLargeGrid, uiIconSkypeCheck, uiIconSkypeClock, uiIconSkypeMinus, uiIconClearFilter, uiIconFlow, uiIconStatusCircleCheckmark, uiIconMoreVertical, uiIconDecreaseIndentLegacy, uiIconIncreaseIndentLegacy, uiIconSizeLegacy, uiIconInternetSharing, uiIconBrightness, uiIconMapPin, uiIconAirplane, uiIconTablet, uiIconQuickNote, uiIconVideo, uiIconPeople, uiIconPhone, uiIconPin, uiIconShop, uiIconStop, uiIconLink, uiIconAllApps, uiIconZoom, uiIconZoomOut, uiIconMicrophone, uiIconCamera, uiIconAttach, uiIconSend, uiIconFavoriteList, uiIconPageSolid, uiIconForward, uiIconBack, uiIconRefresh, uiIconLock, uiIconReportHacked, uiIconEMI, uiIconMiniLink, uiIconBlocked, uiIconReadingMode, uiIconFavicon, uiIconRemove, uiIconCheckbox, uiIconCheckboxComposite, uiIconCheckboxIndeterminate, uiIconCheckboxCompositeReversed, uiIconBackToWindow, uiIconFullScreen, uiIconPrint, uiIconUp, uiIconDown, uiIconOEM, uiIconSave, uiIconCloud, uiIconCommandPrompt, uiIconSad, uiIconSIPMove, uiIconEraseTool, uiIconGripperTool, uiIconDialpad, uiIconPageLeft, uiIconPageRight, uiIconMultiSelect, uiIconKeyboardClassic, uiIconPlay, uiIconPause, uiIconEmoji2, uiIconGripperBarHorizontal, uiIconSystem, uiIconPersonalize, uiIconSearchAndApps, uiIconGlobe, uiIconContactInfo, uiIconUnpin, uiIconContact, uiIconMemo, uiIconPaste, uiIconWindowsLogo, uiIconError, uiIconGripperBarVertical, uiIconUnlock, uiIconAutoEnhanceOn, uiIconAutoEnhanceOff, uiIconColor, uiIconSaveAs, uiIconLight, uiIconFilters, uiIconAspectRatio, uiIconContrast, uiIconRedo, uiIconCrop, uiIconPhotoCollection, uiIconAlbum, uiIconRotate, uiIconPanoIndicator, uiIconRedEye, uiIconThumbnailView, uiIconPackage, uiIconWarning, uiIconFinancial, uiIconEducation, uiIconShoppingCart, uiIconTrain, uiIconMove, uiIconTouchPointer, uiIconMerge, uiIconTurnRight, uiIconFerry, uiIconHighlight, uiIconPowerButton, uiIconTab, uiIconAdmin, uiIconTVMonitor, uiIconSpeakers, uiIconStackIndicator, uiIconNav2DMapView, uiIconCar, uiIconBus, uiIconEatDrink, uiIconLocationCircle, uiIconHome, uiIconSwitcherStartEnd, uiIconParkingLocation, uiIconIncidentTriangle, uiIconTouch, uiIconMapDirections, uiIconCaretHollow, uiIconCaretSolid, uiIconHistory, uiIconLocation, uiIconWork, uiIconRecent, uiIconHotel, uiIconLocationDot, uiIconDictionary, uiIconChromeBack, uiIconFolderOpen, uiIconPinnedFill, uiIconRevToggleKey, uiIconPrevious, uiIconNext, uiIconSync, uiIconHelp, uiIconEmoji, uiIconMailForward, uiIconClosePane, uiIconOpenPane, uiIconPreviewLink, uiIconZoomIn, uiIconBookmarks, uiIconDocument, uiIconProtectedDocument, uiIconOpenInNewWindow, uiIconMailFill, uiIconViewAll, uiIconSwitch, uiIconRename, uiIconRemote, uiIconSelectAll, uiIconOrientation, uiIconImport, uiIconPicture, uiIconChromeClose, uiIconShowResults, uiIconMessage, uiIconCalendarDay, uiIconCalendarWeek, uiIconMailReplyAll, uiIconRead, uiIconCut, uiIconPaymentCard, uiIconCopy, uiIconImportant, uiIconMailReply, uiIconGotoToday, uiIconFont, uiIconFontColor, uiIconFolderFill, uiIconPermissions, uiIconDisableUpdates, uiIconUnfavorite, uiIconItalic, uiIconUnderline, uiIconBold, uiIconMoveToFolder, uiIconDislike, uiIconLike, uiIconAlignCenter, uiIconOpenFile, uiIconFontDecrease, uiIconFontIncrease, uiIconFontSize, uiIconCellPhone, uiIconCalculator, uiIconLibrary, uiIconPostUpdate, uiIconNewFolder, uiIconCalendarReply, uiIconUnsyncFolder, uiIconSyncFolder, uiIconBlockContact, uiIconAccept, uiIconBulletedList, uiIconPreview, uiIconNews, uiIconChat, uiIconGroup, uiIconWorld, uiIconComment, uiIconDockLeft, uiIconDockRight, uiIconRepair, uiIconAccounts, uiIconRadioBullet, uiIconStopwatch, uiIconClock, uiIconWorldClock, uiIconAlarmClock, uiIconPhoto, uiIconHospital, uiIconTimer, uiIconFullCircleMask, uiIconLocationFill, uiIconChromeMinimize, uiIconAnnotation, uiIconFingerprint, uiIconHandwriting, uiIconCompleted, uiIconLabel, uiIconFlickDown, uiIconFlickUp, uiIconFlickLeft, uiIconFlickRight, uiIconMiniExpand, uiIconMiniContract, uiIconStreaming, uiIconMusicInCollection, uiIconOneDriveLogo, uiIconCompassNW, uiIconCode, uiIconLightningBolt, uiIconCalculatorMultiply, uiIconCalculatorAddition, uiIconCalculatorSubtract, uiIconCalculatorEqualTo, uiIconPrintfaxPrinterFile, uiIconCommunications, uiIconHeadset, uiIconHealth, uiIconChevronUpSmall, uiIconChevronDownSmall, uiIconChevronLeftSmall, uiIconChevronRightSmall, uiIconChevronUpMed, uiIconChevronDownMed, uiIconChevronLeftMed, uiIconChevronRightMed, uiIconPC1, uiIconPresenceChickletVideo, uiIconReply, uiIconHalfAlpha, uiIconConstructionCone, uiIconDoubleChevronLeftMed, uiIconVolume0, uiIconVolume1, uiIconVolume2, uiIconVolume3, uiIconChart, uiIconRobot, uiIconManufacturing, uiIconLockSolid, uiIconBidiLtr, uiIconBidiRtl, uiIconRightDoubleQuote, uiIconSunny, uiIconCloudWeather, uiIconCloudy, uiIconPartlyCloudyDay, uiIconPartlyCloudyNight, uiIconClearNight, uiIconRainShowersDay, uiIconRain, uiIconThunderstorms, uiIconRainSnow, uiIconSnow, uiIconBlowingSnow, uiIconFrigid, uiIconFog, uiIconSqualls, uiIconDuststorm, uiIconUnknown, uiIconPrecipitation, uiIconRibbon, uiIconAreaChart, uiIconAssign, uiIconCheckList, uiIconDiagnostic, uiIconGenerate, uiIconLineChart, uiIconEqualizer, uiIconBarChartHorizontal, uiIconBarChartVertical, uiIconFreezing, uiIconProcessing, uiIconSnowShowerDay, uiIconHailDay, uiIconWorkFlow, uiIconHourGlass, uiIconStoreLogoMed20, uiIconTimeSheet, uiIconTriangleSolid, uiIconVideoSolid, uiIconRainShowersNight, uiIconSnowShowerNight, uiIconTeamwork, uiIconHailNight, uiIconPeopleAdd, uiIconGlasses, uiIconDateTime2, uiIconShield, uiIconHeader1, uiIconPageAdd, uiIconNumberedList, uiIconPowerBILogo, uiIconInfo2, uiIconMusicInCollectionFill, uiIconAsterisk, uiIconErrorBadge, uiIconCircleFill, uiIconRecord2, uiIconAllAppsMirrored, uiIconBookmarksMirrored, uiIconBulletedListMirrored, uiIconCaretHollowMirrored, uiIconCaretSolidMirrored, uiIconChromeBackMirrored, uiIconClosePaneMirrored, uiIconDockLeftMirrored, uiIconDoubleChevronLeftMedMirrored, uiIconHelpMirrored, uiIconImportMirrored, uiIconListMirrored, uiIconMailForwardMirrored, uiIconMailReplyMirrored, uiIconMailReplyAllMirrored, uiIconOpenPaneMirrored, uiIconParkingLocationMirrored, uiIconSendMirrored, uiIconShowResultsMirrored, uiIconThumbnailViewMirrored, uiIconDevices3, uiIconLightbulb, uiIconStatusTriangle, uiIconVolumeDisabled, uiIconPuzzle, uiIconEmojiNeutral, uiIconEmojiDisappointed, uiIconHomeSolid, uiIconRinger, uiIconPDF, uiIconHeartBroken, uiIconStoreLogo16, uiIconMultiSelectMirrored, uiIconBroom, uiIconCocktails, uiIconWines, uiIconArticles, uiIconCycling, uiIconDietPlanNotebook, uiIconPill, uiIconExerciseTracker, uiIconHandsFree, uiIconMedical, uiIconRunning, uiIconWeights, uiIconTrackers, uiIconAddNotes, uiIconAllCurrency, uiIconBarChart4, uiIconCirclePlus, uiIconCoffee, uiIconCotton, uiIconMarket, uiIconMoney, uiIconPieDouble, uiIconPieSingle, uiIconRemoveFilter, uiIconSavings, uiIconSell, uiIconStockDown, uiIconStockUp, uiIconLamp, uiIconSource, uiIconMSNVideos, uiIconCricket, uiIconGolf, uiIconBaseball, uiIconSoccer, uiIconMoreSports, uiIconAutoRacing, uiIconCollegeHoops, uiIconCollegeFootball, uiIconProFootball, uiIconProHockey, uiIconRugby, uiIconSubstitutionsIn, uiIconTennis, uiIconArrivals, uiIconDesign, uiIconWebsite, uiIconDrop, uiIconSkiResorts, uiIconSnowflake, uiIconBusSolid, uiIconFerrySolid, uiIconAirplaneSolid, uiIconTrainSolid, uiIconTicket, uiIconDevices4, uiIconAzureLogo, uiIconBingLogo, uiIconMSNLogo, uiIconOutlookLogoInverse, uiIconOfficeLogo, uiIconSkypeLogo, uiIconDoor, uiIconEditMirrored, uiIconGiftCard, uiIconDoubleBookmark, uiIconStatusErrorFull, uiIconCertificate, uiIconFastForward, uiIconRewind, uiIconPhoto2, uiIconOpenSource, uiIconMovers, uiIconCloudDownload, uiIconFamily, uiIconWindDirection, uiIconBug, uiIconSiteScan, uiIconBrowserScreenShot, uiIconF12DevTools, uiIconCSS, uiIconJS, uiIconDeliveryTruck, uiIconReminderPerson, uiIconReminderGroup, uiIconTabletMode, uiIconUmbrella, uiIconNetworkTower, uiIconCityNext, uiIconSection, uiIconOneNoteLogoInverse, uiIconToggleFilled, uiIconToggleBorder, uiIconSliderThumb, uiIconToggleThumb, uiIconDocumentation, uiIconBadge, uiIconGiftbox, uiIconVisualStudioLogo, uiIconExcelLogoInverse, uiIconWordLogoInverse, uiIconPowerPointLogoInverse, uiIconCafe, uiIconSpeedHigh, uiIconCommitments, uiIconThisPC, uiIconMusicNote, uiIconMicOff, uiIconEdgeLogo, uiIconCompletedSolid, uiIconAlbumRemove, uiIconMessageFill, uiIconTabletSelected, uiIconMobileSelected, uiIconLaptopSelected, uiIconTVMonitorSelected, uiIconDeveloperTools, uiIconInsertTextBox, uiIconLowerBrightness, uiIconDOM, uiIconCloudUpload, uiIconScrollUpDown, uiIconDateTime, uiIconEvent, uiIconCake, uiIconOrg, uiIconPartyLeader, uiIconDRM, uiIconCloudAdd, uiIconAppIconDefault, uiIconPhoto2Add, uiIconPhoto2Remove, uiIconPOI, uiIconAddTo, uiIconRadioBtnOff, uiIconRadioBtnOn, uiIconExploreContent, uiIconProduct, uiIconProgressLoopInner, uiIconProgressLoopOuter, uiIconBlocked2, uiIconFangBody, uiIconChatInviteFriend, uiIconCrown, uiIconDiamond, uiIconScaleUp, uiIconFeedback, uiIconSharepointLogoInverse, uiIconYammerLogo, uiIconHide, uiIconUneditable, uiIconReturnToSession, uiIconOpenFolderHorizontal, uiIconCalendarMirrored, uiIconSwayLogoInverse, uiIconOutOfOffice, uiIconTrophy, uiIconReopenPages, uiIconEmojiTabSymbols, uiIconAADLogo, uiIconAccessLogo, uiIconAdminALogoInverse32, uiIconAdminCLogoInverse32, uiIconAdminDLogoInverse32, uiIconAdminELogoInverse32, uiIconAdminLLogoInverse32, uiIconAdminMLogoInverse32, uiIconAdminOLogoInverse32, uiIconAdminPLogoInverse32, uiIconAdminSLogoInverse32, uiIconAdminYLogoInverse32, uiIconDelveLogoInverse, uiIconExchangeLogoInverse, uiIconLyncLogo, uiIconOfficeVideoLogoInverse, uiIconSocialListeningLogo, uiIconVisioLogoInverse, uiIconBalloons, uiIconCat, uiIconMailAlert, uiIconMailCheck, uiIconMailLowImportance, uiIconMailPause, uiIconMailRepeat, uiIconSecurityGroup, uiIconTable, uiIconVoicemailForward, uiIconVoicemailReply, uiIconWaffle, uiIconRemoveEvent, uiIconEventInfo, uiIconForwardEvent, uiIconWipePhone, uiIconAddOnlineMeeting, uiIconJoinOnlineMeeting, uiIconRemoveLink, uiIconPeopleBlock, uiIconPeopleRepeat, uiIconPeopleAlert, uiIconPeoplePause, uiIconTransferCall, uiIconAddPhone, uiIconUnknownCall, uiIconNoteReply, uiIconNoteForward, uiIconNotePinned, uiIconRemoveOccurrence, uiIconTimeline, uiIconEditNote, uiIconCircleHalfFull, uiIconRoom, uiIconUnsubscribe, uiIconSubscribe, uiIconHardDrive, uiIconRecurringTask, uiIconTaskManager, uiIconTaskManagerMirrored, uiIconCombine, uiIconSplit, uiIconDoubleChevronUp, uiIconDoubleChevronLeft, uiIconDoubleChevronRight, uiIconTextBox, uiIconTextField, uiIconNumberField, uiIconDropdown, uiIconBookingsLogo, uiIconClassNotebookLogoInverse, uiIconDelveAnalyticsLogo, uiIconDocsLogoInverse, uiIconDynamics365Logo, uiIconDynamicSMBLogo, uiIconOfficeAssistantLogo, uiIconOfficeStoreLogo, uiIconOneNoteEduLogoInverse, uiIconPlannerLogo, uiIconPowerApps, uiIconSuitcase, uiIconProjectLogoInverse, uiIconCaretLeft8, uiIconCaretRight8, uiIconCaretUp8, uiIconCaretDown8, uiIconCaretLeftSolid8, uiIconCaretRightSolid8, uiIconCaretUpSolid8, uiIconCaretDownSolid8, uiIconClearFormatting, uiIconSuperscript, uiIconSubscript, uiIconStrikethrough, uiIconExport, uiIconExportMirrored, uiIconSingleBookmark, uiIconSingleBookmarkSolid, uiIconDoubleChevronDown, uiIconFollowUser, uiIconReplyAll, uiIconWorkforceManagement, uiIconRecruitmentManagement, uiIconQuestionnaire, uiIconManagerSelfService, uiIconReplyMirrored, uiIconReplyAllMirrored, uiIconMedal, uiIconAddGroup, uiIconQuestionnaireMirrored, uiIconTemporaryUser, uiIconCaretSolid16, uiIconGroupedDescending, uiIconGroupedAscending, uiIconAwayStatus, uiIconMyMoviesTV, uiIconGenericScan, uiIconAustralianRules, uiIconWifiEthernet, uiIconTrackersMirrored, uiIconDateTimeMirrored, uiIconStopSolid, uiIconDoubleChevronUp12, uiIconDoubleChevronDown12, uiIconDoubleChevronLeft12, uiIconDoubleChevronRight12, uiIconCalendarAgenda, uiIconAddEvent, uiIconAssetLibrary, uiIconDataConnectionLibrary, uiIconDocLibrary, uiIconFormLibrary, uiIconFormLibraryMirrored, uiIconReportLibrary, uiIconReportLibraryMirrored, uiIconContactCard, uiIconCustomList, uiIconCustomListMirrored, uiIconIssueTracking, uiIconIssueTrackingMirrored, uiIconPictureLibrary, uiIconOfficeAddinsLogo, uiIconOfflineOneDriveParachute, uiIconOfflineOneDriveParachuteDisabled, uiIconTriangleSolidUp12, uiIconTriangleSolidDown12, uiIconTriangleSolidLeft12, uiIconTriangleSolidRight12, uiIconTriangleUp12, uiIconTriangleDown12, uiIconTriangleLeft12, uiIconTriangleRight12, uiIconArrowUpRight8, uiIconArrowDownRight8, uiIconDocumentSet, uiIconDelveAnalytics, uiIconArrowUpRightMirrored8, uiIconArrowDownRightMirrored8, uiIconCompanyDirectory, uiIconCompanyDirectoryMirrored, uiIconOneDriveAdd, uiIconProfileSearch, uiIconHeader2, uiIconHeader3, uiIconHeader4, uiIconEyedropper, uiIconMarketDown, uiIconCalendarWorkWeek, uiIconSidePanel, uiIconGlobeFavorite, uiIconCaretTopLeftSolid8, uiIconCaretTopRightSolid8, uiIconViewAll2, uiIconDocumentReply, uiIconPlayerSettings, uiIconReceiptForward, uiIconReceiptReply, uiIconReceiptCheck, uiIconFax, uiIconRecurringEvent, uiIconReplyAlt, uiIconReplyAllAlt, uiIconEditStyle, uiIconEditMail, uiIconLifesaver, uiIconLifesaverLock, uiIconInboxCheck, uiIconFolderSearch, uiIconCollapseMenu, uiIconExpandMenu, uiIconBoards, uiIconSunAdd, uiIconSunQuestionMark, uiIconLandscapeOrientation, uiIconDocumentSearch, uiIconPublicCalendar, uiIconPublicContactCard, uiIconPublicEmail, uiIconPublicFolder, uiIconWordDocument, uiIconPowerPointDocument, uiIconExcelDocument, uiIconGroupedList, uiIconClassroomLogo, uiIconSections, uiIconEditPhoto, uiIconStarburst, uiIconShareiOS, uiIconAirTickets, uiIconPencilReply, uiIconTiles2, uiIconSkypeCircleCheck, uiIconSkypeCircleClock, uiIconSkypeCircleMinus, uiIconSkypeMessage, uiIconClosedCaption, uiIconATPLogo, uiIconOfficeFormsLogoInverse, uiIconRecycleBin, uiIconEmptyRecycleBin, uiIconHide2, uiIconBreadcrumb, uiIconBirthdayCake, uiIconTimeEntry, uiIconPageEdit, uiIconPageRemove, uiIconDatabase, uiIconEditContact, uiIconConnectContacts, uiIconActivateOrders, uiIconDeactivateOrders, uiIconDocumentManagement, uiIconCRMReport, uiIconZipFolder, uiIconSurveyQuestions, uiIconTextDocument, uiIconTextDocumentShared, uiIconPageCheckedOut, uiIconSaveAndClose, uiIconScript, uiIconArchive, uiIconActivityFeed, uiIconEventDate, uiIconArrowUpRight, uiIconCaretRight, uiIconSetAction, uiIconCaretSolidLeft, uiIconCaretSolidDown, uiIconCaretSolidRight, uiIconCaretSolidUp, uiIconPowerAppsLogo, uiIconPowerApps2Logo, uiIconSearchIssue, uiIconSearchIssueMirrored, uiIconFabricAssetLibrary, uiIconFabricDataConnectionLibrary, uiIconFabricDocLibrary, uiIconFabricFormLibrary, uiIconFabricFormLibraryMirrored, uiIconFabricReportLibrary, uiIconFabricReportLibraryMirrored, uiIconFabricPublicFolder, uiIconFabricFolderSearch, uiIconFabricMovetoFolder, uiIconFabricUnsyncFolder, uiIconFabricSyncFolder, uiIconFabricOpenFolderHorizontal, uiIconFabricFolder, uiIconFabricFolderFill, uiIconFabricNewFolder, uiIconFabricPictureLibrary, uiIconAddFavorite, uiIconAddFavoriteFill, uiIconBufferTimeBefore, uiIconBufferTimeAfter, uiIconBufferTimeBoth, uiIconCannedChat, uiIconSkypeForBusinessLogo, uiIconPageCheckedin, uiIconReadOutLoud, uiIconCaretBottomLeftSolid8, uiIconCaretBottomRightSolid8, uiIconFolderHorizontal, uiIconMicrosoftStaffhubLogo, uiIconGiftboxOpen, uiIconStatusCircleOuter, uiIconStatusCircleInner, uiIconStatusCircleRing, uiIconStatusTriangleOuter, uiIconStatusTriangleInner, uiIconStatusTriangleExclamation, uiIconStatusCircleExclamation, uiIconStatusCircleErrorX, uiIconStatusCircleInfo, uiIconStatusCircleBlock2, uiIconStatusCircleQuestionMark, uiIconToll, uiIconExploreContentSingle, uiIconCollapseContent, uiIconCollapseContentSingle, uiIconInfoSolid, uiIconProgressRingDots, uiIconCaloriesAdd, uiIconBranchFork, uiIconMobileReport, uiIconHardDriveGroup, uiIconFastMode, uiIconToggleOn, uiIconToggleOff, uiIconTrophy2, uiIconBucketColor, uiIconBucketColorFill, uiIconTaskboard, uiIconSingleColumn, uiIconDoubleColumn, uiIconTripleColumn, uiIconColumnLeftTwoThirds, uiIconColumnRightTwoThirds, uiIconAccessLogoFill, uiIconAnalyticsLogo, uiIconAnalyticsQuery, uiIconNewAnalyticsQuery, uiIconAnalyticsReport, uiIconWordLogo, uiIconWordLogoFill, uiIconExcelLogo, uiIconExcelLogoFill, uiIconOneNoteLogo, uiIconOneNoteLogoFill, uiIconOutlookLogo, uiIconOutlookLogoFill, uiIconPowerPointLogo, uiIconPowerPointLogoFill, uiIconPublisherLogo, uiIconPublisherLogoFill, uiIconScheduleEventAction, uiIconFlameSolid, uiIconServerProcesses, uiIconServer, uiIconSaveAll, uiIconLinkedInLogo, uiIconDecimals, uiIconSidePanelMirrored, uiIconProtectRestrict, uiIconUnknownMirrored, uiIconPublicContactCardMirrored, uiIconGridViewSmall, uiIconGridViewMedium, uiIconGridViewLarge, uiIconStep, uiIconStepInsert, uiIconStepShared, uiIconStepSharedAdd, uiIconStepSharedInsert, uiIconViewDashboard, uiIconViewList, uiIconViewListGroup, uiIconViewListTree, uiIconTriggerAuto, uiIconTriggerUser, uiIconPivotChart, uiIconStackedBarChart, uiIconStackedLineChart, uiIconBuildQueue, uiIconBuildQueueNew, uiIconUserFollowed, uiIconContactLink, uiIconStack, uiIconBullseye, uiIconVennDiagram, uiIconFiveTileGrid, uiIconFocalPoint, uiIconRingerRemove, uiIconTeamsLogoInverse, uiIconTeamsLogo, uiIconTeamsLogoFill, uiIconSkypeForBusinessLogoFill, uiIconSharepointLogo, uiIconSharepointLogoFill, uiIconDelveLogo, uiIconDelveLogoFill, uiIconOfficeVideoLogo, uiIconOfficeVideoLogoFill, uiIconExchangeLogo, uiIconExchangeLogoFill, uiIconDocumentApproval, uiIconCloneToDesktop, uiIconInstallToDrive, uiIconBlur, uiIconBuild, uiIconProcessMetaTask, uiIconBranchFork2, uiIconBranchLocked, uiIconBranchCommit, uiIconBranchCompare, uiIconBranchMerge, uiIconBranchPullRequest, uiIconBranchSearch, uiIconBranchShelveset, uiIconRawSource, uiIconMergeDuplicate, uiIconRowsGroup, uiIconRowsChild, uiIconDeploy, uiIconRedeploy, uiIconServerEnviroment, uiIconVisioDiagram, uiIconHighlightMappedShapes, uiIconTextCallout, uiIconIconSetsFlag, uiIconVisioLogo, uiIconVisioLogoFill, uiIconVisioDocument, uiIconTimelineProgress, uiIconTimelineDelivery, uiIconBacklog, uiIconTeamFavorite, uiIconTaskGroup, uiIconTaskGroupMirrored, uiIconScopeTemplate, uiIconAssessmentGroupTemplate, uiIconNewTeamProject, uiIconCommentAdd, uiIconCommentNext, uiIconCommentPrevious, uiIconShopServer, uiIconLocaleLanguage, uiIconQueryList, uiIconUserSync, uiIconUserPause, uiIconStreamingOff, uiIconArrowTallUpLeft, uiIconArrowTallUpRight, uiIconArrowTallDownLeft, uiIconArrowTallDownRight, uiIconFieldEmpty, uiIconFieldFilled, uiIconFieldChanged, uiIconFieldNotChanged, uiIconRingerOff, uiIconPlayResume, uiIconBulletedList2, uiIconBulletedList2Mirrored, uiIconImageCrosshair, uiIconGitGraph, uiIconRepo, uiIconRepoSolid, uiIconFolderQuery, uiIconFolderList, uiIconFolderListMirrored, uiIconLocationOutline, uiIconPOISolid, uiIconCalculatorNotEqualTo, uiIconBoxSubtractSolid, uiIconBoxAdditionSolid, uiIconBoxMultiplySolid, uiIconBoxPlaySolid, uiIconBoxCheckmarkSolid, uiIconCirclePauseSolid, uiIconCirclePause, uiIconMSNVideosSolid, uiIconCircleStopSolid, uiIconCircleStop, uiIconNavigateBack, uiIconNavigateBackMirrored, uiIconNavigateForward, uiIconNavigateForwardMirrored, uiIconUnknownSolid, uiIconUnknownMirroredSolid, uiIconCircleAddition, uiIconCircleAdditionSolid, uiIconFilePDB, uiIconFileTemplate, uiIconFileSQL, uiIconFileJAVA, uiIconFileASPX, uiIconFileCSS, uiIconFileSass, uiIconFileLess, uiIconFileHTML, uiIconJavaScriptLanguage, uiIconCSharpLanguage, uiIconCSharp, uiIconVisualBasicLanguage, uiIconVB, uiIconCPlusPlusLanguage, uiIconCPlusPlus, uiIconFSharpLanguage, uiIconFSharp, uiIconTypeScriptLanguage, uiIconPythonLanguage, uiIconPY, uiIconCoffeeScript, uiIconMarkDownLanguage, uiIconFullWidth, uiIconFullWidthEdit, uiIconPlug, uiIconPlugSolid, uiIconPlugConnected, uiIconPlugDisconnected, uiIconUnlockSolid, uiIconVariable, uiIconParameter, uiIconCommentUrgent, uiIconStoryboard, uiIconDiffInline, uiIconDiffSideBySide, uiIconImageDiff, uiIconImagePixel, uiIconFileBug, uiIconFileCode, uiIconFileComment, uiIconBusinessHoursSign, uiIconFileImage, uiIconFileSymlink, uiIconAutoFillTemplate, uiIconWorkItem, uiIconWorkItemBug, uiIconLogRemove, uiIconColumnOptions, uiIconPackages, uiIconBuildIssue, uiIconAssessmentGroup, uiIconVariableGroup, uiIconFullHistory, uiIconSingleColumnEdit, uiIconDoubleColumnEdit, uiIconTripleColumnEdit, uiIconColumnLeftTwoThirdsEdit, uiIconColumnRightTwoThirdsEdit, uiIconStreamLogo, uiIconPassiveAuthentication, uiIconAlertSolid, uiIconMegaphoneSolid, uiIconTaskSolid, uiIconConfigurationSolid, uiIconBugSolid, uiIconCrownSolid, uiIconTrophy2Solid, uiIconQuickNoteSolid, uiIconConstructionConeSolid, uiIconPageListSolid, uiIconPageListMirroredSolid, uiIconStarburstSolid, uiIconReadingModeSolid, uiIconSadSolid, uiIconHealthSolid, uiIconShieldSolid, uiIconGiftBoxSolid, uiIconShoppingCartSolid, uiIconMailSolid, uiIconChatSolid, uiIconRibbonSolid, uiIconFinancialSolid, uiIconFinancialMirroredSolid, uiIconHeadsetSolid, uiIconPermissionsSolid, uiIconParkingSolid, uiIconParkingMirroredSolid, uiIconDiamondSolid, uiIconAsteriskSolid, uiIconOfflineStorageSolid, uiIconBankSolid, uiIconDecisionSolid, uiIconParachute, uiIconParachuteSolid, uiIconFiltersSolid, uiIconColorSolid, uiIconReviewSolid, uiIconReviewRequestSolid, uiIconReviewRequestMirroredSolid, uiIconReviewResponseSolid, uiIconFeedbackRequestSolid, uiIconFeedbackRequestMirroredSolid, uiIconFeedbackResponseSolid, uiIconWorkItemBar, uiIconWorkItemBarSolid, uiIconSeparator, uiIconNavigateExternalInline, uiIconPlanView, uiIconTimelineMatrixView, uiIconEngineeringGroup, uiIconProjectCollection, uiIconCaretBottomRightCenter8, uiIconCaretBottomLeftCenter8, uiIconCaretTopRightCenter8, uiIconCaretTopLeftCenter8, uiIconDonutChart, uiIconChevronUnfold10, uiIconChevronFold10, uiIconDoubleChevronDown8, uiIconDoubleChevronUp8, uiIconDoubleChevronLeft8, uiIconDoubleChevronRight8, uiIconChevronDownEnd6, uiIconChevronUpEnd6, uiIconChevronLeftEnd6, uiIconChevronRightEnd6, uiIconContextMenu, uiIconAzureAPIManagement, uiIconAzureServiceEndpoint, uiIconVSTSLogo, uiIconVSTSAltLogo1, uiIconVSTSAltLogo2, uiIconFileTypeSolution, uiIconWordLogoInverse16, uiIconWordLogo16, uiIconWordLogoFill16, uiIconPowerPointLogoInverse16, uiIconPowerPointLogo16, uiIconPowerPointLogoFill16, uiIconExcelLogoInverse16, uiIconExcelLogo16, uiIconExcelLogoFill16, uiIconOneNoteLogoInverse16, uiIconOneNoteLogo16, uiIconOneNoteLogoFill16, uiIconOutlookLogoInverse16, uiIconOutlookLogo16, uiIconOutlookLogoFill16, uiIconPublisherLogoInverse16, uiIconPublisherLogo16, uiIconPublisherLogoFill16, uiIconVisioLogoInverse16, uiIconVisioLogo16, uiIconVisioLogoFill16, uiIconTestBeaker, uiIconTestBeakerSolid, uiIconTestExploreSolid, uiIconTestAutoSolid, uiIconTestUserSolid, uiIconTestImpactSolid, uiIconTestPlan, uiIconTestStep, uiIconTestParameter, uiIconTestSuite, uiIconTestCase, uiIconSprint, uiIconSignOut, uiIconTriggerApproval, uiIconRocket, uiIconAzureKeyVault, uiIconTransition, uiIconLikeSolid, uiIconDislikeSolid, uiIconUnSetColor, uiIconDeclineCall, uiIconRectangularClipping, uiIconTeamsLogo16, uiIconTeamsLogoFill16, uiIconSpacer, uiIconSkypeLogo16, uiIconSkypeForBusinessLogo16, uiIconSkypeForBusinessLogoFill16, uiIconFilterSolid, uiIconMailUndelivered, uiIconMailTentative, uiIconMailTentativeMirrored, uiIconMailReminder, uiIconReceiptUndelivered, uiIconReceiptTentative, uiIconReceiptTentativeMirrored, uiIconInbox, uiIconIRMReply, uiIconIRMReplyMirrored, uiIconIRMForward, uiIconIRMForwardMirrored, uiIconVoicemailIRM, uiIconEventAccepted, uiIconEventTentative, uiIconEventTentativeMirrored, uiIconEventDeclined, uiIconIDBadge, uiIconBackgroundColor, uiIconOfficeFormsLogoInverse16, uiIconOfficeFormsLogo, uiIconOfficeFormsLogoFill, uiIconOfficeFormsLogo16, uiIconOfficeFormsLogoFill16, uiIconOfficeFormsLogoInverse24, uiIconOfficeFormsLogo24, uiIconOfficeFormsLogoFill24, uiIconPageLock, uiIconNotExecuted, uiIconNotImpactedSolid, uiIconFieldReadOnly, uiIconFieldRequired, uiIconBacklogBoard, uiIconExternalBuild, uiIconExternalTFVC, uiIconExternalXAML, uiIconIssueSolid, uiIconDefectSolid, uiIconLadybugSolid, uiIconNugetLogo, uiIconTFVCLogo, uiIconProjectLogo32, uiIconProjectLogoFill32, uiIconProjectLogo16, uiIconProjectLogoFill16, uiIconSwayLogo32, uiIconSwayLogoFill32, uiIconSwayLogo16, uiIconSwayLogoFill16, uiIconClassNotebookLogo32, uiIconClassNotebookLogoFill32, uiIconClassNotebookLogo16, uiIconClassNotebookLogoFill16, uiIconClassNotebookLogoInverse32, uiIconClassNotebookLogoInverse16, uiIconStaffNotebookLogo32, uiIconStaffNotebookLogoFill32, uiIconStaffNotebookLogo16, uiIconStaffNotebookLogoFill16, uiIconStaffNotebookLogoInverted32, uiIconStaffNotebookLogoInverted16, uiIconKaizalaLogo, uiIconTaskLogo, uiIconProtectionCenterLogo32, uiIconGallatinLogo, uiIconGlobe2, uiIconGuitar, uiIconBreakfast, uiIconBrunch, uiIconBeerMug, uiIconVacation, uiIconTeeth, uiIconTaxi, uiIconChopsticks, uiIconSyncOccurence, uiIconUnsyncOccurence, uiIconPrimaryCalendar, uiIconSearchCalendar, uiIconVideoOff, uiIconMicrosoftFlowLogo, uiIconBusinessCenterLogo, uiIconToDoLogoBottom, uiIconToDoLogoTop, uiIconEditSolid12, uiIconEditSolidMirrored12, uiIconUneditableSolid12, uiIconUneditableSolidMirrored12, uiIconUneditableMirrored, uiIconAdminALogo32, uiIconAdminALogoFill32, uiIconToDoLogoInverse, uiIconSnooze, uiIconWaffleOffice365, uiIconImageSearch, uiIconNewsSearch, uiIconVideoSearch, uiIconR, uiIconFontColorA, uiIconFontColorSwatch, uiIconLightWeight, uiIconNormalWeight, uiIconSemiboldWeight, uiIconGroupObject, uiIconUngroupObject, uiIconAlignHorizontalLeft, uiIconAlignHorizontalCenter, uiIconAlignHorizontalRight, uiIconAlignVerticalTop, uiIconAlignVerticalCenter, uiIconAlignVerticalBottom, uiIconHorizontalDistributeCenter, uiIconVerticalDistributeCenter, uiIconEllipse, uiIconLine, uiIconOctagon, uiIconHexagon, uiIconPentagon, uiIconRightTriangle, uiIconHalfCircle, uiIconQuarterCircle, uiIconThreeQuarterCircle, uiIcon6PointStar, uiIcon12PointStar, uiIconArrangeBringToFront, uiIconArrangeSendToBack, uiIconArrangeSendBackward, uiIconArrangeBringForward, uiIconBorderDash, uiIconBorderDot, uiIconLineStyle, uiIconLineThickness, uiIconWindowEdit, uiIconHintText, uiIconMediaAdd, uiIconAnchorLock, uiIconAutoHeight, uiIconChartSeries, uiIconChartXAngle, uiIconChartYAngle, uiIconCombobox, uiIconLineSpacing, uiIconPadding, uiIconPaddingTop, uiIconPaddingBottom, uiIconPaddingLeft, uiIconPaddingRight, uiIconNavigationFlipper, uiIconAlignJustify, uiIconTextOverflow, uiIconVisualsFolder, uiIconVisualsStore, uiIconPictureCenter, uiIconPictureFill, uiIconPicturePosition, uiIconPictureStretch, uiIconPictureTile, uiIconSlider, uiIconSliderHandleSize, uiIconDefaultRatio, uiIconNumberSequence, uiIconGUID, uiIconReportAdd, uiIconDashboardAdd, uiIconMapPinSolid, uiIconWebPublish, uiIconPieSingleSolid, uiIconBlockedSolid, uiIconDrillDown, uiIconDrillDownSolid, uiIconDrillExpand, uiIconDrillShow, uiIconOneDriveFolder16, uiIconFunctionalManagerDashboard, uiIconBIDashboard, uiIconCodeEdit, uiIconRenewalCurrent, uiIconRenewalFuture, uiIconSplitObject, uiIconBulkUpload, uiIconDownloadDocument, uiIconWaitlistConfirm, uiIconWaitlistConfirmMirrored, uiIconLaptopSecure, uiIconDragObject, uiIconEntryView, uiIconEntryDecline, uiIconContactCardSettings, uiIconContactCardSettingsMirrored, uiIconCalendarSettings, uiIconCalendarSettingsMirrored, uiIconHardDriveLock, uiIconHardDriveUnlock, uiIconAccountManagement, uiIconTransitionPop, uiIconTransitionPush, uiIconTransitionEffect, uiIconLookupEntities, uiIconExploreData, uiIconAddBookmark, uiIconSearchBookmark, uiIconDrillThrough, uiIconMasterDatabase, uiIconCertifiedDatabase, uiIconMaximumValue, uiIconMinimumValue, uiIconVisualStudioIDELogo32, uiIconPasteAsText, uiIconPasteAsCode, uiIconBrowserTab, uiIconBrowserTabScreenshot, uiIconDesktopScreenshot, uiIconFileYML, uiIconClipboardSolid, uiIconAnalyticsView, uiIconLeave, uiIconTrending12, uiIconBlocked12, uiIconWarning12, uiIconCheckedOutByOther12, uiIconCheckedOutByYou12, uiIconCircleShapeSolid, uiIconSquareShapeSolid, uiIconTriangleShapeSolid, uiIconDropShapeSolid, uiIconRectangleShapeSolid, uiIconInsertColumnsLeft, uiIconInsertColumnsRight, uiIconInsertRowsAbove, uiIconInsertRowsBelow, uiIconDeleteColumns, uiIconDeleteRows, uiIconDeleteRowsMirrored, uiIconDeleteTable, uiIconVersionControlPush, uiIconWhiteBoardApp16, uiIconWhiteBoardApp32, uiIconInsertSignatureLine, uiIconArrangeByFrom, uiIconPhishing, uiIconCreateMailRule, uiIconPublishCourse, uiIconDictionaryRemove, uiIconUserRemove, uiIconUserEvent, uiIconEncryption, uiIconD365TalentLearn, uiIconD365TalentInsight, uiIconD365TalentHRCore, uiIconBacklogList, uiIconButtonControl, uiIconTableGroup, uiIconMountainClimbing, uiIconTagUnknown, uiIconTagUnknownMirror, uiIconTagUnknown12, uiIconTagUnknown12Mirror, uiIconLink12, uiIconPresentation, uiIconPresentation12, uiIconLock12, uiIconBuildDefinition, uiIconReleaseDefinition, uiIconSaveTemplate, uiIconUserGauge, uiIconBlockedSiteSolid12, uiIconTagSolid, uiIconOfficeChat, uiIconOfficeChatSolid, uiIconMailSchedule };
+export { uiButton, uiCallout, uiCheckbox, uiChoiceField, uiChoiceFieldGroup, uiContextualMenu, uiContextualMenuItem, uiCommandBar, uiCommandButton, uiDialog, uiDropdown, uiDropdownItem, uiLabel, uiLink, uiList, uiListActions, uiListActionItem, uiListItem, uiMessagebar, uiOverlay, uiPanel, uiPersona, uiPivot, uiPivotItem, uiSearchbox as uiSearchBox, uiSpinner, uiTextfield, uiToggle, uiIconGlobalNavButton, uiIconChevronDown, uiIconChevronUp, uiIconEdit, uiIconAdd, uiIconCancel, uiIconMore, uiIconSettings, uiIconMail, uiIconFilter, uiIconSearch, uiIconShare, uiIconBlockedSite, uiIconFavoriteStar, uiIconFavoriteStarFill, uiIconCheckMark, uiIconDelete, uiIconChevronLeft, uiIconChevronRight, uiIconCalendar, uiIconMegaphone, uiIconUndo, uiIconFlag, uiIconPage, uiIconPinned, uiIconView, uiIconClear, uiIconDownload, uiIconUpload, uiIconFolder, uiIconSort, uiIconAlignRight, uiIconAlignLeft, uiIconTag, uiIconAddFriend, uiIconInfo, uiIconSortLines, uiIconList, uiIconCircleRing, uiIconHeart, uiIconHeartFill, uiIconTiles, uiIconEmbed, uiIconGlimmer, uiIconAscending, uiIconDescending, uiIconSortUp, uiIconSortDown, uiIconSyncToPC, uiIconLargeGrid, uiIconSkypeCheck, uiIconSkypeClock, uiIconSkypeMinus, uiIconClearFilter, uiIconFlow, uiIconStatusCircleCheckmark, uiIconMoreVertical, uiIconDecreaseIndentLegacy, uiIconIncreaseIndentLegacy, uiIconSizeLegacy, uiIconInternetSharing, uiIconBrightness, uiIconMapPin, uiIconAirplane, uiIconTablet, uiIconQuickNote, uiIconVideo, uiIconPeople, uiIconPhone, uiIconPin, uiIconShop, uiIconStop, uiIconLink, uiIconAllApps, uiIconZoom, uiIconZoomOut, uiIconMicrophone, uiIconCamera, uiIconAttach, uiIconSend, uiIconFavoriteList, uiIconPageSolid, uiIconForward, uiIconBack, uiIconRefresh, uiIconLock, uiIconReportHacked, uiIconEMI, uiIconMiniLink, uiIconBlocked, uiIconReadingMode, uiIconFavicon, uiIconRemove, uiIconCheckbox, uiIconCheckboxComposite, uiIconCheckboxIndeterminate, uiIconCheckboxCompositeReversed, uiIconBackToWindow, uiIconFullScreen, uiIconPrint, uiIconUp, uiIconDown, uiIconOEM, uiIconSave, uiIconCloud, uiIconCommandPrompt, uiIconSad, uiIconSIPMove, uiIconEraseTool, uiIconGripperTool, uiIconDialpad, uiIconPageLeft, uiIconPageRight, uiIconMultiSelect, uiIconKeyboardClassic, uiIconPlay, uiIconPause, uiIconEmoji2, uiIconGripperBarHorizontal, uiIconSystem, uiIconPersonalize, uiIconSearchAndApps, uiIconGlobe, uiIconContactInfo, uiIconUnpin, uiIconContact, uiIconMemo, uiIconPaste, uiIconWindowsLogo, uiIconError, uiIconGripperBarVertical, uiIconUnlock, uiIconAutoEnhanceOn, uiIconAutoEnhanceOff, uiIconColor, uiIconSaveAs, uiIconLight, uiIconFilters, uiIconAspectRatio, uiIconContrast, uiIconRedo, uiIconCrop, uiIconPhotoCollection, uiIconAlbum, uiIconRotate, uiIconPanoIndicator, uiIconRedEye, uiIconThumbnailView, uiIconPackage, uiIconWarning, uiIconFinancial, uiIconEducation, uiIconShoppingCart, uiIconTrain, uiIconMove, uiIconTouchPointer, uiIconMerge, uiIconTurnRight, uiIconFerry, uiIconHighlight, uiIconPowerButton, uiIconTab, uiIconAdmin, uiIconTVMonitor, uiIconSpeakers, uiIconStackIndicator, uiIconNav2DMapView, uiIconCar, uiIconBus, uiIconEatDrink, uiIconLocationCircle, uiIconHome, uiIconSwitcherStartEnd, uiIconParkingLocation, uiIconIncidentTriangle, uiIconTouch, uiIconMapDirections, uiIconCaretHollow, uiIconCaretSolid, uiIconHistory, uiIconLocation, uiIconWork, uiIconRecent, uiIconHotel, uiIconLocationDot, uiIconDictionary, uiIconChromeBack, uiIconFolderOpen, uiIconPinnedFill, uiIconRevToggleKey, uiIconPrevious, uiIconNext, uiIconSync, uiIconHelp, uiIconEmoji, uiIconMailForward, uiIconClosePane, uiIconOpenPane, uiIconPreviewLink, uiIconZoomIn, uiIconBookmarks, uiIconDocument, uiIconProtectedDocument, uiIconOpenInNewWindow, uiIconMailFill, uiIconViewAll, uiIconSwitch, uiIconRename, uiIconRemote, uiIconSelectAll, uiIconOrientation, uiIconImport, uiIconPicture, uiIconChromeClose, uiIconShowResults, uiIconMessage, uiIconCalendarDay, uiIconCalendarWeek, uiIconMailReplyAll, uiIconRead, uiIconCut, uiIconPaymentCard, uiIconCopy, uiIconImportant, uiIconMailReply, uiIconGotoToday, uiIconFont, uiIconFontColor, uiIconFolderFill, uiIconPermissions, uiIconDisableUpdates, uiIconUnfavorite, uiIconItalic, uiIconUnderline, uiIconBold, uiIconMoveToFolder, uiIconDislike, uiIconLike, uiIconAlignCenter, uiIconOpenFile, uiIconFontDecrease, uiIconFontIncrease, uiIconFontSize, uiIconCellPhone, uiIconCalculator, uiIconLibrary, uiIconPostUpdate, uiIconNewFolder, uiIconCalendarReply, uiIconUnsyncFolder, uiIconSyncFolder, uiIconBlockContact, uiIconAccept, uiIconBulletedList, uiIconPreview, uiIconNews, uiIconChat, uiIconGroup, uiIconWorld, uiIconComment, uiIconDockLeft, uiIconDockRight, uiIconRepair, uiIconAccounts, uiIconRadioBullet, uiIconStopwatch, uiIconClock, uiIconWorldClock, uiIconAlarmClock, uiIconPhoto, uiIconHospital, uiIconTimer, uiIconFullCircleMask, uiIconLocationFill, uiIconChromeMinimize, uiIconAnnotation, uiIconFingerprint, uiIconHandwriting, uiIconCompleted, uiIconLabel, uiIconFlickDown, uiIconFlickUp, uiIconFlickLeft, uiIconFlickRight, uiIconMiniExpand, uiIconMiniContract, uiIconStreaming, uiIconMusicInCollection, uiIconOneDriveLogo, uiIconCompassNW, uiIconCode, uiIconLightningBolt, uiIconCalculatorMultiply, uiIconCalculatorAddition, uiIconCalculatorSubtract, uiIconCalculatorEqualTo, uiIconPrintfaxPrinterFile, uiIconCommunications, uiIconHeadset, uiIconHealth, uiIconChevronUpSmall, uiIconChevronDownSmall, uiIconChevronLeftSmall, uiIconChevronRightSmall, uiIconChevronUpMed, uiIconChevronDownMed, uiIconChevronLeftMed, uiIconChevronRightMed, uiIconPC1, uiIconPresenceChickletVideo, uiIconReply, uiIconHalfAlpha, uiIconConstructionCone, uiIconDoubleChevronLeftMed, uiIconVolume0, uiIconVolume1, uiIconVolume2, uiIconVolume3, uiIconChart, uiIconRobot, uiIconManufacturing, uiIconLockSolid, uiIconBidiLtr, uiIconBidiRtl, uiIconRightDoubleQuote, uiIconSunny, uiIconCloudWeather, uiIconCloudy, uiIconPartlyCloudyDay, uiIconPartlyCloudyNight, uiIconClearNight, uiIconRainShowersDay, uiIconRain, uiIconThunderstorms, uiIconRainSnow, uiIconSnow, uiIconBlowingSnow, uiIconFrigid, uiIconFog, uiIconSqualls, uiIconDuststorm, uiIconUnknown, uiIconPrecipitation, uiIconRibbon, uiIconAreaChart, uiIconAssign, uiIconCheckList, uiIconDiagnostic, uiIconGenerate, uiIconLineChart, uiIconEqualizer, uiIconBarChartHorizontal, uiIconBarChartVertical, uiIconFreezing, uiIconProcessing, uiIconSnowShowerDay, uiIconHailDay, uiIconWorkFlow, uiIconHourGlass, uiIconStoreLogoMed20, uiIconTimeSheet, uiIconTriangleSolid, uiIconVideoSolid, uiIconRainShowersNight, uiIconSnowShowerNight, uiIconTeamwork, uiIconHailNight, uiIconPeopleAdd, uiIconGlasses, uiIconDateTime2, uiIconShield, uiIconHeader1, uiIconPageAdd, uiIconNumberedList, uiIconPowerBILogo, uiIconInfo2, uiIconMusicInCollectionFill, uiIconAsterisk, uiIconErrorBadge, uiIconCircleFill, uiIconRecord2, uiIconAllAppsMirrored, uiIconBookmarksMirrored, uiIconBulletedListMirrored, uiIconCaretHollowMirrored, uiIconCaretSolidMirrored, uiIconChromeBackMirrored, uiIconClosePaneMirrored, uiIconDockLeftMirrored, uiIconDoubleChevronLeftMedMirrored, uiIconHelpMirrored, uiIconImportMirrored, uiIconListMirrored, uiIconMailForwardMirrored, uiIconMailReplyMirrored, uiIconMailReplyAllMirrored, uiIconOpenPaneMirrored, uiIconParkingLocationMirrored, uiIconSendMirrored, uiIconShowResultsMirrored, uiIconThumbnailViewMirrored, uiIconDevices3, uiIconLightbulb, uiIconStatusTriangle, uiIconVolumeDisabled, uiIconPuzzle, uiIconEmojiNeutral, uiIconEmojiDisappointed, uiIconHomeSolid, uiIconRinger, uiIconPDF, uiIconHeartBroken, uiIconStoreLogo16, uiIconMultiSelectMirrored, uiIconBroom, uiIconCocktails, uiIconWines, uiIconArticles, uiIconCycling, uiIconDietPlanNotebook, uiIconPill, uiIconExerciseTracker, uiIconHandsFree, uiIconMedical, uiIconRunning, uiIconWeights, uiIconTrackers, uiIconAddNotes, uiIconAllCurrency, uiIconBarChart4, uiIconCirclePlus, uiIconCoffee, uiIconCotton, uiIconMarket, uiIconMoney, uiIconPieDouble, uiIconPieSingle, uiIconRemoveFilter, uiIconSavings, uiIconSell, uiIconStockDown, uiIconStockUp, uiIconLamp, uiIconSource, uiIconMSNVideos, uiIconCricket, uiIconGolf, uiIconBaseball, uiIconSoccer, uiIconMoreSports, uiIconAutoRacing, uiIconCollegeHoops, uiIconCollegeFootball, uiIconProFootball, uiIconProHockey, uiIconRugby, uiIconSubstitutionsIn, uiIconTennis, uiIconArrivals, uiIconDesign, uiIconWebsite, uiIconDrop, uiIconSkiResorts, uiIconSnowflake, uiIconBusSolid, uiIconFerrySolid, uiIconAirplaneSolid, uiIconTrainSolid, uiIconTicket, uiIconDevices4, uiIconAzureLogo, uiIconBingLogo, uiIconMSNLogo, uiIconOutlookLogoInverse, uiIconOfficeLogo, uiIconSkypeLogo, uiIconDoor, uiIconEditMirrored, uiIconGiftCard, uiIconDoubleBookmark, uiIconStatusErrorFull, uiIconCertificate, uiIconFastForward, uiIconRewind, uiIconPhoto2, uiIconOpenSource, uiIconMovers, uiIconCloudDownload, uiIconFamily, uiIconWindDirection, uiIconBug, uiIconSiteScan, uiIconBrowserScreenShot, uiIconF12DevTools, uiIconCSS, uiIconJS, uiIconDeliveryTruck, uiIconReminderPerson, uiIconReminderGroup, uiIconTabletMode, uiIconUmbrella, uiIconNetworkTower, uiIconCityNext, uiIconSection, uiIconOneNoteLogoInverse, uiIconToggleFilled, uiIconToggleBorder, uiIconSliderThumb, uiIconToggleThumb, uiIconDocumentation, uiIconBadge, uiIconGiftbox, uiIconVisualStudioLogo, uiIconExcelLogoInverse, uiIconWordLogoInverse, uiIconPowerPointLogoInverse, uiIconCafe, uiIconSpeedHigh, uiIconCommitments, uiIconThisPC, uiIconMusicNote, uiIconMicOff, uiIconEdgeLogo, uiIconCompletedSolid, uiIconAlbumRemove, uiIconMessageFill, uiIconTabletSelected, uiIconMobileSelected, uiIconLaptopSelected, uiIconTVMonitorSelected, uiIconDeveloperTools, uiIconInsertTextBox, uiIconLowerBrightness, uiIconDOM, uiIconCloudUpload, uiIconScrollUpDown, uiIconDateTime, uiIconEvent, uiIconCake, uiIconOrg, uiIconPartyLeader, uiIconDRM, uiIconCloudAdd, uiIconAppIconDefault, uiIconPhoto2Add, uiIconPhoto2Remove, uiIconPOI, uiIconAddTo, uiIconRadioBtnOff, uiIconRadioBtnOn, uiIconExploreContent, uiIconProduct, uiIconProgressLoopInner, uiIconProgressLoopOuter, uiIconBlocked2, uiIconFangBody, uiIconChatInviteFriend, uiIconCrown, uiIconDiamond, uiIconScaleUp, uiIconFeedback, uiIconSharepointLogoInverse, uiIconYammerLogo, uiIconHide, uiIconUneditable, uiIconReturnToSession, uiIconOpenFolderHorizontal, uiIconCalendarMirrored, uiIconSwayLogoInverse, uiIconOutOfOffice, uiIconTrophy, uiIconReopenPages, uiIconEmojiTabSymbols, uiIconAADLogo, uiIconAccessLogo, uiIconAdminALogoInverse32, uiIconAdminCLogoInverse32, uiIconAdminDLogoInverse32, uiIconAdminELogoInverse32, uiIconAdminLLogoInverse32, uiIconAdminMLogoInverse32, uiIconAdminOLogoInverse32, uiIconAdminPLogoInverse32, uiIconAdminSLogoInverse32, uiIconAdminYLogoInverse32, uiIconDelveLogoInverse, uiIconExchangeLogoInverse, uiIconLyncLogo, uiIconOfficeVideoLogoInverse, uiIconSocialListeningLogo, uiIconVisioLogoInverse, uiIconBalloons, uiIconCat, uiIconMailAlert, uiIconMailCheck, uiIconMailLowImportance, uiIconMailPause, uiIconMailRepeat, uiIconSecurityGroup, uiIconTable, uiIconVoicemailForward, uiIconVoicemailReply, uiIconWaffle, uiIconRemoveEvent, uiIconEventInfo, uiIconForwardEvent, uiIconWipePhone, uiIconAddOnlineMeeting, uiIconJoinOnlineMeeting, uiIconRemoveLink, uiIconPeopleBlock, uiIconPeopleRepeat, uiIconPeopleAlert, uiIconPeoplePause, uiIconTransferCall, uiIconAddPhone, uiIconUnknownCall, uiIconNoteReply, uiIconNoteForward, uiIconNotePinned, uiIconRemoveOccurrence, uiIconTimeline, uiIconEditNote, uiIconCircleHalfFull, uiIconRoom, uiIconUnsubscribe, uiIconSubscribe, uiIconHardDrive, uiIconRecurringTask, uiIconTaskManager, uiIconTaskManagerMirrored, uiIconCombine, uiIconSplit, uiIconDoubleChevronUp, uiIconDoubleChevronLeft, uiIconDoubleChevronRight, uiIconTextBox, uiIconTextField, uiIconNumberField, uiIconDropdown, uiIconBookingsLogo, uiIconClassNotebookLogoInverse, uiIconDelveAnalyticsLogo, uiIconDocsLogoInverse, uiIconDynamics365Logo, uiIconDynamicSMBLogo, uiIconOfficeAssistantLogo, uiIconOfficeStoreLogo, uiIconOneNoteEduLogoInverse, uiIconPlannerLogo, uiIconPowerApps, uiIconSuitcase, uiIconProjectLogoInverse, uiIconCaretLeft8, uiIconCaretRight8, uiIconCaretUp8, uiIconCaretDown8, uiIconCaretLeftSolid8, uiIconCaretRightSolid8, uiIconCaretUpSolid8, uiIconCaretDownSolid8, uiIconClearFormatting, uiIconSuperscript, uiIconSubscript, uiIconStrikethrough, uiIconExport, uiIconExportMirrored, uiIconSingleBookmark, uiIconSingleBookmarkSolid, uiIconDoubleChevronDown, uiIconFollowUser, uiIconReplyAll, uiIconWorkforceManagement, uiIconRecruitmentManagement, uiIconQuestionnaire, uiIconManagerSelfService, uiIconReplyMirrored, uiIconReplyAllMirrored, uiIconMedal, uiIconAddGroup, uiIconQuestionnaireMirrored, uiIconTemporaryUser, uiIconCaretSolid16, uiIconGroupedDescending, uiIconGroupedAscending, uiIconAwayStatus, uiIconMyMoviesTV, uiIconGenericScan, uiIconAustralianRules, uiIconWifiEthernet, uiIconTrackersMirrored, uiIconDateTimeMirrored, uiIconStopSolid, uiIconDoubleChevronUp12, uiIconDoubleChevronDown12, uiIconDoubleChevronLeft12, uiIconDoubleChevronRight12, uiIconCalendarAgenda, uiIconAddEvent, uiIconAssetLibrary, uiIconDataConnectionLibrary, uiIconDocLibrary, uiIconFormLibrary, uiIconFormLibraryMirrored, uiIconReportLibrary, uiIconReportLibraryMirrored, uiIconContactCard, uiIconCustomList, uiIconCustomListMirrored, uiIconIssueTracking, uiIconIssueTrackingMirrored, uiIconPictureLibrary, uiIconOfficeAddinsLogo, uiIconOfflineOneDriveParachute, uiIconOfflineOneDriveParachuteDisabled, uiIconTriangleSolidUp12, uiIconTriangleSolidDown12, uiIconTriangleSolidLeft12, uiIconTriangleSolidRight12, uiIconTriangleUp12, uiIconTriangleDown12, uiIconTriangleLeft12, uiIconTriangleRight12, uiIconArrowUpRight8, uiIconArrowDownRight8, uiIconDocumentSet, uiIconDelveAnalytics, uiIconArrowUpRightMirrored8, uiIconArrowDownRightMirrored8, uiIconCompanyDirectory, uiIconCompanyDirectoryMirrored, uiIconOneDriveAdd, uiIconProfileSearch, uiIconHeader2, uiIconHeader3, uiIconHeader4, uiIconEyedropper, uiIconMarketDown, uiIconCalendarWorkWeek, uiIconSidePanel, uiIconGlobeFavorite, uiIconCaretTopLeftSolid8, uiIconCaretTopRightSolid8, uiIconViewAll2, uiIconDocumentReply, uiIconPlayerSettings, uiIconReceiptForward, uiIconReceiptReply, uiIconReceiptCheck, uiIconFax, uiIconRecurringEvent, uiIconReplyAlt, uiIconReplyAllAlt, uiIconEditStyle, uiIconEditMail, uiIconLifesaver, uiIconLifesaverLock, uiIconInboxCheck, uiIconFolderSearch, uiIconCollapseMenu, uiIconExpandMenu, uiIconBoards, uiIconSunAdd, uiIconSunQuestionMark, uiIconLandscapeOrientation, uiIconDocumentSearch, uiIconPublicCalendar, uiIconPublicContactCard, uiIconPublicEmail, uiIconPublicFolder, uiIconWordDocument, uiIconPowerPointDocument, uiIconExcelDocument, uiIconGroupedList, uiIconClassroomLogo, uiIconSections, uiIconEditPhoto, uiIconStarburst, uiIconShareiOS, uiIconAirTickets, uiIconPencilReply, uiIconTiles2, uiIconSkypeCircleCheck, uiIconSkypeCircleClock, uiIconSkypeCircleMinus, uiIconSkypeMessage, uiIconClosedCaption, uiIconATPLogo, uiIconOfficeFormsLogoInverse, uiIconRecycleBin, uiIconEmptyRecycleBin, uiIconHide2, uiIconBreadcrumb, uiIconBirthdayCake, uiIconTimeEntry, uiIconPageEdit, uiIconPageRemove, uiIconDatabase, uiIconEditContact, uiIconConnectContacts, uiIconActivateOrders, uiIconDeactivateOrders, uiIconDocumentManagement, uiIconCRMReport, uiIconZipFolder, uiIconSurveyQuestions, uiIconTextDocument, uiIconTextDocumentShared, uiIconPageCheckedOut, uiIconSaveAndClose, uiIconScript, uiIconArchive, uiIconActivityFeed, uiIconEventDate, uiIconArrowUpRight, uiIconCaretRight, uiIconSetAction, uiIconCaretSolidLeft, uiIconCaretSolidDown, uiIconCaretSolidRight, uiIconCaretSolidUp, uiIconPowerAppsLogo, uiIconPowerApps2Logo, uiIconSearchIssue, uiIconSearchIssueMirrored, uiIconFabricAssetLibrary, uiIconFabricDataConnectionLibrary, uiIconFabricDocLibrary, uiIconFabricFormLibrary, uiIconFabricFormLibraryMirrored, uiIconFabricReportLibrary, uiIconFabricReportLibraryMirrored, uiIconFabricPublicFolder, uiIconFabricFolderSearch, uiIconFabricMovetoFolder, uiIconFabricUnsyncFolder, uiIconFabricSyncFolder, uiIconFabricOpenFolderHorizontal, uiIconFabricFolder, uiIconFabricFolderFill, uiIconFabricNewFolder, uiIconFabricPictureLibrary, uiIconAddFavorite, uiIconAddFavoriteFill, uiIconBufferTimeBefore, uiIconBufferTimeAfter, uiIconBufferTimeBoth, uiIconCannedChat, uiIconSkypeForBusinessLogo, uiIconPageCheckedin, uiIconReadOutLoud, uiIconCaretBottomLeftSolid8, uiIconCaretBottomRightSolid8, uiIconFolderHorizontal, uiIconMicrosoftStaffhubLogo, uiIconGiftboxOpen, uiIconStatusCircleOuter, uiIconStatusCircleInner, uiIconStatusCircleRing, uiIconStatusTriangleOuter, uiIconStatusTriangleInner, uiIconStatusTriangleExclamation, uiIconStatusCircleExclamation, uiIconStatusCircleErrorX, uiIconStatusCircleInfo, uiIconStatusCircleBlock2, uiIconStatusCircleQuestionMark, uiIconToll, uiIconExploreContentSingle, uiIconCollapseContent, uiIconCollapseContentSingle, uiIconInfoSolid, uiIconProgressRingDots, uiIconCaloriesAdd, uiIconBranchFork, uiIconMobileReport, uiIconHardDriveGroup, uiIconFastMode, uiIconToggleOn, uiIconToggleOff, uiIconTrophy2, uiIconBucketColor, uiIconBucketColorFill, uiIconTaskboard, uiIconSingleColumn, uiIconDoubleColumn, uiIconTripleColumn, uiIconColumnLeftTwoThirds, uiIconColumnRightTwoThirds, uiIconAccessLogoFill, uiIconAnalyticsLogo, uiIconAnalyticsQuery, uiIconNewAnalyticsQuery, uiIconAnalyticsReport, uiIconWordLogo, uiIconWordLogoFill, uiIconExcelLogo, uiIconExcelLogoFill, uiIconOneNoteLogo, uiIconOneNoteLogoFill, uiIconOutlookLogo, uiIconOutlookLogoFill, uiIconPowerPointLogo, uiIconPowerPointLogoFill, uiIconPublisherLogo, uiIconPublisherLogoFill, uiIconScheduleEventAction, uiIconFlameSolid, uiIconServerProcesses, uiIconServer, uiIconSaveAll, uiIconLinkedInLogo, uiIconDecimals, uiIconSidePanelMirrored, uiIconProtectRestrict, uiIconUnknownMirrored, uiIconPublicContactCardMirrored, uiIconGridViewSmall, uiIconGridViewMedium, uiIconGridViewLarge, uiIconStep, uiIconStepInsert, uiIconStepShared, uiIconStepSharedAdd, uiIconStepSharedInsert, uiIconViewDashboard, uiIconViewList, uiIconViewListGroup, uiIconViewListTree, uiIconTriggerAuto, uiIconTriggerUser, uiIconPivotChart, uiIconStackedBarChart, uiIconStackedLineChart, uiIconBuildQueue, uiIconBuildQueueNew, uiIconUserFollowed, uiIconContactLink, uiIconStack, uiIconBullseye, uiIconVennDiagram, uiIconFiveTileGrid, uiIconFocalPoint, uiIconRingerRemove, uiIconTeamsLogoInverse, uiIconTeamsLogo, uiIconTeamsLogoFill, uiIconSkypeForBusinessLogoFill, uiIconSharepointLogo, uiIconSharepointLogoFill, uiIconDelveLogo, uiIconDelveLogoFill, uiIconOfficeVideoLogo, uiIconOfficeVideoLogoFill, uiIconExchangeLogo, uiIconExchangeLogoFill, uiIconDocumentApproval, uiIconCloneToDesktop, uiIconInstallToDrive, uiIconBlur, uiIconBuild, uiIconProcessMetaTask, uiIconBranchFork2, uiIconBranchLocked, uiIconBranchCommit, uiIconBranchCompare, uiIconBranchMerge, uiIconBranchPullRequest, uiIconBranchSearch, uiIconBranchShelveset, uiIconRawSource, uiIconMergeDuplicate, uiIconRowsGroup, uiIconRowsChild, uiIconDeploy, uiIconRedeploy, uiIconServerEnviroment, uiIconVisioDiagram, uiIconHighlightMappedShapes, uiIconTextCallout, uiIconIconSetsFlag, uiIconVisioLogo, uiIconVisioLogoFill, uiIconVisioDocument, uiIconTimelineProgress, uiIconTimelineDelivery, uiIconBacklog, uiIconTeamFavorite, uiIconTaskGroup, uiIconTaskGroupMirrored, uiIconScopeTemplate, uiIconAssessmentGroupTemplate, uiIconNewTeamProject, uiIconCommentAdd, uiIconCommentNext, uiIconCommentPrevious, uiIconShopServer, uiIconLocaleLanguage, uiIconQueryList, uiIconUserSync, uiIconUserPause, uiIconStreamingOff, uiIconArrowTallUpLeft, uiIconArrowTallUpRight, uiIconArrowTallDownLeft, uiIconArrowTallDownRight, uiIconFieldEmpty, uiIconFieldFilled, uiIconFieldChanged, uiIconFieldNotChanged, uiIconRingerOff, uiIconPlayResume, uiIconBulletedList2, uiIconBulletedList2Mirrored, uiIconImageCrosshair, uiIconGitGraph, uiIconRepo, uiIconRepoSolid, uiIconFolderQuery, uiIconFolderList, uiIconFolderListMirrored, uiIconLocationOutline, uiIconPOISolid, uiIconCalculatorNotEqualTo, uiIconBoxSubtractSolid, uiIconBoxAdditionSolid, uiIconBoxMultiplySolid, uiIconBoxPlaySolid, uiIconBoxCheckmarkSolid, uiIconCirclePauseSolid, uiIconCirclePause, uiIconMSNVideosSolid, uiIconCircleStopSolid, uiIconCircleStop, uiIconNavigateBack, uiIconNavigateBackMirrored, uiIconNavigateForward, uiIconNavigateForwardMirrored, uiIconUnknownSolid, uiIconUnknownMirroredSolid, uiIconCircleAddition, uiIconCircleAdditionSolid, uiIconFilePDB, uiIconFileTemplate, uiIconFileSQL, uiIconFileJAVA, uiIconFileASPX, uiIconFileCSS, uiIconFileSass, uiIconFileLess, uiIconFileHTML, uiIconJavaScriptLanguage, uiIconCSharpLanguage, uiIconCSharp, uiIconVisualBasicLanguage, uiIconVB, uiIconCPlusPlusLanguage, uiIconCPlusPlus, uiIconFSharpLanguage, uiIconFSharp, uiIconTypeScriptLanguage, uiIconPythonLanguage, uiIconPY, uiIconCoffeeScript, uiIconMarkDownLanguage, uiIconFullWidth, uiIconFullWidthEdit, uiIconPlug, uiIconPlugSolid, uiIconPlugConnected, uiIconPlugDisconnected, uiIconUnlockSolid, uiIconVariable, uiIconParameter, uiIconCommentUrgent, uiIconStoryboard, uiIconDiffInline, uiIconDiffSideBySide, uiIconImageDiff, uiIconImagePixel, uiIconFileBug, uiIconFileCode, uiIconFileComment, uiIconBusinessHoursSign, uiIconFileImage, uiIconFileSymlink, uiIconAutoFillTemplate, uiIconWorkItem, uiIconWorkItemBug, uiIconLogRemove, uiIconColumnOptions, uiIconPackages, uiIconBuildIssue, uiIconAssessmentGroup, uiIconVariableGroup, uiIconFullHistory, uiIconSingleColumnEdit, uiIconDoubleColumnEdit, uiIconTripleColumnEdit, uiIconColumnLeftTwoThirdsEdit, uiIconColumnRightTwoThirdsEdit, uiIconStreamLogo, uiIconPassiveAuthentication, uiIconAlertSolid, uiIconMegaphoneSolid, uiIconTaskSolid, uiIconConfigurationSolid, uiIconBugSolid, uiIconCrownSolid, uiIconTrophy2Solid, uiIconQuickNoteSolid, uiIconConstructionConeSolid, uiIconPageListSolid, uiIconPageListMirroredSolid, uiIconStarburstSolid, uiIconReadingModeSolid, uiIconSadSolid, uiIconHealthSolid, uiIconShieldSolid, uiIconGiftBoxSolid, uiIconShoppingCartSolid, uiIconMailSolid, uiIconChatSolid, uiIconRibbonSolid, uiIconFinancialSolid, uiIconFinancialMirroredSolid, uiIconHeadsetSolid, uiIconPermissionsSolid, uiIconParkingSolid, uiIconParkingMirroredSolid, uiIconDiamondSolid, uiIconAsteriskSolid, uiIconOfflineStorageSolid, uiIconBankSolid, uiIconDecisionSolid, uiIconParachute, uiIconParachuteSolid, uiIconFiltersSolid, uiIconColorSolid, uiIconReviewSolid, uiIconReviewRequestSolid, uiIconReviewRequestMirroredSolid, uiIconReviewResponseSolid, uiIconFeedbackRequestSolid, uiIconFeedbackRequestMirroredSolid, uiIconFeedbackResponseSolid, uiIconWorkItemBar, uiIconWorkItemBarSolid, uiIconSeparator, uiIconNavigateExternalInline, uiIconPlanView, uiIconTimelineMatrixView, uiIconEngineeringGroup, uiIconProjectCollection, uiIconCaretBottomRightCenter8, uiIconCaretBottomLeftCenter8, uiIconCaretTopRightCenter8, uiIconCaretTopLeftCenter8, uiIconDonutChart, uiIconChevronUnfold10, uiIconChevronFold10, uiIconDoubleChevronDown8, uiIconDoubleChevronUp8, uiIconDoubleChevronLeft8, uiIconDoubleChevronRight8, uiIconChevronDownEnd6, uiIconChevronUpEnd6, uiIconChevronLeftEnd6, uiIconChevronRightEnd6, uiIconContextMenu, uiIconAzureAPIManagement, uiIconAzureServiceEndpoint, uiIconVSTSLogo, uiIconVSTSAltLogo1, uiIconVSTSAltLogo2, uiIconFileTypeSolution, uiIconWordLogoInverse16, uiIconWordLogo16, uiIconWordLogoFill16, uiIconPowerPointLogoInverse16, uiIconPowerPointLogo16, uiIconPowerPointLogoFill16, uiIconExcelLogoInverse16, uiIconExcelLogo16, uiIconExcelLogoFill16, uiIconOneNoteLogoInverse16, uiIconOneNoteLogo16, uiIconOneNoteLogoFill16, uiIconOutlookLogoInverse16, uiIconOutlookLogo16, uiIconOutlookLogoFill16, uiIconPublisherLogoInverse16, uiIconPublisherLogo16, uiIconPublisherLogoFill16, uiIconVisioLogoInverse16, uiIconVisioLogo16, uiIconVisioLogoFill16, uiIconTestBeaker, uiIconTestBeakerSolid, uiIconTestExploreSolid, uiIconTestAutoSolid, uiIconTestUserSolid, uiIconTestImpactSolid, uiIconTestPlan, uiIconTestStep, uiIconTestParameter, uiIconTestSuite, uiIconTestCase, uiIconSprint, uiIconSignOut, uiIconTriggerApproval, uiIconRocket, uiIconAzureKeyVault, uiIconTransition, uiIconLikeSolid, uiIconDislikeSolid, uiIconUnSetColor, uiIconDeclineCall, uiIconRectangularClipping, uiIconTeamsLogo16, uiIconTeamsLogoFill16, uiIconSpacer, uiIconSkypeLogo16, uiIconSkypeForBusinessLogo16, uiIconSkypeForBusinessLogoFill16, uiIconFilterSolid, uiIconMailUndelivered, uiIconMailTentative, uiIconMailTentativeMirrored, uiIconMailReminder, uiIconReceiptUndelivered, uiIconReceiptTentative, uiIconReceiptTentativeMirrored, uiIconInbox, uiIconIRMReply, uiIconIRMReplyMirrored, uiIconIRMForward, uiIconIRMForwardMirrored, uiIconVoicemailIRM, uiIconEventAccepted, uiIconEventTentative, uiIconEventTentativeMirrored, uiIconEventDeclined, uiIconIDBadge, uiIconBackgroundColor, uiIconOfficeFormsLogoInverse16, uiIconOfficeFormsLogo, uiIconOfficeFormsLogoFill, uiIconOfficeFormsLogo16, uiIconOfficeFormsLogoFill16, uiIconOfficeFormsLogoInverse24, uiIconOfficeFormsLogo24, uiIconOfficeFormsLogoFill24, uiIconPageLock, uiIconNotExecuted, uiIconNotImpactedSolid, uiIconFieldReadOnly, uiIconFieldRequired, uiIconBacklogBoard, uiIconExternalBuild, uiIconExternalTFVC, uiIconExternalXAML, uiIconIssueSolid, uiIconDefectSolid, uiIconLadybugSolid, uiIconNugetLogo, uiIconTFVCLogo, uiIconProjectLogo32, uiIconProjectLogoFill32, uiIconProjectLogo16, uiIconProjectLogoFill16, uiIconSwayLogo32, uiIconSwayLogoFill32, uiIconSwayLogo16, uiIconSwayLogoFill16, uiIconClassNotebookLogo32, uiIconClassNotebookLogoFill32, uiIconClassNotebookLogo16, uiIconClassNotebookLogoFill16, uiIconClassNotebookLogoInverse32, uiIconClassNotebookLogoInverse16, uiIconStaffNotebookLogo32, uiIconStaffNotebookLogoFill32, uiIconStaffNotebookLogo16, uiIconStaffNotebookLogoFill16, uiIconStaffNotebookLogoInverted32, uiIconStaffNotebookLogoInverted16, uiIconKaizalaLogo, uiIconTaskLogo, uiIconProtectionCenterLogo32, uiIconGallatinLogo, uiIconGlobe2, uiIconGuitar, uiIconBreakfast, uiIconBrunch, uiIconBeerMug, uiIconVacation, uiIconTeeth, uiIconTaxi, uiIconChopsticks, uiIconSyncOccurence, uiIconUnsyncOccurence, uiIconPrimaryCalendar, uiIconSearchCalendar, uiIconVideoOff, uiIconMicrosoftFlowLogo, uiIconBusinessCenterLogo, uiIconToDoLogoBottom, uiIconToDoLogoTop, uiIconEditSolid12, uiIconEditSolidMirrored12, uiIconUneditableSolid12, uiIconUneditableSolidMirrored12, uiIconUneditableMirrored, uiIconAdminALogo32, uiIconAdminALogoFill32, uiIconToDoLogoInverse, uiIconSnooze, uiIconWaffleOffice365, uiIconImageSearch, uiIconNewsSearch, uiIconVideoSearch, uiIconR, uiIconFontColorA, uiIconFontColorSwatch, uiIconLightWeight, uiIconNormalWeight, uiIconSemiboldWeight, uiIconGroupObject, uiIconUngroupObject, uiIconAlignHorizontalLeft, uiIconAlignHorizontalCenter, uiIconAlignHorizontalRight, uiIconAlignVerticalTop, uiIconAlignVerticalCenter, uiIconAlignVerticalBottom, uiIconHorizontalDistributeCenter, uiIconVerticalDistributeCenter, uiIconEllipse, uiIconLine, uiIconOctagon, uiIconHexagon, uiIconPentagon, uiIconRightTriangle, uiIconHalfCircle, uiIconQuarterCircle, uiIconThreeQuarterCircle, uiIcon6PointStar, uiIcon12PointStar, uiIconArrangeBringToFront, uiIconArrangeSendToBack, uiIconArrangeSendBackward, uiIconArrangeBringForward, uiIconBorderDash, uiIconBorderDot, uiIconLineStyle, uiIconLineThickness, uiIconWindowEdit, uiIconHintText, uiIconMediaAdd, uiIconAnchorLock, uiIconAutoHeight, uiIconChartSeries, uiIconChartXAngle, uiIconChartYAngle, uiIconCombobox, uiIconLineSpacing, uiIconPadding, uiIconPaddingTop, uiIconPaddingBottom, uiIconPaddingLeft, uiIconPaddingRight, uiIconNavigationFlipper, uiIconAlignJustify, uiIconTextOverflow, uiIconVisualsFolder, uiIconVisualsStore, uiIconPictureCenter, uiIconPictureFill, uiIconPicturePosition, uiIconPictureStretch, uiIconPictureTile, uiIconSlider, uiIconSliderHandleSize, uiIconDefaultRatio, uiIconNumberSequence, uiIconGUID, uiIconReportAdd, uiIconDashboardAdd, uiIconMapPinSolid, uiIconWebPublish, uiIconPieSingleSolid, uiIconBlockedSolid, uiIconDrillDown, uiIconDrillDownSolid, uiIconDrillExpand, uiIconDrillShow, uiIconOneDriveFolder16, uiIconFunctionalManagerDashboard, uiIconBIDashboard, uiIconCodeEdit, uiIconRenewalCurrent, uiIconRenewalFuture, uiIconSplitObject, uiIconBulkUpload, uiIconDownloadDocument, uiIconWaitlistConfirm, uiIconWaitlistConfirmMirrored, uiIconLaptopSecure, uiIconDragObject, uiIconEntryView, uiIconEntryDecline, uiIconContactCardSettings, uiIconContactCardSettingsMirrored, uiIconCalendarSettings, uiIconCalendarSettingsMirrored, uiIconHardDriveLock, uiIconHardDriveUnlock, uiIconAccountManagement, uiIconTransitionPop, uiIconTransitionPush, uiIconTransitionEffect, uiIconLookupEntities, uiIconExploreData, uiIconAddBookmark, uiIconSearchBookmark, uiIconDrillThrough, uiIconMasterDatabase, uiIconCertifiedDatabase, uiIconMaximumValue, uiIconMinimumValue, uiIconVisualStudioIDELogo32, uiIconPasteAsText, uiIconPasteAsCode, uiIconBrowserTab, uiIconBrowserTabScreenshot, uiIconDesktopScreenshot, uiIconFileYML, uiIconClipboardSolid, uiIconAnalyticsView, uiIconLeave, uiIconTrending12, uiIconBlocked12, uiIconWarning12, uiIconCheckedOutByOther12, uiIconCheckedOutByYou12, uiIconCircleShapeSolid, uiIconSquareShapeSolid, uiIconTriangleShapeSolid, uiIconDropShapeSolid, uiIconRectangleShapeSolid, uiIconInsertColumnsLeft, uiIconInsertColumnsRight, uiIconInsertRowsAbove, uiIconInsertRowsBelow, uiIconDeleteColumns, uiIconDeleteRows, uiIconDeleteRowsMirrored, uiIconDeleteTable, uiIconVersionControlPush, uiIconWhiteBoardApp16, uiIconWhiteBoardApp32, uiIconInsertSignatureLine, uiIconArrangeByFrom, uiIconPhishing, uiIconCreateMailRule, uiIconPublishCourse, uiIconDictionaryRemove, uiIconUserRemove, uiIconUserEvent, uiIconEncryption, uiIconD365TalentLearn, uiIconD365TalentInsight, uiIconD365TalentHRCore, uiIconBacklogList, uiIconButtonControl, uiIconTableGroup, uiIconMountainClimbing, uiIconTagUnknown, uiIconTagUnknownMirror, uiIconTagUnknown12, uiIconTagUnknown12Mirror, uiIconLink12, uiIconPresentation, uiIconPresentation12, uiIconLock12, uiIconBuildDefinition, uiIconReleaseDefinition, uiIconSaveTemplate, uiIconUserGauge, uiIconBlockedSiteSolid12, uiIconTagSolid, uiIconOfficeChat, uiIconOfficeChatSolid, uiIconMailSchedule };

@@ -23,6 +23,7 @@ module.exports = {
         link: './docs/link.js',
         pivot: './docs/pivot.js',
         list: './docs/list.js',
+        toggle: './docs/toggle.js',
     },
     output: {
         filename: './[name].js',
