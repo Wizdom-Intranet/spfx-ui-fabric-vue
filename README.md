@@ -1,43 +1,45 @@
 # spfx-ui-fabric-vue
 Office ui fabric components made specific for SPFx.
 
-## Component status
-Component        |Implemented | Uses ui-fabric-js | Uses ui-fabric-vue | Uses ui-fabric-core styles  | Notes
- ---             | :---:      | :---:             | :---:              | :---:                       | ---
-Button           | Yes        | Yes               | Yes                | Yes                      
-Callout          | Yes        | Yes               | Yes                | Yes                         | icons changed to svgs
-Checkbox         | Yes        | Yes               | Yes                | Yes                         | icons changed to svgs
-ChoiceFieldGroup | Yes        | Yes               | Yes                | Yes 
-ContextualMenu   | Yes        | Yes               | Yes                | Yes                         | icons changed to svgs
-Dialog           | Yes        | Yes               | Yes                | Yes                         | icons changed to svgs
-Dropdown         | Yes        | Yes               | Yes                | Yes                         | icons changed to svgs, 
-Label            | Yes        | Yes               | Yes                | Yes                         | 
-Messagebar       | Yes        | Yes               | Yes                | Yes                         | icon is no longer a property, but instead a slot called "icon"
-Overlay          | Yes        | Yes               | Yes                | Yes                         | 
-Panel            | Yes        | Yes               | Yes                | Yes                         | 
-Persona          | Yes        | Yes               | Yes                | Yes                         | 
-Searchbox        | Yes        | Yes               | Yes                | Yes                         | icons changed to svgs
-Spinner          | Yes        | Yes               | Yes                | Yes                         | TESTS MISSING, moving, so not possible to test with screenshots!
-Textfield        | Yes        | Yes               | Yes                | Yes                         | 
-Icons            | Yes        | No                | No                 | No                          |
-Breadcrumb       | No         | Yes               | Yes                | Yes                         | 
-Commandbar       | *Yes       | Yes               | Yes                | Yes                         | Not to happy about the implementation, consider using the react version instead. *Contextual menu, when items get collapsed, is not working as intended yet! TESTS MISSING
-CommandButton    | Yes        | Yes               | Yes                | Yes                         | icon is no longer a property, but instead a slot called "icon"
-Link             | Yes        | Yes               | Yes                | Yes                         | 
-List             | No         | Yes               | No                 | Yes                         | 
-ListItem         | No         | Yes               | No                 | Yes                         | 
-MessageBanner    | No         | Yes               | Yes                | Yes                         | 
-OrgChart         | No         | Yes               | Yes                | Yes                         | 
-Pivot            | Yes        | Yes               | Yes                | Yes                         | 
-ProgressIndicator| No         | Yes               | Yes                | Yes                         | 
-Toggle           | No         | Yes               | Yes                | Yes                         | 
-Facepile         | No         | Yes               | No                 | Yes                         |
-PeoplePicker     | No         | Yes               | No                 | Yes                         |
-PersonaCard      | No         | Yes               | No                 | Yes                         |
-Table            | No         | Yes               | No                 | Yes                         |
+## Component status - Done
+Component        | Uses ui-fabric-js | Uses ui-fabric-vue | Uses ui-fabric-core styles  | Notes
+ ---             | :---:             | :---:              | :---:                       | ---
+Button           | Yes               | Yes                | Yes                      
+Callout          | Yes               | Yes                | Yes                         | icons changed to svgs
+Checkbox         | Yes               | Yes                | Yes                         | icons changed to svgs
+ChoiceFieldGroup | Yes               | Yes                | Yes 
+ContextualMenu   | Yes               | Yes                | Yes                         | icons changed to svgs
+Dialog           | Yes               | Yes                | Yes                         | icons changed to svgs
+Dropdown         | Yes               | Yes                | Yes                         | icons changed to svgs, 
+Label            | Yes               | Yes                | Yes                         | 
+Messagebar       | Yes               | Yes                | Yes                         | icon is no longer a property, but instead a slot called "icon"
+Overlay          | Yes               | Yes                | Yes                         | 
+Panel            | Yes               | Yes                | Yes                         | 
+Persona          | Yes               | Yes                | Yes                         | 
+Searchbox        | Yes               | Yes                | Yes                         | icons changed to svgs
+Spinner          | Yes               | Yes                | Yes                         | TESTS MISSING, moving, so not possible to test with screenshots!
+Textfield        | Yes               | Yes                | Yes                         | 
+Icons            | No                | No                 | No                          |
+Commandbar*      | Yes               | Yes                | Yes                         | Not to happy about the implementation, consider using the react version instead. *Contextual menu, when items get collapsed, is not working as intended yet! TESTS MISSING
+CommandButton    | Yes               | Yes                | Yes                         | icon is no longer a property, but instead a slot called "icon"
+Link             | Yes               | Yes                | Yes                         | 
+Pivot            | Yes               | Yes                | Yes                         | 
+List             | Yes               | Yes                | Yes                         |
 
+## Component status - Todo
+Component         | Notes
+ ---              | ---
 
-
+ListItem          | 
+MessageBanner     | 
+ProgressIndicator | 
+Toggle            | 
+Facepile          |
+PeoplePicker      |
+PersonaCard       |
+Table             |
+OrgChart          | 
+Breadcrumb        | 
 
 ## Bonus components
 No part of the normal ui fabric, but used by multiple wizdom components

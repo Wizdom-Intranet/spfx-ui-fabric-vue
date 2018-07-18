@@ -22,4 +22,9 @@ export { default as uiLink } from "./components/uiLink.vue";
 export { default as uiPivot } from "./components/uiPivot.vue";
 export { default as uiPivotItem } from "./components/uiPivotItem.vue";
 
+export { default as uiList } from "./components/uiList.vue";
+export { default as uiListItem } from "./components/uiListItem.vue";
+export { default as uiListActions } from "./components/uiListActions.vue";
+export { default as uiListActionItem } from "./components/uiListActionItem.vue";
+
 export *  from "./components/uiIcon";
