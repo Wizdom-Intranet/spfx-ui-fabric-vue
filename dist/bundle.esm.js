@@ -2572,17 +2572,17 @@ var uiOverlay = {_scopeId: 'data-v-09ffd35c',
             Overlay : Overlay
         };
     },
-    watch:{
-        useDarkOverlay:{
-            handler: function handler(newVal){
+    // watch:{
+    //     useDarkOverlay:{
+    //         handler(newVal){
                 
-            },
-            immediate : true
-        }
-    },
-    props : {
-        useDarkOverlay: Boolean
-    },
+    //         },
+    //         immediate : true
+    //     }
+    // },
+    // props : {
+    //     useDarkOverlay: Boolean
+    // },
     extends :  overlay
 }
 
@@ -3831,8 +3831,33 @@ function GetIcon(name, unicode, bundle)
     // *please not, we manually scope the css
     return function (resolve){ //factory: https://vuejs.org/v2/guide/components-dynamic-async.html#Handling-Loading-State
         loadStyles(("\n            @font-face{\n                font-family:fabricmdl2icons" + scopeId + bundle + ";\n                src: url(" + baseUrl + "/fabric-icons-" + bundle + ".woff) format(\"woff\")\n            }\n            .ms-Icon[data-v-" + scopeId + "]{display:inline-block;font-style:normal;font-weight:400;speak:none}\n            .ms-Icon--" + name + "[data-v-" + scopeId + "]:before{font-family:fabricmdl2icons" + scopeId + bundle + "; content:\"" + unicode + "\"}\n        "));
-        resolve({template : ("<i data-v-" + scopeId + " class='ms-Icon ms-Icon--" + name + "'></i>")});
+        var attrs = {
+            class : ("ms-Icon ms-Icon--" + name)
+        };
+        attrs["data-v-" + scopeId] = "";
+        resolve({
+            render : function (h){ return h("i", {attrs: attrs}); }
+            // template : `<i data-v-${scopeId} class='ms-Icon ms-Icon--${name}'></i>`}
+        });
     };
+    // return ()=>{
+    //     loadStyles(`
+    //         @font-face{
+    //             font-family:fabricmdl2icons${scopeId}${bundle};
+    //             src: url(${baseUrl}/fabric-icons-${bundle}.woff) format("woff")
+    //         }
+    //         .ms-Icon[data-v-${scopeId}]{display:inline-block;font-style:normal;font-weight:400;speak:none}
+    //         .ms-Icon--${name}[data-v-${scopeId}]:before{font-family:fabricmdl2icons${scopeId}${bundle}; content:"${unicode}"}
+    //     `)
+    //     return {
+    //         component:{
+    //             // render : (h)=>h("i", {attrs:{
+    //             //     class : `ms-Icon ms-Icon--${name}`,
+    //             // }})
+    //             template : `<i data-v-${scopeId} class='ms-Icon ms-Icon--${name}'></i>`
+    //         }
+    //     }
+    // };
 }
 
 var uiIconGlobalNavButton = GetIcon("GlobalNavButton", "\uE700", "a13498cf");

@@ -14,8 +14,33 @@ function GetIcon(name, unicode, bundle)
             .ms-Icon[data-v-${scopeId}]{display:inline-block;font-style:normal;font-weight:400;speak:none}
             .ms-Icon--${name}[data-v-${scopeId}]:before{font-family:fabricmdl2icons${scopeId}${bundle}; content:"${unicode}"}
         `)
-        resolve({template : `<i data-v-${scopeId} class='ms-Icon ms-Icon--${name}'></i>`});
+        var attrs = {
+            class : `ms-Icon ms-Icon--${name}`
+        };
+        attrs["data-v-" + scopeId] = "";
+        resolve({
+            render : (h)=>h("i", {attrs})
+            // template : `<i data-v-${scopeId} class='ms-Icon ms-Icon--${name}'></i>`}
+        });
     };
+    // return ()=>{
+    //     loadStyles(`
+    //         @font-face{
+    //             font-family:fabricmdl2icons${scopeId}${bundle};
+    //             src: url(${baseUrl}/fabric-icons-${bundle}.woff) format("woff")
+    //         }
+    //         .ms-Icon[data-v-${scopeId}]{display:inline-block;font-style:normal;font-weight:400;speak:none}
+    //         .ms-Icon--${name}[data-v-${scopeId}]:before{font-family:fabricmdl2icons${scopeId}${bundle}; content:"${unicode}"}
+    //     `)
+    //     return {
+    //         component:{
+    //             // render : (h)=>h("i", {attrs:{
+    //             //     class : `ms-Icon ms-Icon--${name}`,
+    //             // }})
+    //             template : `<i data-v-${scopeId} class='ms-Icon ms-Icon--${name}'></i>`
+    //         }
+    //     }
+    // };
 }
 
 export let uiIconGlobalNavButton = GetIcon("GlobalNavButton", "\uE700", "a13498cf");
