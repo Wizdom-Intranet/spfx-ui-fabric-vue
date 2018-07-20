@@ -4,6 +4,7 @@
   "description": "Office ui fabric components made specific for SPFx.",
   "main": "dist/bundle.esm.js",
   "module": "dist/bundle.esm.js",
+  "sideEffects": false,
   "scripts": {
     "build": "rollup -c ./rollup.config.js",
     "build:watch": "rollup -c ./rollup.config.js --watch",

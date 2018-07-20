@@ -28,5 +28,14 @@ export { default as uiSpinner } from "./components/uiSpinner.vue";
 export { default as uiTextfield } from "./components/uiTextfield.vue";
 export { default as uiToggle } from "./components/uiToggle.vue";
 
-
+// export const uiIconMore = {};
+// export const uiIconChevronLeft = {};
+// export const uiIconChevronRight = {};
+// export const uiIconChromeClose = {};
+// export const uiIconShare = {};
+// export const uiIconClock = {};
+// export const uiIconLike = {};
+// export const uiIconLikeSolid = {};
+// export const uiIconEdit = {};
+// export const uiIconMessage = {};
 export *  from "./components/uiIcon";
