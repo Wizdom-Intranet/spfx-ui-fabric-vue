@@ -25,4 +25,10 @@ export default {
     @import '../misc/fixThemeVars';
     @import "node_modules/office-ui-fabric-js/src/components/Panel/Panel";
     @import "node_modules/office-ui-fabric-js/src/components/Overlay/Overlay";
+
+    .ms-Panel-contentInner{
+        margin-top: 0;
+        border-top:solid 40px transparent;
+        box-sizing: border-box;
+    }
 </style>
