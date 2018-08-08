@@ -28,11 +28,12 @@ Textfield         | Yes               | Yes                | Yes                
 Pivot             | Yes               | Yes                | Yes                         | 
 Toggle            | Yes               | Yes                | Yes                         |
 ProgressIndicator | Yes               | Yes                | Yes                         |
+MessageBanner     | Yes               | No                 | Yes                         | icon changed to svg
 
 ## Component status - Todo
 Component         | Notes
  ---              | ---
-MessageBanner     | 
+
 Facepile          |
 PeoplePicker      |
 PersonaCard       |

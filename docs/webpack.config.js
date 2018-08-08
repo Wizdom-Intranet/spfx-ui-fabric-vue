@@ -15,6 +15,7 @@ module.exports = {
         spinner:'./docs/spinner.js',
         label:'./docs/label.js',
         messagebar:'./docs/messagebar.js',
+        messagebanner:'./docs/messagebanner.js',
         textfield:'./docs/textfield.js',
         persona:'./docs/persona.js',
         icon:'./docs/icon.js',
