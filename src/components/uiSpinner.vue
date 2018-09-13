@@ -12,7 +12,10 @@ export default {
     mounted() {
         // console.log("spin", this.$refs.spinner);
         var childs = this.$refs.spinner.querySelectorAll(":not([" + this.$options._scopeId + "])");
-        Array.from(childs).map(c=>c.setAttribute(this.$options._scopeId, ""));
+        //IE vs. Array.From vs. querySelectorAll = no work >.<
+        //Array.prototype.slice, does the trick instead 
+        Array.prototype.slice.call(childs).map(c=>c.setAttribute(this.$options._scopeId, ""));
+        // Array.from(childs).map(c=>c.setAttribute(this.$options._scopeId, ""));
     },
     extends :  Spinner
 }

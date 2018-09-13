@@ -9,9 +9,26 @@ export default {
             Dropdown : fabricDropdown
         };
     },
+    methods:{
+        setSelectedStatus: function setSelectedStatus(content) {
+            var this$1 = this;
+
+            Array.prototype.forEach.call(this.$refs.dropdown.querySelectorAll('.ms-Dropdown-item'), function (item) {
+                if (item.textContent.trim() == content.trim()) {
+                    item.classList.add('is-selected');
+                    this$1.setDropdownTitle(content);
+                } else {
+                    item.classList.remove('is-selected');
+                }
+            });
+        },
+    },
     mounted(){
         var childs = this.$refs.dropdown.querySelectorAll(":not([" + this.$options._scopeId + "])");
-        Array.from(childs).map(c=>c.setAttribute(this.$options._scopeId, ""));
+        //IE vs. Array.From vs. querySelectorAll = no work >.<
+        //Array.prototype.slice, does the trick instead 
+        Array.prototype.slice.call(childs).map(c=>c.setAttribute(this.$options._scopeId, ""));
+        // Array.from(childs).map(c=>c.setAttribute(this.$options._scopeId, ""));
     },
     extends :  Dropdown
 }

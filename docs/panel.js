@@ -6,7 +6,7 @@ new Vue({
     components : { uiButton,uiPanel },
     data() {
         return {
-          defaultPanelVisiblity: true
+          defaultPanelVisiblity: false
         };
     },
 

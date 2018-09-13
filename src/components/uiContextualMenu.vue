@@ -15,7 +15,8 @@ export default {
             
             var setScopeIdForContextualHost = contextualhost => {
                 contextualhost.setAttribute(this.$options._scopeId,"");
-                Array.from(contextualhost.children).map(c=>c.setAttribute(this.$options._scopeId,""));
+                Array.prototype.slice.call(contextualhost.children).map(c=>c.setAttribute(this.$options._scopeId, ""));
+                // Array.from(contextualhost.children).map(c=>c.setAttribute(this.$options._scopeId,""));
             }
 
             // set scopeId for contextualhost
@@ -23,15 +24,18 @@ export default {
 
             // scopeId for menuItems
             var menuItems = this.$refs.contextualMenu.querySelectorAll("[class^='ms-ContextualMenu']");
-            Array.from(menuItems).map(menuItem=>menuItem.setAttribute(this.$options._scopeId, ""));
+            Array.prototype.slice.call(menuItems).map(menuItem=>menuItem.setAttribute(this.$options._scopeId, ""));
+            // Array.from(menuItems).map(menuItem=>menuItem.setAttribute(this.$options._scopeId, ""));
 
             var subItems = this$1.contextualMenuInstance._container.querySelectorAll(".ms-ContextualMenu-item.ms-ContextualMenu-item--hasMenu");
-            Array.from(subItems).map((subItem)=>{
+            // Array.from(subItems).map((subItem)=>{
+            Array.prototype.slice.call(menuItems).map((subItem)=>{
                 subItem.addEventListener("click", ()=>{
                     var contextualMenuElmInsideHost = document.querySelector(`.ms-ContextualHost:not([${this.$options._scopeId}]) [${this.$options._scopeId}]`)
                     if(contextualMenuElmInsideHost && contextualMenuElmInsideHost.parentElement.parentElement)
                         setScopeIdForContextualHost(contextualMenuElmInsideHost.parentElement.parentElement);
-                    fabricContextualHost.hosts[fabricContextualHost.hosts.length-1]._openModal();
+                    if(fabricContextualHost.hosts[fabricContextualHost.hosts.length-1])
+                        fabricContextualHost.hosts[fabricContextualHost.hosts.length-1]._openModal();
                 });
             });
 
