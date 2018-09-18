@@ -1,5 +1,6 @@
 import { loadStyles } from '@microsoft/load-themed-styles';
 import Vue from 'vue';
+import { fontFace, mergeStyles } from '@uifabric/merge-styles';
 
 function type () {
   var arguments$1 = arguments;
@@ -4694,16 +4695,90 @@ var uiToggle = {_scopeId: 'data-v-3153c0f8',
     extends :  toggle
 }
 
-// import { loadStyles } from '@microsoft/load-themed-styles';
 var Icon = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('i',{class:_vm.iconClass,on:{"click":function($event){_vm.$emit('click');}}})},staticRenderFns: [],_scopeId: 'data-v-d73a0ac6',
+    data: function data(){
+        return {
+            cl : ""
+        };
+    },
     computed:{
         iconClass: function iconClass(){
-            return ("ms-Icon ms-Icon--" + (this.name))
+            // return this.cl;
+            return "ms-Icon ms-Icon--" + (this.name) + " " + this.cl;
         }
     },
     mounted: function mounted(){
-        var baseUrl = "https://spoprod-a.akamaihd.net/files/fabric/assets/icons"; // this is the baseUrl used by MS!
-        loadStyles(("\n            @font-face{\n                font-family:fabricmdl2icons" + (this.$options._scopeId) + (this.bundle) + ";\n                src: url(" + baseUrl + "/fabric-icons-" + (this.bundle) + ".woff) format(\"woff\")\n            }\n            .ms-Icon[" + (this.$options._scopeId) + "]{display:inline-block;font-style:normal;font-weight:400;speak:none}\n            .ms-Icon--" + (this.name) + "[" + (this.$options._scopeId) + "]:before{font-family:fabricmdl2icons" + (this.$options._scopeId) + (this.bundle) + "; content:\"" + (this.unicode) + "\"}\n        "));
+
+        // loadStyles(`
+        //     @font-face{
+        //         font-family:fabricmdl2icons${this.$options._scopeId}${this.bundle};
+        //         src: url(${baseUrl}/fabric-icons-${this.bundle}.woff) format("woff")
+        //     }
+        //     .ms-Icon[${this.$options._scopeId}]{display:inline-block;font-style:normal;font-weight:400;speak:none}
+        //     .ms-Icon--${this.name}[${this.$options._scopeId}]:before{font-family:fabricmdl2icons${this.$options._scopeId}${this.bundle}; content:"${this.unicode}"}
+        // `);
+        // return;
+
+        // loadStyles(`
+        //     .ms-Icon[${this.$options._scopeId}]{display:inline-block;font-style:normal;font-weight:400;speak:none}
+        //     .ms-Icon--${this.name}[${this.$options._scopeId}]:before{font-family:fabricmdl2icons${this.$options._scopeId}${this.bundle}; content:"${this.unicode}"}
+        // `);
+
+        fontFace({
+            // fontFamily: 'FabricMDL2Icons-4',
+            fontFamily: "FabricMDL2Icons-" + this.bundle,
+            // src: "url('http://spoprod-a.akamaihd.net/files/fabric/assets/icons/fabric-icons-4-aeecd474.woff') format('woff')",
+            src: "url(https://spoprod-a.akamaihd.net/files/fabric/assets/icons/fabric-icons-" + this.bundle +".woff) format(\"woff\")"
+            // src: "url('https://spoprod-a.akamaihd.net/files/fabric/assets/icons/fabric-icons-" + this.bundle + ".woff') format('woff')",
+            // src: "url(\"" + baseUrl + "/fabric-icons-" + this.bundle + ".woff\") format(woff)",
+            // fontWeight: "normal"
+        });
+        this.cl = mergeStyles({ 
+            displayName : this.$options._scopeId,
+            display: 'inline-block',
+            fontStyle: 'normal',
+            fontWeight: '400',
+            speak: 'none',
+            selectors: {
+                ":before":{
+                    fontFamily: "FabricMDL2Icons-" + this.bundle,
+                    content: "'" + this.unicode + "'"
+                }
+            }
+        });
+        return;
+
+
+        // loadStyles(`
+        //     @font-face{
+        //         font-family:fabricmdl2icons${this.$options._scopeId}${this.bundle};
+        //         src: url(${baseUrl}/fabric-icons-${this.bundle}.woff2) format("woff2"),
+        //         src: url(${baseUrl}/fabric-icons-${this.bundle}.woff) format("woff"),
+        //         src: url(${baseUrl}/fabric-icons-${this.bundle}.ttf) format("truetype")
+        //     }
+        //     .ms-Icon[${this.$options._scopeId}]{display:inline-block;font-style:normal;font-weight:400;speak:none}
+        //     .ms-Icon--${this.name}[${this.$options._scopeId}]:before{font-family:fabricmdl2icons${this.$options._scopeId}${this.bundle}; content:"${this.unicode}"}
+        // `)
+        // fontFace({
+        //     fontFamily: `"fabricmdl2icons${this.bundle}"`,
+        //     src: `url("${baseUrl}/fabric-icons-${this.bundle}.woff") format(woff)`,
+        //     fontWeight: "normal"
+        // });
+        
+        // loadStyles(`
+        //     .ms-Icon{display:inline-block;font-style:normal;font-weight:400;speak:none}
+        //     .ms-Icon--${this.name}:before{font-family:fabricmdl2icons${this.bundle}; content:"${this.unicode}"}
+        // `)
+        // loadStyles(`
+        //     @font-face{
+        //         font-family:fabricmdl2icons${this.$options._scopeId}${this.bundle};
+        //         src: url('#{$ms-font-directory}/icons/office365icons.eot?');
+        //         src: url('#{$ms-font-directory}/icons/office365icons.eot?#iefix') format('embedded-opentype'),
+        //              url(${baseUrl}/fabric-icons-${this.bundle}.woff?) format("woff"),
+        //     }
+        //     .ms-Icon[${this.$options._scopeId}]{display:inline-block;font-style:normal;font-weight:400;speak:none}
+        //     .ms-Icon--${this.name}[${this.$options._scopeId}]:before{font-family:fabricmdl2icons${this.$options._scopeId}${this.bundle}; content:"${this.unicode}"}
+        // `)
     }
 }
 

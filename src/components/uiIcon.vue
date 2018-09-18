@@ -3,26 +3,39 @@
 </template>
 
 <script>
-// import { loadStyles } from '@microsoft/load-themed-styles';
+import { fontFace, mergeStyles } from '@uifabric/merge-styles';
+
 export default {
+    data(){
+        return {
+            cl : ""
+        };
+    },
     computed:{
         iconClass(){
-            return `ms-Icon ms-Icon--${this.name}`
+            return `ms-Icon ms-Icon--${this.name} ` + this.cl;
         }
     },
     mounted(){
-        var baseUrl = "https://spoprod-a.akamaihd.net/files/fabric/assets/icons"; // this is the baseUrl used by MS!
-        loadStyles(`
-            @font-face{
-                font-family:fabricmdl2icons${this.$options._scopeId}${this.bundle};
-                src: url(${baseUrl}/fabric-icons-${this.bundle}.woff) format("woff")
+        var baseUrl = "//spoprod-a.akamaihd.net/files/fabric/assets/icons"; // this is the baseUrl used by MS!
+
+        fontFace({
+            fontFamily: "FabricMDL2Icons-" + this.bundle,
+            src: "url(https://spoprod-a.akamaihd.net/files/fabric/assets/icons/fabric-icons-" + this.bundle +".woff) format(\"woff\")"
+        });
+        this.cl = mergeStyles({ 
+            displayName : this.$options._scopeId,
+            display: 'inline-block',
+            fontStyle: 'normal',
+            fontWeight: '400',
+            speak: 'none',
+            selectors: {
+                ":before":{
+                    fontFamily: "FabricMDL2Icons-" + this.bundle,
+                    content: "'" + this.unicode + "'"
+                }
             }
-            .ms-Icon[${this.$options._scopeId}]{display:inline-block;font-style:normal;font-weight:400;speak:none}
-            .ms-Icon--${this.name}[${this.$options._scopeId}]:before{font-family:fabricmdl2icons${this.$options._scopeId}${this.bundle}; content:"${this.unicode}"}
-        `)
+        });
     }
 }
 </script>
-<style scoped>
-    
-</style>
