@@ -45,4 +45,14 @@ export default {
             content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2048 2048" width="12" height="12" version="1.1" xmlns="http://www.w3.org/2000/svg"><path transform="translate(0, 2048) scale(1, -1)" d="M1939 1581l90 -90l-1005 -1005l-1005 1005l90 90l915 -915z" fill="black" stroke="none"/></svg>');
         }
     }
+
+    .ms-Panel .ms-Dropdown-items{
+        /* ui-fabric-js tries to adjust the ms-dropdown-items for small devices, but it confligts with using them normally in panels
+           this will undo these adjustments. (Still works fine on small devices)
+        */
+        max-height: 200px;
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
+        overflow-y: scroll;
+        padding-top: 0;
+    }
 </style>
