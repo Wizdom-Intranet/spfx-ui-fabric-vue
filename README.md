@@ -51,6 +51,7 @@ Richtexteditor   | No          | Needs a license key, see wiki for more info
 TemplateSwitcher | No          |
 Typeahead        | No          |
 Multiselect      | No          |
+Timepicker       | Yes         |
 
 ## Changes, compared to https://aidewoode.github.io/office-ui-fabric-vue/#/
 Dialog, has an extra property to show dark overlay, called useDarkOverlay (Boolean)
