@@ -4726,8 +4726,9 @@ var uiTimePicker = {render: function(){var _vm=this;var _h=_vm.$createElement;va
                 { this.$nextTick(function (){ return this$1.hour = oldVal; }); }
             else
             {
-                this.value.setHours(this.hour);
-                this.$emit("input", new Date(this.value));
+                var newDate = this.value ? new Date(this.value) : new Date(0);
+                newDate.setHours(this.hour);
+                this.$emit("input", newDate);
             }
         },
         minute: function minute(newVal, oldVal){
@@ -4737,14 +4738,18 @@ var uiTimePicker = {render: function(){var _vm=this;var _h=_vm.$createElement;va
                 { this.$nextTick(function (){ return this$1.minute = oldVal; }); }
             else
             {
-                this.value.setMinutes(this.minute);
-                this.$emit("input", new Date(this.value));
+                var newDate = this.value ? new Date(this.value) : new Date(0);
+                newDate.setMinutes(this.minute);
+                this.$emit("input", newDate);
             }
         },
         value:{
             handler: function handler(newVal){
-                this.hour = newVal.getHours();
-                this.minute = newVal.getMinutes();
+                if(newVal)
+                {
+                    this.hour = newVal.getHours();
+                    this.minute = newVal.getMinutes();
+                }
             },
             immediate : true
         }

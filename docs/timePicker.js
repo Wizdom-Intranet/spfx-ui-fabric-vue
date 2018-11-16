@@ -6,12 +6,15 @@ new Vue({
     components : { uiTimePicker },
     data() {
         return {
-            dato : new Date()
+            dato : new Date(),
+            noDate : null
         };
     },
     template : `<div>
         <uiTimePicker v-model="dato" />
         <uiTimePicker v-model="dato" style="width:400px" />
-        {{dato}}
+        <uiTimePicker v-model="noDate" style="width:100px" />
+        {{dato}}<br/>
+        {{noDate}}
     </div>`
 });

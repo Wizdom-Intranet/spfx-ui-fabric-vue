@@ -40,8 +40,9 @@ export default {
                 this.$nextTick(()=>this.hour = oldVal);
             else
             {
-                this.value.setHours(this.hour);
-                this.$emit("input", new Date(this.value));
+                var newDate = this.value ? new Date(this.value) : new Date(0);
+                newDate.setHours(this.hour);
+                this.$emit("input", newDate);
             }
         },
         minute(newVal, oldVal){
@@ -49,14 +50,18 @@ export default {
                 this.$nextTick(()=>this.minute = oldVal);
             else
             {
-                this.value.setMinutes(this.minute);
-                this.$emit("input", new Date(this.value));
+                var newDate = this.value ? new Date(this.value) : new Date(0);
+                newDate.setMinutes(this.minute);
+                this.$emit("input", newDate);
             }
         },
         value:{
             handler(newVal){
-                this.hour = newVal.getHours();
-                this.minute = newVal.getMinutes();
+                if(newVal)
+                {
+                    this.hour = newVal.getHours();
+                    this.minute = newVal.getMinutes();
+                }
             },
             immediate : true
         }
