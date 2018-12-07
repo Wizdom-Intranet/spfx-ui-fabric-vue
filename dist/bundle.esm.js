@@ -4523,9 +4523,9 @@ var uiSpinner = {_scopeId: 'data-v-74b796b6',
     extends :  Spinner
 }
 
-var textField = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"textField",staticClass:"ms-TextField",class:_vm.textFieldClass},[_c('label',{staticClass:"ms-Label"},[_vm._v(_vm._s(_vm.label))]),_vm._v(" "),(_vm.type == 'multiline')?_c('textarea',{staticClass:"ms-TextField-field",attrs:{"placeholder":_vm.placeholder,"type":"text","disabled":_vm.disabled},domProps:{"value":_vm.value},on:{"input":_vm.updateValue,"change":_vm.changeEvent}}):_c('input',{staticClass:"ms-TextField-field",attrs:{"placeholder":_vm.placeholder,"type":_vm.inputType,"disabled":_vm.disabled},domProps:{"value":_vm.value},on:{"input":_vm.updateValue,"change":_vm.changeEvent}})])},staticRenderFns: [],
+var textField = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"textField",staticClass:"ms-TextField",class:_vm.textFieldClass},[_c('label',{staticClass:"ms-Label"},[_vm._v(_vm._s(_vm.label))]),_vm._v(" "),(_vm.type == 'multiline')?_c('textarea',_vm._b({staticClass:"ms-TextField-field",attrs:{"placeholder":_vm.placeholder,"type":"text","disabled":_vm.disabled},domProps:{"value":_vm.value},on:{"input":_vm.updateValue,"change":_vm.changeEvent,"blur":_vm.blurEvent}},'textarea',_vm.attrs,false)):_c('input',_vm._b({staticClass:"ms-TextField-field",attrs:{"placeholder":_vm.placeholder,"type":_vm.inputType,"disabled":_vm.disabled},domProps:{"value":_vm.value},on:{"input":_vm.updateValue,"change":_vm.changeEvent,"blur":_vm.blurEvent}},'input',_vm.attrs,false))])},staticRenderFns: [],
   name: 'ou-text-field',
-
+  inheritAttrs: false,
   mixins: [type('multiline', 'underlined'), disabled],
 
   props: {
@@ -4542,6 +4542,7 @@ var textField = {render: function(){var _vm=this;var _h=_vm.$createElement;var _
   },
 
   computed: {
+    attrs: function attrs(){return this.$attrs},
     textFieldClass: function textFieldClass() {
       var obj;
 
@@ -4557,7 +4558,9 @@ var textField = {render: function(){var _vm=this;var _h=_vm.$createElement;var _
     updateValue: function updateValue(event) {
       this.$emit('input', event.target.value);
     },
-
+    blurEvent: function blurEvent(event){
+      this.$emit('blur', event.target.value);
+    },
     changeEvent: function changeEvent(event) {
       this.$emit('change', event.target.value);
     }
