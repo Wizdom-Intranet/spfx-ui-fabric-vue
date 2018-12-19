@@ -28,6 +28,7 @@ export { default as uiSearchBox } from "./components/uiSearchbox.vue";
 export { default as uiSpinner } from "./components/uiSpinner.vue";
 export { default as uiTextfield } from "./components/uiTextfield.vue";
 export { default as uiToggle } from "./components/uiToggle.vue";
+export { default as uiDynamicIcon } from "./components/uiDynamicIcon.vue";
 
 // our own components
 export { default as uiTimePicker } from "./components/uiTimePicker.vue";

@@ -19,6 +19,7 @@ module.exports = {
         textfield:'./docs/textfield.js',
         persona:'./docs/persona.js',
         icon:'./docs/icon.js',
+        dynamicIcon:'./docs/dynamicIcon.js',
         commandbar: './docs/commandbar.js',
         commandbutton: './docs/commandbutton.js',
         link: './docs/link.js',

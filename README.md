@@ -52,6 +52,7 @@ TemplateSwitcher | No          |
 Typeahead        | No          |
 Multiselect      | No          |
 Timepicker       | Yes         |
+DynamicIcon      | Yes         | 
 
 ## Changes, compared to https://aidewoode.github.io/office-ui-fabric-vue/#/
 Dialog, has an extra property to show dark overlay, called useDarkOverlay (Boolean)
