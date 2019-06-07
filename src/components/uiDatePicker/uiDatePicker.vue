@@ -252,10 +252,10 @@ export default {
             }
         },
         localeObj(){
-            if(locale[this.locale])
-                return locale[this.locale];
-            if(locale[this.locale.split("-")[0]])
-                return locale[this.locale.split("-")[0]];
+            if(locale[this.locale.toLowerCase()])
+                return locale[this.locale.toLowerCase()];
+            if(locale[this.locale.split("-")[0].toLowerCase()])
+                return locale[this.locale.split("-")[0].toLowerCase()];
             return locale["en-us"];
         },
         years(){
