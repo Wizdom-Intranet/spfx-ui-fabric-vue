@@ -319,7 +319,11 @@ export default {
     },
     methods:{
         parseTypedDate(){
-            // console.log("parsing", this.inputVal);
+            if(!this.inputVal || this.inputVal == "")
+            {
+                this.$emit("input", "");
+                return;
+            }
             var parsed = Moment(this.inputVal, this.localeObj.format.toUpperCase());
             if(parsed.isValid()){
                 // this.pickerDate = parsed.toDate();

@@ -25882,7 +25882,12 @@ var uiDatePicker = {render: function(){var _vm=this;var _h=_vm.$createElement;va
     },
     methods:{
         parseTypedDate: function parseTypedDate(){
-            // console.log("parsing", this.inputVal);
+            console.log("parsing", this.inputVal);
+            if(!this.inputVal || this.inputVal == "")
+            {
+                this.$emit("input", "");
+                return;
+            }
             var parsed = Moment(this.inputVal, this.localeObj.format.toUpperCase());
             if(parsed.isValid()){
                 // this.pickerDate = parsed.toDate();
