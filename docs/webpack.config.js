@@ -28,6 +28,7 @@ module.exports = {
         toggle: './docs/toggle.js',
         progressIndicator: './docs/progressIndicator.js',
         timePicker: './docs/timePicker.js',
+        datePicker: './docs/datePicker.js',
     },
     output: {
         filename: './[name].js',
