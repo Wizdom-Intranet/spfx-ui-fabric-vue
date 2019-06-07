@@ -18,6 +18,8 @@ export default {
             only : [
                 "office-ui-fabric-vue", 
                 "office-ui-fabric-js",
+                "vue-popperjs",
+                "popper.js"
             ]
         }),
         commonJS({}),
@@ -25,9 +27,12 @@ export default {
             "presets": [["@babel/preset-env"]],
             "plugins": [
                 "@babel/plugin-transform-spread",
+                "@babel/plugin-transform-object-assign",
                 "babel-plugin-array-includes"
             ]
         }),
-        buble()
+        buble({
+            objectAssign: 'Object.assign'
+        })
     ],
 };
