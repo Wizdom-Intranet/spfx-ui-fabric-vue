@@ -416,6 +416,7 @@ export default {
         user-select: none;
         > div{
             display:table-cell;
+            vertical-align: top;
         }
     }
     .header{ // used in all pickers
@@ -448,6 +449,7 @@ export default {
         padding:5px;
         .years,
         .months{
+            width:200px;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
@@ -476,6 +478,7 @@ export default {
         padding:5px;
         border-right:solid 1px #edebe9;
         .days{
+            width:200px;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
