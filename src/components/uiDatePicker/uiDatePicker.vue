@@ -44,7 +44,7 @@
                             {{month}}
                         </span>
                     </div>
-                    <div class="goToToday"><span @click="goToToday()">Go to today</span></div>
+                    <div class="goToToday"><span @click="goToToday()">{{localeObj.goToToday}}</span></div>
                 </div>
                 <div class="yearPicker" v-if="showYear">
                     <div class="header">
@@ -59,7 +59,7 @@
                             {{year}}
                         </span>
                     </div>
-                    <div class="goToToday"><span @click="goToToday()">Go to today</span></div>
+                    <div class="goToToday"><span @click="goToToday()">{{localeObj.goToToday}}</span></div>
                 </div>
             </div>
             <div class="inputGroup" slot="reference">
