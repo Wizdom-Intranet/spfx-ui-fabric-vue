@@ -226,7 +226,7 @@ export default {
     watch:{
         value:{
             handler(newVal){
-                console.log("value watch", newVal);
+                // console.log("value watch", newVal);
                 if(newVal){
                     this.inputVal = dateUtils.formatDate(newVal, this.localeObj);
                     this.pickerDate = newVal;
@@ -245,9 +245,12 @@ export default {
                 placement: this.placement,
                 positionFixed: true,
                 modifiers: { 
-                    preventOverflow: { enabled: true },
-                    flip: { enabled: false },
-                    shift: { enabled: false },
+                    preventOverflow: { 
+                        enabled: true,
+                        boundariesElement: window 
+                    },
+                    flip: { enabled: true },
+                    shift: { enabled: true },
                     offset: { offset: '0,0' } }
             }
         },
@@ -542,5 +545,18 @@ export default {
             } 
         }
      
+    }
+
+    @media screen and (max-width: 450px) {
+        .yearPicker,
+        .monthPicker{
+            display: none !important;
+        }
+        .dayPicker{
+            border-right:none !important;
+        }
+        .foldout{
+            width:210px;
+        }
     }
 </style>
