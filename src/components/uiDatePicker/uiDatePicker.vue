@@ -242,16 +242,49 @@ export default {
     computed:{
         popperOptions(){
             return {
-                placement: this.placement,
-                positionFixed: true,
-                modifiers: { 
-                    preventOverflow: { 
-                        enabled: true,
-                        boundariesElement: window 
+                placement:"bottom-start",
+                modifiers:{
+                    preventOverflow: {enabled: false},
+                    offset: {enabled: false},
+                    keepTogether: {enabled: false},
+                    arrow: {enabled: false},
+                    flip: {enabled: false},
+                    hide: {enabled: false},
+                    computeStyle: {
+                        enabled: false,
                     },
-                    flip: { enabled: true },
-                    shift: { enabled: true },
-                    offset: { offset: '0,0' } }
+                    applyStyle: {
+                        enabled:true,
+                        fn(data, options){
+                            var input = data.instance.reference.getClientRects()[0];
+                            var popper = data.instance.popper.getClientRects()[0];
+                            var windowWidth = document.documentElement.clientWidth;
+                            var windowHeight = document.documentElement.clientHeight;
+
+                            // below of above the input
+                            var top = 0;
+                            if(input.height + input.y + popper.height < windowHeight)
+                                top = input.height; // yay room to place it beneath
+                            else 
+                                top = 0-popper.height; //crap, place it above
+
+                            // left or rightside of the input
+                            var right = 0;
+                            
+                            if(input.width + input.x - popper.width > 0)
+                                right = 0-popper.width + input.width;
+
+                            // if it still overflows the right side of the screen, move it left, until it dosnt
+                            if(right == 0 && input.x + popper.width > windowWidth)
+                            {
+                                right = 0-(input.x + popper.width-windowWidth);
+                            }
+
+                            // apply style
+                            data.instance.popper.style.transform = "translate(" + right + "px, " + top + "px)";
+                        }
+                    }
+                }
             }
         },
         localeObj(){
