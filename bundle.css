@@ -307,196 +307,6 @@
 /** Warning **/
 /** Server Warning **/
 /** Success **/
-.ms-RadioButton[data-v-9afc786c] {
-  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-  color: "[theme:neutralPrimary, default: #333333]";
-  font-size: 14px;
-  font-weight: 400;
-  min-height: 36px;
-  position: relative; }
-  .ms-RadioButton .ms-Label[data-v-9afc786c] {
-    font-size: 14px;
-    padding: 0 0 0 26px;
-    cursor: pointer;
-    display: inline-block; }
-
-.ms-RadioButton-input[data-v-9afc786c] {
-  position: absolute;
-  opacity: 0; }
-
-.ms-RadioButton-field[data-v-9afc786c]::before {
-  content: '';
-  display: inline-block;
-  border: 2px solid "[theme:neutralTertiary, default: #a6a6a6]";
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-  font-weight: normal;
-  position: absolute;
-  box-sizing: border-box;
-  transition-property: border-color;
-  transition-duration: 200ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.23, 1);
-  border-radius: 50%; }
-
-.ms-RadioButton-field[data-v-9afc786c]::after {
-  content: '';
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  bottom: 0;
-  right: 0;
-  transition-property: top, left, width, height;
-  transition-duration: 150ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.23, 1);
-  box-sizing: border-box; }
-  @media screen and (-ms-high-contrast: active) {
-    .ms-RadioButton-field[data-v-9afc786c]::after {
-      color: #00ff00; } }
-  @media screen and (-ms-high-contrast: black-on-white) {
-    .ms-RadioButton-field[data-v-9afc786c]::after {
-      color: #600000; } }
-
-.ms-RadioButton-field[data-v-9afc786c] {
-  display: inline-block;
-  cursor: pointer;
-  margin-top: 8px;
-  position: relative;
-  outline: 0;
-  vertical-align: top; }
-  .ms-RadioButton-field[data-v-9afc786c]:hover::before, .ms-RadioButton-field[data-v-9afc786c]:focus::before {
-    border-color: "[theme:neutralSecondaryAlt, default: #767676]"; }
-  .ms-RadioButton-field:hover .ms-Label[data-v-9afc786c], .ms-RadioButton-field:focus .ms-Label[data-v-9afc786c] {
-    color: "[theme:black, default: #000000]"; }
-  .ms-RadioButton-field.is-disabled[data-v-9afc786c] {
-    cursor: default; }
-    .ms-RadioButton-field.is-disabled[data-v-9afc786c]::before {
-      background-color: "[theme:neutralTertiaryAlt, default: #c8c8c8]";
-      border-color: "[theme:neutralTertiaryAlt, default: #c8c8c8]";
-      color: "[theme:neutralTertiaryAlt, default: #c8c8c8]"; }
-      @media screen and (-ms-high-contrast: active) {
-        .ms-RadioButton-field.is-disabled[data-v-9afc786c]::before {
-          border-color: #00ff00; } }
-      @media screen and (-ms-high-contrast: black-on-white) {
-        .ms-RadioButton-field.is-disabled[data-v-9afc786c]::before {
-          border-color: #600000; } }
-    .ms-RadioButton-field.is-disabled .ms-Label[data-v-9afc786c] {
-      color: "[theme:neutralTertiary, default: #a6a6a6]"; }
-      @media screen and (-ms-high-contrast: active) {
-        .ms-RadioButton-field.is-disabled .ms-Label[data-v-9afc786c] {
-          color: #00ff00; } }
-      @media screen and (-ms-high-contrast: black-on-white) {
-        .ms-RadioButton-field.is-disabled .ms-Label[data-v-9afc786c] {
-          color: #600000; } }
-    .ms-RadioButton-field.is-disabled[data-v-9afc786c]:hover::before, .ms-RadioButton-field.is-disabled[data-v-9afc786c]:focus::before {
-      border-color: "[theme:neutralTertiaryAlt, default: #c8c8c8]"; }
-  .ms-RadioButton-field.in-focus[data-v-9afc786c]::before {
-    border-color: "[theme:neutralSecondaryAlt, default: #767676]"; }
-
-.ms-RadioButton-field.is-checked[data-v-9afc786c]::before {
-  border: 2px solid "[theme:themePrimary, default: #0078d7]";
-  background-color: transparent; }
-  @media screen and (-ms-high-contrast: active) {
-    .ms-RadioButton-field.is-checked[data-v-9afc786c]::before {
-      border-color: #1AEBFF; } }
-  @media screen and (-ms-high-contrast: black-on-white) {
-    .ms-RadioButton-field.is-checked[data-v-9afc786c]::before {
-      border-color: #37006E; } }
-
-.ms-RadioButton-field.is-checked[data-v-9afc786c]::after {
-  background-color: "[theme:themePrimary, default: #0078d7]";
-  top: 5px;
-  left: 5px;
-  width: 10px;
-  height: 10px; }
-  @media screen and (-ms-high-contrast: active) {
-    .ms-RadioButton-field.is-checked[data-v-9afc786c]::after {
-      background-color: #1AEBFF; } }
-  @media screen and (-ms-high-contrast: black-on-white) {
-    .ms-RadioButton-field.is-checked[data-v-9afc786c]::after {
-      background-color: #37006E; } }
-
-.ms-RadioButton-field.is-checked[data-v-9afc786c]:hover::before, .ms-RadioButton-field.is-checked[data-v-9afc786c]:focus::before {
-  border-color: "[theme:themePrimary, default: #0078d7]"; }
-
-.ms-RadioButton-field.is-checked.in-focus[data-v-9afc786c]::before {
-  border-color: "[theme:themePrimary, default: #0078d7]"; }
-
-.ms-ChoiceFieldGroup[data-v-9afc786c] {
-  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  margin-bottom: 4px; }
-  .ms-ChoiceFieldGroup .ms-ChoiceFieldGroup-list[data-v-9afc786c] {
-    padding: 0;
-    margin: 0;
-    list-style: none; }
-
-/*
-  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
-*/
-/* Theme related color values */
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes color and background styles
-*/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes only the color values
-*/
-/***
-100	Thin (Hairline)
-200	Extra Light (Ultra Light)
-300	Light
-400	Normal
-500	Medium
-600	Semi Bold (Demi Bold)
-700	Bold
-800	Extra Bold (Ultra Bold)
-900	Black (Heavy)
-**/
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
 .ms-Callout[data-v-64664f3c] {
   font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -690,6 +500,196 @@
 
 .ms-Icon.ms-Icon--Clear[data-v-64664f3c] {
   content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2048 2048" width="14" height="14" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M1115 1024l914 -915l-90 -90l-915 914l-915 -914l-90 90l914 915l-914 915l90 90l915 -914l915 914l90 -90z" fill="black" stroke="none"/></svg>'); }
+
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+/* Theme related color values */
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes color and background styles
+*/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes only the color values
+*/
+/***
+100	Thin (Hairline)
+200	Extra Light (Ultra Light)
+300	Light
+400	Normal
+500	Medium
+600	Semi Bold (Demi Bold)
+700	Bold
+800	Extra Bold (Ultra Bold)
+900	Black (Heavy)
+**/
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+.ms-RadioButton[data-v-9afc786c] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  color: "[theme:neutralPrimary, default: #333333]";
+  font-size: 14px;
+  font-weight: 400;
+  min-height: 36px;
+  position: relative; }
+  .ms-RadioButton .ms-Label[data-v-9afc786c] {
+    font-size: 14px;
+    padding: 0 0 0 26px;
+    cursor: pointer;
+    display: inline-block; }
+
+.ms-RadioButton-input[data-v-9afc786c] {
+  position: absolute;
+  opacity: 0; }
+
+.ms-RadioButton-field[data-v-9afc786c]::before {
+  content: '';
+  display: inline-block;
+  border: 2px solid "[theme:neutralTertiary, default: #a6a6a6]";
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  font-weight: normal;
+  position: absolute;
+  box-sizing: border-box;
+  transition-property: border-color;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.23, 1);
+  border-radius: 50%; }
+
+.ms-RadioButton-field[data-v-9afc786c]::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  bottom: 0;
+  right: 0;
+  transition-property: top, left, width, height;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.23, 1);
+  box-sizing: border-box; }
+  @media screen and (-ms-high-contrast: active) {
+    .ms-RadioButton-field[data-v-9afc786c]::after {
+      color: #00ff00; } }
+  @media screen and (-ms-high-contrast: black-on-white) {
+    .ms-RadioButton-field[data-v-9afc786c]::after {
+      color: #600000; } }
+
+.ms-RadioButton-field[data-v-9afc786c] {
+  display: inline-block;
+  cursor: pointer;
+  margin-top: 8px;
+  position: relative;
+  outline: 0;
+  vertical-align: top; }
+  .ms-RadioButton-field[data-v-9afc786c]:hover::before, .ms-RadioButton-field[data-v-9afc786c]:focus::before {
+    border-color: "[theme:neutralSecondaryAlt, default: #767676]"; }
+  .ms-RadioButton-field:hover .ms-Label[data-v-9afc786c], .ms-RadioButton-field:focus .ms-Label[data-v-9afc786c] {
+    color: "[theme:black, default: #000000]"; }
+  .ms-RadioButton-field.is-disabled[data-v-9afc786c] {
+    cursor: default; }
+    .ms-RadioButton-field.is-disabled[data-v-9afc786c]::before {
+      background-color: "[theme:neutralTertiaryAlt, default: #c8c8c8]";
+      border-color: "[theme:neutralTertiaryAlt, default: #c8c8c8]";
+      color: "[theme:neutralTertiaryAlt, default: #c8c8c8]"; }
+      @media screen and (-ms-high-contrast: active) {
+        .ms-RadioButton-field.is-disabled[data-v-9afc786c]::before {
+          border-color: #00ff00; } }
+      @media screen and (-ms-high-contrast: black-on-white) {
+        .ms-RadioButton-field.is-disabled[data-v-9afc786c]::before {
+          border-color: #600000; } }
+    .ms-RadioButton-field.is-disabled .ms-Label[data-v-9afc786c] {
+      color: "[theme:neutralTertiary, default: #a6a6a6]"; }
+      @media screen and (-ms-high-contrast: active) {
+        .ms-RadioButton-field.is-disabled .ms-Label[data-v-9afc786c] {
+          color: #00ff00; } }
+      @media screen and (-ms-high-contrast: black-on-white) {
+        .ms-RadioButton-field.is-disabled .ms-Label[data-v-9afc786c] {
+          color: #600000; } }
+    .ms-RadioButton-field.is-disabled[data-v-9afc786c]:hover::before, .ms-RadioButton-field.is-disabled[data-v-9afc786c]:focus::before {
+      border-color: "[theme:neutralTertiaryAlt, default: #c8c8c8]"; }
+  .ms-RadioButton-field.in-focus[data-v-9afc786c]::before {
+    border-color: "[theme:neutralSecondaryAlt, default: #767676]"; }
+
+.ms-RadioButton-field.is-checked[data-v-9afc786c]::before {
+  border: 2px solid "[theme:themePrimary, default: #0078d7]";
+  background-color: transparent; }
+  @media screen and (-ms-high-contrast: active) {
+    .ms-RadioButton-field.is-checked[data-v-9afc786c]::before {
+      border-color: #1AEBFF; } }
+  @media screen and (-ms-high-contrast: black-on-white) {
+    .ms-RadioButton-field.is-checked[data-v-9afc786c]::before {
+      border-color: #37006E; } }
+
+.ms-RadioButton-field.is-checked[data-v-9afc786c]::after {
+  background-color: "[theme:themePrimary, default: #0078d7]";
+  top: 5px;
+  left: 5px;
+  width: 10px;
+  height: 10px; }
+  @media screen and (-ms-high-contrast: active) {
+    .ms-RadioButton-field.is-checked[data-v-9afc786c]::after {
+      background-color: #1AEBFF; } }
+  @media screen and (-ms-high-contrast: black-on-white) {
+    .ms-RadioButton-field.is-checked[data-v-9afc786c]::after {
+      background-color: #37006E; } }
+
+.ms-RadioButton-field.is-checked[data-v-9afc786c]:hover::before, .ms-RadioButton-field.is-checked[data-v-9afc786c]:focus::before {
+  border-color: "[theme:themePrimary, default: #0078d7]"; }
+
+.ms-RadioButton-field.is-checked.in-focus[data-v-9afc786c]::before {
+  border-color: "[theme:themePrimary, default: #0078d7]"; }
+
+.ms-ChoiceFieldGroup[data-v-9afc786c] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  margin-bottom: 4px; }
+  .ms-ChoiceFieldGroup .ms-ChoiceFieldGroup-list[data-v-9afc786c] {
+    padding: 0;
+    margin: 0;
+    list-style: none; }
 
 /*
   Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
@@ -2079,6 +2079,163 @@
 /** Warning **/
 /** Server Warning **/
 /** Success **/
+.ms-Label[data-v-2943a900] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  color: "[theme:neutralPrimary, default: #333333]";
+  font-size: 12px;
+  font-weight: 400;
+  box-sizing: border-box;
+  display: block;
+  padding: 5px 0; }
+  .ms-Label.is-required[data-v-2943a900]::after {
+    content: ' *';
+    color: "[theme:error, default: #a80000]"; }
+  .ms-Label.is-disabled[data-v-2943a900] {
+    color: "[theme:neutralTertiary, default: #a6a6a6]"; }
+
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+/* Theme related color values */
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes color and background styles
+*/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes only the color values
+*/
+/***
+100	Thin (Hairline)
+200	Extra Light (Ultra Light)
+300	Light
+400	Normal
+500	Medium
+600	Semi Bold (Demi Bold)
+700	Bold
+800	Extra Bold (Ultra Bold)
+900	Black (Heavy)
+**/
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+.ms-List[data-v-1093d442] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  color: "[theme:neutralPrimary, default: #333333]";
+  font-size: 14px;
+  font-weight: 400;
+  list-style-type: none; }
+
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+/* Theme related color values */
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes color and background styles
+*/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes only the color values
+*/
+/***
+100	Thin (Hairline)
+200	Extra Light (Ultra Light)
+300	Light
+400	Normal
+500	Medium
+600	Semi Bold (Demi Bold)
+700	Bold
+800	Extra Bold (Ultra Bold)
+900	Black (Heavy)
+**/
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
 .ms-Dialog[data-v-1194e8ec] {
   font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -2243,26 +2400,19 @@
 /** Warning **/
 /** Server Warning **/
 /** Success **/
-.ms-Label[data-v-2943a900] {
+.ms-Link[data-v-078cc59e] {
   font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  color: "[theme:neutralPrimary, default: #333333]";
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
-  box-sizing: border-box;
-  display: block;
-  padding: 5px 0; }
-  .ms-Label.is-required[data-v-2943a900]::after {
-    content: ' *';
-    color: "[theme:error, default: #a80000]"; }
-  .ms-Label.is-disabled[data-v-2943a900] {
-    color: "[theme:neutralTertiary, default: #a6a6a6]"; }
+  color: "[theme:themePrimary, default: #0078d7]";
+  text-decoration: none;
+  cursor: pointer;
+  outline: none; }
+  .ms-Link[data-v-078cc59e]:hover, .ms-Link[data-v-078cc59e]:focus {
+    color: "[theme:themeDarker, default: #004578]"; }
+  .ms-Link[data-v-078cc59e]:active {
+    color: "[theme:themePrimary, default: #0078d7]"; }
 
 /*
   Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
@@ -2604,94 +2754,53 @@
 /** Warning **/
 /** Server Warning **/
 /** Success **/
-.ms-List[data-v-1093d442] {
+.ms-MessageBar[data-v-7f69de50] {
   font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  color: "[theme:neutralPrimary, default: #333333]";
-  font-size: 14px;
-  font-weight: 400;
-  list-style-type: none; }
+  padding: 8px;
+  display: table;
+  background-color: "[theme:infoBackground, default: #f4f4f4]"; }
+  .ms-MessageBar .ms-Link[data-v-7f69de50] {
+    font-size: 12px; }
 
-/*
-  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
-*/
-/* Theme related color values */
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes color and background styles
-*/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes only the color values
-*/
-/***
-100	Thin (Hairline)
-200	Extra Light (Ultra Light)
-300	Light
-400	Normal
-500	Medium
-600	Semi Bold (Demi Bold)
-700	Bold
-800	Extra Bold (Ultra Bold)
-900	Black (Heavy)
-**/
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-.ms-Link[data-v-078cc59e] {
+.ms-MessageBar-icon[data-v-7f69de50],
+.ms-MessageBar-text[data-v-7f69de50] {
+  display: table-cell;
+  vertical-align: top; }
+
+.ms-MessageBar-icon[data-v-7f69de50] {
+  padding-right: 8px;
+  font-size: 16px;
+  color: "[theme:neutralSecondaryAlt, default: #767676]"; }
+
+.ms-MessageBar-text[data-v-7f69de50] {
   font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
-  font-size: 14px;
-  font-weight: 400;
-  color: "[theme:themePrimary, default: #0078d7]";
-  text-decoration: none;
-  cursor: pointer;
-  outline: none; }
-  .ms-Link[data-v-078cc59e]:hover, .ms-Link[data-v-078cc59e]:focus {
-    color: "[theme:themeDarker, default: #004578]"; }
-  .ms-Link[data-v-078cc59e]:active {
-    color: "[theme:themePrimary, default: #0078d7]"; }
+  font-size: 12px;
+  font-weight: 400; }
+
+.ms-MessageBar.ms-MessageBar--warning[data-v-7f69de50] {
+  background-color: "[theme:warningBackground, default: #fff4ce]"; }
+
+.ms-MessageBar.ms-MessageBar--severeWarning[data-v-7f69de50] {
+  background-color: "[theme:severeWarningBackground, default: #fed9cc]"; }
+  .ms-MessageBar.ms-MessageBar--severeWarning .ms-MessageBar-icon[data-v-7f69de50] {
+    color: "[theme:severeWarning, default: #d83b01]"; }
+
+.ms-MessageBar.ms-MessageBar--error[data-v-7f69de50] {
+  background-color: "[theme:errorBackground, default: #fde7e9]"; }
+  .ms-MessageBar.ms-MessageBar--error .ms-MessageBar-icon[data-v-7f69de50] {
+    color: "[theme:error, default: #a80000]"; }
+
+.ms-MessageBar.ms-MessageBar--blocked[data-v-7f69de50] {
+  background-color: "[theme:errorBackground, default: #fde7e9]"; }
+  .ms-MessageBar.ms-MessageBar--blocked .ms-MessageBar-icon[data-v-7f69de50] {
+    color: "[theme:error, default: #a80000]"; }
+
+.ms-MessageBar.ms-MessageBar--success[data-v-7f69de50] {
+  background-color: "[theme:successBackground, default: #dff6dd]"; }
+  .ms-MessageBar.ms-MessageBar--success .ms-MessageBar-icon[data-v-7f69de50] {
+    color: "[theme:green, default: #107c10]"; }
 
 /*
   Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
@@ -3864,1141 +3973,6 @@
 
 .ms-Icon.ms-Icon--Clear[data-v-349dd89f] {
   content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2048 2048" width="16" height="16" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M1115 1024l690 -691l-90 -90l-691 690l-691 -690l-90 90l690 691l-690 691l90 90l691 -690l691 690l90 -90z" fill="black" stroke="none"/></svg>'); }
-
-/*
-  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
-*/
-/* Theme related color values */
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes color and background styles
-*/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes only the color values
-*/
-/***
-100	Thin (Hairline)
-200	Extra Light (Ultra Light)
-300	Light
-400	Normal
-500	Medium
-600	Semi Bold (Demi Bold)
-700	Bold
-800	Extra Bold (Ultra Bold)
-900	Black (Heavy)
-**/
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-.ms-MessageBar[data-v-7f69de50] {
-  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  padding: 8px;
-  display: table;
-  background-color: "[theme:infoBackground, default: #f4f4f4]"; }
-  .ms-MessageBar .ms-Link[data-v-7f69de50] {
-    font-size: 12px; }
-
-.ms-MessageBar-icon[data-v-7f69de50],
-.ms-MessageBar-text[data-v-7f69de50] {
-  display: table-cell;
-  vertical-align: top; }
-
-.ms-MessageBar-icon[data-v-7f69de50] {
-  padding-right: 8px;
-  font-size: 16px;
-  color: "[theme:neutralSecondaryAlt, default: #767676]"; }
-
-.ms-MessageBar-text[data-v-7f69de50] {
-  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  font-size: 12px;
-  font-weight: 400; }
-
-.ms-MessageBar.ms-MessageBar--warning[data-v-7f69de50] {
-  background-color: "[theme:warningBackground, default: #fff4ce]"; }
-
-.ms-MessageBar.ms-MessageBar--severeWarning[data-v-7f69de50] {
-  background-color: "[theme:severeWarningBackground, default: #fed9cc]"; }
-  .ms-MessageBar.ms-MessageBar--severeWarning .ms-MessageBar-icon[data-v-7f69de50] {
-    color: "[theme:severeWarning, default: #d83b01]"; }
-
-.ms-MessageBar.ms-MessageBar--error[data-v-7f69de50] {
-  background-color: "[theme:errorBackground, default: #fde7e9]"; }
-  .ms-MessageBar.ms-MessageBar--error .ms-MessageBar-icon[data-v-7f69de50] {
-    color: "[theme:error, default: #a80000]"; }
-
-.ms-MessageBar.ms-MessageBar--blocked[data-v-7f69de50] {
-  background-color: "[theme:errorBackground, default: #fde7e9]"; }
-  .ms-MessageBar.ms-MessageBar--blocked .ms-MessageBar-icon[data-v-7f69de50] {
-    color: "[theme:error, default: #a80000]"; }
-
-.ms-MessageBar.ms-MessageBar--success[data-v-7f69de50] {
-  background-color: "[theme:successBackground, default: #dff6dd]"; }
-  .ms-MessageBar.ms-MessageBar--success .ms-MessageBar-icon[data-v-7f69de50] {
-    color: "[theme:green, default: #107c10]"; }
-
-/*
-  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
-*/
-/* Theme related color values */
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes color and background styles
-*/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes only the color values
-*/
-/***
-100	Thin (Hairline)
-200	Extra Light (Ultra Light)
-300	Light
-400	Normal
-500	Medium
-600	Semi Bold (Demi Bold)
-700	Bold
-800	Extra Bold (Ultra Bold)
-900	Black (Heavy)
-**/
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-.ms-ListItem[data-v-a34de616] {
-  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  *zoom: 1;
-  color: "[theme:neutralPrimary, default: #333333]";
-  font-size: 14px;
-  font-weight: 400;
-  padding: 9px 28px 3px;
-  position: relative;
-  display: block; }
-  .ms-ListItem[data-v-a34de616]::before, .ms-ListItem[data-v-a34de616]::after {
-    display: table;
-    content: "";
-    line-height: 0; }
-  .ms-ListItem[data-v-a34de616]::after {
-    clear: both; }
-
-.ms-ListItem-primaryText[data-v-a34de616],
-.ms-ListItem-secondaryText[data-v-a34de616],
-.ms-ListItem-tertiaryText[data-v-a34de616] {
-  display: block;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  display: block; }
-
-.ms-ListItem-primaryText[data-v-a34de616] {
-  color: "[theme:neutralDark, default: #212121]";
-  font-weight: 300;
-  font-size: 21px;
-  padding-right: 80px;
-  position: relative;
-  top: -4px; }
-
-.ms-ListItem-secondaryText[data-v-a34de616] {
-  color: "[theme:neutralPrimary, default: #333333]";
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 25px;
-  position: relative;
-  top: -7px;
-  padding-right: 30px; }
-
-.ms-ListItem-tertiaryText[data-v-a34de616] {
-  color: "[theme:neutralSecondaryAlt, default: #767676]";
-  font-weight: 300;
-  font-size: 14px;
-  position: relative;
-  top: -9px;
-  margin-bottom: -4px;
-  padding-right: 30px; }
-
-.ms-ListItem-metaText[data-v-a34de616] {
-  color: "[theme:neutralPrimary, default: #333333]";
-  font-weight: 300;
-  font-size: 11px;
-  position: absolute;
-  right: 30px;
-  top: 39px; }
-
-.ms-ListItem-image[data-v-a34de616] {
-  float: left;
-  height: 70px;
-  margin-left: -8px;
-  margin-right: 10px;
-  width: 70px;
-  background-color: "[theme:neutralPrimary, default: #333333]"; }
-
-.ms-ListItem-selectionTarget[data-v-a34de616] {
-  display: none; }
-
-.ms-ListItem-actions[data-v-a34de616] {
-  max-width: 80px;
-  position: absolute;
-  right: 30px;
-  text-align: right;
-  top: 10px; }
-
-.ms-ListItem-action[data-v-a34de616] {
-  color: "[theme:neutralTertiary, default: #a6a6a6]";
-  display: inline-block;
-  font-size: 15px;
-  position: relative;
-  text-align: center;
-  top: 3px;
-  cursor: pointer;
-  height: 16px;
-  width: 16px; }
-  .ms-ListItem-action .ms-Icon[data-v-a34de616] {
-    vertical-align: top; }
-  .ms-ListItem-action[data-v-a34de616]:hover {
-    color: "[theme:neutralSecondary, default: #666666]";
-    outline: 1px solid transparent; }
-
-.ms-ListItem.is-unread[data-v-a34de616] {
-  border-left: 3px solid "[theme:themePrimary, default: #0078d7]";
-  padding-left: 27px; }
-  .ms-ListItem.is-unread .ms-ListItem-secondaryText[data-v-a34de616],
-  .ms-ListItem.is-unread .ms-ListItem-metaText[data-v-a34de616] {
-    color: "[theme:themePrimary, default: #0078d7]";
-    font-weight: 600; }
-
-.ms-ListItem.is-unseen[data-v-a34de616]::after {
-  border-right: 10px solid transparent;
-  border-top: 10px solid "[theme:themePrimary, default: #0078d7]";
-  left: 0;
-  position: absolute;
-  top: 0; }
-
-.ms-ListItem.is-selectable .ms-ListItem-selectionTarget[data-v-a34de616] {
-  display: block;
-  height: 20px;
-  left: 6px;
-  position: absolute;
-  top: 13px;
-  width: 20px; }
-
-.ms-ListItem.is-selectable .ms-ListItem-image[data-v-a34de616] {
-  margin-left: 0; }
-
-.ms-ListItem.is-selectable[data-v-a34de616]:hover {
-  background-color: "[theme:neutralLight, default: #eaeaea]";
-  cursor: pointer;
-  outline: 1px solid transparent; }
-  .ms-ListItem.is-selectable[data-v-a34de616]:hover::before {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    display: inline-block;
-    font-family: 'FabricMDL2Icons';
-    font-style: normal;
-    font-weight: normal;
-    speak: none;
-    position: absolute;
-    top: 14px;
-    left: 7px;
-    height: 15px;
-    width: 15px;
-    border: 1px solid "[theme:neutralSecondaryAlt, default: #767676]"; }
-
-.ms-ListItem.is-selected[data-v-a34de616]::before {
-  border: 1px solid transparent; }
-
-.ms-ListItem.is-selected[data-v-a34de616]::before, .ms-ListItem.is-selected[data-v-a34de616]:hover::before {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  display: inline-block;
-  font-family: 'FabricMDL2Icons';
-  font-style: normal;
-  font-weight: normal;
-  speak: none;
-  content: '\e73A';
-  font-size: 17px;
-  color: "[theme:neutralSecondaryAlt, default: #767676]";
-  position: absolute;
-  top: 23px;
-  left: 7px;
-  border: 0; }
-
-.ms-ListItem.is-selected[data-v-a34de616]:hover {
-  background-color: "[theme:themeLight, default: #c7e0f4]";
-  outline: 1px solid transparent; }
-
-.ms-ListItem.ms-ListItem--document[data-v-a34de616] {
-  padding: 0; }
-  .ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon[data-v-a34de616] {
-    width: 70px;
-    height: 70px;
-    float: left;
-    text-align: center; }
-  .ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon .ms-Icon[data-v-a34de616] {
-    font-size: 38px;
-    line-height: 70px;
-    color: "[theme:neutralSecondary, default: #666666]"; }
-  .ms-ListItem.ms-ListItem--document .ms-ListItem-primaryText[data-v-a34de616] {
-    display: block;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    font-size: 14px;
-    padding-top: 15px;
-    padding-right: 0;
-    position: static; }
-  .ms-ListItem.ms-ListItem--document .ms-ListItem-secondaryText[data-v-a34de616] {
-    display: block;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    color: "[theme:neutralSecondary, default: #666666]";
-    font-weight: 400;
-    font-size: 11px;
-    padding-top: 6px; }
-
-.ms-ListItem.is-selected[data-v-a34de616]::before, .ms-ListItem.is-selected[data-v-a34de616]:hover::before {
-  top: 14px;
-  content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2048 2048" width="17" height="17" version="1.1" xmlns="http://www.w3.org/2000/svg"><path transform="translate(0, 2048) scale(1, -1)" d="M2048 2048v-2048h-2048v2048h2048zM1920 1920h-1792v-1792h1792v1792zM768 421l-429 430l90 90l339 -338l851 850l90 -90z" fill="black" stroke="none"/></svg>'); }
-
-/*
-  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
-*/
-/* Theme related color values */
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes color and background styles
-*/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes only the color values
-*/
-/***
-100	Thin (Hairline)
-200	Extra Light (Ultra Light)
-300	Light
-400	Normal
-500	Medium
-600	Semi Bold (Demi Bold)
-700	Bold
-800	Extra Bold (Ultra Bold)
-900	Black (Heavy)
-**/
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-.ms-Persona[data-v-08ee50b8] {
-  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  color: "[theme:neutralPrimary, default: #333333]";
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1;
-  position: relative;
-  width: 100%;
-  height: 48px;
-  display: table;
-  table-layout: fixed;
-  border-collapse: separate; }
-  .ms-Persona .ms-ContextualHost[data-v-08ee50b8] {
-    display: none; }
-
-.ms-Persona-imageArea[data-v-08ee50b8] {
-  position: absolute;
-  overflow: hidden;
-  text-align: center;
-  max-width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  z-index: 0;
-  width: 100%;
-  top: 0;
-  left: 0; }
-  @media screen and (-ms-high-contrast: active) {
-    .ms-Persona-imageArea[data-v-08ee50b8] {
-      border: 1px solid "[theme:white, default: #ffffff]"; } }
-  @media screen and (-ms-high-contrast: black-on-white) {
-    .ms-Persona-imageArea[data-v-08ee50b8] {
-      border: 1px solid "[theme:black, default: #000000]"; } }
-
-.ms-Persona-placeholder[data-v-08ee50b8] {
-  color: "[theme:white, default: #ffffff]";
-  position: absolute;
-  right: 0;
-  left: 0;
-  font-size: 47px;
-  top: 9px;
-  z-index: 5; }
-
-.ms-Persona-initials[data-v-08ee50b8] {
-  color: "[theme:white, default: #ffffff]";
-  font-size: 17px;
-  font-weight: 100;
-  line-height: 48px; }
-  .ms-Persona-initials.ms-Persona-initials--blueLight[data-v-08ee50b8] {
-    background-color: "[theme:blueLight, default: #00bcf2]"; }
-  .ms-Persona-initials.ms-Persona-initials--blue[data-v-08ee50b8] {
-    background-color: "[theme:blue, default: #0078d7]"; }
-  .ms-Persona-initials.ms-Persona-initials--blueDark[data-v-08ee50b8] {
-    background-color: "[theme:blueDark, default: #002050]"; }
-  .ms-Persona-initials.ms-Persona-initials--teal[data-v-08ee50b8] {
-    background-color: "[theme:teal, default: #008272]"; }
-  .ms-Persona-initials.ms-Persona-initials--greenLight[data-v-08ee50b8] {
-    background-color: "[theme:greenLight, default: #bad80a]"; }
-  .ms-Persona-initials.ms-Persona-initials--green[data-v-08ee50b8] {
-    background-color: "[theme:green, default: #107c10]"; }
-  .ms-Persona-initials.ms-Persona-initials--greenDark[data-v-08ee50b8] {
-    background-color: "[theme:greenDark, default: #004b1c]"; }
-  .ms-Persona-initials.ms-Persona-initials--magentaLight[data-v-08ee50b8] {
-    background-color: "[theme:magentaLight, default: #e3008c]"; }
-  .ms-Persona-initials.ms-Persona-initials--magenta[data-v-08ee50b8] {
-    background-color: "[theme:magenta, default: #b4009e]"; }
-  .ms-Persona-initials.ms-Persona-initials--purpleLight[data-v-08ee50b8] {
-    background-color: "[theme:purpleLight, default: #b4a0ff]"; }
-  .ms-Persona-initials.ms-Persona-initials--purple[data-v-08ee50b8] {
-    background-color: "[theme:purple, default: #5c2d91]"; }
-  .ms-Persona-initials.ms-Persona-initials--black[data-v-08ee50b8] {
-    background-color: "[theme:black, default: #000000]"; }
-  .ms-Persona-initials.ms-Persona-initials--orange[data-v-08ee50b8] {
-    background-color: "[theme:orange, default: #d83b01]"; }
-  .ms-Persona-initials.ms-Persona-initials--red[data-v-08ee50b8] {
-    background-color: "[theme:red, default: #e81123]"; }
-  .ms-Persona-initials.ms-Persona-initials--redDark[data-v-08ee50b8] {
-    background-color: "[theme:redDark, default: #a80000]"; }
-
-.ms-Persona-image[data-v-08ee50b8] {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 48px;
-  z-index: 10;
-  width: 100%; }
-  .ms-Persona-image[src=''][data-v-08ee50b8] {
-    display: none; }
-
-.ms-Persona-presence[data-v-08ee50b8] {
-  background-color: #7FBA00;
-  position: absolute;
-  height: 12px;
-  width: 12px;
-  border-radius: 50%;
-  top: auto;
-  left: 34px;
-  bottom: -1px;
-  border: 2px solid "[theme:white, default: #ffffff]";
-  text-align: center; }
-  @media screen and (-ms-high-contrast: active) {
-    .ms-Persona-presence[data-v-08ee50b8] {
-      border-color: "[theme:black, default: #000000]";
-      box-shadow: 0 0 0 1px #1AEBFF inset;
-      color: "[theme:black, default: #000000]";
-      background-color: "[theme:white, default: #ffffff]"; } }
-  @media screen and (-ms-high-contrast: black-on-white) {
-    .ms-Persona-presence[data-v-08ee50b8] {
-      border-color: "[theme:white, default: #ffffff]";
-      box-shadow: 0 0 0 1px #37006E inset;
-      color: "[theme:white, default: #ffffff]";
-      background-color: "[theme:black, default: #000000]"; } }
-
-.ms-Persona-presenceIcon[data-v-08ee50b8] {
-  color: "[theme:white, default: #ffffff]";
-  font-size: 8px;
-  line-height: 12px;
-  vertical-align: top; }
-
-.ms-Persona-details[data-v-08ee50b8] {
-  padding: 0 12px;
-  vertical-align: middle;
-  overflow: hidden;
-  text-align: left;
-  padding-left: 60px;
-  display: table-cell;
-  width: 100%; }
-
-.ms-Persona-primaryText[data-v-08ee50b8],
-.ms-Persona-secondaryText[data-v-08ee50b8],
-.ms-Persona-tertiaryText[data-v-08ee50b8],
-.ms-Persona-optionalText[data-v-08ee50b8] {
-  display: block;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis; }
-
-.ms-Persona-primaryText[data-v-08ee50b8] {
-  color: "[theme:neutralPrimary, default: #333333]";
-  font-weight: 400;
-  font-size: 17px;
-  margin-top: -3px;
-  line-height: 1.4; }
-
-.ms-Persona-secondaryText[data-v-08ee50b8],
-.ms-Persona-tertiaryText[data-v-08ee50b8],
-.ms-Persona-optionalText[data-v-08ee50b8] {
-  color: "[theme:neutralSecondary, default: #666666]";
-  font-weight: 400;
-  font-size: 12px;
-  white-space: nowrap;
-  line-height: 1.3; }
-
-.ms-Persona-secondaryText[data-v-08ee50b8] {
-  padding-top: 3px; }
-
-.ms-Persona-tertiaryText[data-v-08ee50b8],
-.ms-Persona-optionalText[data-v-08ee50b8] {
-  padding-top: 5px;
-  display: none; }
-
-.ms-Persona.ms-Persona--tiny[data-v-08ee50b8] {
-  height: 30px;
-  display: inline-block; }
-  .ms-Persona.ms-Persona--tiny .ms-Persona-imageArea[data-v-08ee50b8] {
-    overflow: visible;
-    display: none; }
-  .ms-Persona.ms-Persona--tiny .ms-Persona-presence[data-v-08ee50b8] {
-    right: auto;
-    top: 10px;
-    left: 0;
-    border: 0; }
-    @media screen and (-ms-high-contrast: active) {
-      .ms-Persona.ms-Persona--tiny .ms-Persona-presence[data-v-08ee50b8] {
-        top: 9px;
-        border: 1px solid "[theme:white, default: #ffffff]"; } }
-    @media screen and (-ms-high-contrast: black-on-white) {
-      .ms-Persona.ms-Persona--tiny .ms-Persona-presence[data-v-08ee50b8] {
-        border: 1px solid "[theme:black, default: #000000]"; } }
-  .ms-Persona.ms-Persona--tiny .ms-Persona-details[data-v-08ee50b8] {
-    padding-left: 20px; }
-  .ms-Persona.ms-Persona--tiny .ms-Persona-primaryText[data-v-08ee50b8] {
-    font-size: 14px;
-    padding-top: 9px; }
-  .ms-Persona.ms-Persona--tiny .ms-Persona-secondaryText[data-v-08ee50b8] {
-    display: none; }
-
-.ms-Persona.ms-Persona--tiny.ms-Persona--readonly[data-v-08ee50b8] {
-  padding: 0;
-  background-color: transparent; }
-  .ms-Persona.ms-Persona--tiny.ms-Persona--readonly .ms-Persona-primaryText[data-v-08ee50b8]::after {
-    content: ';'; }
-
-.ms-Persona.ms-Persona--xs[data-v-08ee50b8],
-.ms-Persona.ms-Persona--facePile[data-v-08ee50b8],
-.ms-Persona.ms-Persona--token[data-v-08ee50b8] {
-  height: 32px; }
-  .ms-Persona.ms-Persona--xs .ms-Persona-imageArea[data-v-08ee50b8],
-  .ms-Persona.ms-Persona--xs .ms-Persona-image[data-v-08ee50b8],
-  .ms-Persona.ms-Persona--facePile .ms-Persona-imageArea[data-v-08ee50b8],
-  .ms-Persona.ms-Persona--facePile .ms-Persona-image[data-v-08ee50b8],
-  .ms-Persona.ms-Persona--token .ms-Persona-imageArea[data-v-08ee50b8],
-  .ms-Persona.ms-Persona--token .ms-Persona-image[data-v-08ee50b8] {
-    max-width: 32px;
-    height: 32px; }
-  .ms-Persona.ms-Persona--xs .ms-Persona-placeholder[data-v-08ee50b8],
-  .ms-Persona.ms-Persona--facePile .ms-Persona-placeholder[data-v-08ee50b8],
-  .ms-Persona.ms-Persona--token .ms-Persona-placeholder[data-v-08ee50b8] {
-    font-size: 28px;
-    top: 6px; }
-  .ms-Persona.ms-Persona--xs .ms-Persona-initials[data-v-08ee50b8],
-  .ms-Persona.ms-Persona--facePile .ms-Persona-initials[data-v-08ee50b8],
-  .ms-Persona.ms-Persona--token .ms-Persona-initials[data-v-08ee50b8] {
-    font-size: 12px;
-    line-height: 32px; }
-  .ms-Persona.ms-Persona--xs .ms-Persona-presence[data-v-08ee50b8],
-  .ms-Persona.ms-Persona--facePile .ms-Persona-presence[data-v-08ee50b8],
-  .ms-Persona.ms-Persona--token .ms-Persona-presence[data-v-08ee50b8] {
-    left: 19px; }
-  .ms-Persona.ms-Persona--xs .ms-Persona-details[data-v-08ee50b8],
-  .ms-Persona.ms-Persona--facePile .ms-Persona-details[data-v-08ee50b8],
-  .ms-Persona.ms-Persona--token .ms-Persona-details[data-v-08ee50b8] {
-    padding-left: 40px; }
-  .ms-Persona.ms-Persona--xs .ms-Persona-primaryText[data-v-08ee50b8],
-  .ms-Persona.ms-Persona--facePile .ms-Persona-primaryText[data-v-08ee50b8],
-  .ms-Persona.ms-Persona--token .ms-Persona-primaryText[data-v-08ee50b8] {
-    font-size: 14px;
-    padding-top: 3px; }
-  .ms-Persona.ms-Persona--xs .ms-Persona-secondaryText[data-v-08ee50b8],
-  .ms-Persona.ms-Persona--facePile .ms-Persona-secondaryText[data-v-08ee50b8],
-  .ms-Persona.ms-Persona--token .ms-Persona-secondaryText[data-v-08ee50b8] {
-    display: none; }
-
-.ms-Persona.ms-Persona--sm[data-v-08ee50b8] {
-  height: 40px; }
-  .ms-Persona.ms-Persona--sm .ms-Persona-imageArea[data-v-08ee50b8],
-  .ms-Persona.ms-Persona--sm .ms-Persona-image[data-v-08ee50b8] {
-    max-width: 40px;
-    height: 40px; }
-  .ms-Persona.ms-Persona--sm .ms-Persona-placeholder[data-v-08ee50b8] {
-    font-size: 38px;
-    top: 5px; }
-  .ms-Persona.ms-Persona--sm .ms-Persona-initials[data-v-08ee50b8] {
-    font-size: 14px;
-    line-height: 40px; }
-  .ms-Persona.ms-Persona--sm .ms-Persona-presence[data-v-08ee50b8] {
-    left: 27px; }
-  .ms-Persona.ms-Persona--sm .ms-Persona-details[data-v-08ee50b8] {
-    padding-left: 48px; }
-  .ms-Persona.ms-Persona--sm .ms-Persona-primaryText[data-v-08ee50b8] {
-    font-size: 14px; }
-  .ms-Persona.ms-Persona--sm .ms-Persona-primaryText[data-v-08ee50b8],
-  .ms-Persona.ms-Persona--sm .ms-Persona-secondaryText[data-v-08ee50b8] {
-    padding-top: 1px; }
-
-.ms-Persona.ms-Persona--lg[data-v-08ee50b8] {
-  height: 72px; }
-  .ms-Persona.ms-Persona--lg .ms-Persona-imageArea[data-v-08ee50b8],
-  .ms-Persona.ms-Persona--lg .ms-Persona-image[data-v-08ee50b8] {
-    max-width: 72px;
-    height: 72px; }
-  .ms-Persona.ms-Persona--lg .ms-Persona-placeholder[data-v-08ee50b8] {
-    font-size: 67px;
-    top: 10px; }
-  .ms-Persona.ms-Persona--lg .ms-Persona-initials[data-v-08ee50b8] {
-    font-size: 28px;
-    line-height: 72px; }
-  .ms-Persona.ms-Persona--lg .ms-Persona-presence[data-v-08ee50b8] {
-    left: 49px;
-    height: 20px;
-    width: 20px;
-    border-width: 3px; }
-  .ms-Persona.ms-Persona--lg .ms-Persona-presenceIcon[data-v-08ee50b8] {
-    line-height: 20px;
-    font-size: 14px; }
-  .ms-Persona.ms-Persona--lg .ms-Persona-details[data-v-08ee50b8] {
-    padding-left: 84px; }
-  .ms-Persona.ms-Persona--lg .ms-Persona-secondaryText[data-v-08ee50b8] {
-    padding-top: 3px; }
-  .ms-Persona.ms-Persona--lg .ms-Persona-tertiaryText[data-v-08ee50b8] {
-    padding-top: 5px;
-    display: block; }
-
-.ms-Persona.ms-Persona--xl[data-v-08ee50b8] {
-  height: 100px; }
-  .ms-Persona.ms-Persona--xl .ms-Persona-imageArea[data-v-08ee50b8],
-  .ms-Persona.ms-Persona--xl .ms-Persona-image[data-v-08ee50b8] {
-    max-width: 100px;
-    height: 100px; }
-  .ms-Persona.ms-Persona--xl .ms-Persona-placeholder[data-v-08ee50b8] {
-    font-size: 95px;
-    top: 12px; }
-  .ms-Persona.ms-Persona--xl .ms-Persona-initials[data-v-08ee50b8] {
-    font-size: 42px;
-    line-height: 100px; }
-  .ms-Persona.ms-Persona--xl .ms-Persona-presence[data-v-08ee50b8] {
-    height: 28px;
-    width: 28px;
-    left: 71px;
-    border-width: 4px; }
-  .ms-Persona.ms-Persona--xl .ms-Persona-presenceIcon[data-v-08ee50b8] {
-    line-height: 28px;
-    font-size: 21px;
-    position: relative;
-    top: 1px; }
-  .ms-Persona.ms-Persona--xl .ms-Persona-details[data-v-08ee50b8] {
-    padding-left: 120px; }
-  .ms-Persona.ms-Persona--xl .ms-Persona-primaryText[data-v-08ee50b8] {
-    font-size: 21px;
-    font-weight: 300;
-    margin-top: 0; }
-  .ms-Persona.ms-Persona--xl .ms-Persona-secondaryText[data-v-08ee50b8] {
-    padding-top: 2px; }
-  .ms-Persona.ms-Persona--xl .ms-Persona-tertiaryText[data-v-08ee50b8],
-  .ms-Persona.ms-Persona--xl .ms-Persona-optionalText[data-v-08ee50b8] {
-    padding-top: 5px;
-    display: block; }
-
-.ms-Persona.ms-Persona--darkText .ms-Persona-primaryText[data-v-08ee50b8] {
-  color: "[theme:neutralDark, default: #212121]"; }
-
-.ms-Persona.ms-Persona--darkText .ms-Persona-secondaryText[data-v-08ee50b8],
-.ms-Persona.ms-Persona--darkText .ms-Persona-tertiaryText[data-v-08ee50b8],
-.ms-Persona.ms-Persona--darkText .ms-Persona-optionalText[data-v-08ee50b8] {
-  color: "[theme:neutralPrimary, default: #333333]"; }
-
-.ms-Persona.ms-Persona--selectable[data-v-08ee50b8] {
-  cursor: pointer;
-  padding: 0 10px; }
-  .ms-Persona.ms-Persona--selectable[data-v-08ee50b8]:not(.ms-Persona--xl):hover, .ms-Persona.ms-Persona--selectable[data-v-08ee50b8]:not(.ms-Persona--xl):focus {
-    background-color: "[theme:themeLighter, default: #deecf9]";
-    outline: 1px solid transparent; }
-
-.ms-Persona.ms-Persona--available .ms-Persona-presence[data-v-08ee50b8] {
-  background-color: #7FBA00; }
-
-.ms-Persona.ms-Persona--away .ms-Persona-presence[data-v-08ee50b8] {
-  background-color: #FCD116; }
-
-.ms-Persona.ms-Persona--away .ms-Persona-presenceIcon[data-v-08ee50b8] {
-  position: relative;
-  left: 1px; }
-
-.ms-Persona.ms-Persona--blocked .ms-Persona-presence[data-v-08ee50b8] {
-  background-color: "[theme:white, default: #ffffff]"; }
-  .ms-Persona.ms-Persona--blocked .ms-Persona-presence[data-v-08ee50b8]::before {
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    box-shadow: 0 0 0 2px #D93B3B inset;
-    border-radius: 50%; }
-  .ms-Persona.ms-Persona--blocked .ms-Persona-presence[data-v-08ee50b8]::after {
-    content: '';
-    width: 100%;
-    height: 2px;
-    background-color: #D93B3B;
-    transform: rotate(-45deg);
-    position: absolute;
-    top: 5px;
-    left: 0; }
-
-.ms-Persona.ms-Persona--blocked.ms-Persona--lg .ms-Persona-presence[data-v-08ee50b8]::after {
-  top: 9px; }
-
-.ms-Persona.ms-Persona--blocked.ms-Persona--xl .ms-Persona-presence[data-v-08ee50b8]::after {
-  top: 13px; }
-
-.ms-Persona.ms-Persona--busy .ms-Persona-presence[data-v-08ee50b8] {
-  background-color: #D93B3B; }
-  @media screen and (-ms-high-contrast: active) {
-    .ms-Persona.ms-Persona--busy .ms-Persona-presence[data-v-08ee50b8] {
-      background-color: #1AEBFF; } }
-  @media screen and (-ms-high-contrast: black-on-white) {
-    .ms-Persona.ms-Persona--busy .ms-Persona-presence[data-v-08ee50b8] {
-      background-color: #37006E; } }
-
-.ms-Persona.ms-Persona--dnd .ms-Persona-presence[data-v-08ee50b8] {
-  background-color: #E81123; }
-
-.ms-Persona.ms-Persona--offline .ms-Persona-presence[data-v-08ee50b8] {
-  background-color: #93ABBD; }
-  @media screen and (-ms-high-contrast: active) {
-    .ms-Persona.ms-Persona--offline .ms-Persona-presence[data-v-08ee50b8] {
-      background-color: "[theme:black, default: #000000]";
-      box-shadow: 0 0 0 1px "[theme:white, default: #ffffff]" inset; } }
-  @media screen and (-ms-high-contrast: black-on-white) {
-    .ms-Persona.ms-Persona--offline .ms-Persona-presence[data-v-08ee50b8] {
-      background-color: "[theme:white, default: #ffffff]";
-      box-shadow: 0 0 0 1px "[theme:black, default: #000000]" inset; } }
-
-.ms-Persona.ms-Persona--facePile[data-v-08ee50b8] {
-  display: inline-block;
-  width: auto; }
-  .ms-Persona.ms-Persona--facePile[data-v-08ee50b8]:hover {
-    cursor: pointer; }
-  .ms-Persona.ms-Persona--facePile .ms-Persona-imageArea[data-v-08ee50b8] {
-    position: relative;
-    width: 100%;
-    min-width: 32px; }
-  .ms-Persona.ms-Persona--facePile .ms-Persona-initials[data-v-08ee50b8] {
-    position: relative; }
-  .ms-Persona.ms-Persona--facePile .ms-Persona-details[data-v-08ee50b8] {
-    display: none; }
-  .ms-Persona.ms-Persona--facePile .ms-Persona-presence[data-v-08ee50b8] {
-    display: none; }
-
-.ms-Persona.ms-Persona--token[data-v-08ee50b8] {
-  display: inline-flex;
-  width: auto;
-  background-color: "[theme:neutralLighter, default: #f4f4f4]";
-  border-radius: 20px;
-  margin: 4px; }
-  .ms-Persona.ms-Persona--token[data-v-08ee50b8]:hover {
-    cursor: pointer; }
-  .ms-Persona.ms-Persona--token .ms-Persona-actionIcon[data-v-08ee50b8] {
-    border-radius: 20px;
-    display: inline-block;
-    width: 32px;
-    height: 32px;
-    padding: 0;
-    line-height: 30px;
-    transition: background-color 0.167s cubic-bezier(0.1, 0.9, 0.2, 1);
-    text-align: center; }
-    .ms-Persona.ms-Persona--token .ms-Persona-actionIcon[data-v-08ee50b8]:hover {
-      background-color: "[theme:neutralLight, default: #eaeaea]"; }
-  .ms-Persona.ms-Persona--token .ms-Persona-imageArea[data-v-08ee50b8] {
-    width: 100%;
-    min-width: 32px; }
-  .ms-Persona.ms-Persona--token .ms-Persona-details[data-v-08ee50b8] {
-    height: 30px;
-    display: inline-block;
-    width: auto;
-    padding-right: 8px; }
-  .ms-Persona.ms-Persona--token .ms-Persona-primaryText[data-v-08ee50b8] {
-    padding-top: 0;
-    line-height: 34px; }
-  .ms-Persona.ms-Persona--token .ms-Persona-initials[data-v-08ee50b8] {
-    position: relative; }
-
-/*
-  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
-*/
-/* Theme related color values */
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes color and background styles
-*/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes only the color values
-*/
-/***
-100	Thin (Hairline)
-200	Extra Light (Ultra Light)
-300	Light
-400	Normal
-500	Medium
-600	Semi Bold (Demi Bold)
-700	Bold
-800	Extra Bold (Ultra Bold)
-900	Black (Heavy)
-**/
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-.ms-Overlay[data-v-09ffd35c] {
-  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  background-color: "[theme:whiteTranslucent40, default: rgba(255,255,255,.4)]";
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  z-index: 0;
-  display: none; }
-
-.ms-Overlay.is-visible[data-v-09ffd35c] {
-  display: block; }
-
-.ms-Overlay--dark[data-v-09ffd35c] {
-  background-color: "[theme:blackTranslucent40, default: rgba(0,0,0,.4)]"; }
-
-.ms-u-overflowHidden[data-v-09ffd35c] {
-  overflow: hidden; }
-
-/*
-  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
-*/
-/* Theme related color values */
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes color and background styles
-*/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes only the color values
-*/
-/***
-100	Thin (Hairline)
-200	Extra Light (Ultra Light)
-300	Light
-400	Normal
-500	Medium
-600	Semi Bold (Demi Bold)
-700	Bold
-800	Extra Bold (Ultra Bold)
-900	Black (Heavy)
-**/
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-.ms-Pivot[data-v-2646c164] {
-  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  font-size: 14px;
-  font-weight: 400; }
-
-.ms-Pivot-links[data-v-2646c164] {
-  font-size: 0;
-  height: 40px;
-  list-style-type: none;
-  padding: 0;
-  white-space: nowrap; }
-
-.ms-Pivot-link[data-v-2646c164] {
-  color: "[theme:neutralPrimary, default: #333333]";
-  display: inline-block;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 40px;
-  margin-right: 8px;
-  padding: 0 8px;
-  text-align: center;
-  vertical-align: top; }
-  .ms-Pivot-link[data-v-2646c164]:hover {
-    cursor: pointer; }
-  .ms-Pivot-link[data-v-2646c164]::before {
-    background-color: transparent;
-    bottom: 0;
-    content: '';
-    height: 2px;
-    left: 8px;
-    position: absolute;
-    right: 8px;
-    transition: background-color 0.267s cubic-bezier(0.1, 0.25, 0.75, 0.9); }
-  .ms-Pivot-link[data-v-2646c164]::after {
-    color: transparent;
-    content: attr(title);
-    display: block;
-    font-weight: bold;
-    height: 1px;
-    overflow: hidden;
-    visibility: hidden; }
-  .ms-Pivot-link.is-selected[data-v-2646c164] {
-    font-weight: 600;
-    position: relative; }
-    .ms-Pivot-link.is-selected[data-v-2646c164]::before {
-      background-color: "[theme:themePrimary, default: #0078d7]"; }
-  .ms-Pivot-link.is-disabled[data-v-2646c164] {
-    color: "[theme:neutralTertiary, default: #a6a6a6]"; }
-
-.ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164] {
-  color: "[theme:neutralSecondary, default: #666666]"; }
-  .ms-Pivot-link.ms-Pivot-link--overflow.is-selected[data-v-2646c164] {
-    color: "[theme:themePrimary, default: #0078d7]"; }
-  .ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164]:hover:not(.is-selected), .ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164]:focus:not(.is-selected) {
-    color: "[theme:neutralDark, default: #212121]"; }
-  .ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164]:active {
-    color: "[theme:themePrimary, default: #0078d7]"; }
-
-.ms-Pivot-ellipsis[data-v-2646c164] {
-  font-size: 15px;
-  position: relative;
-  top: 0; }
-
-.ms-Pivot-content[data-v-2646c164] {
-  display: none;
-  margin-top: 20px; }
-
-.ms-Pivot.ms-Pivot--large .ms-Pivot-link[data-v-2646c164] {
-  font-size: 17px; }
-  .ms-Pivot.ms-Pivot--large .ms-Pivot-link.is-selected[data-v-2646c164] {
-    font-weight: 300; }
-
-.ms-Pivot.ms-Pivot--large .ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164]::after {
-  font-size: 17px; }
-
-.ms-Pivot.ms-Pivot--tabs .ms-Pivot-link[data-v-2646c164] {
-  height: 40px;
-  background-color: "[theme:neutralLighter, default: #f4f4f4]";
-  line-height: 40px;
-  margin-right: -2px;
-  padding: 0 10px; }
-  .ms-Pivot.ms-Pivot--tabs .ms-Pivot-link[data-v-2646c164]:hover:not(.is-selected):not(.ms-Pivot-link--overflow), .ms-Pivot.ms-Pivot--tabs .ms-Pivot-link[data-v-2646c164]:focus:not(.is-selected):not(.ms-Pivot-link--overflow) {
-    color: "[theme:black, default: #000000]"; }
-  .ms-Pivot.ms-Pivot--tabs .ms-Pivot-link[data-v-2646c164]:active {
-    color: "[theme:white, default: #ffffff]";
-    background-color: "[theme:themePrimary, default: #0078d7]"; }
-  .ms-Pivot.ms-Pivot--tabs .ms-Pivot-link.is-selected[data-v-2646c164] {
-    background-color: "[theme:themePrimary, default: #0078d7]";
-    color: "[theme:white, default: #ffffff]";
-    font-weight: 300; }
-
-.ms-Pivot.ms-Pivot--tabs .ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164]:hover:not(.is-selected), .ms-Pivot.ms-Pivot--tabs .ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164]:focus:not(.is-selected) {
-  background-color: "[theme:white, default: #ffffff]"; }
-
-.ms-Pivot.ms-Pivot--tabs .ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164]:active {
-  background-color: "[theme:themePrimary, default: #0078d7]"; }
-
-@media screen and (-ms-high-contrast: active) {
-  .ms-Pivot.ms-Pivot--tabs .ms-Pivot-link.is-selected[data-v-2646c164] {
-    font-weight: 600; } }
 
 /*
   Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
@@ -6297,6 +5271,969 @@
 /** Warning **/
 /** Server Warning **/
 /** Success **/
+.ms-Overlay[data-v-09ffd35c] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: "[theme:whiteTranslucent40, default: rgba(255,255,255,.4)]";
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 0;
+  display: none; }
+
+.ms-Overlay.is-visible[data-v-09ffd35c] {
+  display: block; }
+
+.ms-Overlay--dark[data-v-09ffd35c] {
+  background-color: "[theme:blackTranslucent40, default: rgba(0,0,0,.4)]"; }
+
+.ms-u-overflowHidden[data-v-09ffd35c] {
+  overflow: hidden; }
+
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+/* Theme related color values */
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes color and background styles
+*/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes only the color values
+*/
+/***
+100	Thin (Hairline)
+200	Extra Light (Ultra Light)
+300	Light
+400	Normal
+500	Medium
+600	Semi Bold (Demi Bold)
+700	Bold
+800	Extra Bold (Ultra Bold)
+900	Black (Heavy)
+**/
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+.ms-Persona[data-v-08ee50b8] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  color: "[theme:neutralPrimary, default: #333333]";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  position: relative;
+  width: 100%;
+  height: 48px;
+  display: table;
+  table-layout: fixed;
+  border-collapse: separate; }
+  .ms-Persona .ms-ContextualHost[data-v-08ee50b8] {
+    display: none; }
+
+.ms-Persona-imageArea[data-v-08ee50b8] {
+  position: absolute;
+  overflow: hidden;
+  text-align: center;
+  max-width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  z-index: 0;
+  width: 100%;
+  top: 0;
+  left: 0; }
+  @media screen and (-ms-high-contrast: active) {
+    .ms-Persona-imageArea[data-v-08ee50b8] {
+      border: 1px solid "[theme:white, default: #ffffff]"; } }
+  @media screen and (-ms-high-contrast: black-on-white) {
+    .ms-Persona-imageArea[data-v-08ee50b8] {
+      border: 1px solid "[theme:black, default: #000000]"; } }
+
+.ms-Persona-placeholder[data-v-08ee50b8] {
+  color: "[theme:white, default: #ffffff]";
+  position: absolute;
+  right: 0;
+  left: 0;
+  font-size: 47px;
+  top: 9px;
+  z-index: 5; }
+
+.ms-Persona-initials[data-v-08ee50b8] {
+  color: "[theme:white, default: #ffffff]";
+  font-size: 17px;
+  font-weight: 100;
+  line-height: 48px; }
+  .ms-Persona-initials.ms-Persona-initials--blueLight[data-v-08ee50b8] {
+    background-color: "[theme:blueLight, default: #00bcf2]"; }
+  .ms-Persona-initials.ms-Persona-initials--blue[data-v-08ee50b8] {
+    background-color: "[theme:blue, default: #0078d7]"; }
+  .ms-Persona-initials.ms-Persona-initials--blueDark[data-v-08ee50b8] {
+    background-color: "[theme:blueDark, default: #002050]"; }
+  .ms-Persona-initials.ms-Persona-initials--teal[data-v-08ee50b8] {
+    background-color: "[theme:teal, default: #008272]"; }
+  .ms-Persona-initials.ms-Persona-initials--greenLight[data-v-08ee50b8] {
+    background-color: "[theme:greenLight, default: #bad80a]"; }
+  .ms-Persona-initials.ms-Persona-initials--green[data-v-08ee50b8] {
+    background-color: "[theme:green, default: #107c10]"; }
+  .ms-Persona-initials.ms-Persona-initials--greenDark[data-v-08ee50b8] {
+    background-color: "[theme:greenDark, default: #004b1c]"; }
+  .ms-Persona-initials.ms-Persona-initials--magentaLight[data-v-08ee50b8] {
+    background-color: "[theme:magentaLight, default: #e3008c]"; }
+  .ms-Persona-initials.ms-Persona-initials--magenta[data-v-08ee50b8] {
+    background-color: "[theme:magenta, default: #b4009e]"; }
+  .ms-Persona-initials.ms-Persona-initials--purpleLight[data-v-08ee50b8] {
+    background-color: "[theme:purpleLight, default: #b4a0ff]"; }
+  .ms-Persona-initials.ms-Persona-initials--purple[data-v-08ee50b8] {
+    background-color: "[theme:purple, default: #5c2d91]"; }
+  .ms-Persona-initials.ms-Persona-initials--black[data-v-08ee50b8] {
+    background-color: "[theme:black, default: #000000]"; }
+  .ms-Persona-initials.ms-Persona-initials--orange[data-v-08ee50b8] {
+    background-color: "[theme:orange, default: #d83b01]"; }
+  .ms-Persona-initials.ms-Persona-initials--red[data-v-08ee50b8] {
+    background-color: "[theme:red, default: #e81123]"; }
+  .ms-Persona-initials.ms-Persona-initials--redDark[data-v-08ee50b8] {
+    background-color: "[theme:redDark, default: #a80000]"; }
+
+.ms-Persona-image[data-v-08ee50b8] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 48px;
+  z-index: 10;
+  width: 100%; }
+  .ms-Persona-image[src=''][data-v-08ee50b8] {
+    display: none; }
+
+.ms-Persona-presence[data-v-08ee50b8] {
+  background-color: #7FBA00;
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  top: auto;
+  left: 34px;
+  bottom: -1px;
+  border: 2px solid "[theme:white, default: #ffffff]";
+  text-align: center; }
+  @media screen and (-ms-high-contrast: active) {
+    .ms-Persona-presence[data-v-08ee50b8] {
+      border-color: "[theme:black, default: #000000]";
+      box-shadow: 0 0 0 1px #1AEBFF inset;
+      color: "[theme:black, default: #000000]";
+      background-color: "[theme:white, default: #ffffff]"; } }
+  @media screen and (-ms-high-contrast: black-on-white) {
+    .ms-Persona-presence[data-v-08ee50b8] {
+      border-color: "[theme:white, default: #ffffff]";
+      box-shadow: 0 0 0 1px #37006E inset;
+      color: "[theme:white, default: #ffffff]";
+      background-color: "[theme:black, default: #000000]"; } }
+
+.ms-Persona-presenceIcon[data-v-08ee50b8] {
+  color: "[theme:white, default: #ffffff]";
+  font-size: 8px;
+  line-height: 12px;
+  vertical-align: top; }
+
+.ms-Persona-details[data-v-08ee50b8] {
+  padding: 0 12px;
+  vertical-align: middle;
+  overflow: hidden;
+  text-align: left;
+  padding-left: 60px;
+  display: table-cell;
+  width: 100%; }
+
+.ms-Persona-primaryText[data-v-08ee50b8],
+.ms-Persona-secondaryText[data-v-08ee50b8],
+.ms-Persona-tertiaryText[data-v-08ee50b8],
+.ms-Persona-optionalText[data-v-08ee50b8] {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.ms-Persona-primaryText[data-v-08ee50b8] {
+  color: "[theme:neutralPrimary, default: #333333]";
+  font-weight: 400;
+  font-size: 17px;
+  margin-top: -3px;
+  line-height: 1.4; }
+
+.ms-Persona-secondaryText[data-v-08ee50b8],
+.ms-Persona-tertiaryText[data-v-08ee50b8],
+.ms-Persona-optionalText[data-v-08ee50b8] {
+  color: "[theme:neutralSecondary, default: #666666]";
+  font-weight: 400;
+  font-size: 12px;
+  white-space: nowrap;
+  line-height: 1.3; }
+
+.ms-Persona-secondaryText[data-v-08ee50b8] {
+  padding-top: 3px; }
+
+.ms-Persona-tertiaryText[data-v-08ee50b8],
+.ms-Persona-optionalText[data-v-08ee50b8] {
+  padding-top: 5px;
+  display: none; }
+
+.ms-Persona.ms-Persona--tiny[data-v-08ee50b8] {
+  height: 30px;
+  display: inline-block; }
+  .ms-Persona.ms-Persona--tiny .ms-Persona-imageArea[data-v-08ee50b8] {
+    overflow: visible;
+    display: none; }
+  .ms-Persona.ms-Persona--tiny .ms-Persona-presence[data-v-08ee50b8] {
+    right: auto;
+    top: 10px;
+    left: 0;
+    border: 0; }
+    @media screen and (-ms-high-contrast: active) {
+      .ms-Persona.ms-Persona--tiny .ms-Persona-presence[data-v-08ee50b8] {
+        top: 9px;
+        border: 1px solid "[theme:white, default: #ffffff]"; } }
+    @media screen and (-ms-high-contrast: black-on-white) {
+      .ms-Persona.ms-Persona--tiny .ms-Persona-presence[data-v-08ee50b8] {
+        border: 1px solid "[theme:black, default: #000000]"; } }
+  .ms-Persona.ms-Persona--tiny .ms-Persona-details[data-v-08ee50b8] {
+    padding-left: 20px; }
+  .ms-Persona.ms-Persona--tiny .ms-Persona-primaryText[data-v-08ee50b8] {
+    font-size: 14px;
+    padding-top: 9px; }
+  .ms-Persona.ms-Persona--tiny .ms-Persona-secondaryText[data-v-08ee50b8] {
+    display: none; }
+
+.ms-Persona.ms-Persona--tiny.ms-Persona--readonly[data-v-08ee50b8] {
+  padding: 0;
+  background-color: transparent; }
+  .ms-Persona.ms-Persona--tiny.ms-Persona--readonly .ms-Persona-primaryText[data-v-08ee50b8]::after {
+    content: ';'; }
+
+.ms-Persona.ms-Persona--xs[data-v-08ee50b8],
+.ms-Persona.ms-Persona--facePile[data-v-08ee50b8],
+.ms-Persona.ms-Persona--token[data-v-08ee50b8] {
+  height: 32px; }
+  .ms-Persona.ms-Persona--xs .ms-Persona-imageArea[data-v-08ee50b8],
+  .ms-Persona.ms-Persona--xs .ms-Persona-image[data-v-08ee50b8],
+  .ms-Persona.ms-Persona--facePile .ms-Persona-imageArea[data-v-08ee50b8],
+  .ms-Persona.ms-Persona--facePile .ms-Persona-image[data-v-08ee50b8],
+  .ms-Persona.ms-Persona--token .ms-Persona-imageArea[data-v-08ee50b8],
+  .ms-Persona.ms-Persona--token .ms-Persona-image[data-v-08ee50b8] {
+    max-width: 32px;
+    height: 32px; }
+  .ms-Persona.ms-Persona--xs .ms-Persona-placeholder[data-v-08ee50b8],
+  .ms-Persona.ms-Persona--facePile .ms-Persona-placeholder[data-v-08ee50b8],
+  .ms-Persona.ms-Persona--token .ms-Persona-placeholder[data-v-08ee50b8] {
+    font-size: 28px;
+    top: 6px; }
+  .ms-Persona.ms-Persona--xs .ms-Persona-initials[data-v-08ee50b8],
+  .ms-Persona.ms-Persona--facePile .ms-Persona-initials[data-v-08ee50b8],
+  .ms-Persona.ms-Persona--token .ms-Persona-initials[data-v-08ee50b8] {
+    font-size: 12px;
+    line-height: 32px; }
+  .ms-Persona.ms-Persona--xs .ms-Persona-presence[data-v-08ee50b8],
+  .ms-Persona.ms-Persona--facePile .ms-Persona-presence[data-v-08ee50b8],
+  .ms-Persona.ms-Persona--token .ms-Persona-presence[data-v-08ee50b8] {
+    left: 19px; }
+  .ms-Persona.ms-Persona--xs .ms-Persona-details[data-v-08ee50b8],
+  .ms-Persona.ms-Persona--facePile .ms-Persona-details[data-v-08ee50b8],
+  .ms-Persona.ms-Persona--token .ms-Persona-details[data-v-08ee50b8] {
+    padding-left: 40px; }
+  .ms-Persona.ms-Persona--xs .ms-Persona-primaryText[data-v-08ee50b8],
+  .ms-Persona.ms-Persona--facePile .ms-Persona-primaryText[data-v-08ee50b8],
+  .ms-Persona.ms-Persona--token .ms-Persona-primaryText[data-v-08ee50b8] {
+    font-size: 14px;
+    padding-top: 3px; }
+  .ms-Persona.ms-Persona--xs .ms-Persona-secondaryText[data-v-08ee50b8],
+  .ms-Persona.ms-Persona--facePile .ms-Persona-secondaryText[data-v-08ee50b8],
+  .ms-Persona.ms-Persona--token .ms-Persona-secondaryText[data-v-08ee50b8] {
+    display: none; }
+
+.ms-Persona.ms-Persona--sm[data-v-08ee50b8] {
+  height: 40px; }
+  .ms-Persona.ms-Persona--sm .ms-Persona-imageArea[data-v-08ee50b8],
+  .ms-Persona.ms-Persona--sm .ms-Persona-image[data-v-08ee50b8] {
+    max-width: 40px;
+    height: 40px; }
+  .ms-Persona.ms-Persona--sm .ms-Persona-placeholder[data-v-08ee50b8] {
+    font-size: 38px;
+    top: 5px; }
+  .ms-Persona.ms-Persona--sm .ms-Persona-initials[data-v-08ee50b8] {
+    font-size: 14px;
+    line-height: 40px; }
+  .ms-Persona.ms-Persona--sm .ms-Persona-presence[data-v-08ee50b8] {
+    left: 27px; }
+  .ms-Persona.ms-Persona--sm .ms-Persona-details[data-v-08ee50b8] {
+    padding-left: 48px; }
+  .ms-Persona.ms-Persona--sm .ms-Persona-primaryText[data-v-08ee50b8] {
+    font-size: 14px; }
+  .ms-Persona.ms-Persona--sm .ms-Persona-primaryText[data-v-08ee50b8],
+  .ms-Persona.ms-Persona--sm .ms-Persona-secondaryText[data-v-08ee50b8] {
+    padding-top: 1px; }
+
+.ms-Persona.ms-Persona--lg[data-v-08ee50b8] {
+  height: 72px; }
+  .ms-Persona.ms-Persona--lg .ms-Persona-imageArea[data-v-08ee50b8],
+  .ms-Persona.ms-Persona--lg .ms-Persona-image[data-v-08ee50b8] {
+    max-width: 72px;
+    height: 72px; }
+  .ms-Persona.ms-Persona--lg .ms-Persona-placeholder[data-v-08ee50b8] {
+    font-size: 67px;
+    top: 10px; }
+  .ms-Persona.ms-Persona--lg .ms-Persona-initials[data-v-08ee50b8] {
+    font-size: 28px;
+    line-height: 72px; }
+  .ms-Persona.ms-Persona--lg .ms-Persona-presence[data-v-08ee50b8] {
+    left: 49px;
+    height: 20px;
+    width: 20px;
+    border-width: 3px; }
+  .ms-Persona.ms-Persona--lg .ms-Persona-presenceIcon[data-v-08ee50b8] {
+    line-height: 20px;
+    font-size: 14px; }
+  .ms-Persona.ms-Persona--lg .ms-Persona-details[data-v-08ee50b8] {
+    padding-left: 84px; }
+  .ms-Persona.ms-Persona--lg .ms-Persona-secondaryText[data-v-08ee50b8] {
+    padding-top: 3px; }
+  .ms-Persona.ms-Persona--lg .ms-Persona-tertiaryText[data-v-08ee50b8] {
+    padding-top: 5px;
+    display: block; }
+
+.ms-Persona.ms-Persona--xl[data-v-08ee50b8] {
+  height: 100px; }
+  .ms-Persona.ms-Persona--xl .ms-Persona-imageArea[data-v-08ee50b8],
+  .ms-Persona.ms-Persona--xl .ms-Persona-image[data-v-08ee50b8] {
+    max-width: 100px;
+    height: 100px; }
+  .ms-Persona.ms-Persona--xl .ms-Persona-placeholder[data-v-08ee50b8] {
+    font-size: 95px;
+    top: 12px; }
+  .ms-Persona.ms-Persona--xl .ms-Persona-initials[data-v-08ee50b8] {
+    font-size: 42px;
+    line-height: 100px; }
+  .ms-Persona.ms-Persona--xl .ms-Persona-presence[data-v-08ee50b8] {
+    height: 28px;
+    width: 28px;
+    left: 71px;
+    border-width: 4px; }
+  .ms-Persona.ms-Persona--xl .ms-Persona-presenceIcon[data-v-08ee50b8] {
+    line-height: 28px;
+    font-size: 21px;
+    position: relative;
+    top: 1px; }
+  .ms-Persona.ms-Persona--xl .ms-Persona-details[data-v-08ee50b8] {
+    padding-left: 120px; }
+  .ms-Persona.ms-Persona--xl .ms-Persona-primaryText[data-v-08ee50b8] {
+    font-size: 21px;
+    font-weight: 300;
+    margin-top: 0; }
+  .ms-Persona.ms-Persona--xl .ms-Persona-secondaryText[data-v-08ee50b8] {
+    padding-top: 2px; }
+  .ms-Persona.ms-Persona--xl .ms-Persona-tertiaryText[data-v-08ee50b8],
+  .ms-Persona.ms-Persona--xl .ms-Persona-optionalText[data-v-08ee50b8] {
+    padding-top: 5px;
+    display: block; }
+
+.ms-Persona.ms-Persona--darkText .ms-Persona-primaryText[data-v-08ee50b8] {
+  color: "[theme:neutralDark, default: #212121]"; }
+
+.ms-Persona.ms-Persona--darkText .ms-Persona-secondaryText[data-v-08ee50b8],
+.ms-Persona.ms-Persona--darkText .ms-Persona-tertiaryText[data-v-08ee50b8],
+.ms-Persona.ms-Persona--darkText .ms-Persona-optionalText[data-v-08ee50b8] {
+  color: "[theme:neutralPrimary, default: #333333]"; }
+
+.ms-Persona.ms-Persona--selectable[data-v-08ee50b8] {
+  cursor: pointer;
+  padding: 0 10px; }
+  .ms-Persona.ms-Persona--selectable[data-v-08ee50b8]:not(.ms-Persona--xl):hover, .ms-Persona.ms-Persona--selectable[data-v-08ee50b8]:not(.ms-Persona--xl):focus {
+    background-color: "[theme:themeLighter, default: #deecf9]";
+    outline: 1px solid transparent; }
+
+.ms-Persona.ms-Persona--available .ms-Persona-presence[data-v-08ee50b8] {
+  background-color: #7FBA00; }
+
+.ms-Persona.ms-Persona--away .ms-Persona-presence[data-v-08ee50b8] {
+  background-color: #FCD116; }
+
+.ms-Persona.ms-Persona--away .ms-Persona-presenceIcon[data-v-08ee50b8] {
+  position: relative;
+  left: 1px; }
+
+.ms-Persona.ms-Persona--blocked .ms-Persona-presence[data-v-08ee50b8] {
+  background-color: "[theme:white, default: #ffffff]"; }
+  .ms-Persona.ms-Persona--blocked .ms-Persona-presence[data-v-08ee50b8]::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 0 2px #D93B3B inset;
+    border-radius: 50%; }
+  .ms-Persona.ms-Persona--blocked .ms-Persona-presence[data-v-08ee50b8]::after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: #D93B3B;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 5px;
+    left: 0; }
+
+.ms-Persona.ms-Persona--blocked.ms-Persona--lg .ms-Persona-presence[data-v-08ee50b8]::after {
+  top: 9px; }
+
+.ms-Persona.ms-Persona--blocked.ms-Persona--xl .ms-Persona-presence[data-v-08ee50b8]::after {
+  top: 13px; }
+
+.ms-Persona.ms-Persona--busy .ms-Persona-presence[data-v-08ee50b8] {
+  background-color: #D93B3B; }
+  @media screen and (-ms-high-contrast: active) {
+    .ms-Persona.ms-Persona--busy .ms-Persona-presence[data-v-08ee50b8] {
+      background-color: #1AEBFF; } }
+  @media screen and (-ms-high-contrast: black-on-white) {
+    .ms-Persona.ms-Persona--busy .ms-Persona-presence[data-v-08ee50b8] {
+      background-color: #37006E; } }
+
+.ms-Persona.ms-Persona--dnd .ms-Persona-presence[data-v-08ee50b8] {
+  background-color: #E81123; }
+
+.ms-Persona.ms-Persona--offline .ms-Persona-presence[data-v-08ee50b8] {
+  background-color: #93ABBD; }
+  @media screen and (-ms-high-contrast: active) {
+    .ms-Persona.ms-Persona--offline .ms-Persona-presence[data-v-08ee50b8] {
+      background-color: "[theme:black, default: #000000]";
+      box-shadow: 0 0 0 1px "[theme:white, default: #ffffff]" inset; } }
+  @media screen and (-ms-high-contrast: black-on-white) {
+    .ms-Persona.ms-Persona--offline .ms-Persona-presence[data-v-08ee50b8] {
+      background-color: "[theme:white, default: #ffffff]";
+      box-shadow: 0 0 0 1px "[theme:black, default: #000000]" inset; } }
+
+.ms-Persona.ms-Persona--facePile[data-v-08ee50b8] {
+  display: inline-block;
+  width: auto; }
+  .ms-Persona.ms-Persona--facePile[data-v-08ee50b8]:hover {
+    cursor: pointer; }
+  .ms-Persona.ms-Persona--facePile .ms-Persona-imageArea[data-v-08ee50b8] {
+    position: relative;
+    width: 100%;
+    min-width: 32px; }
+  .ms-Persona.ms-Persona--facePile .ms-Persona-initials[data-v-08ee50b8] {
+    position: relative; }
+  .ms-Persona.ms-Persona--facePile .ms-Persona-details[data-v-08ee50b8] {
+    display: none; }
+  .ms-Persona.ms-Persona--facePile .ms-Persona-presence[data-v-08ee50b8] {
+    display: none; }
+
+.ms-Persona.ms-Persona--token[data-v-08ee50b8] {
+  display: inline-flex;
+  width: auto;
+  background-color: "[theme:neutralLighter, default: #f4f4f4]";
+  border-radius: 20px;
+  margin: 4px; }
+  .ms-Persona.ms-Persona--token[data-v-08ee50b8]:hover {
+    cursor: pointer; }
+  .ms-Persona.ms-Persona--token .ms-Persona-actionIcon[data-v-08ee50b8] {
+    border-radius: 20px;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    line-height: 30px;
+    transition: background-color 0.167s cubic-bezier(0.1, 0.9, 0.2, 1);
+    text-align: center; }
+    .ms-Persona.ms-Persona--token .ms-Persona-actionIcon[data-v-08ee50b8]:hover {
+      background-color: "[theme:neutralLight, default: #eaeaea]"; }
+  .ms-Persona.ms-Persona--token .ms-Persona-imageArea[data-v-08ee50b8] {
+    width: 100%;
+    min-width: 32px; }
+  .ms-Persona.ms-Persona--token .ms-Persona-details[data-v-08ee50b8] {
+    height: 30px;
+    display: inline-block;
+    width: auto;
+    padding-right: 8px; }
+  .ms-Persona.ms-Persona--token .ms-Persona-primaryText[data-v-08ee50b8] {
+    padding-top: 0;
+    line-height: 34px; }
+  .ms-Persona.ms-Persona--token .ms-Persona-initials[data-v-08ee50b8] {
+    position: relative; }
+
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+/* Theme related color values */
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes color and background styles
+*/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes only the color values
+*/
+/***
+100	Thin (Hairline)
+200	Extra Light (Ultra Light)
+300	Light
+400	Normal
+500	Medium
+600	Semi Bold (Demi Bold)
+700	Bold
+800	Extra Bold (Ultra Bold)
+900	Black (Heavy)
+**/
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+.ms-ListItem[data-v-a34de616] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  *zoom: 1;
+  color: "[theme:neutralPrimary, default: #333333]";
+  font-size: 14px;
+  font-weight: 400;
+  padding: 9px 28px 3px;
+  position: relative;
+  display: block; }
+  .ms-ListItem[data-v-a34de616]::before, .ms-ListItem[data-v-a34de616]::after {
+    display: table;
+    content: "";
+    line-height: 0; }
+  .ms-ListItem[data-v-a34de616]::after {
+    clear: both; }
+
+.ms-ListItem-primaryText[data-v-a34de616],
+.ms-ListItem-secondaryText[data-v-a34de616],
+.ms-ListItem-tertiaryText[data-v-a34de616] {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block; }
+
+.ms-ListItem-primaryText[data-v-a34de616] {
+  color: "[theme:neutralDark, default: #212121]";
+  font-weight: 300;
+  font-size: 21px;
+  padding-right: 80px;
+  position: relative;
+  top: -4px; }
+
+.ms-ListItem-secondaryText[data-v-a34de616] {
+  color: "[theme:neutralPrimary, default: #333333]";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 25px;
+  position: relative;
+  top: -7px;
+  padding-right: 30px; }
+
+.ms-ListItem-tertiaryText[data-v-a34de616] {
+  color: "[theme:neutralSecondaryAlt, default: #767676]";
+  font-weight: 300;
+  font-size: 14px;
+  position: relative;
+  top: -9px;
+  margin-bottom: -4px;
+  padding-right: 30px; }
+
+.ms-ListItem-metaText[data-v-a34de616] {
+  color: "[theme:neutralPrimary, default: #333333]";
+  font-weight: 300;
+  font-size: 11px;
+  position: absolute;
+  right: 30px;
+  top: 39px; }
+
+.ms-ListItem-image[data-v-a34de616] {
+  float: left;
+  height: 70px;
+  margin-left: -8px;
+  margin-right: 10px;
+  width: 70px;
+  background-color: "[theme:neutralPrimary, default: #333333]"; }
+
+.ms-ListItem-selectionTarget[data-v-a34de616] {
+  display: none; }
+
+.ms-ListItem-actions[data-v-a34de616] {
+  max-width: 80px;
+  position: absolute;
+  right: 30px;
+  text-align: right;
+  top: 10px; }
+
+.ms-ListItem-action[data-v-a34de616] {
+  color: "[theme:neutralTertiary, default: #a6a6a6]";
+  display: inline-block;
+  font-size: 15px;
+  position: relative;
+  text-align: center;
+  top: 3px;
+  cursor: pointer;
+  height: 16px;
+  width: 16px; }
+  .ms-ListItem-action .ms-Icon[data-v-a34de616] {
+    vertical-align: top; }
+  .ms-ListItem-action[data-v-a34de616]:hover {
+    color: "[theme:neutralSecondary, default: #666666]";
+    outline: 1px solid transparent; }
+
+.ms-ListItem.is-unread[data-v-a34de616] {
+  border-left: 3px solid "[theme:themePrimary, default: #0078d7]";
+  padding-left: 27px; }
+  .ms-ListItem.is-unread .ms-ListItem-secondaryText[data-v-a34de616],
+  .ms-ListItem.is-unread .ms-ListItem-metaText[data-v-a34de616] {
+    color: "[theme:themePrimary, default: #0078d7]";
+    font-weight: 600; }
+
+.ms-ListItem.is-unseen[data-v-a34de616]::after {
+  border-right: 10px solid transparent;
+  border-top: 10px solid "[theme:themePrimary, default: #0078d7]";
+  left: 0;
+  position: absolute;
+  top: 0; }
+
+.ms-ListItem.is-selectable .ms-ListItem-selectionTarget[data-v-a34de616] {
+  display: block;
+  height: 20px;
+  left: 6px;
+  position: absolute;
+  top: 13px;
+  width: 20px; }
+
+.ms-ListItem.is-selectable .ms-ListItem-image[data-v-a34de616] {
+  margin-left: 0; }
+
+.ms-ListItem.is-selectable[data-v-a34de616]:hover {
+  background-color: "[theme:neutralLight, default: #eaeaea]";
+  cursor: pointer;
+  outline: 1px solid transparent; }
+  .ms-ListItem.is-selectable[data-v-a34de616]:hover::before {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-family: 'FabricMDL2Icons';
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    position: absolute;
+    top: 14px;
+    left: 7px;
+    height: 15px;
+    width: 15px;
+    border: 1px solid "[theme:neutralSecondaryAlt, default: #767676]"; }
+
+.ms-ListItem.is-selected[data-v-a34de616]::before {
+  border: 1px solid transparent; }
+
+.ms-ListItem.is-selected[data-v-a34de616]::before, .ms-ListItem.is-selected[data-v-a34de616]:hover::before {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-family: 'FabricMDL2Icons';
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  content: '\e73A';
+  font-size: 17px;
+  color: "[theme:neutralSecondaryAlt, default: #767676]";
+  position: absolute;
+  top: 23px;
+  left: 7px;
+  border: 0; }
+
+.ms-ListItem.is-selected[data-v-a34de616]:hover {
+  background-color: "[theme:themeLight, default: #c7e0f4]";
+  outline: 1px solid transparent; }
+
+.ms-ListItem.ms-ListItem--document[data-v-a34de616] {
+  padding: 0; }
+  .ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon[data-v-a34de616] {
+    width: 70px;
+    height: 70px;
+    float: left;
+    text-align: center; }
+  .ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon .ms-Icon[data-v-a34de616] {
+    font-size: 38px;
+    line-height: 70px;
+    color: "[theme:neutralSecondary, default: #666666]"; }
+  .ms-ListItem.ms-ListItem--document .ms-ListItem-primaryText[data-v-a34de616] {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 14px;
+    padding-top: 15px;
+    padding-right: 0;
+    position: static; }
+  .ms-ListItem.ms-ListItem--document .ms-ListItem-secondaryText[data-v-a34de616] {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: "[theme:neutralSecondary, default: #666666]";
+    font-weight: 400;
+    font-size: 11px;
+    padding-top: 6px; }
+
+.ms-ListItem.is-selected[data-v-a34de616]::before, .ms-ListItem.is-selected[data-v-a34de616]:hover::before {
+  top: 14px;
+  content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2048 2048" width="17" height="17" version="1.1" xmlns="http://www.w3.org/2000/svg"><path transform="translate(0, 2048) scale(1, -1)" d="M2048 2048v-2048h-2048v2048h2048zM1920 1920h-1792v-1792h1792v1792zM768 421l-429 430l90 90l339 -338l851 850l90 -90z" fill="black" stroke="none"/></svg>'); }
+
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+/* Theme related color values */
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes color and background styles
+*/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes only the color values
+*/
+/***
+100	Thin (Hairline)
+200	Extra Light (Ultra Light)
+300	Light
+400	Normal
+500	Medium
+600	Semi Bold (Demi Bold)
+700	Bold
+800	Extra Bold (Ultra Bold)
+900	Black (Heavy)
+**/
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+.ms-ProgressIndicator[data-v-134f1924] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400; }
+
+.ms-ProgressIndicator-itemName[data-v-134f1924] {
+  color: "[theme:neutralPrimary, default: #333333]";
+  font-size: 14px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-top: 4px;
+  line-height: 20px; }
+
+.ms-ProgressIndicator-itemDescription[data-v-134f1924] {
+  color: "[theme:neutralSecondaryAlt, default: #767676]";
+  font-size: 11px;
+  line-height: 18px; }
+
+.ms-ProgressIndicator-itemProgress[data-v-134f1924] {
+  position: relative;
+  width: 180px;
+  height: 2px;
+  padding: 8px 0; }
+
+.ms-ProgressIndicator-progressTrack[data-v-134f1924] {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: "[theme:neutralLight, default: #eaeaea]";
+  outline: 1px solid transparent; }
+
+.ms-ProgressIndicator-progressBar[data-v-134f1924] {
+  background-color: "[theme:themePrimary, default: #0078d7]";
+  height: 2px;
+  position: absolute;
+  transition: width .3s ease;
+  width: 0; }
+  @media screen and (-ms-high-contrast: active) {
+    .ms-ProgressIndicator-progressBar[data-v-134f1924] {
+      background-color: "[theme:white, default: #ffffff]"; } }
+  @media screen and (-ms-high-contrast: black-on-white) {
+    .ms-ProgressIndicator-progressBar[data-v-134f1924] {
+      background-color: "[theme:black, default: #000000]"; } }
+
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+/* Theme related color values */
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes color and background styles
+*/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes only the color values
+*/
+/***
+100	Thin (Hairline)
+200	Extra Light (Ultra Light)
+300	Light
+400	Normal
+500	Medium
+600	Semi Bold (Demi Bold)
+700	Bold
+800	Extra Bold (Ultra Bold)
+900	Black (Heavy)
+**/
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
 .ms-Label[data-v-9e6e890e] {
   font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -6504,6 +6441,175 @@
   min-width: 260px;
   padding-top: 6px;
   overflow: auto; }
+
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+/* Theme related color values */
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes color and background styles
+*/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes only the color values
+*/
+/***
+100	Thin (Hairline)
+200	Extra Light (Ultra Light)
+300	Light
+400	Normal
+500	Medium
+600	Semi Bold (Demi Bold)
+700	Bold
+800	Extra Bold (Ultra Bold)
+900	Black (Heavy)
+**/
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+.ms-Pivot[data-v-2646c164] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  font-size: 14px;
+  font-weight: 400; }
+
+.ms-Pivot-links[data-v-2646c164] {
+  font-size: 0;
+  height: 40px;
+  list-style-type: none;
+  padding: 0;
+  white-space: nowrap; }
+
+.ms-Pivot-link[data-v-2646c164] {
+  color: "[theme:neutralPrimary, default: #333333]";
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 40px;
+  margin-right: 8px;
+  padding: 0 8px;
+  text-align: center;
+  vertical-align: top; }
+  .ms-Pivot-link[data-v-2646c164]:hover {
+    cursor: pointer; }
+  .ms-Pivot-link[data-v-2646c164]::before {
+    background-color: transparent;
+    bottom: 0;
+    content: '';
+    height: 2px;
+    left: 8px;
+    position: absolute;
+    right: 8px;
+    transition: background-color 0.267s cubic-bezier(0.1, 0.25, 0.75, 0.9); }
+  .ms-Pivot-link[data-v-2646c164]::after {
+    color: transparent;
+    content: attr(title);
+    display: block;
+    font-weight: bold;
+    height: 1px;
+    overflow: hidden;
+    visibility: hidden; }
+  .ms-Pivot-link.is-selected[data-v-2646c164] {
+    font-weight: 600;
+    position: relative; }
+    .ms-Pivot-link.is-selected[data-v-2646c164]::before {
+      background-color: "[theme:themePrimary, default: #0078d7]"; }
+  .ms-Pivot-link.is-disabled[data-v-2646c164] {
+    color: "[theme:neutralTertiary, default: #a6a6a6]"; }
+
+.ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164] {
+  color: "[theme:neutralSecondary, default: #666666]"; }
+  .ms-Pivot-link.ms-Pivot-link--overflow.is-selected[data-v-2646c164] {
+    color: "[theme:themePrimary, default: #0078d7]"; }
+  .ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164]:hover:not(.is-selected), .ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164]:focus:not(.is-selected) {
+    color: "[theme:neutralDark, default: #212121]"; }
+  .ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164]:active {
+    color: "[theme:themePrimary, default: #0078d7]"; }
+
+.ms-Pivot-ellipsis[data-v-2646c164] {
+  font-size: 15px;
+  position: relative;
+  top: 0; }
+
+.ms-Pivot-content[data-v-2646c164] {
+  display: none;
+  margin-top: 20px; }
+
+.ms-Pivot.ms-Pivot--large .ms-Pivot-link[data-v-2646c164] {
+  font-size: 17px; }
+  .ms-Pivot.ms-Pivot--large .ms-Pivot-link.is-selected[data-v-2646c164] {
+    font-weight: 300; }
+
+.ms-Pivot.ms-Pivot--large .ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164]::after {
+  font-size: 17px; }
+
+.ms-Pivot.ms-Pivot--tabs .ms-Pivot-link[data-v-2646c164] {
+  height: 40px;
+  background-color: "[theme:neutralLighter, default: #f4f4f4]";
+  line-height: 40px;
+  margin-right: -2px;
+  padding: 0 10px; }
+  .ms-Pivot.ms-Pivot--tabs .ms-Pivot-link[data-v-2646c164]:hover:not(.is-selected):not(.ms-Pivot-link--overflow), .ms-Pivot.ms-Pivot--tabs .ms-Pivot-link[data-v-2646c164]:focus:not(.is-selected):not(.ms-Pivot-link--overflow) {
+    color: "[theme:black, default: #000000]"; }
+  .ms-Pivot.ms-Pivot--tabs .ms-Pivot-link[data-v-2646c164]:active {
+    color: "[theme:white, default: #ffffff]";
+    background-color: "[theme:themePrimary, default: #0078d7]"; }
+  .ms-Pivot.ms-Pivot--tabs .ms-Pivot-link.is-selected[data-v-2646c164] {
+    background-color: "[theme:themePrimary, default: #0078d7]";
+    color: "[theme:white, default: #ffffff]";
+    font-weight: 300; }
+
+.ms-Pivot.ms-Pivot--tabs .ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164]:hover:not(.is-selected), .ms-Pivot.ms-Pivot--tabs .ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164]:focus:not(.is-selected) {
+  background-color: "[theme:white, default: #ffffff]"; }
+
+.ms-Pivot.ms-Pivot--tabs .ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164]:active {
+  background-color: "[theme:themePrimary, default: #0078d7]"; }
+
+@media screen and (-ms-high-contrast: active) {
+  .ms-Pivot.ms-Pivot--tabs .ms-Pivot-link.is-selected[data-v-2646c164] {
+    font-weight: 600; } }
 
 /*
   Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
@@ -7105,112 +7211,6 @@
 /** Warning **/
 /** Server Warning **/
 /** Success **/
-.ms-ProgressIndicator[data-v-134f1924] {
-  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  font-weight: 400; }
-
-.ms-ProgressIndicator-itemName[data-v-134f1924] {
-  color: "[theme:neutralPrimary, default: #333333]";
-  font-size: 14px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-  padding-top: 4px;
-  line-height: 20px; }
-
-.ms-ProgressIndicator-itemDescription[data-v-134f1924] {
-  color: "[theme:neutralSecondaryAlt, default: #767676]";
-  font-size: 11px;
-  line-height: 18px; }
-
-.ms-ProgressIndicator-itemProgress[data-v-134f1924] {
-  position: relative;
-  width: 180px;
-  height: 2px;
-  padding: 8px 0; }
-
-.ms-ProgressIndicator-progressTrack[data-v-134f1924] {
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background-color: "[theme:neutralLight, default: #eaeaea]";
-  outline: 1px solid transparent; }
-
-.ms-ProgressIndicator-progressBar[data-v-134f1924] {
-  background-color: "[theme:themePrimary, default: #0078d7]";
-  height: 2px;
-  position: absolute;
-  transition: width .3s ease;
-  width: 0; }
-  @media screen and (-ms-high-contrast: active) {
-    .ms-ProgressIndicator-progressBar[data-v-134f1924] {
-      background-color: "[theme:white, default: #ffffff]"; } }
-  @media screen and (-ms-high-contrast: black-on-white) {
-    .ms-ProgressIndicator-progressBar[data-v-134f1924] {
-      background-color: "[theme:black, default: #000000]"; } }
-
-/*
-  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
-*/
-/* Theme related color values */
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes color and background styles
-*/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes only the color values
-*/
-/***
-100	Thin (Hairline)
-200	Extra Light (Ultra Light)
-300	Light
-400	Normal
-500	Medium
-600	Semi Bold (Demi Bold)
-700	Bold
-800	Extra Bold (Ultra Bold)
-900	Black (Heavy)
-**/
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
 .ms-Spinner[data-v-74b796b6] {
   font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -7489,6 +7489,29 @@
   .ms-Toggle.ms-Toggle--textLeft .ms-Toggle-field[data-v-3153c0f8] {
     float: right; }
 
+table[data-v-16ac4ddf] {
+  border-spacing: 0;
+  min-width: 90px; }
+
+.seperator[data-v-16ac4ddf] {
+  text-align: center;
+  width: 10px; }
+
+.up[data-v-16ac4ddf], .down[data-v-16ac4ddf] {
+  cursor: pointer;
+  text-align: center;
+  user-select: none; }
+
+.textField[data-v-16ac4ddf] {
+  width: 100%;
+  margin: 0 !important; }
+  .textField[data-v-16ac4ddf] label {
+    display: none; }
+  .textField[data-v-16ac4ddf] input {
+    text-align: center;
+    min-width: unset;
+    padding: 6px 0; }
+
 /*
   Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
 */
@@ -7742,28 +7765,14 @@
       vertical-align: -4px;
       font-size: 18px; }
 
-table[data-v-16ac4ddf] {
-  border-spacing: 0;
-  min-width: 90px; }
-
-.seperator[data-v-16ac4ddf] {
-  text-align: center;
-  width: 10px; }
-
-.up[data-v-16ac4ddf], .down[data-v-16ac4ddf] {
-  cursor: pointer;
-  text-align: center;
-  user-select: none; }
-
-.textField[data-v-16ac4ddf] {
-  width: 100%;
-  margin: 0 !important; }
-  .textField[data-v-16ac4ddf] label {
-    display: none; }
-  .textField[data-v-16ac4ddf] input {
-    text-align: center;
-    min-width: unset;
-    padding: 6px 0; }
+@media screen and (max-width: 450px) {
+  .yearPicker[data-v-d4c0f6c8],
+  .monthPicker[data-v-d4c0f6c8] {
+    display: none !important; }
+  .dayPicker[data-v-d4c0f6c8] {
+    border-right: none !important; }
+  .foldout[data-v-d4c0f6c8] {
+    width: 210px; } }
 
 
 
