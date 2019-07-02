@@ -17,7 +17,8 @@
             </div>
             <div class="inputGroup" slot="reference">
                 <div class="inputContainer">
-                    <uiTextfield v-model="userInput" :placeholder="placeholderText" @blur="inputBlurred()"/>
+                    <uiTextfield v-model="userInput" :placeholder="placeholderText" @blur="inputBlurred()" />
+                    <uiIconChevronDownMed class="chevronIcon"/>
                 </div>
             </div>
         </popper>
@@ -27,6 +28,7 @@
 
 <script>
 import uiTextfield from "./uiTextfield.vue";
+import { uiIconChevronDownMed } from "./uiIcon";
 import Popper from 'vue-popperjs';
 import debounce from 'lodash/debounce';
 
@@ -34,6 +36,7 @@ export default {
     injectCss, 
     components:{
         uiTextfield, 
+        uiIconChevronDownMed,
         Popper
     },
     props: [
@@ -83,7 +86,7 @@ export default {
                     autoSizing: {
                         enabled: true,
                         fn: function autoSizing(data) {
-                            data.styles.width = data.offsets.reference.width;
+                            data.styles.width = data.offsets.reference.width - 2;
                             return data;
                         },
                         order: 840,
@@ -113,11 +116,30 @@ export default {
 @import '../misc/fixThemeVars'; //For using themecolors
 @import 'node_modules/vue-popperjs/dist/vue-popper';
 
+    .inputGroup {
+        position: relative;
+
+        .chevronIcon {
+            color: $ms-color-neutralDark;
+            font-size: 12px;
+            position: absolute;
+            right: 13px;
+            bottom: 7px;
+            pointer-events: none;
+        }
+
+        /deep/ .ms-TextField-field {
+            padding-right: 32px;
+        }
+
+    }
+
     .foldout {
         background-color:white;
         margin: 0px !important;;
         padding: 0px;
-        box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+        box-shadow: 1px 1px 5px 0px $ms-color-neutralQuaternaryAlt;
+        border-radius: 2px;
     }
 
     .optionlist {
