@@ -1,7 +1,5 @@
 <template>
     <div class="uiTypeAhead">
-        <label v-if="label">{{label}}</label> 
-
         <popper
             trigger="click"
             ref="popper"
@@ -17,7 +15,7 @@
             </div>
             <div class="inputGroup" slot="reference">
                 <div class="inputContainer">
-                    <uiTextfield v-model="userInput" :placeholder="placeholderText" @blur="inputBlurred()" />
+                    <uiTextfield v-model="userInput" :label="label" :placeholder="placeholderText" @blur="inputBlurred()" />
                     <uiIconChevronDownMed class="chevronIcon"/>
                 </div>
             </div>
