@@ -8,7 +8,7 @@
 
                 <div class="optionlist">
                     <div v-for="option in options" :key="option.id" class="option" :class="{ 'selectedOption' : selected != null && option.id == selected.id }" @click="selectOption(option)" @mousedown.prevent> <!-- @mousedown.prevent is needed so @blur on input doesn't trigger, otherwise this @click wont be run -->
-                        {{option.name}}
+                        {{option[display]}}
                     </div>
                 </div>
 
@@ -54,7 +54,6 @@ export default {
         selectOption(option) {
             this.selected = option;
             this.userInput = option[this.display];
-            this.$refs.popper.doClose();
         },
         //Autoselects an option if userinput matches display attribute
         autoselectMatch: debounce(function() {
@@ -69,6 +68,9 @@ export default {
             })
 
         }, 500),
+        setUserInput(newInput) {
+            this.userInput = newInput;
+        },
         inputBlurred() {
             this.$refs.popper.doClose();
         },
@@ -95,12 +97,14 @@ export default {
     },
     watch: {
         "userInput": debounce(function (newVal) {
-            //TODO: this popper.doShow shows the instantly, but the emit and refreshing data takes shortly longer. resulting in the dropdown opening and becoming invisible if no results match.
-            this.$refs.popper.doShow();
+            if(this.selected == null || this.selected[this.display] != newVal) {
+                this.$refs.popper.doShow();
+            };
             this.autoselectMatch();
             this.$emit('inputChanged', newVal)
         }, 500),
         "selected": function (newVal) {
+            this.$refs.popper.doClose();
             this.$emit('optionSelected', newVal);
         },
     },

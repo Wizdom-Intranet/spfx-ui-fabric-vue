@@ -25960,7 +25960,7 @@ var uiDatePicker = {render: function(){var _vm=this;var _h=_vm.$createElement;va
     }
 }
 
-var uiTypeAhead = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"uiTypeAhead"},[_c('popper',{ref:"popper",attrs:{"trigger":"click","options":_vm.popperOptions}},[_c('div',{staticClass:"popper foldout"},[_c('div',{staticClass:"optionlist"},_vm._l((_vm.options),function(option){return _c('div',{key:option.id,staticClass:"option",class:{ 'selectedOption' : _vm.selected != null && option.id == _vm.selected.id },on:{"click":function($event){_vm.selectOption(option);},"mousedown":function($event){$event.preventDefault();}}},[_vm._v(" "+_vm._s(option.name)+" ")])}),0)]),_vm._v(" "),_c('div',{staticClass:"inputGroup",attrs:{"slot":"reference"},slot:"reference"},[_c('div',{staticClass:"inputContainer"},[_c('uiTextfield',{attrs:{"label":_vm.label,"placeholder":_vm.placeholderText},on:{"blur":function($event){_vm.inputBlurred();}},model:{value:(_vm.userInput),callback:function ($$v) {_vm.userInput=$$v;},expression:"userInput"}}),_vm._v(" "),_c('uiIconChevronDownMed',{staticClass:"chevronIcon"})],1)])])],1)},staticRenderFns: [],_scopeId: 'data-v-6aabe933',
+var uiTypeAhead = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"uiTypeAhead"},[_c('popper',{ref:"popper",attrs:{"trigger":"click","options":_vm.popperOptions}},[_c('div',{staticClass:"popper foldout"},[_c('div',{staticClass:"optionlist"},_vm._l((_vm.options),function(option){return _c('div',{key:option.id,staticClass:"option",class:{ 'selectedOption' : _vm.selected != null && option.id == _vm.selected.id },on:{"click":function($event){_vm.selectOption(option);},"mousedown":function($event){$event.preventDefault();}}},[_vm._v(" "+_vm._s(option[_vm.display])+" ")])}),0)]),_vm._v(" "),_c('div',{staticClass:"inputGroup",attrs:{"slot":"reference"},slot:"reference"},[_c('div',{staticClass:"inputContainer"},[_c('uiTextfield',{attrs:{"label":_vm.label,"placeholder":_vm.placeholderText},on:{"blur":function($event){_vm.inputBlurred();}},model:{value:(_vm.userInput),callback:function ($$v) {_vm.userInput=$$v;},expression:"userInput"}}),_vm._v(" "),_c('uiIconChevronDownMed',{staticClass:"chevronIcon"})],1)])])],1)},staticRenderFns: [],_scopeId: 'data-v-6aabe933',
     beforeCreate: function beforeCreate(){ loadStyles("/* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .popper[data-v-6aabe933] { width: auto; background-color: #fafafa; color: #212121; text-align: center; padding: 2px; display: inline-block; border-radius: 3px; position: absolute; font-size: 14px; font-weight: normal; border: 1px #ebebeb solid; z-index: 200000; -moz-box-shadow: #3a3a3a 0 0 6px 0; -webkit-box-shadow: #3a3a3a 0 0 6px 0; box-shadow: #3a3a3a 0 0 6px 0; } .popper .popper__arrow[data-v-6aabe933] { width: 0; height: 0; border-style: solid; position: absolute; margin: 5px; } .popper[x-placement^=\"top\"][data-v-6aabe933] { margin-bottom: 5px; } .popper[x-placement^=\"top\"] .popper__arrow[data-v-6aabe933] { border-width: 5px 5px 0 5px; border-color: #fafafa transparent transparent transparent; bottom: -5px; left: calc(50% - 5px); margin-top: 0; margin-bottom: 0; } .popper[x-placement^=\"bottom\"][data-v-6aabe933] { margin-top: 5px; } .popper[x-placement^=\"bottom\"] .popper__arrow[data-v-6aabe933] { border-width: 0 5px 5px 5px; border-color: transparent transparent #fafafa transparent; top: -5px; left: calc(50% - 5px); margin-top: 0; margin-bottom: 0; } .popper[x-placement^=\"right\"][data-v-6aabe933] { margin-left: 5px; } .popper[x-placement^=\"right\"] .popper__arrow[data-v-6aabe933] { border-width: 5px 5px 5px 0; border-color: transparent #fafafa transparent transparent; left: -5px; top: calc(50% - 5px); margin-left: 0; margin-right: 0; } .popper[x-placement^=\"left\"][data-v-6aabe933] { margin-right: 5px; } .popper[x-placement^=\"left\"] .popper__arrow[data-v-6aabe933] { border-width: 5px 0 5px 5px; border-color: transparent transparent transparent #fafafa; right: -5px; top: calc(50% - 5px); margin-left: 0; margin-right: 0; } .inputGroup[data-v-6aabe933] { position: relative; } .inputGroup .chevronIcon[data-v-6aabe933] { color: \"[theme:neutralDark, default: #212121]\"; font-size: 12px; position: absolute; right: 13px; bottom: 7px; pointer-events: none; } .inputGroup[data-v-6aabe933] .ms-TextField-field { padding-right: 32px; } .foldout[data-v-6aabe933] { background-color: white; margin: 0px !important; padding: 0px; box-shadow: 1px 1px 5px 0px \"[theme:neutralQuaternaryAlt, default: #dadada]\"; border-radius: 2px; } .optionlist[data-v-6aabe933] { max-height: 200px; overflow: auto; } .option[data-v-6aabe933] { height: 19px; font-weight: 400; padding: 7px 10px 7px 10px; text-align: left; white-space: nowrap; cursor: pointer; color: \"[theme:neutralPrimary, default: #333333]\"; } .option[data-v-6aabe933]:hover { color: \"[theme:black, default: #000000]\"; background-color: \"[theme:neutralLight, default: #eaeaea]\"; } .selectedOption[data-v-6aabe933] { color: \"[theme:black, default: #000000]\"; background-color: \"[theme:themeLight, default: #c7e0f4]\"; } .selectedOption[data-v-6aabe933]:hover { background-color: \"[theme:themeLight, default: #c7e0f4]\"; } ");}, 
     components:{
         uiTextfield: uiTextfield, 
@@ -25983,7 +25983,6 @@ var uiTypeAhead = {render: function(){var _vm=this;var _h=_vm.$createElement;var
         selectOption: function selectOption(option) {
             this.selected = option;
             this.userInput = option[this.display];
-            this.$refs.popper.doClose();
         },
         //Autoselects an option if userinput matches display attribute
         autoselectMatch: debounce(function() {
@@ -26000,6 +25999,9 @@ var uiTypeAhead = {render: function(){var _vm=this;var _h=_vm.$createElement;var
             });
 
         }, 500),
+        setUserInput: function setUserInput(newInput) {
+            this.userInput = newInput;
+        },
         inputBlurred: function inputBlurred() {
             this.$refs.popper.doClose();
         },
@@ -26026,12 +26028,13 @@ var uiTypeAhead = {render: function(){var _vm=this;var _h=_vm.$createElement;var
     },
     watch: {
         "userInput": debounce(function (newVal) {
-            //TODO: this popper.doShow shows the instantly, but the emit and refreshing data takes shortly longer. resulting in the dropdown opening and becoming invisible if no results match.
-            this.$refs.popper.doShow();
-            this.autoselectMatch();
+            if(this.selected == null || this.selected[this.display] != newVal) {
+                this.$refs.popper.doShow();
+            }            this.autoselectMatch();
             this.$emit('inputChanged', newVal);
         }, 500),
         "selected": function (newVal) {
+            this.$refs.popper.doClose();
             this.$emit('optionSelected', newVal);
         },
     },
