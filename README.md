@@ -49,9 +49,10 @@ Component        | Implemented | Notes
 Imageuploader    | No          | Needs a wizdom context, see wiki for more info
 Richtexteditor   | No          | Needs a license key, see wiki for more info
 TemplateSwitcher | No          |
-Typeahead        | No          |
+Typeahead        | Yes         |
 Multiselect      | No          |
 Timepicker       | Yes         |
+DatePicker       | Yes         |
 DynamicIcon      | Yes         | 
 
 ## Changes, compared to https://aidewoode.github.io/office-ui-fabric-vue/#/

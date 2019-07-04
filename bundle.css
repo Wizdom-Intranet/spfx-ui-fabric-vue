@@ -307,6 +307,310 @@
 /** Warning **/
 /** Server Warning **/
 /** Success **/
+.ms-ContextualMenu[data-v-94d26018] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  color: "[theme:neutralPrimary, default: #333333]";
+  font-size: 14px;
+  font-weight: 400;
+  display: block;
+  min-width: 180px;
+  max-width: 220px;
+  list-style-type: none;
+  position: relative;
+  background-color: "[theme:white, default: #ffffff]"; }
+  .ms-ContextualMenu.is-hidden[data-v-94d26018] {
+    display: none; }
+
+.ms-ContextualMenu-item[data-v-94d26018] {
+  position: relative; }
+
+.ms-ContextualMenu-link[data-v-94d26018] {
+  box-sizing: border-box;
+  text-decoration: none;
+  color: "[theme:neutralPrimary, default: #333333]";
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: block;
+  height: 36px;
+  overflow: hidden;
+  line-height: 34px;
+  padding: 0 16px 0 25px;
+  position: relative;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+  .ms-ContextualMenu-link[data-v-94d26018]:hover, .ms-ContextualMenu-link[data-v-94d26018]:active, .ms-ContextualMenu-link[data-v-94d26018]:focus {
+    background-color: "[theme:neutralLighter, default: #f4f4f4]";
+    color: "[theme:neutralDark, default: #212121]"; }
+    .ms-ContextualMenu-link:hover .ms-ContextualMenu-subMenuIcon[data-v-94d26018], .ms-ContextualMenu-link:active .ms-ContextualMenu-subMenuIcon[data-v-94d26018], .ms-ContextualMenu-link:focus .ms-ContextualMenu-subMenuIcon[data-v-94d26018] {
+      color: "[theme:neutralDark, default: #212121]"; }
+  .ms-ContextualMenu-link[data-v-94d26018]:focus {
+    outline: transparent;
+    border: 1px solid "[theme:neutralSecondary, default: #666666]"; }
+  .ms-ContextualMenu-link.is-selected[data-v-94d26018] {
+    background-color: "[theme:neutralQuaternaryAlt, default: #dadada]";
+    color: "[theme:black, default: #000000]";
+    font-weight: 600; }
+    .ms-ContextualMenu-link.is-selected ~ .ms-ContextualMenu-subMenuIcon[data-v-94d26018] {
+      color: "[theme:black, default: #000000]"; }
+    .ms-ContextualMenu-link.is-selected[data-v-94d26018]:hover {
+      background-color: "[theme:neutralQuaternary, default: #d0d0d0]"; }
+  .ms-ContextualMenu-link.is-disabled[data-v-94d26018] {
+    color: "[theme:neutralTertiary, default: #a6a6a6]";
+    background-color: "[theme:white, default: #ffffff]";
+    pointer-events: none; }
+    .ms-ContextualMenu-link.is-disabled[data-v-94d26018]:active, .ms-ContextualMenu-link.is-disabled[data-v-94d26018]:focus {
+      border-color: "[theme:white, default: #ffffff]"; }
+    .ms-ContextualMenu-link.is-disabled .ms-Icon[data-v-94d26018] {
+      color: "[theme:neutralTertiary, default: #a6a6a6]";
+      pointer-events: none;
+      cursor: default; }
+
+.ms-ContextualMenu-item.ms-ContextualMenu-item--divider[data-v-94d26018] {
+  cursor: default;
+  display: block;
+  height: 1px;
+  background-color: "[theme:neutralLight, default: #eaeaea]";
+  position: relative; }
+
+.ms-ContextualMenu-item.ms-ContextualMenu-item--header[data-v-94d26018] {
+  color: "[theme:themePrimary, default: #0078d7]";
+  font-size: 12px;
+  text-transform: uppercase;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 18px; }
+
+.ms-ContextualMenu-item.ms-ContextualMenu-item--hasMenu .ms-ContextualMenu[data-v-94d26018] {
+  position: absolute;
+  top: -1px;
+  left: 178px; }
+
+.ms-ContextualMenu-subMenuIcon[data-v-94d26018],
+.ms-ContextualMenu-caretRight[data-v-94d26018] {
+  color: "[theme:neutralPrimary, default: #333333]";
+  font-size: 8px;
+  font-weight: 600;
+  width: 24px;
+  height: 36px;
+  line-height: 36px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  pointer-events: none; }
+
+.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-item.ms-ContextualMenu-item--header[data-v-94d26018] {
+  padding: 0 16px 0 26px; }
+
+.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018] {
+  background-color: "[theme:white, default: #ffffff]";
+  font-weight: 600;
+  color: "[theme:neutralPrimary, default: #333333]"; }
+  .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]::after {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-family: 'FabricMDL2Icons';
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    color: "[theme:neutralPrimary, default: #333333]";
+    content: '\E73E';
+    font-size: 10px;
+    font-weight: 800;
+    height: 36px;
+    line-height: 36px;
+    position: absolute;
+    left: 7px; }
+  .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:hover, .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:focus {
+    color: "[theme:neutralDark, default: #212121]";
+    background-color: "[theme:neutralLighter, default: #f4f4f4]"; }
+    .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:hover::after, .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:focus::after {
+      color: "[theme:neutralDark, default: #212121]"; }
+  .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:active {
+    color: "[theme:black, default: #000000]";
+    background-color: "[theme:neutralQuaternary, default: #d0d0d0]"; }
+    .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:active::after {
+      color: "[theme:black, default: #000000]"; }
+
+.ms-ContextualMenu.ms-ContextualMenu--hasIcons .ms-ContextualMenu-link[data-v-94d26018],
+.ms-ContextualMenu.ms-ContextualMenu--hasChecks .ms-ContextualMenu-link[data-v-94d26018] {
+  padding-left: 40px; }
+
+.ms-ContextualMenu.ms-ContextualMenu--hasIcons .ms-Icon[data-v-94d26018],
+.ms-ContextualMenu.ms-ContextualMenu--hasChecks .ms-Icon[data-v-94d26018] {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  text-align: center; }
+
+.ms-ContextualMenu.ms-ContextualMenu--hasIcons[data-v-94d26018] {
+  width: 220px; }
+
+.ms-ContextualHost[data-v-94d26018] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  z-index: 10;
+  margin: 16px auto;
+  position: relative;
+  min-width: 10px;
+  display: none;
+  background-color: "[theme:white, default: #ffffff]";
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4); }
+  .ms-ContextualHost.is-positioned[data-v-94d26018] {
+    position: absolute;
+    margin: 0; }
+  .ms-ContextualHost.is-open[data-v-94d26018] {
+    display: inline-block; }
+
+.ms-ContextualHost-beak[data-v-94d26018] {
+  box-shadow: 0 0 15px -5px "[theme:neutralPrimaryAlt, default: #3c3c3c]";
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  background: "[theme:white, default: #ffffff]";
+  border: 1px solid "[theme:neutralLight, default: #eaeaea]";
+  box-sizing: border-box;
+  top: -6px;
+  display: none;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  z-index: 0;
+  outline: 1px solid transparent; }
+
+.ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-94d26018],
+.ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-94d26018] {
+  top: 40px;
+  display: none; }
+
+.ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-94d26018] {
+  left: -10px; }
+
+.ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-94d26018] {
+  right: -10px; }
+
+.ms-ContextualHost.ms-ContextualHost--arrowTop .ms-ContextualHost-beak[data-v-94d26018] {
+  display: block;
+  top: -10px; }
+
+.ms-ContextualHost.ms-ContextualHost--arrowBottom .ms-ContextualHost-beak[data-v-94d26018] {
+  display: block;
+  bottom: -10px; }
+
+.ms-ContextualHost-main[data-v-94d26018] {
+  position: relative;
+  background-color: "[theme:white, default: #ffffff]";
+  box-sizing: border-box;
+  outline: 1px solid transparent;
+  z-index: 5;
+  min-height: 10px; }
+
+.ms-ContextualHost-close[data-v-94d26018] {
+  margin: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 8px;
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
+  color: "[theme:neutralSecondary, default: #666666]";
+  z-index: 10; }
+
+.ms-ContextualHost.ms-ContextualHost--close .ms-ContextualHost-title[data-v-94d26018] {
+  margin-right: 20px; }
+
+.ms-ContextualHost.ms-ContextualHost--primaryArrow .ms-ContextualHost-beak[data-v-94d26018] {
+  background-color: "[theme:themePrimary, default: #0078d7]"; }
+
+@media (min-width: 480px) {
+  .ms-ContextualHost[data-v-94d26018] {
+    margin: 16px; }
+    .ms-ContextualHost.is-positioned[data-v-94d26018] {
+      margin: 0; }
+  .ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-94d26018],
+  .ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-94d26018] {
+    display: block; } }
+
+.ms-Icon.ms-Icon--ChevronRight[data-v-94d26018]::before {
+  content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2048 2048" width="8" height="8" version="1.1" xmlns="http://www.w3.org/2000/svg"><path transform="translate(0, 2048) scale(1, -1)" d="M515 93l930 931l-930 931l90 90l1022 -1021l-1022 -1021z" fill="black" stroke="none"/></svg>'); }
+
+.ms-ContextualMenu-link.is-selected[data-v-94d26018]::after {
+  content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2048 2048" width="10" height="10" version="1.1" xmlns="http://www.w3.org/2000/svg"><path transform="translate(0, 2048) scale(1, -1)" d="M1837 1491l-1069 -1070l-557 558l90 90l467 -466l979 978z" fill="black" stroke="none"/></svg>') !important; }
+
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+/* Theme related color values */
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes color and background styles
+*/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes only the color values
+*/
+/***
+100	Thin (Hairline)
+200	Extra Light (Ultra Light)
+300	Light
+400	Normal
+500	Medium
+600	Semi Bold (Demi Bold)
+700	Bold
+800	Extra Bold (Ultra Bold)
+900	Black (Heavy)
+**/
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
 .ms-Callout[data-v-64664f3c] {
   font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -562,629 +866,6 @@
 /** Warning **/
 /** Server Warning **/
 /** Success **/
-.ms-RadioButton[data-v-9afc786c] {
-  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-  color: "[theme:neutralPrimary, default: #333333]";
-  font-size: 14px;
-  font-weight: 400;
-  min-height: 36px;
-  position: relative; }
-  .ms-RadioButton .ms-Label[data-v-9afc786c] {
-    font-size: 14px;
-    padding: 0 0 0 26px;
-    cursor: pointer;
-    display: inline-block; }
-
-.ms-RadioButton-input[data-v-9afc786c] {
-  position: absolute;
-  opacity: 0; }
-
-.ms-RadioButton-field[data-v-9afc786c]::before {
-  content: '';
-  display: inline-block;
-  border: 2px solid "[theme:neutralTertiary, default: #a6a6a6]";
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-  font-weight: normal;
-  position: absolute;
-  box-sizing: border-box;
-  transition-property: border-color;
-  transition-duration: 200ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.23, 1);
-  border-radius: 50%; }
-
-.ms-RadioButton-field[data-v-9afc786c]::after {
-  content: '';
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  bottom: 0;
-  right: 0;
-  transition-property: top, left, width, height;
-  transition-duration: 150ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.23, 1);
-  box-sizing: border-box; }
-  @media screen and (-ms-high-contrast: active) {
-    .ms-RadioButton-field[data-v-9afc786c]::after {
-      color: #00ff00; } }
-  @media screen and (-ms-high-contrast: black-on-white) {
-    .ms-RadioButton-field[data-v-9afc786c]::after {
-      color: #600000; } }
-
-.ms-RadioButton-field[data-v-9afc786c] {
-  display: inline-block;
-  cursor: pointer;
-  margin-top: 8px;
-  position: relative;
-  outline: 0;
-  vertical-align: top; }
-  .ms-RadioButton-field[data-v-9afc786c]:hover::before, .ms-RadioButton-field[data-v-9afc786c]:focus::before {
-    border-color: "[theme:neutralSecondaryAlt, default: #767676]"; }
-  .ms-RadioButton-field:hover .ms-Label[data-v-9afc786c], .ms-RadioButton-field:focus .ms-Label[data-v-9afc786c] {
-    color: "[theme:black, default: #000000]"; }
-  .ms-RadioButton-field.is-disabled[data-v-9afc786c] {
-    cursor: default; }
-    .ms-RadioButton-field.is-disabled[data-v-9afc786c]::before {
-      background-color: "[theme:neutralTertiaryAlt, default: #c8c8c8]";
-      border-color: "[theme:neutralTertiaryAlt, default: #c8c8c8]";
-      color: "[theme:neutralTertiaryAlt, default: #c8c8c8]"; }
-      @media screen and (-ms-high-contrast: active) {
-        .ms-RadioButton-field.is-disabled[data-v-9afc786c]::before {
-          border-color: #00ff00; } }
-      @media screen and (-ms-high-contrast: black-on-white) {
-        .ms-RadioButton-field.is-disabled[data-v-9afc786c]::before {
-          border-color: #600000; } }
-    .ms-RadioButton-field.is-disabled .ms-Label[data-v-9afc786c] {
-      color: "[theme:neutralTertiary, default: #a6a6a6]"; }
-      @media screen and (-ms-high-contrast: active) {
-        .ms-RadioButton-field.is-disabled .ms-Label[data-v-9afc786c] {
-          color: #00ff00; } }
-      @media screen and (-ms-high-contrast: black-on-white) {
-        .ms-RadioButton-field.is-disabled .ms-Label[data-v-9afc786c] {
-          color: #600000; } }
-    .ms-RadioButton-field.is-disabled[data-v-9afc786c]:hover::before, .ms-RadioButton-field.is-disabled[data-v-9afc786c]:focus::before {
-      border-color: "[theme:neutralTertiaryAlt, default: #c8c8c8]"; }
-  .ms-RadioButton-field.in-focus[data-v-9afc786c]::before {
-    border-color: "[theme:neutralSecondaryAlt, default: #767676]"; }
-
-.ms-RadioButton-field.is-checked[data-v-9afc786c]::before {
-  border: 2px solid "[theme:themePrimary, default: #0078d7]";
-  background-color: transparent; }
-  @media screen and (-ms-high-contrast: active) {
-    .ms-RadioButton-field.is-checked[data-v-9afc786c]::before {
-      border-color: #1AEBFF; } }
-  @media screen and (-ms-high-contrast: black-on-white) {
-    .ms-RadioButton-field.is-checked[data-v-9afc786c]::before {
-      border-color: #37006E; } }
-
-.ms-RadioButton-field.is-checked[data-v-9afc786c]::after {
-  background-color: "[theme:themePrimary, default: #0078d7]";
-  top: 5px;
-  left: 5px;
-  width: 10px;
-  height: 10px; }
-  @media screen and (-ms-high-contrast: active) {
-    .ms-RadioButton-field.is-checked[data-v-9afc786c]::after {
-      background-color: #1AEBFF; } }
-  @media screen and (-ms-high-contrast: black-on-white) {
-    .ms-RadioButton-field.is-checked[data-v-9afc786c]::after {
-      background-color: #37006E; } }
-
-.ms-RadioButton-field.is-checked[data-v-9afc786c]:hover::before, .ms-RadioButton-field.is-checked[data-v-9afc786c]:focus::before {
-  border-color: "[theme:themePrimary, default: #0078d7]"; }
-
-.ms-RadioButton-field.is-checked.in-focus[data-v-9afc786c]::before {
-  border-color: "[theme:themePrimary, default: #0078d7]"; }
-
-.ms-ChoiceFieldGroup[data-v-9afc786c] {
-  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  margin-bottom: 4px; }
-  .ms-ChoiceFieldGroup .ms-ChoiceFieldGroup-list[data-v-9afc786c] {
-    padding: 0;
-    margin: 0;
-    list-style: none; }
-
-/*
-  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
-*/
-/* Theme related color values */
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes color and background styles
-*/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes only the color values
-*/
-/***
-100	Thin (Hairline)
-200	Extra Light (Ultra Light)
-300	Light
-400	Normal
-500	Medium
-600	Semi Bold (Demi Bold)
-700	Bold
-800	Extra Bold (Ultra Bold)
-900	Black (Heavy)
-**/
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-.ms-CommandButton[data-v-6b2aa7e9] {
-  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  display: inline-block;
-  position: relative;
-  vertical-align: top; }
-  .ms-CommandButton.is-hidden[data-v-6b2aa7e9] {
-    display: none; }
-  .ms-CommandButton:disabled .ms-CommandButton-button[data-v-6b2aa7e9], .ms-CommandButton.is-disabled .ms-CommandButton-button[data-v-6b2aa7e9] {
-    cursor: default; }
-    .ms-CommandButton:disabled .ms-CommandButton-button[data-v-6b2aa7e9]:hover, .ms-CommandButton.is-disabled .ms-CommandButton-button[data-v-6b2aa7e9]:hover {
-      background-color: "[theme:themeLighterAlt, default: #eff6fc]"; }
-    .ms-CommandButton:disabled .ms-CommandButton-button .ms-CommandButton-label[data-v-6b2aa7e9], .ms-CommandButton.is-disabled .ms-CommandButton-button .ms-CommandButton-label[data-v-6b2aa7e9] {
-      color: "[theme:neutralTertiary, default: #a6a6a6]"; }
-    .ms-CommandButton:disabled .ms-CommandButton-button .ms-CommandButton-icon[data-v-6b2aa7e9], .ms-CommandButton.is-disabled .ms-CommandButton-button .ms-CommandButton-icon[data-v-6b2aa7e9] {
-      color: "[theme:neutralTertiary, default: #a6a6a6]"; }
-  .ms-CommandButton .ms-ContextualMenu[data-v-6b2aa7e9] {
-    display: none; }
-
-.ms-CommandButton-button[data-v-6b2aa7e9],
-.ms-CommandButton-splitIcon[data-v-6b2aa7e9] {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  color: "[theme:neutralPrimary, default: #333333]";
-  font-size: 14px;
-  font-weight: 400;
-  cursor: pointer;
-  display: inline-block;
-  height: 40px;
-  line-height: 40px;
-  outline: 1px solid transparent;
-  padding: 0 8px;
-  position: relative;
-  vertical-align: top;
-  background: transparent; }
-  .ms-CommandButton-button[data-v-6b2aa7e9]:hover,
-  .ms-CommandButton-splitIcon[data-v-6b2aa7e9]:hover {
-    background-color: "[theme:neutralLight, default: #eaeaea]"; }
-    .ms-CommandButton-button:hover .ms-CommandButton-label[data-v-6b2aa7e9],
-    .ms-CommandButton-splitIcon:hover .ms-CommandButton-label[data-v-6b2aa7e9] {
-      color: "[theme:neutralDark, default: #212121]"; }
-  .ms-CommandButton-button[data-v-6b2aa7e9]:active,
-  .ms-CommandButton-splitIcon[data-v-6b2aa7e9]:active {
-    background-color: "[theme:neutralLight, default: #eaeaea]"; }
-  .ms-CommandButton-button[data-v-6b2aa7e9]:focus::before,
-  .ms-CommandButton-splitIcon[data-v-6b2aa7e9]:focus::before {
-    top: 3px;
-    left: 3px;
-    right: 3px;
-    bottom: 3px;
-    border: 1px solid "[theme:neutralPrimary, default: #333333]";
-    position: absolute;
-    z-index: 10;
-    content: '';
-    outline: none; }
-  .ms-CommandButton-button[data-v-6b2aa7e9]:focus,
-  .ms-CommandButton-splitIcon[data-v-6b2aa7e9]:focus {
-    outline: 0; }
-  @media only screen and (max-width: 639px) {
-    .ms-CommandButton-button[data-v-6b2aa7e9],
-    .ms-CommandButton-splitIcon[data-v-6b2aa7e9] {
-      height: 44px; }
-      .ms-CommandButton-button .ms-CommandButton-icon[data-v-6b2aa7e9],
-      .ms-CommandButton-splitIcon .ms-CommandButton-icon[data-v-6b2aa7e9] {
-        font-size: 20px; }
-      .ms-CommandButton-button .ms-CommandButton-label[data-v-6b2aa7e9],
-      .ms-CommandButton-splitIcon .ms-CommandButton-label[data-v-6b2aa7e9] {
-        line-height: 44px; } }
-
-.ms-CommandButton-button[data-v-6b2aa7e9] {
-  border: 0;
-  margin: 0; }
-
-.ms-CommandButton + .ms-CommandButton[data-v-6b2aa7e9] {
-  margin-left: 8px; }
-  @media only screen and (max-width: 639px) {
-    .ms-CommandButton + .ms-CommandButton[data-v-6b2aa7e9] {
-      margin-left: 4px; } }
-
-.ms-CommandButton-icon[data-v-6b2aa7e9] {
-  display: inline-block;
-  margin-right: 8px;
-  position: relative;
-  font-size: 16px;
-  min-width: 16px;
-  height: 100%; }
-  .ms-CommandButton-icon .ms-Icon[data-v-6b2aa7e9] {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); }
-
-.ms-CommandButton-label[data-v-6b2aa7e9] {
-  font-size: 14px;
-  font-weight: 400;
-  color: "[theme:neutralPrimary, default: #333333]";
-  line-height: 40px;
-  height: 100%;
-  display: inline-block;
-  vertical-align: top; }
-  .ms-CommandButton-label[data-v-6b2aa7e9]:hover {
-    color: "[theme:neutralDark, default: #212121]"; }
-
-.ms-CommandButton-dropdownIcon[data-v-6b2aa7e9],
-.ms-CommandButton-splitIcon[data-v-6b2aa7e9] {
-  display: inline-block;
-  position: relative;
-  color: "[theme:neutralPrimary, default: #333333]";
-  font-size: 12px;
-  font-weight: 300;
-  min-width: 12px;
-  height: 100%;
-  vertical-align: top;
-  margin-left: 8px; }
-  .ms-CommandButton-dropdownIcon .ms-Icon[data-v-6b2aa7e9],
-  .ms-CommandButton-splitIcon .ms-Icon[data-v-6b2aa7e9] {
-    line-height: normal;
-    padding-top: 16px; }
-  .ms-CommandButton-dropdownIcon[data-v-6b2aa7e9]:focus::before,
-  .ms-CommandButton-splitIcon[data-v-6b2aa7e9]:focus::before {
-    top: 3px;
-    left: 3px;
-    right: 3px;
-    bottom: 3px;
-    border: 1px solid "[theme:neutralPrimary, default: #333333]";
-    position: absolute;
-    z-index: 10;
-    content: '';
-    outline: none; }
-  @media only screen and (max-width: 639px) {
-    .ms-CommandButton-dropdownIcon[data-v-6b2aa7e9],
-    .ms-CommandButton-splitIcon[data-v-6b2aa7e9] {
-      display: none; } }
-
-.ms-CommandButton-splitIcon[data-v-6b2aa7e9] {
-  margin-left: -2px;
-  width: 27px;
-  border: 0; }
-  .ms-CommandButton-splitIcon .ms-Icon[data-v-6b2aa7e9] {
-    margin-left: -1px;
-    position: relative;
-    padding-top: 16px; }
-    .ms-CommandButton-splitIcon .ms-Icon[data-v-6b2aa7e9]::after {
-      position: absolute;
-      content: ' ';
-      width: 1px;
-      height: 16px;
-      top: 12px;
-      left: -8px;
-      border-left: 1px solid "[theme:neutralTertiaryAlt, default: #c8c8c8]"; }
-
-.ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-icon[data-v-6b2aa7e9] {
-  margin-right: 0; }
-
-.ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-label[data-v-6b2aa7e9] {
-  display: none; }
-
-.ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-button[data-v-6b2aa7e9] {
-  padding: 0 12px; }
-
-.ms-CommandButton.ms-CommandButton--inline .ms-CommandButton-button[data-v-6b2aa7e9] {
-  background: none; }
-
-.ms-CommandButton.ms-CommandButton--actionButton .ms-CommandButton-button[data-v-6b2aa7e9] {
-  width: 50px;
-  height: 40px; }
-
-.ms-CommandButton.ms-CommandButton--actionButton .ms-CommandButton-icon[data-v-6b2aa7e9] {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 16px;
-  height: 16px;
-  padding-right: 0; }
-
-.ms-CommandButton.ms-CommandButton--pivot.is-active[data-v-6b2aa7e9]::before {
-  content: '';
-  height: 2px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  background-color: "[theme:themePrimary, default: #0078d7]";
-  bottom: 0;
-  z-index: 5; }
-
-.ms-CommandButton.ms-CommandButton--pivot[data-v-6b2aa7e9]:hover::before {
-  content: '';
-  height: 2px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  background-color: "[theme:themePrimary, default: #0078d7]";
-  bottom: 0;
-  z-index: 5; }
-
-.ms-CommandButton.ms-CommandButton--textOnly .ms-CommandButton-label[data-v-6b2aa7e9],
-.ms-CommandButton.ms-CommandButton--pivot .ms-CommandButton-label[data-v-6b2aa7e9] {
-  display: inline-block; }
-  @media only screen and (max-width: 479px) {
-    .ms-CommandButton.ms-CommandButton--textOnly .ms-CommandButton-label[data-v-6b2aa7e9],
-    .ms-CommandButton.ms-CommandButton--pivot .ms-CommandButton-label[data-v-6b2aa7e9] {
-      font-size: 16px; } }
-
-/*
-  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
-*/
-/* Theme related color values */
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes color and background styles
-*/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes only the color values
-*/
-/***
-100	Thin (Hairline)
-200	Extra Light (Ultra Light)
-300	Light
-400	Normal
-500	Medium
-600	Semi Bold (Demi Bold)
-700	Bold
-800	Extra Bold (Ultra Bold)
-900	Black (Heavy)
-**/
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-.ms-Dialog[data-v-1194e8ec] {
-  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
-  background-color: "[theme:white, default: #ffffff]";
-  display: none;
-  height: auto;
-  min-width: 220px;
-  max-width: 340px;
-  padding: 28px 24px;
-  z-index: 10;
-  position: fixed;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  top: 50%; }
-
-.ms-Dialog.is-open[data-v-1194e8ec] {
-  display: block; }
-
-.ms-Dialog-title[data-v-1194e8ec] {
-  font-size: 21px;
-  font-weight: 100;
-  margin-bottom: 24px; }
-
-.ms-Dialog-content[data-v-1194e8ec] {
-  position: relative; }
-
-.ms-Dialog-subText[data-v-1194e8ec] {
-  color: "[theme:neutralPrimary, default: #333333]";
-  font-size: 12px;
-  font-weight: 300;
-  line-height: 1.5; }
-
-.ms-Dialog-actions[data-v-1194e8ec] {
-  margin-top: 24px;
-  text-align: right; }
-
-.ms-Dialog--multiline .ms-Dialog-title[data-v-1194e8ec] {
-  font-size: 28px; }
-
-.ms-Dialog.ms-Dialog--lgHeader .ms-Dialog-title[data-v-1194e8ec] {
-  background-color: "[theme:themePrimary, default: #0078d7]";
-  color: "[theme:white, default: #ffffff]";
-  font-size: 28px;
-  font-weight: 100;
-  padding: 28px 24px;
-  margin-top: -28px;
-  margin-left: -24px;
-  margin-right: -24px; }
-
-.ms-Dialog-buttonClose[data-v-1194e8ec] {
-  background: none;
-  border: 0;
-  cursor: pointer;
-  margin: 0;
-  padding: 4px;
-  position: absolute;
-  right: 12px;
-  top: 12px;
-  z-index: 10; }
-  .ms-Dialog-buttonClose .ms-Icon.ms-Icon--Cancel[data-v-1194e8ec] {
-    color: "[theme:neutralSecondary, default: #666666]";
-    font-size: 16px; }
-
-.ms-Button.ms-Button--compound[data-v-1194e8ec]:not(:last-child) {
-  margin-bottom: 20px; }
-
-.ms-Dialog.ms-Dialog--close:not(.ms-Dialog--lgHeader) .ms-Dialog-title[data-v-1194e8ec] {
-  margin-right: 20px; }
-
-.ms-Dialog.ms-Dialog--close:not(.ms-Dialog--lgHeader) .ms-Dialog-button.ms-Dialog-buttonClose[data-v-1194e8ec] {
-  display: block; }
-
-@media (min-width: 480px) {
-  .ms-Dialog-main[data-v-1194e8ec] {
-    width: auto;
-    min-width: 288px;
-    max-width: 340px; } }
-
-.ms-Overlay[data-v-1194e8ec] {
-  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  background-color: "[theme:whiteTranslucent40, default: rgba(255,255,255,.4)]";
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  z-index: 0;
-  display: none; }
-
-.ms-Overlay.is-visible[data-v-1194e8ec] {
-  display: block; }
-
-.ms-Overlay--dark[data-v-1194e8ec] {
-  background-color: "[theme:blackTranslucent40, default: rgba(0,0,0,.4)]"; }
-
-.ms-u-overflowHidden[data-v-1194e8ec] {
-  overflow: hidden; }
-
-.ms-Icon.ms-Icon--Cancel[data-v-1194e8ec] {
-  content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2048 2048" width="16" height="16" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M1115 1024l690 -691l-90 -90l-691 690l-691 -690l-90 90l690 691l-690 691l90 90l691 -690l691 690l90 -90z" fill="black" stroke="none"/></svg>'); }
-
-/*
-  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
-*/
-/* Theme related color values */
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes color and background styles
-*/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes only the color values
-*/
-/***
-100	Thin (Hairline)
-200	Extra Light (Ultra Light)
-300	Light
-400	Normal
-500	Medium
-600	Semi Bold (Demi Bold)
-700	Bold
-800	Extra Bold (Ultra Bold)
-900	Black (Heavy)
-**/
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
 .ms-CheckBox[data-v-75ed8232] {
   box-sizing: border-box;
   color: "[theme:neutralPrimary, default: #333333]";
@@ -1355,248 +1036,134 @@
 /** Warning **/
 /** Server Warning **/
 /** Success **/
-.ms-ContextualMenu[data-v-94d26018] {
+.ms-RadioButton[data-v-9afc786c] {
   font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
   color: "[theme:neutralPrimary, default: #333333]";
   font-size: 14px;
   font-weight: 400;
-  display: block;
-  min-width: 180px;
-  max-width: 220px;
-  list-style-type: none;
-  position: relative;
-  background-color: "[theme:white, default: #ffffff]"; }
-  .ms-ContextualMenu.is-hidden[data-v-94d26018] {
-    display: none; }
-
-.ms-ContextualMenu-item[data-v-94d26018] {
+  min-height: 36px;
   position: relative; }
-
-.ms-ContextualMenu-link[data-v-94d26018] {
-  box-sizing: border-box;
-  text-decoration: none;
-  color: "[theme:neutralPrimary, default: #333333]";
-  border: 1px solid transparent;
-  cursor: pointer;
-  display: block;
-  height: 36px;
-  overflow: hidden;
-  line-height: 34px;
-  padding: 0 16px 0 25px;
-  position: relative;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
-  .ms-ContextualMenu-link[data-v-94d26018]:hover, .ms-ContextualMenu-link[data-v-94d26018]:active, .ms-ContextualMenu-link[data-v-94d26018]:focus {
-    background-color: "[theme:neutralLighter, default: #f4f4f4]";
-    color: "[theme:neutralDark, default: #212121]"; }
-    .ms-ContextualMenu-link:hover .ms-ContextualMenu-subMenuIcon[data-v-94d26018], .ms-ContextualMenu-link:active .ms-ContextualMenu-subMenuIcon[data-v-94d26018], .ms-ContextualMenu-link:focus .ms-ContextualMenu-subMenuIcon[data-v-94d26018] {
-      color: "[theme:neutralDark, default: #212121]"; }
-  .ms-ContextualMenu-link[data-v-94d26018]:focus {
-    outline: transparent;
-    border: 1px solid "[theme:neutralSecondary, default: #666666]"; }
-  .ms-ContextualMenu-link.is-selected[data-v-94d26018] {
-    background-color: "[theme:neutralQuaternaryAlt, default: #dadada]";
-    color: "[theme:black, default: #000000]";
-    font-weight: 600; }
-    .ms-ContextualMenu-link.is-selected ~ .ms-ContextualMenu-subMenuIcon[data-v-94d26018] {
-      color: "[theme:black, default: #000000]"; }
-    .ms-ContextualMenu-link.is-selected[data-v-94d26018]:hover {
-      background-color: "[theme:neutralQuaternary, default: #d0d0d0]"; }
-  .ms-ContextualMenu-link.is-disabled[data-v-94d26018] {
-    color: "[theme:neutralTertiary, default: #a6a6a6]";
-    background-color: "[theme:white, default: #ffffff]";
-    pointer-events: none; }
-    .ms-ContextualMenu-link.is-disabled[data-v-94d26018]:active, .ms-ContextualMenu-link.is-disabled[data-v-94d26018]:focus {
-      border-color: "[theme:white, default: #ffffff]"; }
-    .ms-ContextualMenu-link.is-disabled .ms-Icon[data-v-94d26018] {
-      color: "[theme:neutralTertiary, default: #a6a6a6]";
-      pointer-events: none;
-      cursor: default; }
-
-.ms-ContextualMenu-item.ms-ContextualMenu-item--divider[data-v-94d26018] {
-  cursor: default;
-  display: block;
-  height: 1px;
-  background-color: "[theme:neutralLight, default: #eaeaea]";
-  position: relative; }
-
-.ms-ContextualMenu-item.ms-ContextualMenu-item--header[data-v-94d26018] {
-  color: "[theme:themePrimary, default: #0078d7]";
-  font-size: 12px;
-  text-transform: uppercase;
-  height: 36px;
-  line-height: 36px;
-  padding: 0 18px; }
-
-.ms-ContextualMenu-item.ms-ContextualMenu-item--hasMenu .ms-ContextualMenu[data-v-94d26018] {
-  position: absolute;
-  top: -1px;
-  left: 178px; }
-
-.ms-ContextualMenu-subMenuIcon[data-v-94d26018],
-.ms-ContextualMenu-caretRight[data-v-94d26018] {
-  color: "[theme:neutralPrimary, default: #333333]";
-  font-size: 8px;
-  font-weight: 600;
-  width: 24px;
-  height: 36px;
-  line-height: 36px;
-  position: absolute;
-  text-align: center;
-  top: 0;
-  right: 0;
-  z-index: 1;
-  pointer-events: none; }
-
-.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-item.ms-ContextualMenu-item--header[data-v-94d26018] {
-  padding: 0 16px 0 26px; }
-
-.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018] {
-  background-color: "[theme:white, default: #ffffff]";
-  font-weight: 600;
-  color: "[theme:neutralPrimary, default: #333333]"; }
-  .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]::after {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    display: inline-block;
-    font-family: 'FabricMDL2Icons';
-    font-style: normal;
-    font-weight: normal;
-    speak: none;
-    color: "[theme:neutralPrimary, default: #333333]";
-    content: '\E73E';
-    font-size: 10px;
-    font-weight: 800;
-    height: 36px;
-    line-height: 36px;
-    position: absolute;
-    left: 7px; }
-  .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:hover, .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:focus {
-    color: "[theme:neutralDark, default: #212121]";
-    background-color: "[theme:neutralLighter, default: #f4f4f4]"; }
-    .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:hover::after, .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:focus::after {
-      color: "[theme:neutralDark, default: #212121]"; }
-  .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:active {
-    color: "[theme:black, default: #000000]";
-    background-color: "[theme:neutralQuaternary, default: #d0d0d0]"; }
-    .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:active::after {
-      color: "[theme:black, default: #000000]"; }
-
-.ms-ContextualMenu.ms-ContextualMenu--hasIcons .ms-ContextualMenu-link[data-v-94d26018],
-.ms-ContextualMenu.ms-ContextualMenu--hasChecks .ms-ContextualMenu-link[data-v-94d26018] {
-  padding-left: 40px; }
-
-.ms-ContextualMenu.ms-ContextualMenu--hasIcons .ms-Icon[data-v-94d26018],
-.ms-ContextualMenu.ms-ContextualMenu--hasChecks .ms-Icon[data-v-94d26018] {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  text-align: center; }
-
-.ms-ContextualMenu.ms-ContextualMenu--hasIcons[data-v-94d26018] {
-  width: 220px; }
-
-.ms-ContextualHost[data-v-94d26018] {
-  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  z-index: 10;
-  margin: 16px auto;
-  position: relative;
-  min-width: 10px;
-  display: none;
-  background-color: "[theme:white, default: #ffffff]";
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4); }
-  .ms-ContextualHost.is-positioned[data-v-94d26018] {
-    position: absolute;
-    margin: 0; }
-  .ms-ContextualHost.is-open[data-v-94d26018] {
+  .ms-RadioButton .ms-Label[data-v-9afc786c] {
+    font-size: 14px;
+    padding: 0 0 0 26px;
+    cursor: pointer;
     display: inline-block; }
 
-.ms-ContextualHost-beak[data-v-94d26018] {
-  box-shadow: 0 0 15px -5px "[theme:neutralPrimaryAlt, default: #3c3c3c]";
+.ms-RadioButton-input[data-v-9afc786c] {
   position: absolute;
-  width: 28px;
-  height: 28px;
-  background: "[theme:white, default: #ffffff]";
-  border: 1px solid "[theme:neutralLight, default: #eaeaea]";
-  box-sizing: border-box;
-  top: -6px;
-  display: none;
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-  z-index: 0;
-  outline: 1px solid transparent; }
+  opacity: 0; }
 
-.ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-94d26018],
-.ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-94d26018] {
-  top: 40px;
-  display: none; }
-
-.ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-94d26018] {
-  left: -10px; }
-
-.ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-94d26018] {
-  right: -10px; }
-
-.ms-ContextualHost.ms-ContextualHost--arrowTop .ms-ContextualHost-beak[data-v-94d26018] {
-  display: block;
-  top: -10px; }
-
-.ms-ContextualHost.ms-ContextualHost--arrowBottom .ms-ContextualHost-beak[data-v-94d26018] {
-  display: block;
-  bottom: -10px; }
-
-.ms-ContextualHost-main[data-v-94d26018] {
-  position: relative;
-  background-color: "[theme:white, default: #ffffff]";
-  box-sizing: border-box;
-  outline: 1px solid transparent;
-  z-index: 5;
-  min-height: 10px; }
-
-.ms-ContextualHost-close[data-v-94d26018] {
-  margin: 0;
-  border: 0;
-  background: none;
+.ms-RadioButton-field[data-v-9afc786c]::before {
+  content: '';
+  display: inline-block;
+  border: 2px solid "[theme:neutralTertiary, default: #a6a6a6]";
+  width: 20px;
+  height: 20px;
   cursor: pointer;
+  font-weight: normal;
   position: absolute;
-  top: 12px;
-  right: 12px;
-  padding: 8px;
-  width: 32px;
-  height: 32px;
-  font-size: 14px;
-  color: "[theme:neutralSecondary, default: #666666]";
-  z-index: 10; }
+  box-sizing: border-box;
+  transition-property: border-color;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.23, 1);
+  border-radius: 50%; }
 
-.ms-ContextualHost.ms-ContextualHost--close .ms-ContextualHost-title[data-v-94d26018] {
-  margin-right: 20px; }
+.ms-RadioButton-field[data-v-9afc786c]::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  bottom: 0;
+  right: 0;
+  transition-property: top, left, width, height;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.23, 1);
+  box-sizing: border-box; }
+  @media screen and (-ms-high-contrast: active) {
+    .ms-RadioButton-field[data-v-9afc786c]::after {
+      color: #00ff00; } }
+  @media screen and (-ms-high-contrast: black-on-white) {
+    .ms-RadioButton-field[data-v-9afc786c]::after {
+      color: #600000; } }
 
-.ms-ContextualHost.ms-ContextualHost--primaryArrow .ms-ContextualHost-beak[data-v-94d26018] {
-  background-color: "[theme:themePrimary, default: #0078d7]"; }
+.ms-RadioButton-field[data-v-9afc786c] {
+  display: inline-block;
+  cursor: pointer;
+  margin-top: 8px;
+  position: relative;
+  outline: 0;
+  vertical-align: top; }
+  .ms-RadioButton-field[data-v-9afc786c]:hover::before, .ms-RadioButton-field[data-v-9afc786c]:focus::before {
+    border-color: "[theme:neutralSecondaryAlt, default: #767676]"; }
+  .ms-RadioButton-field:hover .ms-Label[data-v-9afc786c], .ms-RadioButton-field:focus .ms-Label[data-v-9afc786c] {
+    color: "[theme:black, default: #000000]"; }
+  .ms-RadioButton-field.is-disabled[data-v-9afc786c] {
+    cursor: default; }
+    .ms-RadioButton-field.is-disabled[data-v-9afc786c]::before {
+      background-color: "[theme:neutralTertiaryAlt, default: #c8c8c8]";
+      border-color: "[theme:neutralTertiaryAlt, default: #c8c8c8]";
+      color: "[theme:neutralTertiaryAlt, default: #c8c8c8]"; }
+      @media screen and (-ms-high-contrast: active) {
+        .ms-RadioButton-field.is-disabled[data-v-9afc786c]::before {
+          border-color: #00ff00; } }
+      @media screen and (-ms-high-contrast: black-on-white) {
+        .ms-RadioButton-field.is-disabled[data-v-9afc786c]::before {
+          border-color: #600000; } }
+    .ms-RadioButton-field.is-disabled .ms-Label[data-v-9afc786c] {
+      color: "[theme:neutralTertiary, default: #a6a6a6]"; }
+      @media screen and (-ms-high-contrast: active) {
+        .ms-RadioButton-field.is-disabled .ms-Label[data-v-9afc786c] {
+          color: #00ff00; } }
+      @media screen and (-ms-high-contrast: black-on-white) {
+        .ms-RadioButton-field.is-disabled .ms-Label[data-v-9afc786c] {
+          color: #600000; } }
+    .ms-RadioButton-field.is-disabled[data-v-9afc786c]:hover::before, .ms-RadioButton-field.is-disabled[data-v-9afc786c]:focus::before {
+      border-color: "[theme:neutralTertiaryAlt, default: #c8c8c8]"; }
+  .ms-RadioButton-field.in-focus[data-v-9afc786c]::before {
+    border-color: "[theme:neutralSecondaryAlt, default: #767676]"; }
 
-@media (min-width: 480px) {
-  .ms-ContextualHost[data-v-94d26018] {
-    margin: 16px; }
-    .ms-ContextualHost.is-positioned[data-v-94d26018] {
-      margin: 0; }
-  .ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-94d26018],
-  .ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-94d26018] {
-    display: block; } }
+.ms-RadioButton-field.is-checked[data-v-9afc786c]::before {
+  border: 2px solid "[theme:themePrimary, default: #0078d7]";
+  background-color: transparent; }
+  @media screen and (-ms-high-contrast: active) {
+    .ms-RadioButton-field.is-checked[data-v-9afc786c]::before {
+      border-color: #1AEBFF; } }
+  @media screen and (-ms-high-contrast: black-on-white) {
+    .ms-RadioButton-field.is-checked[data-v-9afc786c]::before {
+      border-color: #37006E; } }
 
-.ms-Icon.ms-Icon--ChevronRight[data-v-94d26018]::before {
-  content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2048 2048" width="8" height="8" version="1.1" xmlns="http://www.w3.org/2000/svg"><path transform="translate(0, 2048) scale(1, -1)" d="M515 93l930 931l-930 931l90 90l1022 -1021l-1022 -1021z" fill="black" stroke="none"/></svg>'); }
+.ms-RadioButton-field.is-checked[data-v-9afc786c]::after {
+  background-color: "[theme:themePrimary, default: #0078d7]";
+  top: 5px;
+  left: 5px;
+  width: 10px;
+  height: 10px; }
+  @media screen and (-ms-high-contrast: active) {
+    .ms-RadioButton-field.is-checked[data-v-9afc786c]::after {
+      background-color: #1AEBFF; } }
+  @media screen and (-ms-high-contrast: black-on-white) {
+    .ms-RadioButton-field.is-checked[data-v-9afc786c]::after {
+      background-color: #37006E; } }
 
-.ms-ContextualMenu-link.is-selected[data-v-94d26018]::after {
-  content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2048 2048" width="10" height="10" version="1.1" xmlns="http://www.w3.org/2000/svg"><path transform="translate(0, 2048) scale(1, -1)" d="M1837 1491l-1069 -1070l-557 558l90 90l467 -466l979 978z" fill="black" stroke="none"/></svg>') !important; }
+.ms-RadioButton-field.is-checked[data-v-9afc786c]:hover::before, .ms-RadioButton-field.is-checked[data-v-9afc786c]:focus::before {
+  border-color: "[theme:themePrimary, default: #0078d7]"; }
+
+.ms-RadioButton-field.is-checked.in-focus[data-v-9afc786c]::before {
+  border-color: "[theme:themePrimary, default: #0078d7]"; }
+
+.ms-ChoiceFieldGroup[data-v-9afc786c] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  margin-bottom: 4px; }
+  .ms-ChoiceFieldGroup .ms-ChoiceFieldGroup-list[data-v-9afc786c] {
+    padding: 0;
+    margin: 0;
+    list-style: none; }
 
 /*
   Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
@@ -2243,6 +1810,439 @@
 /** Warning **/
 /** Server Warning **/
 /** Success **/
+.ms-Dialog[data-v-1194e8ec] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
+  background-color: "[theme:white, default: #ffffff]";
+  display: none;
+  height: auto;
+  min-width: 220px;
+  max-width: 340px;
+  padding: 28px 24px;
+  z-index: 10;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%; }
+
+.ms-Dialog.is-open[data-v-1194e8ec] {
+  display: block; }
+
+.ms-Dialog-title[data-v-1194e8ec] {
+  font-size: 21px;
+  font-weight: 100;
+  margin-bottom: 24px; }
+
+.ms-Dialog-content[data-v-1194e8ec] {
+  position: relative; }
+
+.ms-Dialog-subText[data-v-1194e8ec] {
+  color: "[theme:neutralPrimary, default: #333333]";
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.5; }
+
+.ms-Dialog-actions[data-v-1194e8ec] {
+  margin-top: 24px;
+  text-align: right; }
+
+.ms-Dialog--multiline .ms-Dialog-title[data-v-1194e8ec] {
+  font-size: 28px; }
+
+.ms-Dialog.ms-Dialog--lgHeader .ms-Dialog-title[data-v-1194e8ec] {
+  background-color: "[theme:themePrimary, default: #0078d7]";
+  color: "[theme:white, default: #ffffff]";
+  font-size: 28px;
+  font-weight: 100;
+  padding: 28px 24px;
+  margin-top: -28px;
+  margin-left: -24px;
+  margin-right: -24px; }
+
+.ms-Dialog-buttonClose[data-v-1194e8ec] {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  margin: 0;
+  padding: 4px;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  z-index: 10; }
+  .ms-Dialog-buttonClose .ms-Icon.ms-Icon--Cancel[data-v-1194e8ec] {
+    color: "[theme:neutralSecondary, default: #666666]";
+    font-size: 16px; }
+
+.ms-Button.ms-Button--compound[data-v-1194e8ec]:not(:last-child) {
+  margin-bottom: 20px; }
+
+.ms-Dialog.ms-Dialog--close:not(.ms-Dialog--lgHeader) .ms-Dialog-title[data-v-1194e8ec] {
+  margin-right: 20px; }
+
+.ms-Dialog.ms-Dialog--close:not(.ms-Dialog--lgHeader) .ms-Dialog-button.ms-Dialog-buttonClose[data-v-1194e8ec] {
+  display: block; }
+
+@media (min-width: 480px) {
+  .ms-Dialog-main[data-v-1194e8ec] {
+    width: auto;
+    min-width: 288px;
+    max-width: 340px; } }
+
+.ms-Overlay[data-v-1194e8ec] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: "[theme:whiteTranslucent40, default: rgba(255,255,255,.4)]";
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 0;
+  display: none; }
+
+.ms-Overlay.is-visible[data-v-1194e8ec] {
+  display: block; }
+
+.ms-Overlay--dark[data-v-1194e8ec] {
+  background-color: "[theme:blackTranslucent40, default: rgba(0,0,0,.4)]"; }
+
+.ms-u-overflowHidden[data-v-1194e8ec] {
+  overflow: hidden; }
+
+.ms-Icon.ms-Icon--Cancel[data-v-1194e8ec] {
+  content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2048 2048" width="16" height="16" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M1115 1024l690 -691l-90 -90l-691 690l-691 -690l-90 90l690 691l-690 691l90 90l691 -690l691 690l90 -90z" fill="black" stroke="none"/></svg>'); }
+
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+/* Theme related color values */
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes color and background styles
+*/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes only the color values
+*/
+/***
+100	Thin (Hairline)
+200	Extra Light (Ultra Light)
+300	Light
+400	Normal
+500	Medium
+600	Semi Bold (Demi Bold)
+700	Bold
+800	Extra Bold (Ultra Bold)
+900	Black (Heavy)
+**/
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+.ms-CommandButton[data-v-6b2aa7e9] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  position: relative;
+  vertical-align: top; }
+  .ms-CommandButton.is-hidden[data-v-6b2aa7e9] {
+    display: none; }
+  .ms-CommandButton:disabled .ms-CommandButton-button[data-v-6b2aa7e9], .ms-CommandButton.is-disabled .ms-CommandButton-button[data-v-6b2aa7e9] {
+    cursor: default; }
+    .ms-CommandButton:disabled .ms-CommandButton-button[data-v-6b2aa7e9]:hover, .ms-CommandButton.is-disabled .ms-CommandButton-button[data-v-6b2aa7e9]:hover {
+      background-color: "[theme:themeLighterAlt, default: #eff6fc]"; }
+    .ms-CommandButton:disabled .ms-CommandButton-button .ms-CommandButton-label[data-v-6b2aa7e9], .ms-CommandButton.is-disabled .ms-CommandButton-button .ms-CommandButton-label[data-v-6b2aa7e9] {
+      color: "[theme:neutralTertiary, default: #a6a6a6]"; }
+    .ms-CommandButton:disabled .ms-CommandButton-button .ms-CommandButton-icon[data-v-6b2aa7e9], .ms-CommandButton.is-disabled .ms-CommandButton-button .ms-CommandButton-icon[data-v-6b2aa7e9] {
+      color: "[theme:neutralTertiary, default: #a6a6a6]"; }
+  .ms-CommandButton .ms-ContextualMenu[data-v-6b2aa7e9] {
+    display: none; }
+
+.ms-CommandButton-button[data-v-6b2aa7e9],
+.ms-CommandButton-splitIcon[data-v-6b2aa7e9] {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  color: "[theme:neutralPrimary, default: #333333]";
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  outline: 1px solid transparent;
+  padding: 0 8px;
+  position: relative;
+  vertical-align: top;
+  background: transparent; }
+  .ms-CommandButton-button[data-v-6b2aa7e9]:hover,
+  .ms-CommandButton-splitIcon[data-v-6b2aa7e9]:hover {
+    background-color: "[theme:neutralLight, default: #eaeaea]"; }
+    .ms-CommandButton-button:hover .ms-CommandButton-label[data-v-6b2aa7e9],
+    .ms-CommandButton-splitIcon:hover .ms-CommandButton-label[data-v-6b2aa7e9] {
+      color: "[theme:neutralDark, default: #212121]"; }
+  .ms-CommandButton-button[data-v-6b2aa7e9]:active,
+  .ms-CommandButton-splitIcon[data-v-6b2aa7e9]:active {
+    background-color: "[theme:neutralLight, default: #eaeaea]"; }
+  .ms-CommandButton-button[data-v-6b2aa7e9]:focus::before,
+  .ms-CommandButton-splitIcon[data-v-6b2aa7e9]:focus::before {
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    border: 1px solid "[theme:neutralPrimary, default: #333333]";
+    position: absolute;
+    z-index: 10;
+    content: '';
+    outline: none; }
+  .ms-CommandButton-button[data-v-6b2aa7e9]:focus,
+  .ms-CommandButton-splitIcon[data-v-6b2aa7e9]:focus {
+    outline: 0; }
+  @media only screen and (max-width: 639px) {
+    .ms-CommandButton-button[data-v-6b2aa7e9],
+    .ms-CommandButton-splitIcon[data-v-6b2aa7e9] {
+      height: 44px; }
+      .ms-CommandButton-button .ms-CommandButton-icon[data-v-6b2aa7e9],
+      .ms-CommandButton-splitIcon .ms-CommandButton-icon[data-v-6b2aa7e9] {
+        font-size: 20px; }
+      .ms-CommandButton-button .ms-CommandButton-label[data-v-6b2aa7e9],
+      .ms-CommandButton-splitIcon .ms-CommandButton-label[data-v-6b2aa7e9] {
+        line-height: 44px; } }
+
+.ms-CommandButton-button[data-v-6b2aa7e9] {
+  border: 0;
+  margin: 0; }
+
+.ms-CommandButton + .ms-CommandButton[data-v-6b2aa7e9] {
+  margin-left: 8px; }
+  @media only screen and (max-width: 639px) {
+    .ms-CommandButton + .ms-CommandButton[data-v-6b2aa7e9] {
+      margin-left: 4px; } }
+
+.ms-CommandButton-icon[data-v-6b2aa7e9] {
+  display: inline-block;
+  margin-right: 8px;
+  position: relative;
+  font-size: 16px;
+  min-width: 16px;
+  height: 100%; }
+  .ms-CommandButton-icon .ms-Icon[data-v-6b2aa7e9] {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+
+.ms-CommandButton-label[data-v-6b2aa7e9] {
+  font-size: 14px;
+  font-weight: 400;
+  color: "[theme:neutralPrimary, default: #333333]";
+  line-height: 40px;
+  height: 100%;
+  display: inline-block;
+  vertical-align: top; }
+  .ms-CommandButton-label[data-v-6b2aa7e9]:hover {
+    color: "[theme:neutralDark, default: #212121]"; }
+
+.ms-CommandButton-dropdownIcon[data-v-6b2aa7e9],
+.ms-CommandButton-splitIcon[data-v-6b2aa7e9] {
+  display: inline-block;
+  position: relative;
+  color: "[theme:neutralPrimary, default: #333333]";
+  font-size: 12px;
+  font-weight: 300;
+  min-width: 12px;
+  height: 100%;
+  vertical-align: top;
+  margin-left: 8px; }
+  .ms-CommandButton-dropdownIcon .ms-Icon[data-v-6b2aa7e9],
+  .ms-CommandButton-splitIcon .ms-Icon[data-v-6b2aa7e9] {
+    line-height: normal;
+    padding-top: 16px; }
+  .ms-CommandButton-dropdownIcon[data-v-6b2aa7e9]:focus::before,
+  .ms-CommandButton-splitIcon[data-v-6b2aa7e9]:focus::before {
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    border: 1px solid "[theme:neutralPrimary, default: #333333]";
+    position: absolute;
+    z-index: 10;
+    content: '';
+    outline: none; }
+  @media only screen and (max-width: 639px) {
+    .ms-CommandButton-dropdownIcon[data-v-6b2aa7e9],
+    .ms-CommandButton-splitIcon[data-v-6b2aa7e9] {
+      display: none; } }
+
+.ms-CommandButton-splitIcon[data-v-6b2aa7e9] {
+  margin-left: -2px;
+  width: 27px;
+  border: 0; }
+  .ms-CommandButton-splitIcon .ms-Icon[data-v-6b2aa7e9] {
+    margin-left: -1px;
+    position: relative;
+    padding-top: 16px; }
+    .ms-CommandButton-splitIcon .ms-Icon[data-v-6b2aa7e9]::after {
+      position: absolute;
+      content: ' ';
+      width: 1px;
+      height: 16px;
+      top: 12px;
+      left: -8px;
+      border-left: 1px solid "[theme:neutralTertiaryAlt, default: #c8c8c8]"; }
+
+.ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-icon[data-v-6b2aa7e9] {
+  margin-right: 0; }
+
+.ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-label[data-v-6b2aa7e9] {
+  display: none; }
+
+.ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-button[data-v-6b2aa7e9] {
+  padding: 0 12px; }
+
+.ms-CommandButton.ms-CommandButton--inline .ms-CommandButton-button[data-v-6b2aa7e9] {
+  background: none; }
+
+.ms-CommandButton.ms-CommandButton--actionButton .ms-CommandButton-button[data-v-6b2aa7e9] {
+  width: 50px;
+  height: 40px; }
+
+.ms-CommandButton.ms-CommandButton--actionButton .ms-CommandButton-icon[data-v-6b2aa7e9] {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  padding-right: 0; }
+
+.ms-CommandButton.ms-CommandButton--pivot.is-active[data-v-6b2aa7e9]::before {
+  content: '';
+  height: 2px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: "[theme:themePrimary, default: #0078d7]";
+  bottom: 0;
+  z-index: 5; }
+
+.ms-CommandButton.ms-CommandButton--pivot[data-v-6b2aa7e9]:hover::before {
+  content: '';
+  height: 2px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: "[theme:themePrimary, default: #0078d7]";
+  bottom: 0;
+  z-index: 5; }
+
+.ms-CommandButton.ms-CommandButton--textOnly .ms-CommandButton-label[data-v-6b2aa7e9],
+.ms-CommandButton.ms-CommandButton--pivot .ms-CommandButton-label[data-v-6b2aa7e9] {
+  display: inline-block; }
+  @media only screen and (max-width: 479px) {
+    .ms-CommandButton.ms-CommandButton--textOnly .ms-CommandButton-label[data-v-6b2aa7e9],
+    .ms-CommandButton.ms-CommandButton--pivot .ms-CommandButton-label[data-v-6b2aa7e9] {
+      font-size: 16px; } }
+
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+/* Theme related color values */
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes color and background styles
+*/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes only the color values
+*/
+/***
+100	Thin (Hairline)
+200	Extra Light (Ultra Light)
+300	Light
+400	Normal
+500	Medium
+600	Semi Bold (Demi Bold)
+700	Bold
+800	Extra Bold (Ultra Bold)
+900	Black (Heavy)
+**/
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
 .ms-Dropdown[data-v-d4b6df96] {
   font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -2522,6 +2522,88 @@
 /** Warning **/
 /** Server Warning **/
 /** Success **/
+.ms-Label[data-v-2943a900] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  color: "[theme:neutralPrimary, default: #333333]";
+  font-size: 12px;
+  font-weight: 400;
+  box-sizing: border-box;
+  display: block;
+  padding: 5px 0; }
+  .ms-Label.is-required[data-v-2943a900]::after {
+    content: ' *';
+    color: "[theme:error, default: #a80000]"; }
+  .ms-Label.is-disabled[data-v-2943a900] {
+    color: "[theme:neutralTertiary, default: #a6a6a6]"; }
+
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+/* Theme related color values */
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes color and background styles
+*/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes only the color values
+*/
+/***
+100	Thin (Hairline)
+200	Extra Light (Ultra Light)
+300	Light
+400	Normal
+500	Medium
+600	Semi Bold (Demi Bold)
+700	Bold
+800	Extra Bold (Ultra Bold)
+900	Black (Heavy)
+**/
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
 .ms-List[data-v-1093d442] {
   font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -2597,26 +2679,53 @@
 /** Warning **/
 /** Server Warning **/
 /** Success **/
-.ms-Label[data-v-2943a900] {
+.ms-MessageBar[data-v-7f69de50] {
   font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  color: "[theme:neutralPrimary, default: #333333]";
+  padding: 8px;
+  display: table;
+  background-color: "[theme:infoBackground, default: #f4f4f4]"; }
+  .ms-MessageBar .ms-Link[data-v-7f69de50] {
+    font-size: 12px; }
+
+.ms-MessageBar-icon[data-v-7f69de50],
+.ms-MessageBar-text[data-v-7f69de50] {
+  display: table-cell;
+  vertical-align: top; }
+
+.ms-MessageBar-icon[data-v-7f69de50] {
+  padding-right: 8px;
+  font-size: 16px;
+  color: "[theme:neutralSecondaryAlt, default: #767676]"; }
+
+.ms-MessageBar-text[data-v-7f69de50] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
   font-size: 12px;
-  font-weight: 400;
-  box-sizing: border-box;
-  display: block;
-  padding: 5px 0; }
-  .ms-Label.is-required[data-v-2943a900]::after {
-    content: ' *';
+  font-weight: 400; }
+
+.ms-MessageBar.ms-MessageBar--warning[data-v-7f69de50] {
+  background-color: "[theme:warningBackground, default: #fff4ce]"; }
+
+.ms-MessageBar.ms-MessageBar--severeWarning[data-v-7f69de50] {
+  background-color: "[theme:severeWarningBackground, default: #fed9cc]"; }
+  .ms-MessageBar.ms-MessageBar--severeWarning .ms-MessageBar-icon[data-v-7f69de50] {
+    color: "[theme:severeWarning, default: #d83b01]"; }
+
+.ms-MessageBar.ms-MessageBar--error[data-v-7f69de50] {
+  background-color: "[theme:errorBackground, default: #fde7e9]"; }
+  .ms-MessageBar.ms-MessageBar--error .ms-MessageBar-icon[data-v-7f69de50] {
     color: "[theme:error, default: #a80000]"; }
-  .ms-Label.is-disabled[data-v-2943a900] {
-    color: "[theme:neutralTertiary, default: #a6a6a6]"; }
+
+.ms-MessageBar.ms-MessageBar--blocked[data-v-7f69de50] {
+  background-color: "[theme:errorBackground, default: #fde7e9]"; }
+  .ms-MessageBar.ms-MessageBar--blocked .ms-MessageBar-icon[data-v-7f69de50] {
+    color: "[theme:error, default: #a80000]"; }
+
+.ms-MessageBar.ms-MessageBar--success[data-v-7f69de50] {
+  background-color: "[theme:successBackground, default: #dff6dd]"; }
+  .ms-MessageBar.ms-MessageBar--success .ms-MessageBar-icon[data-v-7f69de50] {
+    color: "[theme:green, default: #107c10]"; }
 
 /*
   Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
@@ -2955,115 +3064,6 @@
 .ms-ListItem.is-selected[data-v-a34de616]::before, .ms-ListItem.is-selected[data-v-a34de616]:hover::before {
   top: 14px;
   content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2048 2048" width="17" height="17" version="1.1" xmlns="http://www.w3.org/2000/svg"><path transform="translate(0, 2048) scale(1, -1)" d="M2048 2048v-2048h-2048v2048h2048zM1920 1920h-1792v-1792h1792v1792zM768 421l-429 430l90 90l339 -338l851 850l90 -90z" fill="black" stroke="none"/></svg>'); }
-
-/*
-  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
-*/
-/* Theme related color values */
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes color and background styles
-*/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes only the color values
-*/
-/***
-100	Thin (Hairline)
-200	Extra Light (Ultra Light)
-300	Light
-400	Normal
-500	Medium
-600	Semi Bold (Demi Bold)
-700	Bold
-800	Extra Bold (Ultra Bold)
-900	Black (Heavy)
-**/
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-.ms-MessageBar[data-v-7f69de50] {
-  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  padding: 8px;
-  display: table;
-  background-color: "[theme:infoBackground, default: #f4f4f4]"; }
-  .ms-MessageBar .ms-Link[data-v-7f69de50] {
-    font-size: 12px; }
-
-.ms-MessageBar-icon[data-v-7f69de50],
-.ms-MessageBar-text[data-v-7f69de50] {
-  display: table-cell;
-  vertical-align: top; }
-
-.ms-MessageBar-icon[data-v-7f69de50] {
-  padding-right: 8px;
-  font-size: 16px;
-  color: "[theme:neutralSecondaryAlt, default: #767676]"; }
-
-.ms-MessageBar-text[data-v-7f69de50] {
-  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  font-size: 12px;
-  font-weight: 400; }
-
-.ms-MessageBar.ms-MessageBar--warning[data-v-7f69de50] {
-  background-color: "[theme:warningBackground, default: #fff4ce]"; }
-
-.ms-MessageBar.ms-MessageBar--severeWarning[data-v-7f69de50] {
-  background-color: "[theme:severeWarningBackground, default: #fed9cc]"; }
-  .ms-MessageBar.ms-MessageBar--severeWarning .ms-MessageBar-icon[data-v-7f69de50] {
-    color: "[theme:severeWarning, default: #d83b01]"; }
-
-.ms-MessageBar.ms-MessageBar--error[data-v-7f69de50] {
-  background-color: "[theme:errorBackground, default: #fde7e9]"; }
-  .ms-MessageBar.ms-MessageBar--error .ms-MessageBar-icon[data-v-7f69de50] {
-    color: "[theme:error, default: #a80000]"; }
-
-.ms-MessageBar.ms-MessageBar--blocked[data-v-7f69de50] {
-  background-color: "[theme:errorBackground, default: #fde7e9]"; }
-  .ms-MessageBar.ms-MessageBar--blocked .ms-MessageBar-icon[data-v-7f69de50] {
-    color: "[theme:error, default: #a80000]"; }
-
-.ms-MessageBar.ms-MessageBar--success[data-v-7f69de50] {
-  background-color: "[theme:successBackground, default: #dff6dd]"; }
-  .ms-MessageBar.ms-MessageBar--success .ms-MessageBar-icon[data-v-7f69de50] {
-    color: "[theme:green, default: #107c10]"; }
 
 /*
   Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
@@ -4236,6 +4236,88 @@
 
 .ms-Icon.ms-Icon--Clear[data-v-349dd89f] {
   content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2048 2048" width="16" height="16" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M1115 1024l690 -691l-90 -90l-691 690l-691 -690l-90 90l690 691l-690 691l90 90l691 -690l691 690l90 -90z" fill="black" stroke="none"/></svg>'); }
+
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+/* Theme related color values */
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes color and background styles
+*/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes only the color values
+*/
+/***
+100	Thin (Hairline)
+200	Extra Light (Ultra Light)
+300	Light
+400	Normal
+500	Medium
+600	Semi Bold (Demi Bold)
+700	Bold
+800	Extra Bold (Ultra Bold)
+900	Black (Heavy)
+**/
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+.ms-Overlay[data-v-09ffd35c] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: "[theme:whiteTranslucent40, default: rgba(255,255,255,.4)]";
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 0;
+  display: none; }
+
+.ms-Overlay.is-visible[data-v-09ffd35c] {
+  display: block; }
+
+.ms-Overlay--dark[data-v-09ffd35c] {
+  background-color: "[theme:blackTranslucent40, default: rgba(0,0,0,.4)]"; }
+
+.ms-u-overflowHidden[data-v-09ffd35c] {
+  overflow: hidden; }
 
 /*
   Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
@@ -5534,6 +5616,175 @@
 /** Warning **/
 /** Server Warning **/
 /** Success **/
+.ms-Pivot[data-v-2646c164] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  font-size: 14px;
+  font-weight: 400; }
+
+.ms-Pivot-links[data-v-2646c164] {
+  font-size: 0;
+  height: 40px;
+  list-style-type: none;
+  padding: 0;
+  white-space: nowrap; }
+
+.ms-Pivot-link[data-v-2646c164] {
+  color: "[theme:neutralPrimary, default: #333333]";
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 40px;
+  margin-right: 8px;
+  padding: 0 8px;
+  text-align: center;
+  vertical-align: top; }
+  .ms-Pivot-link[data-v-2646c164]:hover {
+    cursor: pointer; }
+  .ms-Pivot-link[data-v-2646c164]::before {
+    background-color: transparent;
+    bottom: 0;
+    content: '';
+    height: 2px;
+    left: 8px;
+    position: absolute;
+    right: 8px;
+    transition: background-color 0.267s cubic-bezier(0.1, 0.25, 0.75, 0.9); }
+  .ms-Pivot-link[data-v-2646c164]::after {
+    color: transparent;
+    content: attr(title);
+    display: block;
+    font-weight: bold;
+    height: 1px;
+    overflow: hidden;
+    visibility: hidden; }
+  .ms-Pivot-link.is-selected[data-v-2646c164] {
+    font-weight: 600;
+    position: relative; }
+    .ms-Pivot-link.is-selected[data-v-2646c164]::before {
+      background-color: "[theme:themePrimary, default: #0078d7]"; }
+  .ms-Pivot-link.is-disabled[data-v-2646c164] {
+    color: "[theme:neutralTertiary, default: #a6a6a6]"; }
+
+.ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164] {
+  color: "[theme:neutralSecondary, default: #666666]"; }
+  .ms-Pivot-link.ms-Pivot-link--overflow.is-selected[data-v-2646c164] {
+    color: "[theme:themePrimary, default: #0078d7]"; }
+  .ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164]:hover:not(.is-selected), .ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164]:focus:not(.is-selected) {
+    color: "[theme:neutralDark, default: #212121]"; }
+  .ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164]:active {
+    color: "[theme:themePrimary, default: #0078d7]"; }
+
+.ms-Pivot-ellipsis[data-v-2646c164] {
+  font-size: 15px;
+  position: relative;
+  top: 0; }
+
+.ms-Pivot-content[data-v-2646c164] {
+  display: none;
+  margin-top: 20px; }
+
+.ms-Pivot.ms-Pivot--large .ms-Pivot-link[data-v-2646c164] {
+  font-size: 17px; }
+  .ms-Pivot.ms-Pivot--large .ms-Pivot-link.is-selected[data-v-2646c164] {
+    font-weight: 300; }
+
+.ms-Pivot.ms-Pivot--large .ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164]::after {
+  font-size: 17px; }
+
+.ms-Pivot.ms-Pivot--tabs .ms-Pivot-link[data-v-2646c164] {
+  height: 40px;
+  background-color: "[theme:neutralLighter, default: #f4f4f4]";
+  line-height: 40px;
+  margin-right: -2px;
+  padding: 0 10px; }
+  .ms-Pivot.ms-Pivot--tabs .ms-Pivot-link[data-v-2646c164]:hover:not(.is-selected):not(.ms-Pivot-link--overflow), .ms-Pivot.ms-Pivot--tabs .ms-Pivot-link[data-v-2646c164]:focus:not(.is-selected):not(.ms-Pivot-link--overflow) {
+    color: "[theme:black, default: #000000]"; }
+  .ms-Pivot.ms-Pivot--tabs .ms-Pivot-link[data-v-2646c164]:active {
+    color: "[theme:white, default: #ffffff]";
+    background-color: "[theme:themePrimary, default: #0078d7]"; }
+  .ms-Pivot.ms-Pivot--tabs .ms-Pivot-link.is-selected[data-v-2646c164] {
+    background-color: "[theme:themePrimary, default: #0078d7]";
+    color: "[theme:white, default: #ffffff]";
+    font-weight: 300; }
+
+.ms-Pivot.ms-Pivot--tabs .ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164]:hover:not(.is-selected), .ms-Pivot.ms-Pivot--tabs .ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164]:focus:not(.is-selected) {
+  background-color: "[theme:white, default: #ffffff]"; }
+
+.ms-Pivot.ms-Pivot--tabs .ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164]:active {
+  background-color: "[theme:themePrimary, default: #0078d7]"; }
+
+@media screen and (-ms-high-contrast: active) {
+  .ms-Pivot.ms-Pivot--tabs .ms-Pivot-link.is-selected[data-v-2646c164] {
+    font-weight: 600; } }
+
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+/* Theme related color values */
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes color and background styles
+*/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes only the color values
+*/
+/***
+100	Thin (Hairline)
+200	Extra Light (Ultra Light)
+300	Light
+400	Normal
+500	Medium
+600	Semi Bold (Demi Bold)
+700	Bold
+800	Extra Bold (Ultra Bold)
+900	Black (Heavy)
+**/
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
 .ms-Persona[data-v-08ee50b8] {
   font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -6046,257 +6297,6 @@
 /** Warning **/
 /** Server Warning **/
 /** Success **/
-.ms-Overlay[data-v-09ffd35c] {
-  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  background-color: "[theme:whiteTranslucent40, default: rgba(255,255,255,.4)]";
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  z-index: 0;
-  display: none; }
-
-.ms-Overlay.is-visible[data-v-09ffd35c] {
-  display: block; }
-
-.ms-Overlay--dark[data-v-09ffd35c] {
-  background-color: "[theme:blackTranslucent40, default: rgba(0,0,0,.4)]"; }
-
-.ms-u-overflowHidden[data-v-09ffd35c] {
-  overflow: hidden; }
-
-/*
-  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
-*/
-/* Theme related color values */
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes color and background styles
-*/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes only the color values
-*/
-/***
-100	Thin (Hairline)
-200	Extra Light (Ultra Light)
-300	Light
-400	Normal
-500	Medium
-600	Semi Bold (Demi Bold)
-700	Bold
-800	Extra Bold (Ultra Bold)
-900	Black (Heavy)
-**/
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-.ms-Pivot[data-v-2646c164] {
-  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  font-size: 14px;
-  font-weight: 400; }
-
-.ms-Pivot-links[data-v-2646c164] {
-  font-size: 0;
-  height: 40px;
-  list-style-type: none;
-  padding: 0;
-  white-space: nowrap; }
-
-.ms-Pivot-link[data-v-2646c164] {
-  color: "[theme:neutralPrimary, default: #333333]";
-  display: inline-block;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 40px;
-  margin-right: 8px;
-  padding: 0 8px;
-  text-align: center;
-  vertical-align: top; }
-  .ms-Pivot-link[data-v-2646c164]:hover {
-    cursor: pointer; }
-  .ms-Pivot-link[data-v-2646c164]::before {
-    background-color: transparent;
-    bottom: 0;
-    content: '';
-    height: 2px;
-    left: 8px;
-    position: absolute;
-    right: 8px;
-    transition: background-color 0.267s cubic-bezier(0.1, 0.25, 0.75, 0.9); }
-  .ms-Pivot-link[data-v-2646c164]::after {
-    color: transparent;
-    content: attr(title);
-    display: block;
-    font-weight: bold;
-    height: 1px;
-    overflow: hidden;
-    visibility: hidden; }
-  .ms-Pivot-link.is-selected[data-v-2646c164] {
-    font-weight: 600;
-    position: relative; }
-    .ms-Pivot-link.is-selected[data-v-2646c164]::before {
-      background-color: "[theme:themePrimary, default: #0078d7]"; }
-  .ms-Pivot-link.is-disabled[data-v-2646c164] {
-    color: "[theme:neutralTertiary, default: #a6a6a6]"; }
-
-.ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164] {
-  color: "[theme:neutralSecondary, default: #666666]"; }
-  .ms-Pivot-link.ms-Pivot-link--overflow.is-selected[data-v-2646c164] {
-    color: "[theme:themePrimary, default: #0078d7]"; }
-  .ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164]:hover:not(.is-selected), .ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164]:focus:not(.is-selected) {
-    color: "[theme:neutralDark, default: #212121]"; }
-  .ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164]:active {
-    color: "[theme:themePrimary, default: #0078d7]"; }
-
-.ms-Pivot-ellipsis[data-v-2646c164] {
-  font-size: 15px;
-  position: relative;
-  top: 0; }
-
-.ms-Pivot-content[data-v-2646c164] {
-  display: none;
-  margin-top: 20px; }
-
-.ms-Pivot.ms-Pivot--large .ms-Pivot-link[data-v-2646c164] {
-  font-size: 17px; }
-  .ms-Pivot.ms-Pivot--large .ms-Pivot-link.is-selected[data-v-2646c164] {
-    font-weight: 300; }
-
-.ms-Pivot.ms-Pivot--large .ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164]::after {
-  font-size: 17px; }
-
-.ms-Pivot.ms-Pivot--tabs .ms-Pivot-link[data-v-2646c164] {
-  height: 40px;
-  background-color: "[theme:neutralLighter, default: #f4f4f4]";
-  line-height: 40px;
-  margin-right: -2px;
-  padding: 0 10px; }
-  .ms-Pivot.ms-Pivot--tabs .ms-Pivot-link[data-v-2646c164]:hover:not(.is-selected):not(.ms-Pivot-link--overflow), .ms-Pivot.ms-Pivot--tabs .ms-Pivot-link[data-v-2646c164]:focus:not(.is-selected):not(.ms-Pivot-link--overflow) {
-    color: "[theme:black, default: #000000]"; }
-  .ms-Pivot.ms-Pivot--tabs .ms-Pivot-link[data-v-2646c164]:active {
-    color: "[theme:white, default: #ffffff]";
-    background-color: "[theme:themePrimary, default: #0078d7]"; }
-  .ms-Pivot.ms-Pivot--tabs .ms-Pivot-link.is-selected[data-v-2646c164] {
-    background-color: "[theme:themePrimary, default: #0078d7]";
-    color: "[theme:white, default: #ffffff]";
-    font-weight: 300; }
-
-.ms-Pivot.ms-Pivot--tabs .ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164]:hover:not(.is-selected), .ms-Pivot.ms-Pivot--tabs .ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164]:focus:not(.is-selected) {
-  background-color: "[theme:white, default: #ffffff]"; }
-
-.ms-Pivot.ms-Pivot--tabs .ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164]:active {
-  background-color: "[theme:themePrimary, default: #0078d7]"; }
-
-@media screen and (-ms-high-contrast: active) {
-  .ms-Pivot.ms-Pivot--tabs .ms-Pivot-link.is-selected[data-v-2646c164] {
-    font-weight: 600; } }
-
-/*
-  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
-*/
-/* Theme related color values */
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes color and background styles
-*/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes only the color values
-*/
-/***
-100	Thin (Hairline)
-200	Extra Light (Ultra Light)
-300	Light
-400	Normal
-500	Medium
-600	Semi Bold (Demi Bold)
-700	Bold
-800	Extra Bold (Ultra Bold)
-900	Black (Heavy)
-**/
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
 .ms-ProgressIndicator[data-v-134f1924] {
   font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -6341,6 +6341,100 @@
   @media screen and (-ms-high-contrast: black-on-white) {
     .ms-ProgressIndicator-progressBar[data-v-134f1924] {
       background-color: "[theme:black, default: #000000]"; } }
+
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+/* Theme related color values */
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes color and background styles
+*/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes only the color values
+*/
+/***
+100	Thin (Hairline)
+200	Extra Light (Ultra Light)
+300	Light
+400	Normal
+500	Medium
+600	Semi Bold (Demi Bold)
+700	Bold
+800	Extra Bold (Ultra Bold)
+900	Black (Heavy)
+**/
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+.ms-Spinner[data-v-74b796b6] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  height: 20px; }
+  .ms-Spinner.ms-Spinner--large[data-v-74b796b6] {
+    height: 28px; }
+    .ms-Spinner.ms-Spinner--large .ms-Spinner-label[data-v-74b796b6] {
+      left: 34px;
+      top: 6px; }
+
+.ms-Spinner-circle[data-v-74b796b6] {
+  position: absolute;
+  border-radius: 100px;
+  background-color: "[theme:themePrimary, default: #0078d7]";
+  opacity: 0; }
+  @media screen and (-ms-high-contrast: active) {
+    .ms-Spinner-circle[data-v-74b796b6] {
+      background-color: "[theme:white, default: #ffffff]"; } }
+  @media screen and (-ms-high-contrast: black-on-white) {
+    .ms-Spinner-circle[data-v-74b796b6] {
+      background-color: "[theme:black, default: #000000]"; } }
+
+.ms-Spinner-label[data-v-74b796b6] {
+  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  font-size: 12px;
+  font-weight: 400;
+  color: "[theme:themePrimary, default: #0078d7]";
+  left: 28px;
+  top: 2px; }
 
 /*
   Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
@@ -6942,100 +7036,6 @@
 /** Warning **/
 /** Server Warning **/
 /** Success **/
-.ms-Spinner[data-v-74b796b6] {
-  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  position: relative;
-  height: 20px; }
-  .ms-Spinner.ms-Spinner--large[data-v-74b796b6] {
-    height: 28px; }
-    .ms-Spinner.ms-Spinner--large .ms-Spinner-label[data-v-74b796b6] {
-      left: 34px;
-      top: 6px; }
-
-.ms-Spinner-circle[data-v-74b796b6] {
-  position: absolute;
-  border-radius: 100px;
-  background-color: "[theme:themePrimary, default: #0078d7]";
-  opacity: 0; }
-  @media screen and (-ms-high-contrast: active) {
-    .ms-Spinner-circle[data-v-74b796b6] {
-      background-color: "[theme:white, default: #ffffff]"; } }
-  @media screen and (-ms-high-contrast: black-on-white) {
-    .ms-Spinner-circle[data-v-74b796b6] {
-      background-color: "[theme:black, default: #000000]"; } }
-
-.ms-Spinner-label[data-v-74b796b6] {
-  font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  position: relative;
-  font-size: 12px;
-  font-weight: 400;
-  color: "[theme:themePrimary, default: #0078d7]";
-  left: 28px;
-  top: 2px; }
-
-/*
-  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
-*/
-/* Theme related color values */
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes color and background styles
-*/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes only the color values
-*/
-/***
-100	Thin (Hairline)
-200	Extra Light (Ultra Light)
-300	Light
-400	Normal
-500	Medium
-600	Semi Bold (Demi Bold)
-700	Bold
-800	Extra Bold (Ultra Bold)
-900	Black (Heavy)
-**/
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
 .ms-Label[data-v-9e6e890e] {
   font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -7243,29 +7243,6 @@
   min-width: 260px;
   padding-top: 6px;
   overflow: auto; }
-
-table[data-v-16ac4ddf] {
-  border-spacing: 0;
-  min-width: 90px; }
-
-.seperator[data-v-16ac4ddf] {
-  text-align: center;
-  width: 10px; }
-
-.up[data-v-16ac4ddf], .down[data-v-16ac4ddf] {
-  cursor: pointer;
-  text-align: center;
-  user-select: none; }
-
-.textField[data-v-16ac4ddf] {
-  width: 100%;
-  margin: 0 !important; }
-  .textField[data-v-16ac4ddf] label {
-    display: none; }
-  .textField[data-v-16ac4ddf] input {
-    text-align: center;
-    min-width: unset;
-    padding: 6px 0; }
 
 /*
   Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
@@ -7511,6 +7488,196 @@ table[data-v-16ac4ddf] {
     margin-bottom: 0; }
   .ms-Toggle.ms-Toggle--textLeft .ms-Toggle-field[data-v-3153c0f8] {
     float: right; }
+
+table[data-v-16ac4ddf] {
+  border-spacing: 0;
+  min-width: 90px; }
+
+.seperator[data-v-16ac4ddf] {
+  text-align: center;
+  width: 10px; }
+
+.up[data-v-16ac4ddf], .down[data-v-16ac4ddf] {
+  cursor: pointer;
+  text-align: center;
+  user-select: none; }
+
+.textField[data-v-16ac4ddf] {
+  width: 100%;
+  margin: 0 !important; }
+  .textField[data-v-16ac4ddf] label {
+    display: none; }
+  .textField[data-v-16ac4ddf] input {
+    text-align: center;
+    min-width: unset;
+    padding: 6px 0; }
+
+/* Theme related color values */
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes color and background styles
+*/
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes only the color values
+*/
+/***
+100	Thin (Hairline)
+200	Extra Light (Ultra Light)
+300	Light
+400	Normal
+500	Medium
+600	Semi Bold (Demi Bold)
+700	Bold
+800	Extra Bold (Ultra Bold)
+900	Black (Heavy)
+**/
+/* Natural Colors */
+/* Base Colors */
+/** Black #000 **/
+/** Blue #0078d7 **/
+/** Green #107c10 **/
+/** Green #b4009e **/
+/** Orange #d83b01 **/
+/** Purble #5c2d91 **/
+/** Red #e81123 **/
+/*** Teal ***/
+/** White **/
+/** Yellow **/
+/* State Colors */
+/** Alerts **/
+/** Error **/
+/** Info ***/
+/** Warning **/
+/** Server Warning **/
+/** Success **/
+.popper[data-v-6aabe933] {
+  width: auto;
+  background-color: #fafafa;
+  color: #212121;
+  text-align: center;
+  padding: 2px;
+  display: inline-block;
+  border-radius: 3px;
+  position: absolute;
+  font-size: 14px;
+  font-weight: normal;
+  border: 1px #ebebeb solid;
+  z-index: 200000;
+  -moz-box-shadow: #3a3a3a 0 0 6px 0;
+  -webkit-box-shadow: #3a3a3a 0 0 6px 0;
+  box-shadow: #3a3a3a 0 0 6px 0; }
+
+.popper .popper__arrow[data-v-6aabe933] {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  position: absolute;
+  margin: 5px; }
+
+.popper[x-placement^="top"][data-v-6aabe933] {
+  margin-bottom: 5px; }
+
+.popper[x-placement^="top"] .popper__arrow[data-v-6aabe933] {
+  border-width: 5px 5px 0 5px;
+  border-color: #fafafa transparent transparent transparent;
+  bottom: -5px;
+  left: calc(50% - 5px);
+  margin-top: 0;
+  margin-bottom: 0; }
+
+.popper[x-placement^="bottom"][data-v-6aabe933] {
+  margin-top: 5px; }
+
+.popper[x-placement^="bottom"] .popper__arrow[data-v-6aabe933] {
+  border-width: 0 5px 5px 5px;
+  border-color: transparent transparent #fafafa transparent;
+  top: -5px;
+  left: calc(50% - 5px);
+  margin-top: 0;
+  margin-bottom: 0; }
+
+.popper[x-placement^="right"][data-v-6aabe933] {
+  margin-left: 5px; }
+
+.popper[x-placement^="right"] .popper__arrow[data-v-6aabe933] {
+  border-width: 5px 5px 5px 0;
+  border-color: transparent #fafafa transparent transparent;
+  left: -5px;
+  top: calc(50% - 5px);
+  margin-left: 0;
+  margin-right: 0; }
+
+.popper[x-placement^="left"][data-v-6aabe933] {
+  margin-right: 5px; }
+
+.popper[x-placement^="left"] .popper__arrow[data-v-6aabe933] {
+  border-width: 5px 0 5px 5px;
+  border-color: transparent transparent transparent #fafafa;
+  right: -5px;
+  top: calc(50% - 5px);
+  margin-left: 0;
+  margin-right: 0; }
+
+.inputGroup[data-v-6aabe933] {
+  position: relative; }
+  .inputGroup .chevronIcon[data-v-6aabe933] {
+    color: "[theme:neutralDark, default: #212121]";
+    font-size: 12px;
+    position: absolute;
+    right: 13px;
+    bottom: 7px;
+    pointer-events: none; }
+  .inputGroup[data-v-6aabe933] .ms-TextField-field {
+    padding-right: 32px; }
+
+.foldout[data-v-6aabe933] {
+  background-color: white;
+  margin: 0px !important;
+  padding: 0px;
+  box-shadow: 1px 1px 5px 0px "[theme:neutralQuaternaryAlt, default: #dadada]";
+  border-radius: 2px; }
+
+.optionlist[data-v-6aabe933] {
+  max-height: 200px;
+  overflow: auto; }
+
+.option[data-v-6aabe933] {
+  height: 19px;
+  font-weight: 400;
+  padding: 7px 10px 7px 10px;
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
+  color: "[theme:neutralPrimary, default: #333333]"; }
+  .option[data-v-6aabe933]:hover {
+    color: "[theme:black, default: #000000]";
+    background-color: "[theme:neutralLight, default: #eaeaea]"; }
+
+.selectedOption[data-v-6aabe933] {
+  color: "[theme:black, default: #000000]";
+  background-color: "[theme:themeLight, default: #c7e0f4]"; }
+  .selectedOption[data-v-6aabe933]:hover {
+    background-color: "[theme:themeLight, default: #c7e0f4]"; }
 
 /*
   Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
@@ -7773,173 +7940,6 @@ table[data-v-16ac4ddf] {
     border-right: none !important; }
   .foldout[data-v-d4c0f6c8] {
     width: 210px; } }
-
-/* Theme related color values */
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes color and background styles
-*/
-/*
-    Get css for state objects for: alert, error, info, servere, success
-    This includes only the color values
-*/
-/***
-100	Thin (Hairline)
-200	Extra Light (Ultra Light)
-300	Light
-400	Normal
-500	Medium
-600	Semi Bold (Demi Bold)
-700	Bold
-800	Extra Bold (Ultra Bold)
-900	Black (Heavy)
-**/
-/* Natural Colors */
-/* Base Colors */
-/** Black #000 **/
-/** Blue #0078d7 **/
-/** Green #107c10 **/
-/** Green #b4009e **/
-/** Orange #d83b01 **/
-/** Purble #5c2d91 **/
-/** Red #e81123 **/
-/*** Teal ***/
-/** White **/
-/** Yellow **/
-/* State Colors */
-/** Alerts **/
-/** Error **/
-/** Info ***/
-/** Warning **/
-/** Server Warning **/
-/** Success **/
-.popper[data-v-6aabe933] {
-  width: auto;
-  background-color: #fafafa;
-  color: #212121;
-  text-align: center;
-  padding: 2px;
-  display: inline-block;
-  border-radius: 3px;
-  position: absolute;
-  font-size: 14px;
-  font-weight: normal;
-  border: 1px #ebebeb solid;
-  z-index: 200000;
-  -moz-box-shadow: #3a3a3a 0 0 6px 0;
-  -webkit-box-shadow: #3a3a3a 0 0 6px 0;
-  box-shadow: #3a3a3a 0 0 6px 0; }
-
-.popper .popper__arrow[data-v-6aabe933] {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  position: absolute;
-  margin: 5px; }
-
-.popper[x-placement^="top"][data-v-6aabe933] {
-  margin-bottom: 5px; }
-
-.popper[x-placement^="top"] .popper__arrow[data-v-6aabe933] {
-  border-width: 5px 5px 0 5px;
-  border-color: #fafafa transparent transparent transparent;
-  bottom: -5px;
-  left: calc(50% - 5px);
-  margin-top: 0;
-  margin-bottom: 0; }
-
-.popper[x-placement^="bottom"][data-v-6aabe933] {
-  margin-top: 5px; }
-
-.popper[x-placement^="bottom"] .popper__arrow[data-v-6aabe933] {
-  border-width: 0 5px 5px 5px;
-  border-color: transparent transparent #fafafa transparent;
-  top: -5px;
-  left: calc(50% - 5px);
-  margin-top: 0;
-  margin-bottom: 0; }
-
-.popper[x-placement^="right"][data-v-6aabe933] {
-  margin-left: 5px; }
-
-.popper[x-placement^="right"] .popper__arrow[data-v-6aabe933] {
-  border-width: 5px 5px 5px 0;
-  border-color: transparent #fafafa transparent transparent;
-  left: -5px;
-  top: calc(50% - 5px);
-  margin-left: 0;
-  margin-right: 0; }
-
-.popper[x-placement^="left"][data-v-6aabe933] {
-  margin-right: 5px; }
-
-.popper[x-placement^="left"] .popper__arrow[data-v-6aabe933] {
-  border-width: 5px 0 5px 5px;
-  border-color: transparent transparent transparent #fafafa;
-  right: -5px;
-  top: calc(50% - 5px);
-  margin-left: 0;
-  margin-right: 0; }
-
-.inputGroup[data-v-6aabe933] {
-  position: relative; }
-  .inputGroup .chevronIcon[data-v-6aabe933] {
-    color: "[theme:neutralDark, default: #212121]";
-    font-size: 12px;
-    position: absolute;
-    right: 13px;
-    bottom: 7px;
-    pointer-events: none; }
-  .inputGroup[data-v-6aabe933] .ms-TextField-field {
-    padding-right: 32px; }
-
-.foldout[data-v-6aabe933] {
-  background-color: white;
-  margin: 0px !important;
-  padding: 0px;
-  box-shadow: 1px 1px 5px 0px "[theme:neutralQuaternaryAlt, default: #dadada]";
-  border-radius: 2px; }
-
-.optionlist[data-v-6aabe933] {
-  max-height: 200px;
-  overflow: auto; }
-
-.option[data-v-6aabe933] {
-  height: 19px;
-  font-weight: 400;
-  padding: 7px 10px 7px 10px;
-  text-align: left;
-  white-space: nowrap;
-  cursor: pointer;
-  color: "[theme:neutralPrimary, default: #333333]"; }
-  .option[data-v-6aabe933]:hover {
-    color: "[theme:black, default: #000000]";
-    background-color: "[theme:neutralLight, default: #eaeaea]"; }
-
-.selectedOption[data-v-6aabe933] {
-  color: "[theme:black, default: #000000]";
-  background-color: "[theme:themeLight, default: #c7e0f4]"; }
-  .selectedOption[data-v-6aabe933]:hover {
-    background-color: "[theme:themeLight, default: #c7e0f4]"; }
 
 
 

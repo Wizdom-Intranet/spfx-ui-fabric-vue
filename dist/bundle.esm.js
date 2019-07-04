@@ -26051,6 +26051,7 @@ var uiTypeAhead = {render: function(){var _vm=this;var _h=_vm.$createElement;var
             return {
                 placement: "bottom-end",
                 positionFixed: true,
+                keepTogether: {enabled: false},
                 modifiers: { 
                     preventOverflow: { enabled: true },
                     flip: { enabled: true },

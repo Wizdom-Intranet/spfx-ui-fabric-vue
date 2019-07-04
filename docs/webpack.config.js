@@ -29,6 +29,7 @@ module.exports = {
         progressIndicator: './docs/progressIndicator.js',
         timePicker: './docs/timePicker.js',
         datePicker: './docs/datePicker.js',
+        typeAhead: './docs/typeAhead.js',
     },
     output: {
         filename: './[name].js',
