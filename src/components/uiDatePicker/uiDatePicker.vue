@@ -44,7 +44,7 @@
                             {{month}}
                         </span>
                     </div>
-                    <div class="goToToday"><span @click="goToToday()">Go to today</span></div>
+                    <div class="goToToday"><span @click="goToToday()">{{localeObj.goToToday}}</span></div>
                 </div>
                 <div class="yearPicker" v-if="showYear">
                     <div class="header">
@@ -59,7 +59,7 @@
                             {{year}}
                         </span>
                     </div>
-                    <div class="goToToday"><span @click="goToToday()">Go to today</span></div>
+                    <div class="goToToday"><span @click="goToToday()">{{localeObj.goToToday}}</span></div>
                 </div>
             </div>
             <div class="inputGroup" slot="reference">
@@ -226,7 +226,7 @@ export default {
     watch:{
         value:{
             handler(newVal){
-                console.log("value watch", newVal);
+                // console.log("value watch", newVal);
                 if(newVal){
                     this.inputVal = dateUtils.formatDate(newVal, this.localeObj);
                     this.pickerDate = newVal;
@@ -242,13 +242,49 @@ export default {
     computed:{
         popperOptions(){
             return {
-                placement: this.placement,
-                positionFixed: true,
-                modifiers: { 
-                    preventOverflow: { enabled: true },
-                    flip: { enabled: false },
-                    shift: { enabled: false },
-                    offset: { offset: '0,0' } }
+                placement:"bottom-start",
+                modifiers:{
+                    preventOverflow: {enabled: false},
+                    offset: {enabled: false},
+                    keepTogether: {enabled: false},
+                    arrow: {enabled: false},
+                    flip: {enabled: false},
+                    hide: {enabled: false},
+                    computeStyle: {
+                        enabled: false,
+                    },
+                    applyStyle: {
+                        enabled:true,
+                        fn(data, options){
+                            var input = data.instance.reference.getClientRects()[0];
+                            var popper = data.instance.popper.getClientRects()[0];
+                            var windowWidth = document.documentElement.clientWidth;
+                            var windowHeight = document.documentElement.clientHeight;
+
+                            // below of above the input
+                            var top = 0;
+                            if(input.height + input.y + popper.height < windowHeight)
+                                top = input.height; // yay room to place it beneath
+                            else 
+                                top = 0-popper.height; //crap, place it above
+
+                            // left or rightside of the input
+                            var right = 0;
+                            
+                            if(input.width + input.x - popper.width > 0)
+                                right = 0-popper.width + input.width;
+
+                            // if it still overflows the right side of the screen, move it left, until it dosnt
+                            if(right == 0 && input.x + popper.width > windowWidth)
+                            {
+                                right = 0-(input.x + popper.width-windowWidth);
+                            }
+
+                            // apply style
+                            data.instance.popper.style.transform = "translate(" + right + "px, " + top + "px)";
+                        }
+                    }
+                }
             }
         },
         localeObj(){
@@ -319,7 +355,11 @@ export default {
     },
     methods:{
         parseTypedDate(){
-            // console.log("parsing", this.inputVal);
+            if(!this.inputVal || this.inputVal == "")
+            {
+                this.$emit("input", "");
+                return;
+            }
             var parsed = Moment(this.inputVal, this.localeObj.format.toUpperCase());
             if(parsed.isValid()){
                 // this.pickerDate = parsed.toDate();
@@ -538,5 +578,18 @@ export default {
             } 
         }
      
+    }
+
+    @media screen and (max-width: 450px) {
+        .yearPicker,
+        .monthPicker{
+            display: none !important;
+        }
+        .dayPicker{
+            border-right:none !important;
+        }
+        .foldout{
+            width:210px;
+        }
     }
 </style>
