@@ -27,6 +27,7 @@
   "dependencies": {
     "@uifabric/icons": "^6.0.2",
     "@uifabric/merge-styles": "^5.17.1",
+    "lodash.debounce": "^4.0.8",
     "moment": "^2.24.0",
     "office-ui-fabric-core": "5.0.1",
     "office-ui-fabric-js": "git+https://github.com/Wizdom-Intranet/office-ui-fabric-js.git",
