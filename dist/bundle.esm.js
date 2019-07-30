@@ -2,7 +2,7 @@ import { loadStyles } from '@microsoft/load-themed-styles';
 import Vue from 'vue';
 import { fontFace, mergeStyles } from '@uifabric/merge-styles';
 import Moment from 'moment';
-import debounce from 'lodash/debounce';
+import debounce from 'lodash.debounce';
 
 function type () {
   var arguments$1 = arguments;
@@ -26051,7 +26051,6 @@ var uiTypeAhead = {render: function(){var _vm=this;var _h=_vm.$createElement;var
             return {
                 placement: "bottom-end",
                 positionFixed: true,
-                keepTogether: {enabled: false},
                 modifiers: { 
                     preventOverflow: { enabled: true },
                     flip: { enabled: true },
