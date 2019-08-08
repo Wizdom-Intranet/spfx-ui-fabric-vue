@@ -28,7 +28,7 @@
 import uiTextfield from "./uiTextfield.vue";
 import { uiIconChevronDownMed } from "./uiIcon";
 import Popper from 'vue-popperjs';
-import debounce from 'lodash/debounce';
+import debounce from 'lodash.debounce';
 
 export default {
     injectCss, 
