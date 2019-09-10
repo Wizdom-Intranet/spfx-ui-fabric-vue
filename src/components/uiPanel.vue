@@ -16,6 +16,9 @@ export default {
             }
         }
     },
+    beforeDestroy(){
+        this.panelInstance.dismiss();
+    },
     extends :  panel
 }
 </script>

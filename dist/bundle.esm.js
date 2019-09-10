@@ -2,7 +2,7 @@ import { loadStyles } from '@microsoft/load-themed-styles';
 import Vue from 'vue';
 import { fontFace, mergeStyles } from '@uifabric/merge-styles';
 import Moment from 'moment';
-import debounce from 'lodash/debounce';
+import debounce from 'lodash.debounce';
 
 function type () {
   var arguments$1 = arguments;
@@ -3444,13 +3444,19 @@ var uiPanel = {_scopeId: 'data-v-15bfa7e0',
         this.$fabric = {
             Panel : Panel$1
         };
+        console.log("before mount panel");
     },
     watch: {
         value: function value(newVal) {
+            console.log("panel newVal", newVal);
             if(newVal){
                 this.panelInstance.panelHost.overlay.overlayElement.setAttribute(this.$options._scopeId, "");
             }
         }
+    },
+    beforeDestroy: function beforeDestroy(){
+        console.log("dismissing panelinstance");
+        this.panelInstance.dismiss();
     },
     extends :  panel
 }
@@ -26051,7 +26057,6 @@ var uiTypeAhead = {render: function(){var _vm=this;var _h=_vm.$createElement;var
             return {
                 placement: "bottom-end",
                 positionFixed: true,
-                keepTogether: {enabled: false},
                 modifiers: { 
                     preventOverflow: { enabled: true },
                     flip: { enabled: true },
