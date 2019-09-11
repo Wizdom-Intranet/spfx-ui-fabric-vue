@@ -3444,19 +3444,17 @@ var uiPanel = {_scopeId: 'data-v-15bfa7e0',
         this.$fabric = {
             Panel : Panel$1
         };
-        console.log("before mount panel");
     },
     watch: {
         value: function value(newVal) {
-            console.log("panel newVal", newVal);
             if(newVal){
                 this.panelInstance.panelHost.overlay.overlayElement.setAttribute(this.$options._scopeId, "");
             }
         }
     },
     beforeDestroy: function beforeDestroy(){
-        console.log("dismissing panelinstance");
-        this.panelInstance.dismiss();
+        if(this.panelInstance)
+            { this.panelInstance.dismiss(); }
     },
     extends :  panel
 }
