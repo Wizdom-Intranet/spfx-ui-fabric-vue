@@ -17,7 +17,7 @@ export default {
         }
     },
     beforeDestroy(){
-        if(this.panelInstance)
+        if(this.panelInstance != null)
             this.panelInstance.dismiss();
     },
     extends :  panel
