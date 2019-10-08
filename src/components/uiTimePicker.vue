@@ -27,9 +27,10 @@
 </template>
 
 <script>
+import { loadStyles } from '@microsoft/load-themed-styles';
 import uiTextfield from "./uiTextfield.vue";
 export default {
-    injectCss,
+    loadStyles,
     components:{
         uiTextfield
     },
@@ -119,10 +120,10 @@ export default {
     .textField{
         width:100%;
         margin: 0 !important;
-        /deep/ label{
+        ::v-deep label{
             display: none;
         }
-        /deep/ input{
+        ::v-deep input{
             text-align: center;
             min-width: unset;
             padding:6px 0;

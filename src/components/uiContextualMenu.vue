@@ -1,10 +1,11 @@
 <script>
+import { loadStyles } from '@microsoft/load-themed-styles';
 import ContextualMenu from "office-ui-fabric-vue/src/components/contextual_menu/ContextualMenu.vue";
 import { ContextualMenu as fabricContextualMenu } from "office-ui-fabric-js/src/components/ContextualMenu/ContextualMenu";
 import { ContextualHost as fabricContextualHost } from "office-ui-fabric-js/src/components/ContextualHost/ContextualHost";
 
 export default {
-    injectCss,
+    loadStyles,
     beforeMount(){
         this.$fabric = {
             ContextualMenu : fabricContextualMenu

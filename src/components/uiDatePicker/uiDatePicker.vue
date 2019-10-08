@@ -111,7 +111,7 @@ const dateUtils = {
 import { uiIconUp, uiIconDown, uiIconCalendar } from "../uiIcon";
 import Popper from 'vue-popperjs';
 import Moment from "moment";
-
+import { loadStyles } from '@microsoft/load-themed-styles';
 const locale = {
     "da" : {
         goToToday : "Gå til idag",
@@ -203,7 +203,7 @@ const locale = {
     }
 }
 export default {
-    injectCss, 
+    loadStyles, 
     components:{
         uiIconUp, 
         uiIconDown,

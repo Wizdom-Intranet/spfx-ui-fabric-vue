@@ -1,8 +1,9 @@
 <script>
+import { loadStyles } from '@microsoft/load-themed-styles';
 import ListItem from "office-ui-fabric-vue/src/components/List/ListItem.vue";
 
 export default {
-    injectCss,
+    loadStyles,
     extends :  ListItem
 }
 </script>

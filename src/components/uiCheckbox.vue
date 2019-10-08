@@ -1,9 +1,10 @@
 <script>
+import { loadStyles } from '@microsoft/load-themed-styles';
 import checkbox from "office-ui-fabric-vue/src/components/checkbox/checkbox.vue";
 import { CheckBox as fabricCheckbox } from "office-ui-fabric-js/src/components/checkBox/checkBox"
 
 export default {
-    injectCss,
+    loadStyles,
     beforeMount(){ 
         this.$fabric = { 
             CheckBox : fabricCheckbox 

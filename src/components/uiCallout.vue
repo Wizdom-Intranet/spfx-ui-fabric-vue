@@ -1,9 +1,10 @@
 <script>
+import { loadStyles } from '@microsoft/load-themed-styles';
 import callout from "office-ui-fabric-vue/src/components/callout/callout.vue";
 import { Callout as fabricCallout } from "office-ui-fabric-js/src/components/callout/callout"
 
 export default {
-    injectCss,
+    loadStyles,
     beforeMount(){
         this.$fabric = {
             Callout : fabricCallout

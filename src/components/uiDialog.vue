@@ -1,9 +1,10 @@
 <script>
+import { loadStyles } from '@microsoft/load-themed-styles';
 import dialog from "office-ui-fabric-vue/src/components/Dialog/Dialog.vue";
 import { Dialog as fabricDialog } from "office-ui-fabric-js/src/components/Dialog/Dialog"
 
 export default {
-    injectCss,
+    loadStyles,
     beforeMount(){
         this.$fabric = {
             Dialog : fabricDialog

@@ -1,19 +1,34 @@
+import bable from 'rollup-plugin-babel';
 import vue from 'rollup-plugin-vue';
 import resolve from 'rollup-plugin-node-resolve';
-import commonJS from 'rollup-plugin-commonjs';
-import buble from 'rollup-plugin-buble';
-import bable from 'rollup-plugin-babel';
+import commonjs from 'rollup-plugin-commonjs';
 
-export default {
-    input: 'src/index.js',
-    output:{
-        format:"es",
-        file : "./dist/bundle.esm.js",
+var configs = [
+    {
+        input: ['src/index.js'],
+        output:[
+            {
+                format:"es",
+                file : "./dist/bundle.esm.js",
+            },
+        ]
     },
+    {
+        input: ['src/index.js'],
+        output:[
+            {
+                format:"esm",
+                dir:"dist",
+            }
+        ],
+        preserveModules: true,
+    }    
+]
+
+export default configs.map(config=>({
+    ...config,
     plugins: [
-        vue({ 
-            useSpfxThemeLoading : true
-        }),
+        commonjs(),
         resolve({
             only : [
                 "office-ui-fabric-vue", 
@@ -22,7 +37,12 @@ export default {
                 "popper.js"
             ]
         }),
-        commonJS({}),
+        vue({ 
+            styleInjector:"function(context){ return function(scopeId, data){__vue_script__.loadStyles && __vue_script__.loadStyles(data.source)}}",
+            template:{
+                isProduction:true,
+            }
+        }),
         bable({
             "presets": [["@babel/preset-env"]],
             "plugins": [
@@ -30,9 +50,6 @@ export default {
                 "@babel/plugin-transform-object-assign",
                 "babel-plugin-array-includes"
             ]
-        }),
-        buble({
-            objectAssign: 'Object.assign'
         })
     ],
-};
+}));

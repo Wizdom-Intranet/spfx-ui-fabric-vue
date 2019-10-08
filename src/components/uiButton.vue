@@ -1,7 +1,8 @@
 <script>
+import { loadStyles } from '@microsoft/load-themed-styles';
 import button from "office-ui-fabric-vue/src/components/button/button.vue";
 export default {
-    injectCss,
+    loadStyles,
     extends :  button
 }
 </script>

@@ -11,10 +11,11 @@
     </div>
 </template>
 <script>
+import { loadStyles } from '@microsoft/load-themed-styles';
 import MessageBar from "office-ui-fabric-vue/src/components/Message_Bar/MessageBar.vue";
 
 export default {
-    injectCss,
+    loadStyles,
     computed: {
         hasIcon () {
             return !!this.$slots['icon']

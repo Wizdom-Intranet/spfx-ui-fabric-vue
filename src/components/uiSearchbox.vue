@@ -1,9 +1,10 @@
 <script>
+import { loadStyles } from '@microsoft/load-themed-styles';
 import searchBox from "office-ui-fabric-vue/src/components/search_box/searchbox.vue";
 import { SearchBox as fabricSearchBox } from "office-ui-fabric-js/src/components/SearchBox/SearchBox"
 
 export default {
-    injectCss,
+    loadStyles,
     beforeMount(){
         this.$fabric = {
             SearchBox : fabricSearchBox

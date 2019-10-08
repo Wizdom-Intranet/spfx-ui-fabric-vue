@@ -1,9 +1,10 @@
 <script>
+import { loadStyles } from '@microsoft/load-themed-styles';
 import panel from "office-ui-fabric-vue/src/components/panel/panel.vue";
 import { Panel as fabricPanel } from "office-ui-fabric-js/src/components/panel/panel"
 
 export default {
-    injectCss,
+    loadStyles,
     beforeMount(){
         this.$fabric = {
             Panel : fabricPanel

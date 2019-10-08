@@ -1,8 +1,9 @@
 <script>
+import { loadStyles } from '@microsoft/load-themed-styles';
 import label from "office-ui-fabric-vue/src/components/Label/Label.vue";
 
 export default {
-    injectCss,
+    loadStyles,
     extends :  label
 }
 </script>

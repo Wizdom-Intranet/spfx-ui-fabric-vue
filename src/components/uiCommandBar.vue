@@ -1,10 +1,11 @@
 <script>
+import { loadStyles } from '@microsoft/load-themed-styles';
 import commandbar from "office-ui-fabric-vue/src/components/command_bar/commandbar.vue";
 import { CommandBar as fabricCommandBar } from "office-ui-fabric-js/src/components/commandbar/commandbar"
 
 
 export default {
-    injectCss,
+    loadStyles,
     beforeMount(){ 
         this.$fabric = { 
             CommandBar : fabricCommandBar 

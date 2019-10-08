@@ -1,9 +1,10 @@
 <script>
+import { loadStyles } from '@microsoft/load-themed-styles';
 import textField from "office-ui-fabric-vue/src/components/text_Field/textField.vue";
 import { TextField as fabricTextField } from "office-ui-fabric-js/src/components/TextField/TextField"
 
 export default {
-    injectCss,
+    loadStyles,
     beforeMount(){
         this.$fabric = {
             TextField : fabricTextField

@@ -1,8 +1,9 @@
 <script>
+import { loadStyles } from '@microsoft/load-themed-styles';
 import link from "office-ui-fabric-vue/src/components/Link/Link.vue";
 
 export default {
-    injectCss,
+    loadStyles,
     extends :  link
 }
 </script>
