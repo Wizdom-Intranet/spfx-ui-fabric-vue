@@ -1,6 +1,6 @@
 import { loadStyles } from '@microsoft/load-themed-styles';
+import { Panel } from '../../node_modules/office-ui-fabric-js/src/components/Panel/Panel.js';
 import panel from '../../node_modules/office-ui-fabric-vue/src/components/panel/panel.vue.js';
-import { Panel } from '../../node_modules/office-ui-fabric-js/src/components/panel/panel.js';
 
 var script = {
   loadStyles: loadStyles,

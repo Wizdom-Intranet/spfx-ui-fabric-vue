@@ -22,7 +22,7 @@ var script = {
       }; // set scopeId for contextualhost
 
 
-      setScopeIdForContextualHost(this$1.$refs.contextualMenu.parentElement.parentElement); // scopeId for menuItems
+      setScopeIdForContextualHost(_this.$refs.contextualMenu.parentElement.parentElement); // scopeId for menuItems
 
       var menuItems = _this.$refs.contextualMenu.querySelectorAll("[class^='ms-ContextualMenu']");
 
@@ -30,7 +30,7 @@ var script = {
         return menuItem.setAttribute(_this.$options._scopeId, "");
       }); // Array.from(menuItems).map(menuItem=>menuItem.setAttribute(this.$options._scopeId, ""));
 
-      var subItems = this$1.contextualMenuInstance._container.querySelectorAll(".ms-ContextualMenu-item.ms-ContextualMenu-item--hasMenu"); // Array.from(subItems).map((subItem)=>{
+      var subItems = _this.contextualMenuInstance._container.querySelectorAll(".ms-ContextualMenu-item.ms-ContextualMenu-item--hasMenu"); // Array.from(subItems).map((subItem)=>{
 
 
       Array.prototype.slice.call(menuItems).map(function (subItem) {
