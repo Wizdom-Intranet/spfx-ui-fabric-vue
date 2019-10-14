@@ -4,4 +4,8 @@ function createCommonjsModule(fn, module) {
 	return module = { exports: {} }, fn(module, module.exports), module.exports;
 }
 
-export { commonjsGlobal, createCommonjsModule };
+function getCjsExportFromNamespace (n) {
+	return n && n['default'] || n;
+}
+
+export { commonjsGlobal, createCommonjsModule, getCjsExportFromNamespace };

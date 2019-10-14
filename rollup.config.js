@@ -4,15 +4,15 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 
 var configs = [
-    // {
-    //     input: ['src/index.js'],
-    //     output:[
-    //         {
-    //             format:"es",
-    //             file : "./dist/bundle.esm.js",
-    //         },
-    //     ]
-    // },
+    {
+        input: ['src/index.js'],
+        output:[
+            {
+                format:"es",
+                file : "./dist/bundle.esm.js",
+            },
+        ]
+    },
     {
         input: ['src/index.js'],
         output:[
