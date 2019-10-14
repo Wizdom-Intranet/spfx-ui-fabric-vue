@@ -1,8 +1,9 @@
 <script>
+import { loadStyles } from '@microsoft/load-themed-styles';
 import pivot from "office-ui-fabric-vue/src/components/Pivot/Pivot.vue";
 import { Pivot as fabricPivot } from "office-ui-fabric-js/src/components/Pivot/Pivot"
 export default {
-    injectCss,
+    loadStyles,
     beforeMount(){
         this.$fabric = {
             Pivot : fabricPivot

@@ -1,9 +1,10 @@
 <script>
+import { loadStyles } from '@microsoft/load-themed-styles';
 import ChoiceFieldGroup from "office-ui-fabric-vue/src/components/choice_field_group/ChoiceFieldGroup.vue";
 import { ChoiceFieldGroup as fabricChoiceFieldGroup } from "office-ui-fabric-js/src/components/choiceFieldGroup/ChoiceFieldGroup"
 
 export default {
-    injectCss,
+    loadStyles,
     beforeMount(){ 
         this.$fabric = { 
             ChoiceFieldGroup : fabricChoiceFieldGroup 

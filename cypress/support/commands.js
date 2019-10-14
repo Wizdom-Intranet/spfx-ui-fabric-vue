@@ -25,14 +25,20 @@
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
 Cypress.Commands.add('vrt', { prevSubject: true }, (prevSubject, ssName) => {
-    cy.wrap(prevSubject)
-        .screenshot(ssName)
+    var takenScreenshotPath = "";
+    cy.wrap(prevSubject).screenshot(ssName, {
+            onAfterScreenshot(document, properties){
+                console.log("screenshot taken", properties);
+                takenScreenshotPath = properties.path;
+            }
+        })
         .then((mon)=>{
-            var ssFile = "./cypress/screenshots/" + ssName + ".png";
+            var ssFile = takenScreenshotPath; //"./cypress/screenshots/" + ssName + ".png";
             var baseFile = "./cypress/screenshots_base/" + ssName + ".png";
-            var diffFile = "./cypress/screenshots/" + ssName + ".diff.png";
+            var diffFile = takenScreenshotPath + ".diff.png"; //"./cypress/screenshots/" + ssName + ".diff.png";
             var cmd = ".\\node_modules\\.bin\\pixelmatch \"" + baseFile + "\" \"" + ssFile + "\" \"" + diffFile + "\" 0.1";
             cy.exec(cmd , { failOnNonZeroExit : false}).then((result)=>{
+                console.log("pixelmatch", result);
                 var errorPercent = result.stdout.split('error: ')[1].split('%')[0] * 1;
                 if(errorPercent<0.1)
                 {

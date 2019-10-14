@@ -17,11 +17,12 @@
     </div>
 </template>
 <script>
+import { loadStyles } from '@microsoft/load-themed-styles';
 import MessageBanner from "office-ui-fabric-vue/src/components/Message_Banner/MessageBanner.vue";
 import { MessageBanner as fabricMessageBanner } from "office-ui-fabric-js/src/components/MessageBanner/MessageBanner"
 
 export default {
-    injectCss,
+    loadStyles,
     props: {
         value: Boolean
     },

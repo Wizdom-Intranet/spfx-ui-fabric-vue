@@ -1,9 +1,10 @@
 <script>
+import { loadStyles } from '@microsoft/load-themed-styles';
 import toggle from "office-ui-fabric-vue/src/components/Toggle/Toggle.vue";
 import { Toggle as fabricToggle } from "office-ui-fabric-js/src/components/Toggle/Toggle"
 
 export default {
-    injectCss,
+    loadStyles,
     beforeMount(){
         this.$fabric = {
             Toggle : fabricToggle

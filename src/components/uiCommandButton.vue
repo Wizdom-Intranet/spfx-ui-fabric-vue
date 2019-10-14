@@ -12,12 +12,13 @@
     </div>
 </template>
 <script>
+import { loadStyles } from '@microsoft/load-themed-styles';
 import commandbutton from "office-ui-fabric-vue/src/components/command_button/commandbutton.vue";
-import { CommandButton as fabricCommandButton } from "office-ui-fabric-js/src/components/commandbutton/commandbutton"
+import { CommandButton as fabricCommandButton } from "office-ui-fabric-js/src/components/CommandButton/CommandButton"
 
 
 export default {
-    injectCss,
+    loadStyles,
     computed: {
         hasIcon () {
             return !!this.$slots['icon']

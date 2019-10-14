@@ -1,38 +1,8 @@
 import { loadStyles } from '@microsoft/load-themed-styles';
 import Vue from 'vue';
 import { fontFace, mergeStyles } from '@uifabric/merge-styles';
-import Moment from 'moment';
-import debounce from 'lodash.debounce';
-
-function type () {
-  var arguments$1 = arguments;
-
-  for (var _len = arguments.length, types = new Array(_len), _key = 0; _key < _len; _key++) {
-    types[_key] = arguments$1[_key];
-  }
-
-  types.push('');
-  return {
-    props: {
-      type: {
-        type: String,
-        default: '',
-        validator: function validator(value) {
-          return types.indexOf(value) !== -1;
-        }
-      }
-    }
-  };
-}
-
-var disabled = {
-  props: {
-    disabled: {
-      type: Boolean,
-      default: false
-    }
-  }
-};
+import parse from 'date-fns/parse';
+import debounce$1 from 'lodash.debounce';
 
 function _defineProperty(obj, key, value) {
   if (key in obj) {
@@ -67,6 +37,34 @@ function _extends() {
   return _extends.apply(this, arguments);
 }
 
+function type () {
+  for (var _len = arguments.length, types = new Array(_len), _key = 0; _key < _len; _key++) {
+    types[_key] = arguments[_key];
+  }
+
+  types.push('');
+  return {
+    props: {
+      type: {
+        type: String,
+        default: '',
+        validator: function validator(value) {
+          return types.indexOf(value) !== -1;
+        }
+      }
+    }
+  };
+}
+
+var disabled = {
+  props: {
+    disabled: {
+      type: Boolean,
+      default: false
+    }
+  }
+};
+
 var icon = {
   props: {
     icon: String
@@ -78,58 +76,199 @@ var icon = {
   }
 };
 
-var button = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('button',{staticClass:"ms-Button",class:_vm.buttonClass,on:{"click":_vm.clickEvent}},[(_vm.icon && _vm.type == 'hero')?_c('span',{staticClass:"ms-Button-icon"},[_c('i',{staticClass:"ms-Icon",class:_vm.iconClass})]):_vm._e(),_vm._v(" "),_c('span',{staticClass:"ms-Button-label"},[_vm._t("default")],2),_vm._v(" "),(_vm.description && _vm.type == 'compound')?_c('span',{staticClass:"ms-Button-description"},[_vm._v(" "+_vm._s(_vm.description)+" ")]):_vm._e()])},staticRenderFns: [],
+var script = {
   name: 'ou-button',
-
-  mixins: [
-    type('primary', 'hero', 'compound', 'small', 'default'),
-    disabled,
-    icon
-  ],
-
+  mixins: [type('primary', 'hero', 'compound', 'small', 'default'), disabled, icon],
   props: {
     description: String
   },
-
   computed: {
     buttonClass: function buttonClass() {
-      var obj;
+      var _ref;
 
-      return ( obj = {}, obj[("ms-Button--" + (this.type))] = !!this.type, obj['is-disabled'] =  this.disabled, obj );
+      return _ref = {}, _defineProperty(_ref, "ms-Button--".concat(this.type), !!this.type), _defineProperty(_ref, 'is-disabled', this.disabled), _ref;
     }
   },
-
   methods: {
     clickEvent: function clickEvent() {
-      if (!this.disabled) { this.$emit('click'); }
+      if (!this.disabled) {
+        this.$emit('click');
+      }
     }
   }
 };
 
-var uiButton = {_scopeId: 'data-v-79820dd6',
-    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-Button[data-v-79820dd6] { box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 14px; font-weight: 400; background-color: \"[theme:neutralLighter, default: #f4f4f4]\"; border: 1px solid \"[theme:neutralLighter, default: #f4f4f4]\"; cursor: pointer; display: inline-block; height: 32px; min-width: 80px; padding: 4px 20px 6px; } .ms-Button.is-hidden[data-v-79820dd6] { display: none; } .ms-Button[data-v-79820dd6]:hover { background-color: \"[theme:neutralLight, default: #eaeaea]\"; border-color: \"[theme:neutralLight, default: #eaeaea]\"; } .ms-Button:hover .ms-Button-label[data-v-79820dd6] { color: \"[theme:black, default: #000000]\"; } @media screen and (-ms-high-contrast: active) { .ms-Button[data-v-79820dd6]:hover { color: #1AEBFF; border-color: #1AEBFF; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-Button[data-v-79820dd6]:hover { color: #37006E; border-color: #37006E; } } .ms-Button[data-v-79820dd6]:focus { background-color: \"[theme:neutralLight, default: #eaeaea]\"; border-color: \"[theme:themePrimary, default: #0078d7]\"; outline: 1px solid transparent; } .ms-Button:focus .ms-Button-label[data-v-79820dd6] { color: \"[theme:black, default: #000000]\"; } .ms-Button[data-v-79820dd6]:active { background-color: \"[theme:themePrimary, default: #0078d7]\"; border-color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-Button:active .ms-Button-label[data-v-79820dd6] { color: \"[theme:white, default: #ffffff]\"; } .ms-Button[data-v-79820dd6]:disabled, .ms-Button.is-disabled[data-v-79820dd6] { background-color: \"[theme:neutralLighter, default: #f4f4f4]\"; border-color: \"[theme:neutralLighter, default: #f4f4f4]\"; cursor: default; } .ms-Button:disabled .ms-Button-label[data-v-79820dd6], .ms-Button.is-disabled .ms-Button-label[data-v-79820dd6] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-Button[data-v-79820dd6]:disabled:hover, .ms-Button[data-v-79820dd6]:disabled:focus, .ms-Button.is-disabled[data-v-79820dd6]:hover, .ms-Button.is-disabled[data-v-79820dd6]:focus { outline: 0; } .ms-Button-label[data-v-79820dd6] { color: \"[theme:neutralPrimary, default: #333333]\"; font-weight: 600; font-size: 14px; } .ms-Button-icon[data-v-79820dd6], .ms-Button-description[data-v-79820dd6] { display: none; } .ms-Button.ms-Button--primary[data-v-79820dd6] { background-color: \"[theme:themePrimary, default: #0078d7]\"; border-color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-Button.ms-Button--primary .ms-Button-label[data-v-79820dd6] { color: \"[theme:white, default: #ffffff]\"; } .ms-Button.ms-Button--primary[data-v-79820dd6]:hover { background-color: \"[theme:themeDark, default: #005a9e]\"; border-color: \"[theme:themeDark, default: #005a9e]\"; } .ms-Button.ms-Button--primary[data-v-79820dd6]:focus { background-color: \"[theme:themeDark, default: #005a9e]\"; border-color: \"[theme:themeDarker, default: #004578]\"; } .ms-Button.ms-Button--primary[data-v-79820dd6]:active { background-color: \"[theme:themePrimary, default: #0078d7]\"; border-color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-Button.ms-Button--primary[data-v-79820dd6]:disabled, .ms-Button.ms-Button--primary.is-disabled[data-v-79820dd6] { background-color: \"[theme:neutralLighter, default: #f4f4f4]\"; border-color: \"[theme:neutralLighter, default: #f4f4f4]\"; } .ms-Button.ms-Button--primary:disabled .ms-Button-label[data-v-79820dd6], .ms-Button.ms-Button--primary.is-disabled .ms-Button-label[data-v-79820dd6] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-Button.ms-Button--small[data-v-79820dd6] { min-width: 60px; min-height: 24px; height: auto; padding-top: 0; padding-bottom: 4px; } .ms-Button.ms-Button--small .ms-Button-label[data-v-79820dd6] { font-weight: 400; font-size: 12px; } .ms-Button.ms-Button--hero[data-v-79820dd6] { align-items: center; background-color: transparent; border: 0; padding: 0; position: relative; } .ms-Button.ms-Button--hero .ms-Button-icon[data-v-79820dd6] { color: \"[theme:themePrimary, default: #0078d7]\"; display: inline-block; font-size: 12px; margin-right: 4px; padding-top: 5px; text-align: center; } .ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon[data-v-79820dd6] { border-radius: 18px; border: 1px solid \"[theme:themePrimary, default: #0078d7]\"; font-size: 12px; height: 18px; line-height: 18px; width: 18px; } .ms-Button.ms-Button--hero .ms-Button-label[data-v-79820dd6] { color: \"[theme:themePrimary, default: #0078d7]\"; font-size: 21px; font-weight: 100; position: relative; text-decoration: none; vertical-align: top; } .ms-Button.ms-Button--hero:hover .ms-Button-icon[data-v-79820dd6], .ms-Button.ms-Button--hero:focus .ms-Button-icon[data-v-79820dd6] { color: \"[theme:themeDark, default: #005a9e]\"; } .ms-Button.ms-Button--hero:hover .ms-Button-icon .ms-Icon[data-v-79820dd6], .ms-Button.ms-Button--hero:focus .ms-Button-icon .ms-Icon[data-v-79820dd6] { border: 1px solid \"[theme:themeDark, default: #005a9e]\"; } .ms-Button.ms-Button--hero:hover .ms-Button-label[data-v-79820dd6], .ms-Button.ms-Button--hero:focus .ms-Button-label[data-v-79820dd6] { color: \"[theme:themeDarker, default: #004578]\"; } .ms-Button.ms-Button--hero:active .ms-Button-icon[data-v-79820dd6] { color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-Button.ms-Button--hero:active .ms-Button-icon .ms-Icon[data-v-79820dd6] { border: 1px solid \"[theme:themePrimary, default: #0078d7]\"; } .ms-Button.ms-Button--hero:active .ms-Button-label[data-v-79820dd6] { color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-Button.ms-Button--hero:disabled .ms-Button-icon[data-v-79820dd6], .ms-Button.ms-Button--hero.is-disabled .ms-Button-icon[data-v-79820dd6] { color: \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; } .ms-Button.ms-Button--hero:disabled .ms-Button-icon .ms-Icon[data-v-79820dd6], .ms-Button.ms-Button--hero.is-disabled .ms-Button-icon .ms-Icon[data-v-79820dd6] { border: 1px solid \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; } .ms-Button.ms-Button--hero:disabled .ms-Button-label[data-v-79820dd6], .ms-Button.ms-Button--hero.is-disabled .ms-Button-label[data-v-79820dd6] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-Button.ms-Button--compound[data-v-79820dd6] { display: block; height: auto; max-width: 280px; min-height: 72px; padding: 20px; } .ms-Button.ms-Button--compound .ms-Button-label[data-v-79820dd6] { display: block; font-weight: 600; position: relative; text-align: left; margin-top: -5px; } .ms-Button.ms-Button--compound .ms-Button-description[data-v-79820dd6] { color: \"[theme:neutralSecondary, default: #666666]\"; display: block; font-weight: 400; font-size: 12px; position: relative; text-align: left; top: 3px; } .ms-Button.ms-Button--compound:hover .ms-Button-description[data-v-79820dd6] { color: \"[theme:neutralDark, default: #212121]\"; } .ms-Button.ms-Button--compound[data-v-79820dd6]:focus { border-color: \"[theme:themePrimary, default: #0078d7]\"; background-color: \"[theme:neutralLighter, default: #f4f4f4]\"; } .ms-Button.ms-Button--compound:focus .ms-Button-label[data-v-79820dd6] { color: \"[theme:neutralPrimary, default: #333333]\"; } .ms-Button.ms-Button--compound:focus .ms-Button-description[data-v-79820dd6] { color: \"[theme:neutralSecondary, default: #666666]\"; } .ms-Button.ms-Button--compound[data-v-79820dd6]:active { background-color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-Button.ms-Button--compound:active .ms-Button-description[data-v-79820dd6], .ms-Button.ms-Button--compound:active .ms-Button-label[data-v-79820dd6] { color: \"[theme:white, default: #ffffff]\"; } .ms-Button.ms-Button--compound:disabled .ms-Button-label[data-v-79820dd6], .ms-Button.ms-Button--compound:disabled .ms-Button-description[data-v-79820dd6], .ms-Button.ms-Button--compound.is-disabled .ms-Button-label[data-v-79820dd6], .ms-Button.ms-Button--compound.is-disabled .ms-Button-description[data-v-79820dd6] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-Button.ms-Button--compound[data-v-79820dd6]:disabled:focus, .ms-Button.ms-Button--compound[data-v-79820dd6]:disabled:active, .ms-Button.ms-Button--compound.is-disabled[data-v-79820dd6]:focus, .ms-Button.ms-Button--compound.is-disabled[data-v-79820dd6]:active { border-color: \"[theme:neutralLighter, default: #f4f4f4]\"; background-color: \"[theme:neutralLighter, default: #f4f4f4]\"; } .ms-Button.ms-Button--compound:disabled:focus .ms-Button-label[data-v-79820dd6], .ms-Button.ms-Button--compound:disabled:focus .ms-Button-description[data-v-79820dd6], .ms-Button.ms-Button--compound:disabled:active .ms-Button-label[data-v-79820dd6], .ms-Button.ms-Button--compound:disabled:active .ms-Button-description[data-v-79820dd6], .ms-Button.ms-Button--compound.is-disabled:focus .ms-Button-label[data-v-79820dd6], .ms-Button.ms-Button--compound.is-disabled:focus .ms-Button-description[data-v-79820dd6], .ms-Button.ms-Button--compound.is-disabled:active .ms-Button-label[data-v-79820dd6], .ms-Button.ms-Button--compound.is-disabled:active .ms-Button-description[data-v-79820dd6] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } ");},
-    extends :  button
+function normalizeComponent(template, style, script, scopeId, isFunctionalTemplate, moduleIdentifier
+/* server only */
+, shadowMode, createInjector, createInjectorSSR, createInjectorShadow) {
+  if (typeof shadowMode !== 'boolean') {
+    createInjectorSSR = createInjector;
+    createInjector = shadowMode;
+    shadowMode = false;
+  } // Vue.extend constructor export interop.
+
+
+  var options = typeof script === 'function' ? script.options : script; // render functions
+
+  if (template && template.render) {
+    options.render = template.render;
+    options.staticRenderFns = template.staticRenderFns;
+    options._compiled = true; // functional template
+
+    if (isFunctionalTemplate) {
+      options.functional = true;
+    }
+  } // scopedId
+
+
+  if (scopeId) {
+    options._scopeId = scopeId;
+  }
+
+  var hook;
+
+  if (moduleIdentifier) {
+    // server build
+    hook = function hook(context) {
+      // 2.3 injection
+      context = context || // cached call
+      this.$vnode && this.$vnode.ssrContext || // stateful
+      this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext; // functional
+      // 2.2 with runInNewContext: true
+
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__;
+      } // inject component styles
+
+
+      if (style) {
+        style.call(this, createInjectorSSR(context));
+      } // register component module identifier for async chunk inference
+
+
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier);
+      }
+    }; // used by ssr in case component is cached and beforeCreate
+    // never gets called
+
+
+    options._ssrRegister = hook;
+  } else if (style) {
+    hook = shadowMode ? function () {
+      style.call(this, createInjectorShadow(this.$root.$options.shadowRoot));
+    } : function (context) {
+      style.call(this, createInjector(context));
+    };
+  }
+
+  if (hook) {
+    if (options.functional) {
+      // register for functional component in vue file
+      var originalRender = options.render;
+
+      options.render = function renderWithStyleInjection(h, context) {
+        hook.call(context);
+        return originalRender(h, context);
+      };
+    } else {
+      // inject component registration as beforeCreate hook
+      var existing = options.beforeCreate;
+      options.beforeCreate = existing ? [].concat(existing, hook) : [hook];
+    }
+  }
+
+  return script;
 }
 
-var callout = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('div',{ref:"callout",staticClass:"ms-Callout is-hidden",class:_vm.calloutClass},[_c('div',{staticClass:"ms-Callout-main"},[(_vm.showClose)?_c('button',{staticClass:"ms-Callout-close"},[_c('i',{staticClass:"ms-Icon ms-Icon--Clear"})]):_vm._e(),_vm._v(" "),_c('div',{staticClass:"ms-Callout-header"},[_c('p',{staticClass:"ms-Callout-title"},[_vm._v(_vm._s(_vm.title))])]),_vm._v(" "),_c('div',{staticClass:"ms-Callout-inner"},[_c('div',{staticClass:"ms-Callout-content"},[(_vm.content)?_c('p',{staticClass:"ms-Callout-subText"},[_vm._v(_vm._s(_vm.content))]):_vm._t("content")],2),_vm._v(" "),_c('div',{staticClass:"ms-Callout-actions"},[_vm._t("actions")],2)])])]),_vm._v(" "),_c('span',{ref:"calloutTrigger"},[_vm._t("default")],2)])},staticRenderFns: [],
+var normalizeComponent_1 = normalizeComponent;
+
+/* script */
+const __vue_script__ = script;
+
+/* template */
+var __vue_render__ = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('button',{staticClass:"ms-Button",class:_vm.buttonClass,on:{"click":_vm.clickEvent}},[(_vm.icon && _vm.type == 'hero')?_c('span',{staticClass:"ms-Button-icon"},[_c('i',{staticClass:"ms-Icon",class:_vm.iconClass})]):_vm._e(),_vm._v(" "),_c('span',{staticClass:"ms-Button-label"},[_vm._t("default")],2),_vm._v(" "),(_vm.description && _vm.type == 'compound')?_c('span',{staticClass:"ms-Button-description"},[_vm._v("\n    "+_vm._s(_vm.description)+"\n  ")]):_vm._e()])};
+var __vue_staticRenderFns__ = [];
+
+  /* style */
+  const __vue_inject_styles__ = undefined;
+  /* scoped */
+  const __vue_scope_id__ = undefined;
+  /* module identifier */
+  const __vue_module_identifier__ = undefined;
+  /* functional template */
+  const __vue_is_functional_template__ = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var button = normalizeComponent_1(
+    { render: __vue_render__, staticRenderFns: __vue_staticRenderFns__ },
+    __vue_inject_styles__,
+    __vue_script__,
+    __vue_scope_id__,
+    __vue_is_functional_template__,
+    __vue_module_identifier__,
+    undefined,
+    undefined
+  );
+
+var script$1 = {
+  loadStyles: loadStyles,
+  extends: button
+};
+
+/* script */
+const __vue_script__$1 = script$1;
+
+/* template */
+
+  /* style */
+  const __vue_inject_styles__$1 = function (inject) {
+    if (!inject) return
+    inject("data-v-3e4e6252_0", { source: ".ms-Button[data-v-3e4e6252]{box-sizing:border-box;margin:0;padding:0;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;color:\"[theme:neutralPrimary, default: #333333]\";font-size:14px;font-weight:400;background-color:\"[theme:neutralLighter, default: #f4f4f4]\";border:1px solid \"[theme:neutralLighter, default: #f4f4f4]\";cursor:pointer;display:inline-block;height:32px;min-width:80px;padding:4px 20px 6px}.ms-Button.is-hidden[data-v-3e4e6252]{display:none}.ms-Button[data-v-3e4e6252]:hover{background-color:\"[theme:neutralLight, default: #eaeaea]\";border-color:\"[theme:neutralLight, default: #eaeaea]\"}.ms-Button:hover .ms-Button-label[data-v-3e4e6252]{color:\"[theme:black, default: #000000]\"}@media screen and (-ms-high-contrast:active){.ms-Button[data-v-3e4e6252]:hover{color:#1aebff;border-color:#1aebff}}@media screen and (-ms-high-contrast:black-on-white){.ms-Button[data-v-3e4e6252]:hover{color:#37006e;border-color:#37006e}}.ms-Button[data-v-3e4e6252]:focus{background-color:\"[theme:neutralLight, default: #eaeaea]\";border-color:\"[theme:themePrimary, default: #0078d7]\";outline:1px solid transparent}.ms-Button:focus .ms-Button-label[data-v-3e4e6252]{color:\"[theme:black, default: #000000]\"}.ms-Button[data-v-3e4e6252]:active{background-color:\"[theme:themePrimary, default: #0078d7]\";border-color:\"[theme:themePrimary, default: #0078d7]\"}.ms-Button:active .ms-Button-label[data-v-3e4e6252]{color:\"[theme:white, default: #ffffff]\"}.ms-Button.is-disabled[data-v-3e4e6252],.ms-Button[data-v-3e4e6252]:disabled{background-color:\"[theme:neutralLighter, default: #f4f4f4]\";border-color:\"[theme:neutralLighter, default: #f4f4f4]\";cursor:default}.ms-Button.is-disabled .ms-Button-label[data-v-3e4e6252],.ms-Button:disabled .ms-Button-label[data-v-3e4e6252]{color:\"[theme:neutralTertiary, default: #a6a6a6]\"}.ms-Button.is-disabled[data-v-3e4e6252]:focus,.ms-Button.is-disabled[data-v-3e4e6252]:hover,.ms-Button[data-v-3e4e6252]:disabled:focus,.ms-Button[data-v-3e4e6252]:disabled:hover{outline:0}.ms-Button-label[data-v-3e4e6252]{color:\"[theme:neutralPrimary, default: #333333]\";font-weight:600;font-size:14px}.ms-Button-description[data-v-3e4e6252],.ms-Button-icon[data-v-3e4e6252]{display:none}.ms-Button.ms-Button--primary[data-v-3e4e6252]{background-color:\"[theme:themePrimary, default: #0078d7]\";border-color:\"[theme:themePrimary, default: #0078d7]\"}.ms-Button.ms-Button--primary .ms-Button-label[data-v-3e4e6252]{color:\"[theme:white, default: #ffffff]\"}.ms-Button.ms-Button--primary[data-v-3e4e6252]:hover{background-color:\"[theme:themeDark, default: #005a9e]\";border-color:\"[theme:themeDark, default: #005a9e]\"}.ms-Button.ms-Button--primary[data-v-3e4e6252]:focus{background-color:\"[theme:themeDark, default: #005a9e]\";border-color:\"[theme:themeDarker, default: #004578]\"}.ms-Button.ms-Button--primary[data-v-3e4e6252]:active{background-color:\"[theme:themePrimary, default: #0078d7]\";border-color:\"[theme:themePrimary, default: #0078d7]\"}.ms-Button.ms-Button--primary.is-disabled[data-v-3e4e6252],.ms-Button.ms-Button--primary[data-v-3e4e6252]:disabled{background-color:\"[theme:neutralLighter, default: #f4f4f4]\";border-color:\"[theme:neutralLighter, default: #f4f4f4]\"}.ms-Button.ms-Button--primary.is-disabled .ms-Button-label[data-v-3e4e6252],.ms-Button.ms-Button--primary:disabled .ms-Button-label[data-v-3e4e6252]{color:\"[theme:neutralTertiary, default: #a6a6a6]\"}.ms-Button.ms-Button--small[data-v-3e4e6252]{min-width:60px;min-height:24px;height:auto;padding-top:0;padding-bottom:4px}.ms-Button.ms-Button--small .ms-Button-label[data-v-3e4e6252]{font-weight:400;font-size:12px}.ms-Button.ms-Button--hero[data-v-3e4e6252]{align-items:center;background-color:transparent;border:0;padding:0;position:relative}.ms-Button.ms-Button--hero .ms-Button-icon[data-v-3e4e6252]{color:\"[theme:themePrimary, default: #0078d7]\";display:inline-block;font-size:12px;margin-right:4px;padding-top:5px;text-align:center}.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon[data-v-3e4e6252]{border-radius:18px;border:1px solid \"[theme:themePrimary, default: #0078d7]\";font-size:12px;height:18px;line-height:18px;width:18px}.ms-Button.ms-Button--hero .ms-Button-label[data-v-3e4e6252]{color:\"[theme:themePrimary, default: #0078d7]\";font-size:21px;font-weight:100;position:relative;text-decoration:none;vertical-align:top}.ms-Button.ms-Button--hero:focus .ms-Button-icon[data-v-3e4e6252],.ms-Button.ms-Button--hero:hover .ms-Button-icon[data-v-3e4e6252]{color:\"[theme:themeDark, default: #005a9e]\"}.ms-Button.ms-Button--hero:focus .ms-Button-icon .ms-Icon[data-v-3e4e6252],.ms-Button.ms-Button--hero:hover .ms-Button-icon .ms-Icon[data-v-3e4e6252]{border:1px solid \"[theme:themeDark, default: #005a9e]\"}.ms-Button.ms-Button--hero:focus .ms-Button-label[data-v-3e4e6252],.ms-Button.ms-Button--hero:hover .ms-Button-label[data-v-3e4e6252]{color:\"[theme:themeDarker, default: #004578]\"}.ms-Button.ms-Button--hero:active .ms-Button-icon[data-v-3e4e6252]{color:\"[theme:themePrimary, default: #0078d7]\"}.ms-Button.ms-Button--hero:active .ms-Button-icon .ms-Icon[data-v-3e4e6252]{border:1px solid \"[theme:themePrimary, default: #0078d7]\"}.ms-Button.ms-Button--hero:active .ms-Button-label[data-v-3e4e6252]{color:\"[theme:themePrimary, default: #0078d7]\"}.ms-Button.ms-Button--hero.is-disabled .ms-Button-icon[data-v-3e4e6252],.ms-Button.ms-Button--hero:disabled .ms-Button-icon[data-v-3e4e6252]{color:\"[theme:neutralTertiaryAlt, default: #c8c8c8]\"}.ms-Button.ms-Button--hero.is-disabled .ms-Button-icon .ms-Icon[data-v-3e4e6252],.ms-Button.ms-Button--hero:disabled .ms-Button-icon .ms-Icon[data-v-3e4e6252]{border:1px solid \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"}.ms-Button.ms-Button--hero.is-disabled .ms-Button-label[data-v-3e4e6252],.ms-Button.ms-Button--hero:disabled .ms-Button-label[data-v-3e4e6252]{color:\"[theme:neutralTertiary, default: #a6a6a6]\"}.ms-Button.ms-Button--compound[data-v-3e4e6252]{display:block;height:auto;max-width:280px;min-height:72px;padding:20px}.ms-Button.ms-Button--compound .ms-Button-label[data-v-3e4e6252]{display:block;font-weight:600;position:relative;text-align:left;margin-top:-5px}.ms-Button.ms-Button--compound .ms-Button-description[data-v-3e4e6252]{color:\"[theme:neutralSecondary, default: #666666]\";display:block;font-weight:400;font-size:12px;position:relative;text-align:left;top:3px}.ms-Button.ms-Button--compound:hover .ms-Button-description[data-v-3e4e6252]{color:\"[theme:neutralDark, default: #212121]\"}.ms-Button.ms-Button--compound[data-v-3e4e6252]:focus{border-color:\"[theme:themePrimary, default: #0078d7]\";background-color:\"[theme:neutralLighter, default: #f4f4f4]\"}.ms-Button.ms-Button--compound:focus .ms-Button-label[data-v-3e4e6252]{color:\"[theme:neutralPrimary, default: #333333]\"}.ms-Button.ms-Button--compound:focus .ms-Button-description[data-v-3e4e6252]{color:\"[theme:neutralSecondary, default: #666666]\"}.ms-Button.ms-Button--compound[data-v-3e4e6252]:active{background-color:\"[theme:themePrimary, default: #0078d7]\"}.ms-Button.ms-Button--compound:active .ms-Button-description[data-v-3e4e6252],.ms-Button.ms-Button--compound:active .ms-Button-label[data-v-3e4e6252]{color:\"[theme:white, default: #ffffff]\"}.ms-Button.ms-Button--compound.is-disabled .ms-Button-description[data-v-3e4e6252],.ms-Button.ms-Button--compound.is-disabled .ms-Button-label[data-v-3e4e6252],.ms-Button.ms-Button--compound:disabled .ms-Button-description[data-v-3e4e6252],.ms-Button.ms-Button--compound:disabled .ms-Button-label[data-v-3e4e6252]{color:\"[theme:neutralTertiary, default: #a6a6a6]\"}.ms-Button.ms-Button--compound.is-disabled[data-v-3e4e6252]:active,.ms-Button.ms-Button--compound.is-disabled[data-v-3e4e6252]:focus,.ms-Button.ms-Button--compound[data-v-3e4e6252]:disabled:active,.ms-Button.ms-Button--compound[data-v-3e4e6252]:disabled:focus{border-color:\"[theme:neutralLighter, default: #f4f4f4]\";background-color:\"[theme:neutralLighter, default: #f4f4f4]\"}.ms-Button.ms-Button--compound.is-disabled:active .ms-Button-description[data-v-3e4e6252],.ms-Button.ms-Button--compound.is-disabled:active .ms-Button-label[data-v-3e4e6252],.ms-Button.ms-Button--compound.is-disabled:focus .ms-Button-description[data-v-3e4e6252],.ms-Button.ms-Button--compound.is-disabled:focus .ms-Button-label[data-v-3e4e6252],.ms-Button.ms-Button--compound:disabled:active .ms-Button-description[data-v-3e4e6252],.ms-Button.ms-Button--compound:disabled:active .ms-Button-label[data-v-3e4e6252],.ms-Button.ms-Button--compound:disabled:focus .ms-Button-description[data-v-3e4e6252],.ms-Button.ms-Button--compound:disabled:focus .ms-Button-label[data-v-3e4e6252]{color:\"[theme:neutralTertiary, default: #a6a6a6]\"}", map: undefined, media: undefined });
+
+  };
+  /* scoped */
+  const __vue_scope_id__$1 = "data-v-3e4e6252";
+  /* module identifier */
+  const __vue_module_identifier__$1 = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$1 = undefined;
+  /* style inject */
+  const __vue_create_injector__ = function(context){ return function(scopeId, data){__vue_script__$1.loadStyles && __vue_script__$1.loadStyles(data.source);}};
+  /* style inject SSR */
+  
+
+  
+  var uiButton = normalizeComponent_1(
+    {},
+    __vue_inject_styles__$1,
+    __vue_script__$1,
+    __vue_scope_id__$1,
+    __vue_is_functional_template__$1,
+    __vue_module_identifier__$1,
+    __vue_create_injector__,
+    undefined
+  );
+
+var script$2 = {
   name: 'ou-callout',
-
   mixins: [type('actionText', 'OOBE', 'peek')],
-
   props: {
     position: {
       type: String,
       default: 'right',
       validator: function validator(value) {
-        return ['right', 'left', 'top', 'bottom'].includes(value);
+        return ['right', 'left', 'top', 'bottom'].indexOf(value) !== -1;
       }
     },
-
     showClose: {
       type: Boolean,
       default: false
     },
-
     title: String,
     content: String
   },
@@ -140,20 +279,47 @@ var callout = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=
   },
   computed: {
     calloutClass: function calloutClass() {
-      var obj;
+      var _ref;
 
-      return ( obj = {}, obj[("ms-Callout--" + (this.type))] = !!this.type, obj['ms-Callout--close'] =  this.showClose, obj );
+      return _ref = {}, _defineProperty(_ref, "ms-Callout--".concat(this.type), !!this.type), _defineProperty(_ref, 'ms-Callout--close', this.showClose), _ref;
     }
   },
-
   mounted: function mounted() {
-    this.calloutInstance = new this.$fabric.Callout(
-      this.$refs.callout,
-      this.$refs.calloutTrigger,
-      this.position
-    );
+    this.calloutInstance = new this.$fabric.Callout(this.$refs.callout, this.$refs.calloutTrigger, this.position);
   }
 };
+
+/* script */
+const __vue_script__$2 = script$2;
+
+/* template */
+var __vue_render__$1 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('div',{ref:"callout",staticClass:"ms-Callout is-hidden",class:_vm.calloutClass},[_c('div',{staticClass:"ms-Callout-main"},[(_vm.showClose)?_c('button',{staticClass:"ms-Callout-close"},[_c('i',{staticClass:"ms-Icon ms-Icon--Clear"})]):_vm._e(),_vm._v(" "),_c('div',{staticClass:"ms-Callout-header"},[_c('p',{staticClass:"ms-Callout-title"},[_vm._v(_vm._s(_vm.title))])]),_vm._v(" "),_c('div',{staticClass:"ms-Callout-inner"},[_c('div',{staticClass:"ms-Callout-content"},[(_vm.content)?_c('p',{staticClass:"ms-Callout-subText"},[_vm._v(_vm._s(_vm.content))]):_vm._t("content")],2),_vm._v(" "),_c('div',{staticClass:"ms-Callout-actions"},[_vm._t("actions")],2)])])]),_vm._v(" "),_c('span',{ref:"calloutTrigger"},[_vm._t("default")],2)])};
+var __vue_staticRenderFns__$1 = [];
+
+  /* style */
+  const __vue_inject_styles__$2 = undefined;
+  /* scoped */
+  const __vue_scope_id__$2 = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$2 = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$2 = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var callout = normalizeComponent_1(
+    { render: __vue_render__$1, staticRenderFns: __vue_staticRenderFns__$1 },
+    __vue_inject_styles__$2,
+    __vue_script__$2,
+    __vue_scope_id__$2,
+    __vue_is_functional_template__$2,
+    __vue_module_identifier__$2,
+    undefined,
+    undefined
+  );
 
 var CONTEXT_STATE_CLASS = "is-open";
 var MODAL_STATE_POSITIONED = "is-positioned";
@@ -645,65 +811,127 @@ var Callout = function () {
   return Callout;
 }();
 
-var uiCallout = {_scopeId: 'data-v-64664f3c',
-    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-Callout[data-v-64664f3c] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; width: 288px; } .ms-Callout.is-hidden[data-v-64664f3c] { display: none; } .ms-Callout-header[data-v-64664f3c] { z-index: 105; padding-top: 24px; padding-bottom: 12px; padding-left: 28px; padding-right: 28px; } .ms-Callout-title[data-v-64664f3c] { margin: 0; font-weight: 300; font-size: 21px; } .ms-Callout-subText[data-v-64664f3c] { margin: 0; font-weight: 300; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 12px; } .ms-Callout-close[data-v-64664f3c] { margin: 0; border: 0; background: none; cursor: pointer; position: absolute; top: 12px; right: 12px; padding: 8px; width: 32px; height: 32px; font-size: 14px; color: \"[theme:neutralSecondary, default: #666666]\"; z-index: 110; } .ms-Callout-link[data-v-64664f3c] { font-size: 14px; } .ms-Callout-inner[data-v-64664f3c] { height: 100%; padding-top: 0; padding-bottom: 12px; padding-left: 28px; padding-right: 28px; } .ms-Callout-actions[data-v-64664f3c] { position: relative; margin-top: 20px; width: 100%; white-space: nowrap; } .ms-Callout-actions .ms-CommandButton.ms-CommandButton--inline[data-v-64664f3c] { height: 27px; line-height: 27px; } .ms-Callout-actions .ms-CommandButton.ms-CommandButton--inline .ms-CommandButton-button[data-v-64664f3c] { height: 27px; line-height: 27px; } .ms-Callout-actions .ms-CommandButton.ms-CommandButton--inline .ms-CommandButton-label[data-v-64664f3c] { line-height: 27px; } .ms-Callout-actions .ms-CommandButton.ms-CommandButton--inline .ms-CommandButton-icon[data-v-64664f3c] { line-height: 27px; } .ms-Callout-actions .ms-CommandButton.ms-CommandButton--inline:hover .ms-Button[data-v-64664f3c], .ms-Callout-actions .ms-CommandButton.ms-CommandButton--inline:focus .ms-Button[data-v-64664f3c] { color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-Callout-actions .ms-Callout-button[data-v-64664f3c] { margin-right: 12px; } .ms-Callout.ms-Callout--OOBE .ms-Callout-header[data-v-64664f3c] { padding: 28px 24px; background-color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-Callout.ms-Callout--OOBE .ms-Callout-title[data-v-64664f3c] { font-weight: 100; font-size: 28px; color: \"[theme:white, default: #ffffff]\"; } .ms-Callout.ms-Callout--OOBE .ms-Callout-inner[data-v-64664f3c] { padding-top: 20px; } .ms-Callout.ms-Callout--OOBE .ms-Callout-subText[data-v-64664f3c] { font-size: 14px; } .ms-Callout.ms-Callout--actionText .ms-Callout-actions[data-v-64664f3c] { border-top: 1px solid \"[theme:neutralLight, default: #eaeaea]\"; padding-top: 12px; } .ms-Callout.ms-Callout--actionText .ms-Callout-inner[data-v-64664f3c] { padding-bottom: 12px; } .ms-Callout.ms-Callout--peek .ms-Callout-header[data-v-64664f3c] { padding-bottom: 0; } .ms-Callout.ms-Callout--peek .ms-Callout-title[data-v-64664f3c] { font-size: 14px; } .ms-Callout.ms-Callout--peek .ms-Callout-actions[data-v-64664f3c] { margin-top: 12px; margin-bottom: -4px; } .ms-ContextualHost[data-v-64664f3c] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; z-index: 10; margin: 16px auto; position: relative; min-width: 10px; display: none; background-color: \"[theme:white, default: #ffffff]\"; box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4); } .ms-ContextualHost.is-positioned[data-v-64664f3c] { position: absolute; margin: 0; } .ms-ContextualHost.is-open[data-v-64664f3c] { display: inline-block; } .ms-ContextualHost-beak[data-v-64664f3c] { box-shadow: 0 0 15px -5px \"[theme:neutralPrimaryAlt, default: #3c3c3c]\"; position: absolute; width: 28px; height: 28px; background: \"[theme:white, default: #ffffff]\"; border: 1px solid \"[theme:neutralLight, default: #eaeaea]\"; box-sizing: border-box; top: -6px; display: none; -webkit-transform: rotate(45deg); transform: rotate(45deg); z-index: 0; outline: 1px solid transparent; } .ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-64664f3c], .ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-64664f3c] { top: 40px; display: none; } .ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-64664f3c] { left: -10px; } .ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-64664f3c] { right: -10px; } .ms-ContextualHost.ms-ContextualHost--arrowTop .ms-ContextualHost-beak[data-v-64664f3c] { display: block; top: -10px; } .ms-ContextualHost.ms-ContextualHost--arrowBottom .ms-ContextualHost-beak[data-v-64664f3c] { display: block; bottom: -10px; } .ms-ContextualHost-main[data-v-64664f3c] { position: relative; background-color: \"[theme:white, default: #ffffff]\"; box-sizing: border-box; outline: 1px solid transparent; z-index: 5; min-height: 10px; } .ms-ContextualHost-close[data-v-64664f3c] { margin: 0; border: 0; background: none; cursor: pointer; position: absolute; top: 12px; right: 12px; padding: 8px; width: 32px; height: 32px; font-size: 14px; color: \"[theme:neutralSecondary, default: #666666]\"; z-index: 10; } .ms-ContextualHost.ms-ContextualHost--close .ms-ContextualHost-title[data-v-64664f3c] { margin-right: 20px; } .ms-ContextualHost.ms-ContextualHost--primaryArrow .ms-ContextualHost-beak[data-v-64664f3c] { background-color: \"[theme:themePrimary, default: #0078d7]\"; } @media (min-width: 480px) { .ms-ContextualHost[data-v-64664f3c] { margin: 16px; } .ms-ContextualHost.is-positioned[data-v-64664f3c] { margin: 0; } .ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-64664f3c], .ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-64664f3c] { display: block; } } .ms-Icon.ms-Icon--Clear[data-v-64664f3c] { content: url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"14\" height=\"14\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M1115 1024l914 -915l-90 -90l-915 914l-915 -914l-90 90l914 915l-914 915l90 90l915 -914l915 914l90 -90z\" fill=\"black\" stroke=\"none\"/></svg>'); } ");},
-    beforeMount: function beforeMount(){
-        this.$fabric = {
-            Callout : Callout
-        };
-    },
-    mounted: function mounted(){
-        var this$1 = this;
+var script$3 = {
+  loadStyles: loadStyles,
+  beforeMount: function beforeMount() {
+    this.$fabric = {
+      Callout: Callout
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
 
-        this.$refs.calloutTrigger.addEventListener("click", function (){
-            var contextualHostElm = this$1.$refs.callout.parentElement.parentElement;
-            contextualHostElm.setAttribute(this$1.$options._scopeId,"");
-            for(var i=0;i<contextualHostElm.children.length;i++)
-                { contextualHostElm.children[i].setAttribute(this$1.$options._scopeId,""); }
-            this$1.calloutInstance._contextualHost._openModal(); // recalculate position
-        });
-    },
-    extends :  callout
-}
+    this.$refs.calloutTrigger.addEventListener("click", function () {
+      var contextualHostElm = _this.$refs.callout.parentElement.parentElement;
+      contextualHostElm.setAttribute(_this.$options._scopeId, "");
 
-var checkbox = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"checkbox",staticClass:"ms-CheckBox"},[_c('input',{staticClass:"ms-CheckBox-input",attrs:{"tabindex":"-1","type":"checkbox"},on:{"click":_vm.toggle}}),_vm._v(" "),_c('label',{staticClass:"ms-CheckBox-field",class:{ 'is-disabled': _vm.disabled },attrs:{"role":"checkbox","tabindex":"0","aria-checked":"false","name":"checkbox"}},[_c('span',{staticClass:"ms-Label"},[_vm._t("default")],2)])])},staticRenderFns: [],
+      for (var i = 0; i < contextualHostElm.children.length; i++) {
+        contextualHostElm.children[i].setAttribute(_this.$options._scopeId, "");
+      }
+
+      _this.calloutInstance._contextualHost._openModal(); // recalculate position
+
+    });
+  },
+  extends: callout
+};
+
+/* script */
+const __vue_script__$3 = script$3;
+
+/* template */
+
+  /* style */
+  const __vue_inject_styles__$3 = function (inject) {
+    if (!inject) return
+    inject("data-v-34ec1efa_0", { source: ".ms-Callout[data-v-34ec1efa]{font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;width:288px}.ms-Callout.is-hidden[data-v-34ec1efa]{display:none}.ms-Callout-header[data-v-34ec1efa]{z-index:105;padding-top:24px;padding-bottom:12px;padding-left:28px;padding-right:28px}.ms-Callout-title[data-v-34ec1efa]{margin:0;font-weight:300;font-size:21px}.ms-Callout-subText[data-v-34ec1efa]{margin:0;font-weight:300;color:\"[theme:neutralPrimary, default: #333333]\";font-size:12px}.ms-Callout-close[data-v-34ec1efa]{margin:0;border:0;background:0 0;cursor:pointer;position:absolute;top:12px;right:12px;padding:8px;width:32px;height:32px;font-size:14px;color:\"[theme:neutralSecondary, default: #666666]\";z-index:110}.ms-Callout-link[data-v-34ec1efa]{font-size:14px}.ms-Callout-inner[data-v-34ec1efa]{height:100%;padding-top:0;padding-bottom:12px;padding-left:28px;padding-right:28px}.ms-Callout-actions[data-v-34ec1efa]{position:relative;margin-top:20px;width:100%;white-space:nowrap}.ms-Callout-actions .ms-CommandButton.ms-CommandButton--inline[data-v-34ec1efa]{height:27px;line-height:27px}.ms-Callout-actions .ms-CommandButton.ms-CommandButton--inline .ms-CommandButton-button[data-v-34ec1efa]{height:27px;line-height:27px}.ms-Callout-actions .ms-CommandButton.ms-CommandButton--inline .ms-CommandButton-label[data-v-34ec1efa]{line-height:27px}.ms-Callout-actions .ms-CommandButton.ms-CommandButton--inline .ms-CommandButton-icon[data-v-34ec1efa]{line-height:27px}.ms-Callout-actions .ms-CommandButton.ms-CommandButton--inline:focus .ms-Button[data-v-34ec1efa],.ms-Callout-actions .ms-CommandButton.ms-CommandButton--inline:hover .ms-Button[data-v-34ec1efa]{color:\"[theme:themePrimary, default: #0078d7]\"}.ms-Callout-actions .ms-Callout-button[data-v-34ec1efa]{margin-right:12px}.ms-Callout.ms-Callout--OOBE .ms-Callout-header[data-v-34ec1efa]{padding:28px 24px;background-color:\"[theme:themePrimary, default: #0078d7]\"}.ms-Callout.ms-Callout--OOBE .ms-Callout-title[data-v-34ec1efa]{font-weight:100;font-size:28px;color:\"[theme:white, default: #ffffff]\"}.ms-Callout.ms-Callout--OOBE .ms-Callout-inner[data-v-34ec1efa]{padding-top:20px}.ms-Callout.ms-Callout--OOBE .ms-Callout-subText[data-v-34ec1efa]{font-size:14px}.ms-Callout.ms-Callout--actionText .ms-Callout-actions[data-v-34ec1efa]{border-top:1px solid \"[theme:neutralLight, default: #eaeaea]\";padding-top:12px}.ms-Callout.ms-Callout--actionText .ms-Callout-inner[data-v-34ec1efa]{padding-bottom:12px}.ms-Callout.ms-Callout--peek .ms-Callout-header[data-v-34ec1efa]{padding-bottom:0}.ms-Callout.ms-Callout--peek .ms-Callout-title[data-v-34ec1efa]{font-size:14px}.ms-Callout.ms-Callout--peek .ms-Callout-actions[data-v-34ec1efa]{margin-top:12px;margin-bottom:-4px}.ms-ContextualHost[data-v-34ec1efa]{font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;z-index:10;margin:16px auto;position:relative;min-width:10px;display:none;background-color:\"[theme:white, default: #ffffff]\";box-shadow:0 0 5px 0 rgba(0,0,0,.4)}.ms-ContextualHost.is-positioned[data-v-34ec1efa]{position:absolute;margin:0}.ms-ContextualHost.is-open[data-v-34ec1efa]{display:inline-block}.ms-ContextualHost-beak[data-v-34ec1efa]{box-shadow:0 0 15px -5px \"[theme:neutralPrimaryAlt, default: #3c3c3c]\";position:absolute;width:28px;height:28px;background:\"[theme:white, default: #ffffff]\";border:1px solid \"[theme:neutralLight, default: #eaeaea]\";box-sizing:border-box;top:-6px;display:none;-webkit-transform:rotate(45deg);transform:rotate(45deg);z-index:0;outline:1px solid transparent}.ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-34ec1efa],.ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-34ec1efa]{top:40px;display:none}.ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-34ec1efa]{left:-10px}.ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-34ec1efa]{right:-10px}.ms-ContextualHost.ms-ContextualHost--arrowTop .ms-ContextualHost-beak[data-v-34ec1efa]{display:block;top:-10px}.ms-ContextualHost.ms-ContextualHost--arrowBottom .ms-ContextualHost-beak[data-v-34ec1efa]{display:block;bottom:-10px}.ms-ContextualHost-main[data-v-34ec1efa]{position:relative;background-color:\"[theme:white, default: #ffffff]\";box-sizing:border-box;outline:1px solid transparent;z-index:5;min-height:10px}.ms-ContextualHost-close[data-v-34ec1efa]{margin:0;border:0;background:0 0;cursor:pointer;position:absolute;top:12px;right:12px;padding:8px;width:32px;height:32px;font-size:14px;color:\"[theme:neutralSecondary, default: #666666]\";z-index:10}.ms-ContextualHost.ms-ContextualHost--close .ms-ContextualHost-title[data-v-34ec1efa]{margin-right:20px}.ms-ContextualHost.ms-ContextualHost--primaryArrow .ms-ContextualHost-beak[data-v-34ec1efa]{background-color:\"[theme:themePrimary, default: #0078d7]\"}@media (min-width:480px){.ms-ContextualHost[data-v-34ec1efa]{margin:16px}.ms-ContextualHost.is-positioned[data-v-34ec1efa]{margin:0}.ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-34ec1efa],.ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-34ec1efa]{display:block}}.ms-Icon.ms-Icon--Clear[data-v-34ec1efa]{content:url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"14\" height=\"14\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M1115 1024l914 -915l-90 -90l-915 914l-915 -914l-90 90l914 915l-914 915l90 90l915 -914l915 914l90 -90z\" fill=\"black\" stroke=\"none\"/></svg>')}", map: undefined, media: undefined });
+
+  };
+  /* scoped */
+  const __vue_scope_id__$3 = "data-v-34ec1efa";
+  /* module identifier */
+  const __vue_module_identifier__$3 = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$3 = undefined;
+  /* style inject */
+  const __vue_create_injector__$1 = function(context){ return function(scopeId, data){__vue_script__$3.loadStyles && __vue_script__$3.loadStyles(data.source);}};
+  /* style inject SSR */
+  
+
+  
+  var uiCallout = normalizeComponent_1(
+    {},
+    __vue_inject_styles__$3,
+    __vue_script__$3,
+    __vue_scope_id__$3,
+    __vue_is_functional_template__$3,
+    __vue_module_identifier__$3,
+    __vue_create_injector__$1,
+    undefined
+  );
+
+//
+var script$4 = {
   name: 'ou-checkbox',
-
   mixins: [disabled],
-
   props: {
     value: Boolean
   },
-
   data: function data() {
     return {
       checkboxInstance: null
     };
   },
-
   watch: {
     value: function value() {
       this.setCheck();
     }
   },
-
   mounted: function mounted() {
     this.checkboxInstance = new this.$fabric.CheckBox(this.$refs.checkbox);
     this.setCheck();
   },
-
   methods: {
     toggle: function toggle() {
       this.$emit('input', this.checkboxInstance.getValue());
     },
-
     setCheck: function setCheck() {
-      this.value && !this.disabled ?
-        this.checkboxInstance.check() :
-        this.checkboxInstance.unCheck();
+      this.value && !this.disabled ? this.checkboxInstance.check() : this.checkboxInstance.unCheck();
     }
   }
 };
+
+/* script */
+const __vue_script__$4 = script$4;
+
+/* template */
+var __vue_render__$2 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"checkbox",staticClass:"ms-CheckBox"},[_c('input',{staticClass:"ms-CheckBox-input",attrs:{"tabindex":"-1","type":"checkbox"},on:{"click":_vm.toggle}}),_vm._v(" "),_c('label',{staticClass:"ms-CheckBox-field",class:{ 'is-disabled': _vm.disabled },attrs:{"role":"checkbox","tabindex":"0","aria-checked":"false","name":"checkbox"}},[_c('span',{staticClass:"ms-Label"},[_vm._t("default")],2)])])};
+var __vue_staticRenderFns__$2 = [];
+
+  /* style */
+  const __vue_inject_styles__$4 = undefined;
+  /* scoped */
+  const __vue_scope_id__$4 = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$4 = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$4 = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var checkbox = normalizeComponent_1(
+    { render: __vue_render__$2, staticRenderFns: __vue_staticRenderFns__$2 },
+    __vue_inject_styles__$4,
+    __vue_script__$4,
+    __vue_scope_id__$4,
+    __vue_is_functional_template__$4,
+    __vue_module_identifier__$4,
+    undefined,
+    undefined
+  );
 
 var CheckBox = function () {
   function CheckBox(container) {
@@ -809,44 +1037,74 @@ var CheckBox = function () {
   return CheckBox;
 }();
 
-var uiCheckbox = {_scopeId: 'data-v-75ed8232',
-    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-CheckBox[data-v-75ed8232] { box-sizing: border-box; color: \"[theme:neutralPrimary, default: #333333]\"; font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; font-size: 14px; font-weight: 400; min-height: 36px; position: relative; } .ms-CheckBox .ms-Label[data-v-75ed8232] { font-size: 14px; padding: 0 0 0 26px; cursor: pointer; display: inline-block; } .ms-CheckBox-input[data-v-75ed8232] { position: absolute; opacity: 0; } .ms-CheckBox-field[data-v-75ed8232]::before { content: ''; display: inline-block; border: 2px solid \"[theme:neutralTertiary, default: #a6a6a6]\"; width: 20px; height: 20px; cursor: pointer; font-weight: normal; position: absolute; box-sizing: border-box; transition-property: background, border, border-color; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.4, 0, 0.23, 1); } .ms-CheckBox-field[data-v-75ed8232]::after { content: \"\\E73E\"; font-family: 'FabricMDL2Icons'; display: none; position: absolute; font-weight: 900; background-color: transparent; font-size: 13px; top: 0; color: \"[theme:white, default: #ffffff]\"; line-height: 20px; width: 20px; text-align: center; } @media screen and (-ms-high-contrast: active) { .ms-CheckBox-field[data-v-75ed8232]::after { color: \"[theme:black, default: #000000]\"; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-CheckBox-field[data-v-75ed8232]::after { color: \"[theme:white, default: #ffffff]\"; } } .ms-CheckBox-field[data-v-75ed8232] { display: inline-block; cursor: pointer; margin-top: 8px; position: relative; outline: 0; vertical-align: top; } .ms-CheckBox-field[data-v-75ed8232]:hover::before, .ms-CheckBox-field[data-v-75ed8232]:focus::before { border-color: \"[theme:neutralSecondaryAlt, default: #767676]\"; } .ms-CheckBox-field:hover .ms-Label[data-v-75ed8232], .ms-CheckBox-field:focus .ms-Label[data-v-75ed8232] { color: \"[theme:black, default: #000000]\"; } .ms-CheckBox-field.is-disabled[data-v-75ed8232] { cursor: default; } .ms-CheckBox-field.is-disabled[data-v-75ed8232]::before { background-color: \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; border-color: \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; color: \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; } @media screen and (-ms-high-contrast: active) { .ms-CheckBox-field.is-disabled[data-v-75ed8232]::before { border-color: #00ff00; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-CheckBox-field.is-disabled[data-v-75ed8232]::before { border-color: #600000; } } .ms-CheckBox-field.is-disabled .ms-Label[data-v-75ed8232] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } @media screen and (-ms-high-contrast: active) { .ms-CheckBox-field.is-disabled .ms-Label[data-v-75ed8232] { color: #00ff00; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-CheckBox-field.is-disabled .ms-Label[data-v-75ed8232] { color: #600000; } } .ms-CheckBox-field.in-focus[data-v-75ed8232]::before { border-color: \"[theme:neutralSecondaryAlt, default: #767676]\"; } .ms-CheckBox-field.in-focus.is-disabled[data-v-75ed8232]::before { border-color: \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; } .ms-CheckBox-field.in-focus.is-checked[data-v-75ed8232]::before { border-color: \"[theme:themeDarkAlt, default: #106ebe]\"; } .ms-CheckBox-field.is-checked[data-v-75ed8232]::before { border: 10px solid \"[theme:themePrimary, default: #0078d7]\"; background-color: \"[theme:themePrimary, default: #0078d7]\"; } @media screen and (-ms-high-contrast: active) { .ms-CheckBox-field.is-checked[data-v-75ed8232]::before { border-color: #1AEBFF; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-CheckBox-field.is-checked[data-v-75ed8232]::before { border-color: #37006E; } } .ms-CheckBox-field.is-checked[data-v-75ed8232]::after { display: block; } .ms-CheckBox-field.is-checked[data-v-75ed8232]:hover::before, .ms-CheckBox-field.is-checked[data-v-75ed8232]:focus::before { border-color: \"[theme:themeDarkAlt, default: #106ebe]\"; } .ms-CheckBox-field[data-v-75ed8232]::after { content: url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"16\" height=\"16\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path transform=\"translate(0, 2048) scale(1, -1)\" d=\"M1837 1491l-1069 -1070l-557 558l90 90l467 -466l979 978z\" fill=\"white\" stroke=\"none\"/></svg>') !important; } ");},
-    beforeMount: function beforeMount(){ 
-        this.$fabric = { 
-            CheckBox : CheckBox 
-        }; 
-    },
-    extends :  checkbox
-}
+var script$5 = {
+  loadStyles: loadStyles,
+  beforeMount: function beforeMount() {
+    this.$fabric = {
+      CheckBox: CheckBox
+    };
+  },
+  extends: checkbox
+};
 
-var ChoiceField = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('li',{staticClass:"ms-RadioButton"},[_c('input',{staticClass:"ms-RadioButton-input",attrs:{"tabindex":"-1","type":"radio"}}),_vm._v(" "),_c('label',{ref:"radioLabel",staticClass:"ms-RadioButton-field",class:{ 'is-disabled': _vm.disabled },attrs:{"role":"radio","tabindex":"0","aria-checked":"false","name":"choicefieldgroup"},on:{"click":_vm.updateParentValue}},[_c('span',{staticClass:"ms-Label"},[_vm._t("default")],2)])])},staticRenderFns: [],
+/* script */
+const __vue_script__$5 = script$5;
+
+/* template */
+
+  /* style */
+  const __vue_inject_styles__$5 = function (inject) {
+    if (!inject) return
+    inject("data-v-6f8d4ca5_0", { source: "@charset \"UTF-8\";.ms-CheckBox[data-v-6f8d4ca5]{box-sizing:border-box;color:\"[theme:neutralPrimary, default: #333333]\";font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;font-size:14px;font-weight:400;min-height:36px;position:relative}.ms-CheckBox .ms-Label[data-v-6f8d4ca5]{font-size:14px;padding:0 0 0 26px;cursor:pointer;display:inline-block}.ms-CheckBox-input[data-v-6f8d4ca5]{position:absolute;opacity:0}.ms-CheckBox-field[data-v-6f8d4ca5]::before{content:\"\";display:inline-block;border:2px solid \"[theme:neutralTertiary, default: #a6a6a6]\";width:20px;height:20px;cursor:pointer;font-weight:400;position:absolute;box-sizing:border-box;transition-property:background,border,border-color;transition-duration:.2s;transition-timing-function:cubic-bezier(.4,0,.23,1)}.ms-CheckBox-field[data-v-6f8d4ca5]::after{content:\"\";font-family:FabricMDL2Icons;display:none;position:absolute;font-weight:900;background-color:transparent;font-size:13px;top:0;color:\"[theme:white, default: #ffffff]\";line-height:20px;width:20px;text-align:center}@media screen and (-ms-high-contrast:active){.ms-CheckBox-field[data-v-6f8d4ca5]::after{color:\"[theme:black, default: #000000]\"}}@media screen and (-ms-high-contrast:black-on-white){.ms-CheckBox-field[data-v-6f8d4ca5]::after{color:\"[theme:white, default: #ffffff]\"}}.ms-CheckBox-field[data-v-6f8d4ca5]{display:inline-block;cursor:pointer;margin-top:8px;position:relative;outline:0;vertical-align:top}.ms-CheckBox-field[data-v-6f8d4ca5]:focus::before,.ms-CheckBox-field[data-v-6f8d4ca5]:hover::before{border-color:\"[theme:neutralSecondaryAlt, default: #767676]\"}.ms-CheckBox-field:focus .ms-Label[data-v-6f8d4ca5],.ms-CheckBox-field:hover .ms-Label[data-v-6f8d4ca5]{color:\"[theme:black, default: #000000]\"}.ms-CheckBox-field.is-disabled[data-v-6f8d4ca5]{cursor:default}.ms-CheckBox-field.is-disabled[data-v-6f8d4ca5]::before{background-color:\"[theme:neutralTertiaryAlt, default: #c8c8c8]\";border-color:\"[theme:neutralTertiaryAlt, default: #c8c8c8]\";color:\"[theme:neutralTertiaryAlt, default: #c8c8c8]\"}@media screen and (-ms-high-contrast:active){.ms-CheckBox-field.is-disabled[data-v-6f8d4ca5]::before{border-color:#0f0}}@media screen and (-ms-high-contrast:black-on-white){.ms-CheckBox-field.is-disabled[data-v-6f8d4ca5]::before{border-color:#600000}}.ms-CheckBox-field.is-disabled .ms-Label[data-v-6f8d4ca5]{color:\"[theme:neutralTertiary, default: #a6a6a6]\"}@media screen and (-ms-high-contrast:active){.ms-CheckBox-field.is-disabled .ms-Label[data-v-6f8d4ca5]{color:#0f0}}@media screen and (-ms-high-contrast:black-on-white){.ms-CheckBox-field.is-disabled .ms-Label[data-v-6f8d4ca5]{color:#600000}}.ms-CheckBox-field.in-focus[data-v-6f8d4ca5]::before{border-color:\"[theme:neutralSecondaryAlt, default: #767676]\"}.ms-CheckBox-field.in-focus.is-disabled[data-v-6f8d4ca5]::before{border-color:\"[theme:neutralTertiaryAlt, default: #c8c8c8]\"}.ms-CheckBox-field.in-focus.is-checked[data-v-6f8d4ca5]::before{border-color:\"[theme:themeDarkAlt, default: #106ebe]\"}.ms-CheckBox-field.is-checked[data-v-6f8d4ca5]::before{border:10px solid \"[theme:themePrimary, default: #0078d7]\";background-color:\"[theme:themePrimary, default: #0078d7]\"}@media screen and (-ms-high-contrast:active){.ms-CheckBox-field.is-checked[data-v-6f8d4ca5]::before{border-color:#1aebff}}@media screen and (-ms-high-contrast:black-on-white){.ms-CheckBox-field.is-checked[data-v-6f8d4ca5]::before{border-color:#37006e}}.ms-CheckBox-field.is-checked[data-v-6f8d4ca5]::after{display:block}.ms-CheckBox-field.is-checked[data-v-6f8d4ca5]:focus::before,.ms-CheckBox-field.is-checked[data-v-6f8d4ca5]:hover::before{border-color:\"[theme:themeDarkAlt, default: #106ebe]\"}.ms-CheckBox-field[data-v-6f8d4ca5]::after{content:url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"16\" height=\"16\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path transform=\"translate(0, 2048) scale(1, -1)\" d=\"M1837 1491l-1069 -1070l-557 558l90 90l467 -466l979 978z\" fill=\"white\" stroke=\"none\"/></svg>')!important}", map: undefined, media: undefined });
+
+  };
+  /* scoped */
+  const __vue_scope_id__$5 = "data-v-6f8d4ca5";
+  /* module identifier */
+  const __vue_module_identifier__$5 = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$5 = undefined;
+  /* style inject */
+  const __vue_create_injector__$2 = function(context){ return function(scopeId, data){__vue_script__$5.loadStyles && __vue_script__$5.loadStyles(data.source);}};
+  /* style inject SSR */
+  
+
+  
+  var uiCheckbox = normalizeComponent_1(
+    {},
+    __vue_inject_styles__$5,
+    __vue_script__$5,
+    __vue_scope_id__$5,
+    __vue_is_functional_template__$5,
+    __vue_module_identifier__$5,
+    __vue_create_injector__$2,
+    undefined
+  );
+
+//
+var script$6 = {
   name: 'ou-choice-field',
-
   mixins: [disabled],
-
   inject: ['eventHub'],
-
   props: {
     value: [String, Number]
   },
-
   created: function created() {
     this.eventHub.$on('setChoiceField', this.setChoiceField);
   },
-
   beforeDestroy: function beforeDestroy() {
     this.eventHub.$off('setChoiceField', this.setChoiceField);
   },
-
   methods: {
     updateParentValue: function updateParentValue() {
       if (!this.disabled) {
         this.eventHub.$emit('updateValue', this.value);
       }
     },
-
     setChoiceField: function setChoiceField(value) {
-      if (this.disabled) { return; }
+      if (this.disabled) {
+        return;
+      }
 
       if (this.value == value) {
         this.$refs.radioLabel.classList.add('is-checked');
@@ -857,12 +1115,74 @@ var ChoiceField = {render: function(){var _vm=this;var _h=_vm.$createElement;var
   }
 };
 
-var uiChoiceField = {
-    extends :  ChoiceField,
-    created: function created(){
-        this.$options._scopeId = this.$parent.$options._scopeId;
-    }
-}
+/* script */
+const __vue_script__$6 = script$6;
+
+/* template */
+var __vue_render__$3 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('li',{staticClass:"ms-RadioButton"},[_c('input',{staticClass:"ms-RadioButton-input",attrs:{"tabindex":"-1","type":"radio"}}),_vm._v(" "),_c('label',{ref:"radioLabel",staticClass:"ms-RadioButton-field",class:{ 'is-disabled': _vm.disabled },attrs:{"role":"radio","tabindex":"0","aria-checked":"false","name":"choicefieldgroup"},on:{"click":_vm.updateParentValue}},[_c('span',{staticClass:"ms-Label"},[_vm._t("default")],2)])])};
+var __vue_staticRenderFns__$3 = [];
+
+  /* style */
+  const __vue_inject_styles__$6 = undefined;
+  /* scoped */
+  const __vue_scope_id__$6 = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$6 = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$6 = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var ChoiceField = normalizeComponent_1(
+    { render: __vue_render__$3, staticRenderFns: __vue_staticRenderFns__$3 },
+    __vue_inject_styles__$6,
+    __vue_script__$6,
+    __vue_scope_id__$6,
+    __vue_is_functional_template__$6,
+    __vue_module_identifier__$6,
+    undefined,
+    undefined
+  );
+
+var script$7 = {
+  extends: ChoiceField,
+  created: function created() {
+    this.$options._scopeId = this.$parent.$options._scopeId;
+  }
+};
+
+/* script */
+const __vue_script__$7 = script$7;
+
+/* template */
+
+  /* style */
+  const __vue_inject_styles__$7 = undefined;
+  /* scoped */
+  const __vue_scope_id__$7 = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$7 = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$7 = undefined;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var uiChoiceField = normalizeComponent_1(
+    {},
+    __vue_inject_styles__$7,
+    __vue_script__$7,
+    __vue_scope_id__$7,
+    __vue_is_functional_template__$7,
+    __vue_module_identifier__$7,
+    undefined,
+    undefined
+  );
 
 var eventHub = {
   data: function data() {
@@ -877,39 +1197,32 @@ var eventHub = {
   }
 };
 
-var ChoiceFieldGroup = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"choiceFieldGroup",staticClass:"ms-ChoiceFieldGroup",attrs:{"id":"choicefieldgroup","role":"radiogroup"}},[_c('div',{staticClass:"ms-ChoiceFieldGroup-title"},[_vm._t("title")],2),_vm._v(" "),_c('ul',{staticClass:"ms-ChoiceFieldGroup-list"},[_vm._t("default")],2)])},staticRenderFns: [],
+//
+var script$8 = {
   name: 'ou-choice-field-group',
-
   mixins: [eventHub],
-
   props: {
     value: [String, Number]
   },
-
   watch: {
     value: function value() {
       this.setChoiceFields();
     }
   },
-
   created: function created() {
     this.eventHub.$on('updateValue', this.updateValue);
   },
-
   beforeDestroy: function beforeDestroy() {
     this.eventHub.$off('updateValue', this.updateValue);
   },
-
   mounted: function mounted() {
     this.setChoiceFields();
     new this.$fabric.ChoiceFieldGroup(this.$refs.choiceFieldGroup);
   },
-
   methods: {
     updateValue: function updateValue(value) {
       this.$emit('input', value);
     },
-
     setChoiceFields: function setChoiceFields() {
       if (typeof this.value != 'undefined') {
         this.eventHub.$emit('setChoiceField', this.value);
@@ -917,6 +1230,38 @@ var ChoiceFieldGroup = {render: function(){var _vm=this;var _h=_vm.$createElemen
     }
   }
 };
+
+/* script */
+const __vue_script__$8 = script$8;
+
+/* template */
+var __vue_render__$4 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"choiceFieldGroup",staticClass:"ms-ChoiceFieldGroup",attrs:{"id":"choicefieldgroup","role":"radiogroup"}},[_c('div',{staticClass:"ms-ChoiceFieldGroup-title"},[_vm._t("title")],2),_vm._v(" "),_c('ul',{staticClass:"ms-ChoiceFieldGroup-list"},[_vm._t("default")],2)])};
+var __vue_staticRenderFns__$4 = [];
+
+  /* style */
+  const __vue_inject_styles__$8 = undefined;
+  /* scoped */
+  const __vue_scope_id__$8 = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$8 = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$8 = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var ChoiceFieldGroup = normalizeComponent_1(
+    { render: __vue_render__$4, staticRenderFns: __vue_staticRenderFns__$4 },
+    __vue_inject_styles__$8,
+    __vue_script__$8,
+    __vue_scope_id__$8,
+    __vue_is_functional_template__$8,
+    __vue_module_identifier__$8,
+    undefined,
+    undefined
+  );
 
 var RadioButton = function () {
   function RadioButton(container) {
@@ -1065,89 +1410,147 @@ var ChoiceFieldGroup$1 = function () {
   return ChoiceFieldGroup;
 }();
 
-var uiChoiceFieldGroup = {_scopeId: 'data-v-9afc786c',
-    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-RadioButton[data-v-9afc786c] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 14px; font-weight: 400; min-height: 36px; position: relative; } .ms-RadioButton .ms-Label[data-v-9afc786c] { font-size: 14px; padding: 0 0 0 26px; cursor: pointer; display: inline-block; } .ms-RadioButton-input[data-v-9afc786c] { position: absolute; opacity: 0; } .ms-RadioButton-field[data-v-9afc786c]::before { content: ''; display: inline-block; border: 2px solid \"[theme:neutralTertiary, default: #a6a6a6]\"; width: 20px; height: 20px; cursor: pointer; font-weight: normal; position: absolute; box-sizing: border-box; transition-property: border-color; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.4, 0, 0.23, 1); border-radius: 50%; } .ms-RadioButton-field[data-v-9afc786c]::after { content: ''; width: 0; height: 0; border-radius: 50%; position: absolute; top: 8px; left: 8px; bottom: 0; right: 0; transition-property: top, left, width, height; transition-duration: 150ms; transition-timing-function: cubic-bezier(0.4, 0, 0.23, 1); box-sizing: border-box; } @media screen and (-ms-high-contrast: active) { .ms-RadioButton-field[data-v-9afc786c]::after { color: #00ff00; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-RadioButton-field[data-v-9afc786c]::after { color: #600000; } } .ms-RadioButton-field[data-v-9afc786c] { display: inline-block; cursor: pointer; margin-top: 8px; position: relative; outline: 0; vertical-align: top; } .ms-RadioButton-field[data-v-9afc786c]:hover::before, .ms-RadioButton-field[data-v-9afc786c]:focus::before { border-color: \"[theme:neutralSecondaryAlt, default: #767676]\"; } .ms-RadioButton-field:hover .ms-Label[data-v-9afc786c], .ms-RadioButton-field:focus .ms-Label[data-v-9afc786c] { color: \"[theme:black, default: #000000]\"; } .ms-RadioButton-field.is-disabled[data-v-9afc786c] { cursor: default; } .ms-RadioButton-field.is-disabled[data-v-9afc786c]::before { background-color: \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; border-color: \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; color: \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; } @media screen and (-ms-high-contrast: active) { .ms-RadioButton-field.is-disabled[data-v-9afc786c]::before { border-color: #00ff00; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-RadioButton-field.is-disabled[data-v-9afc786c]::before { border-color: #600000; } } .ms-RadioButton-field.is-disabled .ms-Label[data-v-9afc786c] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } @media screen and (-ms-high-contrast: active) { .ms-RadioButton-field.is-disabled .ms-Label[data-v-9afc786c] { color: #00ff00; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-RadioButton-field.is-disabled .ms-Label[data-v-9afc786c] { color: #600000; } } .ms-RadioButton-field.is-disabled[data-v-9afc786c]:hover::before, .ms-RadioButton-field.is-disabled[data-v-9afc786c]:focus::before { border-color: \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; } .ms-RadioButton-field.in-focus[data-v-9afc786c]::before { border-color: \"[theme:neutralSecondaryAlt, default: #767676]\"; } .ms-RadioButton-field.is-checked[data-v-9afc786c]::before { border: 2px solid \"[theme:themePrimary, default: #0078d7]\"; background-color: transparent; } @media screen and (-ms-high-contrast: active) { .ms-RadioButton-field.is-checked[data-v-9afc786c]::before { border-color: #1AEBFF; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-RadioButton-field.is-checked[data-v-9afc786c]::before { border-color: #37006E; } } .ms-RadioButton-field.is-checked[data-v-9afc786c]::after { background-color: \"[theme:themePrimary, default: #0078d7]\"; top: 5px; left: 5px; width: 10px; height: 10px; } @media screen and (-ms-high-contrast: active) { .ms-RadioButton-field.is-checked[data-v-9afc786c]::after { background-color: #1AEBFF; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-RadioButton-field.is-checked[data-v-9afc786c]::after { background-color: #37006E; } } .ms-RadioButton-field.is-checked[data-v-9afc786c]:hover::before, .ms-RadioButton-field.is-checked[data-v-9afc786c]:focus::before { border-color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-RadioButton-field.is-checked.in-focus[data-v-9afc786c]::before { border-color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-ChoiceFieldGroup[data-v-9afc786c] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; margin-bottom: 4px; } .ms-ChoiceFieldGroup .ms-ChoiceFieldGroup-list[data-v-9afc786c] { padding: 0; margin: 0; list-style: none; } ");},
-    beforeMount: function beforeMount(){ 
-        this.$fabric = { 
-            ChoiceFieldGroup : ChoiceFieldGroup$1 
-        }; 
-    },
-    extends :  ChoiceFieldGroup
-}
+var script$9 = {
+  loadStyles: loadStyles,
+  beforeMount: function beforeMount() {
+    this.$fabric = {
+      ChoiceFieldGroup: ChoiceFieldGroup$1
+    };
+  },
+  extends: ChoiceFieldGroup
+};
 
-var ContextualMenu = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"inline-block"},[_c('span',{ref:"contextualMenuTrigger",staticClass:"inline-block"},[_vm._t("default")],2),_vm._v(" "),_c('ul',{ref:"contextualMenu",staticClass:"ms-ContextualMenu is-hidden",class:_vm.contextualMenuClass},[_vm._t("list")],2)])},staticRenderFns: [],_scopeId: 'data-v-4d60802a',
-    name: 'ou-contextual-menu',
+/* script */
+const __vue_script__$9 = script$9;
 
-    mixins: [type('multiselect'), eventHub],
+/* template */
 
-    props: {
-      value: {
-        type: Array,
-        default: function default$1() {
-          return [];
-        }
-      }
-    },
+  /* style */
+  const __vue_inject_styles__$9 = function (inject) {
+    if (!inject) return
+    inject("data-v-fcb13a6e_0", { source: ".ms-RadioButton[data-v-fcb13a6e]{font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;box-sizing:border-box;color:\"[theme:neutralPrimary, default: #333333]\";font-size:14px;font-weight:400;min-height:36px;position:relative}.ms-RadioButton .ms-Label[data-v-fcb13a6e]{font-size:14px;padding:0 0 0 26px;cursor:pointer;display:inline-block}.ms-RadioButton-input[data-v-fcb13a6e]{position:absolute;opacity:0}.ms-RadioButton-field[data-v-fcb13a6e]::before{content:\"\";display:inline-block;border:2px solid \"[theme:neutralTertiary, default: #a6a6a6]\";width:20px;height:20px;cursor:pointer;font-weight:400;position:absolute;box-sizing:border-box;transition-property:border-color;transition-duration:.2s;transition-timing-function:cubic-bezier(.4,0,.23,1);border-radius:50%}.ms-RadioButton-field[data-v-fcb13a6e]::after{content:\"\";width:0;height:0;border-radius:50%;position:absolute;top:8px;left:8px;bottom:0;right:0;transition-property:top,left,width,height;transition-duration:150ms;transition-timing-function:cubic-bezier(.4,0,.23,1);box-sizing:border-box}@media screen and (-ms-high-contrast:active){.ms-RadioButton-field[data-v-fcb13a6e]::after{color:#0f0}}@media screen and (-ms-high-contrast:black-on-white){.ms-RadioButton-field[data-v-fcb13a6e]::after{color:#600000}}.ms-RadioButton-field[data-v-fcb13a6e]{display:inline-block;cursor:pointer;margin-top:8px;position:relative;outline:0;vertical-align:top}.ms-RadioButton-field[data-v-fcb13a6e]:focus::before,.ms-RadioButton-field[data-v-fcb13a6e]:hover::before{border-color:\"[theme:neutralSecondaryAlt, default: #767676]\"}.ms-RadioButton-field:focus .ms-Label[data-v-fcb13a6e],.ms-RadioButton-field:hover .ms-Label[data-v-fcb13a6e]{color:\"[theme:black, default: #000000]\"}.ms-RadioButton-field.is-disabled[data-v-fcb13a6e]{cursor:default}.ms-RadioButton-field.is-disabled[data-v-fcb13a6e]::before{background-color:\"[theme:neutralTertiaryAlt, default: #c8c8c8]\";border-color:\"[theme:neutralTertiaryAlt, default: #c8c8c8]\";color:\"[theme:neutralTertiaryAlt, default: #c8c8c8]\"}@media screen and (-ms-high-contrast:active){.ms-RadioButton-field.is-disabled[data-v-fcb13a6e]::before{border-color:#0f0}}@media screen and (-ms-high-contrast:black-on-white){.ms-RadioButton-field.is-disabled[data-v-fcb13a6e]::before{border-color:#600000}}.ms-RadioButton-field.is-disabled .ms-Label[data-v-fcb13a6e]{color:\"[theme:neutralTertiary, default: #a6a6a6]\"}@media screen and (-ms-high-contrast:active){.ms-RadioButton-field.is-disabled .ms-Label[data-v-fcb13a6e]{color:#0f0}}@media screen and (-ms-high-contrast:black-on-white){.ms-RadioButton-field.is-disabled .ms-Label[data-v-fcb13a6e]{color:#600000}}.ms-RadioButton-field.is-disabled[data-v-fcb13a6e]:focus::before,.ms-RadioButton-field.is-disabled[data-v-fcb13a6e]:hover::before{border-color:\"[theme:neutralTertiaryAlt, default: #c8c8c8]\"}.ms-RadioButton-field.in-focus[data-v-fcb13a6e]::before{border-color:\"[theme:neutralSecondaryAlt, default: #767676]\"}.ms-RadioButton-field.is-checked[data-v-fcb13a6e]::before{border:2px solid \"[theme:themePrimary, default: #0078d7]\";background-color:transparent}@media screen and (-ms-high-contrast:active){.ms-RadioButton-field.is-checked[data-v-fcb13a6e]::before{border-color:#1aebff}}@media screen and (-ms-high-contrast:black-on-white){.ms-RadioButton-field.is-checked[data-v-fcb13a6e]::before{border-color:#37006e}}.ms-RadioButton-field.is-checked[data-v-fcb13a6e]::after{background-color:\"[theme:themePrimary, default: #0078d7]\";top:5px;left:5px;width:10px;height:10px}@media screen and (-ms-high-contrast:active){.ms-RadioButton-field.is-checked[data-v-fcb13a6e]::after{background-color:#1aebff}}@media screen and (-ms-high-contrast:black-on-white){.ms-RadioButton-field.is-checked[data-v-fcb13a6e]::after{background-color:#37006e}}.ms-RadioButton-field.is-checked[data-v-fcb13a6e]:focus::before,.ms-RadioButton-field.is-checked[data-v-fcb13a6e]:hover::before{border-color:\"[theme:themePrimary, default: #0078d7]\"}.ms-RadioButton-field.is-checked.in-focus[data-v-fcb13a6e]::before{border-color:\"[theme:themePrimary, default: #0078d7]\"}.ms-ChoiceFieldGroup[data-v-fcb13a6e]{font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;margin-bottom:4px}.ms-ChoiceFieldGroup .ms-ChoiceFieldGroup-list[data-v-fcb13a6e]{padding:0;margin:0;list-style:none}", map: undefined, media: undefined });
 
-    computed: {
-      contextualMenuClass: function contextualMenuClass() {
-        var obj;
+  };
+  /* scoped */
+  const __vue_scope_id__$9 = "data-v-fcb13a6e";
+  /* module identifier */
+  const __vue_module_identifier__$9 = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$9 = undefined;
+  /* style inject */
+  const __vue_create_injector__$3 = function(context){ return function(scopeId, data){__vue_script__$9.loadStyles && __vue_script__$9.loadStyles(data.source);}};
+  /* style inject SSR */
+  
 
-        return ( obj = {}, obj[("ms-ContextualMenu--" + (this.type))] = !!this.type, obj );
-      }
-    },
+  
+  var uiChoiceFieldGroup = normalizeComponent_1(
+    {},
+    __vue_inject_styles__$9,
+    __vue_script__$9,
+    __vue_scope_id__$9,
+    __vue_is_functional_template__$9,
+    __vue_module_identifier__$9,
+    __vue_create_injector__$3,
+    undefined
+  );
 
-    watch: {
-      value: function value() {
-        this.setChildrenValue();
-      }
-    },
-
-    created: function created() {
-      this.eventHub.$on('updateValue', this.updateValue);
-    },
-	data: function data(){
-		return {
-			contextualMenuInstance : null
-		}
-	},
-    mounted: function mounted() {
-      this.setChildrenValue();
-
-      this.contextualMenuInstance = new this.$fabric.ContextualMenu(
-        this.$refs.contextualMenu,
-        this.$refs.contextualMenuTrigger
-      );
-    },
-
-    beforeDestroy: function beforeDestroy() {
-      this.eventHub.$off('updateValue', this.updateValue);
-    },
-
-    methods: {
-      setChildrenValue: function setChildrenValue() {
-        if (this.type == 'multiselect') {
-          this.eventHub.$emit('setSelected', this.value);
-        }
-      },
-
-      updateValue: function updateValue(value) {
-        if (this.type != 'multiselect') { return; }
-
-        var newValue;
-
-        if (this.value.includes(value)) {
-          newValue = this.value.filter(function (item) {
-            return item !== value;
-          });
-        } else {
-          newValue = this.value.concat(value);
-        }
-
-        this.$emit('input', newValue);
+var script$a = {
+  name: 'ou-contextual-menu',
+  mixins: [type('multiselect'), eventHub],
+  props: {
+    value: {
+      type: Array,
+      default: function _default() {
+        return [];
       }
     }
+  },
+  computed: {
+    contextualMenuClass: function contextualMenuClass() {
+      return _defineProperty({}, "ms-ContextualMenu--".concat(this.type), !!this.type);
+    }
+  },
+  watch: {
+    value: function value() {
+      this.setChildrenValue();
+    }
+  },
+  created: function created() {
+    this.eventHub.$on('updateValue', this.updateValue);
+  },
+  data: function data() {
+    return {
+      contextualMenuInstance: null
+    };
+  },
+  mounted: function mounted() {
+    this.setChildrenValue();
+    this.contextualMenuInstance = new this.$fabric.ContextualMenu(this.$refs.contextualMenu, this.$refs.contextualMenuTrigger);
+  },
+  beforeDestroy: function beforeDestroy() {
+    this.eventHub.$off('updateValue', this.updateValue);
+  },
+  methods: {
+    setChildrenValue: function setChildrenValue() {
+      if (this.type == 'multiselect') {
+        this.eventHub.$emit('setSelected', this.value);
+      }
+    },
+    updateValue: function updateValue(value) {
+      if (this.type != 'multiselect') {
+        return;
+      }
+
+      var newValue;
+
+      if (this.value.indexOf(value) !== -1) {
+        newValue = this.value.filter(function (item) {
+          return item !== value;
+        });
+      } else {
+        newValue = this.value.concat(value);
+      }
+
+      this.$emit('input', newValue);
+    }
+  }
+};
+
+/* script */
+const __vue_script__$a = script$a;
+
+/* template */
+var __vue_render__$5 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"inline-block"},[_c('span',{ref:"contextualMenuTrigger",staticClass:"inline-block"},[_vm._t("default")],2),_vm._v(" "),_c('ul',{ref:"contextualMenu",staticClass:"ms-ContextualMenu is-hidden",class:_vm.contextualMenuClass},[_vm._t("list")],2)])};
+var __vue_staticRenderFns__$5 = [];
+
+  /* style */
+  const __vue_inject_styles__$a = function (inject) {
+    if (!inject) return
+    inject("data-v-3132f7cc_0", { source: ".inline-block[data-v-3132f7cc]{display:inline-block}", map: undefined, media: undefined });
+
   };
+  /* scoped */
+  const __vue_scope_id__$a = "data-v-3132f7cc";
+  /* module identifier */
+  const __vue_module_identifier__$a = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$a = false;
+  /* style inject */
+  const __vue_create_injector__$4 = function(context){ return function(scopeId, data){__vue_script__$a.loadStyles && __vue_script__$a.loadStyles(data.source);}};
+  /* style inject SSR */
+  
+
+  
+  var ContextualMenu = normalizeComponent_1(
+    { render: __vue_render__$5, staticRenderFns: __vue_staticRenderFns__$5 },
+    __vue_inject_styles__$a,
+    __vue_script__$a,
+    __vue_scope_id__$a,
+    __vue_is_functional_template__$a,
+    __vue_module_identifier__$a,
+    __vue_create_injector__$4,
+    undefined
+  );
 
 var MODAL_POSITION = "bottom";
 var SUBMENU_POSITION = "right";
@@ -1281,82 +1684,105 @@ var ContextualMenu$1 = function () {
   return ContextualMenu;
 }();
 
-var uiContextualMenu = {_scopeId: 'data-v-94d26018',
-    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-ContextualMenu[data-v-94d26018] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 14px; font-weight: 400; display: block; min-width: 180px; max-width: 220px; list-style-type: none; position: relative; background-color: \"[theme:white, default: #ffffff]\"; } .ms-ContextualMenu.is-hidden[data-v-94d26018] { display: none; } .ms-ContextualMenu-item[data-v-94d26018] { position: relative; } .ms-ContextualMenu-link[data-v-94d26018] { box-sizing: border-box; text-decoration: none; color: \"[theme:neutralPrimary, default: #333333]\"; border: 1px solid transparent; cursor: pointer; display: block; height: 36px; overflow: hidden; line-height: 34px; padding: 0 16px 0 25px; position: relative; text-overflow: ellipsis; white-space: nowrap; } .ms-ContextualMenu-link[data-v-94d26018]:hover, .ms-ContextualMenu-link[data-v-94d26018]:active, .ms-ContextualMenu-link[data-v-94d26018]:focus { background-color: \"[theme:neutralLighter, default: #f4f4f4]\"; color: \"[theme:neutralDark, default: #212121]\"; } .ms-ContextualMenu-link:hover .ms-ContextualMenu-subMenuIcon[data-v-94d26018], .ms-ContextualMenu-link:active .ms-ContextualMenu-subMenuIcon[data-v-94d26018], .ms-ContextualMenu-link:focus .ms-ContextualMenu-subMenuIcon[data-v-94d26018] { color: \"[theme:neutralDark, default: #212121]\"; } .ms-ContextualMenu-link[data-v-94d26018]:focus { outline: transparent; border: 1px solid \"[theme:neutralSecondary, default: #666666]\"; } .ms-ContextualMenu-link.is-selected[data-v-94d26018] { background-color: \"[theme:neutralQuaternaryAlt, default: #dadada]\"; color: \"[theme:black, default: #000000]\"; font-weight: 600; } .ms-ContextualMenu-link.is-selected ~ .ms-ContextualMenu-subMenuIcon[data-v-94d26018] { color: \"[theme:black, default: #000000]\"; } .ms-ContextualMenu-link.is-selected[data-v-94d26018]:hover { background-color: \"[theme:neutralQuaternary, default: #d0d0d0]\"; } .ms-ContextualMenu-link.is-disabled[data-v-94d26018] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; background-color: \"[theme:white, default: #ffffff]\"; pointer-events: none; } .ms-ContextualMenu-link.is-disabled[data-v-94d26018]:active, .ms-ContextualMenu-link.is-disabled[data-v-94d26018]:focus { border-color: \"[theme:white, default: #ffffff]\"; } .ms-ContextualMenu-link.is-disabled .ms-Icon[data-v-94d26018] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; pointer-events: none; cursor: default; } .ms-ContextualMenu-item.ms-ContextualMenu-item--divider[data-v-94d26018] { cursor: default; display: block; height: 1px; background-color: \"[theme:neutralLight, default: #eaeaea]\"; position: relative; } .ms-ContextualMenu-item.ms-ContextualMenu-item--header[data-v-94d26018] { color: \"[theme:themePrimary, default: #0078d7]\"; font-size: 12px; text-transform: uppercase; height: 36px; line-height: 36px; padding: 0 18px; } .ms-ContextualMenu-item.ms-ContextualMenu-item--hasMenu .ms-ContextualMenu[data-v-94d26018] { position: absolute; top: -1px; left: 178px; } .ms-ContextualMenu-subMenuIcon[data-v-94d26018], .ms-ContextualMenu-caretRight[data-v-94d26018] { color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 8px; font-weight: 600; width: 24px; height: 36px; line-height: 36px; position: absolute; text-align: center; top: 0; right: 0; z-index: 1; pointer-events: none; } .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-item.ms-ContextualMenu-item--header[data-v-94d26018] { padding: 0 16px 0 26px; } .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018] { background-color: \"[theme:white, default: #ffffff]\"; font-weight: 600; color: \"[theme:neutralPrimary, default: #333333]\"; } .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]::after { -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; display: inline-block; font-family: 'FabricMDL2Icons'; font-style: normal; font-weight: normal; speak: none; color: \"[theme:neutralPrimary, default: #333333]\"; content: '\\E73E'; font-size: 10px; font-weight: 800; height: 36px; line-height: 36px; position: absolute; left: 7px; } .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:hover, .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:focus { color: \"[theme:neutralDark, default: #212121]\"; background-color: \"[theme:neutralLighter, default: #f4f4f4]\"; } .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:hover::after, .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:focus::after { color: \"[theme:neutralDark, default: #212121]\"; } .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:active { color: \"[theme:black, default: #000000]\"; background-color: \"[theme:neutralQuaternary, default: #d0d0d0]\"; } .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-94d26018]:active::after { color: \"[theme:black, default: #000000]\"; } .ms-ContextualMenu.ms-ContextualMenu--hasIcons .ms-ContextualMenu-link[data-v-94d26018], .ms-ContextualMenu.ms-ContextualMenu--hasChecks .ms-ContextualMenu-link[data-v-94d26018] { padding-left: 40px; } .ms-ContextualMenu.ms-ContextualMenu--hasIcons .ms-Icon[data-v-94d26018], .ms-ContextualMenu.ms-ContextualMenu--hasChecks .ms-Icon[data-v-94d26018] { position: absolute; top: 50%; transform: translateY(-50%); width: 40px; text-align: center; } .ms-ContextualMenu.ms-ContextualMenu--hasIcons[data-v-94d26018] { width: 220px; } .ms-ContextualHost[data-v-94d26018] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; z-index: 10; margin: 16px auto; position: relative; min-width: 10px; display: none; background-color: \"[theme:white, default: #ffffff]\"; box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4); } .ms-ContextualHost.is-positioned[data-v-94d26018] { position: absolute; margin: 0; } .ms-ContextualHost.is-open[data-v-94d26018] { display: inline-block; } .ms-ContextualHost-beak[data-v-94d26018] { box-shadow: 0 0 15px -5px \"[theme:neutralPrimaryAlt, default: #3c3c3c]\"; position: absolute; width: 28px; height: 28px; background: \"[theme:white, default: #ffffff]\"; border: 1px solid \"[theme:neutralLight, default: #eaeaea]\"; box-sizing: border-box; top: -6px; display: none; -webkit-transform: rotate(45deg); transform: rotate(45deg); z-index: 0; outline: 1px solid transparent; } .ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-94d26018], .ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-94d26018] { top: 40px; display: none; } .ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-94d26018] { left: -10px; } .ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-94d26018] { right: -10px; } .ms-ContextualHost.ms-ContextualHost--arrowTop .ms-ContextualHost-beak[data-v-94d26018] { display: block; top: -10px; } .ms-ContextualHost.ms-ContextualHost--arrowBottom .ms-ContextualHost-beak[data-v-94d26018] { display: block; bottom: -10px; } .ms-ContextualHost-main[data-v-94d26018] { position: relative; background-color: \"[theme:white, default: #ffffff]\"; box-sizing: border-box; outline: 1px solid transparent; z-index: 5; min-height: 10px; } .ms-ContextualHost-close[data-v-94d26018] { margin: 0; border: 0; background: none; cursor: pointer; position: absolute; top: 12px; right: 12px; padding: 8px; width: 32px; height: 32px; font-size: 14px; color: \"[theme:neutralSecondary, default: #666666]\"; z-index: 10; } .ms-ContextualHost.ms-ContextualHost--close .ms-ContextualHost-title[data-v-94d26018] { margin-right: 20px; } .ms-ContextualHost.ms-ContextualHost--primaryArrow .ms-ContextualHost-beak[data-v-94d26018] { background-color: \"[theme:themePrimary, default: #0078d7]\"; } @media (min-width: 480px) { .ms-ContextualHost[data-v-94d26018] { margin: 16px; } .ms-ContextualHost.is-positioned[data-v-94d26018] { margin: 0; } .ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-94d26018], .ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-94d26018] { display: block; } } .ms-Icon.ms-Icon--ChevronRight[data-v-94d26018]::before { content: url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"8\" height=\"8\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path transform=\"translate(0, 2048) scale(1, -1)\" d=\"M515 93l930 931l-930 931l90 90l1022 -1021l-1022 -1021z\" fill=\"black\" stroke=\"none\"/></svg>'); } .ms-ContextualMenu-link.is-selected[data-v-94d26018]::after { content: url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"10\" height=\"10\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path transform=\"translate(0, 2048) scale(1, -1)\" d=\"M1837 1491l-1069 -1070l-557 558l90 90l467 -466l979 978z\" fill=\"black\" stroke=\"none\"/></svg>') !important; } ");},
-    beforeMount: function beforeMount(){
-        this.$fabric = {
-            ContextualMenu : ContextualMenu$1
-        };
-    },
-    mounted: function mounted(){
-        var this$1 = this;
+var script$b = {
+  loadStyles: loadStyles,
+  beforeMount: function beforeMount() {
+    this.$fabric = {
+      ContextualMenu: ContextualMenu$1
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
 
-        this.$refs.contextualMenuTrigger.addEventListener("click", function (){
-            
-            var setScopeIdForContextualHost = function (contextualhost) {
-                contextualhost.setAttribute(this$1.$options._scopeId,"");
-                Array.prototype.slice.call(contextualhost.children).map(function (c){ return c.setAttribute(this$1.$options._scopeId, ""); });
-                // Array.from(contextualhost.children).map(c=>c.setAttribute(this.$options._scopeId,""));
-            };
+    this.$refs.contextualMenuTrigger.addEventListener("click", function () {
+      var setScopeIdForContextualHost = function setScopeIdForContextualHost(contextualhost) {
+        contextualhost.setAttribute(_this.$options._scopeId, "");
+        Array.prototype.slice.call(contextualhost.children).map(function (c) {
+          return c.setAttribute(_this.$options._scopeId, "");
+        }); // Array.from(contextualhost.children).map(c=>c.setAttribute(this.$options._scopeId,""));
+      }; // set scopeId for contextualhost
 
-            // set scopeId for contextualhost
-            setScopeIdForContextualHost(this$1.$refs.contextualMenu.parentElement.parentElement);
 
-            // scopeId for menuItems
-            var menuItems = this$1.$refs.contextualMenu.querySelectorAll("[class^='ms-ContextualMenu']");
-            Array.prototype.slice.call(menuItems).map(function (menuItem){ return menuItem.setAttribute(this$1.$options._scopeId, ""); });
-            // Array.from(menuItems).map(menuItem=>menuItem.setAttribute(this.$options._scopeId, ""));
+      setScopeIdForContextualHost(_this.$refs.contextualMenu.parentElement.parentElement); // scopeId for menuItems
 
-            var subItems = this$1.contextualMenuInstance._container.querySelectorAll(".ms-ContextualMenu-item.ms-ContextualMenu-item--hasMenu");
-            // Array.from(subItems).map((subItem)=>{
-            Array.prototype.slice.call(menuItems).map(function (subItem){
-                subItem.addEventListener("click", function (){
-                    var contextualMenuElmInsideHost = document.querySelector((".ms-ContextualHost:not([" + (this$1.$options._scopeId) + "]) [" + (this$1.$options._scopeId) + "]"));
-                    if(contextualMenuElmInsideHost && contextualMenuElmInsideHost.parentElement.parentElement)
-                        { setScopeIdForContextualHost(contextualMenuElmInsideHost.parentElement.parentElement); }
-                    if(ContextualHost.hosts[ContextualHost.hosts.length-1])
-                        { ContextualHost.hosts[ContextualHost.hosts.length-1]._openModal(); }
-                });
-            });
+      var menuItems = _this.$refs.contextualMenu.querySelectorAll("[class^='ms-ContextualMenu']");
 
+      Array.prototype.slice.call(menuItems).map(function (menuItem) {
+        return menuItem.setAttribute(_this.$options._scopeId, "");
+      }); // Array.from(menuItems).map(menuItem=>menuItem.setAttribute(this.$options._scopeId, ""));
+
+      var subItems = _this.contextualMenuInstance._container.querySelectorAll(".ms-ContextualMenu-item.ms-ContextualMenu-item--hasMenu"); // Array.from(subItems).map((subItem)=>{
+
+
+      Array.prototype.slice.call(menuItems).map(function (subItem) {
+        subItem.addEventListener("click", function () {
+          var contextualMenuElmInsideHost = document.querySelector(".ms-ContextualHost:not([".concat(_this.$options._scopeId, "]) [").concat(_this.$options._scopeId, "]"));
+          if (contextualMenuElmInsideHost && contextualMenuElmInsideHost.parentElement.parentElement) setScopeIdForContextualHost(contextualMenuElmInsideHost.parentElement.parentElement);
+          if (ContextualHost.hosts[ContextualHost.hosts.length - 1]) ContextualHost.hosts[ContextualHost.hosts.length - 1]._openModal();
         });
-    },
-    extends :  ContextualMenu
-}
+      });
+    });
+  },
+  extends: ContextualMenu
+};
 
-var ContextualMenuItem = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('li',{staticClass:"ms-ContextualMenu-item",class:_vm.contextualMenuItemClass},[(_vm.type == 'header')?_c('span',[_vm._v(_vm._s(_vm.name))]):_vm._e(),_vm._v(" "),(_vm.hasLink)?_c('a',{staticClass:"ms-ContextualMenu-link",class:_vm.contextualMenuLinkClass,on:{"click":_vm.clickEvent}},[_vm._v(" "+_vm._s(_vm.name)+" ")]):_vm._e(),_vm._v(" "),(_vm.hasMenu)?_c('i',{staticClass:"ms-ContextualMenu-subMenuIcon ms-Icon ms-Icon--ChevronRight"}):_vm._e(),_vm._v(" "),(_vm.hasMenu)?_c('ul',{staticClass:"ms-ContextualMenu is-hidden"},[_vm._t("default")],2):_vm._e()])},staticRenderFns: [],
+/* script */
+const __vue_script__$b = script$b;
+
+/* template */
+
+  /* style */
+  const __vue_inject_styles__$b = function (inject) {
+    if (!inject) return
+    inject("data-v-c0087b9c_0", { source: "@charset \"UTF-8\";.ms-ContextualMenu[data-v-c0087b9c]{font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;box-sizing:border-box;margin:0;padding:0;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;color:\"[theme:neutralPrimary, default: #333333]\";font-size:14px;font-weight:400;display:block;min-width:180px;max-width:220px;list-style-type:none;position:relative;background-color:\"[theme:white, default: #ffffff]\"}.ms-ContextualMenu.is-hidden[data-v-c0087b9c]{display:none}.ms-ContextualMenu-item[data-v-c0087b9c]{position:relative}.ms-ContextualMenu-link[data-v-c0087b9c]{box-sizing:border-box;text-decoration:none;color:\"[theme:neutralPrimary, default: #333333]\";border:1px solid transparent;cursor:pointer;display:block;height:36px;overflow:hidden;line-height:34px;padding:0 16px 0 25px;position:relative;text-overflow:ellipsis;white-space:nowrap}.ms-ContextualMenu-link[data-v-c0087b9c]:active,.ms-ContextualMenu-link[data-v-c0087b9c]:focus,.ms-ContextualMenu-link[data-v-c0087b9c]:hover{background-color:\"[theme:neutralLighter, default: #f4f4f4]\";color:\"[theme:neutralDark, default: #212121]\"}.ms-ContextualMenu-link:active .ms-ContextualMenu-subMenuIcon[data-v-c0087b9c],.ms-ContextualMenu-link:focus .ms-ContextualMenu-subMenuIcon[data-v-c0087b9c],.ms-ContextualMenu-link:hover .ms-ContextualMenu-subMenuIcon[data-v-c0087b9c]{color:\"[theme:neutralDark, default: #212121]\"}.ms-ContextualMenu-link[data-v-c0087b9c]:focus{outline:transparent;border:1px solid \"[theme:neutralSecondary, default: #666666]\"}.ms-ContextualMenu-link.is-selected[data-v-c0087b9c]{background-color:\"[theme:neutralQuaternaryAlt, default: #dadada]\";color:\"[theme:black, default: #000000]\";font-weight:600}.ms-ContextualMenu-link.is-selected~.ms-ContextualMenu-subMenuIcon[data-v-c0087b9c]{color:\"[theme:black, default: #000000]\"}.ms-ContextualMenu-link.is-selected[data-v-c0087b9c]:hover{background-color:\"[theme:neutralQuaternary, default: #d0d0d0]\"}.ms-ContextualMenu-link.is-disabled[data-v-c0087b9c]{color:\"[theme:neutralTertiary, default: #a6a6a6]\";background-color:\"[theme:white, default: #ffffff]\";pointer-events:none}.ms-ContextualMenu-link.is-disabled[data-v-c0087b9c]:active,.ms-ContextualMenu-link.is-disabled[data-v-c0087b9c]:focus{border-color:\"[theme:white, default: #ffffff]\"}.ms-ContextualMenu-link.is-disabled .ms-Icon[data-v-c0087b9c]{color:\"[theme:neutralTertiary, default: #a6a6a6]\";pointer-events:none;cursor:default}.ms-ContextualMenu-item.ms-ContextualMenu-item--divider[data-v-c0087b9c]{cursor:default;display:block;height:1px;background-color:\"[theme:neutralLight, default: #eaeaea]\";position:relative}.ms-ContextualMenu-item.ms-ContextualMenu-item--header[data-v-c0087b9c]{color:\"[theme:themePrimary, default: #0078d7]\";font-size:12px;text-transform:uppercase;height:36px;line-height:36px;padding:0 18px}.ms-ContextualMenu-item.ms-ContextualMenu-item--hasMenu .ms-ContextualMenu[data-v-c0087b9c]{position:absolute;top:-1px;left:178px}.ms-ContextualMenu-caretRight[data-v-c0087b9c],.ms-ContextualMenu-subMenuIcon[data-v-c0087b9c]{color:\"[theme:neutralPrimary, default: #333333]\";font-size:8px;font-weight:600;width:24px;height:36px;line-height:36px;position:absolute;text-align:center;top:0;right:0;z-index:1;pointer-events:none}.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-item.ms-ContextualMenu-item--header[data-v-c0087b9c]{padding:0 16px 0 26px}.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-c0087b9c]{background-color:\"[theme:white, default: #ffffff]\";font-weight:600;color:\"[theme:neutralPrimary, default: #333333]\"}.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-c0087b9c]::after{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:inline-block;font-family:FabricMDL2Icons;font-style:normal;font-weight:400;speak:none;color:\"[theme:neutralPrimary, default: #333333]\";content:\"\";font-size:10px;font-weight:800;height:36px;line-height:36px;position:absolute;left:7px}.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-c0087b9c]:focus,.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-c0087b9c]:hover{color:\"[theme:neutralDark, default: #212121]\";background-color:\"[theme:neutralLighter, default: #f4f4f4]\"}.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-c0087b9c]:focus::after,.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-c0087b9c]:hover::after{color:\"[theme:neutralDark, default: #212121]\"}.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-c0087b9c]:active{color:\"[theme:black, default: #000000]\";background-color:\"[theme:neutralQuaternary, default: #d0d0d0]\"}.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected[data-v-c0087b9c]:active::after{color:\"[theme:black, default: #000000]\"}.ms-ContextualMenu.ms-ContextualMenu--hasChecks .ms-ContextualMenu-link[data-v-c0087b9c],.ms-ContextualMenu.ms-ContextualMenu--hasIcons .ms-ContextualMenu-link[data-v-c0087b9c]{padding-left:40px}.ms-ContextualMenu.ms-ContextualMenu--hasChecks .ms-Icon[data-v-c0087b9c],.ms-ContextualMenu.ms-ContextualMenu--hasIcons .ms-Icon[data-v-c0087b9c]{position:absolute;top:50%;transform:translateY(-50%);width:40px;text-align:center}.ms-ContextualMenu.ms-ContextualMenu--hasIcons[data-v-c0087b9c]{width:220px}.ms-ContextualHost[data-v-c0087b9c]{font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;z-index:10;margin:16px auto;position:relative;min-width:10px;display:none;background-color:\"[theme:white, default: #ffffff]\";box-shadow:0 0 5px 0 rgba(0,0,0,.4)}.ms-ContextualHost.is-positioned[data-v-c0087b9c]{position:absolute;margin:0}.ms-ContextualHost.is-open[data-v-c0087b9c]{display:inline-block}.ms-ContextualHost-beak[data-v-c0087b9c]{box-shadow:0 0 15px -5px \"[theme:neutralPrimaryAlt, default: #3c3c3c]\";position:absolute;width:28px;height:28px;background:\"[theme:white, default: #ffffff]\";border:1px solid \"[theme:neutralLight, default: #eaeaea]\";box-sizing:border-box;top:-6px;display:none;-webkit-transform:rotate(45deg);transform:rotate(45deg);z-index:0;outline:1px solid transparent}.ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-c0087b9c],.ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-c0087b9c]{top:40px;display:none}.ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-c0087b9c]{left:-10px}.ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-c0087b9c]{right:-10px}.ms-ContextualHost.ms-ContextualHost--arrowTop .ms-ContextualHost-beak[data-v-c0087b9c]{display:block;top:-10px}.ms-ContextualHost.ms-ContextualHost--arrowBottom .ms-ContextualHost-beak[data-v-c0087b9c]{display:block;bottom:-10px}.ms-ContextualHost-main[data-v-c0087b9c]{position:relative;background-color:\"[theme:white, default: #ffffff]\";box-sizing:border-box;outline:1px solid transparent;z-index:5;min-height:10px}.ms-ContextualHost-close[data-v-c0087b9c]{margin:0;border:0;background:0 0;cursor:pointer;position:absolute;top:12px;right:12px;padding:8px;width:32px;height:32px;font-size:14px;color:\"[theme:neutralSecondary, default: #666666]\";z-index:10}.ms-ContextualHost.ms-ContextualHost--close .ms-ContextualHost-title[data-v-c0087b9c]{margin-right:20px}.ms-ContextualHost.ms-ContextualHost--primaryArrow .ms-ContextualHost-beak[data-v-c0087b9c]{background-color:\"[theme:themePrimary, default: #0078d7]\"}@media (min-width:480px){.ms-ContextualHost[data-v-c0087b9c]{margin:16px}.ms-ContextualHost.is-positioned[data-v-c0087b9c]{margin:0}.ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak[data-v-c0087b9c],.ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak[data-v-c0087b9c]{display:block}}.ms-Icon.ms-Icon--ChevronRight[data-v-c0087b9c]::before{content:url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"8\" height=\"8\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path transform=\"translate(0, 2048) scale(1, -1)\" d=\"M515 93l930 931l-930 931l90 90l1022 -1021l-1022 -1021z\" fill=\"black\" stroke=\"none\"/></svg>')}.ms-ContextualMenu-link.is-selected[data-v-c0087b9c]::after{content:url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"10\" height=\"10\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path transform=\"translate(0, 2048) scale(1, -1)\" d=\"M1837 1491l-1069 -1070l-557 558l90 90l467 -466l979 978z\" fill=\"black\" stroke=\"none\"/></svg>')!important}", map: undefined, media: undefined });
+
+  };
+  /* scoped */
+  const __vue_scope_id__$b = "data-v-c0087b9c";
+  /* module identifier */
+  const __vue_module_identifier__$b = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$b = undefined;
+  /* style inject */
+  const __vue_create_injector__$5 = function(context){ return function(scopeId, data){__vue_script__$b.loadStyles && __vue_script__$b.loadStyles(data.source);}};
+  /* style inject SSR */
+  
+
+  
+  var uiContextualMenu = normalizeComponent_1(
+    {},
+    __vue_inject_styles__$b,
+    __vue_script__$b,
+    __vue_scope_id__$b,
+    __vue_is_functional_template__$b,
+    __vue_module_identifier__$b,
+    __vue_create_injector__$5,
+    undefined
+  );
+
+var script$c = {
   name: 'ou-contextual-menu-item',
-
   mixins: [type('divider', 'header', 'hasMenu'), disabled],
-
   inject: ['eventHub'],
-
   data: function data() {
     return {
       selected: false
     };
   },
-
   props: {
     name: String,
     value: [String, Number]
   },
-
   computed: {
     hasLink: function hasLink() {
       return this.type == 'hasMenu' || this.type == '';
     },
-
     hasMenu: function hasMenu() {
       return this.type == 'hasMenu';
     },
-
     contextualMenuItemClass: function contextualMenuItemClass() {
-      var obj;
-
-      return ( obj = {}, obj[("ms-ContextualMenu-item--" + (this.type))] = !!this.type, obj );
+      return _defineProperty({}, "ms-ContextualMenu-item--".concat(this.type), !!this.type);
     },
-
     contextualMenuLinkClass: function contextualMenuLinkClass() {
       return {
         'is-disabled': this.disabled,
@@ -1364,15 +1790,12 @@ var ContextualMenuItem = {render: function(){var _vm=this;var _h=_vm.$createElem
       };
     }
   },
-
   created: function created() {
     this.eventHub.$on('setSelected', this.setSelected);
   },
-
   beforeDestroy: function beforeDestroy() {
     this.eventHub.$off('setSelected', this.setSelected);
   },
-
   methods: {
     clickEvent: function clickEvent() {
       if (this.value) {
@@ -1381,9 +1804,8 @@ var ContextualMenuItem = {render: function(){var _vm=this;var _h=_vm.$createElem
         this.$emit('click');
       }
     },
-
     setSelected: function setSelected(values) {
-      if (values.includes(this.value)) {
+      if (values.indexOf(this.value) !== -1) {
         this.selected = true;
       } else {
         this.selected = false;
@@ -1392,18 +1814,132 @@ var ContextualMenuItem = {render: function(){var _vm=this;var _h=_vm.$createElem
   }
 };
 
-var uiContextualMenuItem = {
-    beforeCreate: function beforeCreate(){ loadStyles("");},
-    extends :  ContextualMenuItem
-}
+/* script */
+const __vue_script__$c = script$c;
 
-var commandbar = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"commandBar",staticClass:"ms-CommandBar"},[_c('div',{staticClass:"ms-CommandBar-sideCommands"},[_vm._t("side")],2),_vm._v(" "),_c('div',{staticClass:"ms-CommandBar-mainArea"},[_vm._t("main"),_vm._v(" "),_vm._m(0)],2)])},staticRenderFns: [function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-CommandButton ms-CommandBar-overflowButton ms-CommandButton--noLabel"},[_c('button',{staticClass:"ms-CommandButton-button"},[_c('span',{staticClass:"ms-CommandButton-icon"},[_c('i',{staticClass:"ms-Icon ms-Icon--More"})]),_vm._v(" "),_c('span',{staticClass:"ms-CommandButton-label"})]),_vm._v(" "),_c('ul',{staticClass:"ms-ContextualMenu is-opened ms-ContextualMenu--hasIcons"},[_c('li',{staticClass:"ms-ContextualMenu-item"},[_c('a',{staticClass:"ms-ContextualMenu-link"}),_vm._v(" "),_c('i',{staticClass:"ms-Icon ms-Icon--folder"})])])])}],
+/* template */
+var __vue_render__$6 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('li',{staticClass:"ms-ContextualMenu-item",class:_vm.contextualMenuItemClass},[(_vm.type == 'header')?_c('span',[_vm._v(_vm._s(_vm.name))]):_vm._e(),_vm._v(" "),(_vm.hasLink)?_c('a',{staticClass:"ms-ContextualMenu-link",class:_vm.contextualMenuLinkClass,on:{"click":_vm.clickEvent}},[_vm._v("\n    "+_vm._s(_vm.name)+"\n  ")]):_vm._e(),_vm._v(" "),(_vm.hasMenu)?_c('i',{staticClass:"ms-ContextualMenu-subMenuIcon ms-Icon ms-Icon--ChevronRight"}):_vm._e(),_vm._v(" "),(_vm.hasMenu)?_c('ul',{staticClass:"ms-ContextualMenu is-hidden"},[_vm._t("default")],2):_vm._e()])};
+var __vue_staticRenderFns__$6 = [];
+
+  /* style */
+  const __vue_inject_styles__$c = undefined;
+  /* scoped */
+  const __vue_scope_id__$c = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$c = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$c = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var ContextualMenuItem = normalizeComponent_1(
+    { render: __vue_render__$6, staticRenderFns: __vue_staticRenderFns__$6 },
+    __vue_inject_styles__$c,
+    __vue_script__$c,
+    __vue_scope_id__$c,
+    __vue_is_functional_template__$c,
+    __vue_module_identifier__$c,
+    undefined,
+    undefined
+  );
+
+var script$d = {
+  extends: ContextualMenuItem
+};
+
+/* script */
+const __vue_script__$d = script$d;
+
+/* template */
+
+  /* style */
+  const __vue_inject_styles__$d = undefined;
+  /* scoped */
+  const __vue_scope_id__$d = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$d = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$d = undefined;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var uiContextualMenuItem = normalizeComponent_1(
+    {},
+    __vue_inject_styles__$d,
+    __vue_script__$d,
+    __vue_scope_id__$d,
+    __vue_is_functional_template__$d,
+    __vue_module_identifier__$d,
+    undefined,
+    undefined
+  );
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var script$e = {
   name: 'ou-command-bar',
-
   mounted: function mounted() {
     new this.$fabric.CommandBar(this.$refs.commandBar);
   }
 };
+
+/* script */
+const __vue_script__$e = script$e;
+
+/* template */
+var __vue_render__$7 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"commandBar",staticClass:"ms-CommandBar"},[_c('div',{staticClass:"ms-CommandBar-sideCommands"},[_vm._t("side")],2),_vm._v(" "),_c('div',{staticClass:"ms-CommandBar-mainArea"},[_vm._t("main"),_vm._v(" "),_vm._m(0)],2)])};
+var __vue_staticRenderFns__$7 = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-CommandButton ms-CommandBar-overflowButton ms-CommandButton--noLabel"},[_c('button',{staticClass:"ms-CommandButton-button"},[_c('span',{staticClass:"ms-CommandButton-icon"},[_c('i',{staticClass:"ms-Icon ms-Icon--More"})]),_vm._v(" "),_c('span',{staticClass:"ms-CommandButton-label"})]),_vm._v(" "),_c('ul',{staticClass:"ms-ContextualMenu is-opened ms-ContextualMenu--hasIcons"},[_c('li',{staticClass:"ms-ContextualMenu-item"},[_c('a',{staticClass:"ms-ContextualMenu-link"}),_vm._v(" "),_c('i',{staticClass:"ms-Icon ms-Icon--folder"})])])])}];
+
+  /* style */
+  const __vue_inject_styles__$e = undefined;
+  /* scoped */
+  const __vue_scope_id__$e = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$e = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$e = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var commandbar = normalizeComponent_1(
+    { render: __vue_render__$7, staticRenderFns: __vue_staticRenderFns__$7 },
+    __vue_inject_styles__$e,
+    __vue_script__$e,
+    __vue_scope_id__$e,
+    __vue_is_functional_template__$e,
+    __vue_module_identifier__$e,
+    undefined,
+    undefined
+  );
 
 var SB_FIELD = ".ms-SearchBox-field";
 var SB_CLEAR_BUTTON = ".ms-SearchBox-clear";
@@ -1559,7 +2095,7 @@ var SearchBox = function () {
     var _this = this;
 
     console.log("_handleBlur");
-    if (this._searchBox.classList.contains("ignoreBlur")) { return; }
+    if (this._searchBox.classList.contains("ignoreBlur")) return;
 
     if (!this._clearOnly) {
       this._searchBox.removeEventListener("keyup", this._boundEnableClose);
@@ -2088,146 +2624,191 @@ var CommandBar = function () {
   return CommandBar;
 }();
 
-var uiCommandBar = {
-    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-CommandBar { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; background-color: \"[theme:neutralLighter, default: #f4f4f4]\"; height: 40px; white-space: nowrap; padding-left: 0; border: 0; position: relative; } .ms-CommandBar:focus { outline: none; } .ms-CommandBar .ms-CommandButton--actionButton { border-right: 1px solid \"[theme:neutralLight, default: #eaeaea]\"; } .ms-CommandBar .ms-Button { height: 100%; } .ms-CommandBar .ms-Button.ms-Button--noLabel .ms-Button-icon { padding-right: 0; } .ms-CommandBar .ms-Button.is-hidden { display: none; } .ms-CommandBar .ms-SearchBox, .ms-CommandBar .ms-SearchBox-field, .ms-CommandBar .ms-SearchBox-label { height: 100%; } .ms-CommandBar .ms-SearchBox { display: inline-block; vertical-align: top; transition: margin-right 0.267s; } .ms-CommandBar .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active { width: 220px; } @media only screen and (max-width: 639px) { .ms-CommandBar .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active { width: 100%; position: absolute; left: 0; right: 0; z-index: 10; } } .ms-CommandBar .ms-CommandBar-overflowButton .ms-CommandButton-button { font-size: 18px; padding: 0 11px; } @media only screen and (min-width: 1024px) { .ms-CommandBar .ms-SearchBox { margin-right: 24px; } } @media only screen and (max-width: 639px) { .ms-CommandBar { height: 44px; } } @media only screen and (min-width: 640px) { .ms-CommandBar.search-expanded .ms-SearchBox { margin-right: 8px; } .ms-CommandBar .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed { transition: none; } } .ms-CommandBar-mainArea { overflow-x: hidden; display: block; height: 100%; overflow: hidden; } .ms-CommandBar-sideCommands { float: right; text-align: right; width: auto; padding-right: 4px; height: 100%; } .ms-CommandBar-sideCommands .ms-Button:last-child { margin-right: 0; } @media only screen and (min-width: 640px) { .ms-CommandBar-sideCommands { min-width: 128px; } } @media only screen and (min-width: 1024px) { .ms-CommandBar-sideCommands { padding-right: 20px; } } .ms-CommandButton { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; display: inline-block; position: relative; vertical-align: top; } .ms-CommandButton.is-hidden { display: none; } .ms-CommandButton:disabled .ms-CommandButton-button, .ms-CommandButton.is-disabled .ms-CommandButton-button { cursor: default; } .ms-CommandButton:disabled .ms-CommandButton-button:hover, .ms-CommandButton.is-disabled .ms-CommandButton-button:hover { background-color: \"[theme:themeLighterAlt, default: #eff6fc]\"; } .ms-CommandButton:disabled .ms-CommandButton-button .ms-CommandButton-label, .ms-CommandButton.is-disabled .ms-CommandButton-button .ms-CommandButton-label { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-CommandButton:disabled .ms-CommandButton-button .ms-CommandButton-icon, .ms-CommandButton.is-disabled .ms-CommandButton-button .ms-CommandButton-icon { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-CommandButton .ms-ContextualMenu { display: none; } .ms-CommandButton-button, .ms-CommandButton-splitIcon { box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 14px; font-weight: 400; cursor: pointer; display: inline-block; height: 40px; line-height: 40px; outline: 1px solid transparent; padding: 0 8px; position: relative; vertical-align: top; background: transparent; } .ms-CommandButton-button:hover, .ms-CommandButton-splitIcon:hover { background-color: \"[theme:neutralLight, default: #eaeaea]\"; } .ms-CommandButton-button:hover .ms-CommandButton-label, .ms-CommandButton-splitIcon:hover .ms-CommandButton-label { color: \"[theme:neutralDark, default: #212121]\"; } .ms-CommandButton-button:active, .ms-CommandButton-splitIcon:active { background-color: \"[theme:neutralLight, default: #eaeaea]\"; } .ms-CommandButton-button:focus::before, .ms-CommandButton-splitIcon:focus::before { top: 3px; left: 3px; right: 3px; bottom: 3px; border: 1px solid \"[theme:neutralPrimary, default: #333333]\"; position: absolute; z-index: 10; content: ''; outline: none; } .ms-CommandButton-button:focus, .ms-CommandButton-splitIcon:focus { outline: 0; } @media only screen and (max-width: 639px) { .ms-CommandButton-button, .ms-CommandButton-splitIcon { height: 44px; } .ms-CommandButton-button .ms-CommandButton-icon, .ms-CommandButton-splitIcon .ms-CommandButton-icon { font-size: 20px; } .ms-CommandButton-button .ms-CommandButton-label, .ms-CommandButton-splitIcon .ms-CommandButton-label { line-height: 44px; } } .ms-CommandButton-button { border: 0; margin: 0; } .ms-CommandButton + .ms-CommandButton { margin-left: 8px; } @media only screen and (max-width: 639px) { .ms-CommandButton + .ms-CommandButton { margin-left: 4px; } } .ms-CommandButton-icon { display: inline-block; margin-right: 8px; position: relative; font-size: 16px; min-width: 16px; height: 100%; } .ms-CommandButton-icon .ms-Icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); } .ms-CommandButton-label { font-size: 14px; font-weight: 400; color: \"[theme:neutralPrimary, default: #333333]\"; line-height: 40px; height: 100%; display: inline-block; vertical-align: top; } .ms-CommandButton-label:hover { color: \"[theme:neutralDark, default: #212121]\"; } .ms-CommandButton-dropdownIcon, .ms-CommandButton-splitIcon { display: inline-block; position: relative; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 12px; font-weight: 300; min-width: 12px; height: 100%; vertical-align: top; margin-left: 8px; } .ms-CommandButton-dropdownIcon .ms-Icon, .ms-CommandButton-splitIcon .ms-Icon { line-height: normal; padding-top: 16px; } .ms-CommandButton-dropdownIcon:focus::before, .ms-CommandButton-splitIcon:focus::before { top: 3px; left: 3px; right: 3px; bottom: 3px; border: 1px solid \"[theme:neutralPrimary, default: #333333]\"; position: absolute; z-index: 10; content: ''; outline: none; } @media only screen and (max-width: 639px) { .ms-CommandButton-dropdownIcon, .ms-CommandButton-splitIcon { display: none; } } .ms-CommandButton-splitIcon { margin-left: -2px; width: 27px; border: 0; } .ms-CommandButton-splitIcon .ms-Icon { margin-left: -1px; position: relative; padding-top: 16px; } .ms-CommandButton-splitIcon .ms-Icon::after { position: absolute; content: ' '; width: 1px; height: 16px; top: 12px; left: -8px; border-left: 1px solid \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; } .ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-icon { margin-right: 0; } .ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-label { display: none; } .ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-button { padding: 0 12px; } .ms-CommandButton.ms-CommandButton--inline .ms-CommandButton-button { background: none; } .ms-CommandButton.ms-CommandButton--actionButton .ms-CommandButton-button { width: 50px; height: 40px; } .ms-CommandButton.ms-CommandButton--actionButton .ms-CommandButton-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 16px; height: 16px; padding-right: 0; } .ms-CommandButton.ms-CommandButton--pivot.is-active::before { content: ''; height: 2px; position: absolute; left: 0; right: 0; background-color: \"[theme:themePrimary, default: #0078d7]\"; bottom: 0; z-index: 5; } .ms-CommandButton.ms-CommandButton--pivot:hover::before { content: ''; height: 2px; position: absolute; left: 0; right: 0; background-color: \"[theme:themePrimary, default: #0078d7]\"; bottom: 0; z-index: 5; } .ms-CommandButton.ms-CommandButton--textOnly .ms-CommandButton-label, .ms-CommandButton.ms-CommandButton--pivot .ms-CommandButton-label { display: inline-block; } @media only screen and (max-width: 479px) { .ms-CommandButton.ms-CommandButton--textOnly .ms-CommandButton-label, .ms-CommandButton.ms-CommandButton--pivot .ms-CommandButton-label { font-size: 16px; } } .ms-ContextualMenu { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 14px; font-weight: 400; display: block; min-width: 180px; max-width: 220px; list-style-type: none; position: relative; background-color: \"[theme:white, default: #ffffff]\"; } .ms-ContextualMenu.is-hidden { display: none; } .ms-ContextualMenu-item { position: relative; } .ms-ContextualMenu-link { box-sizing: border-box; text-decoration: none; color: \"[theme:neutralPrimary, default: #333333]\"; border: 1px solid transparent; cursor: pointer; display: block; height: 36px; overflow: hidden; line-height: 34px; padding: 0 16px 0 25px; position: relative; text-overflow: ellipsis; white-space: nowrap; } .ms-ContextualMenu-link:hover, .ms-ContextualMenu-link:active, .ms-ContextualMenu-link:focus { background-color: \"[theme:neutralLighter, default: #f4f4f4]\"; color: \"[theme:neutralDark, default: #212121]\"; } .ms-ContextualMenu-link:hover .ms-ContextualMenu-subMenuIcon, .ms-ContextualMenu-link:active .ms-ContextualMenu-subMenuIcon, .ms-ContextualMenu-link:focus .ms-ContextualMenu-subMenuIcon { color: \"[theme:neutralDark, default: #212121]\"; } .ms-ContextualMenu-link:focus { outline: transparent; border: 1px solid \"[theme:neutralSecondary, default: #666666]\"; } .ms-ContextualMenu-link.is-selected { background-color: \"[theme:neutralQuaternaryAlt, default: #dadada]\"; color: \"[theme:black, default: #000000]\"; font-weight: 600; } .ms-ContextualMenu-link.is-selected ~ .ms-ContextualMenu-subMenuIcon { color: \"[theme:black, default: #000000]\"; } .ms-ContextualMenu-link.is-selected:hover { background-color: \"[theme:neutralQuaternary, default: #d0d0d0]\"; } .ms-ContextualMenu-link.is-disabled { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; background-color: \"[theme:white, default: #ffffff]\"; pointer-events: none; } .ms-ContextualMenu-link.is-disabled:active, .ms-ContextualMenu-link.is-disabled:focus { border-color: \"[theme:white, default: #ffffff]\"; } .ms-ContextualMenu-link.is-disabled .ms-Icon { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; pointer-events: none; cursor: default; } .ms-ContextualMenu-item.ms-ContextualMenu-item--divider { cursor: default; display: block; height: 1px; background-color: \"[theme:neutralLight, default: #eaeaea]\"; position: relative; } .ms-ContextualMenu-item.ms-ContextualMenu-item--header { color: \"[theme:themePrimary, default: #0078d7]\"; font-size: 12px; text-transform: uppercase; height: 36px; line-height: 36px; padding: 0 18px; } .ms-ContextualMenu-item.ms-ContextualMenu-item--hasMenu .ms-ContextualMenu { position: absolute; top: -1px; left: 178px; } .ms-ContextualMenu-subMenuIcon, .ms-ContextualMenu-caretRight { color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 8px; font-weight: 600; width: 24px; height: 36px; line-height: 36px; position: absolute; text-align: center; top: 0; right: 0; z-index: 1; pointer-events: none; } .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-item.ms-ContextualMenu-item--header { padding: 0 16px 0 26px; } .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected { background-color: \"[theme:white, default: #ffffff]\"; font-weight: 600; color: \"[theme:neutralPrimary, default: #333333]\"; } .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected::after { -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; display: inline-block; font-family: 'FabricMDL2Icons'; font-style: normal; font-weight: normal; speak: none; color: \"[theme:neutralPrimary, default: #333333]\"; content: '\\E73E'; font-size: 10px; font-weight: 800; height: 36px; line-height: 36px; position: absolute; left: 7px; } .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected:hover, .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected:focus { color: \"[theme:neutralDark, default: #212121]\"; background-color: \"[theme:neutralLighter, default: #f4f4f4]\"; } .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected:hover::after, .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected:focus::after { color: \"[theme:neutralDark, default: #212121]\"; } .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected:active { color: \"[theme:black, default: #000000]\"; background-color: \"[theme:neutralQuaternary, default: #d0d0d0]\"; } .ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected:active::after { color: \"[theme:black, default: #000000]\"; } .ms-ContextualMenu.ms-ContextualMenu--hasIcons .ms-ContextualMenu-link, .ms-ContextualMenu.ms-ContextualMenu--hasChecks .ms-ContextualMenu-link { padding-left: 40px; } .ms-ContextualMenu.ms-ContextualMenu--hasIcons .ms-Icon, .ms-ContextualMenu.ms-ContextualMenu--hasChecks .ms-Icon { position: absolute; top: 50%; transform: translateY(-50%); width: 40px; text-align: center; } .ms-ContextualMenu.ms-ContextualMenu--hasIcons { width: 220px; } .ms-ContextualHost { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; z-index: 10; margin: 16px auto; position: relative; min-width: 10px; display: none; background-color: \"[theme:white, default: #ffffff]\"; box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4); } .ms-ContextualHost.is-positioned { position: absolute; margin: 0; } .ms-ContextualHost.is-open { display: inline-block; } .ms-ContextualHost-beak { box-shadow: 0 0 15px -5px \"[theme:neutralPrimaryAlt, default: #3c3c3c]\"; position: absolute; width: 28px; height: 28px; background: \"[theme:white, default: #ffffff]\"; border: 1px solid \"[theme:neutralLight, default: #eaeaea]\"; box-sizing: border-box; top: -6px; display: none; -webkit-transform: rotate(45deg); transform: rotate(45deg); z-index: 0; outline: 1px solid transparent; } .ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak, .ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak { top: 40px; display: none; } .ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak { left: -10px; } .ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak { right: -10px; } .ms-ContextualHost.ms-ContextualHost--arrowTop .ms-ContextualHost-beak { display: block; top: -10px; } .ms-ContextualHost.ms-ContextualHost--arrowBottom .ms-ContextualHost-beak { display: block; bottom: -10px; } .ms-ContextualHost-main { position: relative; background-color: \"[theme:white, default: #ffffff]\"; box-sizing: border-box; outline: 1px solid transparent; z-index: 5; min-height: 10px; } .ms-ContextualHost-close { margin: 0; border: 0; background: none; cursor: pointer; position: absolute; top: 12px; right: 12px; padding: 8px; width: 32px; height: 32px; font-size: 14px; color: \"[theme:neutralSecondary, default: #666666]\"; z-index: 10; } .ms-ContextualHost.ms-ContextualHost--close .ms-ContextualHost-title { margin-right: 20px; } .ms-ContextualHost.ms-ContextualHost--primaryArrow .ms-ContextualHost-beak { background-color: \"[theme:themePrimary, default: #0078d7]\"; } @media (min-width: 480px) { .ms-ContextualHost { margin: 16px; } .ms-ContextualHost.is-positioned { margin: 0; } .ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak, .ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak { display: block; } } .inline-block { display: inline-block; } .ms-Icon.ms-Icon--More { content: url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"14\" height=\"14\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M256 1152q27 0 50 -10t40.5 -27.5t27.5 -40.5t10 -50t-10 -50t-27.5 -40.5t-40.5 -27.5t-50 -10t-50 10t-40.5 27.5t-27.5 40.5t-10 50t10 50t27.5 40.5t40.5 27.5t50 10zM1024 1152q27 0 50 -10t40.5 -27.5t27.5 -40.5t10 -50t-10 -50t-27.5 -40.5t-40.5 -27.5t-50 -10t-50 10t-40.5 27.5t-27.5 40.5t-10 50t10 50t27.5 40.5t40.5 27.5t50 10zM1792 1152q27 0 50 -10t40.5 -27.5t27.5 -40.5t10 -50t-10 -50t-27.5 -40.5t-40.5 -27.5t-50 -10t-50 10t-40.5 27.5t-27.5 40.5t-10 50t10 50t27.5 40.5t40.5 27.5t50 10z\" fill=\"black\" stroke=\"none\"/></svg>'); } ");},
-    beforeMount: function beforeMount(){ 
-        this.$fabric = { 
-            CommandBar : CommandBar 
-        }; 
-    },
-    extends :  commandbar
-}
+var script$f = {
+  loadStyles: loadStyles,
+  beforeMount: function beforeMount() {
+    this.$fabric = {
+      CommandBar: CommandBar
+    };
+  },
+  extends: commandbar
+};
 
-var commandbutton = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-CommandButton",class:_vm.commandButtonClass,on:{"click":_vm.clickEvent}},[_c('button',{staticClass:"ms-CommandButton-button"},[(_vm.icon)?_c('span',{staticClass:"ms-CommandButton-icon ms-fontColor-themePrimary"},[_c('i',{staticClass:"ms-Icon",class:_vm.iconClass})]):_vm._e(),_vm._v(" "),_c('span',{staticClass:"ms-CommandButton-label"},[_vm._t("default")],2),_vm._v(" "),(_vm.type == 'dropdown')?_c('span',{staticClass:"ms-CommandButton-dropdownIcon"},[_c('i',{staticClass:"ms-Icon ms-Icon--ChevronDown"})]):_vm._e()])])},staticRenderFns: [],
+/* script */
+const __vue_script__$f = script$f;
+
+/* template */
+
+  /* style */
+  const __vue_inject_styles__$f = function (inject) {
+    if (!inject) return
+    inject("data-v-829f6518_0", { source: "@charset \"UTF-8\";.ms-CommandBar{font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;background-color:\"[theme:neutralLighter, default: #f4f4f4]\";height:40px;white-space:nowrap;padding-left:0;border:0;position:relative}.ms-CommandBar:focus{outline:0}.ms-CommandBar .ms-CommandButton--actionButton{border-right:1px solid \"[theme:neutralLight, default: #eaeaea]\"}.ms-CommandBar .ms-Button{height:100%}.ms-CommandBar .ms-Button.ms-Button--noLabel .ms-Button-icon{padding-right:0}.ms-CommandBar .ms-Button.is-hidden{display:none}.ms-CommandBar .ms-SearchBox,.ms-CommandBar .ms-SearchBox-field,.ms-CommandBar .ms-SearchBox-label{height:100%}.ms-CommandBar .ms-SearchBox{display:inline-block;vertical-align:top;transition:margin-right 267ms}.ms-CommandBar .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active{width:220px}@media only screen and (max-width:639px){.ms-CommandBar .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active{width:100%;position:absolute;left:0;right:0;z-index:10}}.ms-CommandBar .ms-CommandBar-overflowButton .ms-CommandButton-button{font-size:18px;padding:0 11px}@media only screen and (min-width:1024px){.ms-CommandBar .ms-SearchBox{margin-right:24px}}@media only screen and (max-width:639px){.ms-CommandBar{height:44px}}@media only screen and (min-width:640px){.ms-CommandBar.search-expanded .ms-SearchBox{margin-right:8px}.ms-CommandBar .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed{transition:none}}.ms-CommandBar-mainArea{overflow-x:hidden;display:block;height:100%;overflow:hidden}.ms-CommandBar-sideCommands{float:right;text-align:right;width:auto;padding-right:4px;height:100%}.ms-CommandBar-sideCommands .ms-Button:last-child{margin-right:0}@media only screen and (min-width:640px){.ms-CommandBar-sideCommands{min-width:128px}}@media only screen and (min-width:1024px){.ms-CommandBar-sideCommands{padding-right:20px}}.ms-CommandButton{font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;display:inline-block;position:relative;vertical-align:top}.ms-CommandButton.is-hidden{display:none}.ms-CommandButton.is-disabled .ms-CommandButton-button,.ms-CommandButton:disabled .ms-CommandButton-button{cursor:default}.ms-CommandButton.is-disabled .ms-CommandButton-button:hover,.ms-CommandButton:disabled .ms-CommandButton-button:hover{background-color:\"[theme:themeLighterAlt, default: #eff6fc]\"}.ms-CommandButton.is-disabled .ms-CommandButton-button .ms-CommandButton-label,.ms-CommandButton:disabled .ms-CommandButton-button .ms-CommandButton-label{color:\"[theme:neutralTertiary, default: #a6a6a6]\"}.ms-CommandButton.is-disabled .ms-CommandButton-button .ms-CommandButton-icon,.ms-CommandButton:disabled .ms-CommandButton-button .ms-CommandButton-icon{color:\"[theme:neutralTertiary, default: #a6a6a6]\"}.ms-CommandButton .ms-ContextualMenu{display:none}.ms-CommandButton-button,.ms-CommandButton-splitIcon{box-sizing:border-box;margin:0;padding:0;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;color:\"[theme:neutralPrimary, default: #333333]\";font-size:14px;font-weight:400;cursor:pointer;display:inline-block;height:40px;line-height:40px;outline:1px solid transparent;padding:0 8px;position:relative;vertical-align:top;background:0 0}.ms-CommandButton-button:hover,.ms-CommandButton-splitIcon:hover{background-color:\"[theme:neutralLight, default: #eaeaea]\"}.ms-CommandButton-button:hover .ms-CommandButton-label,.ms-CommandButton-splitIcon:hover .ms-CommandButton-label{color:\"[theme:neutralDark, default: #212121]\"}.ms-CommandButton-button:active,.ms-CommandButton-splitIcon:active{background-color:\"[theme:neutralLight, default: #eaeaea]\"}.ms-CommandButton-button:focus::before,.ms-CommandButton-splitIcon:focus::before{top:3px;left:3px;right:3px;bottom:3px;border:1px solid \"[theme:neutralPrimary, default: #333333]\";position:absolute;z-index:10;content:\"\";outline:0}.ms-CommandButton-button:focus,.ms-CommandButton-splitIcon:focus{outline:0}@media only screen and (max-width:639px){.ms-CommandButton-button,.ms-CommandButton-splitIcon{height:44px}.ms-CommandButton-button .ms-CommandButton-icon,.ms-CommandButton-splitIcon .ms-CommandButton-icon{font-size:20px}.ms-CommandButton-button .ms-CommandButton-label,.ms-CommandButton-splitIcon .ms-CommandButton-label{line-height:44px}}.ms-CommandButton-button{border:0;margin:0}.ms-CommandButton+.ms-CommandButton{margin-left:8px}@media only screen and (max-width:639px){.ms-CommandButton+.ms-CommandButton{margin-left:4px}}.ms-CommandButton-icon{display:inline-block;margin-right:8px;position:relative;font-size:16px;min-width:16px;height:100%}.ms-CommandButton-icon .ms-Icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}.ms-CommandButton-label{font-size:14px;font-weight:400;color:\"[theme:neutralPrimary, default: #333333]\";line-height:40px;height:100%;display:inline-block;vertical-align:top}.ms-CommandButton-label:hover{color:\"[theme:neutralDark, default: #212121]\"}.ms-CommandButton-dropdownIcon,.ms-CommandButton-splitIcon{display:inline-block;position:relative;color:\"[theme:neutralPrimary, default: #333333]\";font-size:12px;font-weight:300;min-width:12px;height:100%;vertical-align:top;margin-left:8px}.ms-CommandButton-dropdownIcon .ms-Icon,.ms-CommandButton-splitIcon .ms-Icon{line-height:normal;padding-top:16px}.ms-CommandButton-dropdownIcon:focus::before,.ms-CommandButton-splitIcon:focus::before{top:3px;left:3px;right:3px;bottom:3px;border:1px solid \"[theme:neutralPrimary, default: #333333]\";position:absolute;z-index:10;content:\"\";outline:0}@media only screen and (max-width:639px){.ms-CommandButton-dropdownIcon,.ms-CommandButton-splitIcon{display:none}}.ms-CommandButton-splitIcon{margin-left:-2px;width:27px;border:0}.ms-CommandButton-splitIcon .ms-Icon{margin-left:-1px;position:relative;padding-top:16px}.ms-CommandButton-splitIcon .ms-Icon::after{position:absolute;content:\" \";width:1px;height:16px;top:12px;left:-8px;border-left:1px solid \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"}.ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-icon{margin-right:0}.ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-label{display:none}.ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-button{padding:0 12px}.ms-CommandButton.ms-CommandButton--inline .ms-CommandButton-button{background:0 0}.ms-CommandButton.ms-CommandButton--actionButton .ms-CommandButton-button{width:50px;height:40px}.ms-CommandButton.ms-CommandButton--actionButton .ms-CommandButton-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:16px;height:16px;padding-right:0}.ms-CommandButton.ms-CommandButton--pivot.is-active::before{content:\"\";height:2px;position:absolute;left:0;right:0;background-color:\"[theme:themePrimary, default: #0078d7]\";bottom:0;z-index:5}.ms-CommandButton.ms-CommandButton--pivot:hover::before{content:\"\";height:2px;position:absolute;left:0;right:0;background-color:\"[theme:themePrimary, default: #0078d7]\";bottom:0;z-index:5}.ms-CommandButton.ms-CommandButton--pivot .ms-CommandButton-label,.ms-CommandButton.ms-CommandButton--textOnly .ms-CommandButton-label{display:inline-block}@media only screen and (max-width:479px){.ms-CommandButton.ms-CommandButton--pivot .ms-CommandButton-label,.ms-CommandButton.ms-CommandButton--textOnly .ms-CommandButton-label{font-size:16px}}.ms-ContextualMenu{font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;box-sizing:border-box;margin:0;padding:0;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;color:\"[theme:neutralPrimary, default: #333333]\";font-size:14px;font-weight:400;display:block;min-width:180px;max-width:220px;list-style-type:none;position:relative;background-color:\"[theme:white, default: #ffffff]\"}.ms-ContextualMenu.is-hidden{display:none}.ms-ContextualMenu-item{position:relative}.ms-ContextualMenu-link{box-sizing:border-box;text-decoration:none;color:\"[theme:neutralPrimary, default: #333333]\";border:1px solid transparent;cursor:pointer;display:block;height:36px;overflow:hidden;line-height:34px;padding:0 16px 0 25px;position:relative;text-overflow:ellipsis;white-space:nowrap}.ms-ContextualMenu-link:active,.ms-ContextualMenu-link:focus,.ms-ContextualMenu-link:hover{background-color:\"[theme:neutralLighter, default: #f4f4f4]\";color:\"[theme:neutralDark, default: #212121]\"}.ms-ContextualMenu-link:active .ms-ContextualMenu-subMenuIcon,.ms-ContextualMenu-link:focus .ms-ContextualMenu-subMenuIcon,.ms-ContextualMenu-link:hover .ms-ContextualMenu-subMenuIcon{color:\"[theme:neutralDark, default: #212121]\"}.ms-ContextualMenu-link:focus{outline:transparent;border:1px solid \"[theme:neutralSecondary, default: #666666]\"}.ms-ContextualMenu-link.is-selected{background-color:\"[theme:neutralQuaternaryAlt, default: #dadada]\";color:\"[theme:black, default: #000000]\";font-weight:600}.ms-ContextualMenu-link.is-selected~.ms-ContextualMenu-subMenuIcon{color:\"[theme:black, default: #000000]\"}.ms-ContextualMenu-link.is-selected:hover{background-color:\"[theme:neutralQuaternary, default: #d0d0d0]\"}.ms-ContextualMenu-link.is-disabled{color:\"[theme:neutralTertiary, default: #a6a6a6]\";background-color:\"[theme:white, default: #ffffff]\";pointer-events:none}.ms-ContextualMenu-link.is-disabled:active,.ms-ContextualMenu-link.is-disabled:focus{border-color:\"[theme:white, default: #ffffff]\"}.ms-ContextualMenu-link.is-disabled .ms-Icon{color:\"[theme:neutralTertiary, default: #a6a6a6]\";pointer-events:none;cursor:default}.ms-ContextualMenu-item.ms-ContextualMenu-item--divider{cursor:default;display:block;height:1px;background-color:\"[theme:neutralLight, default: #eaeaea]\";position:relative}.ms-ContextualMenu-item.ms-ContextualMenu-item--header{color:\"[theme:themePrimary, default: #0078d7]\";font-size:12px;text-transform:uppercase;height:36px;line-height:36px;padding:0 18px}.ms-ContextualMenu-item.ms-ContextualMenu-item--hasMenu .ms-ContextualMenu{position:absolute;top:-1px;left:178px}.ms-ContextualMenu-caretRight,.ms-ContextualMenu-subMenuIcon{color:\"[theme:neutralPrimary, default: #333333]\";font-size:8px;font-weight:600;width:24px;height:36px;line-height:36px;position:absolute;text-align:center;top:0;right:0;z-index:1;pointer-events:none}.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-item.ms-ContextualMenu-item--header{padding:0 16px 0 26px}.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected{background-color:\"[theme:white, default: #ffffff]\";font-weight:600;color:\"[theme:neutralPrimary, default: #333333]\"}.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected::after{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:inline-block;font-family:FabricMDL2Icons;font-style:normal;font-weight:400;speak:none;color:\"[theme:neutralPrimary, default: #333333]\";content:\"\";font-size:10px;font-weight:800;height:36px;line-height:36px;position:absolute;left:7px}.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected:focus,.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected:hover{color:\"[theme:neutralDark, default: #212121]\";background-color:\"[theme:neutralLighter, default: #f4f4f4]\"}.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected:focus::after,.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected:hover::after{color:\"[theme:neutralDark, default: #212121]\"}.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected:active{color:\"[theme:black, default: #000000]\";background-color:\"[theme:neutralQuaternary, default: #d0d0d0]\"}.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected:active::after{color:\"[theme:black, default: #000000]\"}.ms-ContextualMenu.ms-ContextualMenu--hasChecks .ms-ContextualMenu-link,.ms-ContextualMenu.ms-ContextualMenu--hasIcons .ms-ContextualMenu-link{padding-left:40px}.ms-ContextualMenu.ms-ContextualMenu--hasChecks .ms-Icon,.ms-ContextualMenu.ms-ContextualMenu--hasIcons .ms-Icon{position:absolute;top:50%;transform:translateY(-50%);width:40px;text-align:center}.ms-ContextualMenu.ms-ContextualMenu--hasIcons{width:220px}.ms-ContextualHost{font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;z-index:10;margin:16px auto;position:relative;min-width:10px;display:none;background-color:\"[theme:white, default: #ffffff]\";box-shadow:0 0 5px 0 rgba(0,0,0,.4)}.ms-ContextualHost.is-positioned{position:absolute;margin:0}.ms-ContextualHost.is-open{display:inline-block}.ms-ContextualHost-beak{box-shadow:0 0 15px -5px \"[theme:neutralPrimaryAlt, default: #3c3c3c]\";position:absolute;width:28px;height:28px;background:\"[theme:white, default: #ffffff]\";border:1px solid \"[theme:neutralLight, default: #eaeaea]\";box-sizing:border-box;top:-6px;display:none;-webkit-transform:rotate(45deg);transform:rotate(45deg);z-index:0;outline:1px solid transparent}.ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak,.ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak{top:40px;display:none}.ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak{left:-10px}.ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak{right:-10px}.ms-ContextualHost.ms-ContextualHost--arrowTop .ms-ContextualHost-beak{display:block;top:-10px}.ms-ContextualHost.ms-ContextualHost--arrowBottom .ms-ContextualHost-beak{display:block;bottom:-10px}.ms-ContextualHost-main{position:relative;background-color:\"[theme:white, default: #ffffff]\";box-sizing:border-box;outline:1px solid transparent;z-index:5;min-height:10px}.ms-ContextualHost-close{margin:0;border:0;background:0 0;cursor:pointer;position:absolute;top:12px;right:12px;padding:8px;width:32px;height:32px;font-size:14px;color:\"[theme:neutralSecondary, default: #666666]\";z-index:10}.ms-ContextualHost.ms-ContextualHost--close .ms-ContextualHost-title{margin-right:20px}.ms-ContextualHost.ms-ContextualHost--primaryArrow .ms-ContextualHost-beak{background-color:\"[theme:themePrimary, default: #0078d7]\"}@media (min-width:480px){.ms-ContextualHost{margin:16px}.ms-ContextualHost.is-positioned{margin:0}.ms-ContextualHost.ms-ContextualHost--arrowLeft .ms-ContextualHost-beak,.ms-ContextualHost.ms-ContextualHost--arrowRight .ms-ContextualHost-beak{display:block}}.inline-block{display:inline-block}.ms-Icon.ms-Icon--More{content:url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"14\" height=\"14\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M256 1152q27 0 50 -10t40.5 -27.5t27.5 -40.5t10 -50t-10 -50t-27.5 -40.5t-40.5 -27.5t-50 -10t-50 10t-40.5 27.5t-27.5 40.5t-10 50t10 50t27.5 40.5t40.5 27.5t50 10zM1024 1152q27 0 50 -10t40.5 -27.5t27.5 -40.5t10 -50t-10 -50t-27.5 -40.5t-40.5 -27.5t-50 -10t-50 10t-40.5 27.5t-27.5 40.5t-10 50t10 50t27.5 40.5t40.5 27.5t50 10zM1792 1152q27 0 50 -10t40.5 -27.5t27.5 -40.5t10 -50t-10 -50t-27.5 -40.5t-40.5 -27.5t-50 -10t-50 10t-40.5 27.5t-27.5 40.5t-10 50t10 50t27.5 40.5t40.5 27.5t50 10z\" fill=\"black\" stroke=\"none\"/></svg>')}", map: undefined, media: undefined });
+
+  };
+  /* scoped */
+  const __vue_scope_id__$f = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$f = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$f = undefined;
+  /* style inject */
+  const __vue_create_injector__$6 = function(context){ return function(scopeId, data){__vue_script__$f.loadStyles && __vue_script__$f.loadStyles(data.source);}};
+  /* style inject SSR */
+  
+
+  
+  var uiCommandBar = normalizeComponent_1(
+    {},
+    __vue_inject_styles__$f,
+    __vue_script__$f,
+    __vue_scope_id__$f,
+    __vue_is_functional_template__$f,
+    __vue_module_identifier__$f,
+    __vue_create_injector__$6,
+    undefined
+  );
+
+var script$g = {
   name: 'ou-command-button',
-
-  mixins: [
-    type('noLabel', 'inline', 'dropdown'),
-    disabled,
-    icon
-  ],
-
+  mixins: [type('noLabel', 'inline', 'dropdown'), disabled, icon],
   computed: {
     commandButtonClass: function commandButtonClass() {
-      var obj;
+      var _ref;
 
-      return ( obj = {}, obj[("ms-CommandButton--" + (this.type))] = !!this.type, obj['is-disabled'] =  this.disabled, obj );
+      return _ref = {}, _defineProperty(_ref, "ms-CommandButton--".concat(this.type), !!this.type), _defineProperty(_ref, 'is-disabled', this.disabled), _ref;
     }
   },
-
   methods: {
     clickEvent: function clickEvent() {
-      if (!this.disabled) { this.$emit('click'); }
+      if (!this.disabled) {
+        this.$emit('click');
+      }
     }
   }
 };
 
-var CONTEXT_CLASS$1 = ".ms-ContextualMenu";
-var CB_SPLIT_CLASS$1 = ".ms-CommandButton-splitIcon";
-var CB_BUTTON_CLASS$1 = ".ms-CommandButton-button";
-var MODAL_POSITION$2 = "bottom";
+/* script */
+const __vue_script__$g = script$g;
 
-var CommandButton$1 = function () {
-  function CommandButton(container, contextMenu) {
-    this._container = container;
-    this._command = this._container;
-    this._commandButton = this._command.querySelector(CB_BUTTON_CLASS$1);
-    this._splitButton = this._command.querySelector(CB_SPLIT_CLASS$1);
+/* template */
+var __vue_render__$8 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-CommandButton",class:_vm.commandButtonClass,on:{"click":_vm.clickEvent}},[_c('button',{staticClass:"ms-CommandButton-button"},[(_vm.icon)?_c('span',{staticClass:"ms-CommandButton-icon ms-fontColor-themePrimary"},[_c('i',{staticClass:"ms-Icon",class:_vm.iconClass})]):_vm._e(),_vm._v(" "),_c('span',{staticClass:"ms-CommandButton-label"},[_vm._t("default")],2),_vm._v(" "),(_vm.type == 'dropdown')?_c('span',{staticClass:"ms-CommandButton-dropdownIcon"},[_c('i',{staticClass:"ms-Icon ms-Icon--ChevronDown"})]):_vm._e()])])};
+var __vue_staticRenderFns__$8 = [];
 
-    if (contextMenu) {
-      this._contextualMenu = contextMenu;
-    } else {
-      this._contextualMenu = this._container.querySelector(CONTEXT_CLASS$1);
+  /* style */
+  const __vue_inject_styles__$g = undefined;
+  /* scoped */
+  const __vue_scope_id__$g = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$g = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$g = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var commandbutton = normalizeComponent_1(
+    { render: __vue_render__$8, staticRenderFns: __vue_staticRenderFns__$8 },
+    __vue_inject_styles__$g,
+    __vue_script__$g,
+    __vue_scope_id__$g,
+    __vue_is_functional_template__$g,
+    __vue_module_identifier__$g,
+    undefined,
+    undefined
+  );
+
+//
+var script$h = {
+  loadStyles: loadStyles,
+  computed: {
+    hasIcon: function hasIcon() {
+      return !!this.$slots['icon'];
     }
+  },
+  beforeMount: function beforeMount() {
+    this.$fabric = {
+      CommandButton: CommandButton
+    };
+  },
+  extends: commandbutton
+};
 
-    this._checkForMenu();
-  }
+/* script */
+const __vue_script__$h = script$h;
 
-  CommandButton.prototype._createModalHostView = function () {
-    this._modalHostView = new ContextualHost(this._contextualMenu, MODAL_POSITION$2, this._command, false);
+/* template */
+var __vue_render__$9 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-CommandButton",class:_vm.commandButtonClass,on:{"click":_vm.clickEvent}},[_c('button',{staticClass:"ms-CommandButton-button"},[(_vm.hasIcon)?_c('span',{staticClass:"ms-CommandButton-icon ms-fontColor-themePrimary"},[_vm._t("icon")],2):_vm._e(),_vm._v(" "),_c('span',{staticClass:"ms-CommandButton-label"},[_vm._t("default")],2),_vm._v(" "),(_vm.type == 'dropdown')?_c('span',{staticClass:"ms-CommandButton-dropdownIcon"},[_c('i',{staticClass:"ms-Icon ms-Icon--ChevronDown"})]):_vm._e()])])};
+var __vue_staticRenderFns__$9 = [];
+
+  /* style */
+  const __vue_inject_styles__$h = function (inject) {
+    if (!inject) return
+    inject("data-v-07a7d11a_0", { source: ".ms-CommandButton[data-v-07a7d11a]{font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;display:inline-block;position:relative;vertical-align:top}.ms-CommandButton.is-hidden[data-v-07a7d11a]{display:none}.ms-CommandButton.is-disabled .ms-CommandButton-button[data-v-07a7d11a],.ms-CommandButton:disabled .ms-CommandButton-button[data-v-07a7d11a]{cursor:default}.ms-CommandButton.is-disabled .ms-CommandButton-button[data-v-07a7d11a]:hover,.ms-CommandButton:disabled .ms-CommandButton-button[data-v-07a7d11a]:hover{background-color:\"[theme:themeLighterAlt, default: #eff6fc]\"}.ms-CommandButton.is-disabled .ms-CommandButton-button .ms-CommandButton-label[data-v-07a7d11a],.ms-CommandButton:disabled .ms-CommandButton-button .ms-CommandButton-label[data-v-07a7d11a]{color:\"[theme:neutralTertiary, default: #a6a6a6]\"}.ms-CommandButton.is-disabled .ms-CommandButton-button .ms-CommandButton-icon[data-v-07a7d11a],.ms-CommandButton:disabled .ms-CommandButton-button .ms-CommandButton-icon[data-v-07a7d11a]{color:\"[theme:neutralTertiary, default: #a6a6a6]\"}.ms-CommandButton .ms-ContextualMenu[data-v-07a7d11a]{display:none}.ms-CommandButton-button[data-v-07a7d11a],.ms-CommandButton-splitIcon[data-v-07a7d11a]{box-sizing:border-box;margin:0;padding:0;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;color:\"[theme:neutralPrimary, default: #333333]\";font-size:14px;font-weight:400;cursor:pointer;display:inline-block;height:40px;line-height:40px;outline:1px solid transparent;padding:0 8px;position:relative;vertical-align:top;background:0 0}.ms-CommandButton-button[data-v-07a7d11a]:hover,.ms-CommandButton-splitIcon[data-v-07a7d11a]:hover{background-color:\"[theme:neutralLight, default: #eaeaea]\"}.ms-CommandButton-button:hover .ms-CommandButton-label[data-v-07a7d11a],.ms-CommandButton-splitIcon:hover .ms-CommandButton-label[data-v-07a7d11a]{color:\"[theme:neutralDark, default: #212121]\"}.ms-CommandButton-button[data-v-07a7d11a]:active,.ms-CommandButton-splitIcon[data-v-07a7d11a]:active{background-color:\"[theme:neutralLight, default: #eaeaea]\"}.ms-CommandButton-button[data-v-07a7d11a]:focus::before,.ms-CommandButton-splitIcon[data-v-07a7d11a]:focus::before{top:3px;left:3px;right:3px;bottom:3px;border:1px solid \"[theme:neutralPrimary, default: #333333]\";position:absolute;z-index:10;content:\"\";outline:0}.ms-CommandButton-button[data-v-07a7d11a]:focus,.ms-CommandButton-splitIcon[data-v-07a7d11a]:focus{outline:0}@media only screen and (max-width:639px){.ms-CommandButton-button[data-v-07a7d11a],.ms-CommandButton-splitIcon[data-v-07a7d11a]{height:44px}.ms-CommandButton-button .ms-CommandButton-icon[data-v-07a7d11a],.ms-CommandButton-splitIcon .ms-CommandButton-icon[data-v-07a7d11a]{font-size:20px}.ms-CommandButton-button .ms-CommandButton-label[data-v-07a7d11a],.ms-CommandButton-splitIcon .ms-CommandButton-label[data-v-07a7d11a]{line-height:44px}}.ms-CommandButton-button[data-v-07a7d11a]{border:0;margin:0}.ms-CommandButton+.ms-CommandButton[data-v-07a7d11a]{margin-left:8px}@media only screen and (max-width:639px){.ms-CommandButton+.ms-CommandButton[data-v-07a7d11a]{margin-left:4px}}.ms-CommandButton-icon[data-v-07a7d11a]{display:inline-block;margin-right:8px;position:relative;font-size:16px;min-width:16px;height:100%}.ms-CommandButton-icon .ms-Icon[data-v-07a7d11a]{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}.ms-CommandButton-label[data-v-07a7d11a]{font-size:14px;font-weight:400;color:\"[theme:neutralPrimary, default: #333333]\";line-height:40px;height:100%;display:inline-block;vertical-align:top}.ms-CommandButton-label[data-v-07a7d11a]:hover{color:\"[theme:neutralDark, default: #212121]\"}.ms-CommandButton-dropdownIcon[data-v-07a7d11a],.ms-CommandButton-splitIcon[data-v-07a7d11a]{display:inline-block;position:relative;color:\"[theme:neutralPrimary, default: #333333]\";font-size:12px;font-weight:300;min-width:12px;height:100%;vertical-align:top;margin-left:8px}.ms-CommandButton-dropdownIcon .ms-Icon[data-v-07a7d11a],.ms-CommandButton-splitIcon .ms-Icon[data-v-07a7d11a]{line-height:normal;padding-top:16px}.ms-CommandButton-dropdownIcon[data-v-07a7d11a]:focus::before,.ms-CommandButton-splitIcon[data-v-07a7d11a]:focus::before{top:3px;left:3px;right:3px;bottom:3px;border:1px solid \"[theme:neutralPrimary, default: #333333]\";position:absolute;z-index:10;content:\"\";outline:0}@media only screen and (max-width:639px){.ms-CommandButton-dropdownIcon[data-v-07a7d11a],.ms-CommandButton-splitIcon[data-v-07a7d11a]{display:none}}.ms-CommandButton-splitIcon[data-v-07a7d11a]{margin-left:-2px;width:27px;border:0}.ms-CommandButton-splitIcon .ms-Icon[data-v-07a7d11a]{margin-left:-1px;position:relative;padding-top:16px}.ms-CommandButton-splitIcon .ms-Icon[data-v-07a7d11a]::after{position:absolute;content:\" \";width:1px;height:16px;top:12px;left:-8px;border-left:1px solid \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"}.ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-icon[data-v-07a7d11a]{margin-right:0}.ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-label[data-v-07a7d11a]{display:none}.ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-button[data-v-07a7d11a]{padding:0 12px}.ms-CommandButton.ms-CommandButton--inline .ms-CommandButton-button[data-v-07a7d11a]{background:0 0}.ms-CommandButton.ms-CommandButton--actionButton .ms-CommandButton-button[data-v-07a7d11a]{width:50px;height:40px}.ms-CommandButton.ms-CommandButton--actionButton .ms-CommandButton-icon[data-v-07a7d11a]{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:16px;height:16px;padding-right:0}.ms-CommandButton.ms-CommandButton--pivot.is-active[data-v-07a7d11a]::before{content:\"\";height:2px;position:absolute;left:0;right:0;background-color:\"[theme:themePrimary, default: #0078d7]\";bottom:0;z-index:5}.ms-CommandButton.ms-CommandButton--pivot[data-v-07a7d11a]:hover::before{content:\"\";height:2px;position:absolute;left:0;right:0;background-color:\"[theme:themePrimary, default: #0078d7]\";bottom:0;z-index:5}.ms-CommandButton.ms-CommandButton--pivot .ms-CommandButton-label[data-v-07a7d11a],.ms-CommandButton.ms-CommandButton--textOnly .ms-CommandButton-label[data-v-07a7d11a]{display:inline-block}@media only screen and (max-width:479px){.ms-CommandButton.ms-CommandButton--pivot .ms-CommandButton-label[data-v-07a7d11a],.ms-CommandButton.ms-CommandButton--textOnly .ms-CommandButton-label[data-v-07a7d11a]{font-size:16px}}", map: undefined, media: undefined });
+
   };
+  /* scoped */
+  const __vue_scope_id__$h = "data-v-07a7d11a";
+  /* module identifier */
+  const __vue_module_identifier__$h = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$h = false;
+  /* style inject */
+  const __vue_create_injector__$7 = function(context){ return function(scopeId, data){__vue_script__$h.loadStyles && __vue_script__$h.loadStyles(data.source);}};
+  /* style inject SSR */
+  
 
-  CommandButton.prototype._setClick = function () {
-    if (this._splitButton) {
-      this._splitButton.addEventListener("click", this._createModalHostView.bind(this), false);
-    } else {
-      this._commandButton.addEventListener("click", this._createModalHostView.bind(this), false);
-    }
-  };
+  
+  var uiCommandButton = normalizeComponent_1(
+    { render: __vue_render__$9, staticRenderFns: __vue_staticRenderFns__$9 },
+    __vue_inject_styles__$h,
+    __vue_script__$h,
+    __vue_scope_id__$h,
+    __vue_is_functional_template__$h,
+    __vue_module_identifier__$h,
+    __vue_create_injector__$7,
+    undefined
+  );
 
-  CommandButton.prototype._checkForMenu = function () {
-    if (this._contextualMenu) {
-      this._setClick();
-    }
-  };
-
-  return CommandButton;
-}();
-
-var uiCommandButton = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-CommandButton",class:_vm.commandButtonClass,on:{"click":_vm.clickEvent}},[_c('button',{staticClass:"ms-CommandButton-button"},[(_vm.hasIcon)?_c('span',{staticClass:"ms-CommandButton-icon ms-fontColor-themePrimary"},[_vm._t("icon")],2):_vm._e(),_vm._v(" "),_c('span',{staticClass:"ms-CommandButton-label"},[_vm._t("default")],2),_vm._v(" "),(_vm.type == 'dropdown')?_c('span',{staticClass:"ms-CommandButton-dropdownIcon"},[_c('i',{staticClass:"ms-Icon ms-Icon--ChevronDown"})]):_vm._e()])])},staticRenderFns: [],_scopeId: 'data-v-6b2aa7e9',
-    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-CommandButton[data-v-6b2aa7e9] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; display: inline-block; position: relative; vertical-align: top; } .ms-CommandButton.is-hidden[data-v-6b2aa7e9] { display: none; } .ms-CommandButton:disabled .ms-CommandButton-button[data-v-6b2aa7e9], .ms-CommandButton.is-disabled .ms-CommandButton-button[data-v-6b2aa7e9] { cursor: default; } .ms-CommandButton:disabled .ms-CommandButton-button[data-v-6b2aa7e9]:hover, .ms-CommandButton.is-disabled .ms-CommandButton-button[data-v-6b2aa7e9]:hover { background-color: \"[theme:themeLighterAlt, default: #eff6fc]\"; } .ms-CommandButton:disabled .ms-CommandButton-button .ms-CommandButton-label[data-v-6b2aa7e9], .ms-CommandButton.is-disabled .ms-CommandButton-button .ms-CommandButton-label[data-v-6b2aa7e9] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-CommandButton:disabled .ms-CommandButton-button .ms-CommandButton-icon[data-v-6b2aa7e9], .ms-CommandButton.is-disabled .ms-CommandButton-button .ms-CommandButton-icon[data-v-6b2aa7e9] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-CommandButton .ms-ContextualMenu[data-v-6b2aa7e9] { display: none; } .ms-CommandButton-button[data-v-6b2aa7e9], .ms-CommandButton-splitIcon[data-v-6b2aa7e9] { box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 14px; font-weight: 400; cursor: pointer; display: inline-block; height: 40px; line-height: 40px; outline: 1px solid transparent; padding: 0 8px; position: relative; vertical-align: top; background: transparent; } .ms-CommandButton-button[data-v-6b2aa7e9]:hover, .ms-CommandButton-splitIcon[data-v-6b2aa7e9]:hover { background-color: \"[theme:neutralLight, default: #eaeaea]\"; } .ms-CommandButton-button:hover .ms-CommandButton-label[data-v-6b2aa7e9], .ms-CommandButton-splitIcon:hover .ms-CommandButton-label[data-v-6b2aa7e9] { color: \"[theme:neutralDark, default: #212121]\"; } .ms-CommandButton-button[data-v-6b2aa7e9]:active, .ms-CommandButton-splitIcon[data-v-6b2aa7e9]:active { background-color: \"[theme:neutralLight, default: #eaeaea]\"; } .ms-CommandButton-button[data-v-6b2aa7e9]:focus::before, .ms-CommandButton-splitIcon[data-v-6b2aa7e9]:focus::before { top: 3px; left: 3px; right: 3px; bottom: 3px; border: 1px solid \"[theme:neutralPrimary, default: #333333]\"; position: absolute; z-index: 10; content: ''; outline: none; } .ms-CommandButton-button[data-v-6b2aa7e9]:focus, .ms-CommandButton-splitIcon[data-v-6b2aa7e9]:focus { outline: 0; } @media only screen and (max-width: 639px) { .ms-CommandButton-button[data-v-6b2aa7e9], .ms-CommandButton-splitIcon[data-v-6b2aa7e9] { height: 44px; } .ms-CommandButton-button .ms-CommandButton-icon[data-v-6b2aa7e9], .ms-CommandButton-splitIcon .ms-CommandButton-icon[data-v-6b2aa7e9] { font-size: 20px; } .ms-CommandButton-button .ms-CommandButton-label[data-v-6b2aa7e9], .ms-CommandButton-splitIcon .ms-CommandButton-label[data-v-6b2aa7e9] { line-height: 44px; } } .ms-CommandButton-button[data-v-6b2aa7e9] { border: 0; margin: 0; } .ms-CommandButton + .ms-CommandButton[data-v-6b2aa7e9] { margin-left: 8px; } @media only screen and (max-width: 639px) { .ms-CommandButton + .ms-CommandButton[data-v-6b2aa7e9] { margin-left: 4px; } } .ms-CommandButton-icon[data-v-6b2aa7e9] { display: inline-block; margin-right: 8px; position: relative; font-size: 16px; min-width: 16px; height: 100%; } .ms-CommandButton-icon .ms-Icon[data-v-6b2aa7e9] { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); } .ms-CommandButton-label[data-v-6b2aa7e9] { font-size: 14px; font-weight: 400; color: \"[theme:neutralPrimary, default: #333333]\"; line-height: 40px; height: 100%; display: inline-block; vertical-align: top; } .ms-CommandButton-label[data-v-6b2aa7e9]:hover { color: \"[theme:neutralDark, default: #212121]\"; } .ms-CommandButton-dropdownIcon[data-v-6b2aa7e9], .ms-CommandButton-splitIcon[data-v-6b2aa7e9] { display: inline-block; position: relative; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 12px; font-weight: 300; min-width: 12px; height: 100%; vertical-align: top; margin-left: 8px; } .ms-CommandButton-dropdownIcon .ms-Icon[data-v-6b2aa7e9], .ms-CommandButton-splitIcon .ms-Icon[data-v-6b2aa7e9] { line-height: normal; padding-top: 16px; } .ms-CommandButton-dropdownIcon[data-v-6b2aa7e9]:focus::before, .ms-CommandButton-splitIcon[data-v-6b2aa7e9]:focus::before { top: 3px; left: 3px; right: 3px; bottom: 3px; border: 1px solid \"[theme:neutralPrimary, default: #333333]\"; position: absolute; z-index: 10; content: ''; outline: none; } @media only screen and (max-width: 639px) { .ms-CommandButton-dropdownIcon[data-v-6b2aa7e9], .ms-CommandButton-splitIcon[data-v-6b2aa7e9] { display: none; } } .ms-CommandButton-splitIcon[data-v-6b2aa7e9] { margin-left: -2px; width: 27px; border: 0; } .ms-CommandButton-splitIcon .ms-Icon[data-v-6b2aa7e9] { margin-left: -1px; position: relative; padding-top: 16px; } .ms-CommandButton-splitIcon .ms-Icon[data-v-6b2aa7e9]::after { position: absolute; content: ' '; width: 1px; height: 16px; top: 12px; left: -8px; border-left: 1px solid \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; } .ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-icon[data-v-6b2aa7e9] { margin-right: 0; } .ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-label[data-v-6b2aa7e9] { display: none; } .ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-button[data-v-6b2aa7e9] { padding: 0 12px; } .ms-CommandButton.ms-CommandButton--inline .ms-CommandButton-button[data-v-6b2aa7e9] { background: none; } .ms-CommandButton.ms-CommandButton--actionButton .ms-CommandButton-button[data-v-6b2aa7e9] { width: 50px; height: 40px; } .ms-CommandButton.ms-CommandButton--actionButton .ms-CommandButton-icon[data-v-6b2aa7e9] { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 16px; height: 16px; padding-right: 0; } .ms-CommandButton.ms-CommandButton--pivot.is-active[data-v-6b2aa7e9]::before { content: ''; height: 2px; position: absolute; left: 0; right: 0; background-color: \"[theme:themePrimary, default: #0078d7]\"; bottom: 0; z-index: 5; } .ms-CommandButton.ms-CommandButton--pivot[data-v-6b2aa7e9]:hover::before { content: ''; height: 2px; position: absolute; left: 0; right: 0; background-color: \"[theme:themePrimary, default: #0078d7]\"; bottom: 0; z-index: 5; } .ms-CommandButton.ms-CommandButton--textOnly .ms-CommandButton-label[data-v-6b2aa7e9], .ms-CommandButton.ms-CommandButton--pivot .ms-CommandButton-label[data-v-6b2aa7e9] { display: inline-block; } @media only screen and (max-width: 479px) { .ms-CommandButton.ms-CommandButton--textOnly .ms-CommandButton-label[data-v-6b2aa7e9], .ms-CommandButton.ms-CommandButton--pivot .ms-CommandButton-label[data-v-6b2aa7e9] { font-size: 16px; } } ");},
-    computed: {
-        hasIcon: function hasIcon () {
-            return !!this.$slots['icon']
-        }
-    },
-    beforeMount: function beforeMount(){ 
-        this.$fabric = { 
-            CommandButton : CommandButton$1 
-        }; 
-    },
-    extends :  commandbutton
-}
-
-var dialog = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"dialog",staticClass:"ms-Dialog",class:_vm.dialogClass},[(_vm.type == 'close')?_c('button',{staticClass:"ms-Dialog-button ms-Dialog-buttonClose",on:{"click":_vm.closeDialog}},[_c('i',{staticClass:"ms-Icon ms-Icon--Cancel"})]):_vm._e(),_vm._v(" "),_c('div',{staticClass:"ms-Dialog-title"},[_vm._v(_vm._s(_vm.title))]),_vm._v(" "),_c('div',{staticClass:"ms-Dialog-content"},[_c('p',{staticClass:"ms-Dialog-subText"},[_vm._v(_vm._s(_vm.subText))]),_vm._v(" "),_vm._t("default")],2),_vm._v(" "),_c('div',{staticClass:"ms-Dialog-actions"},[_vm._t("actions")],2)])},staticRenderFns: [],
+var script$i = {
   name: 'ou-dialog',
-
   mixins: [type('multiline', 'lgHeader', 'blocking', 'close')],
-
   props: {
     title: String,
     subText: String,
-
     value: {
       type: Boolean,
       default: false
     }
   },
-
   data: function data() {
     return {
       dialogInstance: null
     };
   },
-
   computed: {
     dialogClass: function dialogClass() {
-      var obj;
-
-      return ( obj = {}, obj[("ms-Dialog--" + (this.type))] = !!this.type, obj );
+      return _defineProperty({}, "ms-Dialog--".concat(this.type), !!this.type);
     }
   },
-
   watch: {
-    value: function value(value$1) {
-      this.setDialogVisibility(value$1);
+    value: function value(_value) {
+      this.setDialogVisibility(_value);
     }
   },
-
   mounted: function mounted() {
     this.dialogInstance = new this.$fabric.Dialog(this.$refs.dialog);
     this.setDialogVisibility(this.value);
   },
-
   methods: {
     setDialogVisibility: function setDialogVisibility(value) {
       if (value) {
-        this.dialogInstance.open();
-
-        // Because the office ui fabric js don't support on_close or on_open event in dialog
+        this.dialogInstance.open(); // Because the office ui fabric js don't support on_close or on_open event in dialog
         // component, So I have to write some hacking code to change the visible status when
         // click the overlay. Otherwise the visible status can't change, when click the overlay
         // to close the dialog.
+
         this.bindOverlayCloseEvent();
       } else if (this.isOpen()) {
         // Avoid to destroy overlay element twice, and get errors, so determine if the dialog
@@ -2235,39 +2816,67 @@ var dialog = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_
         this.dialogInstance.close();
       }
     },
-
     bindOverlayCloseEvent: function bindOverlayCloseEvent() {
-      var this$1 = this;
+      var _this = this;
 
       if (this.dialogInstance._overlay) {
         var overlayElement = this.dialogInstance._overlay.overlayElement;
 
-        var closeOverlay = function () {
+        var closeOverlay = function closeOverlay() {
           overlayElement.removeEventListener('click', closeOverlay);
-          this$1.$emit('input', false);
+
+          _this.$emit('input', false);
         };
 
         overlayElement.addEventListener('click', closeOverlay);
       }
     },
-
     isOpen: function isOpen() {
       // When the dialog is shown, the dialog element add a class name of 'is-open',
       // So use this to determine the dialog if was opened.
       return this.$refs.dialog.classList.contains('is-open');
     },
-
     closeDialog: function closeDialog(event) {
-      this.$emit('input', false);
-
-
-      // Because the original close button element have the click event to close the dialog,
+      this.$emit('input', false); // Because the original close button element have the click event to close the dialog,
       // when I fire the click event, the original click event function will fire behind it,
       // So stop the original click event, when I fire the click event.
+
       event.stopImmediatePropagation();
     }
   }
 };
+
+/* script */
+const __vue_script__$i = script$i;
+
+/* template */
+var __vue_render__$a = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"dialog",staticClass:"ms-Dialog",class:_vm.dialogClass},[(_vm.type == 'close')?_c('button',{staticClass:"ms-Dialog-button ms-Dialog-buttonClose",on:{"click":_vm.closeDialog}},[_c('i',{staticClass:"ms-Icon ms-Icon--Cancel"})]):_vm._e(),_vm._v(" "),_c('div',{staticClass:"ms-Dialog-title"},[_vm._v(_vm._s(_vm.title))]),_vm._v(" "),_c('div',{staticClass:"ms-Dialog-content"},[_c('p',{staticClass:"ms-Dialog-subText"},[_vm._v(_vm._s(_vm.subText))]),_vm._v(" "),_vm._t("default")],2),_vm._v(" "),_c('div',{staticClass:"ms-Dialog-actions"},[_vm._t("actions")],2)])};
+var __vue_staticRenderFns__$a = [];
+
+  /* style */
+  const __vue_inject_styles__$i = undefined;
+  /* scoped */
+  const __vue_scope_id__$i = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$i = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$i = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var dialog = normalizeComponent_1(
+    { render: __vue_render__$a, staticRenderFns: __vue_staticRenderFns__$a },
+    __vue_inject_styles__$i,
+    __vue_script__$i,
+    __vue_scope_id__$i,
+    __vue_is_functional_template__$i,
+    __vue_module_identifier__$i,
+    undefined,
+    undefined
+  );
 
 var Overlay = function () {
   function Overlay(overlayElement) {
@@ -2343,90 +2952,111 @@ var Dialog = function () {
   return Dialog;
 }();
 
-var uiDialog = {_scopeId: 'data-v-1194e8ec',
-    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-Dialog[data-v-1194e8ec] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4); background-color: \"[theme:white, default: #ffffff]\"; display: none; height: auto; min-width: 220px; max-width: 340px; padding: 28px 24px; z-index: 10; position: fixed; transform: translate(-50%, -50%); left: 50%; top: 50%; } .ms-Dialog.is-open[data-v-1194e8ec] { display: block; } .ms-Dialog-title[data-v-1194e8ec] { font-size: 21px; font-weight: 100; margin-bottom: 24px; } .ms-Dialog-content[data-v-1194e8ec] { position: relative; } .ms-Dialog-subText[data-v-1194e8ec] { color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 12px; font-weight: 300; line-height: 1.5; } .ms-Dialog-actions[data-v-1194e8ec] { margin-top: 24px; text-align: right; } .ms-Dialog--multiline .ms-Dialog-title[data-v-1194e8ec] { font-size: 28px; } .ms-Dialog.ms-Dialog--lgHeader .ms-Dialog-title[data-v-1194e8ec] { background-color: \"[theme:themePrimary, default: #0078d7]\"; color: \"[theme:white, default: #ffffff]\"; font-size: 28px; font-weight: 100; padding: 28px 24px; margin-top: -28px; margin-left: -24px; margin-right: -24px; } .ms-Dialog-buttonClose[data-v-1194e8ec] { background: none; border: 0; cursor: pointer; margin: 0; padding: 4px; position: absolute; right: 12px; top: 12px; z-index: 10; } .ms-Dialog-buttonClose .ms-Icon.ms-Icon--Cancel[data-v-1194e8ec] { color: \"[theme:neutralSecondary, default: #666666]\"; font-size: 16px; } .ms-Button.ms-Button--compound[data-v-1194e8ec]:not(:last-child) { margin-bottom: 20px; } .ms-Dialog.ms-Dialog--close:not(.ms-Dialog--lgHeader) .ms-Dialog-title[data-v-1194e8ec] { margin-right: 20px; } .ms-Dialog.ms-Dialog--close:not(.ms-Dialog--lgHeader) .ms-Dialog-button.ms-Dialog-buttonClose[data-v-1194e8ec] { display: block; } @media (min-width: 480px) { .ms-Dialog-main[data-v-1194e8ec] { width: auto; min-width: 288px; max-width: 340px; } } .ms-Overlay[data-v-1194e8ec] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; background-color: \"[theme:whiteTranslucent40, default: rgba(255,255,255,.4)]\"; position: fixed; bottom: 0; left: 0; right: 0; top: 0; z-index: 0; display: none; } .ms-Overlay.is-visible[data-v-1194e8ec] { display: block; } .ms-Overlay--dark[data-v-1194e8ec] { background-color: \"[theme:blackTranslucent40, default: rgba(0,0,0,.4)]\"; } .ms-u-overflowHidden[data-v-1194e8ec] { overflow: hidden; } .ms-Icon.ms-Icon--Cancel[data-v-1194e8ec] { content: url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"16\" height=\"16\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M1115 1024l690 -691l-90 -90l-691 690l-691 -690l-90 90l690 691l-690 691l90 90l691 -690l691 690l90 -90z\" fill=\"black\" stroke=\"none\"/></svg>'); } ");},
-    beforeMount: function beforeMount(){
-        this.$fabric = {
-            Dialog : Dialog
-        };
-    },
-    props : {
-        useDarkOverlay : Boolean
-    },
-    methods : {
-        ensureScopeIdForChilds: function ensureScopeIdForChilds(){
-            if(this.dialogInstance && this.dialogInstance._overlay && this.dialogInstance._overlay.overlayElement){
-                this.dialogInstance._overlay.overlayElement.setAttribute(this.$options._scopeId,"");
-                if(this.useDarkOverlay)
-                    { this.dialogInstance._overlay.overlayElement.className += " ms-Overlay--dark"; }
-            }
-        },
-        ensureOverlayIsClosed: function ensureOverlayIsClosed(){
-            if(this.dialogInstance && this.dialogInstance._overlay && this.dialogInstance._overlay.overlayElement.parentElement)
-                { this.dialogInstance._overlay.remove(); }
-        }
-    },
-    mounted: function () {
-        this.$nextTick(function () {
-            this.ensureScopeIdForChilds();
-        });
-    },
-    watch:{
-        value: function value(newVal){
-            this.ensureScopeIdForChilds();
+var script$j = {
+  loadStyles: loadStyles,
+  beforeMount: function beforeMount() {
+    this.$fabric = {
+      Dialog: Dialog
+    };
+  },
+  props: {
+    useDarkOverlay: Boolean
+  },
+  methods: {
+    ensureScopeIdForChilds: function ensureScopeIdForChilds() {
+      if (this.dialogInstance && this.dialogInstance._overlay && this.dialogInstance._overlay.overlayElement) {
+        this.dialogInstance._overlay.overlayElement.setAttribute(this.$options._scopeId, "");
 
-        if(!newVal)
-            { this.ensureOverlayIsClosed(); }
-        }
+        if (this.useDarkOverlay) this.dialogInstance._overlay.overlayElement.className += " ms-Overlay--dark";
+      }
     },
-    beforeDestroy: function beforeDestroy()
-    {
-        this.ensureOverlayIsClosed();
-    },
-    extends :  dialog
-}
+    ensureOverlayIsClosed: function ensureOverlayIsClosed() {
+      if (this.dialogInstance && this.dialogInstance._overlay && this.dialogInstance._overlay.overlayElement.parentElement) this.dialogInstance._overlay.remove();
+    }
+  },
+  mounted: function mounted() {
+    this.$nextTick(function () {
+      this.ensureScopeIdForChilds();
+    });
+  },
+  watch: {
+    value: function value(newVal) {
+      this.ensureScopeIdForChilds();
+      if (!newVal) this.ensureOverlayIsClosed();
+    }
+  },
+  beforeDestroy: function beforeDestroy() {
+    this.ensureOverlayIsClosed();
+  },
+  extends: dialog
+};
 
-var Dropdown = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"dropdown",staticClass:"ms-Dropdown",class:{ 'is-disabled': _vm.disabled }},[(_vm.label)?_c('label',{staticClass:"ms-Label"},[_vm._v(_vm._s(_vm.label))]):_vm._e(),_vm._v(" "),_c('i',{staticClass:"ms-Dropdown-caretDown ms-Icon ms-Icon--ChevronDown"}),_vm._v(" "),_c('select',{ref:"dropdownSelect",staticClass:"ms-Dropdown-select",on:{"change":_vm.getCurrentSelected}},[_vm._t("default")],2)])},staticRenderFns: [],
+/* script */
+const __vue_script__$j = script$j;
+
+/* template */
+
+  /* style */
+  const __vue_inject_styles__$j = function (inject) {
+    if (!inject) return
+    inject("data-v-d93cc786_0", { source: ".ms-Dialog[data-v-d93cc786]{font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;box-shadow:0 0 5px 0 rgba(0,0,0,.4);background-color:\"[theme:white, default: #ffffff]\";display:none;height:auto;min-width:220px;max-width:340px;padding:28px 24px;z-index:10;position:fixed;transform:translate(-50%,-50%);left:50%;top:50%}.ms-Dialog.is-open[data-v-d93cc786]{display:block}.ms-Dialog-title[data-v-d93cc786]{font-size:21px;font-weight:100;margin-bottom:24px}.ms-Dialog-content[data-v-d93cc786]{position:relative}.ms-Dialog-subText[data-v-d93cc786]{color:\"[theme:neutralPrimary, default: #333333]\";font-size:12px;font-weight:300;line-height:1.5}.ms-Dialog-actions[data-v-d93cc786]{margin-top:24px;text-align:right}.ms-Dialog--multiline .ms-Dialog-title[data-v-d93cc786]{font-size:28px}.ms-Dialog.ms-Dialog--lgHeader .ms-Dialog-title[data-v-d93cc786]{background-color:\"[theme:themePrimary, default: #0078d7]\";color:\"[theme:white, default: #ffffff]\";font-size:28px;font-weight:100;padding:28px 24px;margin-top:-28px;margin-left:-24px;margin-right:-24px}.ms-Dialog-buttonClose[data-v-d93cc786]{background:0 0;border:0;cursor:pointer;margin:0;padding:4px;position:absolute;right:12px;top:12px;z-index:10}.ms-Dialog-buttonClose .ms-Icon.ms-Icon--Cancel[data-v-d93cc786]{color:\"[theme:neutralSecondary, default: #666666]\";font-size:16px}.ms-Button.ms-Button--compound[data-v-d93cc786]:not(:last-child){margin-bottom:20px}.ms-Dialog.ms-Dialog--close:not(.ms-Dialog--lgHeader) .ms-Dialog-title[data-v-d93cc786]{margin-right:20px}.ms-Dialog.ms-Dialog--close:not(.ms-Dialog--lgHeader) .ms-Dialog-button.ms-Dialog-buttonClose[data-v-d93cc786]{display:block}@media (min-width:480px){.ms-Dialog-main[data-v-d93cc786]{width:auto;min-width:288px;max-width:340px}}.ms-Overlay[data-v-d93cc786]{font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;background-color:\"[theme:whiteTranslucent40, default: rgba(255,255,255,.4)]\";position:fixed;bottom:0;left:0;right:0;top:0;z-index:0;display:none}.ms-Overlay.is-visible[data-v-d93cc786]{display:block}.ms-Overlay--dark[data-v-d93cc786]{background-color:\"[theme:blackTranslucent40, default: rgba(0,0,0,.4)]\"}.ms-u-overflowHidden[data-v-d93cc786]{overflow:hidden}.ms-Icon.ms-Icon--Cancel[data-v-d93cc786]{content:url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"16\" height=\"16\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M1115 1024l690 -691l-90 -90l-691 690l-691 -690l-90 90l690 691l-690 691l90 90l691 -690l691 690l90 -90z\" fill=\"black\" stroke=\"none\"/></svg>')}", map: undefined, media: undefined });
+
+  };
+  /* scoped */
+  const __vue_scope_id__$j = "data-v-d93cc786";
+  /* module identifier */
+  const __vue_module_identifier__$j = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$j = undefined;
+  /* style inject */
+  const __vue_create_injector__$8 = function(context){ return function(scopeId, data){__vue_script__$j.loadStyles && __vue_script__$j.loadStyles(data.source);}};
+  /* style inject SSR */
+  
+
+  
+  var uiDialog = normalizeComponent_1(
+    {},
+    __vue_inject_styles__$j,
+    __vue_script__$j,
+    __vue_scope_id__$j,
+    __vue_is_functional_template__$j,
+    __vue_module_identifier__$j,
+    __vue_create_injector__$8,
+    undefined
+  );
+
+//
+var script$k = {
   name: 'ou-dropdown',
-
   mixins: [disabled, eventHub],
-
   props: {
     label: String,
     value: [String, Number],
-
     placeholder: {
       type: String,
       default: 'Please select'
     }
   },
-
   watch: {
     value: function value() {
       this.setSelectedItem();
     }
   },
-
   created: function created() {
     this.eventHub.$on('setSelectedStatus', this.setSelectedStatus);
   },
-
   beforeDestroy: function beforeDestroy() {
     this.eventHub.$off('setSelectedStatus', this.setSelectedStatus);
   },
-
   mounted: function mounted() {
     new this.$fabric.Dropdown(this.$refs.dropdown);
-
     this.setDropdownTitle(this.placeholder);
     this.setSelectedItem();
   },
-
   methods: {
     setDropdownTitle: function setDropdownTitle(title) {
       this.$refs.dropdown.querySelector('.ms-Dropdown-title').textContent = title;
     },
-
     // Because the office ui js dropdown component don't have selected class to set
     // selected dropdown item, So write some hack code to set dropdown item selected.
     // Maybe next version of office ui js will fix this problem, So this code sould be
@@ -2434,26 +3064,57 @@ var Dropdown = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c
     setSelectedItem: function setSelectedItem() {
       this.eventHub.$emit('setSelectedItem', this.value);
     },
-
     setSelectedStatus: function setSelectedStatus(content) {
-      var this$1 = this;
+      var _this = this;
 
       this.$refs.dropdown.querySelectorAll('.ms-Dropdown-item').forEach(function (item) {
         if (item.textContent.trim() == content.trim()) {
           item.classList.add('is-selected');
-          this$1.setDropdownTitle(content);
+
+          _this.setDropdownTitle(content);
         } else {
           item.classList.remove('is-selected');
         }
       });
     },
-
     getCurrentSelected: function getCurrentSelected() {
       var dropdownSelect = this.$refs.dropdownSelect;
       this.$emit('input', dropdownSelect.options[dropdownSelect.selectedIndex].value);
     }
   }
 };
+
+/* script */
+const __vue_script__$k = script$k;
+
+/* template */
+var __vue_render__$b = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"dropdown",staticClass:"ms-Dropdown",class:{ 'is-disabled': _vm.disabled }},[(_vm.label)?_c('label',{staticClass:"ms-Label"},[_vm._v(_vm._s(_vm.label))]):_vm._e(),_vm._v(" "),_c('i',{staticClass:"ms-Dropdown-caretDown ms-Icon ms-Icon--ChevronDown"}),_vm._v(" "),_c('select',{ref:"dropdownSelect",staticClass:"ms-Dropdown-select",on:{"change":_vm.getCurrentSelected}},[_vm._t("default")],2)])};
+var __vue_staticRenderFns__$b = [];
+
+  /* style */
+  const __vue_inject_styles__$k = undefined;
+  /* scoped */
+  const __vue_scope_id__$k = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$k = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$k = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var Dropdown = normalizeComponent_1(
+    { render: __vue_render__$b, staticRenderFns: __vue_staticRenderFns__$b },
+    __vue_inject_styles__$k,
+    __vue_script__$k,
+    __vue_scope_id__$k,
+    __vue_is_functional_template__$k,
+    __vue_module_identifier__$k,
+    undefined,
+    undefined
+  );
 
 var PANEL_HOST_CLASS = "ms-PanelHost";
 
@@ -2807,56 +3468,88 @@ var Dropdown$1 = function () {
   return Dropdown;
 }();
 
-var uiDropdown = {_scopeId: 'data-v-d4b6df96',
-    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-Dropdown[data-v-d4b6df96] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 14px; font-weight: 400; margin-bottom: 10px; position: relative; outline: 0; } .ms-Dropdown:hover .ms-Dropdown-title[data-v-d4b6df96], .ms-Dropdown:hover .ms-Dropdown-caretDown[data-v-d4b6df96], .ms-Dropdown:focus .ms-Dropdown-title[data-v-d4b6df96], .ms-Dropdown:focus .ms-Dropdown-caretDown[data-v-d4b6df96], .ms-Dropdown:active .ms-Dropdown-title[data-v-d4b6df96], .ms-Dropdown:active .ms-Dropdown-caretDown[data-v-d4b6df96] { color: \"[theme:black, default: #000000]\"; } .ms-Dropdown:hover .ms-Dropdown-title[data-v-d4b6df96], .ms-Dropdown:active .ms-Dropdown-title[data-v-d4b6df96] { border-color: \"[theme:neutralSecondaryAlt, default: #767676]\"; } .ms-Dropdown:focus .ms-Dropdown-title[data-v-d4b6df96] { border-color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-Dropdown .ms-Label[data-v-d4b6df96] { display: inline-block; margin-bottom: 8px; } .ms-Dropdown.is-disabled .ms-Dropdown-title[data-v-d4b6df96] { background-color: \"[theme:neutralLighter, default: #f4f4f4]\"; border-color: \"[theme:neutralLighter, default: #f4f4f4]\"; color: \"[theme:neutralTertiary, default: #a6a6a6]\"; cursor: default; } @media screen and (-ms-high-contrast: active) { .ms-Dropdown.is-disabled .ms-Dropdown-title[data-v-d4b6df96] { border-color: #00ff00; color: #00ff00; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-Dropdown.is-disabled .ms-Dropdown-title[data-v-d4b6df96] { border-color: #600000; color: #600000; } } .ms-Dropdown.is-disabled .ms-Dropdown-caretDown[data-v-d4b6df96] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } @media screen and (-ms-high-contrast: active) { .ms-Dropdown.is-disabled .ms-Dropdown-caretDown[data-v-d4b6df96] { color: #00ff00; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-Dropdown.is-disabled .ms-Dropdown-caretDown[data-v-d4b6df96] { color: #600000; } } .ms-Dropdown.is-open .ms-Dropdown-items[data-v-d4b6df96] { display: block; position: absolute; } .ms-Panel .ms-Dropdown-items[data-v-d4b6df96] { box-shadow: none; overflow-y: auto; padding-top: 4px; max-height: 100%; } .ms-Panel .ms-Dropdown-items .ms-Dropdown-item[data-v-d4b6df96] { padding: 7px 16px; overflow: hidden; text-overflow: ellipsis; } .ms-Panel .ms-Dropdown-items[data-v-d4b6df96]::before { content: none; border: 0; } .ms-Dropdown-select[data-v-d4b6df96] { display: none; } .ms-Dropdown-caretDown[data-v-d4b6df96] { color: \"[theme:neutralDark, default: #212121]\"; font-size: 12px; position: absolute; right: 13px; bottom: 9px; z-index: 1; pointer-events: none; } .ms-Dropdown-title[data-v-d4b6df96] { box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; background: \"[theme:white, default: #ffffff]\"; border: 1px solid \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; cursor: pointer; display: block; height: 32px; padding: 5px 32px 0 10px; position: relative; overflow: hidden; } .ms-Dropdown-title.ms-Dropdown-truncator[data-v-d4b6df96] { height: auto; display: block; position: absolute; visibility: hidden; } .ms-Dropdown-items[data-v-d4b6df96] { box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4); background-color: \"[theme:white, default: #ffffff]\"; display: none; list-style-type: none; position: absolute; width: 100%; max-height: 200px; z-index: 400; overflow-y: scroll; top: auto; right: auto; bottom: auto; left: auto; max-width: 100%; } .ms-Dropdown-items[data-v-d4b6df96]::before { content: ''; position: absolute; z-index: -1; top: 0; left: 0; right: 0; bottom: 0; border: 1px solid \"[theme:neutralLight, default: #eaeaea]\"; } @media screen and (-ms-high-contrast: active) { .ms-Dropdown-items[data-v-d4b6df96] { border: 1px solid \"[theme:white, default: #ffffff]\"; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-Dropdown-items[data-v-d4b6df96] { border: 1px solid \"[theme:black, default: #000000]\"; } } .ms-Dropdown-item[data-v-d4b6df96] { box-sizing: border-box; cursor: pointer; display: block; height: 36px; padding: 7px 10px; position: relative; border: 1px solid transparent; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; } @media screen and (-ms-high-contrast: active) { .ms-Dropdown-item[data-v-d4b6df96] { border-color: \"[theme:black, default: #000000]\"; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-Dropdown-item[data-v-d4b6df96] { border-color: \"[theme:white, default: #ffffff]\"; } } .ms-Dropdown-item[data-v-d4b6df96]:hover { background-color: \"[theme:neutralLight, default: #eaeaea]\"; color: \"[theme:black, default: #000000]\"; } @media screen and (-ms-high-contrast: active) { .ms-Dropdown-item[data-v-d4b6df96]:hover { background-color: #1AEBFF; border-color: #1AEBFF; color: \"[theme:black, default: #000000]\"; } .ms-Dropdown-item[data-v-d4b6df96]:hover:focus { border-color: \"[theme:black, default: #000000]\"; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-Dropdown-item[data-v-d4b6df96]:hover { background-color: #37006E; border-color: #37006E; color: \"[theme:white, default: #ffffff]\"; } } .ms-Dropdown-item[data-v-d4b6df96]:active { background-color: \"[theme:neutralLight, default: #eaeaea]\"; border-color: \"[theme:themePrimary, default: #0078d7]\"; color: \"[theme:black, default: #000000]\"; } .ms-Dropdown-item.is-disabled[data-v-d4b6df96] { background: \"[theme:white, default: #ffffff]\"; color: \"[theme:neutralTertiary, default: #a6a6a6]\"; cursor: default; } .ms-Dropdown-item.is-selected[data-v-d4b6df96], .ms-Dropdown-item.ms-Dropdown-item--selected[data-v-d4b6df96] { background-color: \"[theme:themeLight, default: #c7e0f4]\"; color: \"[theme:black, default: #000000]\"; } .ms-Dropdown-item.is-selected[data-v-d4b6df96]:hover, .ms-Dropdown-item.ms-Dropdown-item--selected[data-v-d4b6df96]:hover { background-color: \"[theme:themeLight, default: #c7e0f4]\"; } @media screen and (-ms-high-contrast: active) { .ms-Dropdown-item.is-selected[data-v-d4b6df96], .ms-Dropdown-item.ms-Dropdown-item--selected[data-v-d4b6df96] { background-color: #1AEBFF; border-color: #1AEBFF; color: \"[theme:black, default: #000000]\"; } .ms-Dropdown-item.is-selected[data-v-d4b6df96]:focus, .ms-Dropdown-item.ms-Dropdown-item--selected[data-v-d4b6df96]:focus { border-color: \"[theme:black, default: #000000]\"; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-Dropdown-item.is-selected[data-v-d4b6df96], .ms-Dropdown-item.ms-Dropdown-item--selected[data-v-d4b6df96] { background-color: #37006E; border-color: #37006E; color: \"[theme:white, default: #ffffff]\"; } } .ms-Dropdown-caretDown[data-v-d4b6df96] { bottom: 7px; } .ms-Dropdown-caretDown.ms-Icon.ms-Icon--ChevronDown[data-v-d4b6df96]::before { content: url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"12\" height=\"12\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path transform=\"translate(0, 2048) scale(1, -1)\" d=\"M1939 1581l90 -90l-1005 -1005l-1005 1005l90 90l915 -915z\" fill=\"black\" stroke=\"none\"/></svg>'); } .ms-Panel .ms-Dropdown-items[data-v-d4b6df96] { /* ui-fabric-js tries to adjust the ms-dropdown-items for small devices, but it confligts with using them normally in panels this will undo these adjustments. (Still works fine on small devices) */ max-height: 200px; box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4); overflow-y: scroll; padding-top: 0; } ");},
-    beforeMount: function beforeMount(){
-        this.$fabric = {
-            Dropdown : Dropdown$1
-        };
-    },
-    methods:{
-        setSelectedStatus: function setSelectedStatus(content) {
-            var this$1 = this;
+var script$l = {
+  loadStyles: loadStyles,
+  beforeMount: function beforeMount() {
+    this.$fabric = {
+      Dropdown: Dropdown$1
+    };
+  },
+  methods: {
+    setSelectedStatus: function setSelectedStatus(content) {
+      var this$1 = this;
+      Array.prototype.forEach.call(this.$refs.dropdown.querySelectorAll('.ms-Dropdown-item'), function (item) {
+        if (item.textContent.trim() == content.trim()) {
+          item.classList.add('is-selected');
+          this$1.setDropdownTitle(content);
+        } else {
+          item.classList.remove('is-selected');
+        }
+      });
+    }
+  },
+  mounted: function mounted() {
+    var _this = this;
 
-            Array.prototype.forEach.call(this.$refs.dropdown.querySelectorAll('.ms-Dropdown-item'), function (item) {
-                if (item.textContent.trim() == content.trim()) {
-                    item.classList.add('is-selected');
-                    this$1.setDropdownTitle(content);
-                } else {
-                    item.classList.remove('is-selected');
-                }
-            });
-        },
-    },
-    mounted: function mounted(){
-        var this$1 = this;
+    var childs = this.$refs.dropdown.querySelectorAll(":not([" + this.$options._scopeId + "])"); //IE vs. Array.From vs. querySelectorAll = no work >.<
+    //Array.prototype.slice, does the trick instead 
 
-        var childs = this.$refs.dropdown.querySelectorAll(":not([" + this.$options._scopeId + "])");
-        //IE vs. Array.From vs. querySelectorAll = no work >.<
-        //Array.prototype.slice, does the trick instead 
-        Array.prototype.slice.call(childs).map(function (c){ return c.setAttribute(this$1.$options._scopeId, ""); });
-        // Array.from(childs).map(c=>c.setAttribute(this.$options._scopeId, ""));
-    },
-    extends :  Dropdown
-}
+    Array.prototype.slice.call(childs).map(function (c) {
+      return c.setAttribute(_this.$options._scopeId, "");
+    }); // Array.from(childs).map(c=>c.setAttribute(this.$options._scopeId, ""));
+  },
+  extends: Dropdown
+};
 
-var dropdownitem = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('option',{domProps:{"value":_vm.value}},[_vm._t("default")],2)},staticRenderFns: [],
+/* script */
+const __vue_script__$l = script$l;
+
+/* template */
+
+  /* style */
+  const __vue_inject_styles__$l = function (inject) {
+    if (!inject) return
+    inject("data-v-3643bbc6_0", { source: ".ms-Dropdown[data-v-3643bbc6]{font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;box-sizing:border-box;margin:0;padding:0;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;color:\"[theme:neutralPrimary, default: #333333]\";font-size:14px;font-weight:400;margin-bottom:10px;position:relative;outline:0}.ms-Dropdown:active .ms-Dropdown-caretDown[data-v-3643bbc6],.ms-Dropdown:active .ms-Dropdown-title[data-v-3643bbc6],.ms-Dropdown:focus .ms-Dropdown-caretDown[data-v-3643bbc6],.ms-Dropdown:focus .ms-Dropdown-title[data-v-3643bbc6],.ms-Dropdown:hover .ms-Dropdown-caretDown[data-v-3643bbc6],.ms-Dropdown:hover .ms-Dropdown-title[data-v-3643bbc6]{color:\"[theme:black, default: #000000]\"}.ms-Dropdown:active .ms-Dropdown-title[data-v-3643bbc6],.ms-Dropdown:hover .ms-Dropdown-title[data-v-3643bbc6]{border-color:\"[theme:neutralSecondaryAlt, default: #767676]\"}.ms-Dropdown:focus .ms-Dropdown-title[data-v-3643bbc6]{border-color:\"[theme:themePrimary, default: #0078d7]\"}.ms-Dropdown .ms-Label[data-v-3643bbc6]{display:inline-block;margin-bottom:8px}.ms-Dropdown.is-disabled .ms-Dropdown-title[data-v-3643bbc6]{background-color:\"[theme:neutralLighter, default: #f4f4f4]\";border-color:\"[theme:neutralLighter, default: #f4f4f4]\";color:\"[theme:neutralTertiary, default: #a6a6a6]\";cursor:default}@media screen and (-ms-high-contrast:active){.ms-Dropdown.is-disabled .ms-Dropdown-title[data-v-3643bbc6]{border-color:#0f0;color:#0f0}}@media screen and (-ms-high-contrast:black-on-white){.ms-Dropdown.is-disabled .ms-Dropdown-title[data-v-3643bbc6]{border-color:#600000;color:#600000}}.ms-Dropdown.is-disabled .ms-Dropdown-caretDown[data-v-3643bbc6]{color:\"[theme:neutralTertiary, default: #a6a6a6]\"}@media screen and (-ms-high-contrast:active){.ms-Dropdown.is-disabled .ms-Dropdown-caretDown[data-v-3643bbc6]{color:#0f0}}@media screen and (-ms-high-contrast:black-on-white){.ms-Dropdown.is-disabled .ms-Dropdown-caretDown[data-v-3643bbc6]{color:#600000}}.ms-Dropdown.is-open .ms-Dropdown-items[data-v-3643bbc6]{display:block;position:absolute}.ms-Panel .ms-Dropdown-items[data-v-3643bbc6]{box-shadow:none;overflow-y:auto;padding-top:4px;max-height:100%}.ms-Panel .ms-Dropdown-items .ms-Dropdown-item[data-v-3643bbc6]{padding:7px 16px;overflow:hidden;text-overflow:ellipsis}.ms-Panel .ms-Dropdown-items[data-v-3643bbc6]::before{content:none;border:0}.ms-Dropdown-select[data-v-3643bbc6]{display:none}.ms-Dropdown-caretDown[data-v-3643bbc6]{color:\"[theme:neutralDark, default: #212121]\";font-size:12px;position:absolute;right:13px;bottom:9px;z-index:1;pointer-events:none}.ms-Dropdown-title[data-v-3643bbc6]{box-sizing:border-box;margin:0;padding:0;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;background:\"[theme:white, default: #ffffff]\";border:1px solid \"[theme:neutralTertiaryAlt, default: #c8c8c8]\";cursor:pointer;display:block;height:32px;padding:5px 32px 0 10px;position:relative;overflow:hidden}.ms-Dropdown-title.ms-Dropdown-truncator[data-v-3643bbc6]{height:auto;display:block;position:absolute;visibility:hidden}.ms-Dropdown-items[data-v-3643bbc6]{box-sizing:border-box;margin:0;padding:0;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;box-shadow:0 0 5px 0 rgba(0,0,0,.4);background-color:\"[theme:white, default: #ffffff]\";display:none;list-style-type:none;position:absolute;width:100%;max-height:200px;z-index:400;overflow-y:scroll;top:auto;right:auto;bottom:auto;left:auto;max-width:100%}.ms-Dropdown-items[data-v-3643bbc6]::before{content:\"\";position:absolute;z-index:-1;top:0;left:0;right:0;bottom:0;border:1px solid \"[theme:neutralLight, default: #eaeaea]\"}@media screen and (-ms-high-contrast:active){.ms-Dropdown-items[data-v-3643bbc6]{border:1px solid \"[theme:white, default: #ffffff]\"}}@media screen and (-ms-high-contrast:black-on-white){.ms-Dropdown-items[data-v-3643bbc6]{border:1px solid \"[theme:black, default: #000000]\"}}.ms-Dropdown-item[data-v-3643bbc6]{box-sizing:border-box;cursor:pointer;display:block;height:36px;padding:7px 10px;position:relative;border:1px solid transparent;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}@media screen and (-ms-high-contrast:active){.ms-Dropdown-item[data-v-3643bbc6]{border-color:\"[theme:black, default: #000000]\"}}@media screen and (-ms-high-contrast:black-on-white){.ms-Dropdown-item[data-v-3643bbc6]{border-color:\"[theme:white, default: #ffffff]\"}}.ms-Dropdown-item[data-v-3643bbc6]:hover{background-color:\"[theme:neutralLight, default: #eaeaea]\";color:\"[theme:black, default: #000000]\"}@media screen and (-ms-high-contrast:active){.ms-Dropdown-item[data-v-3643bbc6]:hover{background-color:#1aebff;border-color:#1aebff;color:\"[theme:black, default: #000000]\"}.ms-Dropdown-item[data-v-3643bbc6]:hover:focus{border-color:\"[theme:black, default: #000000]\"}}@media screen and (-ms-high-contrast:black-on-white){.ms-Dropdown-item[data-v-3643bbc6]:hover{background-color:#37006e;border-color:#37006e;color:\"[theme:white, default: #ffffff]\"}}.ms-Dropdown-item[data-v-3643bbc6]:active{background-color:\"[theme:neutralLight, default: #eaeaea]\";border-color:\"[theme:themePrimary, default: #0078d7]\";color:\"[theme:black, default: #000000]\"}.ms-Dropdown-item.is-disabled[data-v-3643bbc6]{background:\"[theme:white, default: #ffffff]\";color:\"[theme:neutralTertiary, default: #a6a6a6]\";cursor:default}.ms-Dropdown-item.is-selected[data-v-3643bbc6],.ms-Dropdown-item.ms-Dropdown-item--selected[data-v-3643bbc6]{background-color:\"[theme:themeLight, default: #c7e0f4]\";color:\"[theme:black, default: #000000]\"}.ms-Dropdown-item.is-selected[data-v-3643bbc6]:hover,.ms-Dropdown-item.ms-Dropdown-item--selected[data-v-3643bbc6]:hover{background-color:\"[theme:themeLight, default: #c7e0f4]\"}@media screen and (-ms-high-contrast:active){.ms-Dropdown-item.is-selected[data-v-3643bbc6],.ms-Dropdown-item.ms-Dropdown-item--selected[data-v-3643bbc6]{background-color:#1aebff;border-color:#1aebff;color:\"[theme:black, default: #000000]\"}.ms-Dropdown-item.is-selected[data-v-3643bbc6]:focus,.ms-Dropdown-item.ms-Dropdown-item--selected[data-v-3643bbc6]:focus{border-color:\"[theme:black, default: #000000]\"}}@media screen and (-ms-high-contrast:black-on-white){.ms-Dropdown-item.is-selected[data-v-3643bbc6],.ms-Dropdown-item.ms-Dropdown-item--selected[data-v-3643bbc6]{background-color:#37006e;border-color:#37006e;color:\"[theme:white, default: #ffffff]\"}}.ms-Dropdown-caretDown[data-v-3643bbc6]{bottom:7px}.ms-Dropdown-caretDown.ms-Icon.ms-Icon--ChevronDown[data-v-3643bbc6]::before{content:url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"12\" height=\"12\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path transform=\"translate(0, 2048) scale(1, -1)\" d=\"M1939 1581l90 -90l-1005 -1005l-1005 1005l90 90l915 -915z\" fill=\"black\" stroke=\"none\"/></svg>')}.ms-Panel .ms-Dropdown-items[data-v-3643bbc6]{max-height:200px;box-shadow:0 0 5px 0 rgba(0,0,0,.4);overflow-y:scroll;padding-top:0}", map: undefined, media: undefined });
+
+  };
+  /* scoped */
+  const __vue_scope_id__$l = "data-v-3643bbc6";
+  /* module identifier */
+  const __vue_module_identifier__$l = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$l = undefined;
+  /* style inject */
+  const __vue_create_injector__$9 = function(context){ return function(scopeId, data){__vue_script__$l.loadStyles && __vue_script__$l.loadStyles(data.source);}};
+  /* style inject SSR */
+  
+
+  
+  var uiDropdown = normalizeComponent_1(
+    {},
+    __vue_inject_styles__$l,
+    __vue_script__$l,
+    __vue_scope_id__$l,
+    __vue_is_functional_template__$l,
+    __vue_module_identifier__$l,
+    __vue_create_injector__$9,
+    undefined
+  );
+
+//
+//
+//
+var script$m = {
   name: 'ou-dropdown-item',
-
   inject: ['eventHub'],
-
   props: {
     value: [String, Number]
   },
-
   created: function created() {
     this.eventHub.$on('setSelectedItem', this.setSelectedItem);
   },
-
   beforeDestroy: function beforeDestroy() {
     this.eventHub.$off('setSelectedItem', this.setSelectedItem);
   },
-
   methods: {
     setSelectedItem: function setSelectedItem(value) {
       if (value === this.value) {
@@ -2866,26 +3559,85 @@ var dropdownitem = {render: function(){var _vm=this;var _h=_vm.$createElement;va
   }
 };
 
-var uiDropdownItem = {_scopeId: 'data-v-f816d130',
-    beforeCreate: function beforeCreate(){ loadStyles(" /*# sourceMappingURL=uiDropdownItem.vue.map */");},
-    extends :  dropdownitem,
-    created: function created(){
-        this.$options._scopeId = this.$parent.$options._scopeId;
-    }
-}
+/* script */
+const __vue_script__$m = script$m;
 
-var label = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('label',{staticClass:"ms-Label",class:_vm.labelClass},[_vm._t("default")],2)},staticRenderFns: [],
+/* template */
+var __vue_render__$c = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('option',{domProps:{"value":_vm.value}},[_vm._t("default")],2)};
+var __vue_staticRenderFns__$c = [];
+
+  /* style */
+  const __vue_inject_styles__$m = undefined;
+  /* scoped */
+  const __vue_scope_id__$m = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$m = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$m = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var dropdownitem = normalizeComponent_1(
+    { render: __vue_render__$c, staticRenderFns: __vue_staticRenderFns__$c },
+    __vue_inject_styles__$m,
+    __vue_script__$m,
+    __vue_scope_id__$m,
+    __vue_is_functional_template__$m,
+    __vue_module_identifier__$m,
+    undefined,
+    undefined
+  );
+
+var script$n = {
+  extends: dropdownitem,
+  created: function created() {
+    this.$options._scopeId = this.$parent.$options._scopeId;
+  }
+};
+
+/* script */
+const __vue_script__$n = script$n;
+
+/* template */
+
+  /* style */
+  const __vue_inject_styles__$n = undefined;
+  /* scoped */
+  const __vue_scope_id__$n = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$n = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$n = undefined;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var uiDropdownItem = normalizeComponent_1(
+    {},
+    __vue_inject_styles__$n,
+    __vue_script__$n,
+    __vue_scope_id__$n,
+    __vue_is_functional_template__$n,
+    __vue_module_identifier__$n,
+    undefined,
+    undefined
+  );
+
+//
+var script$o = {
   name: 'ou-label',
-
   mixins: [disabled],
-
   props: {
     required: {
       type: Boolean,
       default: false
     }
   },
-
   computed: {
     labelClass: function labelClass() {
       return {
@@ -2896,19 +3648,88 @@ var label = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_v
   }
 };
 
-var uiLabel = {_scopeId: 'data-v-2943a900',
-    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-Label[data-v-2943a900] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 12px; font-weight: 400; box-sizing: border-box; display: block; padding: 5px 0; } .ms-Label.is-required[data-v-2943a900]::after { content: ' *'; color: \"[theme:error, default: #a80000]\"; } .ms-Label.is-disabled[data-v-2943a900] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } ");},
-    extends :  label
-}
+/* script */
+const __vue_script__$o = script$o;
 
-var link = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('a',{staticClass:"ms-Link",attrs:{"href":_vm.href,"title":_vm.title},on:{"click":_vm.clickEvent}},[_vm._t("default")],2)},staticRenderFns: [],
+/* template */
+var __vue_render__$d = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('label',{staticClass:"ms-Label",class:_vm.labelClass},[_vm._t("default")],2)};
+var __vue_staticRenderFns__$d = [];
+
+  /* style */
+  const __vue_inject_styles__$o = undefined;
+  /* scoped */
+  const __vue_scope_id__$o = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$o = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$o = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var label = normalizeComponent_1(
+    { render: __vue_render__$d, staticRenderFns: __vue_staticRenderFns__$d },
+    __vue_inject_styles__$o,
+    __vue_script__$o,
+    __vue_scope_id__$o,
+    __vue_is_functional_template__$o,
+    __vue_module_identifier__$o,
+    undefined,
+    undefined
+  );
+
+var script$p = {
+  loadStyles: loadStyles,
+  extends: label
+};
+
+/* script */
+const __vue_script__$p = script$p;
+
+/* template */
+
+  /* style */
+  const __vue_inject_styles__$p = function (inject) {
+    if (!inject) return
+    inject("data-v-7c3d3d8b_0", { source: ".ms-Label[data-v-7c3d3d8b]{font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;box-sizing:border-box;margin:0;padding:0;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;color:\"[theme:neutralPrimary, default: #333333]\";font-size:12px;font-weight:400;box-sizing:border-box;display:block;padding:5px 0}.ms-Label.is-required[data-v-7c3d3d8b]::after{content:\" *\";color:\"[theme:error, default: #a80000]\"}.ms-Label.is-disabled[data-v-7c3d3d8b]{color:\"[theme:neutralTertiary, default: #a6a6a6]\"}", map: undefined, media: undefined });
+
+  };
+  /* scoped */
+  const __vue_scope_id__$p = "data-v-7c3d3d8b";
+  /* module identifier */
+  const __vue_module_identifier__$p = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$p = undefined;
+  /* style inject */
+  const __vue_create_injector__$a = function(context){ return function(scopeId, data){__vue_script__$p.loadStyles && __vue_script__$p.loadStyles(data.source);}};
+  /* style inject SSR */
+  
+
+  
+  var uiLabel = normalizeComponent_1(
+    {},
+    __vue_inject_styles__$p,
+    __vue_script__$p,
+    __vue_scope_id__$p,
+    __vue_is_functional_template__$p,
+    __vue_module_identifier__$p,
+    __vue_create_injector__$a,
+    undefined
+  );
+
+//
+//
+//
+//
+//
+var script$q = {
   name: 'ou-link',
-
   props: {
     href: String,
-    title: String,
+    title: String
   },
-
   methods: {
     clickEvent: function clickEvent() {
       this.$emit('click');
@@ -2916,36 +3737,235 @@ var link = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm
   }
 };
 
-var uiLink = {_scopeId: 'data-v-078cc59e',
-    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-Link[data-v-078cc59e] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; font-weight: 400; color: \"[theme:themePrimary, default: #0078d7]\"; text-decoration: none; cursor: pointer; outline: none; } .ms-Link[data-v-078cc59e]:hover, .ms-Link[data-v-078cc59e]:focus { color: \"[theme:themeDarker, default: #004578]\"; } .ms-Link[data-v-078cc59e]:active { color: \"[theme:themePrimary, default: #0078d7]\"; } ");},
-    extends :  link
-}
+/* script */
+const __vue_script__$q = script$q;
 
-var List = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('ul',{ref:"list",staticClass:"ms-List"},[_vm._t("default")],2)},staticRenderFns: [],
+/* template */
+var __vue_render__$e = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('a',{staticClass:"ms-Link",attrs:{"href":_vm.href,"title":_vm.title},on:{"click":_vm.clickEvent}},[_vm._t("default")],2)};
+var __vue_staticRenderFns__$e = [];
+
+  /* style */
+  const __vue_inject_styles__$q = undefined;
+  /* scoped */
+  const __vue_scope_id__$q = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$q = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$q = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var link = normalizeComponent_1(
+    { render: __vue_render__$e, staticRenderFns: __vue_staticRenderFns__$e },
+    __vue_inject_styles__$q,
+    __vue_script__$q,
+    __vue_scope_id__$q,
+    __vue_is_functional_template__$q,
+    __vue_module_identifier__$q,
+    undefined,
+    undefined
+  );
+
+var script$r = {
+  loadStyles: loadStyles,
+  extends: link
+};
+
+/* script */
+const __vue_script__$r = script$r;
+
+/* template */
+
+  /* style */
+  const __vue_inject_styles__$r = function (inject) {
+    if (!inject) return
+    inject("data-v-5f8d8729_0", { source: ".ms-Link[data-v-5f8d8729]{font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;font-size:14px;font-weight:400;color:\"[theme:themePrimary, default: #0078d7]\";text-decoration:none;cursor:pointer;outline:0}.ms-Link[data-v-5f8d8729]:focus,.ms-Link[data-v-5f8d8729]:hover{color:\"[theme:themeDarker, default: #004578]\"}.ms-Link[data-v-5f8d8729]:active{color:\"[theme:themePrimary, default: #0078d7]\"}", map: undefined, media: undefined });
+
+  };
+  /* scoped */
+  const __vue_scope_id__$r = "data-v-5f8d8729";
+  /* module identifier */
+  const __vue_module_identifier__$r = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$r = undefined;
+  /* style inject */
+  const __vue_create_injector__$b = function(context){ return function(scopeId, data){__vue_script__$r.loadStyles && __vue_script__$r.loadStyles(data.source);}};
+  /* style inject SSR */
+  
+
+  
+  var uiLink = normalizeComponent_1(
+    {},
+    __vue_inject_styles__$r,
+    __vue_script__$r,
+    __vue_scope_id__$r,
+    __vue_is_functional_template__$r,
+    __vue_module_identifier__$r,
+    __vue_create_injector__$b,
+    undefined
+  );
+
+//
+//
+//
+var script$s = {
   name: 'ou-list'
 };
 
-var uiList = {_scopeId: 'data-v-1093d442',
-    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-List[data-v-1093d442] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 14px; font-weight: 400; list-style-type: none; } ");},
-    extends :  List
-}
+/* script */
+const __vue_script__$s = script$s;
 
-var ListActions = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-ListItem-actions"},[_vm._t("default")],2)},staticRenderFns: [],
+/* template */
+var __vue_render__$f = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('ul',{ref:"list",staticClass:"ms-List"},[_vm._t("default")],2)};
+var __vue_staticRenderFns__$f = [];
+
+  /* style */
+  const __vue_inject_styles__$s = undefined;
+  /* scoped */
+  const __vue_scope_id__$s = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$s = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$s = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var List = normalizeComponent_1(
+    { render: __vue_render__$f, staticRenderFns: __vue_staticRenderFns__$f },
+    __vue_inject_styles__$s,
+    __vue_script__$s,
+    __vue_scope_id__$s,
+    __vue_is_functional_template__$s,
+    __vue_module_identifier__$s,
+    undefined,
+    undefined
+  );
+
+var script$t = {
+  loadStyles: loadStyles,
+  extends: List
+};
+
+/* script */
+const __vue_script__$t = script$t;
+
+/* template */
+
+  /* style */
+  const __vue_inject_styles__$t = function (inject) {
+    if (!inject) return
+    inject("data-v-0dc2df55_0", { source: ".ms-List[data-v-0dc2df55]{font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;box-sizing:border-box;margin:0;padding:0;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;color:\"[theme:neutralPrimary, default: #333333]\";font-size:14px;font-weight:400;list-style-type:none}", map: undefined, media: undefined });
+
+  };
+  /* scoped */
+  const __vue_scope_id__$t = "data-v-0dc2df55";
+  /* module identifier */
+  const __vue_module_identifier__$t = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$t = undefined;
+  /* style inject */
+  const __vue_create_injector__$c = function(context){ return function(scopeId, data){__vue_script__$t.loadStyles && __vue_script__$t.loadStyles(data.source);}};
+  /* style inject SSR */
+  
+
+  
+  var uiList = normalizeComponent_1(
+    {},
+    __vue_inject_styles__$t,
+    __vue_script__$t,
+    __vue_scope_id__$t,
+    __vue_is_functional_template__$t,
+    __vue_module_identifier__$t,
+    __vue_create_injector__$c,
+    undefined
+  );
+
+//
+//
+//
+var script$u = {
   name: 'ou-list-actions'
 };
 
-var uiListActions = {
-    beforeCreate: function beforeCreate(){ loadStyles("");},
-    extends :  ListActions,
-    created: function created(){
-        this.$options._scopeId = this.$parent.$options._scopeId;
-    }
-}
+/* script */
+const __vue_script__$u = script$u;
 
-var ListActionItem = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-ListItem-action",on:{"click":function($event){$event.stopPropagation();return _vm.clickEvent($event)}}},[_c('i',{staticClass:"ms-Icon",class:_vm.iconClass})])},staticRenderFns: [],
+/* template */
+var __vue_render__$g = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-ListItem-actions"},[_vm._t("default")],2)};
+var __vue_staticRenderFns__$g = [];
+
+  /* style */
+  const __vue_inject_styles__$u = undefined;
+  /* scoped */
+  const __vue_scope_id__$u = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$u = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$u = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var ListActions = normalizeComponent_1(
+    { render: __vue_render__$g, staticRenderFns: __vue_staticRenderFns__$g },
+    __vue_inject_styles__$u,
+    __vue_script__$u,
+    __vue_scope_id__$u,
+    __vue_is_functional_template__$u,
+    __vue_module_identifier__$u,
+    undefined,
+    undefined
+  );
+
+var script$v = {
+  extends: ListActions,
+  created: function created() {
+    this.$options._scopeId = this.$parent.$options._scopeId;
+  }
+};
+
+/* script */
+const __vue_script__$v = script$v;
+
+/* template */
+
+  /* style */
+  const __vue_inject_styles__$v = undefined;
+  /* scoped */
+  const __vue_scope_id__$v = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$v = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$v = undefined;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var uiListActions = normalizeComponent_1(
+    {},
+    __vue_inject_styles__$v,
+    __vue_script__$v,
+    __vue_scope_id__$v,
+    __vue_is_functional_template__$v,
+    __vue_module_identifier__$v,
+    undefined,
+    undefined
+  );
+
+//
+var script$w = {
   name: 'ou-list-action-item',
   mixins: [icon],
-
   methods: {
     clickEvent: function clickEvent() {
       this.$emit('click');
@@ -2953,86 +3973,329 @@ var ListActionItem = {render: function(){var _vm=this;var _h=_vm.$createElement;
   }
 };
 
-var uiListActionItem = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-ListItem-action",on:{"click":function($event){$event.stopPropagation();return _vm.clickEvent($event)}}},[_vm._t("icon")],2)},staticRenderFns: [],
-    beforeCreate: function beforeCreate(){ loadStyles("");},
-    extends :  ListActionItem,
-    created: function created(){
-        this.$options._scopeId = this.$parent.$options._scopeId;
-    }
-}
+/* script */
+const __vue_script__$w = script$w;
 
-var ListItem = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('li',{ref:"listItem",staticClass:"ms-ListItem",class:_vm.listItemClass,on:{"click":_vm.clickEvent}},[(_vm.type == 'image')?_c('img',{staticClass:"ms-ListItem-image",attrs:{"src":_vm.imageSrc}}):_vm._e(),_vm._v(" "),(_vm.primaryText)?_c('span',{staticClass:"ms-ListItem-primaryText"},[_vm._v(_vm._s(_vm.primaryText))]):_vm._e(),_vm._v(" "),(_vm.secondaryText)?_c('span',{staticClass:"ms-ListItem-secondaryText"},[_vm._v(_vm._s(_vm.secondaryText))]):_vm._e(),_vm._v(" "),(_vm.tertiaryText)?_c('span',{staticClass:"ms-ListItem-tertiaryText"},[_vm._v(_vm._s(_vm.tertiaryText))]):_vm._e(),_vm._v(" "),(_vm.metaText)?_c('span',{staticClass:"ms-ListItem-metaText"},[_vm._v(_vm._s(_vm.metaText))]):_vm._e(),_vm._v(" "),(_vm.isSelectable)?_c('div',{staticClass:"ms-ListItem-selectionTarget",on:{"click":function($event){$event.stopPropagation();return _vm.toggle($event)}}}):_vm._e(),_vm._v(" "),_vm._t("default")],2)},staticRenderFns: [],
+/* template */
+var __vue_render__$h = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-ListItem-action",on:{"click":function($event){$event.stopPropagation();return _vm.clickEvent($event)}}},[_c('i',{staticClass:"ms-Icon",class:_vm.iconClass})])};
+var __vue_staticRenderFns__$h = [];
+
+  /* style */
+  const __vue_inject_styles__$w = undefined;
+  /* scoped */
+  const __vue_scope_id__$w = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$w = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$w = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var ListActionItem = normalizeComponent_1(
+    { render: __vue_render__$h, staticRenderFns: __vue_staticRenderFns__$h },
+    __vue_inject_styles__$w,
+    __vue_script__$w,
+    __vue_scope_id__$w,
+    __vue_is_functional_template__$w,
+    __vue_module_identifier__$w,
+    undefined,
+    undefined
+  );
+
+//
+var script$x = {
+  extends: ListActionItem,
+  created: function created() {
+    this.$options._scopeId = this.$parent.$options._scopeId;
+  }
+};
+
+/* script */
+const __vue_script__$x = script$x;
+
+/* template */
+var __vue_render__$i = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-ListItem-action",on:{"click":function($event){$event.stopPropagation();return _vm.clickEvent($event)}}},[_vm._t("icon")],2)};
+var __vue_staticRenderFns__$i = [];
+
+  /* style */
+  const __vue_inject_styles__$x = undefined;
+  /* scoped */
+  const __vue_scope_id__$x = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$x = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$x = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var uiListActionItem = normalizeComponent_1(
+    { render: __vue_render__$i, staticRenderFns: __vue_staticRenderFns__$i },
+    __vue_inject_styles__$x,
+    __vue_script__$x,
+    __vue_scope_id__$x,
+    __vue_is_functional_template__$x,
+    __vue_module_identifier__$x,
+    undefined,
+    undefined
+  );
+
+var script$y = {
   name: 'ou-list-item',
-
   mixins: [type('image', 'document')],
-
   props: {
     isUnread: Boolean,
     isSelectable: Boolean,
     isUnseen: Boolean,
     value: Boolean,
-
     imageSrc: String,
     primaryText: String,
     secondaryText: String,
     tertiaryText: String,
     metaText: String
   },
-
   computed: {
     listItemClass: function listItemClass() {
-      var obj;
+      var _ref;
 
-      return ( obj = {}, obj[("ms-ListItem--" + (this.type))] = !!this.type, obj['is-selectable'] =  this.isSelectable, obj['is-selected'] =  this.value, obj['is-unread'] =  this.isUnread, obj['is-unseen'] =  this.isUnseen, obj );
+      return _ref = {}, _defineProperty(_ref, "ms-ListItem--".concat(this.type), !!this.type), _defineProperty(_ref, 'is-selectable', this.isSelectable), _defineProperty(_ref, 'is-selected', this.value), _defineProperty(_ref, 'is-unread', this.isUnread), _defineProperty(_ref, 'is-unseen', this.isUnseen), _ref;
     }
   },
-
   methods: {
     toggle: function toggle() {
       if (this.isSelectable) {
         this.$emit('input', !this.value);
       }
     },
-
     clickEvent: function clickEvent() {
       this.$emit('click');
     }
   }
 };
 
-var uiListItem = {_scopeId: 'data-v-a34de616',
-    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-ListItem[data-v-a34de616] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; *zoom: 1; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 14px; font-weight: 400; padding: 9px 28px 3px; position: relative; display: block; } .ms-ListItem[data-v-a34de616]::before, .ms-ListItem[data-v-a34de616]::after { display: table; content: \"\"; line-height: 0; } .ms-ListItem[data-v-a34de616]::after { clear: both; } .ms-ListItem-primaryText[data-v-a34de616], .ms-ListItem-secondaryText[data-v-a34de616], .ms-ListItem-tertiaryText[data-v-a34de616] { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: block; } .ms-ListItem-primaryText[data-v-a34de616] { color: \"[theme:neutralDark, default: #212121]\"; font-weight: 300; font-size: 21px; padding-right: 80px; position: relative; top: -4px; } .ms-ListItem-secondaryText[data-v-a34de616] { color: \"[theme:neutralPrimary, default: #333333]\"; font-weight: 400; font-size: 14px; line-height: 25px; position: relative; top: -7px; padding-right: 30px; } .ms-ListItem-tertiaryText[data-v-a34de616] { color: \"[theme:neutralSecondaryAlt, default: #767676]\"; font-weight: 300; font-size: 14px; position: relative; top: -9px; margin-bottom: -4px; padding-right: 30px; } .ms-ListItem-metaText[data-v-a34de616] { color: \"[theme:neutralPrimary, default: #333333]\"; font-weight: 300; font-size: 11px; position: absolute; right: 30px; top: 39px; } .ms-ListItem-image[data-v-a34de616] { float: left; height: 70px; margin-left: -8px; margin-right: 10px; width: 70px; background-color: \"[theme:neutralPrimary, default: #333333]\"; } .ms-ListItem-selectionTarget[data-v-a34de616] { display: none; } .ms-ListItem-actions[data-v-a34de616] { max-width: 80px; position: absolute; right: 30px; text-align: right; top: 10px; } .ms-ListItem-action[data-v-a34de616] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; display: inline-block; font-size: 15px; position: relative; text-align: center; top: 3px; cursor: pointer; height: 16px; width: 16px; } .ms-ListItem-action .ms-Icon[data-v-a34de616] { vertical-align: top; } .ms-ListItem-action[data-v-a34de616]:hover { color: \"[theme:neutralSecondary, default: #666666]\"; outline: 1px solid transparent; } .ms-ListItem.is-unread[data-v-a34de616] { border-left: 3px solid \"[theme:themePrimary, default: #0078d7]\"; padding-left: 27px; } .ms-ListItem.is-unread .ms-ListItem-secondaryText[data-v-a34de616], .ms-ListItem.is-unread .ms-ListItem-metaText[data-v-a34de616] { color: \"[theme:themePrimary, default: #0078d7]\"; font-weight: 600; } .ms-ListItem.is-unseen[data-v-a34de616]::after { border-right: 10px solid transparent; border-top: 10px solid \"[theme:themePrimary, default: #0078d7]\"; left: 0; position: absolute; top: 0; } .ms-ListItem.is-selectable .ms-ListItem-selectionTarget[data-v-a34de616] { display: block; height: 20px; left: 6px; position: absolute; top: 13px; width: 20px; } .ms-ListItem.is-selectable .ms-ListItem-image[data-v-a34de616] { margin-left: 0; } .ms-ListItem.is-selectable[data-v-a34de616]:hover { background-color: \"[theme:neutralLight, default: #eaeaea]\"; cursor: pointer; outline: 1px solid transparent; } .ms-ListItem.is-selectable[data-v-a34de616]:hover::before { -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; display: inline-block; font-family: 'FabricMDL2Icons'; font-style: normal; font-weight: normal; speak: none; position: absolute; top: 14px; left: 7px; height: 15px; width: 15px; border: 1px solid \"[theme:neutralSecondaryAlt, default: #767676]\"; } .ms-ListItem.is-selected[data-v-a34de616]::before { border: 1px solid transparent; } .ms-ListItem.is-selected[data-v-a34de616]::before, .ms-ListItem.is-selected[data-v-a34de616]:hover::before { -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; display: inline-block; font-family: 'FabricMDL2Icons'; font-style: normal; font-weight: normal; speak: none; content: '\\e73A'; font-size: 17px; color: \"[theme:neutralSecondaryAlt, default: #767676]\"; position: absolute; top: 23px; left: 7px; border: 0; } .ms-ListItem.is-selected[data-v-a34de616]:hover { background-color: \"[theme:themeLight, default: #c7e0f4]\"; outline: 1px solid transparent; } .ms-ListItem.ms-ListItem--document[data-v-a34de616] { padding: 0; } .ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon[data-v-a34de616] { width: 70px; height: 70px; float: left; text-align: center; } .ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon .ms-Icon[data-v-a34de616] { font-size: 38px; line-height: 70px; color: \"[theme:neutralSecondary, default: #666666]\"; } .ms-ListItem.ms-ListItem--document .ms-ListItem-primaryText[data-v-a34de616] { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 14px; padding-top: 15px; padding-right: 0; position: static; } .ms-ListItem.ms-ListItem--document .ms-ListItem-secondaryText[data-v-a34de616] { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: \"[theme:neutralSecondary, default: #666666]\"; font-weight: 400; font-size: 11px; padding-top: 6px; } .ms-ListItem.is-selected[data-v-a34de616]::before, .ms-ListItem.is-selected[data-v-a34de616]:hover::before { top: 14px; content: url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"17\" height=\"17\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path transform=\"translate(0, 2048) scale(1, -1)\" d=\"M2048 2048v-2048h-2048v2048h2048zM1920 1920h-1792v-1792h1792v1792zM768 421l-429 430l90 90l339 -338l851 850l90 -90z\" fill=\"black\" stroke=\"none\"/></svg>'); } ");},
-    extends :  ListItem
-}
+/* script */
+const __vue_script__$y = script$y;
 
-var MessageBar = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-MessageBar",class:_vm.messageBarClass},[_c('div',{staticClass:"ms-MessageBar-content"},[(_vm.icon)?_c('div',{staticClass:"ms-MessageBar-icon"},[_c('i',{staticClass:"ms-Icon",class:_vm.iconClass})]):_vm._e(),_vm._v(" "),_c('div',{staticClass:"ms-MessageBar-text"},[_vm._t("default")],2)])])},staticRenderFns: [],
+/* template */
+var __vue_render__$j = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('li',{ref:"listItem",staticClass:"ms-ListItem",class:_vm.listItemClass,on:{"click":_vm.clickEvent}},[(_vm.type == 'image')?_c('img',{staticClass:"ms-ListItem-image",attrs:{"src":_vm.imageSrc}}):_vm._e(),_vm._v(" "),(_vm.primaryText)?_c('span',{staticClass:"ms-ListItem-primaryText"},[_vm._v(_vm._s(_vm.primaryText))]):_vm._e(),_vm._v(" "),(_vm.secondaryText)?_c('span',{staticClass:"ms-ListItem-secondaryText"},[_vm._v(_vm._s(_vm.secondaryText))]):_vm._e(),_vm._v(" "),(_vm.tertiaryText)?_c('span',{staticClass:"ms-ListItem-tertiaryText"},[_vm._v(_vm._s(_vm.tertiaryText))]):_vm._e(),_vm._v(" "),(_vm.metaText)?_c('span',{staticClass:"ms-ListItem-metaText"},[_vm._v(_vm._s(_vm.metaText))]):_vm._e(),_vm._v(" "),(_vm.isSelectable)?_c('div',{staticClass:"ms-ListItem-selectionTarget",on:{"click":function($event){$event.stopPropagation();return _vm.toggle($event)}}}):_vm._e(),_vm._v(" "),_vm._t("default")],2)};
+var __vue_staticRenderFns__$j = [];
+
+  /* style */
+  const __vue_inject_styles__$y = undefined;
+  /* scoped */
+  const __vue_scope_id__$y = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$y = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$y = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var ListItem = normalizeComponent_1(
+    { render: __vue_render__$j, staticRenderFns: __vue_staticRenderFns__$j },
+    __vue_inject_styles__$y,
+    __vue_script__$y,
+    __vue_scope_id__$y,
+    __vue_is_functional_template__$y,
+    __vue_module_identifier__$y,
+    undefined,
+    undefined
+  );
+
+var script$z = {
+  loadStyles: loadStyles,
+  extends: ListItem
+};
+
+/* script */
+const __vue_script__$z = script$z;
+
+/* template */
+
+  /* style */
+  const __vue_inject_styles__$z = function (inject) {
+    if (!inject) return
+    inject("data-v-452553ab_0", { source: "@charset \"UTF-8\";.ms-ListItem[data-v-452553ab]{font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;box-sizing:border-box;margin:0;padding:0;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;color:\"[theme:neutralPrimary, default: #333333]\";font-size:14px;font-weight:400;padding:9px 28px 3px;position:relative;display:block}.ms-ListItem[data-v-452553ab]::after,.ms-ListItem[data-v-452553ab]::before{display:table;content:\"\";line-height:0}.ms-ListItem[data-v-452553ab]::after{clear:both}.ms-ListItem-primaryText[data-v-452553ab],.ms-ListItem-secondaryText[data-v-452553ab],.ms-ListItem-tertiaryText[data-v-452553ab]{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block}.ms-ListItem-primaryText[data-v-452553ab]{color:\"[theme:neutralDark, default: #212121]\";font-weight:300;font-size:21px;padding-right:80px;position:relative;top:-4px}.ms-ListItem-secondaryText[data-v-452553ab]{color:\"[theme:neutralPrimary, default: #333333]\";font-weight:400;font-size:14px;line-height:25px;position:relative;top:-7px;padding-right:30px}.ms-ListItem-tertiaryText[data-v-452553ab]{color:\"[theme:neutralSecondaryAlt, default: #767676]\";font-weight:300;font-size:14px;position:relative;top:-9px;margin-bottom:-4px;padding-right:30px}.ms-ListItem-metaText[data-v-452553ab]{color:\"[theme:neutralPrimary, default: #333333]\";font-weight:300;font-size:11px;position:absolute;right:30px;top:39px}.ms-ListItem-image[data-v-452553ab]{float:left;height:70px;margin-left:-8px;margin-right:10px;width:70px;background-color:\"[theme:neutralPrimary, default: #333333]\"}.ms-ListItem-selectionTarget[data-v-452553ab]{display:none}.ms-ListItem-actions[data-v-452553ab]{max-width:80px;position:absolute;right:30px;text-align:right;top:10px}.ms-ListItem-action[data-v-452553ab]{color:\"[theme:neutralTertiary, default: #a6a6a6]\";display:inline-block;font-size:15px;position:relative;text-align:center;top:3px;cursor:pointer;height:16px;width:16px}.ms-ListItem-action .ms-Icon[data-v-452553ab]{vertical-align:top}.ms-ListItem-action[data-v-452553ab]:hover{color:\"[theme:neutralSecondary, default: #666666]\";outline:1px solid transparent}.ms-ListItem.is-unread[data-v-452553ab]{border-left:3px solid \"[theme:themePrimary, default: #0078d7]\";padding-left:27px}.ms-ListItem.is-unread .ms-ListItem-metaText[data-v-452553ab],.ms-ListItem.is-unread .ms-ListItem-secondaryText[data-v-452553ab]{color:\"[theme:themePrimary, default: #0078d7]\";font-weight:600}.ms-ListItem.is-unseen[data-v-452553ab]::after{border-right:10px solid transparent;border-top:10px solid \"[theme:themePrimary, default: #0078d7]\";left:0;position:absolute;top:0}.ms-ListItem.is-selectable .ms-ListItem-selectionTarget[data-v-452553ab]{display:block;height:20px;left:6px;position:absolute;top:13px;width:20px}.ms-ListItem.is-selectable .ms-ListItem-image[data-v-452553ab]{margin-left:0}.ms-ListItem.is-selectable[data-v-452553ab]:hover{background-color:\"[theme:neutralLight, default: #eaeaea]\";cursor:pointer;outline:1px solid transparent}.ms-ListItem.is-selectable[data-v-452553ab]:hover::before{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:inline-block;font-family:FabricMDL2Icons;font-style:normal;font-weight:400;speak:none;position:absolute;top:14px;left:7px;height:15px;width:15px;border:1px solid \"[theme:neutralSecondaryAlt, default: #767676]\"}.ms-ListItem.is-selected[data-v-452553ab]::before{border:1px solid transparent}.ms-ListItem.is-selected[data-v-452553ab]::before,.ms-ListItem.is-selected[data-v-452553ab]:hover::before{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:inline-block;font-family:FabricMDL2Icons;font-style:normal;font-weight:400;speak:none;content:\"\";font-size:17px;color:\"[theme:neutralSecondaryAlt, default: #767676]\";position:absolute;top:23px;left:7px;border:0}.ms-ListItem.is-selected[data-v-452553ab]:hover{background-color:\"[theme:themeLight, default: #c7e0f4]\";outline:1px solid transparent}.ms-ListItem.ms-ListItem--document[data-v-452553ab]{padding:0}.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon[data-v-452553ab]{width:70px;height:70px;float:left;text-align:center}.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon .ms-Icon[data-v-452553ab]{font-size:38px;line-height:70px;color:\"[theme:neutralSecondary, default: #666666]\"}.ms-ListItem.ms-ListItem--document .ms-ListItem-primaryText[data-v-452553ab]{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px;padding-top:15px;padding-right:0;position:static}.ms-ListItem.ms-ListItem--document .ms-ListItem-secondaryText[data-v-452553ab]{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:\"[theme:neutralSecondary, default: #666666]\";font-weight:400;font-size:11px;padding-top:6px}.ms-ListItem.is-selected[data-v-452553ab]::before,.ms-ListItem.is-selected[data-v-452553ab]:hover::before{top:14px;content:url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"17\" height=\"17\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path transform=\"translate(0, 2048) scale(1, -1)\" d=\"M2048 2048v-2048h-2048v2048h2048zM1920 1920h-1792v-1792h1792v1792zM768 421l-429 430l90 90l339 -338l851 850l90 -90z\" fill=\"black\" stroke=\"none\"/></svg>')}", map: undefined, media: undefined });
+
+  };
+  /* scoped */
+  const __vue_scope_id__$z = "data-v-452553ab";
+  /* module identifier */
+  const __vue_module_identifier__$z = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$z = undefined;
+  /* style inject */
+  const __vue_create_injector__$d = function(context){ return function(scopeId, data){__vue_script__$z.loadStyles && __vue_script__$z.loadStyles(data.source);}};
+  /* style inject SSR */
+  
+
+  
+  var uiListItem = normalizeComponent_1(
+    {},
+    __vue_inject_styles__$z,
+    __vue_script__$z,
+    __vue_scope_id__$z,
+    __vue_is_functional_template__$z,
+    __vue_module_identifier__$z,
+    __vue_create_injector__$d,
+    undefined
+  );
+
+var script$A = {
   name: 'ou-message-bar',
-
-  mixins: [
-    type('success', 'error', 'blocked', 'warning', 'severeWarning'),
-    icon
-  ],
-
+  mixins: [type('success', 'error', 'blocked', 'warning', 'severeWarning'), icon],
   computed: {
     messageBarClass: function messageBarClass() {
-      var obj;
-
-      return ( obj = {}, obj[("ms-MessageBar--" + (this.type))] = !!this.type, obj );
+      return _defineProperty({}, "ms-MessageBar--".concat(this.type), !!this.type);
     }
   }
 };
 
-var uiMessagebar = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-MessageBar",class:_vm.messageBarClass},[_c('div',{staticClass:"ms-MessageBar-content"},[(_vm.hasIcon)?_c('div',{staticClass:"ms-MessageBar-icon"},[_vm._t("icon")],2):_vm._e(),_vm._v(" "),_c('div',{staticClass:"ms-MessageBar-text"},[_vm._t("default")],2)])])},staticRenderFns: [],_scopeId: 'data-v-7f69de50',
-    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-MessageBar[data-v-7f69de50] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; padding: 8px; display: table; background-color: \"[theme:infoBackground, default: #f4f4f4]\"; } .ms-MessageBar .ms-Link[data-v-7f69de50] { font-size: 12px; } .ms-MessageBar-icon[data-v-7f69de50], .ms-MessageBar-text[data-v-7f69de50] { display: table-cell; vertical-align: top; } .ms-MessageBar-icon[data-v-7f69de50] { padding-right: 8px; font-size: 16px; color: \"[theme:neutralSecondaryAlt, default: #767676]\"; } .ms-MessageBar-text[data-v-7f69de50] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; font-size: 12px; font-weight: 400; } .ms-MessageBar.ms-MessageBar--warning[data-v-7f69de50] { background-color: \"[theme:warningBackground, default: #fff4ce]\"; } .ms-MessageBar.ms-MessageBar--severeWarning[data-v-7f69de50] { background-color: \"[theme:severeWarningBackground, default: #fed9cc]\"; } .ms-MessageBar.ms-MessageBar--severeWarning .ms-MessageBar-icon[data-v-7f69de50] { color: \"[theme:severeWarning, default: #d83b01]\"; } .ms-MessageBar.ms-MessageBar--error[data-v-7f69de50] { background-color: \"[theme:errorBackground, default: #fde7e9]\"; } .ms-MessageBar.ms-MessageBar--error .ms-MessageBar-icon[data-v-7f69de50] { color: \"[theme:error, default: #a80000]\"; } .ms-MessageBar.ms-MessageBar--blocked[data-v-7f69de50] { background-color: \"[theme:errorBackground, default: #fde7e9]\"; } .ms-MessageBar.ms-MessageBar--blocked .ms-MessageBar-icon[data-v-7f69de50] { color: \"[theme:error, default: #a80000]\"; } .ms-MessageBar.ms-MessageBar--success[data-v-7f69de50] { background-color: \"[theme:successBackground, default: #dff6dd]\"; } .ms-MessageBar.ms-MessageBar--success .ms-MessageBar-icon[data-v-7f69de50] { color: \"[theme:green, default: #107c10]\"; } ");},
-    computed: {
-        hasIcon: function hasIcon () {
-            return !!this.$slots['icon']
-        }
-    },
-    extends :  MessageBar
-}
+/* script */
+const __vue_script__$A = script$A;
 
-var MessageBanner$1 = function () {
+/* template */
+var __vue_render__$k = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-MessageBar",class:_vm.messageBarClass},[_c('div',{staticClass:"ms-MessageBar-content"},[(_vm.icon)?_c('div',{staticClass:"ms-MessageBar-icon"},[_c('i',{staticClass:"ms-Icon",class:_vm.iconClass})]):_vm._e(),_vm._v(" "),_c('div',{staticClass:"ms-MessageBar-text"},[_vm._t("default")],2)])])};
+var __vue_staticRenderFns__$k = [];
+
+  /* style */
+  const __vue_inject_styles__$A = undefined;
+  /* scoped */
+  const __vue_scope_id__$A = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$A = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$A = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var MessageBar = normalizeComponent_1(
+    { render: __vue_render__$k, staticRenderFns: __vue_staticRenderFns__$k },
+    __vue_inject_styles__$A,
+    __vue_script__$A,
+    __vue_scope_id__$A,
+    __vue_is_functional_template__$A,
+    __vue_module_identifier__$A,
+    undefined,
+    undefined
+  );
+
+//
+var script$B = {
+  loadStyles: loadStyles,
+  computed: {
+    hasIcon: function hasIcon() {
+      return !!this.$slots['icon'];
+    }
+  },
+  extends: MessageBar
+};
+
+/* script */
+const __vue_script__$B = script$B;
+
+/* template */
+var __vue_render__$l = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-MessageBar",class:_vm.messageBarClass},[_c('div',{staticClass:"ms-MessageBar-content"},[(_vm.hasIcon)?_c('div',{staticClass:"ms-MessageBar-icon"},[_vm._t("icon")],2):_vm._e(),_vm._v(" "),_c('div',{staticClass:"ms-MessageBar-text"},[_vm._t("default")],2)])])};
+var __vue_staticRenderFns__$l = [];
+
+  /* style */
+  const __vue_inject_styles__$B = function (inject) {
+    if (!inject) return
+    inject("data-v-519832b0_0", { source: ".ms-MessageBar[data-v-519832b0]{font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;padding:8px;display:table;background-color:\"[theme:infoBackground, default: #f4f4f4]\"}.ms-MessageBar .ms-Link[data-v-519832b0]{font-size:12px}.ms-MessageBar-icon[data-v-519832b0],.ms-MessageBar-text[data-v-519832b0]{display:table-cell;vertical-align:top}.ms-MessageBar-icon[data-v-519832b0]{padding-right:8px;font-size:16px;color:\"[theme:neutralSecondaryAlt, default: #767676]\"}.ms-MessageBar-text[data-v-519832b0]{font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;font-size:12px;font-weight:400}.ms-MessageBar.ms-MessageBar--warning[data-v-519832b0]{background-color:\"[theme:warningBackground, default: #fff4ce]\"}.ms-MessageBar.ms-MessageBar--severeWarning[data-v-519832b0]{background-color:\"[theme:severeWarningBackground, default: #fed9cc]\"}.ms-MessageBar.ms-MessageBar--severeWarning .ms-MessageBar-icon[data-v-519832b0]{color:\"[theme:severeWarning, default: #d83b01]\"}.ms-MessageBar.ms-MessageBar--error[data-v-519832b0]{background-color:\"[theme:errorBackground, default: #fde7e9]\"}.ms-MessageBar.ms-MessageBar--error .ms-MessageBar-icon[data-v-519832b0]{color:\"[theme:error, default: #a80000]\"}.ms-MessageBar.ms-MessageBar--blocked[data-v-519832b0]{background-color:\"[theme:errorBackground, default: #fde7e9]\"}.ms-MessageBar.ms-MessageBar--blocked .ms-MessageBar-icon[data-v-519832b0]{color:\"[theme:error, default: #a80000]\"}.ms-MessageBar.ms-MessageBar--success[data-v-519832b0]{background-color:\"[theme:successBackground, default: #dff6dd]\"}.ms-MessageBar.ms-MessageBar--success .ms-MessageBar-icon[data-v-519832b0]{color:\"[theme:green, default: #107c10]\"}", map: undefined, media: undefined });
+
+  };
+  /* scoped */
+  const __vue_scope_id__$B = "data-v-519832b0";
+  /* module identifier */
+  const __vue_module_identifier__$B = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$B = false;
+  /* style inject */
+  const __vue_create_injector__$e = function(context){ return function(scopeId, data){__vue_script__$B.loadStyles && __vue_script__$B.loadStyles(data.source);}};
+  /* style inject SSR */
+  
+
+  
+  var uiMessagebar = normalizeComponent_1(
+    { render: __vue_render__$l, staticRenderFns: __vue_staticRenderFns__$l },
+    __vue_inject_styles__$B,
+    __vue_script__$B,
+    __vue_scope_id__$B,
+    __vue_is_functional_template__$B,
+    __vue_module_identifier__$B,
+    __vue_create_injector__$e,
+    undefined
+  );
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var script$C = {
+  name: 'ou-message-banner',
+  mounted: function mounted() {
+    new this.$fabric.MessageBanner(this.$refs.messageBanner);
+  }
+};
+
+/* script */
+const __vue_script__$C = script$C;
+
+/* template */
+var __vue_render__$m = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"messageBanner",staticClass:"ms-MessageBanner"},[_c('div',{staticClass:"ms-MessageBanner-content"},[_c('div',{staticClass:"ms-MessageBanner-text"},[_c('div',{staticClass:"ms-MessageBanner-clipper"},[_vm._t("default")],2)]),_vm._v(" "),_vm._m(0),_vm._v(" "),_c('div',{staticClass:"ms-MessageBanner-action"},[_vm._t("actions")],2)]),_vm._v(" "),_vm._m(1)])};
+var __vue_staticRenderFns__$m = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('button',{staticClass:"ms-MessageBanner-expand"},[_c('i',{staticClass:"ms-Icon ms-Icon--ChevronDown"})])},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('button',{staticClass:"ms-MessageBanner-close"},[_c('i',{staticClass:"ms-Icon ms-Icon--Clear"})])}];
+
+  /* style */
+  const __vue_inject_styles__$C = undefined;
+  /* scoped */
+  const __vue_scope_id__$C = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$C = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$C = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  normalizeComponent_1(
+    { render: __vue_render__$m, staticRenderFns: __vue_staticRenderFns__$m },
+    __vue_inject_styles__$C,
+    __vue_script__$C,
+    __vue_scope_id__$C,
+    __vue_is_functional_template__$C,
+    __vue_module_identifier__$C,
+    undefined,
+    undefined
+  );
+
+var MessageBanner = function () {
   function MessageBanner(container) {
     this._textContainerMaxWidth = 700;
     this._bufferElementsWidth = 88;
@@ -3153,96 +4416,122 @@ var MessageBanner$1 = function () {
   return MessageBanner;
 }();
 
-var uiMessageBanner = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"messageBanner",staticClass:"ms-MessageBanner is-hidden"},[_c('div',{staticClass:"ms-MessageBanner-content"},[_c('div',{staticClass:"ms-MessageBanner-text"},[_c('div',{staticClass:"ms-MessageBanner-clipper"},[_vm._t("default")],2)]),_vm._v(" "),_vm._m(0),_vm._v(" "),_c('div',{staticClass:"ms-MessageBanner-action"},[_vm._t("actions")],2)]),_vm._v(" "),_vm._m(1)])},staticRenderFns: [function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('button',{staticClass:"ms-MessageBanner-expand"},[_c('i',{staticClass:"ms-Icon ms-Icon--ChevronDown"})])},function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('button',{staticClass:"ms-MessageBanner-close"},[_c('i',{staticClass:"ms-Icon ms-Icon--Clear"})])}],_scopeId: 'data-v-349dd89f',
-    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ .ms-u-slideRightIn10[data-v-349dd89f] { -webkit-animation-name: fadeIn, slideRightIn10; -moz-animation-name: fadeIn, slideRightIn10; -ms-animation-name: fadeIn, slideRightIn10; -o-animation-name: fadeIn, slideRightIn10; animation-name: fadeIn, slideRightIn10; -webkit-animation-duration: 0.367s; -moz-animation-duration: 0.367s; -ms-animation-duration: 0.367s; -o-animation-duration: 0.367s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideRightIn10 { from { -webkit-transform: translate3d(-10px, 0px, 0px); } to { -webkit-transform: translate3d(0px, 0px, 0px); } } @keyframes slideRightIn10 { from { transform: translate3d(-10px, 0px, 0px); } to { transform: translate3d(0px, 0px, 0px); } } .ms-u-slideRightIn20[data-v-349dd89f] { -webkit-animation-name: fadeIn, slideRightIn20; -moz-animation-name: fadeIn, slideRightIn20; -ms-animation-name: fadeIn, slideRightIn20; -o-animation-name: fadeIn, slideRightIn20; animation-name: fadeIn, slideRightIn20; -webkit-animation-duration: 0.367s; -moz-animation-duration: 0.367s; -ms-animation-duration: 0.367s; -o-animation-duration: 0.367s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideRightIn20 { from { -webkit-transform: translate3d(-20px, 0px, 0px); } to { -webkit-transform: translate3d(0px, 0px, 0px); } } @keyframes slideRightIn20 { from { transform: translate3d(-20px, 0px, 0px); } to { transform: translate3d(0px, 0px, 0px); } } .ms-u-slideRightIn40[data-v-349dd89f] { -webkit-animation-name: fadeIn, slideRightIn40; -moz-animation-name: fadeIn, slideRightIn40; -ms-animation-name: fadeIn, slideRightIn40; -o-animation-name: fadeIn, slideRightIn40; animation-name: fadeIn, slideRightIn40; -webkit-animation-duration: 0.367s; -moz-animation-duration: 0.367s; -ms-animation-duration: 0.367s; -o-animation-duration: 0.367s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideRightIn40 { from { -webkit-transform: translate3d(-40px, 0px, 0px); } to { -webkit-transform: translate3d(0px, 0px, 0px); } } @keyframes slideRightIn40 { from { transform: translate3d(-40px, 0px, 0px); } to { transform: translate3d(0px, 0px, 0px); } } .ms-u-slideLeftIn10[data-v-349dd89f] { -webkit-animation-name: fadeIn, slideLeftIn10; -moz-animation-name: fadeIn, slideLeftIn10; -ms-animation-name: fadeIn, slideLeftIn10; -o-animation-name: fadeIn, slideLeftIn10; animation-name: fadeIn, slideLeftIn10; -webkit-animation-duration: 0.367s; -moz-animation-duration: 0.367s; -ms-animation-duration: 0.367s; -o-animation-duration: 0.367s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideLeftIn10 { from { -webkit-transform: translate3d(10px, 0px, 0px); } to { -webkit-transform: translate3d(0px, 0px, 0px); } } @keyframes slideLeftIn10 { from { transform: translate3d(10px, 0px, 0px); } to { transform: translate3d(0px, 0px, 0px); } } .ms-u-slideLeftIn20[data-v-349dd89f] { -webkit-animation-name: fadeIn, slideLeftIn20; -moz-animation-name: fadeIn, slideLeftIn20; -ms-animation-name: fadeIn, slideLeftIn20; -o-animation-name: fadeIn, slideLeftIn20; animation-name: fadeIn, slideLeftIn20; -webkit-animation-duration: 0.367s; -moz-animation-duration: 0.367s; -ms-animation-duration: 0.367s; -o-animation-duration: 0.367s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideLeftIn20 { from { -webkit-transform: translate3d(20px, 0px, 0px); } to { -webkit-transform: translate3d(0px, 0px, 0px); } } @keyframes slideLeftIn20 { from { transform: translate3d(20px, 0px, 0px); } to { transform: translate3d(0px, 0px, 0px); } } .ms-u-slideLeftIn40[data-v-349dd89f] { -webkit-animation-name: fadeIn, slideLeftIn40; -moz-animation-name: fadeIn, slideLeftIn40; -ms-animation-name: fadeIn, slideLeftIn40; -o-animation-name: fadeIn, slideLeftIn40; animation-name: fadeIn, slideLeftIn40; -webkit-animation-duration: 0.367s; -moz-animation-duration: 0.367s; -ms-animation-duration: 0.367s; -o-animation-duration: 0.367s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideLeftIn40 { from { -webkit-transform: translate3d(40px, 0px, 0px); } to { -webkit-transform: translate3d(0px, 0px, 0px); } } @keyframes slideLeftIn40 { from { transform: translate3d(40px, 0px, 0px); } to { transform: translate3d(0px, 0px, 0px); } } .ms-u-slideRightIn400[data-v-349dd89f] { -webkit-animation-name: fadeIn, slideRightIn400; -moz-animation-name: fadeIn, slideRightIn400; -ms-animation-name: fadeIn, slideRightIn400; -o-animation-name: fadeIn, slideRightIn400; animation-name: fadeIn, slideRightIn400; -webkit-animation-duration: 0.367s; -moz-animation-duration: 0.367s; -ms-animation-duration: 0.367s; -o-animation-duration: 0.367s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideRightIn400 { from { -webkit-transform: translate3d(-400px, 0px, 0px); } to { -webkit-transform: translate3d(0px, 0px, 0px); } } @keyframes slideRightIn400 { from { transform: translate3d(-400px, 0px, 0px); } to { transform: translate3d(0px, 0px, 0px); } } .ms-u-slideLeftIn400[data-v-349dd89f] { -webkit-animation-name: fadeIn, slideLeft400; -moz-animation-name: fadeIn, slideLeft400; -ms-animation-name: fadeIn, slideLeft400; -o-animation-name: fadeIn, slideLeft400; animation-name: fadeIn, slideLeft400; -webkit-animation-duration: 0.367s; -moz-animation-duration: 0.367s; -ms-animation-duration: 0.367s; -o-animation-duration: 0.367s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideLeft400 { from { -webkit-transform: translate3d(400px, 0px, 0px); } to { -webkit-transform: translate3d(0px, 0px, 0px); } } @keyframes slideLeft400 { from { transform: translate3d(400px, 0px, 0px); } to { transform: translate3d(0px, 0px, 0px); } } .ms-u-slideUpIn20[data-v-349dd89f] { -webkit-animation-name: fadeIn, slideUpIn20; -moz-animation-name: fadeIn, slideUpIn20; -ms-animation-name: fadeIn, slideUpIn20; -o-animation-name: fadeIn, slideUpIn20; animation-name: fadeIn, slideUpIn20; -webkit-animation-duration: 0.367s; -moz-animation-duration: 0.367s; -ms-animation-duration: 0.367s; -o-animation-duration: 0.367s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideUpIn20 { from { -webkit-transform: translate3d(0px, 20px, 0px); } to { -webkit-transform: translate3d(0px, 0px, 0px); } } @keyframes slideUpIn20 { from { transform: translate3d(0px, 20px, 0px); } to { transform: translate3d(0px, 0px, 0px); } } .ms-u-slideUpIn10[data-v-349dd89f] { -webkit-animation-name: fadeIn, slideUpIn10; -moz-animation-name: fadeIn, slideUpIn10; -ms-animation-name: fadeIn, slideUpIn10; -o-animation-name: fadeIn, slideUpIn10; animation-name: fadeIn, slideUpIn10; -webkit-animation-duration: 0.167s; -moz-animation-duration: 0.167s; -ms-animation-duration: 0.167s; -o-animation-duration: 0.167s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideUpIn10 { from { -webkit-transform: translate3d(0px, 10px, 0px); } to { -webkit-transform: translate3d(0px, 0px, 0px); } } @keyframes slideUpIn10 { from { transform: translate3d(0px, 10px, 0px); } to { transform: translate3d(0px, 0px, 0px); } } .ms-u-slideDownIn20[data-v-349dd89f] { -webkit-animation-name: fadeIn, slideDownIn20; -moz-animation-name: fadeIn, slideDownIn20; -ms-animation-name: fadeIn, slideDownIn20; -o-animation-name: fadeIn, slideDownIn20; animation-name: fadeIn, slideDownIn20; -webkit-animation-duration: 0.367s; -moz-animation-duration: 0.367s; -ms-animation-duration: 0.367s; -o-animation-duration: 0.367s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideDownIn20 { from { -webkit-transform: translate3d(0px, -20px, 0px); } to { -webkit-transform: translate3d(0px, 0px, 0px); } } @keyframes slideDownIn20 { from { transform: translate3d(0px, -20px, 0px); } to { transform: translate3d(0px, 0px, 0px); } } .ms-u-slideDownIn10[data-v-349dd89f] { -webkit-animation-name: fadeIn, slideDownIn10; -moz-animation-name: fadeIn, slideDownIn10; -ms-animation-name: fadeIn, slideDownIn10; -o-animation-name: fadeIn, slideDownIn10; animation-name: fadeIn, slideDownIn10; -webkit-animation-duration: 0.167s; -moz-animation-duration: 0.167s; -ms-animation-duration: 0.167s; -o-animation-duration: 0.167s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideDownIn10 { from { -webkit-transform: translate3d(0px, -10px, 0px); } to { -webkit-transform: translate3d(0px, 0px, 0px); } } @keyframes slideDownIn10 { from { transform: translate3d(0px, -10px, 0px); } to { transform: translate3d(0px, 0px, 0px); } } .ms-u-slideRightOut40[data-v-349dd89f] { -webkit-animation-name: fadeOut, slideRightOut40; -moz-animation-name: fadeOut, slideRightOut40; -ms-animation-name: fadeOut, slideRightOut40; -o-animation-name: fadeOut, slideRightOut40; animation-name: fadeOut, slideRightOut40; -webkit-animation-duration: 0.167s; -moz-animation-duration: 0.167s; -ms-animation-duration: 0.167s; -o-animation-duration: 0.167s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideRightOut40 { from { -webkit-transform: translate3d(0px, 0px, 0px); } to { -webkit-transform: translate3d(40px, 0px, 0px); } } @keyframes slideRightOut40 { from { transform: translate3d(0px, 0px, 0px); } to { transform: translate3d(40px, 0px, 0px); } } .ms-u-slideLeftOut40[data-v-349dd89f] { -webkit-animation-name: fadeOut, slideLeftOut40; -moz-animation-name: fadeOut, slideLeftOut40; -ms-animation-name: fadeOut, slideLeftOut40; -o-animation-name: fadeOut, slideLeftOut40; animation-name: fadeOut, slideLeftOut40; -webkit-animation-duration: 0.167s; -moz-animation-duration: 0.167s; -ms-animation-duration: 0.167s; -o-animation-duration: 0.167s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideLeftOut40 { from { -webkit-transform: translate3d(0, 0px, 0px); } to { -webkit-transform: translate3d(-40px, 0px, 0px); } } @keyframes slideLeftOut40 { from { transform: translate3d(0, 0px, 0px); } to { transform: translate3d(-40px, 0px, 0px); } } .ms-u-slideRightOut400[data-v-349dd89f] { -webkit-animation-name: fadeOut, slideRightOut400; -moz-animation-name: fadeOut, slideRightOut400; -ms-animation-name: fadeOut, slideRightOut400; -o-animation-name: fadeOut, slideRightOut400; animation-name: fadeOut, slideRightOut400; -webkit-animation-duration: 0.167s; -moz-animation-duration: 0.167s; -ms-animation-duration: 0.167s; -o-animation-duration: 0.167s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideRightOut400 { from { -webkit-transform: translate3d(0, 0px, 0px); } to { -webkit-transform: translate3d(400px, 0px, 0px); } } @keyframes slideRightOut400 { from { transform: translate3d(0, 0px, 0px); } to { transform: translate3d(400px, 0px, 0px); } } .ms-u-slideLeftOut400[data-v-349dd89f] { -webkit-animation-name: fadeOut, slideLeftOut400; -moz-animation-name: fadeOut, slideLeftOut400; -ms-animation-name: fadeOut, slideLeftOut400; -o-animation-name: fadeOut, slideLeftOut400; animation-name: fadeOut, slideLeftOut400; -webkit-animation-duration: 0.167s; -moz-animation-duration: 0.167s; -ms-animation-duration: 0.167s; -o-animation-duration: 0.167s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideLeftOut400 { from { -webkit-transform: translate3d(0, 0px, 0px); } to { -webkit-transform: translate3d(-400px, 0px, 0px); } } @keyframes slideLeftOut400 { from { transform: translate3d(0, 0px, 0px); } to { transform: translate3d(-400px, 0px, 0px); } } .ms-u-slideUpOut20[data-v-349dd89f] { -webkit-animation-name: fadeOut, slideUpOut20; -moz-animation-name: fadeOut, slideUpOut20; -ms-animation-name: fadeOut, slideUpOut20; -o-animation-name: fadeOut, slideUpOut20; animation-name: fadeOut, slideUpOut20; -webkit-animation-duration: 0.167s; -moz-animation-duration: 0.167s; -ms-animation-duration: 0.167s; -o-animation-duration: 0.167s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideUpOut20 { from { -webkit-transform: translate3d(0px, 0, 0px); } to { -webkit-transform: translate3d(0px, -20px, 0px); } } @keyframes slideUpOut20 { from { transform: translate3d(0px, 0, 0px); } to { transform: translate3d(0px, -20px, 0px); } } .ms-u-slideUpOut10[data-v-349dd89f] { -webkit-animation-name: fadeOut, slideUpOut10; -moz-animation-name: fadeOut, slideUpOut10; -ms-animation-name: fadeOut, slideUpOut10; -o-animation-name: fadeOut, slideUpOut10; animation-name: fadeOut, slideUpOut10; -webkit-animation-duration: 0.167s; -moz-animation-duration: 0.167s; -ms-animation-duration: 0.167s; -o-animation-duration: 0.167s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideUpOut10 { from { -webkit-transform: translate3d(0px, 0, 0px); } to { -webkit-transform: translate3d(0px, -10px, 0px); } } @keyframes slideUpOut10 { from { transform: translate3d(0px, 0, 0px); } to { transform: translate3d(0px, -10px, 0px); } } .ms-u-slideDownOut20[data-v-349dd89f] { -webkit-animation-name: fadeOut, slideDownOut20; -moz-animation-name: fadeOut, slideDownOut20; -ms-animation-name: fadeOut, slideDownOut20; -o-animation-name: fadeOut, slideDownOut20; animation-name: fadeOut, slideDownOut20; -webkit-animation-duration: 0.167s; -moz-animation-duration: 0.167s; -ms-animation-duration: 0.167s; -o-animation-duration: 0.167s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideDownOut20 { from { -webkit-transform: translate3d(0px, 0, 0px); } to { -webkit-transform: translate3d(0px, 20px, 0px); } } @keyframes slideDownOut20 { from { transform: translate3d(0px, 0, 0px); } to { transform: translate3d(0px, 20px, 0px); } } .ms-u-slideDownOut10[data-v-349dd89f] { -webkit-animation-name: fadeOut, slideDownOut10; -moz-animation-name: fadeOut, slideDownOut10; -ms-animation-name: fadeOut, slideDownOut10; -o-animation-name: fadeOut, slideDownOut10; animation-name: fadeOut, slideDownOut10; -webkit-animation-duration: 0.167s; -moz-animation-duration: 0.167s; -ms-animation-duration: 0.167s; -o-animation-duration: 0.167s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideDownOut10 { from { -webkit-transform: translate3d(0px, 0, 0px); } to { -webkit-transform: translate3d(0px, 10px, 0px); } } @keyframes slideDownOut10 { from { transform: translate3d(0px, 0, 0px); } to { transform: translate3d(0px, 10px, 0px); } } .ms-u-scaleUpIn100[data-v-349dd89f] { -webkit-animation-name: fadeIn, scaleUp100; -moz-animation-name: fadeIn, scaleUp100; -ms-animation-name: fadeIn, scaleUp100; -o-animation-name: fadeIn, scaleUp100; animation-name: fadeIn, scaleUp100; -webkit-animation-duration: 0.367s; -moz-animation-duration: 0.367s; -ms-animation-duration: 0.367s; -o-animation-duration: 0.367s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes scaleUp100 { from { -webkit-transform: scale3d(0.98, 0.98, 1); } to { -webkit-transform: scale3d(1, 1, 1); } } @keyframes scaleUp100 { from { transform: scale3d(0.98, 0.98, 1); } to { transform: scale3d(1, 1, 1); } } .ms-u-scaleDownIn100[data-v-349dd89f] { -webkit-animation-name: fadeIn, scaleDown100; -moz-animation-name: fadeIn, scaleDown100; -ms-animation-name: fadeIn, scaleDown100; -o-animation-name: fadeIn, scaleDown100; animation-name: fadeIn, scaleDown100; -webkit-animation-duration: 0.367s; -moz-animation-duration: 0.367s; -ms-animation-duration: 0.367s; -o-animation-duration: 0.367s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes scaleDown100 { from { -webkit-transform: scale3d(1.03, 1.03, 1); } to { -webkit-transform: scale3d(1, 1, 1); } } @keyframes scaleDown100 { from { transform: scale3d(1.03, 1.03, 1); } to { transform: scale3d(1, 1, 1); } } .ms-u-scaleUpOut103[data-v-349dd89f] { -webkit-animation-name: fadeOut, scaleUp103; -moz-animation-name: fadeOut, scaleUp103; -ms-animation-name: fadeOut, scaleUp103; -o-animation-name: fadeOut, scaleUp103; animation-name: fadeOut, scaleUp103; -webkit-animation-duration: 0.167s; -moz-animation-duration: 0.167s; -ms-animation-duration: 0.167s; -o-animation-duration: 0.167s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes scaleUp103 { from { -webkit-transform: scale3d(1, 1, 1); } to { -webkit-transform: scale3d(1.03, 1.03, 1); } } @keyframes scaleUp103 { from { transform: scale3d(1, 1, 1); } to { transform: scale3d(1.03, 1.03, 1); } } .ms-u-scaleDownOut98[data-v-349dd89f] { -webkit-animation-name: fadeOut, scaleDown98; -moz-animation-name: fadeOut, scaleDown98; -ms-animation-name: fadeOut, scaleDown98; -o-animation-name: fadeOut, scaleDown98; animation-name: fadeOut, scaleDown98; -webkit-animation-duration: 0.167s; -moz-animation-duration: 0.167s; -ms-animation-duration: 0.167s; -o-animation-duration: 0.167s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes scaleDown98 { from { -webkit-transform: scale3d(1, 1, 1); } to { -webkit-transform: scale3d(0.98, 0.98, 1); } } @keyframes scaleDown98 { from { transform: scale3d(1, 1, 1); } to { transform: scale3d(0.98, 0.98, 1); } } .ms-u-fadeIn400[data-v-349dd89f] { -webkit-animation-duration: 0.367s; -webkit-animation-name: fadeIn; -webkit-animation-fill-mode: both; animation-duration: 0.367s; animation-name: fadeIn; animation-fill-mode: both; } .ms-u-fadeIn100[data-v-349dd89f] { -webkit-animation-duration: 0.367s; -webkit-animation-name: fadeIn; -webkit-animation-fill-mode: both; animation-duration: 0.367s; animation-name: fadeIn; animation-fill-mode: both; -webkit-animation-duration: 0.167s; animation-duration: 0.167s; } .ms-u-fadeIn200[data-v-349dd89f] { -webkit-animation-duration: 0.367s; -webkit-animation-name: fadeIn; -webkit-animation-fill-mode: both; animation-duration: 0.367s; animation-name: fadeIn; animation-fill-mode: both; -webkit-animation-duration: 0.267s; animation-duration: 0.267s; } .ms-u-fadeIn500[data-v-349dd89f] { -webkit-animation-duration: 0.367s; -webkit-animation-name: fadeIn; -webkit-animation-fill-mode: both; animation-duration: 0.367s; animation-name: fadeIn; animation-fill-mode: both; -webkit-animation-duration: 0.467s; animation-duration: 0.467s; } @-webkit-keyframes fadeIn { from { opacity: 0; -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); } to { opacity: 1; } } @keyframes fadeIn { from { opacity: 0; animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); } to { opacity: 1; } } .ms-u-fadeOut400[data-v-349dd89f] { -webkit-animation-duration: 0.367s; -webkit-animation-name: fadeOut; -webkit-animation-fill-mode: both; animation-duration: 0.367s; animation-name: fadeOut; animation-fill-mode: both; } .ms-u-fadeOut100[data-v-349dd89f] { -webkit-animation-duration: 0.367s; -webkit-animation-name: fadeOut; -webkit-animation-fill-mode: both; animation-duration: 0.367s; animation-name: fadeOut; animation-fill-mode: both; -webkit-animation-duration: 0.1s; animation-duration: 0.1s; } .ms-u-fadeOut200[data-v-349dd89f] { -webkit-animation-duration: 0.367s; -webkit-animation-name: fadeOut; -webkit-animation-fill-mode: both; animation-duration: 0.367s; animation-name: fadeOut; animation-fill-mode: both; -webkit-animation-duration: 0.167s; animation-duration: 0.167s; } .ms-u-fadeOut500[data-v-349dd89f] { -webkit-animation-duration: 0.367s; -webkit-animation-name: fadeOut; -webkit-animation-fill-mode: both; animation-duration: 0.367s; animation-name: fadeOut; animation-fill-mode: both; -webkit-animation-duration: 0.467s; animation-duration: 0.467s; } @-webkit-keyframes fadeOut { from { opacity: 1; -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); } to { opacity: 0; } } @keyframes fadeOut { from { opacity: 1; animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); } to { opacity: 0; } } .ms-u-rotate90deg[data-v-349dd89f] { -webkit-animation-name: rotate90; -moz-animation-name: rotate90; -ms-animation-name: rotate90; -o-animation-name: rotate90; animation-name: rotate90; -webkit-animation-duration: 0.1s; -moz-animation-duration: 0.1s; -ms-animation-duration: 0.1s; -o-animation-duration: 0.1s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes rotate90 { from { -webkit-transform: rotateZ(0deg); } to { -webkit-transform: rotateZ(90deg); } } @keyframes rotate90 { from { transform: rotateZ(0deg); } to { transform: rotateZ(90deg); } } .ms-u-rotateN90deg[data-v-349dd89f] { -webkit-animation-name: rotateN90; -moz-animation-name: rotateN90; -ms-animation-name: rotateN90; -o-animation-name: rotateN90; animation-name: rotateN90; -webkit-animation-duration: 0.1s; -moz-animation-duration: 0.1s; -ms-animation-duration: 0.1s; -o-animation-duration: 0.1s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes rotateN90 { from { -webkit-transform: rotateZ(90deg); } to { -webkit-transform: rotateZ(0deg); } } @keyframes rotateN90 { from { transform: rotateZ(90deg); } to { transform: rotateZ(0deg); } } .ms-u-expandCollapse400[data-v-349dd89f] { -webkit-transition: height 0.367s cubic-bezier(0.1, 0.25, 0.75, 0.9); transition: height 0.367s cubic-bezier(0.1, 0.25, 0.75, 0.9); } .ms-u-expandCollapse200[data-v-349dd89f] { -webkit-transition: height 0.167s cubic-bezier(0.1, 0.25, 0.75, 0.9); transition: height 0.167s cubic-bezier(0.1, 0.25, 0.75, 0.9); } .ms-u-expandCollapse100[data-v-349dd89f] { -webkit-transition: height 0.1s cubic-bezier(0.1, 0.25, 0.75, 0.9); transition: height 0.1s cubic-bezier(0.1, 0.25, 0.75, 0.9); } .ms-u-delay100[data-v-349dd89f] { -webkit-animation-delay: 0.167s; animation-delay: 0.167s; } .ms-u-delay200[data-v-349dd89f] { -webkit-animation-delay: 0.267s; animation-delay: 0.267s; } /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-MessageBanner[data-v-349dd89f] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 12px; font-weight: 400; position: relative; border-bottom: 1px solid \"[theme:neutralSecondaryAlt, default: #767676]\"; background-color: \"[theme:themeLighterAlt, default: #eff6fc]\"; min-width: 320px; width: 100%; height: 52px; text-align: center; overflow: hidden; -webkit-animation-name: fadeIn, slideDownIn20; -moz-animation-name: fadeIn, slideDownIn20; -ms-animation-name: fadeIn, slideDownIn20; -o-animation-name: fadeIn, slideDownIn20; animation-name: fadeIn, slideDownIn20; -webkit-animation-duration: 0.367s; -moz-animation-duration: 0.367s; -ms-animation-duration: 0.367s; -o-animation-duration: 0.367s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } .ms-MessageBanner .ms-Icon[data-v-349dd89f] { font-size: 16px; } .ms-MessageBanner.hide[data-v-349dd89f] { -webkit-animation-name: fadeOut, slideUpOut20; -moz-animation-name: fadeOut, slideUpOut20; -ms-animation-name: fadeOut, slideUpOut20; -o-animation-name: fadeOut, slideUpOut20; animation-name: fadeOut, slideUpOut20; -webkit-animation-duration: 0.167s; -moz-animation-duration: 0.167s; -ms-animation-duration: 0.167s; -o-animation-duration: 0.167s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } .ms-MessageBanner.is-hidden[data-v-349dd89f] { display: none; } .ms-MessageBanner-expand[data-v-349dd89f], .ms-MessageBanner-close[data-v-349dd89f] { height: 52px; width: 40px; cursor: pointer; border: 0; background-color: transparent; } .ms-MessageBanner-close[data-v-349dd89f] { position: absolute; right: 0; top: 0; line-height: 52px; color: \"[theme:neutralSecondary, default: #666666]\"; } .ms-MessageBanner-text[data-v-349dd89f] { display: inline-block; padding: 18px 0; margin-left: 0; max-width: 770px; overflow: hidden; text-align: left; } .ms-MessageBanner-expand[data-v-349dd89f] { display: none; vertical-align: top; } .ms-MessageBanner-expand.is-visible[data-v-349dd89f] { display: inline-block; } .ms-MessageBanner-action[data-v-349dd89f] { display: inline-block; vertical-align: top; margin-top: 10px; margin-left: 10px; padding-right: 36px; } .ms-MessageBanner-action .ms-Button[data-v-349dd89f] { color: \"[theme:white, default: #ffffff]\"; } .ms-MessageBanner-clipper[data-v-349dd89f] { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; display: inline-block; vertical-align: top; } .ms-MessageBanner.is-expanded[data-v-349dd89f] { height: auto; } .ms-MessageBanner.is-expanded .ms-MessageBanner-clipper[data-v-349dd89f] { white-space: normal; } @media screen and (max-width: 479px) { .ms-MessageBanner-action[data-v-349dd89f] { margin: 0; display: block; text-align: right; padding: 0 10px 10px 0; } .ms-MessageBanner-text[data-v-349dd89f] { margin-left: -25px; padding: 18px 0 10px; min-width: 240px; } .ms-MessageBanner-expand[data-v-349dd89f] { display: inline-block; padding: 0; margin-left: -5px; width: 20px; } .ms-MessageBanner-expand .ms-Icon[data-v-349dd89f] { color: \"[theme:themePrimary, default: #0078d7]\"; } } .ms-Icon.ms-Icon--Clear[data-v-349dd89f] { content: url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"16\" height=\"16\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M1115 1024l690 -691l-90 -90l-691 690l-691 -690l-90 90l690 691l-690 691l90 90l691 -690l691 690l90 -90z\" fill=\"black\" stroke=\"none\"/></svg>'); } ");},
-    props: {
-        value: Boolean
-    },
-    data: function data(){
-        return {
-            instance : null
-        };
-    },
-    watch: {
-        value: function value() {
-            this.setVisibility();
-        }
-    },
-    methods:{
-        setVisibility: function setVisibility(){
-            var this$1 = this;
-
-            if(this.value)
-            {
-                if(!this.instance)
-                {
-                    this.instance = new MessageBanner$1(this.$refs.messageBanner);
-                    this.instance._closeButton.addEventListener("click", function (){
-                        console.log("closed");
-                        this$1.$emit('input', false);
-                        // this.value = false;
-                    }, false);
-                }
-                this.instance.show();
-            }
-            else if(this.instance && this.$refs.messageBanner.className.indexOf("is-hidden")<0)
-                { this.instance.hide(); }
-        }
-    },
-    mounted: function mounted() {
-        this.setVisibility();
-    }
-}
-
-var overlay = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"overlay",staticClass:"ms-Overlay",class:_vm.overlayClass})},staticRenderFns: [],
-  name: 'ou-overlay',
-
-  mixins: [type('dark')],
-
+//
+var script$D = {
+  loadStyles: loadStyles,
   props: {
     value: Boolean
   },
+  data: function data() {
+    return {
+      instance: null
+    };
+  },
+  watch: {
+    value: function value() {
+      this.setVisibility();
+    }
+  },
+  methods: {
+    setVisibility: function setVisibility() {
+      var _this = this;
 
+      if (this.value) {
+        if (!this.instance) {
+          this.instance = new MessageBanner(this.$refs.messageBanner);
+
+          this.instance._closeButton.addEventListener("click", function () {
+            console.log("closed");
+
+            _this.$emit('input', false); // this.value = false;
+
+          }, false);
+        }
+
+        this.instance.show();
+      } else if (this.instance && this.$refs.messageBanner.className.indexOf("is-hidden") < 0) this.instance.hide();
+    }
+  },
+  mounted: function mounted() {
+    this.setVisibility();
+  }
+};
+
+/* script */
+const __vue_script__$D = script$D;
+
+/* template */
+var __vue_render__$n = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"messageBanner",staticClass:"ms-MessageBanner is-hidden"},[_c('div',{staticClass:"ms-MessageBanner-content"},[_c('div',{staticClass:"ms-MessageBanner-text"},[_c('div',{staticClass:"ms-MessageBanner-clipper"},[_vm._t("default")],2)]),_vm._v(" "),_vm._m(0),_vm._v(" "),_c('div',{staticClass:"ms-MessageBanner-action"},[_vm._t("actions")],2)]),_vm._v(" "),_vm._m(1)])};
+var __vue_staticRenderFns__$n = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('button',{staticClass:"ms-MessageBanner-expand"},[_c('i',{staticClass:"ms-Icon ms-Icon--ChevronDown"})])},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('button',{staticClass:"ms-MessageBanner-close"},[_c('i',{staticClass:"ms-Icon ms-Icon--Clear"})])}];
+
+  /* style */
+  const __vue_inject_styles__$D = function (inject) {
+    if (!inject) return
+    inject("data-v-69a50ae8_0", { source: ".ms-u-slideRightIn10[data-v-69a50ae8]{-webkit-animation-name:fadeIn-data-v-69a50ae8,slideRightIn10-data-v-69a50ae8;-moz-animation-name:fadeIn-data-v-69a50ae8,slideRightIn10-data-v-69a50ae8;-ms-animation-name:fadeIn-data-v-69a50ae8,slideRightIn10-data-v-69a50ae8;-o-animation-name:fadeIn-data-v-69a50ae8,slideRightIn10-data-v-69a50ae8;animation-name:fadeIn-data-v-69a50ae8,slideRightIn10-data-v-69a50ae8;-webkit-animation-duration:367ms;-moz-animation-duration:367ms;-ms-animation-duration:367ms;-o-animation-duration:367ms;-webkit-animation-timing-function:cubic-bezier(.1,.9,.2,1);-moz-animation-timing-function:cubic-bezier(.1,.9,.2,1);-ms-animation-timing-function:cubic-bezier(.1,.9,.2,1);-o-animation-timing-function:cubic-bezier(.1,.9,.2,1);animation-timing-function:cubic-bezier(.1,.9,.2,1);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideRightIn10-data-v-69a50ae8{from{-webkit-transform:translate3d(-10px,0,0)}to{-webkit-transform:translate3d(0,0,0)}}@keyframes slideRightIn10-data-v-69a50ae8{from{transform:translate3d(-10px,0,0)}to{transform:translate3d(0,0,0)}}.ms-u-slideRightIn20[data-v-69a50ae8]{-webkit-animation-name:fadeIn-data-v-69a50ae8,slideRightIn20-data-v-69a50ae8;-moz-animation-name:fadeIn-data-v-69a50ae8,slideRightIn20-data-v-69a50ae8;-ms-animation-name:fadeIn-data-v-69a50ae8,slideRightIn20-data-v-69a50ae8;-o-animation-name:fadeIn-data-v-69a50ae8,slideRightIn20-data-v-69a50ae8;animation-name:fadeIn-data-v-69a50ae8,slideRightIn20-data-v-69a50ae8;-webkit-animation-duration:367ms;-moz-animation-duration:367ms;-ms-animation-duration:367ms;-o-animation-duration:367ms;-webkit-animation-timing-function:cubic-bezier(.1,.9,.2,1);-moz-animation-timing-function:cubic-bezier(.1,.9,.2,1);-ms-animation-timing-function:cubic-bezier(.1,.9,.2,1);-o-animation-timing-function:cubic-bezier(.1,.9,.2,1);animation-timing-function:cubic-bezier(.1,.9,.2,1);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideRightIn20-data-v-69a50ae8{from{-webkit-transform:translate3d(-20px,0,0)}to{-webkit-transform:translate3d(0,0,0)}}@keyframes slideRightIn20-data-v-69a50ae8{from{transform:translate3d(-20px,0,0)}to{transform:translate3d(0,0,0)}}.ms-u-slideRightIn40[data-v-69a50ae8]{-webkit-animation-name:fadeIn-data-v-69a50ae8,slideRightIn40-data-v-69a50ae8;-moz-animation-name:fadeIn-data-v-69a50ae8,slideRightIn40-data-v-69a50ae8;-ms-animation-name:fadeIn-data-v-69a50ae8,slideRightIn40-data-v-69a50ae8;-o-animation-name:fadeIn-data-v-69a50ae8,slideRightIn40-data-v-69a50ae8;animation-name:fadeIn-data-v-69a50ae8,slideRightIn40-data-v-69a50ae8;-webkit-animation-duration:367ms;-moz-animation-duration:367ms;-ms-animation-duration:367ms;-o-animation-duration:367ms;-webkit-animation-timing-function:cubic-bezier(.1,.9,.2,1);-moz-animation-timing-function:cubic-bezier(.1,.9,.2,1);-ms-animation-timing-function:cubic-bezier(.1,.9,.2,1);-o-animation-timing-function:cubic-bezier(.1,.9,.2,1);animation-timing-function:cubic-bezier(.1,.9,.2,1);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideRightIn40-data-v-69a50ae8{from{-webkit-transform:translate3d(-40px,0,0)}to{-webkit-transform:translate3d(0,0,0)}}@keyframes slideRightIn40-data-v-69a50ae8{from{transform:translate3d(-40px,0,0)}to{transform:translate3d(0,0,0)}}.ms-u-slideLeftIn10[data-v-69a50ae8]{-webkit-animation-name:fadeIn-data-v-69a50ae8,slideLeftIn10-data-v-69a50ae8;-moz-animation-name:fadeIn-data-v-69a50ae8,slideLeftIn10-data-v-69a50ae8;-ms-animation-name:fadeIn-data-v-69a50ae8,slideLeftIn10-data-v-69a50ae8;-o-animation-name:fadeIn-data-v-69a50ae8,slideLeftIn10-data-v-69a50ae8;animation-name:fadeIn-data-v-69a50ae8,slideLeftIn10-data-v-69a50ae8;-webkit-animation-duration:367ms;-moz-animation-duration:367ms;-ms-animation-duration:367ms;-o-animation-duration:367ms;-webkit-animation-timing-function:cubic-bezier(.1,.9,.2,1);-moz-animation-timing-function:cubic-bezier(.1,.9,.2,1);-ms-animation-timing-function:cubic-bezier(.1,.9,.2,1);-o-animation-timing-function:cubic-bezier(.1,.9,.2,1);animation-timing-function:cubic-bezier(.1,.9,.2,1);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideLeftIn10-data-v-69a50ae8{from{-webkit-transform:translate3d(10px,0,0)}to{-webkit-transform:translate3d(0,0,0)}}@keyframes slideLeftIn10-data-v-69a50ae8{from{transform:translate3d(10px,0,0)}to{transform:translate3d(0,0,0)}}.ms-u-slideLeftIn20[data-v-69a50ae8]{-webkit-animation-name:fadeIn-data-v-69a50ae8,slideLeftIn20-data-v-69a50ae8;-moz-animation-name:fadeIn-data-v-69a50ae8,slideLeftIn20-data-v-69a50ae8;-ms-animation-name:fadeIn-data-v-69a50ae8,slideLeftIn20-data-v-69a50ae8;-o-animation-name:fadeIn-data-v-69a50ae8,slideLeftIn20-data-v-69a50ae8;animation-name:fadeIn-data-v-69a50ae8,slideLeftIn20-data-v-69a50ae8;-webkit-animation-duration:367ms;-moz-animation-duration:367ms;-ms-animation-duration:367ms;-o-animation-duration:367ms;-webkit-animation-timing-function:cubic-bezier(.1,.9,.2,1);-moz-animation-timing-function:cubic-bezier(.1,.9,.2,1);-ms-animation-timing-function:cubic-bezier(.1,.9,.2,1);-o-animation-timing-function:cubic-bezier(.1,.9,.2,1);animation-timing-function:cubic-bezier(.1,.9,.2,1);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideLeftIn20-data-v-69a50ae8{from{-webkit-transform:translate3d(20px,0,0)}to{-webkit-transform:translate3d(0,0,0)}}@keyframes slideLeftIn20-data-v-69a50ae8{from{transform:translate3d(20px,0,0)}to{transform:translate3d(0,0,0)}}.ms-u-slideLeftIn40[data-v-69a50ae8]{-webkit-animation-name:fadeIn-data-v-69a50ae8,slideLeftIn40-data-v-69a50ae8;-moz-animation-name:fadeIn-data-v-69a50ae8,slideLeftIn40-data-v-69a50ae8;-ms-animation-name:fadeIn-data-v-69a50ae8,slideLeftIn40-data-v-69a50ae8;-o-animation-name:fadeIn-data-v-69a50ae8,slideLeftIn40-data-v-69a50ae8;animation-name:fadeIn-data-v-69a50ae8,slideLeftIn40-data-v-69a50ae8;-webkit-animation-duration:367ms;-moz-animation-duration:367ms;-ms-animation-duration:367ms;-o-animation-duration:367ms;-webkit-animation-timing-function:cubic-bezier(.1,.9,.2,1);-moz-animation-timing-function:cubic-bezier(.1,.9,.2,1);-ms-animation-timing-function:cubic-bezier(.1,.9,.2,1);-o-animation-timing-function:cubic-bezier(.1,.9,.2,1);animation-timing-function:cubic-bezier(.1,.9,.2,1);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideLeftIn40-data-v-69a50ae8{from{-webkit-transform:translate3d(40px,0,0)}to{-webkit-transform:translate3d(0,0,0)}}@keyframes slideLeftIn40-data-v-69a50ae8{from{transform:translate3d(40px,0,0)}to{transform:translate3d(0,0,0)}}.ms-u-slideRightIn400[data-v-69a50ae8]{-webkit-animation-name:fadeIn-data-v-69a50ae8,slideRightIn400-data-v-69a50ae8;-moz-animation-name:fadeIn-data-v-69a50ae8,slideRightIn400-data-v-69a50ae8;-ms-animation-name:fadeIn-data-v-69a50ae8,slideRightIn400-data-v-69a50ae8;-o-animation-name:fadeIn-data-v-69a50ae8,slideRightIn400-data-v-69a50ae8;animation-name:fadeIn-data-v-69a50ae8,slideRightIn400-data-v-69a50ae8;-webkit-animation-duration:367ms;-moz-animation-duration:367ms;-ms-animation-duration:367ms;-o-animation-duration:367ms;-webkit-animation-timing-function:cubic-bezier(.1,.9,.2,1);-moz-animation-timing-function:cubic-bezier(.1,.9,.2,1);-ms-animation-timing-function:cubic-bezier(.1,.9,.2,1);-o-animation-timing-function:cubic-bezier(.1,.9,.2,1);animation-timing-function:cubic-bezier(.1,.9,.2,1);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideRightIn400-data-v-69a50ae8{from{-webkit-transform:translate3d(-400px,0,0)}to{-webkit-transform:translate3d(0,0,0)}}@keyframes slideRightIn400-data-v-69a50ae8{from{transform:translate3d(-400px,0,0)}to{transform:translate3d(0,0,0)}}.ms-u-slideLeftIn400[data-v-69a50ae8]{-webkit-animation-name:fadeIn-data-v-69a50ae8,slideLeft400-data-v-69a50ae8;-moz-animation-name:fadeIn-data-v-69a50ae8,slideLeft400-data-v-69a50ae8;-ms-animation-name:fadeIn-data-v-69a50ae8,slideLeft400-data-v-69a50ae8;-o-animation-name:fadeIn-data-v-69a50ae8,slideLeft400-data-v-69a50ae8;animation-name:fadeIn-data-v-69a50ae8,slideLeft400-data-v-69a50ae8;-webkit-animation-duration:367ms;-moz-animation-duration:367ms;-ms-animation-duration:367ms;-o-animation-duration:367ms;-webkit-animation-timing-function:cubic-bezier(.1,.9,.2,1);-moz-animation-timing-function:cubic-bezier(.1,.9,.2,1);-ms-animation-timing-function:cubic-bezier(.1,.9,.2,1);-o-animation-timing-function:cubic-bezier(.1,.9,.2,1);animation-timing-function:cubic-bezier(.1,.9,.2,1);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideLeft400-data-v-69a50ae8{from{-webkit-transform:translate3d(400px,0,0)}to{-webkit-transform:translate3d(0,0,0)}}@keyframes slideLeft400-data-v-69a50ae8{from{transform:translate3d(400px,0,0)}to{transform:translate3d(0,0,0)}}.ms-u-slideUpIn20[data-v-69a50ae8]{-webkit-animation-name:fadeIn-data-v-69a50ae8,slideUpIn20-data-v-69a50ae8;-moz-animation-name:fadeIn-data-v-69a50ae8,slideUpIn20-data-v-69a50ae8;-ms-animation-name:fadeIn-data-v-69a50ae8,slideUpIn20-data-v-69a50ae8;-o-animation-name:fadeIn-data-v-69a50ae8,slideUpIn20-data-v-69a50ae8;animation-name:fadeIn-data-v-69a50ae8,slideUpIn20-data-v-69a50ae8;-webkit-animation-duration:367ms;-moz-animation-duration:367ms;-ms-animation-duration:367ms;-o-animation-duration:367ms;-webkit-animation-timing-function:cubic-bezier(.1,.9,.2,1);-moz-animation-timing-function:cubic-bezier(.1,.9,.2,1);-ms-animation-timing-function:cubic-bezier(.1,.9,.2,1);-o-animation-timing-function:cubic-bezier(.1,.9,.2,1);animation-timing-function:cubic-bezier(.1,.9,.2,1);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideUpIn20-data-v-69a50ae8{from{-webkit-transform:translate3d(0,20px,0)}to{-webkit-transform:translate3d(0,0,0)}}@keyframes slideUpIn20-data-v-69a50ae8{from{transform:translate3d(0,20px,0)}to{transform:translate3d(0,0,0)}}.ms-u-slideUpIn10[data-v-69a50ae8]{-webkit-animation-name:fadeIn-data-v-69a50ae8,slideUpIn10-data-v-69a50ae8;-moz-animation-name:fadeIn-data-v-69a50ae8,slideUpIn10-data-v-69a50ae8;-ms-animation-name:fadeIn-data-v-69a50ae8,slideUpIn10-data-v-69a50ae8;-o-animation-name:fadeIn-data-v-69a50ae8,slideUpIn10-data-v-69a50ae8;animation-name:fadeIn-data-v-69a50ae8,slideUpIn10-data-v-69a50ae8;-webkit-animation-duration:167ms;-moz-animation-duration:167ms;-ms-animation-duration:167ms;-o-animation-duration:167ms;-webkit-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-moz-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-ms-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-o-animation-timing-function:cubic-bezier(.1,.25,.75,.9);animation-timing-function:cubic-bezier(.1,.25,.75,.9);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideUpIn10-data-v-69a50ae8{from{-webkit-transform:translate3d(0,10px,0)}to{-webkit-transform:translate3d(0,0,0)}}@keyframes slideUpIn10-data-v-69a50ae8{from{transform:translate3d(0,10px,0)}to{transform:translate3d(0,0,0)}}.ms-u-slideDownIn20[data-v-69a50ae8]{-webkit-animation-name:fadeIn-data-v-69a50ae8,slideDownIn20-data-v-69a50ae8;-moz-animation-name:fadeIn-data-v-69a50ae8,slideDownIn20-data-v-69a50ae8;-ms-animation-name:fadeIn-data-v-69a50ae8,slideDownIn20-data-v-69a50ae8;-o-animation-name:fadeIn-data-v-69a50ae8,slideDownIn20-data-v-69a50ae8;animation-name:fadeIn-data-v-69a50ae8,slideDownIn20-data-v-69a50ae8;-webkit-animation-duration:367ms;-moz-animation-duration:367ms;-ms-animation-duration:367ms;-o-animation-duration:367ms;-webkit-animation-timing-function:cubic-bezier(.1,.9,.2,1);-moz-animation-timing-function:cubic-bezier(.1,.9,.2,1);-ms-animation-timing-function:cubic-bezier(.1,.9,.2,1);-o-animation-timing-function:cubic-bezier(.1,.9,.2,1);animation-timing-function:cubic-bezier(.1,.9,.2,1);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideDownIn20-data-v-69a50ae8{from{-webkit-transform:translate3d(0,-20px,0)}to{-webkit-transform:translate3d(0,0,0)}}@keyframes slideDownIn20-data-v-69a50ae8{from{transform:translate3d(0,-20px,0)}to{transform:translate3d(0,0,0)}}.ms-u-slideDownIn10[data-v-69a50ae8]{-webkit-animation-name:fadeIn-data-v-69a50ae8,slideDownIn10-data-v-69a50ae8;-moz-animation-name:fadeIn-data-v-69a50ae8,slideDownIn10-data-v-69a50ae8;-ms-animation-name:fadeIn-data-v-69a50ae8,slideDownIn10-data-v-69a50ae8;-o-animation-name:fadeIn-data-v-69a50ae8,slideDownIn10-data-v-69a50ae8;animation-name:fadeIn-data-v-69a50ae8,slideDownIn10-data-v-69a50ae8;-webkit-animation-duration:167ms;-moz-animation-duration:167ms;-ms-animation-duration:167ms;-o-animation-duration:167ms;-webkit-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-moz-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-ms-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-o-animation-timing-function:cubic-bezier(.1,.25,.75,.9);animation-timing-function:cubic-bezier(.1,.25,.75,.9);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideDownIn10-data-v-69a50ae8{from{-webkit-transform:translate3d(0,-10px,0)}to{-webkit-transform:translate3d(0,0,0)}}@keyframes slideDownIn10-data-v-69a50ae8{from{transform:translate3d(0,-10px,0)}to{transform:translate3d(0,0,0)}}.ms-u-slideRightOut40[data-v-69a50ae8]{-webkit-animation-name:fadeOut-data-v-69a50ae8,slideRightOut40-data-v-69a50ae8;-moz-animation-name:fadeOut-data-v-69a50ae8,slideRightOut40-data-v-69a50ae8;-ms-animation-name:fadeOut-data-v-69a50ae8,slideRightOut40-data-v-69a50ae8;-o-animation-name:fadeOut-data-v-69a50ae8,slideRightOut40-data-v-69a50ae8;animation-name:fadeOut-data-v-69a50ae8,slideRightOut40-data-v-69a50ae8;-webkit-animation-duration:167ms;-moz-animation-duration:167ms;-ms-animation-duration:167ms;-o-animation-duration:167ms;-webkit-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-moz-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-ms-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-o-animation-timing-function:cubic-bezier(.1,.25,.75,.9);animation-timing-function:cubic-bezier(.1,.25,.75,.9);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideRightOut40-data-v-69a50ae8{from{-webkit-transform:translate3d(0,0,0)}to{-webkit-transform:translate3d(40px,0,0)}}@keyframes slideRightOut40-data-v-69a50ae8{from{transform:translate3d(0,0,0)}to{transform:translate3d(40px,0,0)}}.ms-u-slideLeftOut40[data-v-69a50ae8]{-webkit-animation-name:fadeOut-data-v-69a50ae8,slideLeftOut40-data-v-69a50ae8;-moz-animation-name:fadeOut-data-v-69a50ae8,slideLeftOut40-data-v-69a50ae8;-ms-animation-name:fadeOut-data-v-69a50ae8,slideLeftOut40-data-v-69a50ae8;-o-animation-name:fadeOut-data-v-69a50ae8,slideLeftOut40-data-v-69a50ae8;animation-name:fadeOut-data-v-69a50ae8,slideLeftOut40-data-v-69a50ae8;-webkit-animation-duration:167ms;-moz-animation-duration:167ms;-ms-animation-duration:167ms;-o-animation-duration:167ms;-webkit-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-moz-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-ms-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-o-animation-timing-function:cubic-bezier(.1,.25,.75,.9);animation-timing-function:cubic-bezier(.1,.25,.75,.9);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideLeftOut40-data-v-69a50ae8{from{-webkit-transform:translate3d(0,0,0)}to{-webkit-transform:translate3d(-40px,0,0)}}@keyframes slideLeftOut40-data-v-69a50ae8{from{transform:translate3d(0,0,0)}to{transform:translate3d(-40px,0,0)}}.ms-u-slideRightOut400[data-v-69a50ae8]{-webkit-animation-name:fadeOut-data-v-69a50ae8,slideRightOut400-data-v-69a50ae8;-moz-animation-name:fadeOut-data-v-69a50ae8,slideRightOut400-data-v-69a50ae8;-ms-animation-name:fadeOut-data-v-69a50ae8,slideRightOut400-data-v-69a50ae8;-o-animation-name:fadeOut-data-v-69a50ae8,slideRightOut400-data-v-69a50ae8;animation-name:fadeOut-data-v-69a50ae8,slideRightOut400-data-v-69a50ae8;-webkit-animation-duration:167ms;-moz-animation-duration:167ms;-ms-animation-duration:167ms;-o-animation-duration:167ms;-webkit-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-moz-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-ms-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-o-animation-timing-function:cubic-bezier(.1,.25,.75,.9);animation-timing-function:cubic-bezier(.1,.25,.75,.9);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideRightOut400-data-v-69a50ae8{from{-webkit-transform:translate3d(0,0,0)}to{-webkit-transform:translate3d(400px,0,0)}}@keyframes slideRightOut400-data-v-69a50ae8{from{transform:translate3d(0,0,0)}to{transform:translate3d(400px,0,0)}}.ms-u-slideLeftOut400[data-v-69a50ae8]{-webkit-animation-name:fadeOut-data-v-69a50ae8,slideLeftOut400-data-v-69a50ae8;-moz-animation-name:fadeOut-data-v-69a50ae8,slideLeftOut400-data-v-69a50ae8;-ms-animation-name:fadeOut-data-v-69a50ae8,slideLeftOut400-data-v-69a50ae8;-o-animation-name:fadeOut-data-v-69a50ae8,slideLeftOut400-data-v-69a50ae8;animation-name:fadeOut-data-v-69a50ae8,slideLeftOut400-data-v-69a50ae8;-webkit-animation-duration:167ms;-moz-animation-duration:167ms;-ms-animation-duration:167ms;-o-animation-duration:167ms;-webkit-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-moz-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-ms-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-o-animation-timing-function:cubic-bezier(.1,.25,.75,.9);animation-timing-function:cubic-bezier(.1,.25,.75,.9);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideLeftOut400-data-v-69a50ae8{from{-webkit-transform:translate3d(0,0,0)}to{-webkit-transform:translate3d(-400px,0,0)}}@keyframes slideLeftOut400-data-v-69a50ae8{from{transform:translate3d(0,0,0)}to{transform:translate3d(-400px,0,0)}}.ms-u-slideUpOut20[data-v-69a50ae8]{-webkit-animation-name:fadeOut-data-v-69a50ae8,slideUpOut20-data-v-69a50ae8;-moz-animation-name:fadeOut-data-v-69a50ae8,slideUpOut20-data-v-69a50ae8;-ms-animation-name:fadeOut-data-v-69a50ae8,slideUpOut20-data-v-69a50ae8;-o-animation-name:fadeOut-data-v-69a50ae8,slideUpOut20-data-v-69a50ae8;animation-name:fadeOut-data-v-69a50ae8,slideUpOut20-data-v-69a50ae8;-webkit-animation-duration:167ms;-moz-animation-duration:167ms;-ms-animation-duration:167ms;-o-animation-duration:167ms;-webkit-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-moz-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-ms-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-o-animation-timing-function:cubic-bezier(.1,.25,.75,.9);animation-timing-function:cubic-bezier(.1,.25,.75,.9);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideUpOut20-data-v-69a50ae8{from{-webkit-transform:translate3d(0,0,0)}to{-webkit-transform:translate3d(0,-20px,0)}}@keyframes slideUpOut20-data-v-69a50ae8{from{transform:translate3d(0,0,0)}to{transform:translate3d(0,-20px,0)}}.ms-u-slideUpOut10[data-v-69a50ae8]{-webkit-animation-name:fadeOut-data-v-69a50ae8,slideUpOut10-data-v-69a50ae8;-moz-animation-name:fadeOut-data-v-69a50ae8,slideUpOut10-data-v-69a50ae8;-ms-animation-name:fadeOut-data-v-69a50ae8,slideUpOut10-data-v-69a50ae8;-o-animation-name:fadeOut-data-v-69a50ae8,slideUpOut10-data-v-69a50ae8;animation-name:fadeOut-data-v-69a50ae8,slideUpOut10-data-v-69a50ae8;-webkit-animation-duration:167ms;-moz-animation-duration:167ms;-ms-animation-duration:167ms;-o-animation-duration:167ms;-webkit-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-moz-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-ms-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-o-animation-timing-function:cubic-bezier(.1,.25,.75,.9);animation-timing-function:cubic-bezier(.1,.25,.75,.9);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideUpOut10-data-v-69a50ae8{from{-webkit-transform:translate3d(0,0,0)}to{-webkit-transform:translate3d(0,-10px,0)}}@keyframes slideUpOut10-data-v-69a50ae8{from{transform:translate3d(0,0,0)}to{transform:translate3d(0,-10px,0)}}.ms-u-slideDownOut20[data-v-69a50ae8]{-webkit-animation-name:fadeOut-data-v-69a50ae8,slideDownOut20-data-v-69a50ae8;-moz-animation-name:fadeOut-data-v-69a50ae8,slideDownOut20-data-v-69a50ae8;-ms-animation-name:fadeOut-data-v-69a50ae8,slideDownOut20-data-v-69a50ae8;-o-animation-name:fadeOut-data-v-69a50ae8,slideDownOut20-data-v-69a50ae8;animation-name:fadeOut-data-v-69a50ae8,slideDownOut20-data-v-69a50ae8;-webkit-animation-duration:167ms;-moz-animation-duration:167ms;-ms-animation-duration:167ms;-o-animation-duration:167ms;-webkit-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-moz-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-ms-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-o-animation-timing-function:cubic-bezier(.1,.25,.75,.9);animation-timing-function:cubic-bezier(.1,.25,.75,.9);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideDownOut20-data-v-69a50ae8{from{-webkit-transform:translate3d(0,0,0)}to{-webkit-transform:translate3d(0,20px,0)}}@keyframes slideDownOut20-data-v-69a50ae8{from{transform:translate3d(0,0,0)}to{transform:translate3d(0,20px,0)}}.ms-u-slideDownOut10[data-v-69a50ae8]{-webkit-animation-name:fadeOut-data-v-69a50ae8,slideDownOut10-data-v-69a50ae8;-moz-animation-name:fadeOut-data-v-69a50ae8,slideDownOut10-data-v-69a50ae8;-ms-animation-name:fadeOut-data-v-69a50ae8,slideDownOut10-data-v-69a50ae8;-o-animation-name:fadeOut-data-v-69a50ae8,slideDownOut10-data-v-69a50ae8;animation-name:fadeOut-data-v-69a50ae8,slideDownOut10-data-v-69a50ae8;-webkit-animation-duration:167ms;-moz-animation-duration:167ms;-ms-animation-duration:167ms;-o-animation-duration:167ms;-webkit-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-moz-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-ms-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-o-animation-timing-function:cubic-bezier(.1,.25,.75,.9);animation-timing-function:cubic-bezier(.1,.25,.75,.9);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideDownOut10-data-v-69a50ae8{from{-webkit-transform:translate3d(0,0,0)}to{-webkit-transform:translate3d(0,10px,0)}}@keyframes slideDownOut10-data-v-69a50ae8{from{transform:translate3d(0,0,0)}to{transform:translate3d(0,10px,0)}}.ms-u-scaleUpIn100[data-v-69a50ae8]{-webkit-animation-name:fadeIn-data-v-69a50ae8,scaleUp100-data-v-69a50ae8;-moz-animation-name:fadeIn-data-v-69a50ae8,scaleUp100-data-v-69a50ae8;-ms-animation-name:fadeIn-data-v-69a50ae8,scaleUp100-data-v-69a50ae8;-o-animation-name:fadeIn-data-v-69a50ae8,scaleUp100-data-v-69a50ae8;animation-name:fadeIn-data-v-69a50ae8,scaleUp100-data-v-69a50ae8;-webkit-animation-duration:367ms;-moz-animation-duration:367ms;-ms-animation-duration:367ms;-o-animation-duration:367ms;-webkit-animation-timing-function:cubic-bezier(.1,.9,.2,1);-moz-animation-timing-function:cubic-bezier(.1,.9,.2,1);-ms-animation-timing-function:cubic-bezier(.1,.9,.2,1);-o-animation-timing-function:cubic-bezier(.1,.9,.2,1);animation-timing-function:cubic-bezier(.1,.9,.2,1);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes scaleUp100-data-v-69a50ae8{from{-webkit-transform:scale3d(.98,.98,1)}to{-webkit-transform:scale3d(1,1,1)}}@keyframes scaleUp100-data-v-69a50ae8{from{transform:scale3d(.98,.98,1)}to{transform:scale3d(1,1,1)}}.ms-u-scaleDownIn100[data-v-69a50ae8]{-webkit-animation-name:fadeIn-data-v-69a50ae8,scaleDown100-data-v-69a50ae8;-moz-animation-name:fadeIn-data-v-69a50ae8,scaleDown100-data-v-69a50ae8;-ms-animation-name:fadeIn-data-v-69a50ae8,scaleDown100-data-v-69a50ae8;-o-animation-name:fadeIn-data-v-69a50ae8,scaleDown100-data-v-69a50ae8;animation-name:fadeIn-data-v-69a50ae8,scaleDown100-data-v-69a50ae8;-webkit-animation-duration:367ms;-moz-animation-duration:367ms;-ms-animation-duration:367ms;-o-animation-duration:367ms;-webkit-animation-timing-function:cubic-bezier(.1,.9,.2,1);-moz-animation-timing-function:cubic-bezier(.1,.9,.2,1);-ms-animation-timing-function:cubic-bezier(.1,.9,.2,1);-o-animation-timing-function:cubic-bezier(.1,.9,.2,1);animation-timing-function:cubic-bezier(.1,.9,.2,1);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes scaleDown100-data-v-69a50ae8{from{-webkit-transform:scale3d(1.03,1.03,1)}to{-webkit-transform:scale3d(1,1,1)}}@keyframes scaleDown100-data-v-69a50ae8{from{transform:scale3d(1.03,1.03,1)}to{transform:scale3d(1,1,1)}}.ms-u-scaleUpOut103[data-v-69a50ae8]{-webkit-animation-name:fadeOut-data-v-69a50ae8,scaleUp103-data-v-69a50ae8;-moz-animation-name:fadeOut-data-v-69a50ae8,scaleUp103-data-v-69a50ae8;-ms-animation-name:fadeOut-data-v-69a50ae8,scaleUp103-data-v-69a50ae8;-o-animation-name:fadeOut-data-v-69a50ae8,scaleUp103-data-v-69a50ae8;animation-name:fadeOut-data-v-69a50ae8,scaleUp103-data-v-69a50ae8;-webkit-animation-duration:167ms;-moz-animation-duration:167ms;-ms-animation-duration:167ms;-o-animation-duration:167ms;-webkit-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-moz-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-ms-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-o-animation-timing-function:cubic-bezier(.1,.25,.75,.9);animation-timing-function:cubic-bezier(.1,.25,.75,.9);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes scaleUp103-data-v-69a50ae8{from{-webkit-transform:scale3d(1,1,1)}to{-webkit-transform:scale3d(1.03,1.03,1)}}@keyframes scaleUp103-data-v-69a50ae8{from{transform:scale3d(1,1,1)}to{transform:scale3d(1.03,1.03,1)}}.ms-u-scaleDownOut98[data-v-69a50ae8]{-webkit-animation-name:fadeOut-data-v-69a50ae8,scaleDown98-data-v-69a50ae8;-moz-animation-name:fadeOut-data-v-69a50ae8,scaleDown98-data-v-69a50ae8;-ms-animation-name:fadeOut-data-v-69a50ae8,scaleDown98-data-v-69a50ae8;-o-animation-name:fadeOut-data-v-69a50ae8,scaleDown98-data-v-69a50ae8;animation-name:fadeOut-data-v-69a50ae8,scaleDown98-data-v-69a50ae8;-webkit-animation-duration:167ms;-moz-animation-duration:167ms;-ms-animation-duration:167ms;-o-animation-duration:167ms;-webkit-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-moz-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-ms-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-o-animation-timing-function:cubic-bezier(.1,.25,.75,.9);animation-timing-function:cubic-bezier(.1,.25,.75,.9);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes scaleDown98-data-v-69a50ae8{from{-webkit-transform:scale3d(1,1,1)}to{-webkit-transform:scale3d(.98,.98,1)}}@keyframes scaleDown98-data-v-69a50ae8{from{transform:scale3d(1,1,1)}to{transform:scale3d(.98,.98,1)}}.ms-u-fadeIn400[data-v-69a50ae8]{-webkit-animation-duration:367ms;-webkit-animation-name:fadeIn-data-v-69a50ae8;-webkit-animation-fill-mode:both;animation-duration:367ms;animation-name:fadeIn-data-v-69a50ae8;animation-fill-mode:both}.ms-u-fadeIn100[data-v-69a50ae8]{-webkit-animation-duration:367ms;-webkit-animation-name:fadeIn-data-v-69a50ae8;-webkit-animation-fill-mode:both;animation-duration:367ms;animation-name:fadeIn-data-v-69a50ae8;animation-fill-mode:both;-webkit-animation-duration:167ms;animation-duration:167ms}.ms-u-fadeIn200[data-v-69a50ae8]{-webkit-animation-duration:367ms;-webkit-animation-name:fadeIn-data-v-69a50ae8;-webkit-animation-fill-mode:both;animation-duration:367ms;animation-name:fadeIn-data-v-69a50ae8;animation-fill-mode:both;-webkit-animation-duration:267ms;animation-duration:267ms}.ms-u-fadeIn500[data-v-69a50ae8]{-webkit-animation-duration:367ms;-webkit-animation-name:fadeIn-data-v-69a50ae8;-webkit-animation-fill-mode:both;animation-duration:367ms;animation-name:fadeIn-data-v-69a50ae8;animation-fill-mode:both;-webkit-animation-duration:467ms;animation-duration:467ms}@-webkit-keyframes fadeIn-data-v-69a50ae8{from{opacity:0;-webkit-animation-timing-function:cubic-bezier(.1,.25,.75,.9)}to{opacity:1}}@keyframes fadeIn-data-v-69a50ae8{from{opacity:0;animation-timing-function:cubic-bezier(.1,.25,.75,.9)}to{opacity:1}}.ms-u-fadeOut400[data-v-69a50ae8]{-webkit-animation-duration:367ms;-webkit-animation-name:fadeOut-data-v-69a50ae8;-webkit-animation-fill-mode:both;animation-duration:367ms;animation-name:fadeOut-data-v-69a50ae8;animation-fill-mode:both}.ms-u-fadeOut100[data-v-69a50ae8]{-webkit-animation-duration:367ms;-webkit-animation-name:fadeOut-data-v-69a50ae8;-webkit-animation-fill-mode:both;animation-duration:367ms;animation-name:fadeOut-data-v-69a50ae8;animation-fill-mode:both;-webkit-animation-duration:.1s;animation-duration:.1s}.ms-u-fadeOut200[data-v-69a50ae8]{-webkit-animation-duration:367ms;-webkit-animation-name:fadeOut-data-v-69a50ae8;-webkit-animation-fill-mode:both;animation-duration:367ms;animation-name:fadeOut-data-v-69a50ae8;animation-fill-mode:both;-webkit-animation-duration:167ms;animation-duration:167ms}.ms-u-fadeOut500[data-v-69a50ae8]{-webkit-animation-duration:367ms;-webkit-animation-name:fadeOut-data-v-69a50ae8;-webkit-animation-fill-mode:both;animation-duration:367ms;animation-name:fadeOut-data-v-69a50ae8;animation-fill-mode:both;-webkit-animation-duration:467ms;animation-duration:467ms}@-webkit-keyframes fadeOut-data-v-69a50ae8{from{opacity:1;-webkit-animation-timing-function:cubic-bezier(.1,.25,.75,.9)}to{opacity:0}}@keyframes fadeOut-data-v-69a50ae8{from{opacity:1;animation-timing-function:cubic-bezier(.1,.25,.75,.9)}to{opacity:0}}.ms-u-rotate90deg[data-v-69a50ae8]{-webkit-animation-name:rotate90-data-v-69a50ae8;-moz-animation-name:rotate90-data-v-69a50ae8;-ms-animation-name:rotate90-data-v-69a50ae8;-o-animation-name:rotate90-data-v-69a50ae8;animation-name:rotate90-data-v-69a50ae8;-webkit-animation-duration:.1s;-moz-animation-duration:.1s;-ms-animation-duration:.1s;-o-animation-duration:.1s;-webkit-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-moz-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-ms-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-o-animation-timing-function:cubic-bezier(.1,.25,.75,.9);animation-timing-function:cubic-bezier(.1,.25,.75,.9);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes rotate90-data-v-69a50ae8{from{-webkit-transform:rotateZ(0)}to{-webkit-transform:rotateZ(90deg)}}@keyframes rotate90-data-v-69a50ae8{from{transform:rotateZ(0)}to{transform:rotateZ(90deg)}}.ms-u-rotateN90deg[data-v-69a50ae8]{-webkit-animation-name:rotateN90-data-v-69a50ae8;-moz-animation-name:rotateN90-data-v-69a50ae8;-ms-animation-name:rotateN90-data-v-69a50ae8;-o-animation-name:rotateN90-data-v-69a50ae8;animation-name:rotateN90-data-v-69a50ae8;-webkit-animation-duration:.1s;-moz-animation-duration:.1s;-ms-animation-duration:.1s;-o-animation-duration:.1s;-webkit-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-moz-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-ms-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-o-animation-timing-function:cubic-bezier(.1,.25,.75,.9);animation-timing-function:cubic-bezier(.1,.25,.75,.9);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes rotateN90-data-v-69a50ae8{from{-webkit-transform:rotateZ(90deg)}to{-webkit-transform:rotateZ(0)}}@keyframes rotateN90-data-v-69a50ae8{from{transform:rotateZ(90deg)}to{transform:rotateZ(0)}}.ms-u-expandCollapse400[data-v-69a50ae8]{-webkit-transition:height 367ms cubic-bezier(.1,.25,.75,.9);transition:height 367ms cubic-bezier(.1,.25,.75,.9)}.ms-u-expandCollapse200[data-v-69a50ae8]{-webkit-transition:height 167ms cubic-bezier(.1,.25,.75,.9);transition:height 167ms cubic-bezier(.1,.25,.75,.9)}.ms-u-expandCollapse100[data-v-69a50ae8]{-webkit-transition:height .1s cubic-bezier(.1,.25,.75,.9);transition:height .1s cubic-bezier(.1,.25,.75,.9)}.ms-u-delay100[data-v-69a50ae8]{-webkit-animation-delay:167ms;animation-delay:167ms}.ms-u-delay200[data-v-69a50ae8]{-webkit-animation-delay:267ms;animation-delay:267ms}.ms-MessageBanner[data-v-69a50ae8]{font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;color:\"[theme:neutralPrimary, default: #333333]\";font-size:12px;font-weight:400;position:relative;border-bottom:1px solid \"[theme:neutralSecondaryAlt, default: #767676]\";background-color:\"[theme:themeLighterAlt, default: #eff6fc]\";min-width:320px;width:100%;height:52px;text-align:center;overflow:hidden;-webkit-animation-name:fadeIn-data-v-69a50ae8,slideDownIn20-data-v-69a50ae8;-moz-animation-name:fadeIn-data-v-69a50ae8,slideDownIn20-data-v-69a50ae8;-ms-animation-name:fadeIn-data-v-69a50ae8,slideDownIn20-data-v-69a50ae8;-o-animation-name:fadeIn-data-v-69a50ae8,slideDownIn20-data-v-69a50ae8;animation-name:fadeIn-data-v-69a50ae8,slideDownIn20-data-v-69a50ae8;-webkit-animation-duration:367ms;-moz-animation-duration:367ms;-ms-animation-duration:367ms;-o-animation-duration:367ms;-webkit-animation-timing-function:cubic-bezier(.1,.9,.2,1);-moz-animation-timing-function:cubic-bezier(.1,.9,.2,1);-ms-animation-timing-function:cubic-bezier(.1,.9,.2,1);-o-animation-timing-function:cubic-bezier(.1,.9,.2,1);animation-timing-function:cubic-bezier(.1,.9,.2,1);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}.ms-MessageBanner .ms-Icon[data-v-69a50ae8]{font-size:16px}.ms-MessageBanner.hide[data-v-69a50ae8]{-webkit-animation-name:fadeOut-data-v-69a50ae8,slideUpOut20-data-v-69a50ae8;-moz-animation-name:fadeOut-data-v-69a50ae8,slideUpOut20-data-v-69a50ae8;-ms-animation-name:fadeOut-data-v-69a50ae8,slideUpOut20-data-v-69a50ae8;-o-animation-name:fadeOut-data-v-69a50ae8,slideUpOut20-data-v-69a50ae8;animation-name:fadeOut-data-v-69a50ae8,slideUpOut20-data-v-69a50ae8;-webkit-animation-duration:167ms;-moz-animation-duration:167ms;-ms-animation-duration:167ms;-o-animation-duration:167ms;-webkit-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-moz-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-ms-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-o-animation-timing-function:cubic-bezier(.1,.25,.75,.9);animation-timing-function:cubic-bezier(.1,.25,.75,.9);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}.ms-MessageBanner.is-hidden[data-v-69a50ae8]{display:none}.ms-MessageBanner-close[data-v-69a50ae8],.ms-MessageBanner-expand[data-v-69a50ae8]{height:52px;width:40px;cursor:pointer;border:0;background-color:transparent}.ms-MessageBanner-close[data-v-69a50ae8]{position:absolute;right:0;top:0;line-height:52px;color:\"[theme:neutralSecondary, default: #666666]\"}.ms-MessageBanner-text[data-v-69a50ae8]{display:inline-block;padding:18px 0;margin-left:0;max-width:770px;overflow:hidden;text-align:left}.ms-MessageBanner-expand[data-v-69a50ae8]{display:none;vertical-align:top}.ms-MessageBanner-expand.is-visible[data-v-69a50ae8]{display:inline-block}.ms-MessageBanner-action[data-v-69a50ae8]{display:inline-block;vertical-align:top;margin-top:10px;margin-left:10px;padding-right:36px}.ms-MessageBanner-action .ms-Button[data-v-69a50ae8]{color:\"[theme:white, default: #ffffff]\"}.ms-MessageBanner-clipper[data-v-69a50ae8]{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;display:inline-block;vertical-align:top}.ms-MessageBanner.is-expanded[data-v-69a50ae8]{height:auto}.ms-MessageBanner.is-expanded .ms-MessageBanner-clipper[data-v-69a50ae8]{white-space:normal}@media screen and (max-width:479px){.ms-MessageBanner-action[data-v-69a50ae8]{margin:0;display:block;text-align:right;padding:0 10px 10px 0}.ms-MessageBanner-text[data-v-69a50ae8]{margin-left:-25px;padding:18px 0 10px;min-width:240px}.ms-MessageBanner-expand[data-v-69a50ae8]{display:inline-block;padding:0;margin-left:-5px;width:20px}.ms-MessageBanner-expand .ms-Icon[data-v-69a50ae8]{color:\"[theme:themePrimary, default: #0078d7]\"}}.ms-Icon.ms-Icon--Clear[data-v-69a50ae8]{content:url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"16\" height=\"16\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M1115 1024l690 -691l-90 -90l-691 690l-691 -690l-90 90l690 691l-690 691l90 90l691 -690l691 690l90 -90z\" fill=\"black\" stroke=\"none\"/></svg>')}", map: undefined, media: undefined });
+
+  };
+  /* scoped */
+  const __vue_scope_id__$D = "data-v-69a50ae8";
+  /* module identifier */
+  const __vue_module_identifier__$D = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$D = false;
+  /* style inject */
+  const __vue_create_injector__$f = function(context){ return function(scopeId, data){__vue_script__$D.loadStyles && __vue_script__$D.loadStyles(data.source);}};
+  /* style inject SSR */
+  
+
+  
+  var uiMessageBanner = normalizeComponent_1(
+    { render: __vue_render__$n, staticRenderFns: __vue_staticRenderFns__$n },
+    __vue_inject_styles__$D,
+    __vue_script__$D,
+    __vue_scope_id__$D,
+    __vue_is_functional_template__$D,
+    __vue_module_identifier__$D,
+    __vue_create_injector__$f,
+    undefined
+  );
+
+var script$E = {
+  name: 'ou-overlay',
+  mixins: [type('dark')],
+  props: {
+    value: Boolean
+  },
   data: function data() {
     return {
       overlayInstance: null
     };
   },
-
   watch: {
     value: function value() {
       this.setOverlayVisibility();
     }
   },
-
   computed: {
     overlayClass: function overlayClass() {
-      var obj;
-
-      return ( obj = {}, obj[("ms-Overlay--" + (this.type))] = !!this.type, obj );
+      return _defineProperty({}, "ms-Overlay--".concat(this.type), !!this.type);
     }
   },
-
   mounted: function mounted() {
     this.overlayInstance = new this.$fabric.Overlay(this.$refs.overlay);
-
     this.setOverlayVisibility();
     this.bindOverlayCloseEvent();
   },
-
   methods: {
     setOverlayVisibility: function setOverlayVisibility() {
       this.value ? this.overlayInstance.show() : this.overlayInstance.hide();
     },
-
     bindOverlayCloseEvent: function bindOverlayCloseEvent() {
-      var this$1 = this;
+      var _this = this;
 
       // Because the overlay component don't have callback when overlay closed,
       // So add a click event when click the overlay to set the value to false
       var overlayElement = this.$refs.overlay;
-      var closeOverlay = function () {
-        this$1.$emit('input', false);
+
+      var closeOverlay = function closeOverlay() {
+        _this.$emit('input', false);
       };
 
       overlayElement.addEventListener('click', closeOverlay);
@@ -3250,32 +4539,95 @@ var overlay = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=
   }
 };
 
-var uiOverlay = {_scopeId: 'data-v-09ffd35c',
-    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-Overlay[data-v-09ffd35c] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; background-color: \"[theme:whiteTranslucent40, default: rgba(255,255,255,.4)]\"; position: fixed; bottom: 0; left: 0; right: 0; top: 0; z-index: 0; display: none; } .ms-Overlay.is-visible[data-v-09ffd35c] { display: block; } .ms-Overlay--dark[data-v-09ffd35c] { background-color: \"[theme:blackTranslucent40, default: rgba(0,0,0,.4)]\"; } .ms-u-overflowHidden[data-v-09ffd35c] { overflow: hidden; } ");},
-    beforeMount: function beforeMount(){
-        this.$fabric = {
-            Overlay : Overlay
-        };
-    },
-    // watch:{
-    //     useDarkOverlay:{
-    //         handler(newVal){
-                
-    //         },
-    //         immediate : true
-    //     }
-    // },
-    // props : {
-    //     useDarkOverlay: Boolean
-    // },
-    extends :  overlay
-}
+/* script */
+const __vue_script__$E = script$E;
+
+/* template */
+var __vue_render__$o = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"overlay",staticClass:"ms-Overlay",class:_vm.overlayClass})};
+var __vue_staticRenderFns__$o = [];
+
+  /* style */
+  const __vue_inject_styles__$E = undefined;
+  /* scoped */
+  const __vue_scope_id__$E = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$E = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$E = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var overlay = normalizeComponent_1(
+    { render: __vue_render__$o, staticRenderFns: __vue_staticRenderFns__$o },
+    __vue_inject_styles__$E,
+    __vue_script__$E,
+    __vue_scope_id__$E,
+    __vue_is_functional_template__$E,
+    __vue_module_identifier__$E,
+    undefined,
+    undefined
+  );
+
+var script$F = {
+  loadStyles: loadStyles,
+  beforeMount: function beforeMount() {
+    this.$fabric = {
+      Overlay: Overlay
+    };
+  },
+  // watch:{
+  //     useDarkOverlay:{
+  //         handler(newVal){
+  //         },
+  //         immediate : true
+  //     }
+  // },
+  // props : {
+  //     useDarkOverlay: Boolean
+  // },
+  extends: overlay
+};
+
+/* script */
+const __vue_script__$F = script$F;
+
+/* template */
+
+  /* style */
+  const __vue_inject_styles__$F = function (inject) {
+    if (!inject) return
+    inject("data-v-4b14bf22_0", { source: ".ms-Overlay[data-v-4b14bf22]{font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;background-color:\"[theme:whiteTranslucent40, default: rgba(255,255,255,.4)]\";position:fixed;bottom:0;left:0;right:0;top:0;z-index:0;display:none}.ms-Overlay.is-visible[data-v-4b14bf22]{display:block}.ms-Overlay--dark[data-v-4b14bf22]{background-color:\"[theme:blackTranslucent40, default: rgba(0,0,0,.4)]\"}.ms-u-overflowHidden[data-v-4b14bf22]{overflow:hidden}", map: undefined, media: undefined });
+
+  };
+  /* scoped */
+  const __vue_scope_id__$F = "data-v-4b14bf22";
+  /* module identifier */
+  const __vue_module_identifier__$F = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$F = undefined;
+  /* style inject */
+  const __vue_create_injector__$g = function(context){ return function(scopeId, data){__vue_script__$F.loadStyles && __vue_script__$F.loadStyles(data.source);}};
+  /* style inject SSR */
+  
+
+  
+  var uiOverlay = normalizeComponent_1(
+    {},
+    __vue_inject_styles__$F,
+    __vue_script__$F,
+    __vue_scope_id__$F,
+    __vue_is_functional_template__$F,
+    __vue_module_identifier__$F,
+    __vue_create_injector__$g,
+    undefined
+  );
 
 function size () {
-  var arguments$1 = arguments;
-
   for (var _len = arguments.length, size = new Array(_len), _key = 0; _key < _len; _key++) {
-    size[_key] = arguments$1[_key];
+    size[_key] = arguments[_key];
   }
 
   size.push('');
@@ -3292,55 +4644,45 @@ function size () {
   };
 }
 
-var panel = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"panel",staticClass:"ms-Panel",class:_vm.panelClass},[_c('button',{staticClass:"ms-Panel-closeButton ms-PanelAction-close",on:{"click":_vm.closePanel}},[_c('i',{staticClass:"ms-Panel-closeIcon ms-Icon ms-Icon--Cancel"})]),_vm._v(" "),_c('div',{staticClass:"ms-Panel-contentInner"},[_c('p',{staticClass:"ms-Panel-headerText"},[_vm._v(_vm._s(_vm.title))]),_vm._v(" "),_c('div',{staticClass:"ms-Panel-content"},[_vm._t("default")],2)])])},staticRenderFns: [],
+var script$G = {
   name: 'ou-panel',
-
   mixins: [size('md', 'lg', 'xl', 'xxl')],
-
   props: {
     value: Boolean,
     title: String,
-
     fixed: {
       type: Boolean,
       default: false
     },
-
     left: {
       type: Boolean,
       default: false
     },
-
     block: {
       type: Boolean,
       default: false
     }
   },
-
   data: function data() {
     return {
       panelInstance: null
     };
   },
-
   watch: {
     value: function value() {
       this.setPanelVisibility();
     }
   },
-
   computed: {
     panelClass: function panelClass() {
-      var obj;
+      var _ref;
 
-      return ( obj = {}, obj[("ms-Panel--" + (this.size))] = !!this.size, obj['ms-Panel--fixed'] =  this.fixed, obj['ms-Panel--left'] =  this.left, obj );
+      return _ref = {}, _defineProperty(_ref, "ms-Panel--".concat(this.size), !!this.size), _defineProperty(_ref, 'ms-Panel--fixed', this.fixed), _defineProperty(_ref, 'ms-Panel--left', this.left), _ref;
     }
   },
-
   mounted: function mounted() {
     this.setPanelVisibility();
   },
-
   methods: {
     setPanelVisibility: function setPanelVisibility() {
       if (this.value) {
@@ -3350,7 +4692,6 @@ var panel = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_v
         this.panelInstance.dismiss();
       }
     },
-
     // Because the office ui fabric js don't support on_close or on_open event in panel
     // component, So I have to write some hacking code to change the visible status when
     // click the overlay. Otherwise the visible status can't change, when click the overlay
@@ -3365,140 +4706,120 @@ var panel = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_v
         overlayElement.addEventListener('click', this.closePanel);
       }
     },
-
     closePanel: function closePanel() {
-      this.$emit('input', false);
-
-      // Because the panel overlay have event to fire dismiss method when click it to
+      this.$emit('input', false); // Because the panel overlay have event to fire dismiss method when click it to
       // close panel. To prevent fire the panel dismiss method again and raise some error,
       // so set the panelInstance to null
+
       this.panelInstance = null;
     }
   }
 };
 
-var ANIMATE_IN_STATE$1 = "animate-in";
-var ANIMATE_OUT_STATE$1 = "animate-out";
-var ANIMATION_END$1 = 400;
+/* script */
+const __vue_script__$G = script$G;
 
-var Panel$1 = function () {
-  function Panel(panel, direction, animateOverlay) {
-    this._panel = panel;
-    this._direction = direction || "right";
-    this._animateOverlay = animateOverlay || true;
-    this.panelHost = new PanelHost(this._panel, this._animateInPanel);
-    this._closeButton = this._panel.querySelector(".ms-PanelAction-close");
-    this._clickHandler = this.dismiss.bind(this, null);
+/* template */
+var __vue_render__$p = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"panel",staticClass:"ms-Panel",class:_vm.panelClass},[_c('button',{staticClass:"ms-Panel-closeButton ms-PanelAction-close",on:{"click":_vm.closePanel}},[_c('i',{staticClass:"ms-Panel-closeIcon ms-Icon ms-Icon--Cancel"})]),_vm._v(" "),_c('div',{staticClass:"ms-Panel-contentInner"},[_c('p',{staticClass:"ms-Panel-headerText"},[_vm._v(_vm._s(_vm.title))]),_vm._v(" "),_c('div',{staticClass:"ms-Panel-content"},[_vm._t("default")],2)])])};
+var __vue_staticRenderFns__$p = [];
 
-    this._setEvents();
+  /* style */
+  const __vue_inject_styles__$G = undefined;
+  /* scoped */
+  const __vue_scope_id__$G = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$G = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$G = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
 
-    document.body.setAttribute("style", "height: 100%; overflow: hidden;");
-  }
+  
+  var panel = normalizeComponent_1(
+    { render: __vue_render__$p, staticRenderFns: __vue_staticRenderFns__$p },
+    __vue_inject_styles__$G,
+    __vue_script__$G,
+    __vue_scope_id__$G,
+    __vue_is_functional_template__$G,
+    __vue_module_identifier__$G,
+    undefined,
+    undefined
+  );
 
-  Panel.prototype.dismiss = function (callBack) {
-    var _this = this;
-
-    this._panel.classList.add(ANIMATE_OUT_STATE$1);
-
-    setTimeout(function () {
-      _this._panel.classList.remove(ANIMATE_OUT_STATE$1);
-
-      _this._panel.classList.remove("is-open");
-
-      _this.panelHost.dismiss();
-
-      if (callBack) {
-        callBack();
+var script$H = {
+  loadStyles: loadStyles,
+  beforeMount: function beforeMount() {
+    this.$fabric = {
+      Panel: Panel
+    };
+  },
+  watch: {
+    value: function value(newVal) {
+      if (newVal) {
+        this.panelInstance.panelHost.overlay.overlayElement.setAttribute(this.$options._scopeId, "");
       }
-
-      document.body.setAttribute("style", "");
-    }, ANIMATION_END$1);
-
-    if (this._closeButton !== null) {
-      this._closeButton.removeEventListener("click", this._clickHandler);
     }
+  },
+  beforeDestroy: function beforeDestroy() {
+    if (this.panelInstance != null) this.panelInstance.dismiss();
+  },
+  extends: panel
+};
+
+/* script */
+const __vue_script__$H = script$H;
+
+/* template */
+
+  /* style */
+  const __vue_inject_styles__$H = function (inject) {
+    if (!inject) return
+    inject("data-v-3d7ed520_0", { source: ".ms-u-slideRightIn10[data-v-3d7ed520]{-webkit-animation-name:fadeIn-data-v-3d7ed520,slideRightIn10-data-v-3d7ed520;-moz-animation-name:fadeIn-data-v-3d7ed520,slideRightIn10-data-v-3d7ed520;-ms-animation-name:fadeIn-data-v-3d7ed520,slideRightIn10-data-v-3d7ed520;-o-animation-name:fadeIn-data-v-3d7ed520,slideRightIn10-data-v-3d7ed520;animation-name:fadeIn-data-v-3d7ed520,slideRightIn10-data-v-3d7ed520;-webkit-animation-duration:367ms;-moz-animation-duration:367ms;-ms-animation-duration:367ms;-o-animation-duration:367ms;-webkit-animation-timing-function:cubic-bezier(.1,.9,.2,1);-moz-animation-timing-function:cubic-bezier(.1,.9,.2,1);-ms-animation-timing-function:cubic-bezier(.1,.9,.2,1);-o-animation-timing-function:cubic-bezier(.1,.9,.2,1);animation-timing-function:cubic-bezier(.1,.9,.2,1);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideRightIn10-data-v-3d7ed520{from{-webkit-transform:translate3d(-10px,0,0)}to{-webkit-transform:translate3d(0,0,0)}}@keyframes slideRightIn10-data-v-3d7ed520{from{transform:translate3d(-10px,0,0)}to{transform:translate3d(0,0,0)}}.ms-u-slideRightIn20[data-v-3d7ed520]{-webkit-animation-name:fadeIn-data-v-3d7ed520,slideRightIn20-data-v-3d7ed520;-moz-animation-name:fadeIn-data-v-3d7ed520,slideRightIn20-data-v-3d7ed520;-ms-animation-name:fadeIn-data-v-3d7ed520,slideRightIn20-data-v-3d7ed520;-o-animation-name:fadeIn-data-v-3d7ed520,slideRightIn20-data-v-3d7ed520;animation-name:fadeIn-data-v-3d7ed520,slideRightIn20-data-v-3d7ed520;-webkit-animation-duration:367ms;-moz-animation-duration:367ms;-ms-animation-duration:367ms;-o-animation-duration:367ms;-webkit-animation-timing-function:cubic-bezier(.1,.9,.2,1);-moz-animation-timing-function:cubic-bezier(.1,.9,.2,1);-ms-animation-timing-function:cubic-bezier(.1,.9,.2,1);-o-animation-timing-function:cubic-bezier(.1,.9,.2,1);animation-timing-function:cubic-bezier(.1,.9,.2,1);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideRightIn20-data-v-3d7ed520{from{-webkit-transform:translate3d(-20px,0,0)}to{-webkit-transform:translate3d(0,0,0)}}@keyframes slideRightIn20-data-v-3d7ed520{from{transform:translate3d(-20px,0,0)}to{transform:translate3d(0,0,0)}}.ms-u-slideRightIn40[data-v-3d7ed520]{-webkit-animation-name:fadeIn-data-v-3d7ed520,slideRightIn40-data-v-3d7ed520;-moz-animation-name:fadeIn-data-v-3d7ed520,slideRightIn40-data-v-3d7ed520;-ms-animation-name:fadeIn-data-v-3d7ed520,slideRightIn40-data-v-3d7ed520;-o-animation-name:fadeIn-data-v-3d7ed520,slideRightIn40-data-v-3d7ed520;animation-name:fadeIn-data-v-3d7ed520,slideRightIn40-data-v-3d7ed520;-webkit-animation-duration:367ms;-moz-animation-duration:367ms;-ms-animation-duration:367ms;-o-animation-duration:367ms;-webkit-animation-timing-function:cubic-bezier(.1,.9,.2,1);-moz-animation-timing-function:cubic-bezier(.1,.9,.2,1);-ms-animation-timing-function:cubic-bezier(.1,.9,.2,1);-o-animation-timing-function:cubic-bezier(.1,.9,.2,1);animation-timing-function:cubic-bezier(.1,.9,.2,1);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideRightIn40-data-v-3d7ed520{from{-webkit-transform:translate3d(-40px,0,0)}to{-webkit-transform:translate3d(0,0,0)}}@keyframes slideRightIn40-data-v-3d7ed520{from{transform:translate3d(-40px,0,0)}to{transform:translate3d(0,0,0)}}.ms-u-slideLeftIn10[data-v-3d7ed520]{-webkit-animation-name:fadeIn-data-v-3d7ed520,slideLeftIn10-data-v-3d7ed520;-moz-animation-name:fadeIn-data-v-3d7ed520,slideLeftIn10-data-v-3d7ed520;-ms-animation-name:fadeIn-data-v-3d7ed520,slideLeftIn10-data-v-3d7ed520;-o-animation-name:fadeIn-data-v-3d7ed520,slideLeftIn10-data-v-3d7ed520;animation-name:fadeIn-data-v-3d7ed520,slideLeftIn10-data-v-3d7ed520;-webkit-animation-duration:367ms;-moz-animation-duration:367ms;-ms-animation-duration:367ms;-o-animation-duration:367ms;-webkit-animation-timing-function:cubic-bezier(.1,.9,.2,1);-moz-animation-timing-function:cubic-bezier(.1,.9,.2,1);-ms-animation-timing-function:cubic-bezier(.1,.9,.2,1);-o-animation-timing-function:cubic-bezier(.1,.9,.2,1);animation-timing-function:cubic-bezier(.1,.9,.2,1);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideLeftIn10-data-v-3d7ed520{from{-webkit-transform:translate3d(10px,0,0)}to{-webkit-transform:translate3d(0,0,0)}}@keyframes slideLeftIn10-data-v-3d7ed520{from{transform:translate3d(10px,0,0)}to{transform:translate3d(0,0,0)}}.ms-u-slideLeftIn20[data-v-3d7ed520]{-webkit-animation-name:fadeIn-data-v-3d7ed520,slideLeftIn20-data-v-3d7ed520;-moz-animation-name:fadeIn-data-v-3d7ed520,slideLeftIn20-data-v-3d7ed520;-ms-animation-name:fadeIn-data-v-3d7ed520,slideLeftIn20-data-v-3d7ed520;-o-animation-name:fadeIn-data-v-3d7ed520,slideLeftIn20-data-v-3d7ed520;animation-name:fadeIn-data-v-3d7ed520,slideLeftIn20-data-v-3d7ed520;-webkit-animation-duration:367ms;-moz-animation-duration:367ms;-ms-animation-duration:367ms;-o-animation-duration:367ms;-webkit-animation-timing-function:cubic-bezier(.1,.9,.2,1);-moz-animation-timing-function:cubic-bezier(.1,.9,.2,1);-ms-animation-timing-function:cubic-bezier(.1,.9,.2,1);-o-animation-timing-function:cubic-bezier(.1,.9,.2,1);animation-timing-function:cubic-bezier(.1,.9,.2,1);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideLeftIn20-data-v-3d7ed520{from{-webkit-transform:translate3d(20px,0,0)}to{-webkit-transform:translate3d(0,0,0)}}@keyframes slideLeftIn20-data-v-3d7ed520{from{transform:translate3d(20px,0,0)}to{transform:translate3d(0,0,0)}}.ms-u-slideLeftIn40[data-v-3d7ed520]{-webkit-animation-name:fadeIn-data-v-3d7ed520,slideLeftIn40-data-v-3d7ed520;-moz-animation-name:fadeIn-data-v-3d7ed520,slideLeftIn40-data-v-3d7ed520;-ms-animation-name:fadeIn-data-v-3d7ed520,slideLeftIn40-data-v-3d7ed520;-o-animation-name:fadeIn-data-v-3d7ed520,slideLeftIn40-data-v-3d7ed520;animation-name:fadeIn-data-v-3d7ed520,slideLeftIn40-data-v-3d7ed520;-webkit-animation-duration:367ms;-moz-animation-duration:367ms;-ms-animation-duration:367ms;-o-animation-duration:367ms;-webkit-animation-timing-function:cubic-bezier(.1,.9,.2,1);-moz-animation-timing-function:cubic-bezier(.1,.9,.2,1);-ms-animation-timing-function:cubic-bezier(.1,.9,.2,1);-o-animation-timing-function:cubic-bezier(.1,.9,.2,1);animation-timing-function:cubic-bezier(.1,.9,.2,1);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideLeftIn40-data-v-3d7ed520{from{-webkit-transform:translate3d(40px,0,0)}to{-webkit-transform:translate3d(0,0,0)}}@keyframes slideLeftIn40-data-v-3d7ed520{from{transform:translate3d(40px,0,0)}to{transform:translate3d(0,0,0)}}.ms-u-slideRightIn400[data-v-3d7ed520]{-webkit-animation-name:fadeIn-data-v-3d7ed520,slideRightIn400-data-v-3d7ed520;-moz-animation-name:fadeIn-data-v-3d7ed520,slideRightIn400-data-v-3d7ed520;-ms-animation-name:fadeIn-data-v-3d7ed520,slideRightIn400-data-v-3d7ed520;-o-animation-name:fadeIn-data-v-3d7ed520,slideRightIn400-data-v-3d7ed520;animation-name:fadeIn-data-v-3d7ed520,slideRightIn400-data-v-3d7ed520;-webkit-animation-duration:367ms;-moz-animation-duration:367ms;-ms-animation-duration:367ms;-o-animation-duration:367ms;-webkit-animation-timing-function:cubic-bezier(.1,.9,.2,1);-moz-animation-timing-function:cubic-bezier(.1,.9,.2,1);-ms-animation-timing-function:cubic-bezier(.1,.9,.2,1);-o-animation-timing-function:cubic-bezier(.1,.9,.2,1);animation-timing-function:cubic-bezier(.1,.9,.2,1);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideRightIn400-data-v-3d7ed520{from{-webkit-transform:translate3d(-400px,0,0)}to{-webkit-transform:translate3d(0,0,0)}}@keyframes slideRightIn400-data-v-3d7ed520{from{transform:translate3d(-400px,0,0)}to{transform:translate3d(0,0,0)}}.ms-u-slideLeftIn400[data-v-3d7ed520]{-webkit-animation-name:fadeIn-data-v-3d7ed520,slideLeft400-data-v-3d7ed520;-moz-animation-name:fadeIn-data-v-3d7ed520,slideLeft400-data-v-3d7ed520;-ms-animation-name:fadeIn-data-v-3d7ed520,slideLeft400-data-v-3d7ed520;-o-animation-name:fadeIn-data-v-3d7ed520,slideLeft400-data-v-3d7ed520;animation-name:fadeIn-data-v-3d7ed520,slideLeft400-data-v-3d7ed520;-webkit-animation-duration:367ms;-moz-animation-duration:367ms;-ms-animation-duration:367ms;-o-animation-duration:367ms;-webkit-animation-timing-function:cubic-bezier(.1,.9,.2,1);-moz-animation-timing-function:cubic-bezier(.1,.9,.2,1);-ms-animation-timing-function:cubic-bezier(.1,.9,.2,1);-o-animation-timing-function:cubic-bezier(.1,.9,.2,1);animation-timing-function:cubic-bezier(.1,.9,.2,1);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideLeft400-data-v-3d7ed520{from{-webkit-transform:translate3d(400px,0,0)}to{-webkit-transform:translate3d(0,0,0)}}@keyframes slideLeft400-data-v-3d7ed520{from{transform:translate3d(400px,0,0)}to{transform:translate3d(0,0,0)}}.ms-u-slideUpIn20[data-v-3d7ed520]{-webkit-animation-name:fadeIn-data-v-3d7ed520,slideUpIn20-data-v-3d7ed520;-moz-animation-name:fadeIn-data-v-3d7ed520,slideUpIn20-data-v-3d7ed520;-ms-animation-name:fadeIn-data-v-3d7ed520,slideUpIn20-data-v-3d7ed520;-o-animation-name:fadeIn-data-v-3d7ed520,slideUpIn20-data-v-3d7ed520;animation-name:fadeIn-data-v-3d7ed520,slideUpIn20-data-v-3d7ed520;-webkit-animation-duration:367ms;-moz-animation-duration:367ms;-ms-animation-duration:367ms;-o-animation-duration:367ms;-webkit-animation-timing-function:cubic-bezier(.1,.9,.2,1);-moz-animation-timing-function:cubic-bezier(.1,.9,.2,1);-ms-animation-timing-function:cubic-bezier(.1,.9,.2,1);-o-animation-timing-function:cubic-bezier(.1,.9,.2,1);animation-timing-function:cubic-bezier(.1,.9,.2,1);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideUpIn20-data-v-3d7ed520{from{-webkit-transform:translate3d(0,20px,0)}to{-webkit-transform:translate3d(0,0,0)}}@keyframes slideUpIn20-data-v-3d7ed520{from{transform:translate3d(0,20px,0)}to{transform:translate3d(0,0,0)}}.ms-u-slideUpIn10[data-v-3d7ed520]{-webkit-animation-name:fadeIn-data-v-3d7ed520,slideUpIn10-data-v-3d7ed520;-moz-animation-name:fadeIn-data-v-3d7ed520,slideUpIn10-data-v-3d7ed520;-ms-animation-name:fadeIn-data-v-3d7ed520,slideUpIn10-data-v-3d7ed520;-o-animation-name:fadeIn-data-v-3d7ed520,slideUpIn10-data-v-3d7ed520;animation-name:fadeIn-data-v-3d7ed520,slideUpIn10-data-v-3d7ed520;-webkit-animation-duration:167ms;-moz-animation-duration:167ms;-ms-animation-duration:167ms;-o-animation-duration:167ms;-webkit-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-moz-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-ms-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-o-animation-timing-function:cubic-bezier(.1,.25,.75,.9);animation-timing-function:cubic-bezier(.1,.25,.75,.9);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideUpIn10-data-v-3d7ed520{from{-webkit-transform:translate3d(0,10px,0)}to{-webkit-transform:translate3d(0,0,0)}}@keyframes slideUpIn10-data-v-3d7ed520{from{transform:translate3d(0,10px,0)}to{transform:translate3d(0,0,0)}}.ms-u-slideDownIn20[data-v-3d7ed520]{-webkit-animation-name:fadeIn-data-v-3d7ed520,slideDownIn20-data-v-3d7ed520;-moz-animation-name:fadeIn-data-v-3d7ed520,slideDownIn20-data-v-3d7ed520;-ms-animation-name:fadeIn-data-v-3d7ed520,slideDownIn20-data-v-3d7ed520;-o-animation-name:fadeIn-data-v-3d7ed520,slideDownIn20-data-v-3d7ed520;animation-name:fadeIn-data-v-3d7ed520,slideDownIn20-data-v-3d7ed520;-webkit-animation-duration:367ms;-moz-animation-duration:367ms;-ms-animation-duration:367ms;-o-animation-duration:367ms;-webkit-animation-timing-function:cubic-bezier(.1,.9,.2,1);-moz-animation-timing-function:cubic-bezier(.1,.9,.2,1);-ms-animation-timing-function:cubic-bezier(.1,.9,.2,1);-o-animation-timing-function:cubic-bezier(.1,.9,.2,1);animation-timing-function:cubic-bezier(.1,.9,.2,1);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideDownIn20-data-v-3d7ed520{from{-webkit-transform:translate3d(0,-20px,0)}to{-webkit-transform:translate3d(0,0,0)}}@keyframes slideDownIn20-data-v-3d7ed520{from{transform:translate3d(0,-20px,0)}to{transform:translate3d(0,0,0)}}.ms-u-slideDownIn10[data-v-3d7ed520]{-webkit-animation-name:fadeIn-data-v-3d7ed520,slideDownIn10-data-v-3d7ed520;-moz-animation-name:fadeIn-data-v-3d7ed520,slideDownIn10-data-v-3d7ed520;-ms-animation-name:fadeIn-data-v-3d7ed520,slideDownIn10-data-v-3d7ed520;-o-animation-name:fadeIn-data-v-3d7ed520,slideDownIn10-data-v-3d7ed520;animation-name:fadeIn-data-v-3d7ed520,slideDownIn10-data-v-3d7ed520;-webkit-animation-duration:167ms;-moz-animation-duration:167ms;-ms-animation-duration:167ms;-o-animation-duration:167ms;-webkit-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-moz-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-ms-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-o-animation-timing-function:cubic-bezier(.1,.25,.75,.9);animation-timing-function:cubic-bezier(.1,.25,.75,.9);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideDownIn10-data-v-3d7ed520{from{-webkit-transform:translate3d(0,-10px,0)}to{-webkit-transform:translate3d(0,0,0)}}@keyframes slideDownIn10-data-v-3d7ed520{from{transform:translate3d(0,-10px,0)}to{transform:translate3d(0,0,0)}}.ms-u-slideRightOut40[data-v-3d7ed520]{-webkit-animation-name:fadeOut-data-v-3d7ed520,slideRightOut40-data-v-3d7ed520;-moz-animation-name:fadeOut-data-v-3d7ed520,slideRightOut40-data-v-3d7ed520;-ms-animation-name:fadeOut-data-v-3d7ed520,slideRightOut40-data-v-3d7ed520;-o-animation-name:fadeOut-data-v-3d7ed520,slideRightOut40-data-v-3d7ed520;animation-name:fadeOut-data-v-3d7ed520,slideRightOut40-data-v-3d7ed520;-webkit-animation-duration:167ms;-moz-animation-duration:167ms;-ms-animation-duration:167ms;-o-animation-duration:167ms;-webkit-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-moz-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-ms-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-o-animation-timing-function:cubic-bezier(.1,.25,.75,.9);animation-timing-function:cubic-bezier(.1,.25,.75,.9);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideRightOut40-data-v-3d7ed520{from{-webkit-transform:translate3d(0,0,0)}to{-webkit-transform:translate3d(40px,0,0)}}@keyframes slideRightOut40-data-v-3d7ed520{from{transform:translate3d(0,0,0)}to{transform:translate3d(40px,0,0)}}.ms-u-slideLeftOut40[data-v-3d7ed520]{-webkit-animation-name:fadeOut-data-v-3d7ed520,slideLeftOut40-data-v-3d7ed520;-moz-animation-name:fadeOut-data-v-3d7ed520,slideLeftOut40-data-v-3d7ed520;-ms-animation-name:fadeOut-data-v-3d7ed520,slideLeftOut40-data-v-3d7ed520;-o-animation-name:fadeOut-data-v-3d7ed520,slideLeftOut40-data-v-3d7ed520;animation-name:fadeOut-data-v-3d7ed520,slideLeftOut40-data-v-3d7ed520;-webkit-animation-duration:167ms;-moz-animation-duration:167ms;-ms-animation-duration:167ms;-o-animation-duration:167ms;-webkit-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-moz-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-ms-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-o-animation-timing-function:cubic-bezier(.1,.25,.75,.9);animation-timing-function:cubic-bezier(.1,.25,.75,.9);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideLeftOut40-data-v-3d7ed520{from{-webkit-transform:translate3d(0,0,0)}to{-webkit-transform:translate3d(-40px,0,0)}}@keyframes slideLeftOut40-data-v-3d7ed520{from{transform:translate3d(0,0,0)}to{transform:translate3d(-40px,0,0)}}.ms-u-slideRightOut400[data-v-3d7ed520]{-webkit-animation-name:fadeOut-data-v-3d7ed520,slideRightOut400-data-v-3d7ed520;-moz-animation-name:fadeOut-data-v-3d7ed520,slideRightOut400-data-v-3d7ed520;-ms-animation-name:fadeOut-data-v-3d7ed520,slideRightOut400-data-v-3d7ed520;-o-animation-name:fadeOut-data-v-3d7ed520,slideRightOut400-data-v-3d7ed520;animation-name:fadeOut-data-v-3d7ed520,slideRightOut400-data-v-3d7ed520;-webkit-animation-duration:167ms;-moz-animation-duration:167ms;-ms-animation-duration:167ms;-o-animation-duration:167ms;-webkit-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-moz-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-ms-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-o-animation-timing-function:cubic-bezier(.1,.25,.75,.9);animation-timing-function:cubic-bezier(.1,.25,.75,.9);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideRightOut400-data-v-3d7ed520{from{-webkit-transform:translate3d(0,0,0)}to{-webkit-transform:translate3d(400px,0,0)}}@keyframes slideRightOut400-data-v-3d7ed520{from{transform:translate3d(0,0,0)}to{transform:translate3d(400px,0,0)}}.ms-u-slideLeftOut400[data-v-3d7ed520]{-webkit-animation-name:fadeOut-data-v-3d7ed520,slideLeftOut400-data-v-3d7ed520;-moz-animation-name:fadeOut-data-v-3d7ed520,slideLeftOut400-data-v-3d7ed520;-ms-animation-name:fadeOut-data-v-3d7ed520,slideLeftOut400-data-v-3d7ed520;-o-animation-name:fadeOut-data-v-3d7ed520,slideLeftOut400-data-v-3d7ed520;animation-name:fadeOut-data-v-3d7ed520,slideLeftOut400-data-v-3d7ed520;-webkit-animation-duration:167ms;-moz-animation-duration:167ms;-ms-animation-duration:167ms;-o-animation-duration:167ms;-webkit-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-moz-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-ms-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-o-animation-timing-function:cubic-bezier(.1,.25,.75,.9);animation-timing-function:cubic-bezier(.1,.25,.75,.9);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideLeftOut400-data-v-3d7ed520{from{-webkit-transform:translate3d(0,0,0)}to{-webkit-transform:translate3d(-400px,0,0)}}@keyframes slideLeftOut400-data-v-3d7ed520{from{transform:translate3d(0,0,0)}to{transform:translate3d(-400px,0,0)}}.ms-u-slideUpOut20[data-v-3d7ed520]{-webkit-animation-name:fadeOut-data-v-3d7ed520,slideUpOut20-data-v-3d7ed520;-moz-animation-name:fadeOut-data-v-3d7ed520,slideUpOut20-data-v-3d7ed520;-ms-animation-name:fadeOut-data-v-3d7ed520,slideUpOut20-data-v-3d7ed520;-o-animation-name:fadeOut-data-v-3d7ed520,slideUpOut20-data-v-3d7ed520;animation-name:fadeOut-data-v-3d7ed520,slideUpOut20-data-v-3d7ed520;-webkit-animation-duration:167ms;-moz-animation-duration:167ms;-ms-animation-duration:167ms;-o-animation-duration:167ms;-webkit-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-moz-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-ms-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-o-animation-timing-function:cubic-bezier(.1,.25,.75,.9);animation-timing-function:cubic-bezier(.1,.25,.75,.9);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideUpOut20-data-v-3d7ed520{from{-webkit-transform:translate3d(0,0,0)}to{-webkit-transform:translate3d(0,-20px,0)}}@keyframes slideUpOut20-data-v-3d7ed520{from{transform:translate3d(0,0,0)}to{transform:translate3d(0,-20px,0)}}.ms-u-slideUpOut10[data-v-3d7ed520]{-webkit-animation-name:fadeOut-data-v-3d7ed520,slideUpOut10-data-v-3d7ed520;-moz-animation-name:fadeOut-data-v-3d7ed520,slideUpOut10-data-v-3d7ed520;-ms-animation-name:fadeOut-data-v-3d7ed520,slideUpOut10-data-v-3d7ed520;-o-animation-name:fadeOut-data-v-3d7ed520,slideUpOut10-data-v-3d7ed520;animation-name:fadeOut-data-v-3d7ed520,slideUpOut10-data-v-3d7ed520;-webkit-animation-duration:167ms;-moz-animation-duration:167ms;-ms-animation-duration:167ms;-o-animation-duration:167ms;-webkit-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-moz-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-ms-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-o-animation-timing-function:cubic-bezier(.1,.25,.75,.9);animation-timing-function:cubic-bezier(.1,.25,.75,.9);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideUpOut10-data-v-3d7ed520{from{-webkit-transform:translate3d(0,0,0)}to{-webkit-transform:translate3d(0,-10px,0)}}@keyframes slideUpOut10-data-v-3d7ed520{from{transform:translate3d(0,0,0)}to{transform:translate3d(0,-10px,0)}}.ms-u-slideDownOut20[data-v-3d7ed520]{-webkit-animation-name:fadeOut-data-v-3d7ed520,slideDownOut20-data-v-3d7ed520;-moz-animation-name:fadeOut-data-v-3d7ed520,slideDownOut20-data-v-3d7ed520;-ms-animation-name:fadeOut-data-v-3d7ed520,slideDownOut20-data-v-3d7ed520;-o-animation-name:fadeOut-data-v-3d7ed520,slideDownOut20-data-v-3d7ed520;animation-name:fadeOut-data-v-3d7ed520,slideDownOut20-data-v-3d7ed520;-webkit-animation-duration:167ms;-moz-animation-duration:167ms;-ms-animation-duration:167ms;-o-animation-duration:167ms;-webkit-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-moz-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-ms-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-o-animation-timing-function:cubic-bezier(.1,.25,.75,.9);animation-timing-function:cubic-bezier(.1,.25,.75,.9);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideDownOut20-data-v-3d7ed520{from{-webkit-transform:translate3d(0,0,0)}to{-webkit-transform:translate3d(0,20px,0)}}@keyframes slideDownOut20-data-v-3d7ed520{from{transform:translate3d(0,0,0)}to{transform:translate3d(0,20px,0)}}.ms-u-slideDownOut10[data-v-3d7ed520]{-webkit-animation-name:fadeOut-data-v-3d7ed520,slideDownOut10-data-v-3d7ed520;-moz-animation-name:fadeOut-data-v-3d7ed520,slideDownOut10-data-v-3d7ed520;-ms-animation-name:fadeOut-data-v-3d7ed520,slideDownOut10-data-v-3d7ed520;-o-animation-name:fadeOut-data-v-3d7ed520,slideDownOut10-data-v-3d7ed520;animation-name:fadeOut-data-v-3d7ed520,slideDownOut10-data-v-3d7ed520;-webkit-animation-duration:167ms;-moz-animation-duration:167ms;-ms-animation-duration:167ms;-o-animation-duration:167ms;-webkit-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-moz-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-ms-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-o-animation-timing-function:cubic-bezier(.1,.25,.75,.9);animation-timing-function:cubic-bezier(.1,.25,.75,.9);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes slideDownOut10-data-v-3d7ed520{from{-webkit-transform:translate3d(0,0,0)}to{-webkit-transform:translate3d(0,10px,0)}}@keyframes slideDownOut10-data-v-3d7ed520{from{transform:translate3d(0,0,0)}to{transform:translate3d(0,10px,0)}}.ms-u-scaleUpIn100[data-v-3d7ed520]{-webkit-animation-name:fadeIn-data-v-3d7ed520,scaleUp100-data-v-3d7ed520;-moz-animation-name:fadeIn-data-v-3d7ed520,scaleUp100-data-v-3d7ed520;-ms-animation-name:fadeIn-data-v-3d7ed520,scaleUp100-data-v-3d7ed520;-o-animation-name:fadeIn-data-v-3d7ed520,scaleUp100-data-v-3d7ed520;animation-name:fadeIn-data-v-3d7ed520,scaleUp100-data-v-3d7ed520;-webkit-animation-duration:367ms;-moz-animation-duration:367ms;-ms-animation-duration:367ms;-o-animation-duration:367ms;-webkit-animation-timing-function:cubic-bezier(.1,.9,.2,1);-moz-animation-timing-function:cubic-bezier(.1,.9,.2,1);-ms-animation-timing-function:cubic-bezier(.1,.9,.2,1);-o-animation-timing-function:cubic-bezier(.1,.9,.2,1);animation-timing-function:cubic-bezier(.1,.9,.2,1);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes scaleUp100-data-v-3d7ed520{from{-webkit-transform:scale3d(.98,.98,1)}to{-webkit-transform:scale3d(1,1,1)}}@keyframes scaleUp100-data-v-3d7ed520{from{transform:scale3d(.98,.98,1)}to{transform:scale3d(1,1,1)}}.ms-u-scaleDownIn100[data-v-3d7ed520]{-webkit-animation-name:fadeIn-data-v-3d7ed520,scaleDown100-data-v-3d7ed520;-moz-animation-name:fadeIn-data-v-3d7ed520,scaleDown100-data-v-3d7ed520;-ms-animation-name:fadeIn-data-v-3d7ed520,scaleDown100-data-v-3d7ed520;-o-animation-name:fadeIn-data-v-3d7ed520,scaleDown100-data-v-3d7ed520;animation-name:fadeIn-data-v-3d7ed520,scaleDown100-data-v-3d7ed520;-webkit-animation-duration:367ms;-moz-animation-duration:367ms;-ms-animation-duration:367ms;-o-animation-duration:367ms;-webkit-animation-timing-function:cubic-bezier(.1,.9,.2,1);-moz-animation-timing-function:cubic-bezier(.1,.9,.2,1);-ms-animation-timing-function:cubic-bezier(.1,.9,.2,1);-o-animation-timing-function:cubic-bezier(.1,.9,.2,1);animation-timing-function:cubic-bezier(.1,.9,.2,1);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes scaleDown100-data-v-3d7ed520{from{-webkit-transform:scale3d(1.03,1.03,1)}to{-webkit-transform:scale3d(1,1,1)}}@keyframes scaleDown100-data-v-3d7ed520{from{transform:scale3d(1.03,1.03,1)}to{transform:scale3d(1,1,1)}}.ms-u-scaleUpOut103[data-v-3d7ed520]{-webkit-animation-name:fadeOut-data-v-3d7ed520,scaleUp103-data-v-3d7ed520;-moz-animation-name:fadeOut-data-v-3d7ed520,scaleUp103-data-v-3d7ed520;-ms-animation-name:fadeOut-data-v-3d7ed520,scaleUp103-data-v-3d7ed520;-o-animation-name:fadeOut-data-v-3d7ed520,scaleUp103-data-v-3d7ed520;animation-name:fadeOut-data-v-3d7ed520,scaleUp103-data-v-3d7ed520;-webkit-animation-duration:167ms;-moz-animation-duration:167ms;-ms-animation-duration:167ms;-o-animation-duration:167ms;-webkit-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-moz-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-ms-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-o-animation-timing-function:cubic-bezier(.1,.25,.75,.9);animation-timing-function:cubic-bezier(.1,.25,.75,.9);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes scaleUp103-data-v-3d7ed520{from{-webkit-transform:scale3d(1,1,1)}to{-webkit-transform:scale3d(1.03,1.03,1)}}@keyframes scaleUp103-data-v-3d7ed520{from{transform:scale3d(1,1,1)}to{transform:scale3d(1.03,1.03,1)}}.ms-u-scaleDownOut98[data-v-3d7ed520]{-webkit-animation-name:fadeOut-data-v-3d7ed520,scaleDown98-data-v-3d7ed520;-moz-animation-name:fadeOut-data-v-3d7ed520,scaleDown98-data-v-3d7ed520;-ms-animation-name:fadeOut-data-v-3d7ed520,scaleDown98-data-v-3d7ed520;-o-animation-name:fadeOut-data-v-3d7ed520,scaleDown98-data-v-3d7ed520;animation-name:fadeOut-data-v-3d7ed520,scaleDown98-data-v-3d7ed520;-webkit-animation-duration:167ms;-moz-animation-duration:167ms;-ms-animation-duration:167ms;-o-animation-duration:167ms;-webkit-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-moz-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-ms-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-o-animation-timing-function:cubic-bezier(.1,.25,.75,.9);animation-timing-function:cubic-bezier(.1,.25,.75,.9);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes scaleDown98-data-v-3d7ed520{from{-webkit-transform:scale3d(1,1,1)}to{-webkit-transform:scale3d(.98,.98,1)}}@keyframes scaleDown98-data-v-3d7ed520{from{transform:scale3d(1,1,1)}to{transform:scale3d(.98,.98,1)}}.ms-u-fadeIn400[data-v-3d7ed520]{-webkit-animation-duration:367ms;-webkit-animation-name:fadeIn-data-v-3d7ed520;-webkit-animation-fill-mode:both;animation-duration:367ms;animation-name:fadeIn-data-v-3d7ed520;animation-fill-mode:both}.ms-u-fadeIn100[data-v-3d7ed520]{-webkit-animation-duration:367ms;-webkit-animation-name:fadeIn-data-v-3d7ed520;-webkit-animation-fill-mode:both;animation-duration:367ms;animation-name:fadeIn-data-v-3d7ed520;animation-fill-mode:both;-webkit-animation-duration:167ms;animation-duration:167ms}.ms-u-fadeIn200[data-v-3d7ed520]{-webkit-animation-duration:367ms;-webkit-animation-name:fadeIn-data-v-3d7ed520;-webkit-animation-fill-mode:both;animation-duration:367ms;animation-name:fadeIn-data-v-3d7ed520;animation-fill-mode:both;-webkit-animation-duration:267ms;animation-duration:267ms}.ms-u-fadeIn500[data-v-3d7ed520]{-webkit-animation-duration:367ms;-webkit-animation-name:fadeIn-data-v-3d7ed520;-webkit-animation-fill-mode:both;animation-duration:367ms;animation-name:fadeIn-data-v-3d7ed520;animation-fill-mode:both;-webkit-animation-duration:467ms;animation-duration:467ms}@-webkit-keyframes fadeIn-data-v-3d7ed520{from{opacity:0;-webkit-animation-timing-function:cubic-bezier(.1,.25,.75,.9)}to{opacity:1}}@keyframes fadeIn-data-v-3d7ed520{from{opacity:0;animation-timing-function:cubic-bezier(.1,.25,.75,.9)}to{opacity:1}}.ms-u-fadeOut400[data-v-3d7ed520]{-webkit-animation-duration:367ms;-webkit-animation-name:fadeOut-data-v-3d7ed520;-webkit-animation-fill-mode:both;animation-duration:367ms;animation-name:fadeOut-data-v-3d7ed520;animation-fill-mode:both}.ms-u-fadeOut100[data-v-3d7ed520]{-webkit-animation-duration:367ms;-webkit-animation-name:fadeOut-data-v-3d7ed520;-webkit-animation-fill-mode:both;animation-duration:367ms;animation-name:fadeOut-data-v-3d7ed520;animation-fill-mode:both;-webkit-animation-duration:.1s;animation-duration:.1s}.ms-u-fadeOut200[data-v-3d7ed520]{-webkit-animation-duration:367ms;-webkit-animation-name:fadeOut-data-v-3d7ed520;-webkit-animation-fill-mode:both;animation-duration:367ms;animation-name:fadeOut-data-v-3d7ed520;animation-fill-mode:both;-webkit-animation-duration:167ms;animation-duration:167ms}.ms-u-fadeOut500[data-v-3d7ed520]{-webkit-animation-duration:367ms;-webkit-animation-name:fadeOut-data-v-3d7ed520;-webkit-animation-fill-mode:both;animation-duration:367ms;animation-name:fadeOut-data-v-3d7ed520;animation-fill-mode:both;-webkit-animation-duration:467ms;animation-duration:467ms}@-webkit-keyframes fadeOut-data-v-3d7ed520{from{opacity:1;-webkit-animation-timing-function:cubic-bezier(.1,.25,.75,.9)}to{opacity:0}}@keyframes fadeOut-data-v-3d7ed520{from{opacity:1;animation-timing-function:cubic-bezier(.1,.25,.75,.9)}to{opacity:0}}.ms-u-rotate90deg[data-v-3d7ed520]{-webkit-animation-name:rotate90-data-v-3d7ed520;-moz-animation-name:rotate90-data-v-3d7ed520;-ms-animation-name:rotate90-data-v-3d7ed520;-o-animation-name:rotate90-data-v-3d7ed520;animation-name:rotate90-data-v-3d7ed520;-webkit-animation-duration:.1s;-moz-animation-duration:.1s;-ms-animation-duration:.1s;-o-animation-duration:.1s;-webkit-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-moz-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-ms-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-o-animation-timing-function:cubic-bezier(.1,.25,.75,.9);animation-timing-function:cubic-bezier(.1,.25,.75,.9);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes rotate90-data-v-3d7ed520{from{-webkit-transform:rotateZ(0)}to{-webkit-transform:rotateZ(90deg)}}@keyframes rotate90-data-v-3d7ed520{from{transform:rotateZ(0)}to{transform:rotateZ(90deg)}}.ms-u-rotateN90deg[data-v-3d7ed520]{-webkit-animation-name:rotateN90-data-v-3d7ed520;-moz-animation-name:rotateN90-data-v-3d7ed520;-ms-animation-name:rotateN90-data-v-3d7ed520;-o-animation-name:rotateN90-data-v-3d7ed520;animation-name:rotateN90-data-v-3d7ed520;-webkit-animation-duration:.1s;-moz-animation-duration:.1s;-ms-animation-duration:.1s;-o-animation-duration:.1s;-webkit-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-moz-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-ms-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-o-animation-timing-function:cubic-bezier(.1,.25,.75,.9);animation-timing-function:cubic-bezier(.1,.25,.75,.9);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes rotateN90-data-v-3d7ed520{from{-webkit-transform:rotateZ(90deg)}to{-webkit-transform:rotateZ(0)}}@keyframes rotateN90-data-v-3d7ed520{from{transform:rotateZ(90deg)}to{transform:rotateZ(0)}}.ms-u-expandCollapse400[data-v-3d7ed520]{-webkit-transition:height 367ms cubic-bezier(.1,.25,.75,.9);transition:height 367ms cubic-bezier(.1,.25,.75,.9)}.ms-u-expandCollapse200[data-v-3d7ed520]{-webkit-transition:height 167ms cubic-bezier(.1,.25,.75,.9);transition:height 167ms cubic-bezier(.1,.25,.75,.9)}.ms-u-expandCollapse100[data-v-3d7ed520]{-webkit-transition:height .1s cubic-bezier(.1,.25,.75,.9);transition:height .1s cubic-bezier(.1,.25,.75,.9)}.ms-u-delay100[data-v-3d7ed520]{-webkit-animation-delay:167ms;animation-delay:167ms}.ms-u-delay200[data-v-3d7ed520]{-webkit-animation-delay:267ms;animation-delay:267ms}.ms-Panel[data-v-3d7ed520]{font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;background-color:\"[theme:white, default: #ffffff]\";width:100%;max-width:340px;box-shadow:-30px 0 30px -30px rgba(0,0,0,.2);position:absolute;top:0;right:0;bottom:0;z-index:10;display:none;height:100%}.ms-Panel.animate-in[data-v-3d7ed520]{-webkit-animation-name:fadeIn-data-v-3d7ed520,slideLeftIn40-data-v-3d7ed520;-moz-animation-name:fadeIn-data-v-3d7ed520,slideLeftIn40-data-v-3d7ed520;-ms-animation-name:fadeIn-data-v-3d7ed520,slideLeftIn40-data-v-3d7ed520;-o-animation-name:fadeIn-data-v-3d7ed520,slideLeftIn40-data-v-3d7ed520;animation-name:fadeIn-data-v-3d7ed520,slideLeftIn40-data-v-3d7ed520;-webkit-animation-duration:367ms;-moz-animation-duration:367ms;-ms-animation-duration:367ms;-o-animation-duration:367ms;-webkit-animation-timing-function:cubic-bezier(.1,.9,.2,1);-moz-animation-timing-function:cubic-bezier(.1,.9,.2,1);-ms-animation-timing-function:cubic-bezier(.1,.9,.2,1);-o-animation-timing-function:cubic-bezier(.1,.9,.2,1);animation-timing-function:cubic-bezier(.1,.9,.2,1);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}.ms-Panel.animate-out[data-v-3d7ed520]{-webkit-animation-name:fadeOut-data-v-3d7ed520,slideRightOut40-data-v-3d7ed520;-moz-animation-name:fadeOut-data-v-3d7ed520,slideRightOut40-data-v-3d7ed520;-ms-animation-name:fadeOut-data-v-3d7ed520,slideRightOut40-data-v-3d7ed520;-o-animation-name:fadeOut-data-v-3d7ed520,slideRightOut40-data-v-3d7ed520;animation-name:fadeOut-data-v-3d7ed520,slideRightOut40-data-v-3d7ed520;-webkit-animation-duration:167ms;-moz-animation-duration:167ms;-ms-animation-duration:167ms;-o-animation-duration:167ms;-webkit-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-moz-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-ms-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-o-animation-timing-function:cubic-bezier(.1,.25,.75,.9);animation-timing-function:cubic-bezier(.1,.25,.75,.9);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}.ms-Panel.is-open[data-v-3d7ed520]{display:block}.ms-Panel .ms-CommandBar[data-v-3d7ed520]{padding-right:0;padding-left:8px}.ms-Panel.ms-Panel--md[data-v-3d7ed520]{max-width:340px}.ms-Panel.ms-Panel--lg[data-v-3d7ed520]{max-width:644px}.ms-Panel.ms-Panel--xl[data-v-3d7ed520]{max-width:940px}.ms-Panel.ms-Panel--xxl[data-v-3d7ed520]{max-width:1192px}.ms-Panel--left[data-v-3d7ed520]{box-shadow:-30px 0 30px 30px rgba(0,0,0,.2);left:0;right:auto}.ms-Panel--left.animate-in[data-v-3d7ed520]{-webkit-animation-name:fadeIn-data-v-3d7ed520,slideRightIn40-data-v-3d7ed520;-moz-animation-name:fadeIn-data-v-3d7ed520,slideRightIn40-data-v-3d7ed520;-ms-animation-name:fadeIn-data-v-3d7ed520,slideRightIn40-data-v-3d7ed520;-o-animation-name:fadeIn-data-v-3d7ed520,slideRightIn40-data-v-3d7ed520;animation-name:fadeIn-data-v-3d7ed520,slideRightIn40-data-v-3d7ed520;-webkit-animation-duration:367ms;-moz-animation-duration:367ms;-ms-animation-duration:367ms;-o-animation-duration:367ms;-webkit-animation-timing-function:cubic-bezier(.1,.9,.2,1);-moz-animation-timing-function:cubic-bezier(.1,.9,.2,1);-ms-animation-timing-function:cubic-bezier(.1,.9,.2,1);-o-animation-timing-function:cubic-bezier(.1,.9,.2,1);animation-timing-function:cubic-bezier(.1,.9,.2,1);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}.ms-Panel--left.animate-out[data-v-3d7ed520]{-webkit-animation-name:fadeOut-data-v-3d7ed520,slideLeftOut40-data-v-3d7ed520;-moz-animation-name:fadeOut-data-v-3d7ed520,slideLeftOut40-data-v-3d7ed520;-ms-animation-name:fadeOut-data-v-3d7ed520,slideLeftOut40-data-v-3d7ed520;-o-animation-name:fadeOut-data-v-3d7ed520,slideLeftOut40-data-v-3d7ed520;animation-name:fadeOut-data-v-3d7ed520,slideLeftOut40-data-v-3d7ed520;-webkit-animation-duration:167ms;-moz-animation-duration:167ms;-ms-animation-duration:167ms;-o-animation-duration:167ms;-webkit-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-moz-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-ms-animation-timing-function:cubic-bezier(.1,.25,.75,.9);-o-animation-timing-function:cubic-bezier(.1,.25,.75,.9);animation-timing-function:cubic-bezier(.1,.25,.75,.9);-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both}.ms-Panel-closeButton[data-v-3d7ed520]{background:0 0;border:0;cursor:pointer;position:absolute;right:6px;top:0;height:40px;width:40px;line-height:40px;outline:0;padding:0;color:\"[theme:neutralSecondary, default: #666666]\";font-size:16px}.ms-Panel-closeButton[data-v-3d7ed520]:hover{color:\"[theme:neutralPrimary, default: #333333]\"}.ms-Panel-closeButton .ms-Icon--Cancel[data-v-3d7ed520]{margin-top:2px}@media (max-width:639px){.ms-Panel-closeButton[data-v-3d7ed520]{font-size:20px;line-height:20px;height:44px;right:4px}}.ms-Panel-contentInner[data-v-3d7ed520]{margin-top:40px;padding:0 16px 20px;overflow-y:auto;height:100%}@media (min-width:640px){.ms-Panel-contentInner[data-v-3d7ed520]{padding:0 32px 20px}}@media (min-width:1366px){.ms-Panel-contentInner[data-v-3d7ed520]{padding:0 40px 20px}}.ms-Panel-headerText[data-v-3d7ed520]{font-weight:100;font-size:21px;color:\"[theme:neutralPrimary, default: #333333]\";margin:10px 0;padding:4px 0;line-height:1;text-overflow:ellipsis;overflow:hidden}@media (min-width:1024px){.ms-Panel-headerText[data-v-3d7ed520]{margin-top:30px}}.ms-Overlay[data-v-3d7ed520]{font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;background-color:\"[theme:whiteTranslucent40, default: rgba(255,255,255,.4)]\";position:fixed;bottom:0;left:0;right:0;top:0;z-index:0;display:none}.ms-Overlay.is-visible[data-v-3d7ed520]{display:block}.ms-Overlay--dark[data-v-3d7ed520]{background-color:\"[theme:blackTranslucent40, default: rgba(0,0,0,.4)]\"}.ms-u-overflowHidden[data-v-3d7ed520]{overflow:hidden}.ms-Panel-contentInner[data-v-3d7ed520]{margin-top:0;border-top:solid 40px transparent;box-sizing:border-box}", map: undefined, media: undefined });
+
   };
+  /* scoped */
+  const __vue_scope_id__$H = "data-v-3d7ed520";
+  /* module identifier */
+  const __vue_module_identifier__$H = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$H = undefined;
+  /* style inject */
+  const __vue_create_injector__$h = function(context){ return function(scopeId, data){__vue_script__$H.loadStyles && __vue_script__$H.loadStyles(data.source);}};
+  /* style inject SSR */
+  
 
-  Panel.prototype._setEvents = function () {
-    this.panelHost.overlay.overlayElement.addEventListener("click", this._clickHandler);
+  
+  var uiPanel = normalizeComponent_1(
+    {},
+    __vue_inject_styles__$H,
+    __vue_script__$H,
+    __vue_scope_id__$H,
+    __vue_is_functional_template__$H,
+    __vue_module_identifier__$H,
+    __vue_create_injector__$h,
+    undefined
+  );
 
-    if (this._closeButton !== null) {
-      this._closeButton.addEventListener("click", this._clickHandler);
-    }
-  };
-
-  Panel.prototype._animateInPanel = function (layer) {
-    layer.classList.add(ANIMATE_IN_STATE$1);
-    layer.classList.add("is-open");
-    setTimeout(function () {
-      layer.classList.remove(ANIMATE_IN_STATE$1);
-    }, ANIMATION_END$1);
-  };
-
-  return Panel;
-}();
-
-var uiPanel = {_scopeId: 'data-v-15bfa7e0',
-    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ .ms-u-slideRightIn10[data-v-15bfa7e0] { -webkit-animation-name: fadeIn, slideRightIn10; -moz-animation-name: fadeIn, slideRightIn10; -ms-animation-name: fadeIn, slideRightIn10; -o-animation-name: fadeIn, slideRightIn10; animation-name: fadeIn, slideRightIn10; -webkit-animation-duration: 0.367s; -moz-animation-duration: 0.367s; -ms-animation-duration: 0.367s; -o-animation-duration: 0.367s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideRightIn10 { from { -webkit-transform: translate3d(-10px, 0px, 0px); } to { -webkit-transform: translate3d(0px, 0px, 0px); } } @keyframes slideRightIn10 { from { transform: translate3d(-10px, 0px, 0px); } to { transform: translate3d(0px, 0px, 0px); } } .ms-u-slideRightIn20[data-v-15bfa7e0] { -webkit-animation-name: fadeIn, slideRightIn20; -moz-animation-name: fadeIn, slideRightIn20; -ms-animation-name: fadeIn, slideRightIn20; -o-animation-name: fadeIn, slideRightIn20; animation-name: fadeIn, slideRightIn20; -webkit-animation-duration: 0.367s; -moz-animation-duration: 0.367s; -ms-animation-duration: 0.367s; -o-animation-duration: 0.367s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideRightIn20 { from { -webkit-transform: translate3d(-20px, 0px, 0px); } to { -webkit-transform: translate3d(0px, 0px, 0px); } } @keyframes slideRightIn20 { from { transform: translate3d(-20px, 0px, 0px); } to { transform: translate3d(0px, 0px, 0px); } } .ms-u-slideRightIn40[data-v-15bfa7e0] { -webkit-animation-name: fadeIn, slideRightIn40; -moz-animation-name: fadeIn, slideRightIn40; -ms-animation-name: fadeIn, slideRightIn40; -o-animation-name: fadeIn, slideRightIn40; animation-name: fadeIn, slideRightIn40; -webkit-animation-duration: 0.367s; -moz-animation-duration: 0.367s; -ms-animation-duration: 0.367s; -o-animation-duration: 0.367s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideRightIn40 { from { -webkit-transform: translate3d(-40px, 0px, 0px); } to { -webkit-transform: translate3d(0px, 0px, 0px); } } @keyframes slideRightIn40 { from { transform: translate3d(-40px, 0px, 0px); } to { transform: translate3d(0px, 0px, 0px); } } .ms-u-slideLeftIn10[data-v-15bfa7e0] { -webkit-animation-name: fadeIn, slideLeftIn10; -moz-animation-name: fadeIn, slideLeftIn10; -ms-animation-name: fadeIn, slideLeftIn10; -o-animation-name: fadeIn, slideLeftIn10; animation-name: fadeIn, slideLeftIn10; -webkit-animation-duration: 0.367s; -moz-animation-duration: 0.367s; -ms-animation-duration: 0.367s; -o-animation-duration: 0.367s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideLeftIn10 { from { -webkit-transform: translate3d(10px, 0px, 0px); } to { -webkit-transform: translate3d(0px, 0px, 0px); } } @keyframes slideLeftIn10 { from { transform: translate3d(10px, 0px, 0px); } to { transform: translate3d(0px, 0px, 0px); } } .ms-u-slideLeftIn20[data-v-15bfa7e0] { -webkit-animation-name: fadeIn, slideLeftIn20; -moz-animation-name: fadeIn, slideLeftIn20; -ms-animation-name: fadeIn, slideLeftIn20; -o-animation-name: fadeIn, slideLeftIn20; animation-name: fadeIn, slideLeftIn20; -webkit-animation-duration: 0.367s; -moz-animation-duration: 0.367s; -ms-animation-duration: 0.367s; -o-animation-duration: 0.367s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideLeftIn20 { from { -webkit-transform: translate3d(20px, 0px, 0px); } to { -webkit-transform: translate3d(0px, 0px, 0px); } } @keyframes slideLeftIn20 { from { transform: translate3d(20px, 0px, 0px); } to { transform: translate3d(0px, 0px, 0px); } } .ms-u-slideLeftIn40[data-v-15bfa7e0] { -webkit-animation-name: fadeIn, slideLeftIn40; -moz-animation-name: fadeIn, slideLeftIn40; -ms-animation-name: fadeIn, slideLeftIn40; -o-animation-name: fadeIn, slideLeftIn40; animation-name: fadeIn, slideLeftIn40; -webkit-animation-duration: 0.367s; -moz-animation-duration: 0.367s; -ms-animation-duration: 0.367s; -o-animation-duration: 0.367s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideLeftIn40 { from { -webkit-transform: translate3d(40px, 0px, 0px); } to { -webkit-transform: translate3d(0px, 0px, 0px); } } @keyframes slideLeftIn40 { from { transform: translate3d(40px, 0px, 0px); } to { transform: translate3d(0px, 0px, 0px); } } .ms-u-slideRightIn400[data-v-15bfa7e0] { -webkit-animation-name: fadeIn, slideRightIn400; -moz-animation-name: fadeIn, slideRightIn400; -ms-animation-name: fadeIn, slideRightIn400; -o-animation-name: fadeIn, slideRightIn400; animation-name: fadeIn, slideRightIn400; -webkit-animation-duration: 0.367s; -moz-animation-duration: 0.367s; -ms-animation-duration: 0.367s; -o-animation-duration: 0.367s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideRightIn400 { from { -webkit-transform: translate3d(-400px, 0px, 0px); } to { -webkit-transform: translate3d(0px, 0px, 0px); } } @keyframes slideRightIn400 { from { transform: translate3d(-400px, 0px, 0px); } to { transform: translate3d(0px, 0px, 0px); } } .ms-u-slideLeftIn400[data-v-15bfa7e0] { -webkit-animation-name: fadeIn, slideLeft400; -moz-animation-name: fadeIn, slideLeft400; -ms-animation-name: fadeIn, slideLeft400; -o-animation-name: fadeIn, slideLeft400; animation-name: fadeIn, slideLeft400; -webkit-animation-duration: 0.367s; -moz-animation-duration: 0.367s; -ms-animation-duration: 0.367s; -o-animation-duration: 0.367s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideLeft400 { from { -webkit-transform: translate3d(400px, 0px, 0px); } to { -webkit-transform: translate3d(0px, 0px, 0px); } } @keyframes slideLeft400 { from { transform: translate3d(400px, 0px, 0px); } to { transform: translate3d(0px, 0px, 0px); } } .ms-u-slideUpIn20[data-v-15bfa7e0] { -webkit-animation-name: fadeIn, slideUpIn20; -moz-animation-name: fadeIn, slideUpIn20; -ms-animation-name: fadeIn, slideUpIn20; -o-animation-name: fadeIn, slideUpIn20; animation-name: fadeIn, slideUpIn20; -webkit-animation-duration: 0.367s; -moz-animation-duration: 0.367s; -ms-animation-duration: 0.367s; -o-animation-duration: 0.367s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideUpIn20 { from { -webkit-transform: translate3d(0px, 20px, 0px); } to { -webkit-transform: translate3d(0px, 0px, 0px); } } @keyframes slideUpIn20 { from { transform: translate3d(0px, 20px, 0px); } to { transform: translate3d(0px, 0px, 0px); } } .ms-u-slideUpIn10[data-v-15bfa7e0] { -webkit-animation-name: fadeIn, slideUpIn10; -moz-animation-name: fadeIn, slideUpIn10; -ms-animation-name: fadeIn, slideUpIn10; -o-animation-name: fadeIn, slideUpIn10; animation-name: fadeIn, slideUpIn10; -webkit-animation-duration: 0.167s; -moz-animation-duration: 0.167s; -ms-animation-duration: 0.167s; -o-animation-duration: 0.167s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideUpIn10 { from { -webkit-transform: translate3d(0px, 10px, 0px); } to { -webkit-transform: translate3d(0px, 0px, 0px); } } @keyframes slideUpIn10 { from { transform: translate3d(0px, 10px, 0px); } to { transform: translate3d(0px, 0px, 0px); } } .ms-u-slideDownIn20[data-v-15bfa7e0] { -webkit-animation-name: fadeIn, slideDownIn20; -moz-animation-name: fadeIn, slideDownIn20; -ms-animation-name: fadeIn, slideDownIn20; -o-animation-name: fadeIn, slideDownIn20; animation-name: fadeIn, slideDownIn20; -webkit-animation-duration: 0.367s; -moz-animation-duration: 0.367s; -ms-animation-duration: 0.367s; -o-animation-duration: 0.367s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideDownIn20 { from { -webkit-transform: translate3d(0px, -20px, 0px); } to { -webkit-transform: translate3d(0px, 0px, 0px); } } @keyframes slideDownIn20 { from { transform: translate3d(0px, -20px, 0px); } to { transform: translate3d(0px, 0px, 0px); } } .ms-u-slideDownIn10[data-v-15bfa7e0] { -webkit-animation-name: fadeIn, slideDownIn10; -moz-animation-name: fadeIn, slideDownIn10; -ms-animation-name: fadeIn, slideDownIn10; -o-animation-name: fadeIn, slideDownIn10; animation-name: fadeIn, slideDownIn10; -webkit-animation-duration: 0.167s; -moz-animation-duration: 0.167s; -ms-animation-duration: 0.167s; -o-animation-duration: 0.167s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideDownIn10 { from { -webkit-transform: translate3d(0px, -10px, 0px); } to { -webkit-transform: translate3d(0px, 0px, 0px); } } @keyframes slideDownIn10 { from { transform: translate3d(0px, -10px, 0px); } to { transform: translate3d(0px, 0px, 0px); } } .ms-u-slideRightOut40[data-v-15bfa7e0] { -webkit-animation-name: fadeOut, slideRightOut40; -moz-animation-name: fadeOut, slideRightOut40; -ms-animation-name: fadeOut, slideRightOut40; -o-animation-name: fadeOut, slideRightOut40; animation-name: fadeOut, slideRightOut40; -webkit-animation-duration: 0.167s; -moz-animation-duration: 0.167s; -ms-animation-duration: 0.167s; -o-animation-duration: 0.167s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideRightOut40 { from { -webkit-transform: translate3d(0px, 0px, 0px); } to { -webkit-transform: translate3d(40px, 0px, 0px); } } @keyframes slideRightOut40 { from { transform: translate3d(0px, 0px, 0px); } to { transform: translate3d(40px, 0px, 0px); } } .ms-u-slideLeftOut40[data-v-15bfa7e0] { -webkit-animation-name: fadeOut, slideLeftOut40; -moz-animation-name: fadeOut, slideLeftOut40; -ms-animation-name: fadeOut, slideLeftOut40; -o-animation-name: fadeOut, slideLeftOut40; animation-name: fadeOut, slideLeftOut40; -webkit-animation-duration: 0.167s; -moz-animation-duration: 0.167s; -ms-animation-duration: 0.167s; -o-animation-duration: 0.167s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideLeftOut40 { from { -webkit-transform: translate3d(0, 0px, 0px); } to { -webkit-transform: translate3d(-40px, 0px, 0px); } } @keyframes slideLeftOut40 { from { transform: translate3d(0, 0px, 0px); } to { transform: translate3d(-40px, 0px, 0px); } } .ms-u-slideRightOut400[data-v-15bfa7e0] { -webkit-animation-name: fadeOut, slideRightOut400; -moz-animation-name: fadeOut, slideRightOut400; -ms-animation-name: fadeOut, slideRightOut400; -o-animation-name: fadeOut, slideRightOut400; animation-name: fadeOut, slideRightOut400; -webkit-animation-duration: 0.167s; -moz-animation-duration: 0.167s; -ms-animation-duration: 0.167s; -o-animation-duration: 0.167s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideRightOut400 { from { -webkit-transform: translate3d(0, 0px, 0px); } to { -webkit-transform: translate3d(400px, 0px, 0px); } } @keyframes slideRightOut400 { from { transform: translate3d(0, 0px, 0px); } to { transform: translate3d(400px, 0px, 0px); } } .ms-u-slideLeftOut400[data-v-15bfa7e0] { -webkit-animation-name: fadeOut, slideLeftOut400; -moz-animation-name: fadeOut, slideLeftOut400; -ms-animation-name: fadeOut, slideLeftOut400; -o-animation-name: fadeOut, slideLeftOut400; animation-name: fadeOut, slideLeftOut400; -webkit-animation-duration: 0.167s; -moz-animation-duration: 0.167s; -ms-animation-duration: 0.167s; -o-animation-duration: 0.167s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideLeftOut400 { from { -webkit-transform: translate3d(0, 0px, 0px); } to { -webkit-transform: translate3d(-400px, 0px, 0px); } } @keyframes slideLeftOut400 { from { transform: translate3d(0, 0px, 0px); } to { transform: translate3d(-400px, 0px, 0px); } } .ms-u-slideUpOut20[data-v-15bfa7e0] { -webkit-animation-name: fadeOut, slideUpOut20; -moz-animation-name: fadeOut, slideUpOut20; -ms-animation-name: fadeOut, slideUpOut20; -o-animation-name: fadeOut, slideUpOut20; animation-name: fadeOut, slideUpOut20; -webkit-animation-duration: 0.167s; -moz-animation-duration: 0.167s; -ms-animation-duration: 0.167s; -o-animation-duration: 0.167s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideUpOut20 { from { -webkit-transform: translate3d(0px, 0, 0px); } to { -webkit-transform: translate3d(0px, -20px, 0px); } } @keyframes slideUpOut20 { from { transform: translate3d(0px, 0, 0px); } to { transform: translate3d(0px, -20px, 0px); } } .ms-u-slideUpOut10[data-v-15bfa7e0] { -webkit-animation-name: fadeOut, slideUpOut10; -moz-animation-name: fadeOut, slideUpOut10; -ms-animation-name: fadeOut, slideUpOut10; -o-animation-name: fadeOut, slideUpOut10; animation-name: fadeOut, slideUpOut10; -webkit-animation-duration: 0.167s; -moz-animation-duration: 0.167s; -ms-animation-duration: 0.167s; -o-animation-duration: 0.167s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideUpOut10 { from { -webkit-transform: translate3d(0px, 0, 0px); } to { -webkit-transform: translate3d(0px, -10px, 0px); } } @keyframes slideUpOut10 { from { transform: translate3d(0px, 0, 0px); } to { transform: translate3d(0px, -10px, 0px); } } .ms-u-slideDownOut20[data-v-15bfa7e0] { -webkit-animation-name: fadeOut, slideDownOut20; -moz-animation-name: fadeOut, slideDownOut20; -ms-animation-name: fadeOut, slideDownOut20; -o-animation-name: fadeOut, slideDownOut20; animation-name: fadeOut, slideDownOut20; -webkit-animation-duration: 0.167s; -moz-animation-duration: 0.167s; -ms-animation-duration: 0.167s; -o-animation-duration: 0.167s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideDownOut20 { from { -webkit-transform: translate3d(0px, 0, 0px); } to { -webkit-transform: translate3d(0px, 20px, 0px); } } @keyframes slideDownOut20 { from { transform: translate3d(0px, 0, 0px); } to { transform: translate3d(0px, 20px, 0px); } } .ms-u-slideDownOut10[data-v-15bfa7e0] { -webkit-animation-name: fadeOut, slideDownOut10; -moz-animation-name: fadeOut, slideDownOut10; -ms-animation-name: fadeOut, slideDownOut10; -o-animation-name: fadeOut, slideDownOut10; animation-name: fadeOut, slideDownOut10; -webkit-animation-duration: 0.167s; -moz-animation-duration: 0.167s; -ms-animation-duration: 0.167s; -o-animation-duration: 0.167s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes slideDownOut10 { from { -webkit-transform: translate3d(0px, 0, 0px); } to { -webkit-transform: translate3d(0px, 10px, 0px); } } @keyframes slideDownOut10 { from { transform: translate3d(0px, 0, 0px); } to { transform: translate3d(0px, 10px, 0px); } } .ms-u-scaleUpIn100[data-v-15bfa7e0] { -webkit-animation-name: fadeIn, scaleUp100; -moz-animation-name: fadeIn, scaleUp100; -ms-animation-name: fadeIn, scaleUp100; -o-animation-name: fadeIn, scaleUp100; animation-name: fadeIn, scaleUp100; -webkit-animation-duration: 0.367s; -moz-animation-duration: 0.367s; -ms-animation-duration: 0.367s; -o-animation-duration: 0.367s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes scaleUp100 { from { -webkit-transform: scale3d(0.98, 0.98, 1); } to { -webkit-transform: scale3d(1, 1, 1); } } @keyframes scaleUp100 { from { transform: scale3d(0.98, 0.98, 1); } to { transform: scale3d(1, 1, 1); } } .ms-u-scaleDownIn100[data-v-15bfa7e0] { -webkit-animation-name: fadeIn, scaleDown100; -moz-animation-name: fadeIn, scaleDown100; -ms-animation-name: fadeIn, scaleDown100; -o-animation-name: fadeIn, scaleDown100; animation-name: fadeIn, scaleDown100; -webkit-animation-duration: 0.367s; -moz-animation-duration: 0.367s; -ms-animation-duration: 0.367s; -o-animation-duration: 0.367s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes scaleDown100 { from { -webkit-transform: scale3d(1.03, 1.03, 1); } to { -webkit-transform: scale3d(1, 1, 1); } } @keyframes scaleDown100 { from { transform: scale3d(1.03, 1.03, 1); } to { transform: scale3d(1, 1, 1); } } .ms-u-scaleUpOut103[data-v-15bfa7e0] { -webkit-animation-name: fadeOut, scaleUp103; -moz-animation-name: fadeOut, scaleUp103; -ms-animation-name: fadeOut, scaleUp103; -o-animation-name: fadeOut, scaleUp103; animation-name: fadeOut, scaleUp103; -webkit-animation-duration: 0.167s; -moz-animation-duration: 0.167s; -ms-animation-duration: 0.167s; -o-animation-duration: 0.167s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes scaleUp103 { from { -webkit-transform: scale3d(1, 1, 1); } to { -webkit-transform: scale3d(1.03, 1.03, 1); } } @keyframes scaleUp103 { from { transform: scale3d(1, 1, 1); } to { transform: scale3d(1.03, 1.03, 1); } } .ms-u-scaleDownOut98[data-v-15bfa7e0] { -webkit-animation-name: fadeOut, scaleDown98; -moz-animation-name: fadeOut, scaleDown98; -ms-animation-name: fadeOut, scaleDown98; -o-animation-name: fadeOut, scaleDown98; animation-name: fadeOut, scaleDown98; -webkit-animation-duration: 0.167s; -moz-animation-duration: 0.167s; -ms-animation-duration: 0.167s; -o-animation-duration: 0.167s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes scaleDown98 { from { -webkit-transform: scale3d(1, 1, 1); } to { -webkit-transform: scale3d(0.98, 0.98, 1); } } @keyframes scaleDown98 { from { transform: scale3d(1, 1, 1); } to { transform: scale3d(0.98, 0.98, 1); } } .ms-u-fadeIn400[data-v-15bfa7e0] { -webkit-animation-duration: 0.367s; -webkit-animation-name: fadeIn; -webkit-animation-fill-mode: both; animation-duration: 0.367s; animation-name: fadeIn; animation-fill-mode: both; } .ms-u-fadeIn100[data-v-15bfa7e0] { -webkit-animation-duration: 0.367s; -webkit-animation-name: fadeIn; -webkit-animation-fill-mode: both; animation-duration: 0.367s; animation-name: fadeIn; animation-fill-mode: both; -webkit-animation-duration: 0.167s; animation-duration: 0.167s; } .ms-u-fadeIn200[data-v-15bfa7e0] { -webkit-animation-duration: 0.367s; -webkit-animation-name: fadeIn; -webkit-animation-fill-mode: both; animation-duration: 0.367s; animation-name: fadeIn; animation-fill-mode: both; -webkit-animation-duration: 0.267s; animation-duration: 0.267s; } .ms-u-fadeIn500[data-v-15bfa7e0] { -webkit-animation-duration: 0.367s; -webkit-animation-name: fadeIn; -webkit-animation-fill-mode: both; animation-duration: 0.367s; animation-name: fadeIn; animation-fill-mode: both; -webkit-animation-duration: 0.467s; animation-duration: 0.467s; } @-webkit-keyframes fadeIn { from { opacity: 0; -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); } to { opacity: 1; } } @keyframes fadeIn { from { opacity: 0; animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); } to { opacity: 1; } } .ms-u-fadeOut400[data-v-15bfa7e0] { -webkit-animation-duration: 0.367s; -webkit-animation-name: fadeOut; -webkit-animation-fill-mode: both; animation-duration: 0.367s; animation-name: fadeOut; animation-fill-mode: both; } .ms-u-fadeOut100[data-v-15bfa7e0] { -webkit-animation-duration: 0.367s; -webkit-animation-name: fadeOut; -webkit-animation-fill-mode: both; animation-duration: 0.367s; animation-name: fadeOut; animation-fill-mode: both; -webkit-animation-duration: 0.1s; animation-duration: 0.1s; } .ms-u-fadeOut200[data-v-15bfa7e0] { -webkit-animation-duration: 0.367s; -webkit-animation-name: fadeOut; -webkit-animation-fill-mode: both; animation-duration: 0.367s; animation-name: fadeOut; animation-fill-mode: both; -webkit-animation-duration: 0.167s; animation-duration: 0.167s; } .ms-u-fadeOut500[data-v-15bfa7e0] { -webkit-animation-duration: 0.367s; -webkit-animation-name: fadeOut; -webkit-animation-fill-mode: both; animation-duration: 0.367s; animation-name: fadeOut; animation-fill-mode: both; -webkit-animation-duration: 0.467s; animation-duration: 0.467s; } @-webkit-keyframes fadeOut { from { opacity: 1; -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); } to { opacity: 0; } } @keyframes fadeOut { from { opacity: 1; animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); } to { opacity: 0; } } .ms-u-rotate90deg[data-v-15bfa7e0] { -webkit-animation-name: rotate90; -moz-animation-name: rotate90; -ms-animation-name: rotate90; -o-animation-name: rotate90; animation-name: rotate90; -webkit-animation-duration: 0.1s; -moz-animation-duration: 0.1s; -ms-animation-duration: 0.1s; -o-animation-duration: 0.1s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes rotate90 { from { -webkit-transform: rotateZ(0deg); } to { -webkit-transform: rotateZ(90deg); } } @keyframes rotate90 { from { transform: rotateZ(0deg); } to { transform: rotateZ(90deg); } } .ms-u-rotateN90deg[data-v-15bfa7e0] { -webkit-animation-name: rotateN90; -moz-animation-name: rotateN90; -ms-animation-name: rotateN90; -o-animation-name: rotateN90; animation-name: rotateN90; -webkit-animation-duration: 0.1s; -moz-animation-duration: 0.1s; -ms-animation-duration: 0.1s; -o-animation-duration: 0.1s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } @-webkit-keyframes rotateN90 { from { -webkit-transform: rotateZ(90deg); } to { -webkit-transform: rotateZ(0deg); } } @keyframes rotateN90 { from { transform: rotateZ(90deg); } to { transform: rotateZ(0deg); } } .ms-u-expandCollapse400[data-v-15bfa7e0] { -webkit-transition: height 0.367s cubic-bezier(0.1, 0.25, 0.75, 0.9); transition: height 0.367s cubic-bezier(0.1, 0.25, 0.75, 0.9); } .ms-u-expandCollapse200[data-v-15bfa7e0] { -webkit-transition: height 0.167s cubic-bezier(0.1, 0.25, 0.75, 0.9); transition: height 0.167s cubic-bezier(0.1, 0.25, 0.75, 0.9); } .ms-u-expandCollapse100[data-v-15bfa7e0] { -webkit-transition: height 0.1s cubic-bezier(0.1, 0.25, 0.75, 0.9); transition: height 0.1s cubic-bezier(0.1, 0.25, 0.75, 0.9); } .ms-u-delay100[data-v-15bfa7e0] { -webkit-animation-delay: 0.167s; animation-delay: 0.167s; } .ms-u-delay200[data-v-15bfa7e0] { -webkit-animation-delay: 0.267s; animation-delay: 0.267s; } /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-Panel[data-v-15bfa7e0] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; background-color: \"[theme:white, default: #ffffff]\"; width: 100%; max-width: 340px; box-shadow: -30px 0 30px -30px rgba(0, 0, 0, 0.2); position: absolute; top: 0; right: 0; bottom: 0; z-index: 10; display: none; height: 100%; } .ms-Panel.animate-in[data-v-15bfa7e0] { -webkit-animation-name: fadeIn, slideLeftIn40; -moz-animation-name: fadeIn, slideLeftIn40; -ms-animation-name: fadeIn, slideLeftIn40; -o-animation-name: fadeIn, slideLeftIn40; animation-name: fadeIn, slideLeftIn40; -webkit-animation-duration: 0.367s; -moz-animation-duration: 0.367s; -ms-animation-duration: 0.367s; -o-animation-duration: 0.367s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } .ms-Panel.animate-out[data-v-15bfa7e0] { -webkit-animation-name: fadeOut, slideRightOut40; -moz-animation-name: fadeOut, slideRightOut40; -ms-animation-name: fadeOut, slideRightOut40; -o-animation-name: fadeOut, slideRightOut40; animation-name: fadeOut, slideRightOut40; -webkit-animation-duration: 0.167s; -moz-animation-duration: 0.167s; -ms-animation-duration: 0.167s; -o-animation-duration: 0.167s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } .ms-Panel.is-open[data-v-15bfa7e0] { display: block; } .ms-Panel .ms-CommandBar[data-v-15bfa7e0] { padding-right: 0; padding-left: 8px; } .ms-Panel.ms-Panel--md[data-v-15bfa7e0] { max-width: 340px; } .ms-Panel.ms-Panel--lg[data-v-15bfa7e0] { max-width: 644px; } .ms-Panel.ms-Panel--xl[data-v-15bfa7e0] { max-width: 940px; } .ms-Panel.ms-Panel--xxl[data-v-15bfa7e0] { max-width: 1192px; } .ms-Panel--left[data-v-15bfa7e0] { box-shadow: -30px 0 30px 30px rgba(0, 0, 0, 0.2); left: 0; right: auto; } .ms-Panel--left.animate-in[data-v-15bfa7e0] { -webkit-animation-name: fadeIn, slideRightIn40; -moz-animation-name: fadeIn, slideRightIn40; -ms-animation-name: fadeIn, slideRightIn40; -o-animation-name: fadeIn, slideRightIn40; animation-name: fadeIn, slideRightIn40; -webkit-animation-duration: 0.367s; -moz-animation-duration: 0.367s; -ms-animation-duration: 0.367s; -o-animation-duration: 0.367s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -moz-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -ms-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -o-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } .ms-Panel--left.animate-out[data-v-15bfa7e0] { -webkit-animation-name: fadeOut, slideLeftOut40; -moz-animation-name: fadeOut, slideLeftOut40; -ms-animation-name: fadeOut, slideLeftOut40; -o-animation-name: fadeOut, slideLeftOut40; animation-name: fadeOut, slideLeftOut40; -webkit-animation-duration: 0.167s; -moz-animation-duration: 0.167s; -ms-animation-duration: 0.167s; -o-animation-duration: 0.167s; -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -moz-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -ms-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -o-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9); -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -ms-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; } .ms-Panel-closeButton[data-v-15bfa7e0] { background: none; border: 0; cursor: pointer; position: absolute; right: 6px; top: 0; height: 40px; width: 40px; line-height: 40px; outline: 0; padding: 0; color: \"[theme:neutralSecondary, default: #666666]\"; font-size: 16px; } .ms-Panel-closeButton[data-v-15bfa7e0]:hover { color: \"[theme:neutralPrimary, default: #333333]\"; } .ms-Panel-closeButton .ms-Icon--Cancel[data-v-15bfa7e0] { margin-top: 2px; } @media (max-width: 639px) { .ms-Panel-closeButton[data-v-15bfa7e0] { font-size: 20px; line-height: 20px; height: 44px; right: 4px; } } .ms-Panel-contentInner[data-v-15bfa7e0] { margin-top: 40px; padding: 0 16px 20px; overflow-y: auto; height: 100%; } @media (min-width: 640px) { .ms-Panel-contentInner[data-v-15bfa7e0] { padding: 0 32px 20px; } } @media (min-width: 1366px) { .ms-Panel-contentInner[data-v-15bfa7e0] { padding: 0 40px 20px; } } .ms-Panel-headerText[data-v-15bfa7e0] { font-weight: 100; font-size: 21px; color: \"[theme:neutralPrimary, default: #333333]\"; margin: 10px 0; padding: 4px 0; line-height: 1; text-overflow: ellipsis; overflow: hidden; } @media (min-width: 1024px) { .ms-Panel-headerText[data-v-15bfa7e0] { margin-top: 30px; } } .ms-Overlay[data-v-15bfa7e0] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; background-color: \"[theme:whiteTranslucent40, default: rgba(255,255,255,.4)]\"; position: fixed; bottom: 0; left: 0; right: 0; top: 0; z-index: 0; display: none; } .ms-Overlay.is-visible[data-v-15bfa7e0] { display: block; } .ms-Overlay--dark[data-v-15bfa7e0] { background-color: \"[theme:blackTranslucent40, default: rgba(0,0,0,.4)]\"; } .ms-u-overflowHidden[data-v-15bfa7e0] { overflow: hidden; } .ms-Panel-contentInner[data-v-15bfa7e0] { margin-top: 0; border-top: solid 40px transparent; box-sizing: border-box; } ");},
-    beforeMount: function beforeMount(){
-        this.$fabric = {
-            Panel : Panel$1
-        };
-    },
-    watch: {
-        value: function value(newVal) {
-            if(newVal){
-                this.panelInstance.panelHost.overlay.overlayElement.setAttribute(this.$options._scopeId, "");
-            }
-        }
-    },
-    beforeDestroy: function beforeDestroy(){
-        if(this.panelInstance)
-            { this.panelInstance.dismiss(); }
-    },
-    extends :  panel
-}
-
-var persona = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-Persona",class:_vm.personaClass},[_c('div',{staticClass:"ms-Persona-imageArea"},[(!_vm.initials)?_c('img',{staticClass:"ms-Persona-image",attrs:{"src":_vm.src}}):_c('div',{staticClass:"ms-Persona-initials",class:_vm.initialsPersonaClass},[_vm._v(_vm._s(_vm.initials.toUpperCase()))])]),_vm._v(" "),(_vm.type)?_c('div',{staticClass:"ms-Persona-presence"},[_c('i',{staticClass:"ms-Persona-presenceIcon ms-Icon",class:_vm.personaIconClass})]):_vm._e(),_vm._v(" "),_c('div',{staticClass:"ms-Persona-details"},[_c('div',{staticClass:"ms-Persona-primaryText"},[_vm._v(_vm._s(_vm.primaryText))]),_vm._v(" "),_c('div',{staticClass:"ms-Persona-secondaryText"},[_vm._v(_vm._s(_vm.secondaryText))]),_vm._v(" "),_c('div',{staticClass:"ms-Persona-tertiaryText"},[_vm._v(_vm._s(_vm.tertiaryText))]),_vm._v(" "),_c('div',{staticClass:"ms-Persona-optionalText"},[_vm._v(_vm._s(_vm.optionalText))])])])},staticRenderFns: [],
+var script$I = {
   name: 'ou-persona',
-
-  mixins: [
-    size('tiny', 'xs', 'sm', 'lg', 'xl'),
-    type('available', 'away', 'blocked', 'busy', 'dnd', 'offline')
-  ],
-
+  mixins: [size('tiny', 'xs', 'sm', 'lg', 'xl'), type('available', 'away', 'blocked', 'busy', 'dnd', 'offline')],
   data: function data() {
     if (this.initials) {
-      var validateColor = [
-        'blue',
-        'blueLight',
-        'blueDark',
-        'teal',
-        'greenLight',
-        'green',
-        'greenDark',
-        'magentaLight',
-        'magenta',
-        'purpleLight',
-        'purple',
-        'black',
-        'orange',
-        'red',
-        'redDark'
-      ];
-
+      var validateColor = ['blue', 'blueLight', 'blueDark', 'teal', 'greenLight', 'green', 'greenDark', 'magentaLight', 'magenta', 'purpleLight', 'purple', 'black', 'orange', 'red', 'redDark'];
       var initialsLetter = this.initials[0].toUpperCase();
-      var initialsIndex = initialsLetter.charCodeAt() - 65;
+      var initialsIndex = initialsLetter.charCodeAt() - 65; // get radom color from validateColor
 
-      // get radom color from validateColor
       return {
-        initialsColor: validateColor[Math.round((validateColor.length / 26) * initialsIndex)]
+        initialsColor: validateColor[Math.round(validateColor.length / 26 * initialsIndex)]
       };
     }
 
-    return { initialsColor: '' };
+    return {
+      initialsColor: ''
+    };
   },
-
   props: {
     src: String,
     initials: String,
@@ -3507,20 +4828,15 @@ var persona = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=
     tertiaryText: String,
     optionalText: String
   },
-
   computed: {
     personaClass: function personaClass() {
-      var obj;
+      var _ref;
 
-      return ( obj = {}, obj[("ms-Persona--" + (this.size))] = !!this.size, obj[("ms-Persona--" + (this.type))] = !!this.type, obj );
+      return _ref = {}, _defineProperty(_ref, "ms-Persona--".concat(this.size), !!this.size), _defineProperty(_ref, "ms-Persona--".concat(this.type), !!this.type), _ref;
     },
-
     initialsPersonaClass: function initialsPersonaClass() {
-      var obj;
-
-      return ( obj = {}, obj[("ms-Persona-initials--" + (this.initialsColor))] = !!this.initialsColor, obj );
+      return _defineProperty({}, "ms-Persona-initials--".concat(this.initialsColor), !!this.initialsColor);
     },
-
     personaIconClass: function personaIconClass() {
       var icon = '';
 
@@ -3528,20 +4844,54 @@ var persona = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=
         case 'available':
           icon = 'SkypeCheck';
           break;
+
         case 'away':
           icon = 'SkypeClock';
           break;
+
         case 'dnd':
           icon = 'SkypeMinus';
           break;
       }
 
       if (icon) {
-        return ("ms-Icon--" + icon);
+        return "ms-Icon--".concat(icon);
       }
     }
   }
 };
+
+/* script */
+const __vue_script__$I = script$I;
+
+/* template */
+var __vue_render__$q = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-Persona",class:_vm.personaClass},[_c('div',{staticClass:"ms-Persona-imageArea"},[(!_vm.initials)?_c('img',{staticClass:"ms-Persona-image",attrs:{"src":_vm.src}}):_c('div',{staticClass:"ms-Persona-initials",class:_vm.initialsPersonaClass},[_vm._v(_vm._s(_vm.initials.toUpperCase()))])]),_vm._v(" "),(_vm.type)?_c('div',{staticClass:"ms-Persona-presence"},[_c('i',{staticClass:"ms-Persona-presenceIcon ms-Icon",class:_vm.personaIconClass})]):_vm._e(),_vm._v(" "),_c('div',{staticClass:"ms-Persona-details"},[_c('div',{staticClass:"ms-Persona-primaryText"},[_vm._v(_vm._s(_vm.primaryText))]),_vm._v(" "),_c('div',{staticClass:"ms-Persona-secondaryText"},[_vm._v(_vm._s(_vm.secondaryText))]),_vm._v(" "),_c('div',{staticClass:"ms-Persona-tertiaryText"},[_vm._v(_vm._s(_vm.tertiaryText))]),_vm._v(" "),_c('div',{staticClass:"ms-Persona-optionalText"},[_vm._v(_vm._s(_vm.optionalText))])])])};
+var __vue_staticRenderFns__$q = [];
+
+  /* style */
+  const __vue_inject_styles__$I = undefined;
+  /* scoped */
+  const __vue_scope_id__$I = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$I = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$I = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var persona = normalizeComponent_1(
+    { render: __vue_render__$q, staticRenderFns: __vue_staticRenderFns__$q },
+    __vue_inject_styles__$I,
+    __vue_script__$I,
+    __vue_scope_id__$I,
+    __vue_is_functional_template__$I,
+    __vue_module_identifier__$I,
+    undefined,
+    undefined
+  );
 
 var SCROLL_FRAME_RATE = 33;
 
@@ -3973,7 +5323,7 @@ var PersonaCard = function () {
   return PersonaCard;
 }();
 
-var MODAL_POSITION$3 = "top";
+var MODAL_POSITION$2 = "top";
 
 var Persona = function () {
   function Persona(container) {
@@ -3996,7 +5346,7 @@ var Persona = function () {
   Persona.prototype._createContextualHostInstance = function () {
     this._personaCard.setAttribute("style", "display: block;");
 
-    this._contextualHostInstance = new ContextualHost(this._personaCard, MODAL_POSITION$3, this._persona);
+    this._contextualHostInstance = new ContextualHost(this._personaCard, MODAL_POSITION$2, this._persona);
   };
 
   Persona.prototype._personaEventHandler = function () {
@@ -4016,56 +5366,78 @@ var Persona = function () {
   return Persona;
 }();
 
-var uiPersona = {_scopeId: 'data-v-08ee50b8',
-    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-Persona[data-v-08ee50b8] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 14px; font-weight: 400; line-height: 1; position: relative; width: 100%; height: 48px; display: table; table-layout: fixed; border-collapse: separate; } .ms-Persona .ms-ContextualHost[data-v-08ee50b8] { display: none; } .ms-Persona-imageArea[data-v-08ee50b8] { position: absolute; overflow: hidden; text-align: center; max-width: 48px; height: 48px; border-radius: 50%; z-index: 0; width: 100%; top: 0; left: 0; } @media screen and (-ms-high-contrast: active) { .ms-Persona-imageArea[data-v-08ee50b8] { border: 1px solid \"[theme:white, default: #ffffff]\"; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-Persona-imageArea[data-v-08ee50b8] { border: 1px solid \"[theme:black, default: #000000]\"; } } .ms-Persona-placeholder[data-v-08ee50b8] { color: \"[theme:white, default: #ffffff]\"; position: absolute; right: 0; left: 0; font-size: 47px; top: 9px; z-index: 5; } .ms-Persona-initials[data-v-08ee50b8] { color: \"[theme:white, default: #ffffff]\"; font-size: 17px; font-weight: 100; line-height: 48px; } .ms-Persona-initials.ms-Persona-initials--blueLight[data-v-08ee50b8] { background-color: \"[theme:blueLight, default: #00bcf2]\"; } .ms-Persona-initials.ms-Persona-initials--blue[data-v-08ee50b8] { background-color: \"[theme:blue, default: #0078d7]\"; } .ms-Persona-initials.ms-Persona-initials--blueDark[data-v-08ee50b8] { background-color: \"[theme:blueDark, default: #002050]\"; } .ms-Persona-initials.ms-Persona-initials--teal[data-v-08ee50b8] { background-color: \"[theme:teal, default: #008272]\"; } .ms-Persona-initials.ms-Persona-initials--greenLight[data-v-08ee50b8] { background-color: \"[theme:greenLight, default: #bad80a]\"; } .ms-Persona-initials.ms-Persona-initials--green[data-v-08ee50b8] { background-color: \"[theme:green, default: #107c10]\"; } .ms-Persona-initials.ms-Persona-initials--greenDark[data-v-08ee50b8] { background-color: \"[theme:greenDark, default: #004b1c]\"; } .ms-Persona-initials.ms-Persona-initials--magentaLight[data-v-08ee50b8] { background-color: \"[theme:magentaLight, default: #e3008c]\"; } .ms-Persona-initials.ms-Persona-initials--magenta[data-v-08ee50b8] { background-color: \"[theme:magenta, default: #b4009e]\"; } .ms-Persona-initials.ms-Persona-initials--purpleLight[data-v-08ee50b8] { background-color: \"[theme:purpleLight, default: #b4a0ff]\"; } .ms-Persona-initials.ms-Persona-initials--purple[data-v-08ee50b8] { background-color: \"[theme:purple, default: #5c2d91]\"; } .ms-Persona-initials.ms-Persona-initials--black[data-v-08ee50b8] { background-color: \"[theme:black, default: #000000]\"; } .ms-Persona-initials.ms-Persona-initials--orange[data-v-08ee50b8] { background-color: \"[theme:orange, default: #d83b01]\"; } .ms-Persona-initials.ms-Persona-initials--red[data-v-08ee50b8] { background-color: \"[theme:red, default: #e81123]\"; } .ms-Persona-initials.ms-Persona-initials--redDark[data-v-08ee50b8] { background-color: \"[theme:redDark, default: #a80000]\"; } .ms-Persona-image[data-v-08ee50b8] { position: absolute; top: 0; left: 0; height: 48px; z-index: 10; width: 100%; } .ms-Persona-image[src=''][data-v-08ee50b8] { display: none; } .ms-Persona-presence[data-v-08ee50b8] { background-color: #7FBA00; position: absolute; height: 12px; width: 12px; border-radius: 50%; top: auto; left: 34px; bottom: -1px; border: 2px solid \"[theme:white, default: #ffffff]\"; text-align: center; } @media screen and (-ms-high-contrast: active) { .ms-Persona-presence[data-v-08ee50b8] { border-color: \"[theme:black, default: #000000]\"; box-shadow: 0 0 0 1px #1AEBFF inset; color: \"[theme:black, default: #000000]\"; background-color: \"[theme:white, default: #ffffff]\"; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-Persona-presence[data-v-08ee50b8] { border-color: \"[theme:white, default: #ffffff]\"; box-shadow: 0 0 0 1px #37006E inset; color: \"[theme:white, default: #ffffff]\"; background-color: \"[theme:black, default: #000000]\"; } } .ms-Persona-presenceIcon[data-v-08ee50b8] { color: \"[theme:white, default: #ffffff]\"; font-size: 8px; line-height: 12px; vertical-align: top; } .ms-Persona-details[data-v-08ee50b8] { padding: 0 12px; vertical-align: middle; overflow: hidden; text-align: left; padding-left: 60px; display: table-cell; width: 100%; } .ms-Persona-primaryText[data-v-08ee50b8], .ms-Persona-secondaryText[data-v-08ee50b8], .ms-Persona-tertiaryText[data-v-08ee50b8], .ms-Persona-optionalText[data-v-08ee50b8] { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis; } .ms-Persona-primaryText[data-v-08ee50b8] { color: \"[theme:neutralPrimary, default: #333333]\"; font-weight: 400; font-size: 17px; margin-top: -3px; line-height: 1.4; } .ms-Persona-secondaryText[data-v-08ee50b8], .ms-Persona-tertiaryText[data-v-08ee50b8], .ms-Persona-optionalText[data-v-08ee50b8] { color: \"[theme:neutralSecondary, default: #666666]\"; font-weight: 400; font-size: 12px; white-space: nowrap; line-height: 1.3; } .ms-Persona-secondaryText[data-v-08ee50b8] { padding-top: 3px; } .ms-Persona-tertiaryText[data-v-08ee50b8], .ms-Persona-optionalText[data-v-08ee50b8] { padding-top: 5px; display: none; } .ms-Persona.ms-Persona--tiny[data-v-08ee50b8] { height: 30px; display: inline-block; } .ms-Persona.ms-Persona--tiny .ms-Persona-imageArea[data-v-08ee50b8] { overflow: visible; display: none; } .ms-Persona.ms-Persona--tiny .ms-Persona-presence[data-v-08ee50b8] { right: auto; top: 10px; left: 0; border: 0; } @media screen and (-ms-high-contrast: active) { .ms-Persona.ms-Persona--tiny .ms-Persona-presence[data-v-08ee50b8] { top: 9px; border: 1px solid \"[theme:white, default: #ffffff]\"; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-Persona.ms-Persona--tiny .ms-Persona-presence[data-v-08ee50b8] { border: 1px solid \"[theme:black, default: #000000]\"; } } .ms-Persona.ms-Persona--tiny .ms-Persona-details[data-v-08ee50b8] { padding-left: 20px; } .ms-Persona.ms-Persona--tiny .ms-Persona-primaryText[data-v-08ee50b8] { font-size: 14px; padding-top: 9px; } .ms-Persona.ms-Persona--tiny .ms-Persona-secondaryText[data-v-08ee50b8] { display: none; } .ms-Persona.ms-Persona--tiny.ms-Persona--readonly[data-v-08ee50b8] { padding: 0; background-color: transparent; } .ms-Persona.ms-Persona--tiny.ms-Persona--readonly .ms-Persona-primaryText[data-v-08ee50b8]::after { content: ';'; } .ms-Persona.ms-Persona--xs[data-v-08ee50b8], .ms-Persona.ms-Persona--facePile[data-v-08ee50b8], .ms-Persona.ms-Persona--token[data-v-08ee50b8] { height: 32px; } .ms-Persona.ms-Persona--xs .ms-Persona-imageArea[data-v-08ee50b8], .ms-Persona.ms-Persona--xs .ms-Persona-image[data-v-08ee50b8], .ms-Persona.ms-Persona--facePile .ms-Persona-imageArea[data-v-08ee50b8], .ms-Persona.ms-Persona--facePile .ms-Persona-image[data-v-08ee50b8], .ms-Persona.ms-Persona--token .ms-Persona-imageArea[data-v-08ee50b8], .ms-Persona.ms-Persona--token .ms-Persona-image[data-v-08ee50b8] { max-width: 32px; height: 32px; } .ms-Persona.ms-Persona--xs .ms-Persona-placeholder[data-v-08ee50b8], .ms-Persona.ms-Persona--facePile .ms-Persona-placeholder[data-v-08ee50b8], .ms-Persona.ms-Persona--token .ms-Persona-placeholder[data-v-08ee50b8] { font-size: 28px; top: 6px; } .ms-Persona.ms-Persona--xs .ms-Persona-initials[data-v-08ee50b8], .ms-Persona.ms-Persona--facePile .ms-Persona-initials[data-v-08ee50b8], .ms-Persona.ms-Persona--token .ms-Persona-initials[data-v-08ee50b8] { font-size: 12px; line-height: 32px; } .ms-Persona.ms-Persona--xs .ms-Persona-presence[data-v-08ee50b8], .ms-Persona.ms-Persona--facePile .ms-Persona-presence[data-v-08ee50b8], .ms-Persona.ms-Persona--token .ms-Persona-presence[data-v-08ee50b8] { left: 19px; } .ms-Persona.ms-Persona--xs .ms-Persona-details[data-v-08ee50b8], .ms-Persona.ms-Persona--facePile .ms-Persona-details[data-v-08ee50b8], .ms-Persona.ms-Persona--token .ms-Persona-details[data-v-08ee50b8] { padding-left: 40px; } .ms-Persona.ms-Persona--xs .ms-Persona-primaryText[data-v-08ee50b8], .ms-Persona.ms-Persona--facePile .ms-Persona-primaryText[data-v-08ee50b8], .ms-Persona.ms-Persona--token .ms-Persona-primaryText[data-v-08ee50b8] { font-size: 14px; padding-top: 3px; } .ms-Persona.ms-Persona--xs .ms-Persona-secondaryText[data-v-08ee50b8], .ms-Persona.ms-Persona--facePile .ms-Persona-secondaryText[data-v-08ee50b8], .ms-Persona.ms-Persona--token .ms-Persona-secondaryText[data-v-08ee50b8] { display: none; } .ms-Persona.ms-Persona--sm[data-v-08ee50b8] { height: 40px; } .ms-Persona.ms-Persona--sm .ms-Persona-imageArea[data-v-08ee50b8], .ms-Persona.ms-Persona--sm .ms-Persona-image[data-v-08ee50b8] { max-width: 40px; height: 40px; } .ms-Persona.ms-Persona--sm .ms-Persona-placeholder[data-v-08ee50b8] { font-size: 38px; top: 5px; } .ms-Persona.ms-Persona--sm .ms-Persona-initials[data-v-08ee50b8] { font-size: 14px; line-height: 40px; } .ms-Persona.ms-Persona--sm .ms-Persona-presence[data-v-08ee50b8] { left: 27px; } .ms-Persona.ms-Persona--sm .ms-Persona-details[data-v-08ee50b8] { padding-left: 48px; } .ms-Persona.ms-Persona--sm .ms-Persona-primaryText[data-v-08ee50b8] { font-size: 14px; } .ms-Persona.ms-Persona--sm .ms-Persona-primaryText[data-v-08ee50b8], .ms-Persona.ms-Persona--sm .ms-Persona-secondaryText[data-v-08ee50b8] { padding-top: 1px; } .ms-Persona.ms-Persona--lg[data-v-08ee50b8] { height: 72px; } .ms-Persona.ms-Persona--lg .ms-Persona-imageArea[data-v-08ee50b8], .ms-Persona.ms-Persona--lg .ms-Persona-image[data-v-08ee50b8] { max-width: 72px; height: 72px; } .ms-Persona.ms-Persona--lg .ms-Persona-placeholder[data-v-08ee50b8] { font-size: 67px; top: 10px; } .ms-Persona.ms-Persona--lg .ms-Persona-initials[data-v-08ee50b8] { font-size: 28px; line-height: 72px; } .ms-Persona.ms-Persona--lg .ms-Persona-presence[data-v-08ee50b8] { left: 49px; height: 20px; width: 20px; border-width: 3px; } .ms-Persona.ms-Persona--lg .ms-Persona-presenceIcon[data-v-08ee50b8] { line-height: 20px; font-size: 14px; } .ms-Persona.ms-Persona--lg .ms-Persona-details[data-v-08ee50b8] { padding-left: 84px; } .ms-Persona.ms-Persona--lg .ms-Persona-secondaryText[data-v-08ee50b8] { padding-top: 3px; } .ms-Persona.ms-Persona--lg .ms-Persona-tertiaryText[data-v-08ee50b8] { padding-top: 5px; display: block; } .ms-Persona.ms-Persona--xl[data-v-08ee50b8] { height: 100px; } .ms-Persona.ms-Persona--xl .ms-Persona-imageArea[data-v-08ee50b8], .ms-Persona.ms-Persona--xl .ms-Persona-image[data-v-08ee50b8] { max-width: 100px; height: 100px; } .ms-Persona.ms-Persona--xl .ms-Persona-placeholder[data-v-08ee50b8] { font-size: 95px; top: 12px; } .ms-Persona.ms-Persona--xl .ms-Persona-initials[data-v-08ee50b8] { font-size: 42px; line-height: 100px; } .ms-Persona.ms-Persona--xl .ms-Persona-presence[data-v-08ee50b8] { height: 28px; width: 28px; left: 71px; border-width: 4px; } .ms-Persona.ms-Persona--xl .ms-Persona-presenceIcon[data-v-08ee50b8] { line-height: 28px; font-size: 21px; position: relative; top: 1px; } .ms-Persona.ms-Persona--xl .ms-Persona-details[data-v-08ee50b8] { padding-left: 120px; } .ms-Persona.ms-Persona--xl .ms-Persona-primaryText[data-v-08ee50b8] { font-size: 21px; font-weight: 300; margin-top: 0; } .ms-Persona.ms-Persona--xl .ms-Persona-secondaryText[data-v-08ee50b8] { padding-top: 2px; } .ms-Persona.ms-Persona--xl .ms-Persona-tertiaryText[data-v-08ee50b8], .ms-Persona.ms-Persona--xl .ms-Persona-optionalText[data-v-08ee50b8] { padding-top: 5px; display: block; } .ms-Persona.ms-Persona--darkText .ms-Persona-primaryText[data-v-08ee50b8] { color: \"[theme:neutralDark, default: #212121]\"; } .ms-Persona.ms-Persona--darkText .ms-Persona-secondaryText[data-v-08ee50b8], .ms-Persona.ms-Persona--darkText .ms-Persona-tertiaryText[data-v-08ee50b8], .ms-Persona.ms-Persona--darkText .ms-Persona-optionalText[data-v-08ee50b8] { color: \"[theme:neutralPrimary, default: #333333]\"; } .ms-Persona.ms-Persona--selectable[data-v-08ee50b8] { cursor: pointer; padding: 0 10px; } .ms-Persona.ms-Persona--selectable[data-v-08ee50b8]:not(.ms-Persona--xl):hover, .ms-Persona.ms-Persona--selectable[data-v-08ee50b8]:not(.ms-Persona--xl):focus { background-color: \"[theme:themeLighter, default: #deecf9]\"; outline: 1px solid transparent; } .ms-Persona.ms-Persona--available .ms-Persona-presence[data-v-08ee50b8] { background-color: #7FBA00; } .ms-Persona.ms-Persona--away .ms-Persona-presence[data-v-08ee50b8] { background-color: #FCD116; } .ms-Persona.ms-Persona--away .ms-Persona-presenceIcon[data-v-08ee50b8] { position: relative; left: 1px; } .ms-Persona.ms-Persona--blocked .ms-Persona-presence[data-v-08ee50b8] { background-color: \"[theme:white, default: #ffffff]\"; } .ms-Persona.ms-Persona--blocked .ms-Persona-presence[data-v-08ee50b8]::before { content: ''; width: 100%; height: 100%; position: absolute; top: 0; left: 0; box-shadow: 0 0 0 2px #D93B3B inset; border-radius: 50%; } .ms-Persona.ms-Persona--blocked .ms-Persona-presence[data-v-08ee50b8]::after { content: ''; width: 100%; height: 2px; background-color: #D93B3B; transform: rotate(-45deg); position: absolute; top: 5px; left: 0; } .ms-Persona.ms-Persona--blocked.ms-Persona--lg .ms-Persona-presence[data-v-08ee50b8]::after { top: 9px; } .ms-Persona.ms-Persona--blocked.ms-Persona--xl .ms-Persona-presence[data-v-08ee50b8]::after { top: 13px; } .ms-Persona.ms-Persona--busy .ms-Persona-presence[data-v-08ee50b8] { background-color: #D93B3B; } @media screen and (-ms-high-contrast: active) { .ms-Persona.ms-Persona--busy .ms-Persona-presence[data-v-08ee50b8] { background-color: #1AEBFF; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-Persona.ms-Persona--busy .ms-Persona-presence[data-v-08ee50b8] { background-color: #37006E; } } .ms-Persona.ms-Persona--dnd .ms-Persona-presence[data-v-08ee50b8] { background-color: #E81123; } .ms-Persona.ms-Persona--offline .ms-Persona-presence[data-v-08ee50b8] { background-color: #93ABBD; } @media screen and (-ms-high-contrast: active) { .ms-Persona.ms-Persona--offline .ms-Persona-presence[data-v-08ee50b8] { background-color: \"[theme:black, default: #000000]\"; box-shadow: 0 0 0 1px \"[theme:white, default: #ffffff]\" inset; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-Persona.ms-Persona--offline .ms-Persona-presence[data-v-08ee50b8] { background-color: \"[theme:white, default: #ffffff]\"; box-shadow: 0 0 0 1px \"[theme:black, default: #000000]\" inset; } } .ms-Persona.ms-Persona--facePile[data-v-08ee50b8] { display: inline-block; width: auto; } .ms-Persona.ms-Persona--facePile[data-v-08ee50b8]:hover { cursor: pointer; } .ms-Persona.ms-Persona--facePile .ms-Persona-imageArea[data-v-08ee50b8] { position: relative; width: 100%; min-width: 32px; } .ms-Persona.ms-Persona--facePile .ms-Persona-initials[data-v-08ee50b8] { position: relative; } .ms-Persona.ms-Persona--facePile .ms-Persona-details[data-v-08ee50b8] { display: none; } .ms-Persona.ms-Persona--facePile .ms-Persona-presence[data-v-08ee50b8] { display: none; } .ms-Persona.ms-Persona--token[data-v-08ee50b8] { display: inline-flex; width: auto; background-color: \"[theme:neutralLighter, default: #f4f4f4]\"; border-radius: 20px; margin: 4px; } .ms-Persona.ms-Persona--token[data-v-08ee50b8]:hover { cursor: pointer; } .ms-Persona.ms-Persona--token .ms-Persona-actionIcon[data-v-08ee50b8] { border-radius: 20px; display: inline-block; width: 32px; height: 32px; padding: 0; line-height: 30px; transition: background-color 0.167s cubic-bezier(0.1, 0.9, 0.2, 1); text-align: center; } .ms-Persona.ms-Persona--token .ms-Persona-actionIcon[data-v-08ee50b8]:hover { background-color: \"[theme:neutralLight, default: #eaeaea]\"; } .ms-Persona.ms-Persona--token .ms-Persona-imageArea[data-v-08ee50b8] { width: 100%; min-width: 32px; } .ms-Persona.ms-Persona--token .ms-Persona-details[data-v-08ee50b8] { height: 30px; display: inline-block; width: auto; padding-right: 8px; } .ms-Persona.ms-Persona--token .ms-Persona-primaryText[data-v-08ee50b8] { padding-top: 0; line-height: 34px; } .ms-Persona.ms-Persona--token .ms-Persona-initials[data-v-08ee50b8] { position: relative; } ");},
-    beforeMount: function beforeMount(){
-        this.$fabric = {
-            Persona : Persona
-        };
-    },
-    extends :  persona
-}
+var script$J = {
+  loadStyles: loadStyles,
+  beforeMount: function beforeMount() {
+    this.$fabric = {
+      Persona: Persona
+    };
+  },
+  extends: persona
+};
 
-var pivot = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"pivot",staticClass:"ms-Pivot",class:_vm.pivotClass},[_c('ul',{staticClass:"ms-Pivot-links",on:{"click":_vm.clickEvent}},_vm._l((_vm.pivotItems),function(item,index){return _c('li',{staticClass:"ms-Pivot-link",class:{ 'is-selected': index == 0 },attrs:{"tabindex":"1","data-content":item,"title":item}},[_vm._v(" "+_vm._s(item)+" ")])}),0),_vm._v(" "),_vm._t("default")],2)},staticRenderFns: [],
+/* script */
+const __vue_script__$J = script$J;
+
+/* template */
+
+  /* style */
+  const __vue_inject_styles__$J = function (inject) {
+    if (!inject) return
+    inject("data-v-aab71c4c_0", { source: ".ms-Persona[data-v-aab71c4c]{font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;box-sizing:border-box;margin:0;padding:0;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;color:\"[theme:neutralPrimary, default: #333333]\";font-size:14px;font-weight:400;line-height:1;position:relative;width:100%;height:48px;display:table;table-layout:fixed;border-collapse:separate}.ms-Persona .ms-ContextualHost[data-v-aab71c4c]{display:none}.ms-Persona-imageArea[data-v-aab71c4c]{position:absolute;overflow:hidden;text-align:center;max-width:48px;height:48px;border-radius:50%;z-index:0;width:100%;top:0;left:0}@media screen and (-ms-high-contrast:active){.ms-Persona-imageArea[data-v-aab71c4c]{border:1px solid \"[theme:white, default: #ffffff]\"}}@media screen and (-ms-high-contrast:black-on-white){.ms-Persona-imageArea[data-v-aab71c4c]{border:1px solid \"[theme:black, default: #000000]\"}}.ms-Persona-placeholder[data-v-aab71c4c]{color:\"[theme:white, default: #ffffff]\";position:absolute;right:0;left:0;font-size:47px;top:9px;z-index:5}.ms-Persona-initials[data-v-aab71c4c]{color:\"[theme:white, default: #ffffff]\";font-size:17px;font-weight:100;line-height:48px}.ms-Persona-initials.ms-Persona-initials--blueLight[data-v-aab71c4c]{background-color:\"[theme:blueLight, default: #00bcf2]\"}.ms-Persona-initials.ms-Persona-initials--blue[data-v-aab71c4c]{background-color:\"[theme:blue, default: #0078d7]\"}.ms-Persona-initials.ms-Persona-initials--blueDark[data-v-aab71c4c]{background-color:\"[theme:blueDark, default: #002050]\"}.ms-Persona-initials.ms-Persona-initials--teal[data-v-aab71c4c]{background-color:\"[theme:teal, default: #008272]\"}.ms-Persona-initials.ms-Persona-initials--greenLight[data-v-aab71c4c]{background-color:\"[theme:greenLight, default: #bad80a]\"}.ms-Persona-initials.ms-Persona-initials--green[data-v-aab71c4c]{background-color:\"[theme:green, default: #107c10]\"}.ms-Persona-initials.ms-Persona-initials--greenDark[data-v-aab71c4c]{background-color:\"[theme:greenDark, default: #004b1c]\"}.ms-Persona-initials.ms-Persona-initials--magentaLight[data-v-aab71c4c]{background-color:\"[theme:magentaLight, default: #e3008c]\"}.ms-Persona-initials.ms-Persona-initials--magenta[data-v-aab71c4c]{background-color:\"[theme:magenta, default: #b4009e]\"}.ms-Persona-initials.ms-Persona-initials--purpleLight[data-v-aab71c4c]{background-color:\"[theme:purpleLight, default: #b4a0ff]\"}.ms-Persona-initials.ms-Persona-initials--purple[data-v-aab71c4c]{background-color:\"[theme:purple, default: #5c2d91]\"}.ms-Persona-initials.ms-Persona-initials--black[data-v-aab71c4c]{background-color:\"[theme:black, default: #000000]\"}.ms-Persona-initials.ms-Persona-initials--orange[data-v-aab71c4c]{background-color:\"[theme:orange, default: #d83b01]\"}.ms-Persona-initials.ms-Persona-initials--red[data-v-aab71c4c]{background-color:\"[theme:red, default: #e81123]\"}.ms-Persona-initials.ms-Persona-initials--redDark[data-v-aab71c4c]{background-color:\"[theme:redDark, default: #a80000]\"}.ms-Persona-image[data-v-aab71c4c]{position:absolute;top:0;left:0;height:48px;z-index:10;width:100%}.ms-Persona-image[src][data-v-aab71c4c]{display:none}.ms-Persona-presence[data-v-aab71c4c]{background-color:#7fba00;position:absolute;height:12px;width:12px;border-radius:50%;top:auto;left:34px;bottom:-1px;border:2px solid \"[theme:white, default: #ffffff]\";text-align:center}@media screen and (-ms-high-contrast:active){.ms-Persona-presence[data-v-aab71c4c]{border-color:\"[theme:black, default: #000000]\";box-shadow:0 0 0 1px #1aebff inset;color:\"[theme:black, default: #000000]\";background-color:\"[theme:white, default: #ffffff]\"}}@media screen and (-ms-high-contrast:black-on-white){.ms-Persona-presence[data-v-aab71c4c]{border-color:\"[theme:white, default: #ffffff]\";box-shadow:0 0 0 1px #37006e inset;color:\"[theme:white, default: #ffffff]\";background-color:\"[theme:black, default: #000000]\"}}.ms-Persona-presenceIcon[data-v-aab71c4c]{color:\"[theme:white, default: #ffffff]\";font-size:8px;line-height:12px;vertical-align:top}.ms-Persona-details[data-v-aab71c4c]{padding:0 12px;vertical-align:middle;overflow:hidden;text-align:left;padding-left:60px;display:table-cell;width:100%}.ms-Persona-optionalText[data-v-aab71c4c],.ms-Persona-primaryText[data-v-aab71c4c],.ms-Persona-secondaryText[data-v-aab71c4c],.ms-Persona-tertiaryText[data-v-aab71c4c]{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:100%;overflow:hidden;text-overflow:ellipsis}.ms-Persona-primaryText[data-v-aab71c4c]{color:\"[theme:neutralPrimary, default: #333333]\";font-weight:400;font-size:17px;margin-top:-3px;line-height:1.4}.ms-Persona-optionalText[data-v-aab71c4c],.ms-Persona-secondaryText[data-v-aab71c4c],.ms-Persona-tertiaryText[data-v-aab71c4c]{color:\"[theme:neutralSecondary, default: #666666]\";font-weight:400;font-size:12px;white-space:nowrap;line-height:1.3}.ms-Persona-secondaryText[data-v-aab71c4c]{padding-top:3px}.ms-Persona-optionalText[data-v-aab71c4c],.ms-Persona-tertiaryText[data-v-aab71c4c]{padding-top:5px;display:none}.ms-Persona.ms-Persona--tiny[data-v-aab71c4c]{height:30px;display:inline-block}.ms-Persona.ms-Persona--tiny .ms-Persona-imageArea[data-v-aab71c4c]{overflow:visible;display:none}.ms-Persona.ms-Persona--tiny .ms-Persona-presence[data-v-aab71c4c]{right:auto;top:10px;left:0;border:0}@media screen and (-ms-high-contrast:active){.ms-Persona.ms-Persona--tiny .ms-Persona-presence[data-v-aab71c4c]{top:9px;border:1px solid \"[theme:white, default: #ffffff]\"}}@media screen and (-ms-high-contrast:black-on-white){.ms-Persona.ms-Persona--tiny .ms-Persona-presence[data-v-aab71c4c]{border:1px solid \"[theme:black, default: #000000]\"}}.ms-Persona.ms-Persona--tiny .ms-Persona-details[data-v-aab71c4c]{padding-left:20px}.ms-Persona.ms-Persona--tiny .ms-Persona-primaryText[data-v-aab71c4c]{font-size:14px;padding-top:9px}.ms-Persona.ms-Persona--tiny .ms-Persona-secondaryText[data-v-aab71c4c]{display:none}.ms-Persona.ms-Persona--tiny.ms-Persona--readonly[data-v-aab71c4c]{padding:0;background-color:transparent}.ms-Persona.ms-Persona--tiny.ms-Persona--readonly .ms-Persona-primaryText[data-v-aab71c4c]::after{content:\";\"}.ms-Persona.ms-Persona--facePile[data-v-aab71c4c],.ms-Persona.ms-Persona--token[data-v-aab71c4c],.ms-Persona.ms-Persona--xs[data-v-aab71c4c]{height:32px}.ms-Persona.ms-Persona--facePile .ms-Persona-image[data-v-aab71c4c],.ms-Persona.ms-Persona--facePile .ms-Persona-imageArea[data-v-aab71c4c],.ms-Persona.ms-Persona--token .ms-Persona-image[data-v-aab71c4c],.ms-Persona.ms-Persona--token .ms-Persona-imageArea[data-v-aab71c4c],.ms-Persona.ms-Persona--xs .ms-Persona-image[data-v-aab71c4c],.ms-Persona.ms-Persona--xs .ms-Persona-imageArea[data-v-aab71c4c]{max-width:32px;height:32px}.ms-Persona.ms-Persona--facePile .ms-Persona-placeholder[data-v-aab71c4c],.ms-Persona.ms-Persona--token .ms-Persona-placeholder[data-v-aab71c4c],.ms-Persona.ms-Persona--xs .ms-Persona-placeholder[data-v-aab71c4c]{font-size:28px;top:6px}.ms-Persona.ms-Persona--facePile .ms-Persona-initials[data-v-aab71c4c],.ms-Persona.ms-Persona--token .ms-Persona-initials[data-v-aab71c4c],.ms-Persona.ms-Persona--xs .ms-Persona-initials[data-v-aab71c4c]{font-size:12px;line-height:32px}.ms-Persona.ms-Persona--facePile .ms-Persona-presence[data-v-aab71c4c],.ms-Persona.ms-Persona--token .ms-Persona-presence[data-v-aab71c4c],.ms-Persona.ms-Persona--xs .ms-Persona-presence[data-v-aab71c4c]{left:19px}.ms-Persona.ms-Persona--facePile .ms-Persona-details[data-v-aab71c4c],.ms-Persona.ms-Persona--token .ms-Persona-details[data-v-aab71c4c],.ms-Persona.ms-Persona--xs .ms-Persona-details[data-v-aab71c4c]{padding-left:40px}.ms-Persona.ms-Persona--facePile .ms-Persona-primaryText[data-v-aab71c4c],.ms-Persona.ms-Persona--token .ms-Persona-primaryText[data-v-aab71c4c],.ms-Persona.ms-Persona--xs .ms-Persona-primaryText[data-v-aab71c4c]{font-size:14px;padding-top:3px}.ms-Persona.ms-Persona--facePile .ms-Persona-secondaryText[data-v-aab71c4c],.ms-Persona.ms-Persona--token .ms-Persona-secondaryText[data-v-aab71c4c],.ms-Persona.ms-Persona--xs .ms-Persona-secondaryText[data-v-aab71c4c]{display:none}.ms-Persona.ms-Persona--sm[data-v-aab71c4c]{height:40px}.ms-Persona.ms-Persona--sm .ms-Persona-image[data-v-aab71c4c],.ms-Persona.ms-Persona--sm .ms-Persona-imageArea[data-v-aab71c4c]{max-width:40px;height:40px}.ms-Persona.ms-Persona--sm .ms-Persona-placeholder[data-v-aab71c4c]{font-size:38px;top:5px}.ms-Persona.ms-Persona--sm .ms-Persona-initials[data-v-aab71c4c]{font-size:14px;line-height:40px}.ms-Persona.ms-Persona--sm .ms-Persona-presence[data-v-aab71c4c]{left:27px}.ms-Persona.ms-Persona--sm .ms-Persona-details[data-v-aab71c4c]{padding-left:48px}.ms-Persona.ms-Persona--sm .ms-Persona-primaryText[data-v-aab71c4c]{font-size:14px}.ms-Persona.ms-Persona--sm .ms-Persona-primaryText[data-v-aab71c4c],.ms-Persona.ms-Persona--sm .ms-Persona-secondaryText[data-v-aab71c4c]{padding-top:1px}.ms-Persona.ms-Persona--lg[data-v-aab71c4c]{height:72px}.ms-Persona.ms-Persona--lg .ms-Persona-image[data-v-aab71c4c],.ms-Persona.ms-Persona--lg .ms-Persona-imageArea[data-v-aab71c4c]{max-width:72px;height:72px}.ms-Persona.ms-Persona--lg .ms-Persona-placeholder[data-v-aab71c4c]{font-size:67px;top:10px}.ms-Persona.ms-Persona--lg .ms-Persona-initials[data-v-aab71c4c]{font-size:28px;line-height:72px}.ms-Persona.ms-Persona--lg .ms-Persona-presence[data-v-aab71c4c]{left:49px;height:20px;width:20px;border-width:3px}.ms-Persona.ms-Persona--lg .ms-Persona-presenceIcon[data-v-aab71c4c]{line-height:20px;font-size:14px}.ms-Persona.ms-Persona--lg .ms-Persona-details[data-v-aab71c4c]{padding-left:84px}.ms-Persona.ms-Persona--lg .ms-Persona-secondaryText[data-v-aab71c4c]{padding-top:3px}.ms-Persona.ms-Persona--lg .ms-Persona-tertiaryText[data-v-aab71c4c]{padding-top:5px;display:block}.ms-Persona.ms-Persona--xl[data-v-aab71c4c]{height:100px}.ms-Persona.ms-Persona--xl .ms-Persona-image[data-v-aab71c4c],.ms-Persona.ms-Persona--xl .ms-Persona-imageArea[data-v-aab71c4c]{max-width:100px;height:100px}.ms-Persona.ms-Persona--xl .ms-Persona-placeholder[data-v-aab71c4c]{font-size:95px;top:12px}.ms-Persona.ms-Persona--xl .ms-Persona-initials[data-v-aab71c4c]{font-size:42px;line-height:100px}.ms-Persona.ms-Persona--xl .ms-Persona-presence[data-v-aab71c4c]{height:28px;width:28px;left:71px;border-width:4px}.ms-Persona.ms-Persona--xl .ms-Persona-presenceIcon[data-v-aab71c4c]{line-height:28px;font-size:21px;position:relative;top:1px}.ms-Persona.ms-Persona--xl .ms-Persona-details[data-v-aab71c4c]{padding-left:120px}.ms-Persona.ms-Persona--xl .ms-Persona-primaryText[data-v-aab71c4c]{font-size:21px;font-weight:300;margin-top:0}.ms-Persona.ms-Persona--xl .ms-Persona-secondaryText[data-v-aab71c4c]{padding-top:2px}.ms-Persona.ms-Persona--xl .ms-Persona-optionalText[data-v-aab71c4c],.ms-Persona.ms-Persona--xl .ms-Persona-tertiaryText[data-v-aab71c4c]{padding-top:5px;display:block}.ms-Persona.ms-Persona--darkText .ms-Persona-primaryText[data-v-aab71c4c]{color:\"[theme:neutralDark, default: #212121]\"}.ms-Persona.ms-Persona--darkText .ms-Persona-optionalText[data-v-aab71c4c],.ms-Persona.ms-Persona--darkText .ms-Persona-secondaryText[data-v-aab71c4c],.ms-Persona.ms-Persona--darkText .ms-Persona-tertiaryText[data-v-aab71c4c]{color:\"[theme:neutralPrimary, default: #333333]\"}.ms-Persona.ms-Persona--selectable[data-v-aab71c4c]{cursor:pointer;padding:0 10px}.ms-Persona.ms-Persona--selectable[data-v-aab71c4c]:not(.ms-Persona--xl):focus,.ms-Persona.ms-Persona--selectable[data-v-aab71c4c]:not(.ms-Persona--xl):hover{background-color:\"[theme:themeLighter, default: #deecf9]\";outline:1px solid transparent}.ms-Persona.ms-Persona--available .ms-Persona-presence[data-v-aab71c4c]{background-color:#7fba00}.ms-Persona.ms-Persona--away .ms-Persona-presence[data-v-aab71c4c]{background-color:#fcd116}.ms-Persona.ms-Persona--away .ms-Persona-presenceIcon[data-v-aab71c4c]{position:relative;left:1px}.ms-Persona.ms-Persona--blocked .ms-Persona-presence[data-v-aab71c4c]{background-color:\"[theme:white, default: #ffffff]\"}.ms-Persona.ms-Persona--blocked .ms-Persona-presence[data-v-aab71c4c]::before{content:\"\";width:100%;height:100%;position:absolute;top:0;left:0;box-shadow:0 0 0 2px #d93b3b inset;border-radius:50%}.ms-Persona.ms-Persona--blocked .ms-Persona-presence[data-v-aab71c4c]::after{content:\"\";width:100%;height:2px;background-color:#d93b3b;transform:rotate(-45deg);position:absolute;top:5px;left:0}.ms-Persona.ms-Persona--blocked.ms-Persona--lg .ms-Persona-presence[data-v-aab71c4c]::after{top:9px}.ms-Persona.ms-Persona--blocked.ms-Persona--xl .ms-Persona-presence[data-v-aab71c4c]::after{top:13px}.ms-Persona.ms-Persona--busy .ms-Persona-presence[data-v-aab71c4c]{background-color:#d93b3b}@media screen and (-ms-high-contrast:active){.ms-Persona.ms-Persona--busy .ms-Persona-presence[data-v-aab71c4c]{background-color:#1aebff}}@media screen and (-ms-high-contrast:black-on-white){.ms-Persona.ms-Persona--busy .ms-Persona-presence[data-v-aab71c4c]{background-color:#37006e}}.ms-Persona.ms-Persona--dnd .ms-Persona-presence[data-v-aab71c4c]{background-color:#e81123}.ms-Persona.ms-Persona--offline .ms-Persona-presence[data-v-aab71c4c]{background-color:#93abbd}@media screen and (-ms-high-contrast:active){.ms-Persona.ms-Persona--offline .ms-Persona-presence[data-v-aab71c4c]{background-color:\"[theme:black, default: #000000]\";box-shadow:0 0 0 1px \"[theme:white, default: #ffffff]\" inset}}@media screen and (-ms-high-contrast:black-on-white){.ms-Persona.ms-Persona--offline .ms-Persona-presence[data-v-aab71c4c]{background-color:\"[theme:white, default: #ffffff]\";box-shadow:0 0 0 1px \"[theme:black, default: #000000]\" inset}}.ms-Persona.ms-Persona--facePile[data-v-aab71c4c]{display:inline-block;width:auto}.ms-Persona.ms-Persona--facePile[data-v-aab71c4c]:hover{cursor:pointer}.ms-Persona.ms-Persona--facePile .ms-Persona-imageArea[data-v-aab71c4c]{position:relative;width:100%;min-width:32px}.ms-Persona.ms-Persona--facePile .ms-Persona-initials[data-v-aab71c4c]{position:relative}.ms-Persona.ms-Persona--facePile .ms-Persona-details[data-v-aab71c4c]{display:none}.ms-Persona.ms-Persona--facePile .ms-Persona-presence[data-v-aab71c4c]{display:none}.ms-Persona.ms-Persona--token[data-v-aab71c4c]{display:inline-flex;width:auto;background-color:\"[theme:neutralLighter, default: #f4f4f4]\";border-radius:20px;margin:4px}.ms-Persona.ms-Persona--token[data-v-aab71c4c]:hover{cursor:pointer}.ms-Persona.ms-Persona--token .ms-Persona-actionIcon[data-v-aab71c4c]{border-radius:20px;display:inline-block;width:32px;height:32px;padding:0;line-height:30px;transition:background-color 167ms cubic-bezier(.1,.9,.2,1);text-align:center}.ms-Persona.ms-Persona--token .ms-Persona-actionIcon[data-v-aab71c4c]:hover{background-color:\"[theme:neutralLight, default: #eaeaea]\"}.ms-Persona.ms-Persona--token .ms-Persona-imageArea[data-v-aab71c4c]{width:100%;min-width:32px}.ms-Persona.ms-Persona--token .ms-Persona-details[data-v-aab71c4c]{height:30px;display:inline-block;width:auto;padding-right:8px}.ms-Persona.ms-Persona--token .ms-Persona-primaryText[data-v-aab71c4c]{padding-top:0;line-height:34px}.ms-Persona.ms-Persona--token .ms-Persona-initials[data-v-aab71c4c]{position:relative}", map: undefined, media: undefined });
+
+  };
+  /* scoped */
+  const __vue_scope_id__$J = "data-v-aab71c4c";
+  /* module identifier */
+  const __vue_module_identifier__$J = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$J = undefined;
+  /* style inject */
+  const __vue_create_injector__$i = function(context){ return function(scopeId, data){__vue_script__$J.loadStyles && __vue_script__$J.loadStyles(data.source);}};
+  /* style inject SSR */
+  
+
+  
+  var uiPersona = normalizeComponent_1(
+    {},
+    __vue_inject_styles__$J,
+    __vue_script__$J,
+    __vue_scope_id__$J,
+    __vue_is_functional_template__$J,
+    __vue_module_identifier__$J,
+    __vue_create_injector__$i,
+    undefined
+  );
+
+var script$K = {
   name: 'ou-pivot',
-
-  mixins: [
-    size('large'),
-    type('tabs'),
-    eventHub
-  ],
-
+  mixins: [size('large'), type('tabs'), eventHub],
   data: function data() {
     return {
       pivotItems: []
     };
   },
-
   computed: {
     pivotClass: function pivotClass() {
-      var obj;
+      var _ref;
 
-      return ( obj = {}, obj[("ms-Pivot--" + (this.size))] = !!this.size, obj[("ms-Pivot--" + (this.type))] = !!this.type, obj );
+      return _ref = {}, _defineProperty(_ref, "ms-Pivot--".concat(this.size), !!this.size), _defineProperty(_ref, "ms-Pivot--".concat(this.type), !!this.type), _ref;
     }
   },
-
   created: function created() {
     this.eventHub.$on('addPivotItem', this.addPivotItem);
   },
-
   beforeDestroy: function beforeDestroy() {
     this.eventHub.$off('addPivotItem', this.addPivotItem);
   },
-
   mounted: function mounted() {
     new this.$fabric.Pivot(this.$refs.pivot);
   },
-
   methods: {
     addPivotItem: function addPivotItem(label) {
       this.pivotItems.push(label);
     },
-
     clickEvent: function clickEvent(event) {
       if (event.target.tagName == 'LI') {
         this.$emit('click', event);
@@ -4073,6 +5445,38 @@ var pivot = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_v
     }
   }
 };
+
+/* script */
+const __vue_script__$K = script$K;
+
+/* template */
+var __vue_render__$r = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"pivot",staticClass:"ms-Pivot",class:_vm.pivotClass},[_c('ul',{staticClass:"ms-Pivot-links",on:{"click":_vm.clickEvent}},_vm._l((_vm.pivotItems),function(item,index){return _c('li',{staticClass:"ms-Pivot-link",class:{ 'is-selected': index == 0 },attrs:{"tabindex":"1","data-content":item,"title":item}},[_vm._v("\n      "+_vm._s(item)+"\n    ")])}),0),_vm._v(" "),_vm._t("default")],2)};
+var __vue_staticRenderFns__$r = [];
+
+  /* style */
+  const __vue_inject_styles__$K = undefined;
+  /* scoped */
+  const __vue_scope_id__$K = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$K = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$K = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var pivot = normalizeComponent_1(
+    { render: __vue_render__$r, staticRenderFns: __vue_staticRenderFns__$r },
+    __vue_inject_styles__$K,
+    __vue_script__$K,
+    __vue_scope_id__$K,
+    __vue_is_functional_template__$K,
+    __vue_module_identifier__$K,
+    undefined,
+    undefined
+  );
 
 var Pivot = function () {
   function Pivot(container) {
@@ -4142,45 +5546,148 @@ var Pivot = function () {
   return Pivot;
 }();
 
-var uiPivot = {_scopeId: 'data-v-2646c164',
-    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-Pivot[data-v-2646c164] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; font-size: 14px; font-weight: 400; } .ms-Pivot-links[data-v-2646c164] { font-size: 0; height: 40px; list-style-type: none; padding: 0; white-space: nowrap; } .ms-Pivot-link[data-v-2646c164] { color: \"[theme:neutralPrimary, default: #333333]\"; display: inline-block; font-size: 14px; font-weight: 400; line-height: 40px; margin-right: 8px; padding: 0 8px; text-align: center; vertical-align: top; } .ms-Pivot-link[data-v-2646c164]:hover { cursor: pointer; } .ms-Pivot-link[data-v-2646c164]::before { background-color: transparent; bottom: 0; content: ''; height: 2px; left: 8px; position: absolute; right: 8px; transition: background-color 0.267s cubic-bezier(0.1, 0.25, 0.75, 0.9); } .ms-Pivot-link[data-v-2646c164]::after { color: transparent; content: attr(title); display: block; font-weight: bold; height: 1px; overflow: hidden; visibility: hidden; } .ms-Pivot-link.is-selected[data-v-2646c164] { font-weight: 600; position: relative; } .ms-Pivot-link.is-selected[data-v-2646c164]::before { background-color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-Pivot-link.is-disabled[data-v-2646c164] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164] { color: \"[theme:neutralSecondary, default: #666666]\"; } .ms-Pivot-link.ms-Pivot-link--overflow.is-selected[data-v-2646c164] { color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164]:hover:not(.is-selected), .ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164]:focus:not(.is-selected) { color: \"[theme:neutralDark, default: #212121]\"; } .ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164]:active { color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-Pivot-ellipsis[data-v-2646c164] { font-size: 15px; position: relative; top: 0; } .ms-Pivot-content[data-v-2646c164] { display: none; margin-top: 20px; } .ms-Pivot.ms-Pivot--large .ms-Pivot-link[data-v-2646c164] { font-size: 17px; } .ms-Pivot.ms-Pivot--large .ms-Pivot-link.is-selected[data-v-2646c164] { font-weight: 300; } .ms-Pivot.ms-Pivot--large .ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164]::after { font-size: 17px; } .ms-Pivot.ms-Pivot--tabs .ms-Pivot-link[data-v-2646c164] { height: 40px; background-color: \"[theme:neutralLighter, default: #f4f4f4]\"; line-height: 40px; margin-right: -2px; padding: 0 10px; } .ms-Pivot.ms-Pivot--tabs .ms-Pivot-link[data-v-2646c164]:hover:not(.is-selected):not(.ms-Pivot-link--overflow), .ms-Pivot.ms-Pivot--tabs .ms-Pivot-link[data-v-2646c164]:focus:not(.is-selected):not(.ms-Pivot-link--overflow) { color: \"[theme:black, default: #000000]\"; } .ms-Pivot.ms-Pivot--tabs .ms-Pivot-link[data-v-2646c164]:active { color: \"[theme:white, default: #ffffff]\"; background-color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-Pivot.ms-Pivot--tabs .ms-Pivot-link.is-selected[data-v-2646c164] { background-color: \"[theme:themePrimary, default: #0078d7]\"; color: \"[theme:white, default: #ffffff]\"; font-weight: 300; } .ms-Pivot.ms-Pivot--tabs .ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164]:hover:not(.is-selected), .ms-Pivot.ms-Pivot--tabs .ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164]:focus:not(.is-selected) { background-color: \"[theme:white, default: #ffffff]\"; } .ms-Pivot.ms-Pivot--tabs .ms-Pivot-link.ms-Pivot-link--overflow[data-v-2646c164]:active { background-color: \"[theme:themePrimary, default: #0078d7]\"; } @media screen and (-ms-high-contrast: active) { .ms-Pivot.ms-Pivot--tabs .ms-Pivot-link.is-selected[data-v-2646c164] { font-weight: 600; } } ");},
-    beforeMount: function beforeMount(){
-        this.$fabric = {
-            Pivot : Pivot
-        };
-    },
-    extends :  pivot
-}
+var script$L = {
+  loadStyles: loadStyles,
+  beforeMount: function beforeMount() {
+    this.$fabric = {
+      Pivot: Pivot
+    };
+  },
+  extends: pivot
+};
 
-var PivotItem = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-Pivot-content",attrs:{"data-content":_vm.label}},[_vm._t("default")],2)},staticRenderFns: [],
+/* script */
+const __vue_script__$L = script$L;
+
+/* template */
+
+  /* style */
+  const __vue_inject_styles__$L = function (inject) {
+    if (!inject) return
+    inject("data-v-777772a0_0", { source: ".ms-Pivot[data-v-777772a0]{font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;box-sizing:border-box;margin:0;padding:0;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;font-size:14px;font-weight:400}.ms-Pivot-links[data-v-777772a0]{font-size:0;height:40px;list-style-type:none;padding:0;white-space:nowrap}.ms-Pivot-link[data-v-777772a0]{color:\"[theme:neutralPrimary, default: #333333]\";display:inline-block;font-size:14px;font-weight:400;line-height:40px;margin-right:8px;padding:0 8px;text-align:center;vertical-align:top}.ms-Pivot-link[data-v-777772a0]:hover{cursor:pointer}.ms-Pivot-link[data-v-777772a0]::before{background-color:transparent;bottom:0;content:\"\";height:2px;left:8px;position:absolute;right:8px;transition:background-color 267ms cubic-bezier(.1,.25,.75,.9)}.ms-Pivot-link[data-v-777772a0]::after{color:transparent;content:attr(title);display:block;font-weight:700;height:1px;overflow:hidden;visibility:hidden}.ms-Pivot-link.is-selected[data-v-777772a0]{font-weight:600;position:relative}.ms-Pivot-link.is-selected[data-v-777772a0]::before{background-color:\"[theme:themePrimary, default: #0078d7]\"}.ms-Pivot-link.is-disabled[data-v-777772a0]{color:\"[theme:neutralTertiary, default: #a6a6a6]\"}.ms-Pivot-link.ms-Pivot-link--overflow[data-v-777772a0]{color:\"[theme:neutralSecondary, default: #666666]\"}.ms-Pivot-link.ms-Pivot-link--overflow.is-selected[data-v-777772a0]{color:\"[theme:themePrimary, default: #0078d7]\"}.ms-Pivot-link.ms-Pivot-link--overflow[data-v-777772a0]:focus:not(.is-selected),.ms-Pivot-link.ms-Pivot-link--overflow[data-v-777772a0]:hover:not(.is-selected){color:\"[theme:neutralDark, default: #212121]\"}.ms-Pivot-link.ms-Pivot-link--overflow[data-v-777772a0]:active{color:\"[theme:themePrimary, default: #0078d7]\"}.ms-Pivot-ellipsis[data-v-777772a0]{font-size:15px;position:relative;top:0}.ms-Pivot-content[data-v-777772a0]{display:none;margin-top:20px}.ms-Pivot.ms-Pivot--large .ms-Pivot-link[data-v-777772a0]{font-size:17px}.ms-Pivot.ms-Pivot--large .ms-Pivot-link.is-selected[data-v-777772a0]{font-weight:300}.ms-Pivot.ms-Pivot--large .ms-Pivot-link.ms-Pivot-link--overflow[data-v-777772a0]::after{font-size:17px}.ms-Pivot.ms-Pivot--tabs .ms-Pivot-link[data-v-777772a0]{height:40px;background-color:\"[theme:neutralLighter, default: #f4f4f4]\";line-height:40px;margin-right:-2px;padding:0 10px}.ms-Pivot.ms-Pivot--tabs .ms-Pivot-link[data-v-777772a0]:focus:not(.is-selected):not(.ms-Pivot-link--overflow),.ms-Pivot.ms-Pivot--tabs .ms-Pivot-link[data-v-777772a0]:hover:not(.is-selected):not(.ms-Pivot-link--overflow){color:\"[theme:black, default: #000000]\"}.ms-Pivot.ms-Pivot--tabs .ms-Pivot-link[data-v-777772a0]:active{color:\"[theme:white, default: #ffffff]\";background-color:\"[theme:themePrimary, default: #0078d7]\"}.ms-Pivot.ms-Pivot--tabs .ms-Pivot-link.is-selected[data-v-777772a0]{background-color:\"[theme:themePrimary, default: #0078d7]\";color:\"[theme:white, default: #ffffff]\";font-weight:300}.ms-Pivot.ms-Pivot--tabs .ms-Pivot-link.ms-Pivot-link--overflow[data-v-777772a0]:focus:not(.is-selected),.ms-Pivot.ms-Pivot--tabs .ms-Pivot-link.ms-Pivot-link--overflow[data-v-777772a0]:hover:not(.is-selected){background-color:\"[theme:white, default: #ffffff]\"}.ms-Pivot.ms-Pivot--tabs .ms-Pivot-link.ms-Pivot-link--overflow[data-v-777772a0]:active{background-color:\"[theme:themePrimary, default: #0078d7]\"}@media screen and (-ms-high-contrast:active){.ms-Pivot.ms-Pivot--tabs .ms-Pivot-link.is-selected[data-v-777772a0]{font-weight:600}}", map: undefined, media: undefined });
+
+  };
+  /* scoped */
+  const __vue_scope_id__$L = "data-v-777772a0";
+  /* module identifier */
+  const __vue_module_identifier__$L = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$L = undefined;
+  /* style inject */
+  const __vue_create_injector__$j = function(context){ return function(scopeId, data){__vue_script__$L.loadStyles && __vue_script__$L.loadStyles(data.source);}};
+  /* style inject SSR */
+  
+
+  
+  var uiPivot = normalizeComponent_1(
+    {},
+    __vue_inject_styles__$L,
+    __vue_script__$L,
+    __vue_scope_id__$L,
+    __vue_is_functional_template__$L,
+    __vue_module_identifier__$L,
+    __vue_create_injector__$j,
+    undefined
+  );
+
+//
+//
+//
+var script$M = {
   name: 'ou-pivot-item',
-
   inject: ['eventHub'],
-
   props: {
     label: {
       type: String,
       required: true
     }
   },
-
   beforeMount: function beforeMount() {
     this.eventHub.$emit('addPivotItem', this.label);
   }
 };
 
-var uiPivotItem = {
-    beforeCreate: function beforeCreate(){ loadStyles("");},
-    extends :  PivotItem
-}
+/* script */
+const __vue_script__$M = script$M;
 
-var ProgressIndicator = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"progressIndicator",staticClass:"ms-ProgressIndicator"},[(_vm.name)?_c('div',{staticClass:"ms-ProgressIndicator-itemName"},[_vm._v(_vm._s(_vm.name))]):_vm._e(),_vm._v(" "),_vm._m(0),_vm._v(" "),(_vm.description)?_c('div',{staticClass:"ms-ProgressIndicator-itemDescription"},[_vm._v(_vm._s(_vm.description))]):_vm._e()])},staticRenderFns: [function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-ProgressIndicator-itemProgress"},[_c('div',{staticClass:"ms-ProgressIndicator-progressTrack"}),_vm._v(" "),_c('div',{staticClass:"ms-ProgressIndicator-progressBar"})])}],
+/* template */
+var __vue_render__$s = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-Pivot-content",attrs:{"data-content":_vm.label}},[_vm._t("default")],2)};
+var __vue_staticRenderFns__$s = [];
+
+  /* style */
+  const __vue_inject_styles__$M = undefined;
+  /* scoped */
+  const __vue_scope_id__$M = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$M = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$M = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var PivotItem = normalizeComponent_1(
+    { render: __vue_render__$s, staticRenderFns: __vue_staticRenderFns__$s },
+    __vue_inject_styles__$M,
+    __vue_script__$M,
+    __vue_scope_id__$M,
+    __vue_is_functional_template__$M,
+    __vue_module_identifier__$M,
+    undefined,
+    undefined
+  );
+
+var script$N = {
+  extends: PivotItem
+};
+
+/* script */
+const __vue_script__$N = script$N;
+
+/* template */
+
+  /* style */
+  const __vue_inject_styles__$N = undefined;
+  /* scoped */
+  const __vue_scope_id__$N = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$N = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$N = undefined;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var uiPivotItem = normalizeComponent_1(
+    {},
+    __vue_inject_styles__$N,
+    __vue_script__$N,
+    __vue_scope_id__$N,
+    __vue_is_functional_template__$N,
+    __vue_module_identifier__$N,
+    undefined,
+    undefined
+  );
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var script$O = {
   name: 'ou-progress-indicator',
-
   props: {
     name: String,
     description: String,
-
     percent: {
       type: Number,
       validator: function validator(value) {
@@ -4188,32 +5695,59 @@ var ProgressIndicator = {render: function(){var _vm=this;var _h=_vm.$createEleme
       }
     }
   },
-
   data: function data() {
     return {
       progressIndicatorInstance: null
     };
   },
-
   watch: {
     percent: function percent() {
       this.setProgressIndicator();
     }
   },
-
   mounted: function mounted() {
     var progressIndicatorElement = this.$refs.progressIndicator;
-
     this.progressIndicatorInstance = new this.$fabric.ProgressIndicator(progressIndicatorElement);
     this.setProgressIndicator();
   },
-
   methods: {
     setProgressIndicator: function setProgressIndicator() {
       this.progressIndicatorInstance.setProgressPercent(this.percent);
     }
   }
 };
+
+/* script */
+const __vue_script__$O = script$O;
+
+/* template */
+var __vue_render__$t = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"progressIndicator",staticClass:"ms-ProgressIndicator"},[(_vm.name)?_c('div',{staticClass:"ms-ProgressIndicator-itemName"},[_vm._v(_vm._s(_vm.name))]):_vm._e(),_vm._v(" "),_vm._m(0),_vm._v(" "),(_vm.description)?_c('div',{staticClass:"ms-ProgressIndicator-itemDescription"},[_vm._v(_vm._s(_vm.description))]):_vm._e()])};
+var __vue_staticRenderFns__$t = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ms-ProgressIndicator-itemProgress"},[_c('div',{staticClass:"ms-ProgressIndicator-progressTrack"}),_vm._v(" "),_c('div',{staticClass:"ms-ProgressIndicator-progressBar"})])}];
+
+  /* style */
+  const __vue_inject_styles__$O = undefined;
+  /* scoped */
+  const __vue_scope_id__$O = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$O = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$O = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var ProgressIndicator = normalizeComponent_1(
+    { render: __vue_render__$t, staticRenderFns: __vue_staticRenderFns__$t },
+    __vue_inject_styles__$O,
+    __vue_script__$O,
+    __vue_scope_id__$O,
+    __vue_is_functional_template__$O,
+    __vue_module_identifier__$O,
+    undefined,
+    undefined
+  );
 
 var ProgressIndicator$1 = function () {
   function ProgressIndicator(container) {
@@ -4254,74 +5788,102 @@ var ProgressIndicator$1 = function () {
   return ProgressIndicator;
 }();
 
-var uiProgressIndicator = {_scopeId: 'data-v-134f1924',
-    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-ProgressIndicator[data-v-134f1924] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; font-weight: 400; } .ms-ProgressIndicator-itemName[data-v-134f1924] { color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 14px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding-top: 4px; line-height: 20px; } .ms-ProgressIndicator-itemDescription[data-v-134f1924] { color: \"[theme:neutralSecondaryAlt, default: #767676]\"; font-size: 11px; line-height: 18px; } .ms-ProgressIndicator-itemProgress[data-v-134f1924] { position: relative; width: 180px; height: 2px; padding: 8px 0; } .ms-ProgressIndicator-progressTrack[data-v-134f1924] { position: absolute; width: 100%; height: 2px; background-color: \"[theme:neutralLight, default: #eaeaea]\"; outline: 1px solid transparent; } .ms-ProgressIndicator-progressBar[data-v-134f1924] { background-color: \"[theme:themePrimary, default: #0078d7]\"; height: 2px; position: absolute; transition: width .3s ease; width: 0; } @media screen and (-ms-high-contrast: active) { .ms-ProgressIndicator-progressBar[data-v-134f1924] { background-color: \"[theme:white, default: #ffffff]\"; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-ProgressIndicator-progressBar[data-v-134f1924] { background-color: \"[theme:black, default: #000000]\"; } } ");},
-    beforeMount: function beforeMount(){
-        this.$fabric = {
-            ProgressIndicator : ProgressIndicator$1
-        };
-    },
-    extends :  ProgressIndicator
-}
+var script$P = {
+  loadStyles: loadStyles,
+  beforeMount: function beforeMount() {
+    this.$fabric = {
+      ProgressIndicator: ProgressIndicator$1
+    };
+  },
+  extends: ProgressIndicator
+};
 
-var searchBox = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"searchBox",staticClass:"ms-SearchBox",class:_vm.searchBoxClass},[_c('input',{ref:"searchBoxInput",staticClass:"ms-SearchBox-field",attrs:{"type":"text"},domProps:{"value":_vm.value},on:{"input":_vm.updateValue}}),_vm._v(" "),_c('label',{staticClass:"ms-SearchBox-label"},[_c('i',{staticClass:"ms-SearchBox-icon ms-Icon ms-Icon--Search"}),_vm._v(" "),(!_vm.hasValue)?_c('span',{staticClass:"ms-SearchBox-text"},[_vm._v(_vm._s(_vm.placeholder))]):_vm._e()]),_vm._v(" "),_c('div',{staticClass:"ms-CommandButton ms-SearchBox-clear ms-CommandButton--noLabel",on:{"mousedown":_vm.clearValue}},[_vm._m(0)])])},staticRenderFns: [function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('button',{staticClass:"ms-CommandButton-button"},[_c('span',{staticClass:"ms-CommandButton-icon"},[_c('i',{staticClass:"ms-Icon ms-Icon--Clear"})]),_vm._v(" "),_c('span',{staticClass:"ms-CommandButton-label"})])}],
+/* script */
+const __vue_script__$P = script$P;
+
+/* template */
+
+  /* style */
+  const __vue_inject_styles__$P = function (inject) {
+    if (!inject) return
+    inject("data-v-18bcd5df_0", { source: ".ms-ProgressIndicator[data-v-18bcd5df]{font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;font-weight:400}.ms-ProgressIndicator-itemName[data-v-18bcd5df]{color:\"[theme:neutralPrimary, default: #333333]\";font-size:14px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;padding-top:4px;line-height:20px}.ms-ProgressIndicator-itemDescription[data-v-18bcd5df]{color:\"[theme:neutralSecondaryAlt, default: #767676]\";font-size:11px;line-height:18px}.ms-ProgressIndicator-itemProgress[data-v-18bcd5df]{position:relative;width:180px;height:2px;padding:8px 0}.ms-ProgressIndicator-progressTrack[data-v-18bcd5df]{position:absolute;width:100%;height:2px;background-color:\"[theme:neutralLight, default: #eaeaea]\";outline:1px solid transparent}.ms-ProgressIndicator-progressBar[data-v-18bcd5df]{background-color:\"[theme:themePrimary, default: #0078d7]\";height:2px;position:absolute;transition:width .3s ease;width:0}@media screen and (-ms-high-contrast:active){.ms-ProgressIndicator-progressBar[data-v-18bcd5df]{background-color:\"[theme:white, default: #ffffff]\"}}@media screen and (-ms-high-contrast:black-on-white){.ms-ProgressIndicator-progressBar[data-v-18bcd5df]{background-color:\"[theme:black, default: #000000]\"}}", map: undefined, media: undefined });
+
+  };
+  /* scoped */
+  const __vue_scope_id__$P = "data-v-18bcd5df";
+  /* module identifier */
+  const __vue_module_identifier__$P = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$P = undefined;
+  /* style inject */
+  const __vue_create_injector__$k = function(context){ return function(scopeId, data){__vue_script__$P.loadStyles && __vue_script__$P.loadStyles(data.source);}};
+  /* style inject SSR */
+  
+
+  
+  var uiProgressIndicator = normalizeComponent_1(
+    {},
+    __vue_inject_styles__$P,
+    __vue_script__$P,
+    __vue_scope_id__$P,
+    __vue_is_functional_template__$P,
+    __vue_module_identifier__$P,
+    __vue_create_injector__$k,
+    undefined
+  );
+
+var script$Q = {
   name: 'ou-search-box',
-
   mixins: [type('commandBar')],
-
   props: {
     value: String,
     placeholder: String,
-
     collapsed: {
       type: Boolean,
       default: false
     }
   },
-
   data: function data() {
     return {
       hasValue: !!this.value,
       searchBoxInstance: null
     };
   },
-
   computed: {
     searchBoxClass: function searchBoxClass() {
-      var obj;
+      var _ref;
 
-      return ( obj = {}, obj[("ms-SearchBox--" + (this.type))] = !!this.type, obj['is-collapsed'] =  this.collapsed, obj );
+      return _ref = {}, _defineProperty(_ref, "ms-SearchBox--".concat(this.type), !!this.type), _defineProperty(_ref, 'is-collapsed', this.collapsed), _ref;
     }
   },
-
   mounted: function mounted() {
-    this.searchBoxInstance = new this.$fabric.SearchBox(this.$refs.searchBox);
-
-    // Overwrite the default blur event on searchBoxField
+    this.searchBoxInstance = new this.$fabric.SearchBox(this.$refs.searchBox); // Overwrite the default blur event on searchBoxField
     // to prevent lose content when searchBox blur.
     // You can see here https://github.com/OfficeDev/office-ui-fabric-js/issues/301
+
     this.searchBoxInstance._searchBoxField.removeEventListener('blur', this.searchBoxInstance._boundHandleBlur, true);
+
     this.searchBoxInstance._searchBoxField.addEventListener('blur', this.blurEvent, true);
   },
-
   methods: {
     updateValue: function updateValue(event) {
       this.$emit('input', event.target.value);
     },
-
     clearValue: function clearValue() {
       this.$emit('input', '');
     },
-
     blurEvent: function blurEvent() {
       var self = this.searchBoxInstance;
 
       if (!self._clearOnly) {
         self._searchBox.removeEventListener('keyup', self._boundEnableClose);
+
         setTimeout(function () {
           if (!self._searchBox.contains(document.activeElement) && self._searchBoxField.value == '') {
             self._clearSearchBox();
+
             self._collapseSearchBox();
+
             self.setCollapsedListeners();
           }
         }, 10);
@@ -4334,37 +5896,129 @@ var searchBox = {render: function(){var _vm=this;var _h=_vm.$createElement;var _
   }
 };
 
-var uiSearchbox = {_scopeId: 'data-v-880410a2',
-    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-Label[data-v-880410a2] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 12px; font-weight: 400; box-sizing: border-box; display: block; padding: 5px 0; } .ms-Label.is-required[data-v-880410a2]::after { content: ' *'; color: \"[theme:error, default: #a80000]\"; } .ms-Label.is-disabled[data-v-880410a2] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } /* searchbox uses mixins from label */ .ms-CommandButton[data-v-880410a2] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; display: inline-block; position: relative; vertical-align: top; } .ms-CommandButton.is-hidden[data-v-880410a2] { display: none; } .ms-CommandButton:disabled .ms-CommandButton-button[data-v-880410a2], .ms-CommandButton.is-disabled .ms-CommandButton-button[data-v-880410a2] { cursor: default; } .ms-CommandButton:disabled .ms-CommandButton-button[data-v-880410a2]:hover, .ms-CommandButton.is-disabled .ms-CommandButton-button[data-v-880410a2]:hover { background-color: \"[theme:themeLighterAlt, default: #eff6fc]\"; } .ms-CommandButton:disabled .ms-CommandButton-button .ms-CommandButton-label[data-v-880410a2], .ms-CommandButton.is-disabled .ms-CommandButton-button .ms-CommandButton-label[data-v-880410a2] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-CommandButton:disabled .ms-CommandButton-button .ms-CommandButton-icon[data-v-880410a2], .ms-CommandButton.is-disabled .ms-CommandButton-button .ms-CommandButton-icon[data-v-880410a2] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-CommandButton .ms-ContextualMenu[data-v-880410a2] { display: none; } .ms-CommandButton-button[data-v-880410a2], .ms-CommandButton-splitIcon[data-v-880410a2] { box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 14px; font-weight: 400; cursor: pointer; display: inline-block; height: 40px; line-height: 40px; outline: 1px solid transparent; padding: 0 8px; position: relative; vertical-align: top; background: transparent; } .ms-CommandButton-button[data-v-880410a2]:hover, .ms-CommandButton-splitIcon[data-v-880410a2]:hover { background-color: \"[theme:neutralLight, default: #eaeaea]\"; } .ms-CommandButton-button:hover .ms-CommandButton-label[data-v-880410a2], .ms-CommandButton-splitIcon:hover .ms-CommandButton-label[data-v-880410a2] { color: \"[theme:neutralDark, default: #212121]\"; } .ms-CommandButton-button[data-v-880410a2]:active, .ms-CommandButton-splitIcon[data-v-880410a2]:active { background-color: \"[theme:neutralLight, default: #eaeaea]\"; } .ms-CommandButton-button[data-v-880410a2]:focus::before, .ms-CommandButton-splitIcon[data-v-880410a2]:focus::before { top: 3px; left: 3px; right: 3px; bottom: 3px; border: 1px solid \"[theme:neutralPrimary, default: #333333]\"; position: absolute; z-index: 10; content: ''; outline: none; } .ms-CommandButton-button[data-v-880410a2]:focus, .ms-CommandButton-splitIcon[data-v-880410a2]:focus { outline: 0; } @media only screen and (max-width: 639px) { .ms-CommandButton-button[data-v-880410a2], .ms-CommandButton-splitIcon[data-v-880410a2] { height: 44px; } .ms-CommandButton-button .ms-CommandButton-icon[data-v-880410a2], .ms-CommandButton-splitIcon .ms-CommandButton-icon[data-v-880410a2] { font-size: 20px; } .ms-CommandButton-button .ms-CommandButton-label[data-v-880410a2], .ms-CommandButton-splitIcon .ms-CommandButton-label[data-v-880410a2] { line-height: 44px; } } .ms-CommandButton-button[data-v-880410a2] { border: 0; margin: 0; } .ms-CommandButton + .ms-CommandButton[data-v-880410a2] { margin-left: 8px; } @media only screen and (max-width: 639px) { .ms-CommandButton + .ms-CommandButton[data-v-880410a2] { margin-left: 4px; } } .ms-CommandButton-icon[data-v-880410a2] { display: inline-block; margin-right: 8px; position: relative; font-size: 16px; min-width: 16px; height: 100%; } .ms-CommandButton-icon .ms-Icon[data-v-880410a2] { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); } .ms-CommandButton-label[data-v-880410a2] { font-size: 14px; font-weight: 400; color: \"[theme:neutralPrimary, default: #333333]\"; line-height: 40px; height: 100%; display: inline-block; vertical-align: top; } .ms-CommandButton-label[data-v-880410a2]:hover { color: \"[theme:neutralDark, default: #212121]\"; } .ms-CommandButton-dropdownIcon[data-v-880410a2], .ms-CommandButton-splitIcon[data-v-880410a2] { display: inline-block; position: relative; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 12px; font-weight: 300; min-width: 12px; height: 100%; vertical-align: top; margin-left: 8px; } .ms-CommandButton-dropdownIcon .ms-Icon[data-v-880410a2], .ms-CommandButton-splitIcon .ms-Icon[data-v-880410a2] { line-height: normal; padding-top: 16px; } .ms-CommandButton-dropdownIcon[data-v-880410a2]:focus::before, .ms-CommandButton-splitIcon[data-v-880410a2]:focus::before { top: 3px; left: 3px; right: 3px; bottom: 3px; border: 1px solid \"[theme:neutralPrimary, default: #333333]\"; position: absolute; z-index: 10; content: ''; outline: none; } @media only screen and (max-width: 639px) { .ms-CommandButton-dropdownIcon[data-v-880410a2], .ms-CommandButton-splitIcon[data-v-880410a2] { display: none; } } .ms-CommandButton-splitIcon[data-v-880410a2] { margin-left: -2px; width: 27px; border: 0; } .ms-CommandButton-splitIcon .ms-Icon[data-v-880410a2] { margin-left: -1px; position: relative; padding-top: 16px; } .ms-CommandButton-splitIcon .ms-Icon[data-v-880410a2]::after { position: absolute; content: ' '; width: 1px; height: 16px; top: 12px; left: -8px; border-left: 1px solid \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; } .ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-icon[data-v-880410a2] { margin-right: 0; } .ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-label[data-v-880410a2] { display: none; } .ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-button[data-v-880410a2] { padding: 0 12px; } .ms-CommandButton.ms-CommandButton--inline .ms-CommandButton-button[data-v-880410a2] { background: none; } .ms-CommandButton.ms-CommandButton--actionButton .ms-CommandButton-button[data-v-880410a2] { width: 50px; height: 40px; } .ms-CommandButton.ms-CommandButton--actionButton .ms-CommandButton-icon[data-v-880410a2] { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 16px; height: 16px; padding-right: 0; } .ms-CommandButton.ms-CommandButton--pivot.is-active[data-v-880410a2]::before { content: ''; height: 2px; position: absolute; left: 0; right: 0; background-color: \"[theme:themePrimary, default: #0078d7]\"; bottom: 0; z-index: 5; } .ms-CommandButton.ms-CommandButton--pivot[data-v-880410a2]:hover::before { content: ''; height: 2px; position: absolute; left: 0; right: 0; background-color: \"[theme:themePrimary, default: #0078d7]\"; bottom: 0; z-index: 5; } .ms-CommandButton.ms-CommandButton--textOnly .ms-CommandButton-label[data-v-880410a2], .ms-CommandButton.ms-CommandButton--pivot .ms-CommandButton-label[data-v-880410a2] { display: inline-block; } @media only screen and (max-width: 479px) { .ms-CommandButton.ms-CommandButton--textOnly .ms-CommandButton-label[data-v-880410a2], .ms-CommandButton.ms-CommandButton--pivot .ms-CommandButton-label[data-v-880410a2] { font-size: 16px; } } /* searchbox uses classes from CommandButton */ .ms-SearchBox[data-v-880410a2] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; height: 36px; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 14px; font-weight: 400; position: relative; margin-bottom: 10px; display: inline-block; overflow: hidden; background-color: \"[theme:white, default: #ffffff]\"; } .ms-SearchBox.is-active[data-v-880410a2] { z-index: 10; } .ms-SearchBox.is-active .ms-SearchBox-label[data-v-880410a2] { display: none; } .ms-SearchBox.is-active .ms-SearchBox-clear[data-v-880410a2] { display: block; } .ms-SearchBox[data-v-880410a2]:hover { background-color: \"[theme:themeLighter, default: #deecf9]\"; } .ms-SearchBox:hover .ms-SearchBox-label[data-v-880410a2] { color: \"[theme:black, default: #000000]\"; } .ms-SearchBox:hover .ms-SearchBox-label .ms-Icon[data-v-880410a2] { color: \"[theme:neutralPrimary, default: #333333]\"; } .ms-SearchBox.is-disabled[data-v-880410a2] { background-color: #F4F4F4; pointer-events: none; } .ms-SearchBox.is-disabled .ms-SearchBox-label[data-v-880410a2] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-SearchBox.is-disabled .ms-SearchBox-icon[data-v-880410a2] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-SearchBox.is-disabled .ms-SearchBox-field[data-v-880410a2] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; background-color: transparent; border-color: \"[theme:neutralLighter, default: #f4f4f4]\"; cursor: default; } .ms-SearchBox-clear[data-v-880410a2] { display: none; position: absolute; top: 0; right: 0; z-index: 10; } .ms-SearchBox-clear .ms-CommandButton-button[data-v-880410a2] { background-color: \"[theme:themePrimary, default: #0078d7]\"; color: \"[theme:white, default: #ffffff]\"; height: 36px; } .ms-SearchBox-clear .ms-CommandButton-icon[data-v-880410a2] { color: \"[theme:white, default: #ffffff]\"; } .ms-SearchBox-icon[data-v-880410a2] { position: relative; top: 50%; transform: translateY(-50%); display: inline-block; font-size: 16px; width: 16px; margin-left: 12px; margin-right: 6px; color: \"[theme:themePrimary, default: #0078d7]\"; vertical-align: top; } .ms-SearchBox-field[data-v-880410a2] { position: relative; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; border: 1px solid \"[theme:themeTertiary, default: #71afe5]\"; outline: transparent 1px solid; font-weight: 300; font-size: 14px; color: \"[theme:black, default: #000000]\"; height: 36px; padding: 6px 3px 7px 45px; width: 208px; background-color: transparent; z-index: 5; transition: padding-left 0.167s; } .ms-SearchBox-field[data-v-880410a2]:focus { padding: 6px 32px 7px 10px; border-color: \"[theme:themePrimary, default: #0078d7]\"; background-color: \"[theme:themeLighter, default: #deecf9]\"; } .ms-SearchBox-field[data-v-880410a2]::-ms-clear { display: none; } .ms-SearchBox-label[data-v-880410a2] { position: absolute; top: 0; left: 0; height: 36px; line-height: 36px; color: \"[theme:neutralSecondary, default: #666666]\"; } .ms-SearchBox.ms-SearchBox--commandBar[data-v-880410a2] { background-color: \"[theme:white, default: #ffffff]\"; width: 208px; height: 40px; } .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-field[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-label[data-v-880410a2] { height: 40px; } .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-field[data-v-880410a2] { transition: none; border: 0; } .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-field[data-v-880410a2]:focus { background-color: transparent; padding: 6px 3px 7px 45px; } .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-clear[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-filter[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-exit[data-v-880410a2] { display: none; position: absolute; top: 0; z-index: 10; color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-clear .ms-CommandButton-button[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-filter .ms-CommandButton-button[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-exit .ms-CommandButton-button[data-v-880410a2] { height: 40px; background-color: transparent; } .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-clear[data-v-880410a2] { right: 8px; } .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-filter[data-v-880410a2] { right: 8px; } .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-filter .ms-CommandButton-icon[data-v-880410a2] { color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-SearchBox.ms-SearchBox--commandBar[data-v-880410a2]::before { position: absolute; content: ' '; right: 0; bottom: 0; left: 0; margin: 0 8px; border-bottom: 1px solid \"[theme:neutralLight, default: #eaeaea]\"; } .ms-SearchBox.ms-SearchBox--commandBar[data-v-880410a2]:hover { background-color: \"[theme:white, default: #ffffff]\"; } .ms-SearchBox.ms-SearchBox--commandBar:hover .ms-SearchBox-label[data-v-880410a2] { color: \"[theme:neutralDark, default: #212121]\"; } .ms-SearchBox.ms-SearchBox--commandBar:hover .ms-SearchBox-icon[data-v-880410a2] { color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-SearchBox.ms-SearchBox--commandBar[data-v-880410a2]:focus { background-color: transparent; } .ms-SearchBox.ms-SearchBox--commandBar.is-active .ms-CommandButton .ms-SearchBox-exit[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar.is-active .ms-CommandButton .ms-SearchBox-filter[data-v-880410a2] { display: block; } .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed[data-v-880410a2] { width: 50px; min-height: 40px; z-index: 0; background-color: #F4F4F4; } .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed .ms-SearchBox-text[data-v-880410a2] { display: none; } .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed .ms-SearchBox-field[data-v-880410a2] { cursor: pointer; width: calc(100% - 50px); } .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed[data-v-880410a2]::before { visibility: hidden; } .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active[data-v-880410a2] { width: 100%; } .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active .ms-SearchBox-field[data-v-880410a2] { display: block; cursor: text; } .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active .ms-SearchBox-text[data-v-880410a2] { display: inline-block; } @media only screen and (max-width: 639px) { .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active[data-v-880410a2] { width: 100%; } .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active .ms-SearchBox-clear[data-v-880410a2] { display: inline-block; right: 58px; } .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active .ms-SearchBox-filter[data-v-880410a2] { display: inline-block; } .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active.is-animated[data-v-880410a2] { transition: width 0.167s cubic-bezier(0.1, 0.9, 0.2, 1); } } .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active[data-v-880410a2]::before { visibility: visible; } .ms-SearchBox.ms-SearchBox--commandBar.has-text .ms-SearchBox-clear[data-v-880410a2] { display: inline-block; } .ms-SearchBox.ms-SearchBox--commandBar.has-text .ms-SearchBox-clear .ms-CommandButton-icon[data-v-880410a2] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-SearchBox.ms-SearchBox--commandBar.has-text .ms-SearchBox-clear .ms-CommandButton-icon[data-v-880410a2]:active { color: \"[theme:themePrimary, default: #0078d7]\"; } @media only screen and (min-width: 1024px) { .ms-SearchBox.ms-SearchBox--commandBar[data-v-880410a2] { background-color: \"[theme:white, default: #ffffff]\"; border-right: 1px solid \"[theme:neutralLight, default: #eaeaea]\"; } } @media only screen and (max-width: 639px) { .ms-SearchBox.ms-SearchBox--commandBar[data-v-880410a2] { height: 44px; } .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-icon[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-exit[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-field[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-label[data-v-880410a2] { height: 44px; line-height: 44px; } .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-icon[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-exit[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-filter[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-clear[data-v-880410a2] { font-size: 20px; } .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-icon .ms-CommandButton-button[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-exit .ms-CommandButton-button[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-filter .ms-CommandButton-button[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-clear .ms-CommandButton-button[data-v-880410a2] { height: 44px; } .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-field[data-v-880410a2], .ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-label[data-v-880410a2] { font-size: 16px; } } .ms-SearchBox.ms-SearchBox--commandBar.is-active[data-v-880410a2] { background-color: \"[theme:white, default: #ffffff]\"; } .ms-SearchBox.ms-SearchBox--commandBar.is-active .ms-SearchBox-label[data-v-880410a2] { display: block; line-height: 40px; height: 40px; } .ms-SearchBox.ms-SearchBox--commandBar.is-active .ms-SearchBox-label .ms-SearchBox-text[data-v-880410a2] { display: none; } .ms-SearchBox.ms-SearchBox--commandBar.is-active[data-v-880410a2]::before { visibility: visible; } @media only screen and (max-width: 639px) { .ms-SearchBox.ms-SearchBox--commandBar.is-active .ms-SearchBox-field[data-v-880410a2] { width: 100%; padding-right: 100px; } .ms-SearchBox.ms-SearchBox--commandBar.is-active .ms-SearchBox-icon[data-v-880410a2] { display: none; } .ms-SearchBox.ms-SearchBox--commandBar.is-active .ms-SearchBox-exit[data-v-880410a2] { display: inline-block; } .ms-SearchBox.ms-SearchBox--commandBar.is-active.has-text .ms-SearchBox-filter .ms-CommandButton-icon[data-v-880410a2] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } } .ms-Icon.ms-Icon--Search[data-v-880410a2] { content: url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"16\" height=\"16\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path fill=\"#0078d7\" stroke=\"none\" transform=\"translate(0, 2048) scale(1, -1)\" d=\"M1344 2048q97 0 187 -25t168 -71t142.5 -110.5t110.5 -142.5t71 -168t25 -187t-25 -187t-71 -168t-110.5 -142.5t-142.5 -110.5t-168 -71t-187 -25q-125 0 -239.5 42t-210.5 121l-785 -784q-19 -19 -45 -19t-45 19t-19 45t19 45l784 785q-79 96 -121 210.5t-42 239.5q0 97 25 187t71 168t110.5 142.5t142.5 110.5t168 71t187 25zM1344 768q119 0 224 45.5t183 123.5t123.5 183t45.5 224t-45.5 224t-123.5 183t-183 123.5t-224 45.5t-224 -45.5t-183 -123.5t-123.5 -183t-45.5 -224t45.5 -224t123.5 -183t183 -123.5t224 -45.5z\"/></svg>'); } .ms-Icon.ms-Icon--Clear[data-v-880410a2] { content: url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"14\" height=\"14\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path fill=\"white\" stroke=\"none\" d=\"M1115 1024l914 -915l-90 -90l-915 914l-915 -914l-90 90l914 915l-914 915l90 90l915 -914l915 914l90 -90z\"/></svg>'); } .ms-SearchBox--commandBar .ms-Icon.ms-Icon--Clear[data-v-880410a2] { content: url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"14\" height=\"14\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path fill=\"#a6a6a6\" stroke=\"none\" d=\"M1115 1024l914 -915l-90 -90l-915 914l-915 -914l-90 90l914 915l-914 915l90 90l915 -914l915 914l90 -90z\"/></svg>'); } ");},
-    beforeMount: function beforeMount(){
-        this.$fabric = {
-            SearchBox : SearchBox
-        };
-    },
-    extends :  searchBox
-}
+/* script */
+const __vue_script__$Q = script$Q;
 
-var Spinner = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"spinner",staticClass:"ms-Spinner",class:_vm.spinnerClass},[(_vm.label)?_c('div',{staticClass:"ms-Spinner-label"},[_vm._v(_vm._s(_vm.label))]):_vm._e()])},staticRenderFns: [],
+/* template */
+var __vue_render__$u = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"searchBox",staticClass:"ms-SearchBox",class:_vm.searchBoxClass},[_c('input',{ref:"searchBoxInput",staticClass:"ms-SearchBox-field",attrs:{"type":"text"},domProps:{"value":_vm.value},on:{"input":_vm.updateValue}}),_vm._v(" "),_c('label',{staticClass:"ms-SearchBox-label"},[_c('i',{staticClass:"ms-SearchBox-icon ms-Icon ms-Icon--Search"}),_vm._v(" "),(!_vm.hasValue)?_c('span',{staticClass:"ms-SearchBox-text"},[_vm._v(_vm._s(_vm.placeholder))]):_vm._e()]),_vm._v(" "),_c('div',{staticClass:"ms-CommandButton ms-SearchBox-clear ms-CommandButton--noLabel",on:{"mousedown":_vm.clearValue}},[_vm._m(0)])])};
+var __vue_staticRenderFns__$u = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('button',{staticClass:"ms-CommandButton-button"},[_c('span',{staticClass:"ms-CommandButton-icon"},[_c('i',{staticClass:"ms-Icon ms-Icon--Clear"})]),_vm._v(" "),_c('span',{staticClass:"ms-CommandButton-label"})])}];
+
+  /* style */
+  const __vue_inject_styles__$Q = undefined;
+  /* scoped */
+  const __vue_scope_id__$Q = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$Q = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$Q = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var searchBox = normalizeComponent_1(
+    { render: __vue_render__$u, staticRenderFns: __vue_staticRenderFns__$u },
+    __vue_inject_styles__$Q,
+    __vue_script__$Q,
+    __vue_scope_id__$Q,
+    __vue_is_functional_template__$Q,
+    __vue_module_identifier__$Q,
+    undefined,
+    undefined
+  );
+
+var script$R = {
+  loadStyles: loadStyles,
+  beforeMount: function beforeMount() {
+    this.$fabric = {
+      SearchBox: SearchBox
+    };
+  },
+  extends: searchBox
+};
+
+/* script */
+const __vue_script__$R = script$R;
+
+/* template */
+
+  /* style */
+  const __vue_inject_styles__$R = function (inject) {
+    if (!inject) return
+    inject("data-v-5f20b66e_0", { source: ".ms-Label[data-v-5f20b66e]{font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;box-sizing:border-box;margin:0;padding:0;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;color:\"[theme:neutralPrimary, default: #333333]\";font-size:12px;font-weight:400;box-sizing:border-box;display:block;padding:5px 0}.ms-Label.is-required[data-v-5f20b66e]::after{content:\" *\";color:\"[theme:error, default: #a80000]\"}.ms-Label.is-disabled[data-v-5f20b66e]{color:\"[theme:neutralTertiary, default: #a6a6a6]\"}.ms-CommandButton[data-v-5f20b66e]{font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;display:inline-block;position:relative;vertical-align:top}.ms-CommandButton.is-hidden[data-v-5f20b66e]{display:none}.ms-CommandButton.is-disabled .ms-CommandButton-button[data-v-5f20b66e],.ms-CommandButton:disabled .ms-CommandButton-button[data-v-5f20b66e]{cursor:default}.ms-CommandButton.is-disabled .ms-CommandButton-button[data-v-5f20b66e]:hover,.ms-CommandButton:disabled .ms-CommandButton-button[data-v-5f20b66e]:hover{background-color:\"[theme:themeLighterAlt, default: #eff6fc]\"}.ms-CommandButton.is-disabled .ms-CommandButton-button .ms-CommandButton-label[data-v-5f20b66e],.ms-CommandButton:disabled .ms-CommandButton-button .ms-CommandButton-label[data-v-5f20b66e]{color:\"[theme:neutralTertiary, default: #a6a6a6]\"}.ms-CommandButton.is-disabled .ms-CommandButton-button .ms-CommandButton-icon[data-v-5f20b66e],.ms-CommandButton:disabled .ms-CommandButton-button .ms-CommandButton-icon[data-v-5f20b66e]{color:\"[theme:neutralTertiary, default: #a6a6a6]\"}.ms-CommandButton .ms-ContextualMenu[data-v-5f20b66e]{display:none}.ms-CommandButton-button[data-v-5f20b66e],.ms-CommandButton-splitIcon[data-v-5f20b66e]{box-sizing:border-box;margin:0;padding:0;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;color:\"[theme:neutralPrimary, default: #333333]\";font-size:14px;font-weight:400;cursor:pointer;display:inline-block;height:40px;line-height:40px;outline:1px solid transparent;padding:0 8px;position:relative;vertical-align:top;background:0 0}.ms-CommandButton-button[data-v-5f20b66e]:hover,.ms-CommandButton-splitIcon[data-v-5f20b66e]:hover{background-color:\"[theme:neutralLight, default: #eaeaea]\"}.ms-CommandButton-button:hover .ms-CommandButton-label[data-v-5f20b66e],.ms-CommandButton-splitIcon:hover .ms-CommandButton-label[data-v-5f20b66e]{color:\"[theme:neutralDark, default: #212121]\"}.ms-CommandButton-button[data-v-5f20b66e]:active,.ms-CommandButton-splitIcon[data-v-5f20b66e]:active{background-color:\"[theme:neutralLight, default: #eaeaea]\"}.ms-CommandButton-button[data-v-5f20b66e]:focus::before,.ms-CommandButton-splitIcon[data-v-5f20b66e]:focus::before{top:3px;left:3px;right:3px;bottom:3px;border:1px solid \"[theme:neutralPrimary, default: #333333]\";position:absolute;z-index:10;content:\"\";outline:0}.ms-CommandButton-button[data-v-5f20b66e]:focus,.ms-CommandButton-splitIcon[data-v-5f20b66e]:focus{outline:0}@media only screen and (max-width:639px){.ms-CommandButton-button[data-v-5f20b66e],.ms-CommandButton-splitIcon[data-v-5f20b66e]{height:44px}.ms-CommandButton-button .ms-CommandButton-icon[data-v-5f20b66e],.ms-CommandButton-splitIcon .ms-CommandButton-icon[data-v-5f20b66e]{font-size:20px}.ms-CommandButton-button .ms-CommandButton-label[data-v-5f20b66e],.ms-CommandButton-splitIcon .ms-CommandButton-label[data-v-5f20b66e]{line-height:44px}}.ms-CommandButton-button[data-v-5f20b66e]{border:0;margin:0}.ms-CommandButton+.ms-CommandButton[data-v-5f20b66e]{margin-left:8px}@media only screen and (max-width:639px){.ms-CommandButton+.ms-CommandButton[data-v-5f20b66e]{margin-left:4px}}.ms-CommandButton-icon[data-v-5f20b66e]{display:inline-block;margin-right:8px;position:relative;font-size:16px;min-width:16px;height:100%}.ms-CommandButton-icon .ms-Icon[data-v-5f20b66e]{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}.ms-CommandButton-label[data-v-5f20b66e]{font-size:14px;font-weight:400;color:\"[theme:neutralPrimary, default: #333333]\";line-height:40px;height:100%;display:inline-block;vertical-align:top}.ms-CommandButton-label[data-v-5f20b66e]:hover{color:\"[theme:neutralDark, default: #212121]\"}.ms-CommandButton-dropdownIcon[data-v-5f20b66e],.ms-CommandButton-splitIcon[data-v-5f20b66e]{display:inline-block;position:relative;color:\"[theme:neutralPrimary, default: #333333]\";font-size:12px;font-weight:300;min-width:12px;height:100%;vertical-align:top;margin-left:8px}.ms-CommandButton-dropdownIcon .ms-Icon[data-v-5f20b66e],.ms-CommandButton-splitIcon .ms-Icon[data-v-5f20b66e]{line-height:normal;padding-top:16px}.ms-CommandButton-dropdownIcon[data-v-5f20b66e]:focus::before,.ms-CommandButton-splitIcon[data-v-5f20b66e]:focus::before{top:3px;left:3px;right:3px;bottom:3px;border:1px solid \"[theme:neutralPrimary, default: #333333]\";position:absolute;z-index:10;content:\"\";outline:0}@media only screen and (max-width:639px){.ms-CommandButton-dropdownIcon[data-v-5f20b66e],.ms-CommandButton-splitIcon[data-v-5f20b66e]{display:none}}.ms-CommandButton-splitIcon[data-v-5f20b66e]{margin-left:-2px;width:27px;border:0}.ms-CommandButton-splitIcon .ms-Icon[data-v-5f20b66e]{margin-left:-1px;position:relative;padding-top:16px}.ms-CommandButton-splitIcon .ms-Icon[data-v-5f20b66e]::after{position:absolute;content:\" \";width:1px;height:16px;top:12px;left:-8px;border-left:1px solid \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"}.ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-icon[data-v-5f20b66e]{margin-right:0}.ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-label[data-v-5f20b66e]{display:none}.ms-CommandButton.ms-CommandButton--noLabel .ms-CommandButton-button[data-v-5f20b66e]{padding:0 12px}.ms-CommandButton.ms-CommandButton--inline .ms-CommandButton-button[data-v-5f20b66e]{background:0 0}.ms-CommandButton.ms-CommandButton--actionButton .ms-CommandButton-button[data-v-5f20b66e]{width:50px;height:40px}.ms-CommandButton.ms-CommandButton--actionButton .ms-CommandButton-icon[data-v-5f20b66e]{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:16px;height:16px;padding-right:0}.ms-CommandButton.ms-CommandButton--pivot.is-active[data-v-5f20b66e]::before{content:\"\";height:2px;position:absolute;left:0;right:0;background-color:\"[theme:themePrimary, default: #0078d7]\";bottom:0;z-index:5}.ms-CommandButton.ms-CommandButton--pivot[data-v-5f20b66e]:hover::before{content:\"\";height:2px;position:absolute;left:0;right:0;background-color:\"[theme:themePrimary, default: #0078d7]\";bottom:0;z-index:5}.ms-CommandButton.ms-CommandButton--pivot .ms-CommandButton-label[data-v-5f20b66e],.ms-CommandButton.ms-CommandButton--textOnly .ms-CommandButton-label[data-v-5f20b66e]{display:inline-block}@media only screen and (max-width:479px){.ms-CommandButton.ms-CommandButton--pivot .ms-CommandButton-label[data-v-5f20b66e],.ms-CommandButton.ms-CommandButton--textOnly .ms-CommandButton-label[data-v-5f20b66e]{font-size:16px}}.ms-SearchBox[data-v-5f20b66e]{font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;box-sizing:border-box;margin:0;padding:0;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;height:36px;color:\"[theme:neutralPrimary, default: #333333]\";font-size:14px;font-weight:400;position:relative;margin-bottom:10px;display:inline-block;overflow:hidden;background-color:\"[theme:white, default: #ffffff]\"}.ms-SearchBox.is-active[data-v-5f20b66e]{z-index:10}.ms-SearchBox.is-active .ms-SearchBox-label[data-v-5f20b66e]{display:none}.ms-SearchBox.is-active .ms-SearchBox-clear[data-v-5f20b66e]{display:block}.ms-SearchBox[data-v-5f20b66e]:hover{background-color:\"[theme:themeLighter, default: #deecf9]\"}.ms-SearchBox:hover .ms-SearchBox-label[data-v-5f20b66e]{color:\"[theme:black, default: #000000]\"}.ms-SearchBox:hover .ms-SearchBox-label .ms-Icon[data-v-5f20b66e]{color:\"[theme:neutralPrimary, default: #333333]\"}.ms-SearchBox.is-disabled[data-v-5f20b66e]{background-color:#f4f4f4;pointer-events:none}.ms-SearchBox.is-disabled .ms-SearchBox-label[data-v-5f20b66e]{color:\"[theme:neutralTertiary, default: #a6a6a6]\"}.ms-SearchBox.is-disabled .ms-SearchBox-icon[data-v-5f20b66e]{color:\"[theme:neutralTertiary, default: #a6a6a6]\"}.ms-SearchBox.is-disabled .ms-SearchBox-field[data-v-5f20b66e]{color:\"[theme:neutralTertiary, default: #a6a6a6]\";background-color:transparent;border-color:\"[theme:neutralLighter, default: #f4f4f4]\";cursor:default}.ms-SearchBox-clear[data-v-5f20b66e]{display:none;position:absolute;top:0;right:0;z-index:10}.ms-SearchBox-clear .ms-CommandButton-button[data-v-5f20b66e]{background-color:\"[theme:themePrimary, default: #0078d7]\";color:\"[theme:white, default: #ffffff]\";height:36px}.ms-SearchBox-clear .ms-CommandButton-icon[data-v-5f20b66e]{color:\"[theme:white, default: #ffffff]\"}.ms-SearchBox-icon[data-v-5f20b66e]{position:relative;top:50%;transform:translateY(-50%);display:inline-block;font-size:16px;width:16px;margin-left:12px;margin-right:6px;color:\"[theme:themePrimary, default: #0078d7]\";vertical-align:top}.ms-SearchBox-field[data-v-5f20b66e]{position:relative;box-sizing:border-box;margin:0;padding:0;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;border:1px solid \"[theme:themeTertiary, default: #71afe5]\";outline:transparent 1px solid;font-weight:300;font-size:14px;color:\"[theme:black, default: #000000]\";height:36px;padding:6px 3px 7px 45px;width:208px;background-color:transparent;z-index:5;transition:padding-left 167ms}.ms-SearchBox-field[data-v-5f20b66e]:focus{padding:6px 32px 7px 10px;border-color:\"[theme:themePrimary, default: #0078d7]\";background-color:\"[theme:themeLighter, default: #deecf9]\"}.ms-SearchBox-field[data-v-5f20b66e]::-ms-clear{display:none}.ms-SearchBox-label[data-v-5f20b66e]{position:absolute;top:0;left:0;height:36px;line-height:36px;color:\"[theme:neutralSecondary, default: #666666]\"}.ms-SearchBox.ms-SearchBox--commandBar[data-v-5f20b66e]{background-color:\"[theme:white, default: #ffffff]\";width:208px;height:40px}.ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-field[data-v-5f20b66e],.ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-label[data-v-5f20b66e]{height:40px}.ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-field[data-v-5f20b66e]{transition:none;border:0}.ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-field[data-v-5f20b66e]:focus{background-color:transparent;padding:6px 3px 7px 45px}.ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-clear[data-v-5f20b66e],.ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-exit[data-v-5f20b66e],.ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-filter[data-v-5f20b66e]{display:none;position:absolute;top:0;z-index:10;color:\"[theme:neutralTertiary, default: #a6a6a6]\"}.ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-clear .ms-CommandButton-button[data-v-5f20b66e],.ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-exit .ms-CommandButton-button[data-v-5f20b66e],.ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-filter .ms-CommandButton-button[data-v-5f20b66e]{height:40px;background-color:transparent}.ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-clear[data-v-5f20b66e]{right:8px}.ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-filter[data-v-5f20b66e]{right:8px}.ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-filter .ms-CommandButton-icon[data-v-5f20b66e]{color:\"[theme:themePrimary, default: #0078d7]\"}.ms-SearchBox.ms-SearchBox--commandBar[data-v-5f20b66e]::before{position:absolute;content:\" \";right:0;bottom:0;left:0;margin:0 8px;border-bottom:1px solid \"[theme:neutralLight, default: #eaeaea]\"}.ms-SearchBox.ms-SearchBox--commandBar[data-v-5f20b66e]:hover{background-color:\"[theme:white, default: #ffffff]\"}.ms-SearchBox.ms-SearchBox--commandBar:hover .ms-SearchBox-label[data-v-5f20b66e]{color:\"[theme:neutralDark, default: #212121]\"}.ms-SearchBox.ms-SearchBox--commandBar:hover .ms-SearchBox-icon[data-v-5f20b66e]{color:\"[theme:themePrimary, default: #0078d7]\"}.ms-SearchBox.ms-SearchBox--commandBar[data-v-5f20b66e]:focus{background-color:transparent}.ms-SearchBox.ms-SearchBox--commandBar.is-active .ms-CommandButton .ms-SearchBox-exit[data-v-5f20b66e],.ms-SearchBox.ms-SearchBox--commandBar.is-active .ms-CommandButton .ms-SearchBox-filter[data-v-5f20b66e]{display:block}.ms-SearchBox.ms-SearchBox--commandBar.is-collapsed[data-v-5f20b66e]{width:50px;min-height:40px;z-index:0;background-color:#f4f4f4}.ms-SearchBox.ms-SearchBox--commandBar.is-collapsed .ms-SearchBox-text[data-v-5f20b66e]{display:none}.ms-SearchBox.ms-SearchBox--commandBar.is-collapsed .ms-SearchBox-field[data-v-5f20b66e]{cursor:pointer;width:calc(100% - 50px)}.ms-SearchBox.ms-SearchBox--commandBar.is-collapsed[data-v-5f20b66e]::before{visibility:hidden}.ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active[data-v-5f20b66e]{width:100%}.ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active .ms-SearchBox-field[data-v-5f20b66e]{display:block;cursor:text}.ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active .ms-SearchBox-text[data-v-5f20b66e]{display:inline-block}@media only screen and (max-width:639px){.ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active[data-v-5f20b66e]{width:100%}.ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active .ms-SearchBox-clear[data-v-5f20b66e]{display:inline-block;right:58px}.ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active .ms-SearchBox-filter[data-v-5f20b66e]{display:inline-block}.ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active.is-animated[data-v-5f20b66e]{transition:width 167ms cubic-bezier(.1,.9,.2,1)}}.ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active[data-v-5f20b66e]::before{visibility:visible}.ms-SearchBox.ms-SearchBox--commandBar.has-text .ms-SearchBox-clear[data-v-5f20b66e]{display:inline-block}.ms-SearchBox.ms-SearchBox--commandBar.has-text .ms-SearchBox-clear .ms-CommandButton-icon[data-v-5f20b66e]{color:\"[theme:neutralTertiary, default: #a6a6a6]\"}.ms-SearchBox.ms-SearchBox--commandBar.has-text .ms-SearchBox-clear .ms-CommandButton-icon[data-v-5f20b66e]:active{color:\"[theme:themePrimary, default: #0078d7]\"}@media only screen and (min-width:1024px){.ms-SearchBox.ms-SearchBox--commandBar[data-v-5f20b66e]{background-color:\"[theme:white, default: #ffffff]\";border-right:1px solid \"[theme:neutralLight, default: #eaeaea]\"}}@media only screen and (max-width:639px){.ms-SearchBox.ms-SearchBox--commandBar[data-v-5f20b66e]{height:44px}.ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-exit[data-v-5f20b66e],.ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-field[data-v-5f20b66e],.ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-icon[data-v-5f20b66e],.ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-label[data-v-5f20b66e]{height:44px;line-height:44px}.ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-clear[data-v-5f20b66e],.ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-exit[data-v-5f20b66e],.ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-filter[data-v-5f20b66e],.ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-icon[data-v-5f20b66e]{font-size:20px}.ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-clear .ms-CommandButton-button[data-v-5f20b66e],.ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-exit .ms-CommandButton-button[data-v-5f20b66e],.ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-filter .ms-CommandButton-button[data-v-5f20b66e],.ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-icon .ms-CommandButton-button[data-v-5f20b66e]{height:44px}.ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-field[data-v-5f20b66e],.ms-SearchBox.ms-SearchBox--commandBar .ms-SearchBox-label[data-v-5f20b66e]{font-size:16px}}.ms-SearchBox.ms-SearchBox--commandBar.is-active[data-v-5f20b66e]{background-color:\"[theme:white, default: #ffffff]\"}.ms-SearchBox.ms-SearchBox--commandBar.is-active .ms-SearchBox-label[data-v-5f20b66e]{display:block;line-height:40px;height:40px}.ms-SearchBox.ms-SearchBox--commandBar.is-active .ms-SearchBox-label .ms-SearchBox-text[data-v-5f20b66e]{display:none}.ms-SearchBox.ms-SearchBox--commandBar.is-active[data-v-5f20b66e]::before{visibility:visible}@media only screen and (max-width:639px){.ms-SearchBox.ms-SearchBox--commandBar.is-active .ms-SearchBox-field[data-v-5f20b66e]{width:100%;padding-right:100px}.ms-SearchBox.ms-SearchBox--commandBar.is-active .ms-SearchBox-icon[data-v-5f20b66e]{display:none}.ms-SearchBox.ms-SearchBox--commandBar.is-active .ms-SearchBox-exit[data-v-5f20b66e]{display:inline-block}.ms-SearchBox.ms-SearchBox--commandBar.is-active.has-text .ms-SearchBox-filter .ms-CommandButton-icon[data-v-5f20b66e]{color:\"[theme:neutralTertiary, default: #a6a6a6]\"}}.ms-Icon.ms-Icon--Search[data-v-5f20b66e]{content:url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"16\" height=\"16\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path fill=\"#0078d7\" stroke=\"none\" transform=\"translate(0, 2048) scale(1, -1)\" d=\"M1344 2048q97 0 187 -25t168 -71t142.5 -110.5t110.5 -142.5t71 -168t25 -187t-25 -187t-71 -168t-110.5 -142.5t-142.5 -110.5t-168 -71t-187 -25q-125 0 -239.5 42t-210.5 121l-785 -784q-19 -19 -45 -19t-45 19t-19 45t19 45l784 785q-79 96 -121 210.5t-42 239.5q0 97 25 187t71 168t110.5 142.5t142.5 110.5t168 71t187 25zM1344 768q119 0 224 45.5t183 123.5t123.5 183t45.5 224t-45.5 224t-123.5 183t-183 123.5t-224 45.5t-224 -45.5t-183 -123.5t-123.5 -183t-45.5 -224t45.5 -224t123.5 -183t183 -123.5t224 -45.5z\"/></svg>')}.ms-Icon.ms-Icon--Clear[data-v-5f20b66e]{content:url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"14\" height=\"14\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path fill=\"white\" stroke=\"none\" d=\"M1115 1024l914 -915l-90 -90l-915 914l-915 -914l-90 90l914 915l-914 915l90 90l915 -914l915 914l90 -90z\"/></svg>')}.ms-SearchBox--commandBar .ms-Icon.ms-Icon--Clear[data-v-5f20b66e]{content:url('data:image/svg+xml;utf8,<svg viewBox=\"0 -0 2048 2048\" width=\"14\" height=\"14\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><path fill=\"#a6a6a6\" stroke=\"none\" d=\"M1115 1024l914 -915l-90 -90l-915 914l-915 -914l-90 90l914 915l-914 915l90 90l915 -914l915 914l90 -90z\"/></svg>')}", map: undefined, media: undefined });
+
+  };
+  /* scoped */
+  const __vue_scope_id__$R = "data-v-5f20b66e";
+  /* module identifier */
+  const __vue_module_identifier__$R = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$R = undefined;
+  /* style inject */
+  const __vue_create_injector__$l = function(context){ return function(scopeId, data){__vue_script__$R.loadStyles && __vue_script__$R.loadStyles(data.source);}};
+  /* style inject SSR */
+  
+
+  
+  var uiSearchbox = normalizeComponent_1(
+    {},
+    __vue_inject_styles__$R,
+    __vue_script__$R,
+    __vue_scope_id__$R,
+    __vue_is_functional_template__$R,
+    __vue_module_identifier__$R,
+    __vue_create_injector__$l,
+    undefined
+  );
+
+var script$S = {
   name: 'ou-spinner',
-
   mixins: [type('large')],
-
   props: {
     label: String
   },
-
   computed: {
     spinnerClass: function spinnerClass() {
-      var obj;
-
-      return ( obj = {}, obj[("ms-Spinner--" + (this.type))] = !!this.type, obj );
+      return _defineProperty({}, "ms-Spinner--".concat(this.type), !!this.type);
     }
   },
-
   mounted: function mounted() {
     new this.$fabric.Spinner(this.$refs.spinner);
   }
 };
+
+/* script */
+const __vue_script__$S = script$S;
+
+/* template */
+var __vue_render__$v = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"spinner",staticClass:"ms-Spinner",class:_vm.spinnerClass},[(_vm.label)?_c('div',{staticClass:"ms-Spinner-label"},[_vm._v(_vm._s(_vm.label))]):_vm._e()])};
+var __vue_staticRenderFns__$v = [];
+
+  /* style */
+  const __vue_inject_styles__$S = undefined;
+  /* scoped */
+  const __vue_scope_id__$S = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$S = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$S = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var Spinner = normalizeComponent_1(
+    { render: __vue_render__$v, staticRenderFns: __vue_staticRenderFns__$v },
+    __vue_inject_styles__$S,
+    __vue_script__$S,
+    __vue_scope_id__$S,
+    __vue_is_functional_template__$S,
+    __vue_module_identifier__$S,
+    undefined,
+    undefined
+  );
 
 var CircleObject = function () {
   function CircleObject(element, j) {
@@ -4501,31 +6155,65 @@ var Spinner$1 = function () {
   return Spinner;
 }();
 
-var uiSpinner = {_scopeId: 'data-v-74b796b6',
-    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-Spinner[data-v-74b796b6] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; position: relative; height: 20px; } .ms-Spinner.ms-Spinner--large[data-v-74b796b6] { height: 28px; } .ms-Spinner.ms-Spinner--large .ms-Spinner-label[data-v-74b796b6] { left: 34px; top: 6px; } .ms-Spinner-circle[data-v-74b796b6] { position: absolute; border-radius: 100px; background-color: \"[theme:themePrimary, default: #0078d7]\"; opacity: 0; } @media screen and (-ms-high-contrast: active) { .ms-Spinner-circle[data-v-74b796b6] { background-color: \"[theme:white, default: #ffffff]\"; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-Spinner-circle[data-v-74b796b6] { background-color: \"[theme:black, default: #000000]\"; } } .ms-Spinner-label[data-v-74b796b6] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; position: relative; font-size: 12px; font-weight: 400; color: \"[theme:themePrimary, default: #0078d7]\"; left: 28px; top: 2px; } ");},
-    beforeMount: function beforeMount(){
-        this.$fabric = {
-            Spinner : Spinner$1
-        };
-    },
-    mounted: function mounted() {
-        var this$1 = this;
+var script$T = {
+  loadStyles: loadStyles,
+  beforeMount: function beforeMount() {
+    this.$fabric = {
+      Spinner: Spinner$1
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
 
-        // console.log("spin", this.$refs.spinner);
-        var childs = this.$refs.spinner.querySelectorAll(":not([" + this.$options._scopeId + "])");
-        //IE vs. Array.From vs. querySelectorAll = no work >.<
-        //Array.prototype.slice, does the trick instead 
-        Array.prototype.slice.call(childs).map(function (c){ return c.setAttribute(this$1.$options._scopeId, ""); });
-        // Array.from(childs).map(c=>c.setAttribute(this.$options._scopeId, ""));
-    },
-    extends :  Spinner
-}
+    // console.log("spin", this.$refs.spinner);
+    var childs = this.$refs.spinner.querySelectorAll(":not([" + this.$options._scopeId + "])"); //IE vs. Array.From vs. querySelectorAll = no work >.<
+    //Array.prototype.slice, does the trick instead 
 
-var textField = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"textField",staticClass:"ms-TextField",class:_vm.textFieldClass},[_c('label',{staticClass:"ms-Label"},[_vm._v(_vm._s(_vm.label))]),_vm._v(" "),(_vm.type == 'multiline')?_c('textarea',_vm._b({staticClass:"ms-TextField-field",attrs:{"placeholder":_vm.placeholder,"type":"text","disabled":_vm.disabled},domProps:{"value":_vm.value},on:{"input":_vm.updateValue,"change":_vm.changeEvent,"blur":_vm.blurEvent}},'textarea',_vm.attrs,false)):_c('input',_vm._b({staticClass:"ms-TextField-field",attrs:{"placeholder":_vm.placeholder,"type":_vm.inputType,"disabled":_vm.disabled},domProps:{"value":_vm.value},on:{"input":_vm.updateValue,"change":_vm.changeEvent,"blur":_vm.blurEvent}},'input',_vm.attrs,false))])},staticRenderFns: [],
+    Array.prototype.slice.call(childs).map(function (c) {
+      return c.setAttribute(_this.$options._scopeId, "");
+    }); // Array.from(childs).map(c=>c.setAttribute(this.$options._scopeId, ""));
+  },
+  extends: Spinner
+};
+
+/* script */
+const __vue_script__$T = script$T;
+
+/* template */
+
+  /* style */
+  const __vue_inject_styles__$T = function (inject) {
+    if (!inject) return
+    inject("data-v-da2fe6b4_0", { source: ".ms-Spinner[data-v-da2fe6b4]{font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;position:relative;height:20px}.ms-Spinner.ms-Spinner--large[data-v-da2fe6b4]{height:28px}.ms-Spinner.ms-Spinner--large .ms-Spinner-label[data-v-da2fe6b4]{left:34px;top:6px}.ms-Spinner-circle[data-v-da2fe6b4]{position:absolute;border-radius:100px;background-color:\"[theme:themePrimary, default: #0078d7]\";opacity:0}@media screen and (-ms-high-contrast:active){.ms-Spinner-circle[data-v-da2fe6b4]{background-color:\"[theme:white, default: #ffffff]\"}}@media screen and (-ms-high-contrast:black-on-white){.ms-Spinner-circle[data-v-da2fe6b4]{background-color:\"[theme:black, default: #000000]\"}}.ms-Spinner-label[data-v-da2fe6b4]{font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;position:relative;font-size:12px;font-weight:400;color:\"[theme:themePrimary, default: #0078d7]\";left:28px;top:2px}", map: undefined, media: undefined });
+
+  };
+  /* scoped */
+  const __vue_scope_id__$T = "data-v-da2fe6b4";
+  /* module identifier */
+  const __vue_module_identifier__$T = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$T = undefined;
+  /* style inject */
+  const __vue_create_injector__$m = function(context){ return function(scopeId, data){__vue_script__$T.loadStyles && __vue_script__$T.loadStyles(data.source);}};
+  /* style inject SSR */
+  
+
+  
+  var uiSpinner = normalizeComponent_1(
+    {},
+    __vue_inject_styles__$T,
+    __vue_script__$T,
+    __vue_scope_id__$T,
+    __vue_is_functional_template__$T,
+    __vue_module_identifier__$T,
+    __vue_create_injector__$m,
+    undefined
+  );
+
+var script$U = {
   name: 'ou-text-field',
   inheritAttrs: false,
   mixins: [type('multiline', 'underlined'), disabled],
-
   props: {
     value: [String, Number],
     label: String,
@@ -4534,29 +6222,28 @@ var textField = {render: function(){var _vm=this;var _h=_vm.$createElement;var _
       type: String,
       default: 'text',
       validator: function validator(value) {
-        return ['text', 'password', 'file', 'number'].includes(value);
+        return ['text', 'password', 'file', 'number'].indexOf(value) !== -1;
       }
     }
   },
-
   computed: {
-    attrs: function attrs(){return this.$attrs},
+    attrs: function attrs() {
+      return this.$attrs;
+    },
     textFieldClass: function textFieldClass() {
-      var obj;
+      var _ref;
 
-      return ( obj = {}, obj[("ms-TextField--" + (this.type))] = !!this.type, obj['is-disabled'] =  this.disabled, obj );
+      return _ref = {}, _defineProperty(_ref, "ms-TextField--".concat(this.type), !!this.type), _defineProperty(_ref, 'is-disabled', this.disabled), _ref;
     }
   },
-
   mounted: function mounted() {
     new this.$fabric.TextField(this.$refs.textField);
   },
-
   methods: {
     updateValue: function updateValue(event) {
       this.$emit('input', event.target.value);
     },
-    blurEvent: function blurEvent(event){
+    blurEvent: function blurEvent(event) {
       this.$emit('blur', event.target.value);
     },
     changeEvent: function changeEvent(event) {
@@ -4564,6 +6251,38 @@ var textField = {render: function(){var _vm=this;var _h=_vm.$createElement;var _
     }
   }
 };
+
+/* script */
+const __vue_script__$U = script$U;
+
+/* template */
+var __vue_render__$w = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"textField",staticClass:"ms-TextField",class:_vm.textFieldClass},[_c('label',{staticClass:"ms-Label"},[_vm._v(_vm._s(_vm.label))]),_vm._v(" "),(_vm.type == 'multiline')?_c('textarea',_vm._b({staticClass:"ms-TextField-field",attrs:{"placeholder":_vm.placeholder,"type":"text","disabled":_vm.disabled},domProps:{"value":_vm.value},on:{"input":_vm.updateValue,"change":_vm.changeEvent,"blur":_vm.blurEvent}},'textarea',_vm.attrs,false)):_c('input',_vm._b({staticClass:"ms-TextField-field",attrs:{"placeholder":_vm.placeholder,"type":_vm.inputType,"disabled":_vm.disabled},domProps:{"value":_vm.value},on:{"input":_vm.updateValue,"change":_vm.changeEvent,"blur":_vm.blurEvent}},'input',_vm.attrs,false))])};
+var __vue_staticRenderFns__$w = [];
+
+  /* style */
+  const __vue_inject_styles__$U = undefined;
+  /* scoped */
+  const __vue_scope_id__$U = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$U = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$U = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var textField = normalizeComponent_1(
+    { render: __vue_render__$w, staticRenderFns: __vue_staticRenderFns__$w },
+    __vue_inject_styles__$U,
+    __vue_script__$U,
+    __vue_scope_id__$U,
+    __vue_is_functional_template__$U,
+    __vue_module_identifier__$U,
+    undefined,
+    undefined
+  );
 
 var TextFieldConsts;
 
@@ -4631,40 +6350,69 @@ var TextField = function () {
   return TextField;
 }();
 
-var uiTextfield = {_scopeId: 'data-v-9e6e890e',
-    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-Label[data-v-9e6e890e] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 12px; font-weight: 400; box-sizing: border-box; display: block; padding: 5px 0; } .ms-Label.is-required[data-v-9e6e890e]::after { content: ' *'; color: \"[theme:error, default: #a80000]\"; } .ms-Label.is-disabled[data-v-9e6e890e] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-TextField[data-v-9e6e890e] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 14px; font-weight: 400; margin-bottom: 8px; } .ms-TextField .ms-Label[data-v-9e6e890e] { font-size: 14px; font-weight: 600; } .ms-TextField.is-disabled .ms-TextField-field[data-v-9e6e890e] { background-color: \"[theme:neutralLighter, default: #f4f4f4]\"; border-color: \"[theme:neutralLighter, default: #f4f4f4]\"; pointer-events: none; cursor: default; } .ms-TextField.is-disabled[data-v-9e6e890e]::-webkit-input-placeholder { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-TextField.is-disabled[data-v-9e6e890e]::-moz-placeholder { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-TextField.is-disabled[data-v-9e6e890e]:-moz-placeholder { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-TextField.is-disabled[data-v-9e6e890e]:-ms-input-placeholder { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-TextField.is-required .ms-Label[data-v-9e6e890e]::after { content: ' *'; color: \"[theme:error, default: #a80000]\"; } .ms-TextField.is-required[data-v-9e6e890e]::-webkit-input-placeholder::after { content: ' *'; color: \"[theme:error, default: #a80000]\"; } .ms-TextField.is-required[data-v-9e6e890e]::-moz-placeholder::after { content: ' *'; color: \"[theme:error, default: #a80000]\"; } .ms-TextField.is-required[data-v-9e6e890e]:-moz-placeholder::after { content: ' *'; color: \"[theme:error, default: #a80000]\"; } .ms-TextField.is-required[data-v-9e6e890e]:-ms-input-placeholder::after { content: ' *'; color: \"[theme:error, default: #a80000]\"; } .ms-TextField.is-active[data-v-9e6e890e] { border-color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-TextField-field[data-v-9e6e890e] { box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; border: 1px solid \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; border-radius: 0; font-weight: 300; font-size: 14px; color: \"[theme:neutralPrimary, default: #333333]\"; height: 32px; padding: 6px 12px 7px; width: 100%; min-width: 180px; outline: 0; text-overflow: ellipsis; } .ms-TextField-field[data-v-9e6e890e]:hover { border-color: \"[theme:neutralSecondaryAlt, default: #767676]\"; } .ms-TextField-field[data-v-9e6e890e]:focus { border-color: \"[theme:themePrimary, default: #0078d7]\"; } @media screen and (-ms-high-contrast: active) { .ms-TextField-field[data-v-9e6e890e]:hover, .ms-TextField-field[data-v-9e6e890e]:focus { border-color: #1AEBFF; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-TextField-field[data-v-9e6e890e]:hover, .ms-TextField-field[data-v-9e6e890e]:focus { border-color: #37006E; } } .ms-TextField-field[disabled][data-v-9e6e890e] { background-color: \"[theme:neutralLighter, default: #f4f4f4]\"; border-color: \"[theme:neutralLighter, default: #f4f4f4]\"; pointer-events: none; cursor: default; } .ms-TextField-field[data-v-9e6e890e]::-webkit-input-placeholder { color: \"[theme:neutralSecondary, default: #666666]\"; } .ms-TextField-field[data-v-9e6e890e]::-moz-placeholder { color: \"[theme:neutralSecondary, default: #666666]\"; } .ms-TextField-field[data-v-9e6e890e]:-moz-placeholder { color: \"[theme:neutralSecondary, default: #666666]\"; } .ms-TextField-field[data-v-9e6e890e]:-ms-input-placeholder { color: \"[theme:neutralSecondary, default: #666666]\"; } .ms-TextField-description[data-v-9e6e890e] { color: \"[theme:neutralSecondaryAlt, default: #767676]\"; font-size: 11px; } .ms-TextField.ms-TextField--placeholder[data-v-9e6e890e] { position: relative; background-color: \"[theme:white, default: #ffffff]\"; } .ms-TextField.ms-TextField--placeholder .ms-TextField-field[data-v-9e6e890e] { position: relative; background-color: transparent; z-index: 5; } .ms-TextField.ms-TextField--placeholder .ms-Label[data-v-9e6e890e] { position: absolute; font-weight: 300; font-size: 14px; color: \"[theme:neutralSecondary, default: #666666]\"; padding: 6px 12px 7px; pointer-events: none; z-index: 0; } .ms-TextField.ms-TextField--placeholder.is-disabled[data-v-9e6e890e] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-TextField.ms-TextField--placeholder.is-disabled .ms-Label[data-v-9e6e890e] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-TextField.ms-TextField--underlined[data-v-9e6e890e] { border-bottom: 1px solid \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; display: table; width: 100%; min-width: 180px; } .ms-TextField.ms-TextField--underlined[data-v-9e6e890e]:hover { border-color: \"[theme:neutralSecondaryAlt, default: #767676]\"; } @media screen and (-ms-high-contrast: active) { .ms-TextField.ms-TextField--underlined[data-v-9e6e890e]:hover { border-color: #1AEBFF; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-TextField.ms-TextField--underlined[data-v-9e6e890e]:hover { border-color: #37006E; } } .ms-TextField.ms-TextField--underlined[data-v-9e6e890e]:active, .ms-TextField.ms-TextField--underlined[data-v-9e6e890e]:focus { border-color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-TextField.ms-TextField--underlined .ms-Label[data-v-9e6e890e] { font-size: 14px; margin-right: 8px; display: table-cell; vertical-align: top; padding-left: 12px; padding-top: 9px; height: 32px; width: 1%; white-space: nowrap; } .ms-TextField.ms-TextField--underlined .ms-TextField-field[data-v-9e6e890e] { border: 0; float: left; display: table-cell; text-align: left; padding-top: 8px; padding-bottom: 3px; } .ms-TextField.ms-TextField--underlined .ms-TextField-field[data-v-9e6e890e]:active, .ms-TextField.ms-TextField--underlined .ms-TextField-field[data-v-9e6e890e]:focus, .ms-TextField.ms-TextField--underlined .ms-TextField-field[data-v-9e6e890e]:hover { outline: 0; } .ms-TextField.ms-TextField--underlined.is-disabled[data-v-9e6e890e] { border-bottom-color: \"[theme:neutralLight, default: #eaeaea]\"; } .ms-TextField.ms-TextField--underlined.is-disabled .ms-Label[data-v-9e6e890e] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-TextField.ms-TextField--underlined.is-disabled .ms-TextField-field[data-v-9e6e890e] { background-color: transparent; color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-TextField.ms-TextField--underlined.is-active[data-v-9e6e890e] { border-color: \"[theme:themePrimary, default: #0078d7]\"; } @media screen and (-ms-high-contrast: active) { .ms-TextField.ms-TextField--underlined.is-active[data-v-9e6e890e] { border-color: #1AEBFF; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-TextField.ms-TextField--underlined.is-active[data-v-9e6e890e] { border-color: #37006E; } } .ms-TextField.ms-TextField--multiline .ms-TextField-field[data-v-9e6e890e] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; color: \"[theme:neutralSecondary, default: #666666]\"; font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; font-size: 14px; font-weight: 400; line-height: 17px; min-height: 60px; min-width: 260px; padding-top: 6px; overflow: auto; } ");},
-    beforeMount: function beforeMount(){
-        this.$fabric = {
-            TextField : TextField
-        };
-    },
-    extends :  textField
-}
+var script$V = {
+  loadStyles: loadStyles,
+  beforeMount: function beforeMount() {
+    this.$fabric = {
+      TextField: TextField
+    };
+  },
+  extends: textField
+};
 
-var toggle = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"toggle",staticClass:"ms-Toggle",class:_vm.toggleClass},[(_vm.description)?_c('span',{staticClass:"ms-Toggle-description"},[_vm._v(" "+_vm._s(_vm.description)+" ")]):_vm._e(),_vm._v(" "),_c('input',{staticClass:"ms-Toggle-input",attrs:{"type":"checkbox"}}),_vm._v(" "),_c('span',{staticClass:"ms-Toggle-trigger",on:{"click":_vm.toggle}},[_c('label',{ref:"toggleLabel",staticClass:"ms-Toggle-field",class:{ 'is-selected': _vm.value },attrs:{"tabindex":"0"}},[_c('span',{staticClass:"ms-Label ms-Label--off"},[_vm._v(_vm._s(_vm.offLabel))]),_vm._v(" "),_c('span',{staticClass:"ms-Label ms-Label--on"},[_vm._v(_vm._s(_vm.onLabel))])])])])},staticRenderFns: [],
+/* script */
+const __vue_script__$V = script$V;
+
+/* template */
+
+  /* style */
+  const __vue_inject_styles__$V = function (inject) {
+    if (!inject) return
+    inject("data-v-b66577ac_0", { source: ".ms-Label[data-v-b66577ac]{font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;box-sizing:border-box;margin:0;padding:0;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;color:\"[theme:neutralPrimary, default: #333333]\";font-size:12px;font-weight:400;box-sizing:border-box;display:block;padding:5px 0}.ms-Label.is-required[data-v-b66577ac]::after{content:\" *\";color:\"[theme:error, default: #a80000]\"}.ms-Label.is-disabled[data-v-b66577ac]{color:\"[theme:neutralTertiary, default: #a6a6a6]\"}.ms-TextField[data-v-b66577ac]{font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;box-sizing:border-box;margin:0;padding:0;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;color:\"[theme:neutralPrimary, default: #333333]\";font-size:14px;font-weight:400;margin-bottom:8px}.ms-TextField .ms-Label[data-v-b66577ac]{font-size:14px;font-weight:600}.ms-TextField.is-disabled .ms-TextField-field[data-v-b66577ac]{background-color:\"[theme:neutralLighter, default: #f4f4f4]\";border-color:\"[theme:neutralLighter, default: #f4f4f4]\";pointer-events:none;cursor:default}.ms-TextField.is-disabled[data-v-b66577ac]::-webkit-input-placeholder{color:\"[theme:neutralTertiary, default: #a6a6a6]\"}.ms-TextField.is-disabled[data-v-b66577ac]::-moz-placeholder{color:\"[theme:neutralTertiary, default: #a6a6a6]\"}.ms-TextField.is-disabled[data-v-b66577ac]:-moz-placeholder{color:\"[theme:neutralTertiary, default: #a6a6a6]\"}.ms-TextField.is-disabled[data-v-b66577ac]:-ms-input-placeholder{color:\"[theme:neutralTertiary, default: #a6a6a6]\"}.ms-TextField.is-required .ms-Label[data-v-b66577ac]::after{content:\" *\";color:\"[theme:error, default: #a80000]\"}.ms-TextField.is-required[data-v-b66577ac]::-webkit-input-placeholder::after{content:\" *\";color:\"[theme:error, default: #a80000]\"}.ms-TextField.is-required[data-v-b66577ac]::-moz-placeholder::after{content:\" *\";color:\"[theme:error, default: #a80000]\"}.ms-TextField.is-required[data-v-b66577ac]:-moz-placeholder::after{content:\" *\";color:\"[theme:error, default: #a80000]\"}.ms-TextField.is-required[data-v-b66577ac]:-ms-input-placeholder::after{content:\" *\";color:\"[theme:error, default: #a80000]\"}.ms-TextField.is-active[data-v-b66577ac]{border-color:\"[theme:themePrimary, default: #0078d7]\"}.ms-TextField-field[data-v-b66577ac]{box-sizing:border-box;margin:0;padding:0;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;border:1px solid \"[theme:neutralTertiaryAlt, default: #c8c8c8]\";border-radius:0;font-weight:300;font-size:14px;color:\"[theme:neutralPrimary, default: #333333]\";height:32px;padding:6px 12px 7px;width:100%;min-width:180px;outline:0;text-overflow:ellipsis}.ms-TextField-field[data-v-b66577ac]:hover{border-color:\"[theme:neutralSecondaryAlt, default: #767676]\"}.ms-TextField-field[data-v-b66577ac]:focus{border-color:\"[theme:themePrimary, default: #0078d7]\"}@media screen and (-ms-high-contrast:active){.ms-TextField-field[data-v-b66577ac]:focus,.ms-TextField-field[data-v-b66577ac]:hover{border-color:#1aebff}}@media screen and (-ms-high-contrast:black-on-white){.ms-TextField-field[data-v-b66577ac]:focus,.ms-TextField-field[data-v-b66577ac]:hover{border-color:#37006e}}.ms-TextField-field[disabled][data-v-b66577ac]{background-color:\"[theme:neutralLighter, default: #f4f4f4]\";border-color:\"[theme:neutralLighter, default: #f4f4f4]\";pointer-events:none;cursor:default}.ms-TextField-field[data-v-b66577ac]::-webkit-input-placeholder{color:\"[theme:neutralSecondary, default: #666666]\"}.ms-TextField-field[data-v-b66577ac]::-moz-placeholder{color:\"[theme:neutralSecondary, default: #666666]\"}.ms-TextField-field[data-v-b66577ac]:-moz-placeholder{color:\"[theme:neutralSecondary, default: #666666]\"}.ms-TextField-field[data-v-b66577ac]:-ms-input-placeholder{color:\"[theme:neutralSecondary, default: #666666]\"}.ms-TextField-description[data-v-b66577ac]{color:\"[theme:neutralSecondaryAlt, default: #767676]\";font-size:11px}.ms-TextField.ms-TextField--placeholder[data-v-b66577ac]{position:relative;background-color:\"[theme:white, default: #ffffff]\"}.ms-TextField.ms-TextField--placeholder .ms-TextField-field[data-v-b66577ac]{position:relative;background-color:transparent;z-index:5}.ms-TextField.ms-TextField--placeholder .ms-Label[data-v-b66577ac]{position:absolute;font-weight:300;font-size:14px;color:\"[theme:neutralSecondary, default: #666666]\";padding:6px 12px 7px;pointer-events:none;z-index:0}.ms-TextField.ms-TextField--placeholder.is-disabled[data-v-b66577ac]{color:\"[theme:neutralTertiary, default: #a6a6a6]\"}.ms-TextField.ms-TextField--placeholder.is-disabled .ms-Label[data-v-b66577ac]{color:\"[theme:neutralTertiary, default: #a6a6a6]\"}.ms-TextField.ms-TextField--underlined[data-v-b66577ac]{border-bottom:1px solid \"[theme:neutralTertiaryAlt, default: #c8c8c8]\";display:table;width:100%;min-width:180px}.ms-TextField.ms-TextField--underlined[data-v-b66577ac]:hover{border-color:\"[theme:neutralSecondaryAlt, default: #767676]\"}@media screen and (-ms-high-contrast:active){.ms-TextField.ms-TextField--underlined[data-v-b66577ac]:hover{border-color:#1aebff}}@media screen and (-ms-high-contrast:black-on-white){.ms-TextField.ms-TextField--underlined[data-v-b66577ac]:hover{border-color:#37006e}}.ms-TextField.ms-TextField--underlined[data-v-b66577ac]:active,.ms-TextField.ms-TextField--underlined[data-v-b66577ac]:focus{border-color:\"[theme:themePrimary, default: #0078d7]\"}.ms-TextField.ms-TextField--underlined .ms-Label[data-v-b66577ac]{font-size:14px;margin-right:8px;display:table-cell;vertical-align:top;padding-left:12px;padding-top:9px;height:32px;width:1%;white-space:nowrap}.ms-TextField.ms-TextField--underlined .ms-TextField-field[data-v-b66577ac]{border:0;float:left;display:table-cell;text-align:left;padding-top:8px;padding-bottom:3px}.ms-TextField.ms-TextField--underlined .ms-TextField-field[data-v-b66577ac]:active,.ms-TextField.ms-TextField--underlined .ms-TextField-field[data-v-b66577ac]:focus,.ms-TextField.ms-TextField--underlined .ms-TextField-field[data-v-b66577ac]:hover{outline:0}.ms-TextField.ms-TextField--underlined.is-disabled[data-v-b66577ac]{border-bottom-color:\"[theme:neutralLight, default: #eaeaea]\"}.ms-TextField.ms-TextField--underlined.is-disabled .ms-Label[data-v-b66577ac]{color:\"[theme:neutralTertiary, default: #a6a6a6]\"}.ms-TextField.ms-TextField--underlined.is-disabled .ms-TextField-field[data-v-b66577ac]{background-color:transparent;color:\"[theme:neutralTertiary, default: #a6a6a6]\"}.ms-TextField.ms-TextField--underlined.is-active[data-v-b66577ac]{border-color:\"[theme:themePrimary, default: #0078d7]\"}@media screen and (-ms-high-contrast:active){.ms-TextField.ms-TextField--underlined.is-active[data-v-b66577ac]{border-color:#1aebff}}@media screen and (-ms-high-contrast:black-on-white){.ms-TextField.ms-TextField--underlined.is-active[data-v-b66577ac]{border-color:#37006e}}.ms-TextField.ms-TextField--multiline .ms-TextField-field[data-v-b66577ac]{font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;color:\"[theme:neutralSecondary, default: #666666]\";font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;font-size:14px;font-weight:400;line-height:17px;min-height:60px;min-width:260px;padding-top:6px;overflow:auto}", map: undefined, media: undefined });
+
+  };
+  /* scoped */
+  const __vue_scope_id__$V = "data-v-b66577ac";
+  /* module identifier */
+  const __vue_module_identifier__$V = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$V = undefined;
+  /* style inject */
+  const __vue_create_injector__$n = function(context){ return function(scopeId, data){__vue_script__$V.loadStyles && __vue_script__$V.loadStyles(data.source);}};
+  /* style inject SSR */
+  
+
+  
+  var uiTextfield = normalizeComponent_1(
+    {},
+    __vue_inject_styles__$V,
+    __vue_script__$V,
+    __vue_scope_id__$V,
+    __vue_is_functional_template__$V,
+    __vue_module_identifier__$V,
+    __vue_create_injector__$n,
+    undefined
+  );
+
+var script$W = {
   name: 'ou-toggle',
-
   mixins: [type('textLeft'), disabled],
-
   props: {
     value: Boolean,
     onLabel: String,
     offLabel: String,
     description: String
   },
-
   computed: {
     toggleClass: function toggleClass() {
-      var obj;
+      var _ref;
 
-      return ( obj = {}, obj[("ms-Toggle--" + (this.type))] = !!this.type, obj['is-disabled'] =  this.disabled, obj );
+      return _ref = {}, _defineProperty(_ref, "ms-Toggle--".concat(this.type), !!this.type), _defineProperty(_ref, 'is-disabled', this.disabled), _ref;
     }
   },
-
   mounted: function mounted() {
     new this.$fabric.Toggle(this.$refs.toggle);
   },
-
   methods: {
     toggle: function toggle() {
       if (!this.disabled) {
@@ -4673,6 +6421,38 @@ var toggle = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_
     }
   }
 };
+
+/* script */
+const __vue_script__$W = script$W;
+
+/* template */
+var __vue_render__$x = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"toggle",staticClass:"ms-Toggle",class:_vm.toggleClass},[(_vm.description)?_c('span',{staticClass:"ms-Toggle-description"},[_vm._v("\n    "+_vm._s(_vm.description)+"\n  ")]):_vm._e(),_vm._v(" "),_c('input',{staticClass:"ms-Toggle-input",attrs:{"type":"checkbox"}}),_vm._v(" "),_c('span',{staticClass:"ms-Toggle-trigger",on:{"click":_vm.toggle}},[_c('label',{ref:"toggleLabel",staticClass:"ms-Toggle-field",class:{ 'is-selected': _vm.value },attrs:{"tabindex":"0"}},[_c('span',{staticClass:"ms-Label ms-Label--off"},[_vm._v(_vm._s(_vm.offLabel))]),_vm._v(" "),_c('span',{staticClass:"ms-Label ms-Label--on"},[_vm._v(_vm._s(_vm.onLabel))])])])])};
+var __vue_staticRenderFns__$x = [];
+
+  /* style */
+  const __vue_inject_styles__$W = undefined;
+  /* scoped */
+  const __vue_scope_id__$W = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$W = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$W = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var toggle = normalizeComponent_1(
+    { render: __vue_render__$x, staticRenderFns: __vue_staticRenderFns__$x },
+    __vue_inject_styles__$W,
+    __vue_script__$W,
+    __vue_scope_id__$W,
+    __vue_is_functional_template__$W,
+    __vue_module_identifier__$W,
+    undefined,
+    undefined
+  );
 
 var Toggle = function () {
   function Toggle(container) {
@@ -4703,168 +6483,1861 @@ var Toggle = function () {
   return Toggle;
 }();
 
-var uiToggle = {_scopeId: 'data-v-3153c0f8',
-    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .ms-Label[data-v-3153c0f8] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 12px; font-weight: 400; box-sizing: border-box; display: block; padding: 5px 0; } .ms-Label.is-required[data-v-3153c0f8]::after { content: ' *'; color: \"[theme:error, default: #a80000]\"; } .ms-Label.is-disabled[data-v-3153c0f8] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-Toggle[data-v-3153c0f8] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; font-weight: 400; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; position: relative; display: block; margin-bottom: 26px; } .ms-Toggle .ms-Label[data-v-3153c0f8] { position: relative; top: -2px; padding: 0 0 0 50px; } .ms-Toggle .ms-Toggle-field[data-v-3153c0f8]::before { position: absolute; top: 3px; width: 10px; height: 10px; border-radius: 10px; content: ''; left: 4px; background-color: \"[theme:neutralSecondary, default: #666666]\"; outline: 1px solid transparent; transition-property: background, left; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0, 0.23, 1); } @media screen and (-ms-high-contrast: active) { .ms-Toggle .ms-Toggle-field[data-v-3153c0f8]::before { border: 2.5px solid \"[theme:white, default: #ffffff]\"; height: 15px; outline: 0; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-Toggle .ms-Toggle-field[data-v-3153c0f8]::before { border-color: \"[theme:black, default: #000000]\"; } } .ms-Toggle .ms-Toggle-field[data-v-3153c0f8]::before { right: auto; } .ms-Toggle .ms-Toggle-field .ms-Label--off[data-v-3153c0f8] { display: block; } .ms-Toggle .ms-Toggle-field .ms-Label--on[data-v-3153c0f8] { display: none; } .ms-Toggle .ms-Toggle-field.is-selected[data-v-3153c0f8] { background-color: \"[theme:themePrimary, default: #0078d7]\"; border-color: \"[theme:themePrimary, default: #0078d7]\"; } .ms-Toggle .ms-Toggle-field.is-selected[data-v-3153c0f8]::before { position: absolute; top: 3px; width: 10px; height: 10px; border-radius: 10px; content: ''; right: 4px; background-color: \"[theme:neutralSecondary, default: #666666]\"; outline: 1px solid transparent; transition-property: background, left; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0, 0.23, 1); } @media screen and (-ms-high-contrast: active) { .ms-Toggle .ms-Toggle-field.is-selected[data-v-3153c0f8]::before { border: 2.5px solid \"[theme:white, default: #ffffff]\"; height: 15px; outline: 0; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-Toggle .ms-Toggle-field.is-selected[data-v-3153c0f8]::before { border-color: \"[theme:black, default: #000000]\"; } } .ms-Toggle .ms-Toggle-field.is-selected[data-v-3153c0f8]::before { background-color: \"[theme:white, default: #ffffff]\"; left: 28px; } .ms-Toggle .ms-Toggle-field.is-selected .ms-Label--off[data-v-3153c0f8] { display: none; } .ms-Toggle .ms-Toggle-field.is-selected .ms-Label--on[data-v-3153c0f8] { display: block; } @media screen and (-ms-high-contrast: active) { .ms-Toggle .ms-Toggle-field.is-selected[data-v-3153c0f8] { background-color: \"[theme:white, default: #ffffff]\"; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-Toggle .ms-Toggle-field.is-selected[data-v-3153c0f8] { background-color: \"[theme:black, default: #000000]\"; } } .ms-Toggle:focus + .ms-Toggle-field[data-v-3153c0f8], .ms-Toggle:hover + .ms-Toggle-field[data-v-3153c0f8] { border-color: \"[theme:neutralSecondary, default: #666666]\"; } .ms-Toggle:focus + .ms-Toggle-field[data-v-3153c0f8]::before, .ms-Toggle:hover + .ms-Toggle-field[data-v-3153c0f8]::before { background-color: \"[theme:neutralPrimary, default: #333333]\"; } .ms-Toggle:focus:checked + .ms-Toggle-field[data-v-3153c0f8], .ms-Toggle:hover:checked + .ms-Toggle-field[data-v-3153c0f8] { background-color: \"[theme:themeDarkAlt, default: #106ebe]\"; border-color: \"[theme:themeDarkAlt, default: #106ebe]\"; } .ms-Toggle:focus:checked + .ms-Toggle-field[data-v-3153c0f8]::before, .ms-Toggle:hover:checked + .ms-Toggle-field[data-v-3153c0f8]::before { background-color: \"[theme:white, default: #ffffff]\"; } .ms-Toggle:active:checked + .ms-Toggle-field[data-v-3153c0f8] { background-color: \"[theme:themeDark, default: #005a9e]\"; border-color: \"[theme:themeDark, default: #005a9e]\"; } .ms-Toggle .ms-Toggle-field[data-v-3153c0f8]:focus, .ms-Toggle .ms-Toggle-field[data-v-3153c0f8]:hover { border-color: \"[theme:neutralPrimary, default: #333333]\"; } .ms-Toggle .ms-Toggle-field.is-selected[data-v-3153c0f8]:focus, .ms-Toggle .ms-Toggle-field.is-selected[data-v-3153c0f8]:hover { background-color: \"[theme:themeDarkAlt, default: #106ebe]\"; border-color: \"[theme:themeDarkAlt, default: #106ebe]\"; } .ms-Toggle .ms-Toggle-field .ms-Label[data-v-3153c0f8] { color: \"[theme:black, default: #000000]\"; user-select: none; } .ms-Toggle .ms-Toggle-field:hover .ms-Label[data-v-3153c0f8] { color: \"[theme:black, default: #000000]\"; } .ms-Toggle .ms-Toggle-field:active .ms-Label[data-v-3153c0f8] { color: \"[theme:neutralPrimary, default: #333333]\"; } .ms-Toggle.is-disabled .ms-Label[data-v-3153c0f8] { color: \"[theme:neutralTertiary, default: #a6a6a6]\"; } .ms-Toggle.is-disabled .ms-Toggle-field[data-v-3153c0f8] { background-color: \"[theme:white, default: #ffffff]\"; border-color: \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; pointer-events: none; cursor: default; } .ms-Toggle.is-disabled .ms-Toggle-field[data-v-3153c0f8]::before { background-color: \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; } @media screen and (-ms-high-contrast: active) { .ms-Toggle.is-disabled .ms-Toggle-field[data-v-3153c0f8], .ms-Toggle.is-disabled .ms-Toggle-field[data-v-3153c0f8]::before { border-color: #00ff00; } } @media screen and (-ms-high-contrast: black-on-white) { .ms-Toggle.is-disabled .ms-Toggle-field[data-v-3153c0f8], .ms-Toggle.is-disabled .ms-Toggle-field[data-v-3153c0f8]::before { border-color: #600000; } } .ms-Toggle-description[data-v-3153c0f8] { position: relative; font-size: 14px; vertical-align: top; display: block; margin-bottom: 8px; } .ms-Toggle-field[data-v-3153c0f8] { position: relative; display: inline-block; width: 45px; height: 20px; box-sizing: border-box; border: 2px solid \"[theme:neutralTertiary, default: #a6a6a6]\"; border-radius: 20px; cursor: pointer; transition-property: background, left, border-color; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0, 0.23, 1); outline: 0; } .ms-Toggle-field[data-v-3153c0f8]:hover, .ms-Toggle-field[data-v-3153c0f8]:focus { border-color: \"[theme:neutralSecondary, default: #666666]\"; } .ms-Toggle-input[data-v-3153c0f8] { display: none; } .ms-Toggle.ms-Toggle--textLeft[data-v-3153c0f8] { width: 225px; margin-bottom: 40px; } .ms-Toggle.ms-Toggle--textLeft .ms-Toggle-description[data-v-3153c0f8] { display: inline-block; max-width: 150px; top: -3px; margin-bottom: 0; } .ms-Toggle.ms-Toggle--textLeft .ms-Toggle-field[data-v-3153c0f8] { float: right; } ");},
-    beforeMount: function beforeMount(){
-        this.$fabric = {
-            Toggle : Toggle
-        };
-    },
-    extends :  toggle
-}
+var script$X = {
+  loadStyles: loadStyles,
+  beforeMount: function beforeMount() {
+    this.$fabric = {
+      Toggle: Toggle
+    };
+  },
+  extends: toggle
+};
 
-var iconData = [{bundle:'a13498cf',icons:{GlobalNavButton:'E700',ChevronDown:'E70D',ChevronUp:'E70E',Edit:'E70F',Add:'E710',Cancel:'E711',More:'E712',Settings:'E713',Mail:'E715',Filter:'E71C',Search:'E721',Share:'E72D',BlockedSite:'E72F',FavoriteStar:'E734',FavoriteStarFill:'E735',CheckMark:'E73E',Delete:'E74D',ChevronLeft:'E76B',ChevronRight:'E76C',Calendar:'E787',Megaphone:'E789',Undo:'E7A7',Flag:'E7C1',Page:'E7C3',Pinned:'E840',View:'E890',Clear:'E894',Download:'E896',Upload:'E898',Folder:'E8B7',Sort:'E8CB',AlignRight:'E8E2',AlignLeft:'E8E4',Tag:'E8EC',AddFriend:'E8FA',Info:'E946',SortLines:'E9D0',List:'EA37',CircleRing:'EA3A',Heart:'EB51',HeartFill:'EB52',Tiles:'ECA5',Embed:'ECCE',Glimmer:'ECF4',Ascending:'EDC0',Descending:'EDC1',SortUp:'EE68',SortDown:'EE69',SyncToPC:'EE6E',LargeGrid:'EECB',SkypeCheck:'EF80',SkypeClock:'EF81',SkypeMinus:'EF82',ClearFilter:'EF8F',Flow:'EF90',StatusCircleCheckmark:'F13E',MoreVertical:'F2BC'}},{bundle:'0-29734c63',icons:{DecreaseIndentLegacy:'E290',IncreaseIndentLegacy:'E291',SizeLegacy:'E2B2',InternetSharing:'E704',Brightness:'E706',MapPin:'E707',Airplane:'E709',Tablet:'E70A',QuickNote:'E70B',Video:'E714',People:'E716',Phone:'E717',Pin:'E718',Shop:'E719',Stop:'E71A',Link:'E71B',AllApps:'E71D',Zoom:'E71E',ZoomOut:'E71F',Microphone:'E720',Camera:'E722',Attach:'E723',Send:'E724',FavoriteList:'E728',PageSolid:'E729',Forward:'E72A',Back:'E72B',Refresh:'E72C',Lock:'E72E',ReportHacked:'E730',EMI:'E731',MiniLink:'E732',Blocked:'E733',ReadingMode:'E736',Favicon:'E737',Remove:'E738',Checkbox:'E739',CheckboxComposite:'E73A',CheckboxIndeterminate:'E73C',CheckboxCompositeReversed:'E73D',BackToWindow:'E73F',FullScreen:'E740',Print:'E749',Up:'E74A',Down:'E74B',OEM:'E74C',Save:'E74E',Cloud:'E753',CommandPrompt:'E756',Sad:'E757',SIPMove:'E759',EraseTool:'E75C',GripperTool:'E75E',Dialpad:'E75F',PageLeft:'E760',PageRight:'E761',MultiSelect:'E762',KeyboardClassic:'E765',Play:'E768',Pause:'E769',Emoji2:'E76E',GripperBarHorizontal:'E76F',System:'E770',Personalize:'E771',SearchAndApps:'E773',Globe:'E774',ContactInfo:'E779',Unpin:'E77A',Contact:'E77B',Memo:'E77C',Paste:'E77F',WindowsLogo:'E782',Error:'E783',GripperBarVertical:'E784',Unlock:'E785',AutoEnhanceOn:'E78D',AutoEnhanceOff:'E78E',Color:'E790',SaveAs:'E792',Light:'E793',Filters:'E795',AspectRatio:'E799',Contrast:'E7A1',Redo:'E7A6',Crop:'E7A8',PhotoCollection:'E7AA',Album:'E7AB',Rotate:'E7AD',PanoIndicator:'E7B0',RedEye:'E7B3',ThumbnailView:'E7B6',Package:'E7B8',Warning:'E7BA',Financial:'E7BB',Education:'E7BE',ShoppingCart:'E7BF',Train:'E7C0',Move:'E7C2',TouchPointer:'E7C9',Merge:'E7D5'}},{bundle:'1-a653c37c',icons:{TurnRight:'E7DB',Ferry:'E7E3',Highlight:'E7E6',PowerButton:'E7E8',Tab:'E7E9',Admin:'E7EF',TVMonitor:'E7F4',Speakers:'E7F5',StackIndicator:'E7FF',Nav2DMapView:'E800',Car:'E804',Bus:'E806',EatDrink:'E807',LocationCircle:'E80E',Home:'E80F',SwitcherStartEnd:'E810',ParkingLocation:'E811',IncidentTriangle:'E814',Touch:'E815',MapDirections:'E816',CaretHollow:'E817',CaretSolid:'E818',History:'E81C',Location:'E81D',Work:'E821',Recent:'E823',Hotel:'E824',LocationDot:'E827',Dictionary:'E82D',ChromeBack:'E830',FolderOpen:'E838',PinnedFill:'E842',RevToggleKey:'E845',Previous:'E892',Next:'E893',Sync:'E895',Help:'E897',Emoji:'E899',MailForward:'E89C',ClosePane:'E89F',OpenPane:'E8A0',PreviewLink:'E8A1',ZoomIn:'E8A3',Bookmarks:'E8A4',Document:'E8A5',ProtectedDocument:'E8A6',OpenInNewWindow:'E8A7',MailFill:'E8A8',ViewAll:'E8A9',Switch:'E8AB',Rename:'E8AC',Remote:'E8AF',SelectAll:'E8B3',Orientation:'E8B4',Import:'E8B5',Picture:'E8B9',ChromeClose:'E8BB',ShowResults:'E8BC',Message:'E8BD',CalendarDay:'E8BF',CalendarWeek:'E8C0',MailReplyAll:'E8C2',Read:'E8C3',Cut:'E8C6',PaymentCard:'E8C7',Copy:'E8C8',Important:'E8C9',MailReply:'E8CA',GotoToday:'E8D1',Font:'E8D2',FontColor:'E8D3',FolderFill:'E8D5',Permissions:'E8D7',DisableUpdates:'E8D8',Unfavorite:'E8D9',Italic:'E8DB',Underline:'E8DC',Bold:'E8DD',MoveToFolder:'E8DE',Dislike:'E8E0',Like:'E8E1',AlignCenter:'E8E3',OpenFile:'E8E5',FontDecrease:'E8E7',FontIncrease:'E8E8',FontSize:'E8E9',CellPhone:'E8EA',Calculator:'E8EF',Library:'E8F1',PostUpdate:'E8F3',NewFolder:'E8F4',CalendarReply:'E8F5',UnsyncFolder:'E8F6',SyncFolder:'E8F7',BlockContact:'E8F8',Accept:'E8FB',BulletedList:'E8FD',Preview:'E8FF',News:'E900',Chat:'E901'}},{bundle:'2-b9379dbc',icons:{Group:'E902',World:'E909',Comment:'E90A',DockLeft:'E90C',DockRight:'E90D',Repair:'E90F',Accounts:'E910',RadioBullet:'E915',Stopwatch:'E916',Clock:'E917',WorldClock:'E918',AlarmClock:'E919',Photo:'E91B',Hospital:'E91D',Timer:'E91E',FullCircleMask:'E91F',LocationFill:'E920',ChromeMinimize:'E921',Annotation:'E924',Fingerprint:'E928',Handwriting:'E929',Completed:'E930',Label:'E932',FlickDown:'E935',FlickUp:'E936',FlickLeft:'E937',FlickRight:'E938',MiniExpand:'E93A',MiniContract:'E93B',Streaming:'E93E',MusicInCollection:'E940',OneDriveLogo:'E941',CompassNW:'E942',Code:'E943',LightningBolt:'E945',CalculatorMultiply:'E947',CalculatorAddition:'E948',CalculatorSubtract:'E949',CalculatorEqualTo:'E94E',PrintfaxPrinterFile:'E956',Communications:'E95A',Headset:'E95B',Health:'E95E',ChevronUpSmall:'E96D',ChevronDownSmall:'E96E',ChevronLeftSmall:'E96F',ChevronRightSmall:'E970',ChevronUpMed:'E971',ChevronDownMed:'E972',ChevronLeftMed:'E973',ChevronRightMed:'E974',PC1:'E977',PresenceChickletVideo:'E979',Reply:'E97A',HalfAlpha:'E97E',ConstructionCone:'E98F',DoubleChevronLeftMed:'E991',Volume0:'E992',Volume1:'E993',Volume2:'E994',Volume3:'E995',Chart:'E999',Robot:'E99A',Manufacturing:'E99C',LockSolid:'E9A2',BidiLtr:'E9AA',BidiRtl:'E9AB',RightDoubleQuote:'E9B1',Sunny:'E9BD',CloudWeather:'E9BE',Cloudy:'E9BF',PartlyCloudyDay:'E9C0',PartlyCloudyNight:'E9C1',ClearNight:'E9C2',RainShowersDay:'E9C3',Rain:'E9C4',Thunderstorms:'E9C6',RainSnow:'E9C7',Snow:'E9C8',BlowingSnow:'E9C9',Frigid:'E9CA',Fog:'E9CB',Squalls:'E9CC',Duststorm:'E9CD',Unknown:'E9CE',Precipitation:'E9CF',Ribbon:'E9D1',AreaChart:'E9D2',Assign:'E9D3',CheckList:'E9D5',Diagnostic:'E9D9',Generate:'E9DA',LineChart:'E9E6',Equalizer:'E9E9',BarChartHorizontal:'E9EB',BarChartVertical:'E9EC',Freezing:'E9EF',Processing:'E9F5',SnowShowerDay:'E9FD',HailDay:'EA00'}},{bundle:'3-ef2110da',icons:{WorkFlow:'EA01',HourGlass:'EA03',StoreLogoMed20:'EA04',TimeSheet:'EA05',TriangleSolid:'EA08',VideoSolid:'EA0C',RainShowersNight:'EA0F',SnowShowerNight:'EA11',Teamwork:'EA12',HailNight:'EA13',PeopleAdd:'EA15',Glasses:'EA16',DateTime2:'EA17',Shield:'EA18',Header1:'EA19',PageAdd:'EA1A',NumberedList:'EA1C',PowerBILogo:'EA1E',Info2:'EA1F',MusicInCollectionFill:'EA36',Asterisk:'EA38',ErrorBadge:'EA39',CircleFill:'EA3B',Record2:'EA3F',AllAppsMirrored:'EA40',BookmarksMirrored:'EA41',BulletedListMirrored:'EA42',CaretHollowMirrored:'EA45',CaretSolidMirrored:'EA46',ChromeBackMirrored:'EA47',ClosePaneMirrored:'EA49',DockLeftMirrored:'EA4C',DoubleChevronLeftMedMirrored:'EA4D',HelpMirrored:'EA51',ImportMirrored:'EA52',ListMirrored:'EA55',MailForwardMirrored:'EA56',MailReplyMirrored:'EA57',MailReplyAllMirrored:'EA58',OpenPaneMirrored:'EA5B',ParkingLocationMirrored:'EA5E',SendMirrored:'EA63',ShowResultsMirrored:'EA65',ThumbnailViewMirrored:'EA67',Devices3:'EA6C',Lightbulb:'EA80',StatusTriangle:'EA82',VolumeDisabled:'EA85',Puzzle:'EA86',EmojiNeutral:'EA87',EmojiDisappointed:'EA88',HomeSolid:'EA8A',Ringer:'EA8F',PDF:'EA90',HeartBroken:'EA92',StoreLogo16:'EA96',MultiSelectMirrored:'EA98',Broom:'EA99',Cocktails:'EA9D',Wines:'EABF',Articles:'EAC1',Cycling:'EAC7',DietPlanNotebook:'EAC8',Pill:'EACB',ExerciseTracker:'EACC',HandsFree:'EAD0',Medical:'EAD4',Running:'EADA',Weights:'EADB',Trackers:'EADF',AddNotes:'EAE3',AllCurrency:'EAE4',BarChart4:'EAE7',CirclePlus:'EAEE',Coffee:'EAEF',Cotton:'EAF3',Market:'EAFC',Money:'EAFD',PieDouble:'EB04',PieSingle:'EB05',RemoveFilter:'EB08',Savings:'EB0B',Sell:'EB0C',StockDown:'EB0F',StockUp:'EB11',Lamp:'EB19',Source:'EB1B',MSNVideos:'EB1C',Cricket:'EB1E',Golf:'EB1F',Baseball:'EB20',Soccer:'EB21',MoreSports:'EB22',AutoRacing:'EB24',CollegeHoops:'EB25',CollegeFootball:'EB26',ProFootball:'EB27',ProHockey:'EB28',Rugby:'EB2D',SubstitutionsIn:'EB31'}},{bundle:'4-aeecd474',icons:{Tennis:'EB33',Arrivals:'EB34',Design:'EB3C',Website:'EB41',Drop:'EB42',SkiResorts:'EB45',Snowflake:'EB46',BusSolid:'EB47',FerrySolid:'EB48',AirplaneSolid:'EB4C',TrainSolid:'EB4D',Ticket:'EB54',Devices4:'EB66',AzureLogo:'EB6A',BingLogo:'EB6B',MSNLogo:'EB6C',OutlookLogoInverse:'EB6D',OfficeLogo:'EB6E',SkypeLogo:'EB6F',Door:'EB75',EditMirrored:'EB7E',GiftCard:'EB8E',DoubleBookmark:'EB8F',StatusErrorFull:'EB90',Certificate:'EB95',FastForward:'EB9D',Rewind:'EB9E',Photo2:'EB9F',OpenSource:'EBC2',Movers:'EBCD',CloudDownload:'EBD3',Family:'EBDA',WindDirection:'EBE6',Bug:'EBE8',SiteScan:'EBEC',BrowserScreenShot:'EBED',F12DevTools:'EBEE',CSS:'EBEF',JS:'EBF0',DeliveryTruck:'EBF4',ReminderPerson:'EBF7',ReminderGroup:'EBF8',TabletMode:'EBFC',Umbrella:'EC04',NetworkTower:'EC05',CityNext:'EC06',Section:'EC0C',OneNoteLogoInverse:'EC0D',ToggleFilled:'EC11',ToggleBorder:'EC12',SliderThumb:'EC13',ToggleThumb:'EC14',Documentation:'EC17',Badge:'EC1B',Giftbox:'EC1F',VisualStudioLogo:'EC22',ExcelLogoInverse:'EC28',WordLogoInverse:'EC29',PowerPointLogoInverse:'EC2A',Cafe:'EC32',SpeedHigh:'EC4A',Commitments:'EC4D',ThisPC:'EC4E',MusicNote:'EC4F',MicOff:'EC54',EdgeLogo:'EC60',CompletedSolid:'EC61',AlbumRemove:'EC62',MessageFill:'EC70',TabletSelected:'EC74',MobileSelected:'EC75',LaptopSelected:'EC76',TVMonitorSelected:'EC77',DeveloperTools:'EC7A',InsertTextBox:'EC7D',LowerBrightness:'EC8A',DOM:'EC8D',CloudUpload:'EC8E',ScrollUpDown:'EC8F',DateTime:'EC92',Event:'ECA3',Cake:'ECA4',Org:'ECA6',PartyLeader:'ECA7',DRM:'ECA8',CloudAdd:'ECA9',AppIconDefault:'ECAA',Photo2Add:'ECAB',Photo2Remove:'ECAC',POI:'ECAF',AddTo:'ECC8',RadioBtnOff:'ECCA',RadioBtnOn:'ECCB',ExploreContent:'ECCD',Product:'ECDC',ProgressLoopInner:'ECDE',ProgressLoopOuter:'ECDF',Blocked2:'ECE4',FangBody:'ECEB',ChatInviteFriend:'ECFE'}},{bundle:'5-f6547654',icons:{Crown:'ED01',Diamond:'ED02',ScaleUp:'ED09',Feedback:'ED15',SharepointLogoInverse:'ED18',YammerLogo:'ED19',Hide:'ED1A',Uneditable:'ED1D',ReturnToSession:'ED24',OpenFolderHorizontal:'ED25',CalendarMirrored:'ED28',SwayLogoInverse:'ED29',OutOfOffice:'ED34',Trophy:'ED3F',ReopenPages:'ED50',EmojiTabSymbols:'ED58',AADLogo:'ED68',AccessLogo:'ED69',AdminALogoInverse32:'ED6A',AdminCLogoInverse32:'ED6B',AdminDLogoInverse32:'ED6C',AdminELogoInverse32:'ED6D',AdminLLogoInverse32:'ED6E',AdminMLogoInverse32:'ED6F',AdminOLogoInverse32:'ED70',AdminPLogoInverse32:'ED71',AdminSLogoInverse32:'ED72',AdminYLogoInverse32:'ED73',DelveLogoInverse:'ED76',ExchangeLogoInverse:'ED78',LyncLogo:'ED79',OfficeVideoLogoInverse:'ED7A',SocialListeningLogo:'ED7C',VisioLogoInverse:'ED7D',Balloons:'ED7E',Cat:'ED7F',MailAlert:'ED80',MailCheck:'ED81',MailLowImportance:'ED82',MailPause:'ED83',MailRepeat:'ED84',SecurityGroup:'ED85',Table:'ED86',VoicemailForward:'ED87',VoicemailReply:'ED88',Waffle:'ED89',RemoveEvent:'ED8A',EventInfo:'ED8B',ForwardEvent:'ED8C',WipePhone:'ED8D',AddOnlineMeeting:'ED8E',JoinOnlineMeeting:'ED8F',RemoveLink:'ED90',PeopleBlock:'ED91',PeopleRepeat:'ED92',PeopleAlert:'ED93',PeoplePause:'ED94',TransferCall:'ED95',AddPhone:'ED96',UnknownCall:'ED97',NoteReply:'ED98',NoteForward:'ED99',NotePinned:'ED9A',RemoveOccurrence:'ED9B',Timeline:'ED9C',EditNote:'ED9D',CircleHalfFull:'ED9E',Room:'ED9F',Unsubscribe:'EDA0',Subscribe:'EDA1',HardDrive:'EDA2',RecurringTask:'EDB2',TaskManager:'EDB7',TaskManagerMirrored:'EDB8',Combine:'EDBB',Split:'EDBC',DoubleChevronUp:'EDBD',DoubleChevronLeft:'EDBE',DoubleChevronRight:'EDBF',TextBox:'EDC2',TextField:'EDC3',NumberField:'EDC4',Dropdown:'EDC5',BookingsLogo:'EDC7',ClassNotebookLogoInverse:'EDC8',DelveAnalyticsLogo:'EDCA',DocsLogoInverse:'EDCB',Dynamics365Logo:'EDCC',DynamicSMBLogo:'EDCD',OfficeAssistantLogo:'EDCE',OfficeStoreLogo:'EDCF',OneNoteEduLogoInverse:'EDD0',PlannerLogo:'EDD1',PowerApps:'EDD2',Suitcase:'EDD3',ProjectLogoInverse:'EDD4',CaretLeft8:'EDD5',CaretRight8:'EDD6',CaretUp8:'EDD7',CaretDown8:'EDD8'}},{bundle:'6-3954c770',icons:{CaretLeftSolid8:'EDD9',CaretRightSolid8:'EDDA',CaretUpSolid8:'EDDB',CaretDownSolid8:'EDDC',ClearFormatting:'EDDD',Superscript:'EDDE',Subscript:'EDDF',Strikethrough:'EDE0',Export:'EDE1',ExportMirrored:'EDE2',SingleBookmark:'EDFF',SingleBookmarkSolid:'EE00',DoubleChevronDown:'EE04',FollowUser:'EE05',ReplyAll:'EE0A',WorkforceManagement:'EE0F',RecruitmentManagement:'EE12',Questionnaire:'EE19',ManagerSelfService:'EE23',ReplyMirrored:'EE35',ReplyAllMirrored:'EE36',Medal:'EE38',AddGroup:'EE3D',QuestionnaireMirrored:'EE4B',TemporaryUser:'EE58',CaretSolid16:'EE62',GroupedDescending:'EE66',GroupedAscending:'EE67',AwayStatus:'EE6A',MyMoviesTV:'EE6C',GenericScan:'EE6F',AustralianRules:'EE70',WifiEthernet:'EE77',TrackersMirrored:'EE92',DateTimeMirrored:'EE93',StopSolid:'EE95',DoubleChevronUp12:'EE96',DoubleChevronDown12:'EE97',DoubleChevronLeft12:'EE98',DoubleChevronRight12:'EE99',CalendarAgenda:'EE9A',AddEvent:'EEB5',AssetLibrary:'EEB6',DataConnectionLibrary:'EEB7',DocLibrary:'EEB8',FormLibrary:'EEB9',FormLibraryMirrored:'EEBA',ReportLibrary:'EEBB',ReportLibraryMirrored:'EEBC',ContactCard:'EEBD',CustomList:'EEBE',CustomListMirrored:'EEBF',IssueTracking:'EEC0',IssueTrackingMirrored:'EEC1',PictureLibrary:'EEC2',OfficeAddinsLogo:'EEC7',OfflineOneDriveParachute:'EEC8',OfflineOneDriveParachuteDisabled:'EEC9',TriangleSolidUp12:'EECC',TriangleSolidDown12:'EECD',TriangleSolidLeft12:'EECE',TriangleSolidRight12:'EECF',TriangleUp12:'EED0',TriangleDown12:'EED1',TriangleLeft12:'EED2',TriangleRight12:'EED3',ArrowUpRight8:'EED4',ArrowDownRight8:'EED5',DocumentSet:'EED6',DelveAnalytics:'EEEE',ArrowUpRightMirrored8:'EEEF',ArrowDownRightMirrored8:'EEF0',CompanyDirectory:'EF0D',CompanyDirectoryMirrored:'EF2B',OneDriveAdd:'EF32',ProfileSearch:'EF35',Header2:'EF36',Header3:'EF37',Header4:'EF38',Eyedropper:'EF3C',MarketDown:'EF42',CalendarWorkWeek:'EF51',SidePanel:'EF52',GlobeFavorite:'EF53',CaretTopLeftSolid8:'EF54',CaretTopRightSolid8:'EF55',ViewAll2:'EF56',DocumentReply:'EF57',PlayerSettings:'EF58',ReceiptForward:'EF59',ReceiptReply:'EF5A',ReceiptCheck:'EF5B',Fax:'EF5C',RecurringEvent:'EF5D',ReplyAlt:'EF5E',ReplyAllAlt:'EF5F',EditStyle:'EF60',EditMail:'EF61',Lifesaver:'EF62',LifesaverLock:'EF63'}},{bundle:'7-02107cf8',icons:{InboxCheck:'EF64',FolderSearch:'EF65',CollapseMenu:'EF66',ExpandMenu:'EF67',Boards:'EF68',SunAdd:'EF69',SunQuestionMark:'EF6A',LandscapeOrientation:'EF6B',DocumentSearch:'EF6C',PublicCalendar:'EF6D',PublicContactCard:'EF6E',PublicEmail:'EF6F',PublicFolder:'EF70',WordDocument:'EF71',PowerPointDocument:'EF72',ExcelDocument:'EF73',GroupedList:'EF74',ClassroomLogo:'EF75',Sections:'EF76',EditPhoto:'EF77',Starburst:'EF78',ShareiOS:'EF79',AirTickets:'EF7A',PencilReply:'EF7B',Tiles2:'EF7C',SkypeCircleCheck:'EF7D',SkypeCircleClock:'EF7E',SkypeCircleMinus:'EF7F',SkypeMessage:'EF83',ClosedCaption:'EF84',ATPLogo:'EF85',OfficeFormsLogoInverse:'EF86',RecycleBin:'EF87',EmptyRecycleBin:'EF88',Hide2:'EF89',Breadcrumb:'EF8C',BirthdayCake:'EF8D',TimeEntry:'EF95',PageEdit:'EFB6',PageRemove:'EFBA',Database:'EFC7',EditContact:'EFD3',ConnectContacts:'EFD4',ActivateOrders:'EFE0',DeactivateOrders:'EFE1',DocumentManagement:'EFFC',CRMReport:'EFFE',ZipFolder:'F012',SurveyQuestions:'F01B',TextDocument:'F029',TextDocumentShared:'F02B',PageCheckedOut:'F02C',SaveAndClose:'F038',Script:'F03A',Archive:'F03F',ActivityFeed:'F056',EventDate:'F059',ArrowUpRight:'F069',CaretRight:'F06B',SetAction:'F071',CaretSolidLeft:'F08D',CaretSolidDown:'F08E',CaretSolidRight:'F08F',CaretSolidUp:'F090',PowerAppsLogo:'F091',PowerApps2Logo:'F092',SearchIssue:'F09A',SearchIssueMirrored:'F09B',FabricAssetLibrary:'F09C',FabricDataConnectionLibrary:'F09D',FabricDocLibrary:'F09E',FabricFormLibrary:'F09F',FabricFormLibraryMirrored:'F0A0',FabricReportLibrary:'F0A1',FabricReportLibraryMirrored:'F0A2',FabricPublicFolder:'F0A3',FabricFolderSearch:'F0A4',FabricMovetoFolder:'F0A5',FabricUnsyncFolder:'F0A6',FabricSyncFolder:'F0A7',FabricOpenFolderHorizontal:'F0A8',FabricFolder:'F0A9',FabricFolderFill:'F0AA',FabricNewFolder:'F0AB',FabricPictureLibrary:'F0AC',AddFavorite:'F0C8',AddFavoriteFill:'F0C9',BufferTimeBefore:'F0CF',BufferTimeAfter:'F0D0',BufferTimeBoth:'F0D1',CannedChat:'F0F2',SkypeForBusinessLogo:'F0FC',PageCheckedin:'F104',ReadOutLoud:'F112',CaretBottomLeftSolid8:'F121',CaretBottomRightSolid8:'F122',FolderHorizontal:'F12B',MicrosoftStaffhubLogo:'F130',GiftboxOpen:'F133',StatusCircleOuter:'F136'}},{bundle:'8-645fa64e',icons:{StatusCircleInner:'F137',StatusCircleRing:'F138',StatusTriangleOuter:'F139',StatusTriangleInner:'F13A',StatusTriangleExclamation:'F13B',StatusCircleExclamation:'F13C',StatusCircleErrorX:'F13D',StatusCircleInfo:'F13F',StatusCircleBlock2:'F141',StatusCircleQuestionMark:'F142',Toll:'F160',ExploreContentSingle:'F164',CollapseContent:'F165',CollapseContentSingle:'F166',InfoSolid:'F167',ProgressRingDots:'F16A',CaloriesAdd:'F172',BranchFork:'F173',MobileReport:'F18A',HardDriveGroup:'F18F',FastMode:'F19A',ToggleOn:'F19E',ToggleOff:'F19F',Trophy2:'F1AE',BucketColor:'F1B6',BucketColorFill:'F1B7',Taskboard:'F1C2',SingleColumn:'F1D3',DoubleColumn:'F1D4',TripleColumn:'F1D5',ColumnLeftTwoThirds:'F1D6',ColumnRightTwoThirds:'F1D7',AccessLogoFill:'F1DB',AnalyticsLogo:'F1DE',AnalyticsQuery:'F1DF',NewAnalyticsQuery:'F1E0',AnalyticsReport:'F1E1',WordLogo:'F1E3',WordLogoFill:'F1E4',ExcelLogo:'F1E5',ExcelLogoFill:'F1E6',OneNoteLogo:'F1E7',OneNoteLogoFill:'F1E8',OutlookLogo:'F1E9',OutlookLogoFill:'F1EA',PowerPointLogo:'F1EB',PowerPointLogoFill:'F1EC',PublisherLogo:'F1ED',PublisherLogoFill:'F1EE',ScheduleEventAction:'F1EF',FlameSolid:'F1F3',ServerProcesses:'F1FE',Server:'F201',SaveAll:'F203',LinkedInLogo:'F20A',Decimals:'F218',SidePanelMirrored:'F221',ProtectRestrict:'F22A',UnknownMirrored:'F22E',PublicContactCardMirrored:'F230',GridViewSmall:'F232',GridViewMedium:'F233',GridViewLarge:'F234',Step:'F241',StepInsert:'F242',StepShared:'F243',StepSharedAdd:'F244',StepSharedInsert:'F245',ViewDashboard:'F246',ViewList:'F247',ViewListGroup:'F248',ViewListTree:'F249',TriggerAuto:'F24A',TriggerUser:'F24B',PivotChart:'F24C',StackedBarChart:'F24D',StackedLineChart:'F24E',BuildQueue:'F24F',BuildQueueNew:'F250',UserFollowed:'F25C',ContactLink:'F25F',Stack:'F26F',Bullseye:'F272',VennDiagram:'F273',FiveTileGrid:'F274',FocalPoint:'F277',RingerRemove:'F279',TeamsLogoInverse:'F27A',TeamsLogo:'F27B',TeamsLogoFill:'F27C',SkypeForBusinessLogoFill:'F27D',SharepointLogo:'F27E',SharepointLogoFill:'F27F',DelveLogo:'F280',DelveLogoFill:'F281',OfficeVideoLogo:'F282',OfficeVideoLogoFill:'F283',ExchangeLogo:'F284',ExchangeLogoFill:'F285',DocumentApproval:'F28B'}},{bundle:'9-53746c82',icons:{CloneToDesktop:'F28C',InstallToDrive:'F28D',Blur:'F28E',Build:'F28F',ProcessMetaTask:'F290',BranchFork2:'F291',BranchLocked:'F292',BranchCommit:'F293',BranchCompare:'F294',BranchMerge:'F295',BranchPullRequest:'F296',BranchSearch:'F297',BranchShelveset:'F298',RawSource:'F299',MergeDuplicate:'F29A',RowsGroup:'F29B',RowsChild:'F29C',Deploy:'F29D',Redeploy:'F29E',ServerEnviroment:'F29F',VisioDiagram:'F2A0',HighlightMappedShapes:'F2A1',TextCallout:'F2A2',IconSetsFlag:'F2A4',VisioLogo:'F2A7',VisioLogoFill:'F2A8',VisioDocument:'F2A9',TimelineProgress:'F2AA',TimelineDelivery:'F2AB',Backlog:'F2AC',TeamFavorite:'F2AD',TaskGroup:'F2AE',TaskGroupMirrored:'F2AF',ScopeTemplate:'F2B0',AssessmentGroupTemplate:'F2B1',NewTeamProject:'F2B2',CommentAdd:'F2B3',CommentNext:'F2B4',CommentPrevious:'F2B5',ShopServer:'F2B6',LocaleLanguage:'F2B7',QueryList:'F2B8',UserSync:'F2B9',UserPause:'F2BA',StreamingOff:'F2BB',ArrowTallUpLeft:'F2BD',ArrowTallUpRight:'F2BE',ArrowTallDownLeft:'F2BF',ArrowTallDownRight:'F2C0',FieldEmpty:'F2C1',FieldFilled:'F2C2',FieldChanged:'F2C3',FieldNotChanged:'F2C4',RingerOff:'F2C5',PlayResume:'F2C6',BulletedList2:'F2C7',BulletedList2Mirrored:'F2C8',ImageCrosshair:'F2C9',GitGraph:'F2CA',Repo:'F2CB',RepoSolid:'F2CC',FolderQuery:'F2CD',FolderList:'F2CE',FolderListMirrored:'F2CF',LocationOutline:'F2D0',POISolid:'F2D1',CalculatorNotEqualTo:'F2D2',BoxSubtractSolid:'F2D3',BoxAdditionSolid:'F2D4',BoxMultiplySolid:'F2D5',BoxPlaySolid:'F2D6',BoxCheckmarkSolid:'F2D7',CirclePauseSolid:'F2D8',CirclePause:'F2D9',MSNVideosSolid:'F2DA',CircleStopSolid:'F2DB',CircleStop:'F2DC',NavigateBack:'F2DD',NavigateBackMirrored:'F2DE',NavigateForward:'F2DF',NavigateForwardMirrored:'F2E0',UnknownSolid:'F2E1',UnknownMirroredSolid:'F2E2',CircleAddition:'F2E3',CircleAdditionSolid:'F2E4',FilePDB:'F2E5',FileTemplate:'F2E6',FileSQL:'F2E7',FileJAVA:'F2E8',FileASPX:'F2E9',FileCSS:'F2EA',FileSass:'F2EB',FileLess:'F2EC',FileHTML:'F2ED',JavaScriptLanguage:'F2EE',CSharpLanguage:'F2EF',CSharp:'F2F0',VisualBasicLanguage:'F2F1',VB:'F2F2',CPlusPlusLanguage:'F2F3'}},{bundle:'10-fb519450',icons:{CPlusPlus:'F2F4',FSharpLanguage:'F2F5',FSharp:'F2F6',TypeScriptLanguage:'F2F7',PythonLanguage:'F2F8',PY:'F2F9',CoffeeScript:'F2FA',MarkDownLanguage:'F2FB',FullWidth:'F2FE',FullWidthEdit:'F2FF',Plug:'F300',PlugSolid:'F301',PlugConnected:'F302',PlugDisconnected:'F303',UnlockSolid:'F304',Variable:'F305',Parameter:'F306',CommentUrgent:'F307',Storyboard:'F308',DiffInline:'F309',DiffSideBySide:'F30A',ImageDiff:'F30B',ImagePixel:'F30C',FileBug:'F30D',FileCode:'F30E',FileComment:'F30F',BusinessHoursSign:'F310',FileImage:'F311',FileSymlink:'F312',AutoFillTemplate:'F313',WorkItem:'F314',WorkItemBug:'F315',LogRemove:'F316',ColumnOptions:'F317',Packages:'F318',BuildIssue:'F319',AssessmentGroup:'F31A',VariableGroup:'F31B',FullHistory:'F31C',SingleColumnEdit:'F321',DoubleColumnEdit:'F322',TripleColumnEdit:'F323',ColumnLeftTwoThirdsEdit:'F324',ColumnRightTwoThirdsEdit:'F325',StreamLogo:'F329',PassiveAuthentication:'F32A',AlertSolid:'F331',MegaphoneSolid:'F332',TaskSolid:'F333',ConfigurationSolid:'F334',BugSolid:'F335',CrownSolid:'F336',Trophy2Solid:'F337',QuickNoteSolid:'F338',ConstructionConeSolid:'F339',PageListSolid:'F33A',PageListMirroredSolid:'F33B',StarburstSolid:'F33C',ReadingModeSolid:'F33D',SadSolid:'F33E',HealthSolid:'F33F',ShieldSolid:'F340',GiftBoxSolid:'F341',ShoppingCartSolid:'F342',MailSolid:'F343',ChatSolid:'F344',RibbonSolid:'F345',FinancialSolid:'F346',FinancialMirroredSolid:'F347',HeadsetSolid:'F348',PermissionsSolid:'F349',ParkingSolid:'F34A',ParkingMirroredSolid:'F34B',DiamondSolid:'F34C',AsteriskSolid:'F34D',OfflineStorageSolid:'F34E',BankSolid:'F34F',DecisionSolid:'F350',Parachute:'F351',ParachuteSolid:'F352',FiltersSolid:'F353',ColorSolid:'F354',ReviewSolid:'F355',ReviewRequestSolid:'F356',ReviewRequestMirroredSolid:'F357',ReviewResponseSolid:'F358',FeedbackRequestSolid:'F359',FeedbackRequestMirroredSolid:'F35A',FeedbackResponseSolid:'F35B',WorkItemBar:'F35C',WorkItemBarSolid:'F35D',Separator:'F35E',NavigateExternalInline:'F35F',PlanView:'F360',TimelineMatrixView:'F361',EngineeringGroup:'F362',ProjectCollection:'F363',CaretBottomRightCenter8:'F364',CaretBottomLeftCenter8:'F365',CaretTopRightCenter8:'F366'}},{bundle:'11-a4026982',icons:{CaretTopLeftCenter8:'F367',DonutChart:'F368',ChevronUnfold10:'F369',ChevronFold10:'F36A',DoubleChevronDown8:'F36B',DoubleChevronUp8:'F36C',DoubleChevronLeft8:'F36D',DoubleChevronRight8:'F36E',ChevronDownEnd6:'F36F',ChevronUpEnd6:'F370',ChevronLeftEnd6:'F371',ChevronRightEnd6:'F372',ContextMenu:'F37C',AzureAPIManagement:'F37F',AzureServiceEndpoint:'F380',VSTSLogo:'F381',VSTSAltLogo1:'F382',VSTSAltLogo2:'F383',FileTypeSolution:'F387',WordLogoInverse16:'F390',WordLogo16:'F391',WordLogoFill16:'F392',PowerPointLogoInverse16:'F393',PowerPointLogo16:'F394',PowerPointLogoFill16:'F395',ExcelLogoInverse16:'F396',ExcelLogo16:'F397',ExcelLogoFill16:'F398',OneNoteLogoInverse16:'F399',OneNoteLogo16:'F39A',OneNoteLogoFill16:'F39B',OutlookLogoInverse16:'F39C',OutlookLogo16:'F39D',OutlookLogoFill16:'F39E',PublisherLogoInverse16:'F39F',PublisherLogo16:'F3A0',PublisherLogoFill16:'F3A1',VisioLogoInverse16:'F3A2',VisioLogo16:'F3A3',VisioLogoFill16:'F3A4',TestBeaker:'F3A5',TestBeakerSolid:'F3A6',TestExploreSolid:'F3A7',TestAutoSolid:'F3A8',TestUserSolid:'F3A9',TestImpactSolid:'F3AA',TestPlan:'F3AB',TestStep:'F3AC',TestParameter:'F3AD',TestSuite:'F3AE',TestCase:'F3AF',Sprint:'F3B0',SignOut:'F3B1',TriggerApproval:'F3B2',Rocket:'F3B3',AzureKeyVault:'F3B4',Transition:'F3BC',LikeSolid:'F3BF',DislikeSolid:'F3C0',UnSetColor:'F3F9',DeclineCall:'F405',RectangularClipping:'F407',TeamsLogo16:'F40A',TeamsLogoFill16:'F40B',Spacer:'F40D',SkypeLogo16:'F40E',SkypeForBusinessLogo16:'F40F',SkypeForBusinessLogoFill16:'F410',FilterSolid:'F412',MailUndelivered:'F415',MailTentative:'F416',MailTentativeMirrored:'F417',MailReminder:'F418',ReceiptUndelivered:'F419',ReceiptTentative:'F41A',ReceiptTentativeMirrored:'F41B',Inbox:'F41C',IRMReply:'F41D',IRMReplyMirrored:'F41E',IRMForward:'F41F',IRMForwardMirrored:'F420',VoicemailIRM:'F421',EventAccepted:'F422',EventTentative:'F423',EventTentativeMirrored:'F424',EventDeclined:'F425',IDBadge:'F427',BackgroundColor:'F42B',OfficeFormsLogoInverse16:'F433',OfficeFormsLogo:'F434',OfficeFormsLogoFill:'F435',OfficeFormsLogo16:'F436',OfficeFormsLogoFill16:'F437',OfficeFormsLogoInverse24:'F43A',OfficeFormsLogo24:'F43B',OfficeFormsLogoFill24:'F43C',PageLock:'F43F',NotExecuted:'F440',NotImpactedSolid:'F441',FieldReadOnly:'F442'}},{bundle:'12-e6882c74',icons:{FieldRequired:'F443',BacklogBoard:'F444',ExternalBuild:'F445',ExternalTFVC:'F446',ExternalXAML:'F447',IssueSolid:'F448',DefectSolid:'F449',LadybugSolid:'F44A',NugetLogo:'F44C',TFVCLogo:'F44D',ProjectLogo32:'F47E',ProjectLogoFill32:'F47F',ProjectLogo16:'F480',ProjectLogoFill16:'F481',SwayLogo32:'F482',SwayLogoFill32:'F483',SwayLogo16:'F484',SwayLogoFill16:'F485',ClassNotebookLogo32:'F486',ClassNotebookLogoFill32:'F487',ClassNotebookLogo16:'F488',ClassNotebookLogoFill16:'F489',ClassNotebookLogoInverse32:'F48A',ClassNotebookLogoInverse16:'F48B',StaffNotebookLogo32:'F48C',StaffNotebookLogoFill32:'F48D',StaffNotebookLogo16:'F48E',StaffNotebookLogoFill16:'F48F',StaffNotebookLogoInverted32:'F490',StaffNotebookLogoInverted16:'F491',KaizalaLogo:'F492',TaskLogo:'F493',ProtectionCenterLogo32:'F494',GallatinLogo:'F496',Globe2:'F49A',Guitar:'F49B',Breakfast:'F49C',Brunch:'F49D',BeerMug:'F49E',Vacation:'F49F',Teeth:'F4A0',Taxi:'F4A1',Chopsticks:'F4A2',SyncOccurence:'F4A3',UnsyncOccurence:'F4A4',PrimaryCalendar:'F4AE',SearchCalendar:'F4AF',VideoOff:'F4B0',MicrosoftFlowLogo:'F4B1',BusinessCenterLogo:'F4B2',ToDoLogoBottom:'F4B3',ToDoLogoTop:'F4B4',EditSolid12:'F4B5',EditSolidMirrored12:'F4B6',UneditableSolid12:'F4B7',UneditableSolidMirrored12:'F4B8',UneditableMirrored:'F4B9',AdminALogo32:'F4BA',AdminALogoFill32:'F4BB',ToDoLogoInverse:'F4BC',Snooze:'F4BD',WaffleOffice365:'F4E0',ImageSearch:'F4E8',NewsSearch:'F4E9',VideoSearch:'F4EA',R:'F4EB',FontColorA:'F4EC',FontColorSwatch:'F4ED',LightWeight:'F4EE',NormalWeight:'F4EF',SemiboldWeight:'F4F0',GroupObject:'F4F1',UngroupObject:'F4F2',AlignHorizontalLeft:'F4F3',AlignHorizontalCenter:'F4F4',AlignHorizontalRight:'F4F5',AlignVerticalTop:'F4F6',AlignVerticalCenter:'F4F7',AlignVerticalBottom:'F4F8',HorizontalDistributeCenter:'F4F9',VerticalDistributeCenter:'F4FA',Ellipse:'F4FB',Line:'F4FC',Octagon:'F4FD',Hexagon:'F4FE',Pentagon:'F4FF',RightTriangle:'F500',HalfCircle:'F501',QuarterCircle:'F502',ThreeQuarterCircle:'F503','6PointStar':'F504','12PointStar':'F505',ArrangeBringToFront:'F506',ArrangeSendToBack:'F507',ArrangeSendBackward:'F508',ArrangeBringForward:'F509',BorderDash:'F50A',BorderDot:'F50B',LineStyle:'F50C',LineThickness:'F50D'}},{bundle:'13-0980cd6d',icons:{WindowEdit:'F50E',HintText:'F50F',MediaAdd:'F510',AnchorLock:'F511',AutoHeight:'F512',ChartSeries:'F513',ChartXAngle:'F514',ChartYAngle:'F515',Combobox:'F516',LineSpacing:'F517',Padding:'F518',PaddingTop:'F519',PaddingBottom:'F51A',PaddingLeft:'F51B',PaddingRight:'F51C',NavigationFlipper:'F51D',AlignJustify:'F51E',TextOverflow:'F51F',VisualsFolder:'F520',VisualsStore:'F521',PictureCenter:'F522',PictureFill:'F523',PicturePosition:'F524',PictureStretch:'F525',PictureTile:'F526',Slider:'F527',SliderHandleSize:'F528',DefaultRatio:'F529',NumberSequence:'F52A',GUID:'F52B',ReportAdd:'F52C',DashboardAdd:'F52D',MapPinSolid:'F52E',WebPublish:'F52F',PieSingleSolid:'F530',BlockedSolid:'F531',DrillDown:'F532',DrillDownSolid:'F533',DrillExpand:'F534',DrillShow:'F535',OneDriveFolder16:'F53B',FunctionalManagerDashboard:'F542',BIDashboard:'F543',CodeEdit:'F544',RenewalCurrent:'F545',RenewalFuture:'F546',SplitObject:'F547',BulkUpload:'F548',DownloadDocument:'F549',WaitlistConfirm:'F550',WaitlistConfirmMirrored:'F551',LaptopSecure:'F552',DragObject:'F553',EntryView:'F554',EntryDecline:'F555',ContactCardSettings:'F556',ContactCardSettingsMirrored:'F557',CalendarSettings:'F558',CalendarSettingsMirrored:'F559',HardDriveLock:'F55A',HardDriveUnlock:'F55B',AccountManagement:'F55C',TransitionPop:'F5B2',TransitionPush:'F5B3',TransitionEffect:'F5B4',LookupEntities:'F5B5',ExploreData:'F5B6',AddBookmark:'F5B7',SearchBookmark:'F5B8',DrillThrough:'F5B9',MasterDatabase:'F5BA',CertifiedDatabase:'F5BB',MaximumValue:'F5BC',MinimumValue:'F5BD',VisualStudioIDELogo32:'F5D0',PasteAsText:'F5D5',PasteAsCode:'F5D6',BrowserTab:'F5D7',BrowserTabScreenshot:'F5D8',DesktopScreenshot:'F5D9',FileYML:'F5DA',ClipboardSolid:'F5DC',AnalyticsView:'F5F1',Leave:'F627',Trending12:'F62D',Blocked12:'F62E',Warning12:'F62F',CheckedOutByOther12:'F630',CheckedOutByYou12:'F631',CircleShapeSolid:'F63C',SquareShapeSolid:'F63D',TriangleShapeSolid:'F63E',DropShapeSolid:'F63F',RectangleShapeSolid:'F640',InsertColumnsLeft:'F64A',InsertColumnsRight:'F64B',InsertRowsAbove:'F64C',InsertRowsBelow:'F64D',DeleteColumns:'F64E',DeleteRows:'F64F'}},{bundle:'14-eb4d1150',icons:{DeleteRowsMirrored:'F650',DeleteTable:'F651',VersionControlPush:'F664',WhiteBoardApp16:'F673',WhiteBoardApp32:'F674',InsertSignatureLine:'F677',ArrangeByFrom:'F678',Phishing:'F679',CreateMailRule:'F67A',PublishCourse:'F699',DictionaryRemove:'F69A',UserRemove:'F69B',UserEvent:'F69C',Encryption:'F69D',D365TalentLearn:'F6BB',D365TalentInsight:'F6BC',D365TalentHRCore:'F6BD',BacklogList:'F6BF',ButtonControl:'F6C0',TableGroup:'F6D9',MountainClimbing:'F6DB',TagUnknown:'F6DF',TagUnknownMirror:'F6E0',TagUnknown12:'F6E1',TagUnknown12Mirror:'F6E2',Link12:'F6E3',Presentation:'F6E4',Presentation12:'F6E5',Lock12:'F6E6',BuildDefinition:'F6E9',ReleaseDefinition:'F6EA',SaveTemplate:'F6EC',UserGauge:'F6ED',BlockedSiteSolid12:'F70A',TagSolid:'F70E',OfficeChat:'F70F',OfficeChatSolid:'F710',MailSchedule:'F72E'}}];
+/* script */
+const __vue_script__$X = script$X;
 
-var uiDynamicIcon = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('i',{class:_vm.iconClass,on:{"click":function($event){_vm.$emit('click');}}})},staticRenderFns: [],
-    props:["name"],
-    computed:{
-        iconClass: function iconClass(){
-            return ("ms-Icon ms-Icon--" + (this.name) + " " + (this.contentClass))
-        }
-    },
-    data: function data(){
-        return {
-            contentClass : null
-        }
-    },
-    mounted: function mounted(){
-        // find bundle
-        var unicode;
-        var bundle;
-        for(var b=0;b<iconData.length && !unicode;b++)
-            { if(unicode = iconData[b].icons[this.name])
-                { bundle = iconData[b].bundle; } }
+/* template */
 
-        fontFace({
-            fontFamily: "FabricMDL2Icons-" + bundle,
-            src: "url(https://spoprod-a.akamaihd.net/files/fabric/assets/icons/fabric-icons-" + bundle +".woff) format(\"woff\")"
-        });
+  /* style */
+  const __vue_inject_styles__$X = function (inject) {
+    if (!inject) return
+    inject("data-v-29e08c9d_0", { source: ".ms-Label[data-v-29e08c9d]{font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;box-sizing:border-box;margin:0;padding:0;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;color:\"[theme:neutralPrimary, default: #333333]\";font-size:12px;font-weight:400;box-sizing:border-box;display:block;padding:5px 0}.ms-Label.is-required[data-v-29e08c9d]::after{content:\" *\";color:\"[theme:error, default: #a80000]\"}.ms-Label.is-disabled[data-v-29e08c9d]{color:\"[theme:neutralTertiary, default: #a6a6a6]\"}.ms-Toggle[data-v-29e08c9d]{font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;font-size:14px;font-weight:400;box-sizing:border-box;margin:0;padding:0;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;position:relative;display:block;margin-bottom:26px}.ms-Toggle .ms-Label[data-v-29e08c9d]{position:relative;top:-2px;padding:0 0 0 50px}.ms-Toggle .ms-Toggle-field[data-v-29e08c9d]::before{position:absolute;top:3px;width:10px;height:10px;border-radius:10px;content:\"\";left:4px;background-color:\"[theme:neutralSecondary, default: #666666]\";outline:1px solid transparent;transition-property:background,left;transition-duration:250ms;transition-timing-function:cubic-bezier(.4,0,.23,1)}@media screen and (-ms-high-contrast:active){.ms-Toggle .ms-Toggle-field[data-v-29e08c9d]::before{border:2.5px solid \"[theme:white, default: #ffffff]\";height:15px;outline:0}}@media screen and (-ms-high-contrast:black-on-white){.ms-Toggle .ms-Toggle-field[data-v-29e08c9d]::before{border-color:\"[theme:black, default: #000000]\"}}.ms-Toggle .ms-Toggle-field[data-v-29e08c9d]::before{right:auto}.ms-Toggle .ms-Toggle-field .ms-Label--off[data-v-29e08c9d]{display:block}.ms-Toggle .ms-Toggle-field .ms-Label--on[data-v-29e08c9d]{display:none}.ms-Toggle .ms-Toggle-field.is-selected[data-v-29e08c9d]{background-color:\"[theme:themePrimary, default: #0078d7]\";border-color:\"[theme:themePrimary, default: #0078d7]\"}.ms-Toggle .ms-Toggle-field.is-selected[data-v-29e08c9d]::before{position:absolute;top:3px;width:10px;height:10px;border-radius:10px;content:\"\";right:4px;background-color:\"[theme:neutralSecondary, default: #666666]\";outline:1px solid transparent;transition-property:background,left;transition-duration:250ms;transition-timing-function:cubic-bezier(.4,0,.23,1)}@media screen and (-ms-high-contrast:active){.ms-Toggle .ms-Toggle-field.is-selected[data-v-29e08c9d]::before{border:2.5px solid \"[theme:white, default: #ffffff]\";height:15px;outline:0}}@media screen and (-ms-high-contrast:black-on-white){.ms-Toggle .ms-Toggle-field.is-selected[data-v-29e08c9d]::before{border-color:\"[theme:black, default: #000000]\"}}.ms-Toggle .ms-Toggle-field.is-selected[data-v-29e08c9d]::before{background-color:\"[theme:white, default: #ffffff]\";left:28px}.ms-Toggle .ms-Toggle-field.is-selected .ms-Label--off[data-v-29e08c9d]{display:none}.ms-Toggle .ms-Toggle-field.is-selected .ms-Label--on[data-v-29e08c9d]{display:block}@media screen and (-ms-high-contrast:active){.ms-Toggle .ms-Toggle-field.is-selected[data-v-29e08c9d]{background-color:\"[theme:white, default: #ffffff]\"}}@media screen and (-ms-high-contrast:black-on-white){.ms-Toggle .ms-Toggle-field.is-selected[data-v-29e08c9d]{background-color:\"[theme:black, default: #000000]\"}}.ms-Toggle:focus+.ms-Toggle-field[data-v-29e08c9d],.ms-Toggle:hover+.ms-Toggle-field[data-v-29e08c9d]{border-color:\"[theme:neutralSecondary, default: #666666]\"}.ms-Toggle:focus+.ms-Toggle-field[data-v-29e08c9d]::before,.ms-Toggle:hover+.ms-Toggle-field[data-v-29e08c9d]::before{background-color:\"[theme:neutralPrimary, default: #333333]\"}.ms-Toggle:focus:checked+.ms-Toggle-field[data-v-29e08c9d],.ms-Toggle:hover:checked+.ms-Toggle-field[data-v-29e08c9d]{background-color:\"[theme:themeDarkAlt, default: #106ebe]\";border-color:\"[theme:themeDarkAlt, default: #106ebe]\"}.ms-Toggle:focus:checked+.ms-Toggle-field[data-v-29e08c9d]::before,.ms-Toggle:hover:checked+.ms-Toggle-field[data-v-29e08c9d]::before{background-color:\"[theme:white, default: #ffffff]\"}.ms-Toggle:active:checked+.ms-Toggle-field[data-v-29e08c9d]{background-color:\"[theme:themeDark, default: #005a9e]\";border-color:\"[theme:themeDark, default: #005a9e]\"}.ms-Toggle .ms-Toggle-field[data-v-29e08c9d]:focus,.ms-Toggle .ms-Toggle-field[data-v-29e08c9d]:hover{border-color:\"[theme:neutralPrimary, default: #333333]\"}.ms-Toggle .ms-Toggle-field.is-selected[data-v-29e08c9d]:focus,.ms-Toggle .ms-Toggle-field.is-selected[data-v-29e08c9d]:hover{background-color:\"[theme:themeDarkAlt, default: #106ebe]\";border-color:\"[theme:themeDarkAlt, default: #106ebe]\"}.ms-Toggle .ms-Toggle-field .ms-Label[data-v-29e08c9d]{color:\"[theme:black, default: #000000]\";user-select:none}.ms-Toggle .ms-Toggle-field:hover .ms-Label[data-v-29e08c9d]{color:\"[theme:black, default: #000000]\"}.ms-Toggle .ms-Toggle-field:active .ms-Label[data-v-29e08c9d]{color:\"[theme:neutralPrimary, default: #333333]\"}.ms-Toggle.is-disabled .ms-Label[data-v-29e08c9d]{color:\"[theme:neutralTertiary, default: #a6a6a6]\"}.ms-Toggle.is-disabled .ms-Toggle-field[data-v-29e08c9d]{background-color:\"[theme:white, default: #ffffff]\";border-color:\"[theme:neutralTertiaryAlt, default: #c8c8c8]\";pointer-events:none;cursor:default}.ms-Toggle.is-disabled .ms-Toggle-field[data-v-29e08c9d]::before{background-color:\"[theme:neutralTertiaryAlt, default: #c8c8c8]\"}@media screen and (-ms-high-contrast:active){.ms-Toggle.is-disabled .ms-Toggle-field[data-v-29e08c9d],.ms-Toggle.is-disabled .ms-Toggle-field[data-v-29e08c9d]::before{border-color:#0f0}}@media screen and (-ms-high-contrast:black-on-white){.ms-Toggle.is-disabled .ms-Toggle-field[data-v-29e08c9d],.ms-Toggle.is-disabled .ms-Toggle-field[data-v-29e08c9d]::before{border-color:#600000}}.ms-Toggle-description[data-v-29e08c9d]{position:relative;font-size:14px;vertical-align:top;display:block;margin-bottom:8px}.ms-Toggle-field[data-v-29e08c9d]{position:relative;display:inline-block;width:45px;height:20px;box-sizing:border-box;border:2px solid \"[theme:neutralTertiary, default: #a6a6a6]\";border-radius:20px;cursor:pointer;transition-property:background,left,border-color;transition-duration:250ms;transition-timing-function:cubic-bezier(.4,0,.23,1);outline:0}.ms-Toggle-field[data-v-29e08c9d]:focus,.ms-Toggle-field[data-v-29e08c9d]:hover{border-color:\"[theme:neutralSecondary, default: #666666]\"}.ms-Toggle-input[data-v-29e08c9d]{display:none}.ms-Toggle.ms-Toggle--textLeft[data-v-29e08c9d]{width:225px;margin-bottom:40px}.ms-Toggle.ms-Toggle--textLeft .ms-Toggle-description[data-v-29e08c9d]{display:inline-block;max-width:150px;top:-3px;margin-bottom:0}.ms-Toggle.ms-Toggle--textLeft .ms-Toggle-field[data-v-29e08c9d]{float:right}", map: undefined, media: undefined });
 
-        this.contentClass = mergeStyles({ 
-            displayName : this.$options._scopeId,
-            display: 'inline-block',
-            fontStyle: 'normal',
-            fontWeight: '400',
-            speak: 'none',
-            selectors: {
-                ":before":{
-                    fontFamily: "FabricMDL2Icons-" + bundle,
-                    content: ("\"\\" + unicode + "\"")
-                }
-            }
-        });
+  };
+  /* scoped */
+  const __vue_scope_id__$X = "data-v-29e08c9d";
+  /* module identifier */
+  const __vue_module_identifier__$X = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$X = undefined;
+  /* style inject */
+  const __vue_create_injector__$o = function(context){ return function(scopeId, data){__vue_script__$X.loadStyles && __vue_script__$X.loadStyles(data.source);}};
+  /* style inject SSR */
+  
+
+  
+  var uiToggle = normalizeComponent_1(
+    {},
+    __vue_inject_styles__$X,
+    __vue_script__$X,
+    __vue_scope_id__$X,
+    __vue_is_functional_template__$X,
+    __vue_module_identifier__$X,
+    __vue_create_injector__$o,
+    undefined
+  );
+
+//
+//
+//
+//
+var iconData = [{
+  bundle: 'a13498cf',
+  icons: {
+    GlobalNavButton: 'E700',
+    ChevronDown: 'E70D',
+    ChevronUp: 'E70E',
+    Edit: 'E70F',
+    Add: 'E710',
+    Cancel: 'E711',
+    More: 'E712',
+    Settings: 'E713',
+    Mail: 'E715',
+    Filter: 'E71C',
+    Search: 'E721',
+    Share: 'E72D',
+    BlockedSite: 'E72F',
+    FavoriteStar: 'E734',
+    FavoriteStarFill: 'E735',
+    CheckMark: 'E73E',
+    Delete: 'E74D',
+    ChevronLeft: 'E76B',
+    ChevronRight: 'E76C',
+    Calendar: 'E787',
+    Megaphone: 'E789',
+    Undo: 'E7A7',
+    Flag: 'E7C1',
+    Page: 'E7C3',
+    Pinned: 'E840',
+    View: 'E890',
+    Clear: 'E894',
+    Download: 'E896',
+    Upload: 'E898',
+    Folder: 'E8B7',
+    Sort: 'E8CB',
+    AlignRight: 'E8E2',
+    AlignLeft: 'E8E4',
+    Tag: 'E8EC',
+    AddFriend: 'E8FA',
+    Info: 'E946',
+    SortLines: 'E9D0',
+    List: 'EA37',
+    CircleRing: 'EA3A',
+    Heart: 'EB51',
+    HeartFill: 'EB52',
+    Tiles: 'ECA5',
+    Embed: 'ECCE',
+    Glimmer: 'ECF4',
+    Ascending: 'EDC0',
+    Descending: 'EDC1',
+    SortUp: 'EE68',
+    SortDown: 'EE69',
+    SyncToPC: 'EE6E',
+    LargeGrid: 'EECB',
+    SkypeCheck: 'EF80',
+    SkypeClock: 'EF81',
+    SkypeMinus: 'EF82',
+    ClearFilter: 'EF8F',
+    Flow: 'EF90',
+    StatusCircleCheckmark: 'F13E',
+    MoreVertical: 'F2BC'
+  }
+}, {
+  bundle: '0-29734c63',
+  icons: {
+    DecreaseIndentLegacy: 'E290',
+    IncreaseIndentLegacy: 'E291',
+    SizeLegacy: 'E2B2',
+    InternetSharing: 'E704',
+    Brightness: 'E706',
+    MapPin: 'E707',
+    Airplane: 'E709',
+    Tablet: 'E70A',
+    QuickNote: 'E70B',
+    Video: 'E714',
+    People: 'E716',
+    Phone: 'E717',
+    Pin: 'E718',
+    Shop: 'E719',
+    Stop: 'E71A',
+    Link: 'E71B',
+    AllApps: 'E71D',
+    Zoom: 'E71E',
+    ZoomOut: 'E71F',
+    Microphone: 'E720',
+    Camera: 'E722',
+    Attach: 'E723',
+    Send: 'E724',
+    FavoriteList: 'E728',
+    PageSolid: 'E729',
+    Forward: 'E72A',
+    Back: 'E72B',
+    Refresh: 'E72C',
+    Lock: 'E72E',
+    ReportHacked: 'E730',
+    EMI: 'E731',
+    MiniLink: 'E732',
+    Blocked: 'E733',
+    ReadingMode: 'E736',
+    Favicon: 'E737',
+    Remove: 'E738',
+    Checkbox: 'E739',
+    CheckboxComposite: 'E73A',
+    CheckboxIndeterminate: 'E73C',
+    CheckboxCompositeReversed: 'E73D',
+    BackToWindow: 'E73F',
+    FullScreen: 'E740',
+    Print: 'E749',
+    Up: 'E74A',
+    Down: 'E74B',
+    OEM: 'E74C',
+    Save: 'E74E',
+    Cloud: 'E753',
+    CommandPrompt: 'E756',
+    Sad: 'E757',
+    SIPMove: 'E759',
+    EraseTool: 'E75C',
+    GripperTool: 'E75E',
+    Dialpad: 'E75F',
+    PageLeft: 'E760',
+    PageRight: 'E761',
+    MultiSelect: 'E762',
+    KeyboardClassic: 'E765',
+    Play: 'E768',
+    Pause: 'E769',
+    Emoji2: 'E76E',
+    GripperBarHorizontal: 'E76F',
+    System: 'E770',
+    Personalize: 'E771',
+    SearchAndApps: 'E773',
+    Globe: 'E774',
+    ContactInfo: 'E779',
+    Unpin: 'E77A',
+    Contact: 'E77B',
+    Memo: 'E77C',
+    Paste: 'E77F',
+    WindowsLogo: 'E782',
+    Error: 'E783',
+    GripperBarVertical: 'E784',
+    Unlock: 'E785',
+    AutoEnhanceOn: 'E78D',
+    AutoEnhanceOff: 'E78E',
+    Color: 'E790',
+    SaveAs: 'E792',
+    Light: 'E793',
+    Filters: 'E795',
+    AspectRatio: 'E799',
+    Contrast: 'E7A1',
+    Redo: 'E7A6',
+    Crop: 'E7A8',
+    PhotoCollection: 'E7AA',
+    Album: 'E7AB',
+    Rotate: 'E7AD',
+    PanoIndicator: 'E7B0',
+    RedEye: 'E7B3',
+    ThumbnailView: 'E7B6',
+    Package: 'E7B8',
+    Warning: 'E7BA',
+    Financial: 'E7BB',
+    Education: 'E7BE',
+    ShoppingCart: 'E7BF',
+    Train: 'E7C0',
+    Move: 'E7C2',
+    TouchPointer: 'E7C9',
+    Merge: 'E7D5'
+  }
+}, {
+  bundle: '1-a653c37c',
+  icons: {
+    TurnRight: 'E7DB',
+    Ferry: 'E7E3',
+    Highlight: 'E7E6',
+    PowerButton: 'E7E8',
+    Tab: 'E7E9',
+    Admin: 'E7EF',
+    TVMonitor: 'E7F4',
+    Speakers: 'E7F5',
+    StackIndicator: 'E7FF',
+    Nav2DMapView: 'E800',
+    Car: 'E804',
+    Bus: 'E806',
+    EatDrink: 'E807',
+    LocationCircle: 'E80E',
+    Home: 'E80F',
+    SwitcherStartEnd: 'E810',
+    ParkingLocation: 'E811',
+    IncidentTriangle: 'E814',
+    Touch: 'E815',
+    MapDirections: 'E816',
+    CaretHollow: 'E817',
+    CaretSolid: 'E818',
+    History: 'E81C',
+    Location: 'E81D',
+    Work: 'E821',
+    Recent: 'E823',
+    Hotel: 'E824',
+    LocationDot: 'E827',
+    Dictionary: 'E82D',
+    ChromeBack: 'E830',
+    FolderOpen: 'E838',
+    PinnedFill: 'E842',
+    RevToggleKey: 'E845',
+    Previous: 'E892',
+    Next: 'E893',
+    Sync: 'E895',
+    Help: 'E897',
+    Emoji: 'E899',
+    MailForward: 'E89C',
+    ClosePane: 'E89F',
+    OpenPane: 'E8A0',
+    PreviewLink: 'E8A1',
+    ZoomIn: 'E8A3',
+    Bookmarks: 'E8A4',
+    Document: 'E8A5',
+    ProtectedDocument: 'E8A6',
+    OpenInNewWindow: 'E8A7',
+    MailFill: 'E8A8',
+    ViewAll: 'E8A9',
+    Switch: 'E8AB',
+    Rename: 'E8AC',
+    Remote: 'E8AF',
+    SelectAll: 'E8B3',
+    Orientation: 'E8B4',
+    Import: 'E8B5',
+    Picture: 'E8B9',
+    ChromeClose: 'E8BB',
+    ShowResults: 'E8BC',
+    Message: 'E8BD',
+    CalendarDay: 'E8BF',
+    CalendarWeek: 'E8C0',
+    MailReplyAll: 'E8C2',
+    Read: 'E8C3',
+    Cut: 'E8C6',
+    PaymentCard: 'E8C7',
+    Copy: 'E8C8',
+    Important: 'E8C9',
+    MailReply: 'E8CA',
+    GotoToday: 'E8D1',
+    Font: 'E8D2',
+    FontColor: 'E8D3',
+    FolderFill: 'E8D5',
+    Permissions: 'E8D7',
+    DisableUpdates: 'E8D8',
+    Unfavorite: 'E8D9',
+    Italic: 'E8DB',
+    Underline: 'E8DC',
+    Bold: 'E8DD',
+    MoveToFolder: 'E8DE',
+    Dislike: 'E8E0',
+    Like: 'E8E1',
+    AlignCenter: 'E8E3',
+    OpenFile: 'E8E5',
+    FontDecrease: 'E8E7',
+    FontIncrease: 'E8E8',
+    FontSize: 'E8E9',
+    CellPhone: 'E8EA',
+    Calculator: 'E8EF',
+    Library: 'E8F1',
+    PostUpdate: 'E8F3',
+    NewFolder: 'E8F4',
+    CalendarReply: 'E8F5',
+    UnsyncFolder: 'E8F6',
+    SyncFolder: 'E8F7',
+    BlockContact: 'E8F8',
+    Accept: 'E8FB',
+    BulletedList: 'E8FD',
+    Preview: 'E8FF',
+    News: 'E900',
+    Chat: 'E901'
+  }
+}, {
+  bundle: '2-b9379dbc',
+  icons: {
+    Group: 'E902',
+    World: 'E909',
+    Comment: 'E90A',
+    DockLeft: 'E90C',
+    DockRight: 'E90D',
+    Repair: 'E90F',
+    Accounts: 'E910',
+    RadioBullet: 'E915',
+    Stopwatch: 'E916',
+    Clock: 'E917',
+    WorldClock: 'E918',
+    AlarmClock: 'E919',
+    Photo: 'E91B',
+    Hospital: 'E91D',
+    Timer: 'E91E',
+    FullCircleMask: 'E91F',
+    LocationFill: 'E920',
+    ChromeMinimize: 'E921',
+    Annotation: 'E924',
+    Fingerprint: 'E928',
+    Handwriting: 'E929',
+    Completed: 'E930',
+    Label: 'E932',
+    FlickDown: 'E935',
+    FlickUp: 'E936',
+    FlickLeft: 'E937',
+    FlickRight: 'E938',
+    MiniExpand: 'E93A',
+    MiniContract: 'E93B',
+    Streaming: 'E93E',
+    MusicInCollection: 'E940',
+    OneDriveLogo: 'E941',
+    CompassNW: 'E942',
+    Code: 'E943',
+    LightningBolt: 'E945',
+    CalculatorMultiply: 'E947',
+    CalculatorAddition: 'E948',
+    CalculatorSubtract: 'E949',
+    CalculatorEqualTo: 'E94E',
+    PrintfaxPrinterFile: 'E956',
+    Communications: 'E95A',
+    Headset: 'E95B',
+    Health: 'E95E',
+    ChevronUpSmall: 'E96D',
+    ChevronDownSmall: 'E96E',
+    ChevronLeftSmall: 'E96F',
+    ChevronRightSmall: 'E970',
+    ChevronUpMed: 'E971',
+    ChevronDownMed: 'E972',
+    ChevronLeftMed: 'E973',
+    ChevronRightMed: 'E974',
+    PC1: 'E977',
+    PresenceChickletVideo: 'E979',
+    Reply: 'E97A',
+    HalfAlpha: 'E97E',
+    ConstructionCone: 'E98F',
+    DoubleChevronLeftMed: 'E991',
+    Volume0: 'E992',
+    Volume1: 'E993',
+    Volume2: 'E994',
+    Volume3: 'E995',
+    Chart: 'E999',
+    Robot: 'E99A',
+    Manufacturing: 'E99C',
+    LockSolid: 'E9A2',
+    BidiLtr: 'E9AA',
+    BidiRtl: 'E9AB',
+    RightDoubleQuote: 'E9B1',
+    Sunny: 'E9BD',
+    CloudWeather: 'E9BE',
+    Cloudy: 'E9BF',
+    PartlyCloudyDay: 'E9C0',
+    PartlyCloudyNight: 'E9C1',
+    ClearNight: 'E9C2',
+    RainShowersDay: 'E9C3',
+    Rain: 'E9C4',
+    Thunderstorms: 'E9C6',
+    RainSnow: 'E9C7',
+    Snow: 'E9C8',
+    BlowingSnow: 'E9C9',
+    Frigid: 'E9CA',
+    Fog: 'E9CB',
+    Squalls: 'E9CC',
+    Duststorm: 'E9CD',
+    Unknown: 'E9CE',
+    Precipitation: 'E9CF',
+    Ribbon: 'E9D1',
+    AreaChart: 'E9D2',
+    Assign: 'E9D3',
+    CheckList: 'E9D5',
+    Diagnostic: 'E9D9',
+    Generate: 'E9DA',
+    LineChart: 'E9E6',
+    Equalizer: 'E9E9',
+    BarChartHorizontal: 'E9EB',
+    BarChartVertical: 'E9EC',
+    Freezing: 'E9EF',
+    Processing: 'E9F5',
+    SnowShowerDay: 'E9FD',
+    HailDay: 'EA00'
+  }
+}, {
+  bundle: '3-ef2110da',
+  icons: {
+    WorkFlow: 'EA01',
+    HourGlass: 'EA03',
+    StoreLogoMed20: 'EA04',
+    TimeSheet: 'EA05',
+    TriangleSolid: 'EA08',
+    VideoSolid: 'EA0C',
+    RainShowersNight: 'EA0F',
+    SnowShowerNight: 'EA11',
+    Teamwork: 'EA12',
+    HailNight: 'EA13',
+    PeopleAdd: 'EA15',
+    Glasses: 'EA16',
+    DateTime2: 'EA17',
+    Shield: 'EA18',
+    Header1: 'EA19',
+    PageAdd: 'EA1A',
+    NumberedList: 'EA1C',
+    PowerBILogo: 'EA1E',
+    Info2: 'EA1F',
+    MusicInCollectionFill: 'EA36',
+    Asterisk: 'EA38',
+    ErrorBadge: 'EA39',
+    CircleFill: 'EA3B',
+    Record2: 'EA3F',
+    AllAppsMirrored: 'EA40',
+    BookmarksMirrored: 'EA41',
+    BulletedListMirrored: 'EA42',
+    CaretHollowMirrored: 'EA45',
+    CaretSolidMirrored: 'EA46',
+    ChromeBackMirrored: 'EA47',
+    ClosePaneMirrored: 'EA49',
+    DockLeftMirrored: 'EA4C',
+    DoubleChevronLeftMedMirrored: 'EA4D',
+    HelpMirrored: 'EA51',
+    ImportMirrored: 'EA52',
+    ListMirrored: 'EA55',
+    MailForwardMirrored: 'EA56',
+    MailReplyMirrored: 'EA57',
+    MailReplyAllMirrored: 'EA58',
+    OpenPaneMirrored: 'EA5B',
+    ParkingLocationMirrored: 'EA5E',
+    SendMirrored: 'EA63',
+    ShowResultsMirrored: 'EA65',
+    ThumbnailViewMirrored: 'EA67',
+    Devices3: 'EA6C',
+    Lightbulb: 'EA80',
+    StatusTriangle: 'EA82',
+    VolumeDisabled: 'EA85',
+    Puzzle: 'EA86',
+    EmojiNeutral: 'EA87',
+    EmojiDisappointed: 'EA88',
+    HomeSolid: 'EA8A',
+    Ringer: 'EA8F',
+    PDF: 'EA90',
+    HeartBroken: 'EA92',
+    StoreLogo16: 'EA96',
+    MultiSelectMirrored: 'EA98',
+    Broom: 'EA99',
+    Cocktails: 'EA9D',
+    Wines: 'EABF',
+    Articles: 'EAC1',
+    Cycling: 'EAC7',
+    DietPlanNotebook: 'EAC8',
+    Pill: 'EACB',
+    ExerciseTracker: 'EACC',
+    HandsFree: 'EAD0',
+    Medical: 'EAD4',
+    Running: 'EADA',
+    Weights: 'EADB',
+    Trackers: 'EADF',
+    AddNotes: 'EAE3',
+    AllCurrency: 'EAE4',
+    BarChart4: 'EAE7',
+    CirclePlus: 'EAEE',
+    Coffee: 'EAEF',
+    Cotton: 'EAF3',
+    Market: 'EAFC',
+    Money: 'EAFD',
+    PieDouble: 'EB04',
+    PieSingle: 'EB05',
+    RemoveFilter: 'EB08',
+    Savings: 'EB0B',
+    Sell: 'EB0C',
+    StockDown: 'EB0F',
+    StockUp: 'EB11',
+    Lamp: 'EB19',
+    Source: 'EB1B',
+    MSNVideos: 'EB1C',
+    Cricket: 'EB1E',
+    Golf: 'EB1F',
+    Baseball: 'EB20',
+    Soccer: 'EB21',
+    MoreSports: 'EB22',
+    AutoRacing: 'EB24',
+    CollegeHoops: 'EB25',
+    CollegeFootball: 'EB26',
+    ProFootball: 'EB27',
+    ProHockey: 'EB28',
+    Rugby: 'EB2D',
+    SubstitutionsIn: 'EB31'
+  }
+}, {
+  bundle: '4-aeecd474',
+  icons: {
+    Tennis: 'EB33',
+    Arrivals: 'EB34',
+    Design: 'EB3C',
+    Website: 'EB41',
+    Drop: 'EB42',
+    SkiResorts: 'EB45',
+    Snowflake: 'EB46',
+    BusSolid: 'EB47',
+    FerrySolid: 'EB48',
+    AirplaneSolid: 'EB4C',
+    TrainSolid: 'EB4D',
+    Ticket: 'EB54',
+    Devices4: 'EB66',
+    AzureLogo: 'EB6A',
+    BingLogo: 'EB6B',
+    MSNLogo: 'EB6C',
+    OutlookLogoInverse: 'EB6D',
+    OfficeLogo: 'EB6E',
+    SkypeLogo: 'EB6F',
+    Door: 'EB75',
+    EditMirrored: 'EB7E',
+    GiftCard: 'EB8E',
+    DoubleBookmark: 'EB8F',
+    StatusErrorFull: 'EB90',
+    Certificate: 'EB95',
+    FastForward: 'EB9D',
+    Rewind: 'EB9E',
+    Photo2: 'EB9F',
+    OpenSource: 'EBC2',
+    Movers: 'EBCD',
+    CloudDownload: 'EBD3',
+    Family: 'EBDA',
+    WindDirection: 'EBE6',
+    Bug: 'EBE8',
+    SiteScan: 'EBEC',
+    BrowserScreenShot: 'EBED',
+    F12DevTools: 'EBEE',
+    CSS: 'EBEF',
+    JS: 'EBF0',
+    DeliveryTruck: 'EBF4',
+    ReminderPerson: 'EBF7',
+    ReminderGroup: 'EBF8',
+    TabletMode: 'EBFC',
+    Umbrella: 'EC04',
+    NetworkTower: 'EC05',
+    CityNext: 'EC06',
+    Section: 'EC0C',
+    OneNoteLogoInverse: 'EC0D',
+    ToggleFilled: 'EC11',
+    ToggleBorder: 'EC12',
+    SliderThumb: 'EC13',
+    ToggleThumb: 'EC14',
+    Documentation: 'EC17',
+    Badge: 'EC1B',
+    Giftbox: 'EC1F',
+    VisualStudioLogo: 'EC22',
+    ExcelLogoInverse: 'EC28',
+    WordLogoInverse: 'EC29',
+    PowerPointLogoInverse: 'EC2A',
+    Cafe: 'EC32',
+    SpeedHigh: 'EC4A',
+    Commitments: 'EC4D',
+    ThisPC: 'EC4E',
+    MusicNote: 'EC4F',
+    MicOff: 'EC54',
+    EdgeLogo: 'EC60',
+    CompletedSolid: 'EC61',
+    AlbumRemove: 'EC62',
+    MessageFill: 'EC70',
+    TabletSelected: 'EC74',
+    MobileSelected: 'EC75',
+    LaptopSelected: 'EC76',
+    TVMonitorSelected: 'EC77',
+    DeveloperTools: 'EC7A',
+    InsertTextBox: 'EC7D',
+    LowerBrightness: 'EC8A',
+    DOM: 'EC8D',
+    CloudUpload: 'EC8E',
+    ScrollUpDown: 'EC8F',
+    DateTime: 'EC92',
+    Event: 'ECA3',
+    Cake: 'ECA4',
+    Org: 'ECA6',
+    PartyLeader: 'ECA7',
+    DRM: 'ECA8',
+    CloudAdd: 'ECA9',
+    AppIconDefault: 'ECAA',
+    Photo2Add: 'ECAB',
+    Photo2Remove: 'ECAC',
+    POI: 'ECAF',
+    AddTo: 'ECC8',
+    RadioBtnOff: 'ECCA',
+    RadioBtnOn: 'ECCB',
+    ExploreContent: 'ECCD',
+    Product: 'ECDC',
+    ProgressLoopInner: 'ECDE',
+    ProgressLoopOuter: 'ECDF',
+    Blocked2: 'ECE4',
+    FangBody: 'ECEB',
+    ChatInviteFriend: 'ECFE'
+  }
+}, {
+  bundle: '5-f6547654',
+  icons: {
+    Crown: 'ED01',
+    Diamond: 'ED02',
+    ScaleUp: 'ED09',
+    Feedback: 'ED15',
+    SharepointLogoInverse: 'ED18',
+    YammerLogo: 'ED19',
+    Hide: 'ED1A',
+    Uneditable: 'ED1D',
+    ReturnToSession: 'ED24',
+    OpenFolderHorizontal: 'ED25',
+    CalendarMirrored: 'ED28',
+    SwayLogoInverse: 'ED29',
+    OutOfOffice: 'ED34',
+    Trophy: 'ED3F',
+    ReopenPages: 'ED50',
+    EmojiTabSymbols: 'ED58',
+    AADLogo: 'ED68',
+    AccessLogo: 'ED69',
+    AdminALogoInverse32: 'ED6A',
+    AdminCLogoInverse32: 'ED6B',
+    AdminDLogoInverse32: 'ED6C',
+    AdminELogoInverse32: 'ED6D',
+    AdminLLogoInverse32: 'ED6E',
+    AdminMLogoInverse32: 'ED6F',
+    AdminOLogoInverse32: 'ED70',
+    AdminPLogoInverse32: 'ED71',
+    AdminSLogoInverse32: 'ED72',
+    AdminYLogoInverse32: 'ED73',
+    DelveLogoInverse: 'ED76',
+    ExchangeLogoInverse: 'ED78',
+    LyncLogo: 'ED79',
+    OfficeVideoLogoInverse: 'ED7A',
+    SocialListeningLogo: 'ED7C',
+    VisioLogoInverse: 'ED7D',
+    Balloons: 'ED7E',
+    Cat: 'ED7F',
+    MailAlert: 'ED80',
+    MailCheck: 'ED81',
+    MailLowImportance: 'ED82',
+    MailPause: 'ED83',
+    MailRepeat: 'ED84',
+    SecurityGroup: 'ED85',
+    Table: 'ED86',
+    VoicemailForward: 'ED87',
+    VoicemailReply: 'ED88',
+    Waffle: 'ED89',
+    RemoveEvent: 'ED8A',
+    EventInfo: 'ED8B',
+    ForwardEvent: 'ED8C',
+    WipePhone: 'ED8D',
+    AddOnlineMeeting: 'ED8E',
+    JoinOnlineMeeting: 'ED8F',
+    RemoveLink: 'ED90',
+    PeopleBlock: 'ED91',
+    PeopleRepeat: 'ED92',
+    PeopleAlert: 'ED93',
+    PeoplePause: 'ED94',
+    TransferCall: 'ED95',
+    AddPhone: 'ED96',
+    UnknownCall: 'ED97',
+    NoteReply: 'ED98',
+    NoteForward: 'ED99',
+    NotePinned: 'ED9A',
+    RemoveOccurrence: 'ED9B',
+    Timeline: 'ED9C',
+    EditNote: 'ED9D',
+    CircleHalfFull: 'ED9E',
+    Room: 'ED9F',
+    Unsubscribe: 'EDA0',
+    Subscribe: 'EDA1',
+    HardDrive: 'EDA2',
+    RecurringTask: 'EDB2',
+    TaskManager: 'EDB7',
+    TaskManagerMirrored: 'EDB8',
+    Combine: 'EDBB',
+    Split: 'EDBC',
+    DoubleChevronUp: 'EDBD',
+    DoubleChevronLeft: 'EDBE',
+    DoubleChevronRight: 'EDBF',
+    TextBox: 'EDC2',
+    TextField: 'EDC3',
+    NumberField: 'EDC4',
+    Dropdown: 'EDC5',
+    BookingsLogo: 'EDC7',
+    ClassNotebookLogoInverse: 'EDC8',
+    DelveAnalyticsLogo: 'EDCA',
+    DocsLogoInverse: 'EDCB',
+    Dynamics365Logo: 'EDCC',
+    DynamicSMBLogo: 'EDCD',
+    OfficeAssistantLogo: 'EDCE',
+    OfficeStoreLogo: 'EDCF',
+    OneNoteEduLogoInverse: 'EDD0',
+    PlannerLogo: 'EDD1',
+    PowerApps: 'EDD2',
+    Suitcase: 'EDD3',
+    ProjectLogoInverse: 'EDD4',
+    CaretLeft8: 'EDD5',
+    CaretRight8: 'EDD6',
+    CaretUp8: 'EDD7',
+    CaretDown8: 'EDD8'
+  }
+}, {
+  bundle: '6-3954c770',
+  icons: {
+    CaretLeftSolid8: 'EDD9',
+    CaretRightSolid8: 'EDDA',
+    CaretUpSolid8: 'EDDB',
+    CaretDownSolid8: 'EDDC',
+    ClearFormatting: 'EDDD',
+    Superscript: 'EDDE',
+    Subscript: 'EDDF',
+    Strikethrough: 'EDE0',
+    Export: 'EDE1',
+    ExportMirrored: 'EDE2',
+    SingleBookmark: 'EDFF',
+    SingleBookmarkSolid: 'EE00',
+    DoubleChevronDown: 'EE04',
+    FollowUser: 'EE05',
+    ReplyAll: 'EE0A',
+    WorkforceManagement: 'EE0F',
+    RecruitmentManagement: 'EE12',
+    Questionnaire: 'EE19',
+    ManagerSelfService: 'EE23',
+    ReplyMirrored: 'EE35',
+    ReplyAllMirrored: 'EE36',
+    Medal: 'EE38',
+    AddGroup: 'EE3D',
+    QuestionnaireMirrored: 'EE4B',
+    TemporaryUser: 'EE58',
+    CaretSolid16: 'EE62',
+    GroupedDescending: 'EE66',
+    GroupedAscending: 'EE67',
+    AwayStatus: 'EE6A',
+    MyMoviesTV: 'EE6C',
+    GenericScan: 'EE6F',
+    AustralianRules: 'EE70',
+    WifiEthernet: 'EE77',
+    TrackersMirrored: 'EE92',
+    DateTimeMirrored: 'EE93',
+    StopSolid: 'EE95',
+    DoubleChevronUp12: 'EE96',
+    DoubleChevronDown12: 'EE97',
+    DoubleChevronLeft12: 'EE98',
+    DoubleChevronRight12: 'EE99',
+    CalendarAgenda: 'EE9A',
+    AddEvent: 'EEB5',
+    AssetLibrary: 'EEB6',
+    DataConnectionLibrary: 'EEB7',
+    DocLibrary: 'EEB8',
+    FormLibrary: 'EEB9',
+    FormLibraryMirrored: 'EEBA',
+    ReportLibrary: 'EEBB',
+    ReportLibraryMirrored: 'EEBC',
+    ContactCard: 'EEBD',
+    CustomList: 'EEBE',
+    CustomListMirrored: 'EEBF',
+    IssueTracking: 'EEC0',
+    IssueTrackingMirrored: 'EEC1',
+    PictureLibrary: 'EEC2',
+    OfficeAddinsLogo: 'EEC7',
+    OfflineOneDriveParachute: 'EEC8',
+    OfflineOneDriveParachuteDisabled: 'EEC9',
+    TriangleSolidUp12: 'EECC',
+    TriangleSolidDown12: 'EECD',
+    TriangleSolidLeft12: 'EECE',
+    TriangleSolidRight12: 'EECF',
+    TriangleUp12: 'EED0',
+    TriangleDown12: 'EED1',
+    TriangleLeft12: 'EED2',
+    TriangleRight12: 'EED3',
+    ArrowUpRight8: 'EED4',
+    ArrowDownRight8: 'EED5',
+    DocumentSet: 'EED6',
+    DelveAnalytics: 'EEEE',
+    ArrowUpRightMirrored8: 'EEEF',
+    ArrowDownRightMirrored8: 'EEF0',
+    CompanyDirectory: 'EF0D',
+    CompanyDirectoryMirrored: 'EF2B',
+    OneDriveAdd: 'EF32',
+    ProfileSearch: 'EF35',
+    Header2: 'EF36',
+    Header3: 'EF37',
+    Header4: 'EF38',
+    Eyedropper: 'EF3C',
+    MarketDown: 'EF42',
+    CalendarWorkWeek: 'EF51',
+    SidePanel: 'EF52',
+    GlobeFavorite: 'EF53',
+    CaretTopLeftSolid8: 'EF54',
+    CaretTopRightSolid8: 'EF55',
+    ViewAll2: 'EF56',
+    DocumentReply: 'EF57',
+    PlayerSettings: 'EF58',
+    ReceiptForward: 'EF59',
+    ReceiptReply: 'EF5A',
+    ReceiptCheck: 'EF5B',
+    Fax: 'EF5C',
+    RecurringEvent: 'EF5D',
+    ReplyAlt: 'EF5E',
+    ReplyAllAlt: 'EF5F',
+    EditStyle: 'EF60',
+    EditMail: 'EF61',
+    Lifesaver: 'EF62',
+    LifesaverLock: 'EF63'
+  }
+}, {
+  bundle: '7-02107cf8',
+  icons: {
+    InboxCheck: 'EF64',
+    FolderSearch: 'EF65',
+    CollapseMenu: 'EF66',
+    ExpandMenu: 'EF67',
+    Boards: 'EF68',
+    SunAdd: 'EF69',
+    SunQuestionMark: 'EF6A',
+    LandscapeOrientation: 'EF6B',
+    DocumentSearch: 'EF6C',
+    PublicCalendar: 'EF6D',
+    PublicContactCard: 'EF6E',
+    PublicEmail: 'EF6F',
+    PublicFolder: 'EF70',
+    WordDocument: 'EF71',
+    PowerPointDocument: 'EF72',
+    ExcelDocument: 'EF73',
+    GroupedList: 'EF74',
+    ClassroomLogo: 'EF75',
+    Sections: 'EF76',
+    EditPhoto: 'EF77',
+    Starburst: 'EF78',
+    ShareiOS: 'EF79',
+    AirTickets: 'EF7A',
+    PencilReply: 'EF7B',
+    Tiles2: 'EF7C',
+    SkypeCircleCheck: 'EF7D',
+    SkypeCircleClock: 'EF7E',
+    SkypeCircleMinus: 'EF7F',
+    SkypeMessage: 'EF83',
+    ClosedCaption: 'EF84',
+    ATPLogo: 'EF85',
+    OfficeFormsLogoInverse: 'EF86',
+    RecycleBin: 'EF87',
+    EmptyRecycleBin: 'EF88',
+    Hide2: 'EF89',
+    Breadcrumb: 'EF8C',
+    BirthdayCake: 'EF8D',
+    TimeEntry: 'EF95',
+    PageEdit: 'EFB6',
+    PageRemove: 'EFBA',
+    Database: 'EFC7',
+    EditContact: 'EFD3',
+    ConnectContacts: 'EFD4',
+    ActivateOrders: 'EFE0',
+    DeactivateOrders: 'EFE1',
+    DocumentManagement: 'EFFC',
+    CRMReport: 'EFFE',
+    ZipFolder: 'F012',
+    SurveyQuestions: 'F01B',
+    TextDocument: 'F029',
+    TextDocumentShared: 'F02B',
+    PageCheckedOut: 'F02C',
+    SaveAndClose: 'F038',
+    Script: 'F03A',
+    Archive: 'F03F',
+    ActivityFeed: 'F056',
+    EventDate: 'F059',
+    ArrowUpRight: 'F069',
+    CaretRight: 'F06B',
+    SetAction: 'F071',
+    CaretSolidLeft: 'F08D',
+    CaretSolidDown: 'F08E',
+    CaretSolidRight: 'F08F',
+    CaretSolidUp: 'F090',
+    PowerAppsLogo: 'F091',
+    PowerApps2Logo: 'F092',
+    SearchIssue: 'F09A',
+    SearchIssueMirrored: 'F09B',
+    FabricAssetLibrary: 'F09C',
+    FabricDataConnectionLibrary: 'F09D',
+    FabricDocLibrary: 'F09E',
+    FabricFormLibrary: 'F09F',
+    FabricFormLibraryMirrored: 'F0A0',
+    FabricReportLibrary: 'F0A1',
+    FabricReportLibraryMirrored: 'F0A2',
+    FabricPublicFolder: 'F0A3',
+    FabricFolderSearch: 'F0A4',
+    FabricMovetoFolder: 'F0A5',
+    FabricUnsyncFolder: 'F0A6',
+    FabricSyncFolder: 'F0A7',
+    FabricOpenFolderHorizontal: 'F0A8',
+    FabricFolder: 'F0A9',
+    FabricFolderFill: 'F0AA',
+    FabricNewFolder: 'F0AB',
+    FabricPictureLibrary: 'F0AC',
+    AddFavorite: 'F0C8',
+    AddFavoriteFill: 'F0C9',
+    BufferTimeBefore: 'F0CF',
+    BufferTimeAfter: 'F0D0',
+    BufferTimeBoth: 'F0D1',
+    CannedChat: 'F0F2',
+    SkypeForBusinessLogo: 'F0FC',
+    PageCheckedin: 'F104',
+    ReadOutLoud: 'F112',
+    CaretBottomLeftSolid8: 'F121',
+    CaretBottomRightSolid8: 'F122',
+    FolderHorizontal: 'F12B',
+    MicrosoftStaffhubLogo: 'F130',
+    GiftboxOpen: 'F133',
+    StatusCircleOuter: 'F136'
+  }
+}, {
+  bundle: '8-645fa64e',
+  icons: {
+    StatusCircleInner: 'F137',
+    StatusCircleRing: 'F138',
+    StatusTriangleOuter: 'F139',
+    StatusTriangleInner: 'F13A',
+    StatusTriangleExclamation: 'F13B',
+    StatusCircleExclamation: 'F13C',
+    StatusCircleErrorX: 'F13D',
+    StatusCircleInfo: 'F13F',
+    StatusCircleBlock2: 'F141',
+    StatusCircleQuestionMark: 'F142',
+    Toll: 'F160',
+    ExploreContentSingle: 'F164',
+    CollapseContent: 'F165',
+    CollapseContentSingle: 'F166',
+    InfoSolid: 'F167',
+    ProgressRingDots: 'F16A',
+    CaloriesAdd: 'F172',
+    BranchFork: 'F173',
+    MobileReport: 'F18A',
+    HardDriveGroup: 'F18F',
+    FastMode: 'F19A',
+    ToggleOn: 'F19E',
+    ToggleOff: 'F19F',
+    Trophy2: 'F1AE',
+    BucketColor: 'F1B6',
+    BucketColorFill: 'F1B7',
+    Taskboard: 'F1C2',
+    SingleColumn: 'F1D3',
+    DoubleColumn: 'F1D4',
+    TripleColumn: 'F1D5',
+    ColumnLeftTwoThirds: 'F1D6',
+    ColumnRightTwoThirds: 'F1D7',
+    AccessLogoFill: 'F1DB',
+    AnalyticsLogo: 'F1DE',
+    AnalyticsQuery: 'F1DF',
+    NewAnalyticsQuery: 'F1E0',
+    AnalyticsReport: 'F1E1',
+    WordLogo: 'F1E3',
+    WordLogoFill: 'F1E4',
+    ExcelLogo: 'F1E5',
+    ExcelLogoFill: 'F1E6',
+    OneNoteLogo: 'F1E7',
+    OneNoteLogoFill: 'F1E8',
+    OutlookLogo: 'F1E9',
+    OutlookLogoFill: 'F1EA',
+    PowerPointLogo: 'F1EB',
+    PowerPointLogoFill: 'F1EC',
+    PublisherLogo: 'F1ED',
+    PublisherLogoFill: 'F1EE',
+    ScheduleEventAction: 'F1EF',
+    FlameSolid: 'F1F3',
+    ServerProcesses: 'F1FE',
+    Server: 'F201',
+    SaveAll: 'F203',
+    LinkedInLogo: 'F20A',
+    Decimals: 'F218',
+    SidePanelMirrored: 'F221',
+    ProtectRestrict: 'F22A',
+    UnknownMirrored: 'F22E',
+    PublicContactCardMirrored: 'F230',
+    GridViewSmall: 'F232',
+    GridViewMedium: 'F233',
+    GridViewLarge: 'F234',
+    Step: 'F241',
+    StepInsert: 'F242',
+    StepShared: 'F243',
+    StepSharedAdd: 'F244',
+    StepSharedInsert: 'F245',
+    ViewDashboard: 'F246',
+    ViewList: 'F247',
+    ViewListGroup: 'F248',
+    ViewListTree: 'F249',
+    TriggerAuto: 'F24A',
+    TriggerUser: 'F24B',
+    PivotChart: 'F24C',
+    StackedBarChart: 'F24D',
+    StackedLineChart: 'F24E',
+    BuildQueue: 'F24F',
+    BuildQueueNew: 'F250',
+    UserFollowed: 'F25C',
+    ContactLink: 'F25F',
+    Stack: 'F26F',
+    Bullseye: 'F272',
+    VennDiagram: 'F273',
+    FiveTileGrid: 'F274',
+    FocalPoint: 'F277',
+    RingerRemove: 'F279',
+    TeamsLogoInverse: 'F27A',
+    TeamsLogo: 'F27B',
+    TeamsLogoFill: 'F27C',
+    SkypeForBusinessLogoFill: 'F27D',
+    SharepointLogo: 'F27E',
+    SharepointLogoFill: 'F27F',
+    DelveLogo: 'F280',
+    DelveLogoFill: 'F281',
+    OfficeVideoLogo: 'F282',
+    OfficeVideoLogoFill: 'F283',
+    ExchangeLogo: 'F284',
+    ExchangeLogoFill: 'F285',
+    DocumentApproval: 'F28B'
+  }
+}, {
+  bundle: '9-53746c82',
+  icons: {
+    CloneToDesktop: 'F28C',
+    InstallToDrive: 'F28D',
+    Blur: 'F28E',
+    Build: 'F28F',
+    ProcessMetaTask: 'F290',
+    BranchFork2: 'F291',
+    BranchLocked: 'F292',
+    BranchCommit: 'F293',
+    BranchCompare: 'F294',
+    BranchMerge: 'F295',
+    BranchPullRequest: 'F296',
+    BranchSearch: 'F297',
+    BranchShelveset: 'F298',
+    RawSource: 'F299',
+    MergeDuplicate: 'F29A',
+    RowsGroup: 'F29B',
+    RowsChild: 'F29C',
+    Deploy: 'F29D',
+    Redeploy: 'F29E',
+    ServerEnviroment: 'F29F',
+    VisioDiagram: 'F2A0',
+    HighlightMappedShapes: 'F2A1',
+    TextCallout: 'F2A2',
+    IconSetsFlag: 'F2A4',
+    VisioLogo: 'F2A7',
+    VisioLogoFill: 'F2A8',
+    VisioDocument: 'F2A9',
+    TimelineProgress: 'F2AA',
+    TimelineDelivery: 'F2AB',
+    Backlog: 'F2AC',
+    TeamFavorite: 'F2AD',
+    TaskGroup: 'F2AE',
+    TaskGroupMirrored: 'F2AF',
+    ScopeTemplate: 'F2B0',
+    AssessmentGroupTemplate: 'F2B1',
+    NewTeamProject: 'F2B2',
+    CommentAdd: 'F2B3',
+    CommentNext: 'F2B4',
+    CommentPrevious: 'F2B5',
+    ShopServer: 'F2B6',
+    LocaleLanguage: 'F2B7',
+    QueryList: 'F2B8',
+    UserSync: 'F2B9',
+    UserPause: 'F2BA',
+    StreamingOff: 'F2BB',
+    ArrowTallUpLeft: 'F2BD',
+    ArrowTallUpRight: 'F2BE',
+    ArrowTallDownLeft: 'F2BF',
+    ArrowTallDownRight: 'F2C0',
+    FieldEmpty: 'F2C1',
+    FieldFilled: 'F2C2',
+    FieldChanged: 'F2C3',
+    FieldNotChanged: 'F2C4',
+    RingerOff: 'F2C5',
+    PlayResume: 'F2C6',
+    BulletedList2: 'F2C7',
+    BulletedList2Mirrored: 'F2C8',
+    ImageCrosshair: 'F2C9',
+    GitGraph: 'F2CA',
+    Repo: 'F2CB',
+    RepoSolid: 'F2CC',
+    FolderQuery: 'F2CD',
+    FolderList: 'F2CE',
+    FolderListMirrored: 'F2CF',
+    LocationOutline: 'F2D0',
+    POISolid: 'F2D1',
+    CalculatorNotEqualTo: 'F2D2',
+    BoxSubtractSolid: 'F2D3',
+    BoxAdditionSolid: 'F2D4',
+    BoxMultiplySolid: 'F2D5',
+    BoxPlaySolid: 'F2D6',
+    BoxCheckmarkSolid: 'F2D7',
+    CirclePauseSolid: 'F2D8',
+    CirclePause: 'F2D9',
+    MSNVideosSolid: 'F2DA',
+    CircleStopSolid: 'F2DB',
+    CircleStop: 'F2DC',
+    NavigateBack: 'F2DD',
+    NavigateBackMirrored: 'F2DE',
+    NavigateForward: 'F2DF',
+    NavigateForwardMirrored: 'F2E0',
+    UnknownSolid: 'F2E1',
+    UnknownMirroredSolid: 'F2E2',
+    CircleAddition: 'F2E3',
+    CircleAdditionSolid: 'F2E4',
+    FilePDB: 'F2E5',
+    FileTemplate: 'F2E6',
+    FileSQL: 'F2E7',
+    FileJAVA: 'F2E8',
+    FileASPX: 'F2E9',
+    FileCSS: 'F2EA',
+    FileSass: 'F2EB',
+    FileLess: 'F2EC',
+    FileHTML: 'F2ED',
+    JavaScriptLanguage: 'F2EE',
+    CSharpLanguage: 'F2EF',
+    CSharp: 'F2F0',
+    VisualBasicLanguage: 'F2F1',
+    VB: 'F2F2',
+    CPlusPlusLanguage: 'F2F3'
+  }
+}, {
+  bundle: '10-fb519450',
+  icons: {
+    CPlusPlus: 'F2F4',
+    FSharpLanguage: 'F2F5',
+    FSharp: 'F2F6',
+    TypeScriptLanguage: 'F2F7',
+    PythonLanguage: 'F2F8',
+    PY: 'F2F9',
+    CoffeeScript: 'F2FA',
+    MarkDownLanguage: 'F2FB',
+    FullWidth: 'F2FE',
+    FullWidthEdit: 'F2FF',
+    Plug: 'F300',
+    PlugSolid: 'F301',
+    PlugConnected: 'F302',
+    PlugDisconnected: 'F303',
+    UnlockSolid: 'F304',
+    Variable: 'F305',
+    Parameter: 'F306',
+    CommentUrgent: 'F307',
+    Storyboard: 'F308',
+    DiffInline: 'F309',
+    DiffSideBySide: 'F30A',
+    ImageDiff: 'F30B',
+    ImagePixel: 'F30C',
+    FileBug: 'F30D',
+    FileCode: 'F30E',
+    FileComment: 'F30F',
+    BusinessHoursSign: 'F310',
+    FileImage: 'F311',
+    FileSymlink: 'F312',
+    AutoFillTemplate: 'F313',
+    WorkItem: 'F314',
+    WorkItemBug: 'F315',
+    LogRemove: 'F316',
+    ColumnOptions: 'F317',
+    Packages: 'F318',
+    BuildIssue: 'F319',
+    AssessmentGroup: 'F31A',
+    VariableGroup: 'F31B',
+    FullHistory: 'F31C',
+    SingleColumnEdit: 'F321',
+    DoubleColumnEdit: 'F322',
+    TripleColumnEdit: 'F323',
+    ColumnLeftTwoThirdsEdit: 'F324',
+    ColumnRightTwoThirdsEdit: 'F325',
+    StreamLogo: 'F329',
+    PassiveAuthentication: 'F32A',
+    AlertSolid: 'F331',
+    MegaphoneSolid: 'F332',
+    TaskSolid: 'F333',
+    ConfigurationSolid: 'F334',
+    BugSolid: 'F335',
+    CrownSolid: 'F336',
+    Trophy2Solid: 'F337',
+    QuickNoteSolid: 'F338',
+    ConstructionConeSolid: 'F339',
+    PageListSolid: 'F33A',
+    PageListMirroredSolid: 'F33B',
+    StarburstSolid: 'F33C',
+    ReadingModeSolid: 'F33D',
+    SadSolid: 'F33E',
+    HealthSolid: 'F33F',
+    ShieldSolid: 'F340',
+    GiftBoxSolid: 'F341',
+    ShoppingCartSolid: 'F342',
+    MailSolid: 'F343',
+    ChatSolid: 'F344',
+    RibbonSolid: 'F345',
+    FinancialSolid: 'F346',
+    FinancialMirroredSolid: 'F347',
+    HeadsetSolid: 'F348',
+    PermissionsSolid: 'F349',
+    ParkingSolid: 'F34A',
+    ParkingMirroredSolid: 'F34B',
+    DiamondSolid: 'F34C',
+    AsteriskSolid: 'F34D',
+    OfflineStorageSolid: 'F34E',
+    BankSolid: 'F34F',
+    DecisionSolid: 'F350',
+    Parachute: 'F351',
+    ParachuteSolid: 'F352',
+    FiltersSolid: 'F353',
+    ColorSolid: 'F354',
+    ReviewSolid: 'F355',
+    ReviewRequestSolid: 'F356',
+    ReviewRequestMirroredSolid: 'F357',
+    ReviewResponseSolid: 'F358',
+    FeedbackRequestSolid: 'F359',
+    FeedbackRequestMirroredSolid: 'F35A',
+    FeedbackResponseSolid: 'F35B',
+    WorkItemBar: 'F35C',
+    WorkItemBarSolid: 'F35D',
+    Separator: 'F35E',
+    NavigateExternalInline: 'F35F',
+    PlanView: 'F360',
+    TimelineMatrixView: 'F361',
+    EngineeringGroup: 'F362',
+    ProjectCollection: 'F363',
+    CaretBottomRightCenter8: 'F364',
+    CaretBottomLeftCenter8: 'F365',
+    CaretTopRightCenter8: 'F366'
+  }
+}, {
+  bundle: '11-a4026982',
+  icons: {
+    CaretTopLeftCenter8: 'F367',
+    DonutChart: 'F368',
+    ChevronUnfold10: 'F369',
+    ChevronFold10: 'F36A',
+    DoubleChevronDown8: 'F36B',
+    DoubleChevronUp8: 'F36C',
+    DoubleChevronLeft8: 'F36D',
+    DoubleChevronRight8: 'F36E',
+    ChevronDownEnd6: 'F36F',
+    ChevronUpEnd6: 'F370',
+    ChevronLeftEnd6: 'F371',
+    ChevronRightEnd6: 'F372',
+    ContextMenu: 'F37C',
+    AzureAPIManagement: 'F37F',
+    AzureServiceEndpoint: 'F380',
+    VSTSLogo: 'F381',
+    VSTSAltLogo1: 'F382',
+    VSTSAltLogo2: 'F383',
+    FileTypeSolution: 'F387',
+    WordLogoInverse16: 'F390',
+    WordLogo16: 'F391',
+    WordLogoFill16: 'F392',
+    PowerPointLogoInverse16: 'F393',
+    PowerPointLogo16: 'F394',
+    PowerPointLogoFill16: 'F395',
+    ExcelLogoInverse16: 'F396',
+    ExcelLogo16: 'F397',
+    ExcelLogoFill16: 'F398',
+    OneNoteLogoInverse16: 'F399',
+    OneNoteLogo16: 'F39A',
+    OneNoteLogoFill16: 'F39B',
+    OutlookLogoInverse16: 'F39C',
+    OutlookLogo16: 'F39D',
+    OutlookLogoFill16: 'F39E',
+    PublisherLogoInverse16: 'F39F',
+    PublisherLogo16: 'F3A0',
+    PublisherLogoFill16: 'F3A1',
+    VisioLogoInverse16: 'F3A2',
+    VisioLogo16: 'F3A3',
+    VisioLogoFill16: 'F3A4',
+    TestBeaker: 'F3A5',
+    TestBeakerSolid: 'F3A6',
+    TestExploreSolid: 'F3A7',
+    TestAutoSolid: 'F3A8',
+    TestUserSolid: 'F3A9',
+    TestImpactSolid: 'F3AA',
+    TestPlan: 'F3AB',
+    TestStep: 'F3AC',
+    TestParameter: 'F3AD',
+    TestSuite: 'F3AE',
+    TestCase: 'F3AF',
+    Sprint: 'F3B0',
+    SignOut: 'F3B1',
+    TriggerApproval: 'F3B2',
+    Rocket: 'F3B3',
+    AzureKeyVault: 'F3B4',
+    Transition: 'F3BC',
+    LikeSolid: 'F3BF',
+    DislikeSolid: 'F3C0',
+    UnSetColor: 'F3F9',
+    DeclineCall: 'F405',
+    RectangularClipping: 'F407',
+    TeamsLogo16: 'F40A',
+    TeamsLogoFill16: 'F40B',
+    Spacer: 'F40D',
+    SkypeLogo16: 'F40E',
+    SkypeForBusinessLogo16: 'F40F',
+    SkypeForBusinessLogoFill16: 'F410',
+    FilterSolid: 'F412',
+    MailUndelivered: 'F415',
+    MailTentative: 'F416',
+    MailTentativeMirrored: 'F417',
+    MailReminder: 'F418',
+    ReceiptUndelivered: 'F419',
+    ReceiptTentative: 'F41A',
+    ReceiptTentativeMirrored: 'F41B',
+    Inbox: 'F41C',
+    IRMReply: 'F41D',
+    IRMReplyMirrored: 'F41E',
+    IRMForward: 'F41F',
+    IRMForwardMirrored: 'F420',
+    VoicemailIRM: 'F421',
+    EventAccepted: 'F422',
+    EventTentative: 'F423',
+    EventTentativeMirrored: 'F424',
+    EventDeclined: 'F425',
+    IDBadge: 'F427',
+    BackgroundColor: 'F42B',
+    OfficeFormsLogoInverse16: 'F433',
+    OfficeFormsLogo: 'F434',
+    OfficeFormsLogoFill: 'F435',
+    OfficeFormsLogo16: 'F436',
+    OfficeFormsLogoFill16: 'F437',
+    OfficeFormsLogoInverse24: 'F43A',
+    OfficeFormsLogo24: 'F43B',
+    OfficeFormsLogoFill24: 'F43C',
+    PageLock: 'F43F',
+    NotExecuted: 'F440',
+    NotImpactedSolid: 'F441',
+    FieldReadOnly: 'F442'
+  }
+}, {
+  bundle: '12-e6882c74',
+  icons: {
+    FieldRequired: 'F443',
+    BacklogBoard: 'F444',
+    ExternalBuild: 'F445',
+    ExternalTFVC: 'F446',
+    ExternalXAML: 'F447',
+    IssueSolid: 'F448',
+    DefectSolid: 'F449',
+    LadybugSolid: 'F44A',
+    NugetLogo: 'F44C',
+    TFVCLogo: 'F44D',
+    ProjectLogo32: 'F47E',
+    ProjectLogoFill32: 'F47F',
+    ProjectLogo16: 'F480',
+    ProjectLogoFill16: 'F481',
+    SwayLogo32: 'F482',
+    SwayLogoFill32: 'F483',
+    SwayLogo16: 'F484',
+    SwayLogoFill16: 'F485',
+    ClassNotebookLogo32: 'F486',
+    ClassNotebookLogoFill32: 'F487',
+    ClassNotebookLogo16: 'F488',
+    ClassNotebookLogoFill16: 'F489',
+    ClassNotebookLogoInverse32: 'F48A',
+    ClassNotebookLogoInverse16: 'F48B',
+    StaffNotebookLogo32: 'F48C',
+    StaffNotebookLogoFill32: 'F48D',
+    StaffNotebookLogo16: 'F48E',
+    StaffNotebookLogoFill16: 'F48F',
+    StaffNotebookLogoInverted32: 'F490',
+    StaffNotebookLogoInverted16: 'F491',
+    KaizalaLogo: 'F492',
+    TaskLogo: 'F493',
+    ProtectionCenterLogo32: 'F494',
+    GallatinLogo: 'F496',
+    Globe2: 'F49A',
+    Guitar: 'F49B',
+    Breakfast: 'F49C',
+    Brunch: 'F49D',
+    BeerMug: 'F49E',
+    Vacation: 'F49F',
+    Teeth: 'F4A0',
+    Taxi: 'F4A1',
+    Chopsticks: 'F4A2',
+    SyncOccurence: 'F4A3',
+    UnsyncOccurence: 'F4A4',
+    PrimaryCalendar: 'F4AE',
+    SearchCalendar: 'F4AF',
+    VideoOff: 'F4B0',
+    MicrosoftFlowLogo: 'F4B1',
+    BusinessCenterLogo: 'F4B2',
+    ToDoLogoBottom: 'F4B3',
+    ToDoLogoTop: 'F4B4',
+    EditSolid12: 'F4B5',
+    EditSolidMirrored12: 'F4B6',
+    UneditableSolid12: 'F4B7',
+    UneditableSolidMirrored12: 'F4B8',
+    UneditableMirrored: 'F4B9',
+    AdminALogo32: 'F4BA',
+    AdminALogoFill32: 'F4BB',
+    ToDoLogoInverse: 'F4BC',
+    Snooze: 'F4BD',
+    WaffleOffice365: 'F4E0',
+    ImageSearch: 'F4E8',
+    NewsSearch: 'F4E9',
+    VideoSearch: 'F4EA',
+    R: 'F4EB',
+    FontColorA: 'F4EC',
+    FontColorSwatch: 'F4ED',
+    LightWeight: 'F4EE',
+    NormalWeight: 'F4EF',
+    SemiboldWeight: 'F4F0',
+    GroupObject: 'F4F1',
+    UngroupObject: 'F4F2',
+    AlignHorizontalLeft: 'F4F3',
+    AlignHorizontalCenter: 'F4F4',
+    AlignHorizontalRight: 'F4F5',
+    AlignVerticalTop: 'F4F6',
+    AlignVerticalCenter: 'F4F7',
+    AlignVerticalBottom: 'F4F8',
+    HorizontalDistributeCenter: 'F4F9',
+    VerticalDistributeCenter: 'F4FA',
+    Ellipse: 'F4FB',
+    Line: 'F4FC',
+    Octagon: 'F4FD',
+    Hexagon: 'F4FE',
+    Pentagon: 'F4FF',
+    RightTriangle: 'F500',
+    HalfCircle: 'F501',
+    QuarterCircle: 'F502',
+    ThreeQuarterCircle: 'F503',
+    '6PointStar': 'F504',
+    '12PointStar': 'F505',
+    ArrangeBringToFront: 'F506',
+    ArrangeSendToBack: 'F507',
+    ArrangeSendBackward: 'F508',
+    ArrangeBringForward: 'F509',
+    BorderDash: 'F50A',
+    BorderDot: 'F50B',
+    LineStyle: 'F50C',
+    LineThickness: 'F50D'
+  }
+}, {
+  bundle: '13-0980cd6d',
+  icons: {
+    WindowEdit: 'F50E',
+    HintText: 'F50F',
+    MediaAdd: 'F510',
+    AnchorLock: 'F511',
+    AutoHeight: 'F512',
+    ChartSeries: 'F513',
+    ChartXAngle: 'F514',
+    ChartYAngle: 'F515',
+    Combobox: 'F516',
+    LineSpacing: 'F517',
+    Padding: 'F518',
+    PaddingTop: 'F519',
+    PaddingBottom: 'F51A',
+    PaddingLeft: 'F51B',
+    PaddingRight: 'F51C',
+    NavigationFlipper: 'F51D',
+    AlignJustify: 'F51E',
+    TextOverflow: 'F51F',
+    VisualsFolder: 'F520',
+    VisualsStore: 'F521',
+    PictureCenter: 'F522',
+    PictureFill: 'F523',
+    PicturePosition: 'F524',
+    PictureStretch: 'F525',
+    PictureTile: 'F526',
+    Slider: 'F527',
+    SliderHandleSize: 'F528',
+    DefaultRatio: 'F529',
+    NumberSequence: 'F52A',
+    GUID: 'F52B',
+    ReportAdd: 'F52C',
+    DashboardAdd: 'F52D',
+    MapPinSolid: 'F52E',
+    WebPublish: 'F52F',
+    PieSingleSolid: 'F530',
+    BlockedSolid: 'F531',
+    DrillDown: 'F532',
+    DrillDownSolid: 'F533',
+    DrillExpand: 'F534',
+    DrillShow: 'F535',
+    OneDriveFolder16: 'F53B',
+    FunctionalManagerDashboard: 'F542',
+    BIDashboard: 'F543',
+    CodeEdit: 'F544',
+    RenewalCurrent: 'F545',
+    RenewalFuture: 'F546',
+    SplitObject: 'F547',
+    BulkUpload: 'F548',
+    DownloadDocument: 'F549',
+    WaitlistConfirm: 'F550',
+    WaitlistConfirmMirrored: 'F551',
+    LaptopSecure: 'F552',
+    DragObject: 'F553',
+    EntryView: 'F554',
+    EntryDecline: 'F555',
+    ContactCardSettings: 'F556',
+    ContactCardSettingsMirrored: 'F557',
+    CalendarSettings: 'F558',
+    CalendarSettingsMirrored: 'F559',
+    HardDriveLock: 'F55A',
+    HardDriveUnlock: 'F55B',
+    AccountManagement: 'F55C',
+    TransitionPop: 'F5B2',
+    TransitionPush: 'F5B3',
+    TransitionEffect: 'F5B4',
+    LookupEntities: 'F5B5',
+    ExploreData: 'F5B6',
+    AddBookmark: 'F5B7',
+    SearchBookmark: 'F5B8',
+    DrillThrough: 'F5B9',
+    MasterDatabase: 'F5BA',
+    CertifiedDatabase: 'F5BB',
+    MaximumValue: 'F5BC',
+    MinimumValue: 'F5BD',
+    VisualStudioIDELogo32: 'F5D0',
+    PasteAsText: 'F5D5',
+    PasteAsCode: 'F5D6',
+    BrowserTab: 'F5D7',
+    BrowserTabScreenshot: 'F5D8',
+    DesktopScreenshot: 'F5D9',
+    FileYML: 'F5DA',
+    ClipboardSolid: 'F5DC',
+    AnalyticsView: 'F5F1',
+    Leave: 'F627',
+    Trending12: 'F62D',
+    Blocked12: 'F62E',
+    Warning12: 'F62F',
+    CheckedOutByOther12: 'F630',
+    CheckedOutByYou12: 'F631',
+    CircleShapeSolid: 'F63C',
+    SquareShapeSolid: 'F63D',
+    TriangleShapeSolid: 'F63E',
+    DropShapeSolid: 'F63F',
+    RectangleShapeSolid: 'F640',
+    InsertColumnsLeft: 'F64A',
+    InsertColumnsRight: 'F64B',
+    InsertRowsAbove: 'F64C',
+    InsertRowsBelow: 'F64D',
+    DeleteColumns: 'F64E',
+    DeleteRows: 'F64F'
+  }
+}, {
+  bundle: '14-eb4d1150',
+  icons: {
+    DeleteRowsMirrored: 'F650',
+    DeleteTable: 'F651',
+    VersionControlPush: 'F664',
+    WhiteBoardApp16: 'F673',
+    WhiteBoardApp32: 'F674',
+    InsertSignatureLine: 'F677',
+    ArrangeByFrom: 'F678',
+    Phishing: 'F679',
+    CreateMailRule: 'F67A',
+    PublishCourse: 'F699',
+    DictionaryRemove: 'F69A',
+    UserRemove: 'F69B',
+    UserEvent: 'F69C',
+    Encryption: 'F69D',
+    D365TalentLearn: 'F6BB',
+    D365TalentInsight: 'F6BC',
+    D365TalentHRCore: 'F6BD',
+    BacklogList: 'F6BF',
+    ButtonControl: 'F6C0',
+    TableGroup: 'F6D9',
+    MountainClimbing: 'F6DB',
+    TagUnknown: 'F6DF',
+    TagUnknownMirror: 'F6E0',
+    TagUnknown12: 'F6E1',
+    TagUnknown12Mirror: 'F6E2',
+    Link12: 'F6E3',
+    Presentation: 'F6E4',
+    Presentation12: 'F6E5',
+    Lock12: 'F6E6',
+    BuildDefinition: 'F6E9',
+    ReleaseDefinition: 'F6EA',
+    SaveTemplate: 'F6EC',
+    UserGauge: 'F6ED',
+    BlockedSiteSolid12: 'F70A',
+    TagSolid: 'F70E',
+    OfficeChat: 'F70F',
+    OfficeChatSolid: 'F710',
+    MailSchedule: 'F72E'
+  }
+}];
+var script$Y = {
+  props: ["name"],
+  computed: {
+    iconClass: function iconClass() {
+      return "ms-Icon ms-Icon--".concat(this.name, " ").concat(this.contentClass);
     }
-}
+  },
+  data: function data() {
+    return {
+      contentClass: null
+    };
+  },
+  mounted: function mounted() {
+    // find bundle
+    var unicode;
+    var bundle;
 
-var uiTimePicker = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('table',[_c('tr',[_c('td',{staticClass:"up",on:{"click":function($event){_vm.upHour();}}},[_c('svg',{attrs:{"viewBox":"0 -0 2048 2048","width":"16","height":"16","version":"1.1","xmlns":"http://www.w3.org/2000/svg"}},[_c('path',{attrs:{"fill":"#000000","stroke":"none","transform":"translate(0, 2048) scale(1, -1)","d":"M1024 1607l1017 -1017l-242 -241l-775 775l-775 -775l-242 241l1017 1017v0z"}})])]),_vm._v(" "),_c('td',{staticClass:"seperator"}),_vm._v(" "),_c('td',{staticClass:"up",on:{"click":function($event){_vm.upMinute();}}},[_c('svg',{attrs:{"viewBox":"0 -0 2048 2048","width":"16","height":"16","version":"1.1","xmlns":"http://www.w3.org/2000/svg"}},[_c('path',{attrs:{"fill":"#000000","stroke":"none","transform":"translate(0, 2048) scale(1, -1)","d":"M1024 1607l1017 -1017l-242 -241l-775 775l-775 -775l-242 241l1017 1017v0z"}})])])]),_vm._v(" "),_c('tr',[_c('td',[_c('uiTextfield',{staticClass:"textField",model:{value:(_vm.hour),callback:function ($$v) {_vm.hour=$$v;},expression:"hour"}})],1),_vm._v(" "),_c('td',{staticClass:"seperator"},[_vm._v(":")]),_vm._v(" "),_c('td',[_c('uiTextfield',{staticClass:"textField",model:{value:(_vm.minute),callback:function ($$v) {_vm.minute=$$v;},expression:"minute"}})],1)]),_vm._v(" "),_c('tr',[_c('td',{staticClass:"down",on:{"click":function($event){_vm.downHour();}}},[_c('svg',{attrs:{"viewBox":"0 -0 2048 2048","width":"16","height":"16","version":"1.1","xmlns":"http://www.w3.org/2000/svg"}},[_c('path',{attrs:{"fill":"#000000","stroke":"none","transform":"translate(0, 2048) scale(1, -1)","d":"M1799 1699l242 -241l-1017 -1017l-1017 1017l242 241l775 -775l775 775v0z"}})])]),_vm._v(" "),_c('td',{staticClass:"seperator"}),_vm._v(" "),_c('td',{staticClass:"down",on:{"click":function($event){_vm.downMinute();}}},[_c('svg',{attrs:{"viewBox":"0 -0 2048 2048","width":"16","height":"16","version":"1.1","xmlns":"http://www.w3.org/2000/svg"}},[_c('path',{attrs:{"fill":"#000000","stroke":"none","transform":"translate(0, 2048) scale(1, -1)","d":"M1799 1699l242 -241l-1017 -1017l-1017 1017l242 241l775 -775l775 775v0z"}})])])])])},staticRenderFns: [],_scopeId: 'data-v-16ac4ddf',
-    beforeCreate: function beforeCreate(){ loadStyles("table[data-v-16ac4ddf] { border-spacing: 0; min-width: 90px; } .seperator[data-v-16ac4ddf] { text-align: center; width: 10px; } .up[data-v-16ac4ddf], .down[data-v-16ac4ddf] { cursor: pointer; text-align: center; user-select: none; } .textField[data-v-16ac4ddf] { width: 100%; margin: 0 !important; } .textField[data-v-16ac4ddf] label { display: none; } .textField[data-v-16ac4ddf] input { text-align: center; min-width: unset; padding: 6px 0; } ");},
-    components:{
-        uiTextfield: uiTextfield
-    },
-    props:["value"],
-    watch:{
-        hour: function hour(newVal, oldVal){
-            var this$1 = this;
-
-            if(newVal*1 != newVal || newVal<0 || newVal>23)
-                { this.$nextTick(function (){ return this$1.hour = oldVal; }); }
-            else
-            {
-                var newDate = this.value ? new Date(this.value) : new Date(0);
-                newDate.setHours(this.hour);
-                this.$emit("input", newDate);
-            }
-        },
-        minute: function minute(newVal, oldVal){
-            var this$1 = this;
-
-            if(newVal*1 != newVal || newVal<0 || newVal>59)
-                { this.$nextTick(function (){ return this$1.minute = oldVal; }); }
-            else
-            {
-                var newDate = this.value ? new Date(this.value) : new Date(0);
-                newDate.setMinutes(this.minute);
-                this.$emit("input", newDate);
-            }
-        },
-        value:{
-            handler: function handler(newVal){
-                if(newVal)
-                {
-                    this.hour = newVal.getHours();
-                    this.minute = newVal.getMinutes();
-                }
-            },
-            immediate : true
-        }
-    },
-    methods:{
-        upHour: function upHour(){
-            this.hour = (this.hour+1)%24;
-        },
-        upMinute: function upMinute(){
-            this.minute++;
-            if(this.minute>59)
-            {
-                this.upHour();
-                this.minute = 0;
-            }
-        },
-        downHour: function downHour(){
-            this.hour--;
-            if(this.hour<0)
-                { this.hour = 23; }
-
-        },
-        downMinute: function downMinute(){
-            this.minute--;
-            if(this.minute<0)
-            {
-                this.downHour();
-                this.minute = 59;
-            }
-        },
-    },
-    data: function data(){
-        return{
-            hour : 0,
-            minute : 0
-        }
+    for (var b = 0; b < iconData.length && !unicode; b++) {
+      if (unicode = iconData[b].icons[this.name]) bundle = iconData[b].bundle;
     }
-}
 
-var Icon = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('i',{class:_vm.iconClass,on:{"click":function($event){_vm.$emit('click');}}})},staticRenderFns: [],
-    data: function data(){
-        return {
-            cl : ""
-        };
-    },
-    computed:{
-        iconClass: function iconClass(){
-            return "ms-Icon ms-Icon--" + (this.name) + " " + this.cl;
+    fontFace({
+      fontFamily: "FabricMDL2Icons-" + bundle,
+      src: "url(https://spoprod-a.akamaihd.net/files/fabric/assets/icons/fabric-icons-" + bundle + ".woff) format(\"woff\")"
+    });
+    this.contentClass = mergeStyles({
+      displayName: this.$options._scopeId,
+      display: 'inline-block',
+      fontStyle: 'normal',
+      fontWeight: '400',
+      speak: 'none',
+      selectors: {
+        ":before": {
+          fontFamily: "FabricMDL2Icons-" + bundle,
+          content: "\"\\".concat(unicode, "\"")
         }
-    },
-    mounted: function mounted(){
+      }
+    });
+  }
+};
 
-        fontFace({
-            fontFamily: "FabricMDL2Icons-" + this.bundle,
-            src: "url(https://spoprod-a.akamaihd.net/files/fabric/assets/icons/fabric-icons-" + this.bundle +".woff) format(\"woff\")"
-        });
-        this.cl = mergeStyles({ 
-            displayName : this.$options._scopeId,
-            display: 'inline-block',
-            fontStyle: 'normal',
-            fontWeight: '400',
-            speak: 'none',
-            selectors: {
-                ":before":{
-                    fontFamily: "FabricMDL2Icons-" + this.bundle,
-                    content: "'" + this.unicode + "'"
-                }
-            }
-        });
+/* script */
+const __vue_script__$Y = script$Y;
+
+/* template */
+var __vue_render__$y = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('i',{class:_vm.iconClass,on:{"click":function($event){return _vm.$emit('click')}}})};
+var __vue_staticRenderFns__$y = [];
+
+  /* style */
+  const __vue_inject_styles__$Y = undefined;
+  /* scoped */
+  const __vue_scope_id__$Y = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$Y = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$Y = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var uiDynamicIcon = normalizeComponent_1(
+    { render: __vue_render__$y, staticRenderFns: __vue_staticRenderFns__$y },
+    __vue_inject_styles__$Y,
+    __vue_script__$Y,
+    __vue_scope_id__$Y,
+    __vue_is_functional_template__$Y,
+    __vue_module_identifier__$Y,
+    undefined,
+    undefined
+  );
+
+//
+var script$Z = {
+  loadStyles: loadStyles,
+  components: {
+    uiTextfield: uiTextfield
+  },
+  props: ["value"],
+  watch: {
+    hour: function hour(newVal, oldVal) {
+      var _this = this;
+
+      if (newVal * 1 != newVal || newVal < 0 || newVal > 23) this.$nextTick(function () {
+        return _this.hour = oldVal;
+      });else {
+        var newDate = this.value ? new Date(this.value) : new Date(0);
+        newDate.setHours(this.hour);
+        this.$emit("input", newDate);
+      }
+    },
+    minute: function minute(newVal, oldVal) {
+      var _this2 = this;
+
+      if (newVal * 1 != newVal || newVal < 0 || newVal > 59) this.$nextTick(function () {
+        return _this2.minute = oldVal;
+      });else {
+        var newDate = this.value ? new Date(this.value) : new Date(0);
+        newDate.setMinutes(this.minute);
+        this.$emit("input", newDate);
+      }
+    },
+    value: {
+      handler: function handler(newVal) {
+        if (newVal) {
+          this.hour = newVal.getHours();
+          this.minute = newVal.getMinutes();
+        }
+      },
+      immediate: true
     }
-}
+  },
+  methods: {
+    upHour: function upHour() {
+      this.hour = (this.hour + 1) % 24;
+    },
+    upMinute: function upMinute() {
+      this.minute++;
+
+      if (this.minute > 59) {
+        this.upHour();
+        this.minute = 0;
+      }
+    },
+    downHour: function downHour() {
+      this.hour--;
+      if (this.hour < 0) this.hour = 23;
+    },
+    downMinute: function downMinute() {
+      this.minute--;
+
+      if (this.minute < 0) {
+        this.downHour();
+        this.minute = 59;
+      }
+    }
+  },
+  data: function data() {
+    return {
+      hour: 0,
+      minute: 0
+    };
+  }
+};
+
+/* script */
+const __vue_script__$Z = script$Z;
+
+/* template */
+var __vue_render__$z = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('table',[_c('tr',[_c('td',{staticClass:"up",on:{"click":function($event){return _vm.upHour()}}},[_c('svg',{attrs:{"viewBox":"0 -0 2048 2048","width":"16","height":"16","version":"1.1","xmlns":"http://www.w3.org/2000/svg"}},[_c('path',{attrs:{"fill":"#000000","stroke":"none","transform":"translate(0, 2048) scale(1, -1)","d":"M1024 1607l1017 -1017l-242 -241l-775 775l-775 -775l-242 241l1017 1017v0z"}})])]),_vm._v(" "),_c('td',{staticClass:"seperator"}),_vm._v(" "),_c('td',{staticClass:"up",on:{"click":function($event){return _vm.upMinute()}}},[_c('svg',{attrs:{"viewBox":"0 -0 2048 2048","width":"16","height":"16","version":"1.1","xmlns":"http://www.w3.org/2000/svg"}},[_c('path',{attrs:{"fill":"#000000","stroke":"none","transform":"translate(0, 2048) scale(1, -1)","d":"M1024 1607l1017 -1017l-242 -241l-775 775l-775 -775l-242 241l1017 1017v0z"}})])])]),_vm._v(" "),_c('tr',[_c('td',[_c('uiTextfield',{staticClass:"textField",model:{value:(_vm.hour),callback:function ($$v) {_vm.hour=$$v;},expression:"hour"}})],1),_vm._v(" "),_c('td',{staticClass:"seperator"},[_vm._v(":")]),_vm._v(" "),_c('td',[_c('uiTextfield',{staticClass:"textField",model:{value:(_vm.minute),callback:function ($$v) {_vm.minute=$$v;},expression:"minute"}})],1)]),_vm._v(" "),_c('tr',[_c('td',{staticClass:"down",on:{"click":function($event){return _vm.downHour()}}},[_c('svg',{attrs:{"viewBox":"0 -0 2048 2048","width":"16","height":"16","version":"1.1","xmlns":"http://www.w3.org/2000/svg"}},[_c('path',{attrs:{"fill":"#000000","stroke":"none","transform":"translate(0, 2048) scale(1, -1)","d":"M1799 1699l242 -241l-1017 -1017l-1017 1017l242 241l775 -775l775 775v0z"}})])]),_vm._v(" "),_c('td',{staticClass:"seperator"}),_vm._v(" "),_c('td',{staticClass:"down",on:{"click":function($event){return _vm.downMinute()}}},[_c('svg',{attrs:{"viewBox":"0 -0 2048 2048","width":"16","height":"16","version":"1.1","xmlns":"http://www.w3.org/2000/svg"}},[_c('path',{attrs:{"fill":"#000000","stroke":"none","transform":"translate(0, 2048) scale(1, -1)","d":"M1799 1699l242 -241l-1017 -1017l-1017 1017l242 241l775 -775l775 775v0z"}})])])])])};
+var __vue_staticRenderFns__$z = [];
+
+  /* style */
+  const __vue_inject_styles__$Z = function (inject) {
+    if (!inject) return
+    inject("data-v-4b961c08_0", { source: "table[data-v-4b961c08]{border-spacing:0;min-width:90px}.seperator[data-v-4b961c08]{text-align:center;width:10px}.down[data-v-4b961c08],.up[data-v-4b961c08]{cursor:pointer;text-align:center;user-select:none}.textField[data-v-4b961c08]{width:100%;margin:0!important}.textField[data-v-4b961c08]  label{display:none}.textField[data-v-4b961c08]  input{text-align:center;min-width:unset;padding:6px 0}", map: undefined, media: undefined });
+
+  };
+  /* scoped */
+  const __vue_scope_id__$Z = "data-v-4b961c08";
+  /* module identifier */
+  const __vue_module_identifier__$Z = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$Z = false;
+  /* style inject */
+  const __vue_create_injector__$p = function(context){ return function(scopeId, data){__vue_script__$Z.loadStyles && __vue_script__$Z.loadStyles(data.source);}};
+  /* style inject SSR */
+  
+
+  
+  var uiTimePicker = normalizeComponent_1(
+    { render: __vue_render__$z, staticRenderFns: __vue_staticRenderFns__$z },
+    __vue_inject_styles__$Z,
+    __vue_script__$Z,
+    __vue_scope_id__$Z,
+    __vue_is_functional_template__$Z,
+    __vue_module_identifier__$Z,
+    __vue_create_injector__$p,
+    undefined
+  );
+
+//
+var script$_ = {
+  data: function data() {
+    return {
+      cl: ""
+    };
+  },
+  computed: {
+    iconClass: function iconClass() {
+      return "ms-Icon ms-Icon--".concat(this.name, " ") + this.cl;
+    }
+  },
+  mounted: function mounted() {
+
+    fontFace({
+      fontFamily: "FabricMDL2Icons-" + this.bundle,
+      src: "url(https://spoprod-a.akamaihd.net/files/fabric/assets/icons/fabric-icons-" + this.bundle + ".woff) format(\"woff\")"
+    });
+    this.cl = mergeStyles({
+      displayName: this.$options._scopeId,
+      display: 'inline-block',
+      fontStyle: 'normal',
+      fontWeight: '400',
+      speak: 'none',
+      selectors: {
+        ":before": {
+          fontFamily: "FabricMDL2Icons-" + this.bundle,
+          content: "'" + this.unicode + "'"
+        }
+      }
+    });
+  }
+};
+
+/* script */
+const __vue_script__$_ = script$_;
+
+/* template */
+var __vue_render__$A = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('i',{class:_vm.iconClass,on:{"click":function($event){return _vm.$emit('click')}}})};
+var __vue_staticRenderFns__$A = [];
+
+  /* style */
+  const __vue_inject_styles__$_ = undefined;
+  /* scoped */
+  const __vue_scope_id__$_ = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$_ = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$_ = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var Icon = normalizeComponent_1(
+    { render: __vue_render__$A, staticRenderFns: __vue_staticRenderFns__$A },
+    __vue_inject_styles__$_,
+    __vue_script__$_,
+    __vue_scope_id__$_,
+    __vue_is_functional_template__$_,
+    __vue_module_identifier__$_,
+    undefined,
+    undefined
+  );
 
 function uiIconGlobalNavButton(resolve) {
   resolve({
@@ -22807,7 +26280,7 @@ function uiIconMailSchedule(resolve) {
   });
 }
 
-var commonjsGlobal = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
 function createCommonjsModule(fn, module) {
 	return module = { exports: {} }, fn(module, module.exports), module.exports;
@@ -22887,7 +26360,7 @@ var supportsMicroTasks = isBrowser && window.Promise;
 * @returns {Function}
 */
 
-var debounce$1 = supportsMicroTasks ? microtaskDebounce : taskDebounce;
+var debounce = supportsMicroTasks ? microtaskDebounce : taskDebounce;
 /**
  * Check if the given variable is a function
  * @method
@@ -23186,14 +26659,14 @@ var createClass = function () {
       var descriptor = props[i];
       descriptor.enumerable = descriptor.enumerable || false;
       descriptor.configurable = true;
-      if ("value" in descriptor) { descriptor.writable = true; }
+      if ("value" in descriptor) descriptor.writable = true;
       Object.defineProperty(target, descriptor.key, descriptor);
     }
   }
 
   return function (Constructor, protoProps, staticProps) {
-    if (protoProps) { defineProperties(Constructor.prototype, protoProps); }
-    if (staticProps) { defineProperties(Constructor, staticProps); }
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) defineProperties(Constructor, staticProps);
     return Constructor;
   };
 }();
@@ -23214,10 +26687,8 @@ var defineProperty = function defineProperty(obj, key, value) {
 };
 
 var _extends$1 = Object.assign || function (target) {
-  var arguments$1 = arguments;
-
   for (var i = 1; i < arguments.length; i++) {
-    var source = arguments$1[i];
+    var source = arguments[i];
 
     for (var key in source) {
       if (Object.prototype.hasOwnProperty.call(source, key)) {
@@ -25295,7 +28766,7 @@ var Popper = function () {
     }; // make update() debounced, so that it only runs at most once-per-tick
 
 
-    this.update = debounce$1(this.update.bind(this)); // with {} we create a new object with the options inside it
+    this.update = debounce(this.update.bind(this)); // with {} we create a new object with the options inside it
 
     this.options = _extends$1({}, Popper.Defaults, options); // init state
 
@@ -25417,7 +28888,7 @@ Popper.Defaults = Defaults;
 
 var vuePopper_min = createCommonjsModule(function (module, exports) {
   !function (e, t) {
-    module.exports = t(Popper);
+     module.exports = t(Popper) ;
   }(commonjsGlobal, function (e) {
 
     function t(e, t, o) {
@@ -25608,7 +29079,7 @@ var vuePopper_min = createCommonjsModule(function (module, exports) {
         t.call(this, d(this.$root.$options.shadowRoot));
       } : function (e) {
         t.call(this, p(e));
-      }), u) { if (c.functional) {
+      }), u) if (c.functional) {
         var _e = c.render;
 
         c.render = function (t, o) {
@@ -25617,7 +29088,7 @@ var vuePopper_min = createCommonjsModule(function (module, exports) {
       } else {
         var _e2 = c.beforeCreate;
         c.beforeCreate = _e2 ? [].concat(_e2, u) : [u];
-      } }
+      }
       return o;
     }({
       render: function render() {
@@ -25650,438 +29121,600 @@ var vuePopper_min = createCommonjsModule(function (module, exports) {
   });
 });
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var dateUtils = {
-    compareDates: function compareDates (date1, date2) {
-        var d1 = new Date(date1.getTime());
-        var d2 = new Date(date2.getTime());
-        d1.setHours(0, 0, 0, 0);
-        d2.setHours(0, 0, 0, 0);
-        return d1.getTime() === d2.getTime()
-    },  
-    daysInMonth: function daysInMonth (year, month) {
-        return /8|3|5|10/.test(month) ? 30 : month === 1 ? (!(year % 4) && year % 100) || !(year % 400) ? 29 : 28 : 31
-    },
-    formatDate: function formatDate (date, localeObj) {
-        var year = date.getFullYear();
-        var month = date.getMonth() + 1;
-        var day = date.getDate();
-        var str = localeObj.format
-        .replace(/dd/, ('0' + day).slice(-2))
-        .replace(/d/, day)
-        .replace(/yyyy/, year)
-        .replace(/yy/, String(year).slice(2))
-        .replace(/MMMM/, localeObj.months[date.getMonth()])
-        .replace(/MMMM/, localeObj.short[date.getMonth()])
-        .replace(/MM/, ('0' + month).slice(-2))
-        .replace(/M(?!a|ä|e)/, month);
-        // .replace(/su/, this.getNthSuffix(this.getDate(date)))
-        // .replace(/D(?!e|é|i)/, this.getDayNameAbbr(date, translation.days))
-        return str
-    }
-};
+  compareDates: function compareDates(date1, date2) {
+    var d1 = new Date(date1.getTime());
+    var d2 = new Date(date2.getTime());
+    d1.setHours(0, 0, 0, 0);
+    d2.setHours(0, 0, 0, 0);
+    return d1.getTime() === d2.getTime();
+  },
+  daysInMonth: function daysInMonth(year, month) {
+    return /8|3|5|10/.test(month) ? 30 : month === 1 ? !(year % 4) && year % 100 || !(year % 400) ? 29 : 28 : 31;
+  },
+  formatDate: function formatDate(date, localeObj) {
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1;
+    var day = date.getDate();
+    var str = localeObj.format.replace(/dd/, ('0' + day).slice(-2)).replace(/d/, day).replace(/yyyy/, year).replace(/yy/, String(year).slice(2)).replace(/MMMM/, localeObj.months[date.getMonth()]).replace(/MMMM/, localeObj.short[date.getMonth()]).replace(/MM/, ('0' + month).slice(-2)).replace(/M(?!a|ä|e)/, month); // .replace(/su/, this.getNthSuffix(this.getDate(date)))
+    // .replace(/D(?!e|é|i)/, this.getDayNameAbbr(date, translation.days))
 
+    return str;
+  }
+};
 var locale = {
-    "da" : {
-        goToToday : "Gå til idag",
-        format : "dd/MM/yyyy",
-        firstDay : 1,
-        days : ["M","T","O","T","F","L","S"],
-        months : ['Januar', 'Februar', 'Marts', 'April', 'Maj', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'December'],
-        short : ['Jan', 'Feb', 'Mar', 'Apr', 'Maj', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec']
-    },
-    "de" : {
-        goToToday : "gehe heute hin",
-        format : "dd.MM.yyyy",
-        firstDay : 1,
-        days : ["M","D","M","D","F","S","S"],
-        months : ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'],
-        short : ['Jan', 'Febr', 'Mrz', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sept', 'Okt', 'Nov', 'Dez']
-    },
-    "es":{
-        goToToday : "ir a hoy",
-        format : "dd/MM/yyyy", 
-        firstDay : 1,
-        days : ["L","M","M","J","V","S","D"],
-        months : ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-        short : ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']
-    },
-    "en-uk" : {
-        goToToday : "Go to today",
-        format : "dd/MM/yyyy",
-        firstDay : 1,
-        days : ["M","T","W","T","F","S","S"],
-        months : ["January", "February", "March", "April", "May", "June", "July","August", "September","October", "November","December"],
-        short : ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
-    },
-    "en-gb" : {
-        goToToday : "Go to today",
-        format : "dd/MM/yyyy",
-        firstDay : 1,
-        days : ["M","T","W","T","F","S","S"],
-        months : ["January", "February", "March", "April", "May", "June", "July","August", "September","October", "November","December"],
-        short : ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
-    },
-    "en-us" : {
-        goToToday : "Go to today",
-        format : "M/d/yyyy",
-        firstDay : 0,
-        days : ["S", "M","T","W","T","F","S"],
-        months : ["January", "February", "March", "April", "May", "June", "July","August", "September","October", "November","December"],
-        short : ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
-    },
-    "fi":{
-        goToToday : "mene tänään",
-        format : "M/d/yyyy", 
-        firstDay : 1,
-        days : ["M", "T","K","T","P","L","S"],
-        months : ["Tammikuu", "helmikuu", "maaliskuu", "huhtikuu", "toukokuu", "kesäkuu", "heinäkuu", "elokuu", "syyskuu", "lokakuu", "marraskuu", "joulukuu"],
-        short : ["Tam","Hel","Maa","Huh","Tou","Kes","Hei","Elo","Syy","Lok","Mar","Jou"]
-    },
-    "fr":{
-        goToToday : "Aller à aujourd'hui",
-        format : "dd/MM/yyyy",
-        firstDay : 1,
-        days : ["L", "M","M","J","V","S","D"],
-        months : ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'],
-        short : ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.']
-    },
-    "it":{
-        goToToday : "Vai a oggi",
-        format : "dd/MM/yyyy",
-        firstDay : 1,
-        days : ["L", "M","M","G","V","S","D"],
-        months : ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'],
-        short : ['gen', 'feb', 'mar', 'apr', 'mag', 'giu', 'lug', 'ago', 'set', 'ott', 'nov', 'dic']
-    },
-    "nl":{
-        goToToday : "Ga naar vandaag",
-        format : "dd-MM-yyyy",
-        firstDay : 1,
-        days : ["M", "D","W","D","V","Z","Z"],
-        months : ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december'],
-        short : ['jan', 'feb', 'mrt', 'apr', 'mei', 'jun', 'jul', 'aug', 'sep', 'okt', 'nov', 'dec']
-    },
-    "pl":{
-        goToToday : "Idź do dzisiaj",
-        format : "dd.MM.yyyy",
-        firstDay : 1,
-        days : ["P","W","Ś","C","P","S","N"],
-        months : ['styczeń', 'luty', 'marzec', 'kwiecień', 'maj', 'czerwiec', 'lipiec', 'sierpień', 'wrzesień', 'październik', 'listopad', 'grudzień'],
-        short : ['sty', 'lut', 'mar', 'kwi', 'maj', 'cze', 'lip', 'sie', 'wrz', 'paź', 'lis', 'gru']
-    }
+  "da": {
+    goToToday: "Gå til idag",
+    format: "dd/MM/yyyy",
+    firstDay: 1,
+    days: ["M", "T", "O", "T", "F", "L", "S"],
+    months: ['Januar', 'Februar', 'Marts', 'April', 'Maj', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'December'],
+    short: ['Jan', 'Feb', 'Mar', 'Apr', 'Maj', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec']
+  },
+  "de": {
+    goToToday: "gehe heute hin",
+    format: "dd.MM.yyyy",
+    firstDay: 1,
+    days: ["M", "D", "M", "D", "F", "S", "S"],
+    months: ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'],
+    short: ['Jan', 'Febr', 'Mrz', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sept', 'Okt', 'Nov', 'Dez']
+  },
+  "es": {
+    goToToday: "ir a hoy",
+    format: "dd/MM/yyyy",
+    firstDay: 1,
+    days: ["L", "M", "M", "J", "V", "S", "D"],
+    months: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+    short: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']
+  },
+  "en-uk": {
+    goToToday: "Go to today",
+    format: "dd/MM/yyyy",
+    firstDay: 1,
+    days: ["M", "T", "W", "T", "F", "S", "S"],
+    months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    short: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+  },
+  "en-gb": {
+    goToToday: "Go to today",
+    format: "dd/MM/yyyy",
+    firstDay: 1,
+    days: ["M", "T", "W", "T", "F", "S", "S"],
+    months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    short: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+  },
+  "en-us": {
+    goToToday: "Go to today",
+    format: "M/d/yyyy",
+    firstDay: 0,
+    days: ["S", "M", "T", "W", "T", "F", "S"],
+    months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    short: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+  },
+  "fi": {
+    goToToday: "mene tänään",
+    format: "M/d/yyyy",
+    firstDay: 1,
+    days: ["M", "T", "K", "T", "P", "L", "S"],
+    months: ["Tammikuu", "helmikuu", "maaliskuu", "huhtikuu", "toukokuu", "kesäkuu", "heinäkuu", "elokuu", "syyskuu", "lokakuu", "marraskuu", "joulukuu"],
+    short: ["Tam", "Hel", "Maa", "Huh", "Tou", "Kes", "Hei", "Elo", "Syy", "Lok", "Mar", "Jou"]
+  },
+  "fr": {
+    goToToday: "Aller à aujourd'hui",
+    format: "dd/MM/yyyy",
+    firstDay: 1,
+    days: ["L", "M", "M", "J", "V", "S", "D"],
+    months: ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'],
+    short: ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.']
+  },
+  "it": {
+    goToToday: "Vai a oggi",
+    format: "dd/MM/yyyy",
+    firstDay: 1,
+    days: ["L", "M", "M", "G", "V", "S", "D"],
+    months: ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'],
+    short: ['gen', 'feb', 'mar', 'apr', 'mag', 'giu', 'lug', 'ago', 'set', 'ott', 'nov', 'dic']
+  },
+  "nl": {
+    goToToday: "Ga naar vandaag",
+    format: "dd-MM-yyyy",
+    firstDay: 1,
+    days: ["M", "D", "W", "D", "V", "Z", "Z"],
+    months: ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december'],
+    short: ['jan', 'feb', 'mrt', 'apr', 'mei', 'jun', 'jul', 'aug', 'sep', 'okt', 'nov', 'dec']
+  },
+  "pl": {
+    goToToday: "Idź do dzisiaj",
+    format: "dd.MM.yyyy",
+    firstDay: 1,
+    days: ["P", "W", "Ś", "C", "P", "S", "N"],
+    months: ['styczeń', 'luty', 'marzec', 'kwiecień', 'maj', 'czerwiec', 'lipiec', 'sierpień', 'wrzesień', 'październik', 'listopad', 'grudzień'],
+    short: ['sty', 'lut', 'mar', 'kwi', 'maj', 'cze', 'lip', 'sie', 'wrz', 'paź', 'lis', 'gru']
+  }
 };
-var uiDatePicker = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"uiDatePicker"},[_c('popper',{ref:"popper",attrs:{"trigger":"click","options":_vm.popperOptions}},[_c('div',{staticClass:"popper foldout"},[_c('div',{staticClass:"dayPicker"},[_c('div',{staticClass:"header"},[_c('span',{staticClass:"current"},[_vm._v(_vm._s(_vm.currentMonth))]),_vm._v(" "),_c('span',{staticClass:"navigate"},[_c('span',{staticClass:"up",on:{"click":function($event){_vm.monthUp();}}},[_c('uiIconUp')],1),_vm._v(" "),_c('span',{staticClass:"down",on:{"click":function($event){_vm.monthDown();}}},[_c('uiIconDown')],1)])]),_vm._v(" "),_c('div',{staticClass:"days"},_vm._l((_vm.daysOfWeek),function(day,index){return _c('span',{key:index},[_vm._v(_vm._s(day))])}),0),_vm._v(" "),_c('div',{staticClass:"days"},[(_vm.blankDaysStart > 0)?_vm._l((_vm.blankDaysStart),function(d){return _c('span',{key:d.timestamp})}):_vm._e(),_vm._v(" "),_vm._l((_vm.days),function(day){return _c('span',{key:day.timestamp,class:_vm.getDayClasses(day),on:{"click":function($event){_vm.selectDate(day);}}},[_vm._v(_vm._s(day.date))])}),_vm._v(" "),(_vm.blankDaysEnd > 0)?_vm._l((_vm.blankDaysEnd),function(d){return _c('span',{key:d.timestamp})}):_vm._e()],2)]),_vm._v(" "),(!_vm.showYear)?_c('div',{staticClass:"monthPicker"},[_c('div',{staticClass:"header"},[_c('span',{staticClass:"current pointer",on:{"click":function($event){_vm.showYear=true;}}},[_vm._v(_vm._s(_vm.year))]),_vm._v(" "),_c('span',{staticClass:"navigate"},[_c('span',{staticClass:"up",on:{"click":function($event){_vm.year++;}}},[_c('uiIconUp')],1),_vm._v(" "),_c('span',{staticClass:"down",on:{"click":function($event){_vm.year--;}}},[_c('uiIconDown')],1)])]),_vm._v(" "),_c('div',{staticClass:"months"},_vm._l((_vm.months),function(month,index){return _c('span',{key:index,on:{"click":function($event){_vm.selectMonth(index);}}},[_vm._v(" "+_vm._s(month)+" ")])}),0),_vm._v(" "),_c('div',{staticClass:"goToToday"},[_c('span',{on:{"click":function($event){_vm.goToToday();}}},[_vm._v(_vm._s(_vm.localeObj.goToToday))])])]):_vm._e(),_vm._v(" "),(_vm.showYear)?_c('div',{staticClass:"yearPicker"},[_c('div',{staticClass:"header"},[_c('span',{staticClass:"current pointer",on:{"click":function($event){_vm.showYear=false;}}},[_vm._v(_vm._s(_vm.yearStart)+" - "+_vm._s(_vm.yearEnd-1))]),_vm._v(" "),_c('span',{staticClass:"navigate"},[_c('span',{staticClass:"up",on:{"click":function($event){_vm.yearStart+=12;}}},[_c('uiIconUp')],1),_vm._v(" "),_c('span',{staticClass:"down",on:{"click":function($event){_vm.yearStart-=12;}}},[_c('uiIconDown')],1)])]),_vm._v(" "),_c('div',{staticClass:"years"},_vm._l((_vm.years),function(year){return _c('span',{key:year,on:{"click":function($event){_vm.selectYear(year);}}},[_vm._v(" "+_vm._s(year)+" ")])}),0),_vm._v(" "),_c('div',{staticClass:"goToToday"},[_c('span',{on:{"click":function($event){_vm.goToToday();}}},[_vm._v(_vm._s(_vm.localeObj.goToToday))])])]):_vm._e()]),_vm._v(" "),_c('div',{staticClass:"inputGroup",attrs:{"slot":"reference"},slot:"reference"},[_c('div',{staticClass:"inputContainer"},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.inputVal),expression:"inputVal"}],attrs:{"type":"text"},domProps:{"value":(_vm.inputVal)},on:{"blur":_vm.parseTypedDate,"input":function($event){if($event.target.composing){ return; }_vm.inputVal=$event.target.value;}}})]),_vm._v(" "),_c('div',{staticClass:"iconContainer"},[_c('uiIconCalendar')],1)])])],1)},staticRenderFns: [],_scopeId: 'data-v-d4c0f6c8',
-    beforeCreate: function beforeCreate(){ loadStyles("/* Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license */ /* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .popper[data-v-d4c0f6c8] { width: auto; background-color: #fafafa; color: #212121; text-align: center; padding: 2px; display: inline-block; border-radius: 3px; position: absolute; font-size: 14px; font-weight: normal; border: 1px #ebebeb solid; z-index: 200000; -moz-box-shadow: #3a3a3a 0 0 6px 0; -webkit-box-shadow: #3a3a3a 0 0 6px 0; box-shadow: #3a3a3a 0 0 6px 0; } .popper .popper__arrow[data-v-d4c0f6c8] { width: 0; height: 0; border-style: solid; position: absolute; margin: 5px; } .popper[x-placement^=\"top\"][data-v-d4c0f6c8] { margin-bottom: 5px; } .popper[x-placement^=\"top\"] .popper__arrow[data-v-d4c0f6c8] { border-width: 5px 5px 0 5px; border-color: #fafafa transparent transparent transparent; bottom: -5px; left: calc(50% - 5px); margin-top: 0; margin-bottom: 0; } .popper[x-placement^=\"bottom\"][data-v-d4c0f6c8] { margin-top: 5px; } .popper[x-placement^=\"bottom\"] .popper__arrow[data-v-d4c0f6c8] { border-width: 0 5px 5px 5px; border-color: transparent transparent #fafafa transparent; top: -5px; left: calc(50% - 5px); margin-top: 0; margin-bottom: 0; } .popper[x-placement^=\"right\"][data-v-d4c0f6c8] { margin-left: 5px; } .popper[x-placement^=\"right\"] .popper__arrow[data-v-d4c0f6c8] { border-width: 5px 5px 5px 0; border-color: transparent #fafafa transparent transparent; left: -5px; top: calc(50% - 5px); margin-left: 0; margin-right: 0; } .popper[x-placement^=\"left\"][data-v-d4c0f6c8] { margin-right: 5px; } .popper[x-placement^=\"left\"] .popper__arrow[data-v-d4c0f6c8] { border-width: 5px 0 5px 5px; border-color: transparent transparent transparent #fafafa; right: -5px; top: calc(50% - 5px); margin-left: 0; margin-right: 0; } .uiDatePicker[data-v-d4c0f6c8] { font-family: \"Segoe UI WestEuropean\", \"Segoe UI\", -apple-system, BlinkMacSystemFont, \"Roboto\", \"Helvetica Neue\", sans-serif; -webkit-font-smoothing: antialiased; box-sizing: border-box; margin: 0; padding: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: \"[theme:neutralPrimary, default: #333333]\"; font-size: 12px; font-weight: 400; } .foldout[data-v-d4c0f6c8] { background-color: white; width: 420px; box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75); user-select: none; } .foldout > div[data-v-d4c0f6c8] { display: table-cell; vertical-align: top; } .header[data-v-d4c0f6c8] { padding: 7px; display: flex; justify-content: space-between; } .header .current[data-v-d4c0f6c8] { font-weight: bold; } .header .navigate[data-v-d4c0f6c8] { cursor: pointer; } .header .navigate .up[data-v-d4c0f6c8] { padding: 6px 8px; } .header .navigate .up[data-v-d4c0f6c8]:hover { background-color: lightgray; } .header .navigate .down[data-v-d4c0f6c8] { padding: 6px 8px; } .header .navigate .down[data-v-d4c0f6c8]:hover { background-color: lightgray; } .yearPicker[data-v-d4c0f6c8], .monthPicker[data-v-d4c0f6c8] { width: 210px; padding: 5px; } .yearPicker .years[data-v-d4c0f6c8], .yearPicker .months[data-v-d4c0f6c8], .monthPicker .years[data-v-d4c0f6c8], .monthPicker .months[data-v-d4c0f6c8] { width: 200px; display: flex; flex-wrap: wrap; justify-content: space-between; } .yearPicker .years span[data-v-d4c0f6c8], .yearPicker .months span[data-v-d4c0f6c8], .monthPicker .years span[data-v-d4c0f6c8], .monthPicker .months span[data-v-d4c0f6c8] { flex-basis: 40px; padding: 12px 2px; text-align: center; margin-bottom: 12px; cursor: pointer; } .yearPicker .years span[data-v-d4c0f6c8]:hover, .yearPicker .months span[data-v-d4c0f6c8]:hover, .monthPicker .years span[data-v-d4c0f6c8]:hover, .monthPicker .months span[data-v-d4c0f6c8]:hover { background-color: lightgray; } .yearPicker .goToToday[data-v-d4c0f6c8], .monthPicker .goToToday[data-v-d4c0f6c8] { text-align: right; padding: 5px; } .yearPicker .goToToday span[data-v-d4c0f6c8], .monthPicker .goToToday span[data-v-d4c0f6c8] { cursor: pointer; } .dayPicker[data-v-d4c0f6c8] { width: 210px; padding: 5px; border-right: solid 1px #edebe9; } .dayPicker .days[data-v-d4c0f6c8] { width: 200px; display: flex; flex-wrap: wrap; justify-content: space-between; } .dayPicker .days span[data-v-d4c0f6c8] { flex-basis: 20px; padding: 4px; text-align: center; } .dayPicker .days span.selectable[data-v-d4c0f6c8] { cursor: pointer; } .dayPicker .days span.selectable[data-v-d4c0f6c8]:hover { background-color: lightgray; } .dayPicker .days span.today[data-v-d4c0f6c8] { background-color: \"[theme:themePrimary, default: #0078d7]\"; color: \"[theme:white, default: #ffffff]\"; } .dayPicker .days span.selected[data-v-d4c0f6c8] { background-color: \"[theme:themeLight, default: #c7e0f4]\"; } .pointer[data-v-d4c0f6c8] { cursor: pointer; } .inputGroup[data-v-d4c0f6c8] { display: inline-block; padding-right: 8px; border: 1px solid \"[theme:neutralTertiaryAlt, default: #c8c8c8]\"; border-radius: 2px; } .inputGroup .inputContainer[data-v-d4c0f6c8] { display: table-cell; width: 100%; } .inputGroup .inputContainer input[data-v-d4c0f6c8] { height: 30px; width: 100%; box-sizing: border-box; padding: 0 8px; border: none; font-weight: 300; font-size: 14px; color: \"[theme:neutralPrimary, default: #333333]\"; } .inputGroup .inputContainer input[data-v-d4c0f6c8]:focus { outline: none; } .inputGroup .iconContainer[data-v-d4c0f6c8] { display: table-cell; } .inputGroup .iconContainer .ms-Icon[data-v-d4c0f6c8] { vertical-align: -4px; font-size: 18px; } @media screen and (max-width: 450px) { .yearPicker[data-v-d4c0f6c8], .monthPicker[data-v-d4c0f6c8] { display: none !important; } .dayPicker[data-v-d4c0f6c8] { border-right: none !important; } .foldout[data-v-d4c0f6c8] { width: 210px; } } ");}, 
-    components:{
-        uiIconUp: uiIconUp, 
-        uiIconDown: uiIconDown,
-        uiIconCalendar: uiIconCalendar,
-        Popper: vuePopper_min
+var script$$ = {
+  loadStyles: loadStyles,
+  components: {
+    uiIconUp: uiIconUp,
+    uiIconDown: uiIconDown,
+    uiIconCalendar: uiIconCalendar,
+    Popper: vuePopper_min
+  },
+  props: {
+    value: {
+      type: Date
     },
-    props:{
-        value:{
-            type:Date
-        },
-        locale:{
-            type:String,
-            default:"en-us"
-        },
-        placement:{
-            type:String, 
-            default: "top-end"
-        }
+    locale: {
+      type: String,
+      default: "en-us"
     },
-    watch:{
-        value:{
-            handler: function handler(newVal){
-                // console.log("value watch", newVal);
-                if(newVal){
-                    this.inputVal = dateUtils.formatDate(newVal, this.localeObj);
-                    this.pickerDate = newVal;
-                }
-                else{
-                    this.inputVal = "";
-                    this.pickerDate = new Date();
-                }                
-            },
-            immediate:true
-        }
-    },
-    computed:{
-        popperOptions: function popperOptions(){
-            return {
-                placement:"bottom-start",
-                modifiers:{
-                    preventOverflow: {enabled: false},
-                    offset: {enabled: false},
-                    keepTogether: {enabled: false},
-                    arrow: {enabled: false},
-                    flip: {enabled: false},
-                    hide: {enabled: false},
-                    computeStyle: {
-                        enabled: false,
-                    },
-                    applyStyle: {
-                        enabled:true,
-                        fn: function fn(data, options){
-                            var input = data.instance.reference.getClientRects()[0];
-                            var popper = data.instance.popper.getClientRects()[0];
-                            var windowWidth = document.documentElement.clientWidth;
-                            var windowHeight = document.documentElement.clientHeight;
-
-                            // below of above the input
-                            var top = 0;
-                            if(input.height + input.y + popper.height < windowHeight)
-                                { top = input.height; } // yay room to place it beneath
-                            else 
-                                { top = 0-popper.height; } //crap, place it above
-
-                            // left or rightside of the input
-                            var right = 0;
-                            
-                            if(input.width + input.x - popper.width > 0)
-                                { right = 0-popper.width + input.width; }
-
-                            // if it still overflows the right side of the screen, move it left, until it dosnt
-                            if(right == 0 && input.x + popper.width > windowWidth)
-                            {
-                                right = 0-(input.x + popper.width-windowWidth);
-                            }
-
-                            // apply style
-                            data.instance.popper.style.transform = "translate(" + right + "px, " + top + "px)";
-                        }
-                    }
-                }
-            }
-        },
-        localeObj: function localeObj(){
-            if(locale[this.locale.toLowerCase()])
-                { return locale[this.locale.toLowerCase()]; }
-            if(locale[this.locale.split("-")[0].toLowerCase()])
-                { return locale[this.locale.split("-")[0].toLowerCase()]; }
-            return locale["en-us"];
-        },
-        years: function years(){
-            var rtn=[];
-            for(var i=this.yearStart;i<this.yearEnd;i++)
-                { rtn.push(i); }
-            return rtn;
-        },
-        yearStart:{
-            get: function get(){return this.yearEnd-12;},
-            set: function set(val){this.yearEnd = val+12;}
-        },
-        currentMonth: function currentMonth(){
-            return this.localeObj.months[this.pickerDate.getMonth()] + " " + this.pickerDate.getFullYear();
-            // return ['Januar', 'Februar', 'Marts', 'April', 'Maj', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'December'][this.pickerDate.getMonth()]
-            // + " " + this.pickerDate.getFullYear();// TODO
-        },
-        months: function months(){
-            return this.localeObj.short;
-            // return ['Jan', 'Feb', 'Mar', 'Apr', 'Maj', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec'];
-        },
-        daysOfWeek: function daysOfWeek(){
-            return this.localeObj.days;
-            // ["M","T","O","T","F","L","S"]
-        },
-        blankDaysStart: function blankDaysStart () {
-            var dObj = new Date(this.pickerDate.getFullYear(), this.pickerDate.getMonth(), 1, this.pickerDate.getHours(), this.pickerDate.getMinutes());
-            // if (this.mondayFirst) {
-            if (this.localeObj.firstDay == 1) {
-                return dObj.getDay() > 0 ? dObj.getDay() - 1 : 6
-            }
-            return dObj.getDay();
-        },
-        blankDaysEnd: function blankDaysEnd(){
-            return 7-((this.blankDaysStart+this.days.length)%7);
-        },
-        days: function days () {
-            var d = this.pickerDate;
-            var days = [];
-            var dObj = new Date(this.pickerDate.getFullYear(), this.pickerDate.getMonth(), 1, this.pickerDate.getHours(), this.pickerDate.getMinutes());
-            var daysInMonth = dateUtils.daysInMonth(dObj.getFullYear(), dObj.getMonth());
-
-            for (var i = 0; i < daysInMonth; i++) {
-                days.push({
-                    date: dObj.getDate(),
-                    timestamp: dObj.getTime(),
-                    isSelected: this.value && dateUtils.compareDates(dObj, this.value),
-                    // isDisabled: this.isDisabledDate(dObj),
-                    // isHighlighted: this.isHighlightedDate(dObj),
-                    // isHighlightStart: this.isHighlightStart(dObj),
-                    // isHighlightEnd: this.isHighlightEnd(dObj),
-                    isToday: dateUtils.compareDates(dObj, new Date()),
-                    isWeekend: dObj.getDay() === 0 || dObj.getDay() === 6,
-                    isSaturday: dObj.getDay() === 6,
-                    isSunday: dObj.getDay() === 0
-                });
-                dObj.setDate(dObj.getDate() + 1);
-            }
-            return days
-        },
-    },
-    methods:{
-        parseTypedDate: function parseTypedDate(){
-            if(!this.inputVal || this.inputVal == "")
-            {
-                this.$emit("input", "");
-                return;
-            }
-            var parsed = Moment(this.inputVal, this.localeObj.format.toUpperCase());
-            if(parsed.isValid()){
-                // this.pickerDate = parsed.toDate();
-                if(!dateUtils.compareDates(parsed.toDate(), this.value))
-                    { this.$emit("input", parsed.toDate()); }
-            }
-            // console.log("parsed", parsed);
-        },
-        selectDate: function selectDate(val){
-            var this$1 = this;
-
-            this.$emit("input", new Date(val.timestamp));
-            this.inputVal = dateUtils.formatDate(new Date(val.timestamp), this.localeObj);
-            // this.showPicker = false;
-            this.$refs.popper.doClose();
-            this.$nextTick(function (){
-                this$1.$refs.popper.doClose();
-            });
-            // console.log("inputval", this.inputVal);
-        },
-        selectYear: function selectYear(year){
-            this.year = year;
-            this.showYear = false;
-        },
-        selectMonth: function selectMonth(index){
-            this.pickerDate.setMonth(index);
-            this.pickerDate.setFullYear(this.year);
-            this.pickerDate = new Date(this.pickerDate); // fire off change detection
-        },
-        getDayClasses: function getDayClasses(day){
-            return {
-                'selectable': true,
-                'selected': day.isSelected,
-                // 'disabled': day.isDisabled,
-                // 'highlighted': day.isHighlighted,
-                'today': day.isToday,
-                'weekend': day.isWeekend,
-                'sat': day.isSaturday,
-                'sun': day.isSunday,
-                // 'highlight-start': day.isHighlightStart,
-                // 'highlight-end': day.isHighlightEnd
-            }
-        },
-        // inputBlurred(){
-        //     setTimeout(()=>{
-        //         if(!this.cancelBlur)
-        //             this.showPicker = false;
-        //         this.cancelBlur = false;
-        //     },500);            
-        // },
-        monthUp: function monthUp(){
-            this.pickerDate.setMonth(this.pickerDate.getMonth()+1);
-            this.pickerDate = new Date(this.pickerDate); // fire off change detection
-        },
-        monthDown: function monthDown(){
-            this.pickerDate.setMonth(this.pickerDate.getMonth()-1);
-            this.pickerDate = new Date(this.pickerDate); // fire off change detection
-        },
-        goToToday: function goToToday(){
-            this.year = new Date().getFullYear();
-            this.pickerDate = new Date();
-        }
-    },
-    data: function data(){
-        return{
-            // showPicker : true, // TODO
-            // cancelBlur : false,
-            inputVal : "",
-            showYear : false, 
-            pickerDate : this.value || new Date(),
-            year : (this.value || new Date()).getFullYear(),
-            yearEnd : new Date().getFullYear() - new Date().getFullYear() % 12 + 12
-        }
+    placement: {
+      type: String,
+      default: "top-end"
     }
-}
-
-var uiTypeAhead = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"uiTypeAhead"},[_c('popper',{ref:"popper",attrs:{"trigger":"click","options":_vm.popperOptions}},[_c('div',{staticClass:"popper foldout"},[_c('div',{staticClass:"optionlist"},_vm._l((_vm.options),function(option){return _c('div',{key:option.id,staticClass:"option",class:{ 'selectedOption' : _vm.selected != null && option.id == _vm.selected.id },on:{"click":function($event){_vm.selectOption(option);},"mousedown":function($event){$event.preventDefault();}}},[_vm._v(" "+_vm._s(option[_vm.display])+" ")])}),0)]),_vm._v(" "),_c('div',{staticClass:"inputGroup",attrs:{"slot":"reference"},slot:"reference"},[_c('div',{staticClass:"inputContainer"},[_c('uiTextfield',{attrs:{"label":_vm.label,"placeholder":_vm.placeholderText},on:{"blur":function($event){_vm.inputBlurred();}},model:{value:(_vm.userInput),callback:function ($$v) {_vm.userInput=$$v;},expression:"userInput"}}),_vm._v(" "),_c('uiIconChevronDownMed',{staticClass:"chevronIcon"})],1)])])],1)},staticRenderFns: [],_scopeId: 'data-v-6aabe933',
-    beforeCreate: function beforeCreate(){ loadStyles("/* Theme related color values */ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ /* Get css for state objects for: alert, error, info, servere, success This includes color and background styles */ /* Get css for state objects for: alert, error, info, servere, success This includes only the color values */ /*** 100 Thin (Hairline) 200 Extra Light (Ultra Light) 300 Light 400 Normal 500 Medium 600 Semi Bold (Demi Bold) 700 Bold 800 Extra Bold (Ultra Bold) 900 Black (Heavy) **/ /* Natural Colors */ /* Base Colors */ /** Black #000 **/ /** Blue #0078d7 **/ /** Green #107c10 **/ /** Green #b4009e **/ /** Orange #d83b01 **/ /** Purble #5c2d91 **/ /** Red #e81123 **/ /*** Teal ***/ /** White **/ /** Yellow **/ /* State Colors */ /** Alerts **/ /** Error **/ /** Info ***/ /** Warning **/ /** Server Warning **/ /** Success **/ .popper[data-v-6aabe933] { width: auto; background-color: #fafafa; color: #212121; text-align: center; padding: 2px; display: inline-block; border-radius: 3px; position: absolute; font-size: 14px; font-weight: normal; border: 1px #ebebeb solid; z-index: 200000; -moz-box-shadow: #3a3a3a 0 0 6px 0; -webkit-box-shadow: #3a3a3a 0 0 6px 0; box-shadow: #3a3a3a 0 0 6px 0; } .popper .popper__arrow[data-v-6aabe933] { width: 0; height: 0; border-style: solid; position: absolute; margin: 5px; } .popper[x-placement^=\"top\"][data-v-6aabe933] { margin-bottom: 5px; } .popper[x-placement^=\"top\"] .popper__arrow[data-v-6aabe933] { border-width: 5px 5px 0 5px; border-color: #fafafa transparent transparent transparent; bottom: -5px; left: calc(50% - 5px); margin-top: 0; margin-bottom: 0; } .popper[x-placement^=\"bottom\"][data-v-6aabe933] { margin-top: 5px; } .popper[x-placement^=\"bottom\"] .popper__arrow[data-v-6aabe933] { border-width: 0 5px 5px 5px; border-color: transparent transparent #fafafa transparent; top: -5px; left: calc(50% - 5px); margin-top: 0; margin-bottom: 0; } .popper[x-placement^=\"right\"][data-v-6aabe933] { margin-left: 5px; } .popper[x-placement^=\"right\"] .popper__arrow[data-v-6aabe933] { border-width: 5px 5px 5px 0; border-color: transparent #fafafa transparent transparent; left: -5px; top: calc(50% - 5px); margin-left: 0; margin-right: 0; } .popper[x-placement^=\"left\"][data-v-6aabe933] { margin-right: 5px; } .popper[x-placement^=\"left\"] .popper__arrow[data-v-6aabe933] { border-width: 5px 0 5px 5px; border-color: transparent transparent transparent #fafafa; right: -5px; top: calc(50% - 5px); margin-left: 0; margin-right: 0; } .inputGroup[data-v-6aabe933] { position: relative; } .inputGroup .chevronIcon[data-v-6aabe933] { color: \"[theme:neutralDark, default: #212121]\"; font-size: 12px; position: absolute; right: 13px; bottom: 7px; pointer-events: none; } .inputGroup[data-v-6aabe933] .ms-TextField-field { padding-right: 32px; } .foldout[data-v-6aabe933] { background-color: white; margin: 0px !important; padding: 0px; box-shadow: 1px 1px 5px 0px \"[theme:neutralQuaternaryAlt, default: #dadada]\"; border-radius: 2px; } .optionlist[data-v-6aabe933] { max-height: 200px; overflow: auto; } .option[data-v-6aabe933] { height: 19px; font-weight: 400; padding: 7px 10px 7px 10px; text-align: left; white-space: nowrap; cursor: pointer; color: \"[theme:neutralPrimary, default: #333333]\"; } .option[data-v-6aabe933]:hover { color: \"[theme:black, default: #000000]\"; background-color: \"[theme:neutralLight, default: #eaeaea]\"; } .selectedOption[data-v-6aabe933] { color: \"[theme:black, default: #000000]\"; background-color: \"[theme:themeLight, default: #c7e0f4]\"; } .selectedOption[data-v-6aabe933]:hover { background-color: \"[theme:themeLight, default: #c7e0f4]\"; } ");}, 
-    components:{
-        uiTextfield: uiTextfield, 
-        uiIconChevronDownMed: uiIconChevronDownMed,
-        Popper: vuePopper_min
-    },
-    props: [
-        'options',          //Array of available options to display in dropdown
-        'display',          //String that decides what attribute on the options is used for display and typeahead
-        'placeholderText',  //String to use as placeholder text
-        'label',            //Label
-        'autoselectOff' ],
-    data: function() {
-        return {
-            selected: null,
-            userInput: '',
+  },
+  watch: {
+    value: {
+      handler: function handler(newVal) {
+        // console.log("value watch", newVal);
+        if (newVal) {
+          this.inputVal = dateUtils.formatDate(newVal, this.localeObj);
+          this.pickerDate = newVal;
+        } else {
+          this.inputVal = "";
+          this.pickerDate = new Date();
         }
-    },
-    methods: {
-        selectOption: function selectOption(option) {
-            this.selected = option;
-            this.userInput = option[this.display];
-        },
-        //Autoselects an option if userinput matches display attribute
-        autoselectMatch: debounce(function() {
-            var this$1 = this;
+      },
+      immediate: true
+    }
+  },
+  computed: {
+    popperOptions: function popperOptions() {
+      return {
+        placement: "bottom-start",
+        modifiers: {
+          preventOverflow: {
+            enabled: false
+          },
+          offset: {
+            enabled: false
+          },
+          keepTogether: {
+            enabled: false
+          },
+          arrow: {
+            enabled: false
+          },
+          flip: {
+            enabled: false
+          },
+          hide: {
+            enabled: false
+          },
+          computeStyle: {
+            enabled: false
+          },
+          applyStyle: {
+            enabled: true,
+            fn: function fn(data, options) {
+              var input = data.instance.reference.getClientRects()[0];
+              var popper = data.instance.popper.getClientRects()[0];
+              var windowWidth = document.documentElement.clientWidth;
+              var windowHeight = document.documentElement.clientHeight; // below of above the input
 
-            if(this.autoselectOff == true) { return; }
+              var top = 0;
+              if (input.height + input.y + popper.height < windowHeight) top = input.height; // yay room to place it beneath
+              else top = 0 - popper.height; //crap, place it above
+              // left or rightside of the input
 
-            this.options.forEach(function (option) {
-                //Regex for exact match but case insensitive
-                var regex = new RegExp('^' + this$1.userInput + '$', 'i');
-                if (regex.test(option[this$1.display])) {
-                    this$1.selectOption(option);
-                }
-            });
+              var right = 0;
+              if (input.width + input.x - popper.width > 0) right = 0 - popper.width + input.width; // if it still overflows the right side of the screen, move it left, until it dosnt
 
-        }, 500),
-        setUserInput: function setUserInput(newInput) {
-            this.userInput = newInput;
-        },
-        inputBlurred: function inputBlurred() {
-            this.$refs.popper.doClose();
-        },
-    },
-    computed: {
-        popperOptions: function popperOptions(){
-            return {
-                placement: "bottom-end",
-                positionFixed: true,
-                modifiers: { 
-                    preventOverflow: { enabled: true },
-                    flip: { enabled: true },
-                    autoSizing: {
-                        enabled: true,
-                        fn: function autoSizing(data) {
-                            data.styles.width = data.offsets.reference.width - 2;
-                            return data;
-                        },
-                        order: 840,
-                    },
-                }
+              if (right == 0 && input.x + popper.width > windowWidth) {
+                right = 0 - (input.x + popper.width - windowWidth);
+              } // apply style
+
+
+              data.instance.popper.style.transform = "translate(" + right + "px, " + top + "px)";
             }
-        },
+          }
+        }
+      };
     },
-    watch: {
-        "userInput": debounce(function (newVal) {
-            if(this.selected == null || this.selected[this.display] != newVal) {
-                this.$refs.popper.doShow();
-            }            this.autoselectMatch();
-            this.$emit('inputChanged', newVal);
-        }, 500),
-        "selected": function (newVal) {
-            this.$refs.popper.doClose();
-            this.$emit('optionSelected', newVal);
-        },
+    localeObj: function localeObj() {
+      if (locale[this.locale.toLowerCase()]) return locale[this.locale.toLowerCase()];
+      if (locale[this.locale.split("-")[0].toLowerCase()]) return locale[this.locale.split("-")[0].toLowerCase()];
+      return locale["en-us"];
     },
-}
+    years: function years() {
+      var rtn = [];
 
-export { uiButton, uiCallout, uiCheckbox, uiChoiceField, uiChoiceFieldGroup, uiContextualMenu, uiContextualMenuItem, uiCommandBar, uiCommandButton, uiDialog, uiDropdown, uiDropdownItem, uiLabel, uiLink, uiList, uiListActions, uiListActionItem, uiListItem, uiMessagebar as uiMessageBar, uiMessageBanner, uiOverlay, uiPanel, uiPersona, uiPivot, uiPivotItem, uiProgressIndicator, uiSearchbox as uiSearchBox, uiSpinner, uiTextfield, uiToggle, uiDynamicIcon, uiTimePicker, uiDatePicker, uiTypeAhead, uiIconGlobalNavButton, uiIconChevronDown, uiIconChevronUp, uiIconEdit, uiIconAdd, uiIconCancel, uiIconMore, uiIconSettings, uiIconMail, uiIconFilter, uiIconSearch, uiIconShare, uiIconBlockedSite, uiIconFavoriteStar, uiIconFavoriteStarFill, uiIconCheckMark, uiIconDelete, uiIconChevronLeft, uiIconChevronRight, uiIconCalendar, uiIconMegaphone, uiIconUndo, uiIconFlag, uiIconPage, uiIconPinned, uiIconView, uiIconClear, uiIconDownload, uiIconUpload, uiIconFolder, uiIconSort, uiIconAlignRight, uiIconAlignLeft, uiIconTag, uiIconAddFriend, uiIconInfo, uiIconSortLines, uiIconList, uiIconCircleRing, uiIconHeart, uiIconHeartFill, uiIconTiles, uiIconEmbed, uiIconGlimmer, uiIconAscending, uiIconDescending, uiIconSortUp, uiIconSortDown, uiIconSyncToPC, uiIconLargeGrid, uiIconSkypeCheck, uiIconSkypeClock, uiIconSkypeMinus, uiIconClearFilter, uiIconFlow, uiIconStatusCircleCheckmark, uiIconMoreVertical, uiIconDecreaseIndentLegacy, uiIconIncreaseIndentLegacy, uiIconSizeLegacy, uiIconInternetSharing, uiIconBrightness, uiIconMapPin, uiIconAirplane, uiIconTablet, uiIconQuickNote, uiIconVideo, uiIconPeople, uiIconPhone, uiIconPin, uiIconShop, uiIconStop, uiIconLink, uiIconAllApps, uiIconZoom, uiIconZoomOut, uiIconMicrophone, uiIconCamera, uiIconAttach, uiIconSend, uiIconFavoriteList, uiIconPageSolid, uiIconForward, uiIconBack, uiIconRefresh, uiIconLock, uiIconReportHacked, uiIconEMI, uiIconMiniLink, uiIconBlocked, uiIconReadingMode, uiIconFavicon, uiIconRemove, uiIconCheckbox, uiIconCheckboxComposite, uiIconCheckboxIndeterminate, uiIconCheckboxCompositeReversed, uiIconBackToWindow, uiIconFullScreen, uiIconPrint, uiIconUp, uiIconDown, uiIconOEM, uiIconSave, uiIconCloud, uiIconCommandPrompt, uiIconSad, uiIconSIPMove, uiIconEraseTool, uiIconGripperTool, uiIconDialpad, uiIconPageLeft, uiIconPageRight, uiIconMultiSelect, uiIconKeyboardClassic, uiIconPlay, uiIconPause, uiIconEmoji2, uiIconGripperBarHorizontal, uiIconSystem, uiIconPersonalize, uiIconSearchAndApps, uiIconGlobe, uiIconContactInfo, uiIconUnpin, uiIconContact, uiIconMemo, uiIconPaste, uiIconWindowsLogo, uiIconError, uiIconGripperBarVertical, uiIconUnlock, uiIconAutoEnhanceOn, uiIconAutoEnhanceOff, uiIconColor, uiIconSaveAs, uiIconLight, uiIconFilters, uiIconAspectRatio, uiIconContrast, uiIconRedo, uiIconCrop, uiIconPhotoCollection, uiIconAlbum, uiIconRotate, uiIconPanoIndicator, uiIconRedEye, uiIconThumbnailView, uiIconPackage, uiIconWarning, uiIconFinancial, uiIconEducation, uiIconShoppingCart, uiIconTrain, uiIconMove, uiIconTouchPointer, uiIconMerge, uiIconTurnRight, uiIconFerry, uiIconHighlight, uiIconPowerButton, uiIconTab, uiIconAdmin, uiIconTVMonitor, uiIconSpeakers, uiIconStackIndicator, uiIconNav2DMapView, uiIconCar, uiIconBus, uiIconEatDrink, uiIconLocationCircle, uiIconHome, uiIconSwitcherStartEnd, uiIconParkingLocation, uiIconIncidentTriangle, uiIconTouch, uiIconMapDirections, uiIconCaretHollow, uiIconCaretSolid, uiIconHistory, uiIconLocation, uiIconWork, uiIconRecent, uiIconHotel, uiIconLocationDot, uiIconDictionary, uiIconChromeBack, uiIconFolderOpen, uiIconPinnedFill, uiIconRevToggleKey, uiIconPrevious, uiIconNext, uiIconSync, uiIconHelp, uiIconEmoji, uiIconMailForward, uiIconClosePane, uiIconOpenPane, uiIconPreviewLink, uiIconZoomIn, uiIconBookmarks, uiIconDocument, uiIconProtectedDocument, uiIconOpenInNewWindow, uiIconMailFill, uiIconViewAll, uiIconSwitch, uiIconRename, uiIconRemote, uiIconSelectAll, uiIconOrientation, uiIconImport, uiIconPicture, uiIconChromeClose, uiIconShowResults, uiIconMessage, uiIconCalendarDay, uiIconCalendarWeek, uiIconMailReplyAll, uiIconRead, uiIconCut, uiIconPaymentCard, uiIconCopy, uiIconImportant, uiIconMailReply, uiIconGotoToday, uiIconFont, uiIconFontColor, uiIconFolderFill, uiIconPermissions, uiIconDisableUpdates, uiIconUnfavorite, uiIconItalic, uiIconUnderline, uiIconBold, uiIconMoveToFolder, uiIconDislike, uiIconLike, uiIconAlignCenter, uiIconOpenFile, uiIconFontDecrease, uiIconFontIncrease, uiIconFontSize, uiIconCellPhone, uiIconCalculator, uiIconLibrary, uiIconPostUpdate, uiIconNewFolder, uiIconCalendarReply, uiIconUnsyncFolder, uiIconSyncFolder, uiIconBlockContact, uiIconAccept, uiIconBulletedList, uiIconPreview, uiIconNews, uiIconChat, uiIconGroup, uiIconWorld, uiIconComment, uiIconDockLeft, uiIconDockRight, uiIconRepair, uiIconAccounts, uiIconRadioBullet, uiIconStopwatch, uiIconClock, uiIconWorldClock, uiIconAlarmClock, uiIconPhoto, uiIconHospital, uiIconTimer, uiIconFullCircleMask, uiIconLocationFill, uiIconChromeMinimize, uiIconAnnotation, uiIconFingerprint, uiIconHandwriting, uiIconCompleted, uiIconLabel, uiIconFlickDown, uiIconFlickUp, uiIconFlickLeft, uiIconFlickRight, uiIconMiniExpand, uiIconMiniContract, uiIconStreaming, uiIconMusicInCollection, uiIconOneDriveLogo, uiIconCompassNW, uiIconCode, uiIconLightningBolt, uiIconCalculatorMultiply, uiIconCalculatorAddition, uiIconCalculatorSubtract, uiIconCalculatorEqualTo, uiIconPrintfaxPrinterFile, uiIconCommunications, uiIconHeadset, uiIconHealth, uiIconChevronUpSmall, uiIconChevronDownSmall, uiIconChevronLeftSmall, uiIconChevronRightSmall, uiIconChevronUpMed, uiIconChevronDownMed, uiIconChevronLeftMed, uiIconChevronRightMed, uiIconPC1, uiIconPresenceChickletVideo, uiIconReply, uiIconHalfAlpha, uiIconConstructionCone, uiIconDoubleChevronLeftMed, uiIconVolume0, uiIconVolume1, uiIconVolume2, uiIconVolume3, uiIconChart, uiIconRobot, uiIconManufacturing, uiIconLockSolid, uiIconBidiLtr, uiIconBidiRtl, uiIconRightDoubleQuote, uiIconSunny, uiIconCloudWeather, uiIconCloudy, uiIconPartlyCloudyDay, uiIconPartlyCloudyNight, uiIconClearNight, uiIconRainShowersDay, uiIconRain, uiIconThunderstorms, uiIconRainSnow, uiIconSnow, uiIconBlowingSnow, uiIconFrigid, uiIconFog, uiIconSqualls, uiIconDuststorm, uiIconUnknown, uiIconPrecipitation, uiIconRibbon, uiIconAreaChart, uiIconAssign, uiIconCheckList, uiIconDiagnostic, uiIconGenerate, uiIconLineChart, uiIconEqualizer, uiIconBarChartHorizontal, uiIconBarChartVertical, uiIconFreezing, uiIconProcessing, uiIconSnowShowerDay, uiIconHailDay, uiIconWorkFlow, uiIconHourGlass, uiIconStoreLogoMed20, uiIconTimeSheet, uiIconTriangleSolid, uiIconVideoSolid, uiIconRainShowersNight, uiIconSnowShowerNight, uiIconTeamwork, uiIconHailNight, uiIconPeopleAdd, uiIconGlasses, uiIconDateTime2, uiIconShield, uiIconHeader1, uiIconPageAdd, uiIconNumberedList, uiIconPowerBILogo, uiIconInfo2, uiIconMusicInCollectionFill, uiIconAsterisk, uiIconErrorBadge, uiIconCircleFill, uiIconRecord2, uiIconAllAppsMirrored, uiIconBookmarksMirrored, uiIconBulletedListMirrored, uiIconCaretHollowMirrored, uiIconCaretSolidMirrored, uiIconChromeBackMirrored, uiIconClosePaneMirrored, uiIconDockLeftMirrored, uiIconDoubleChevronLeftMedMirrored, uiIconHelpMirrored, uiIconImportMirrored, uiIconListMirrored, uiIconMailForwardMirrored, uiIconMailReplyMirrored, uiIconMailReplyAllMirrored, uiIconOpenPaneMirrored, uiIconParkingLocationMirrored, uiIconSendMirrored, uiIconShowResultsMirrored, uiIconThumbnailViewMirrored, uiIconDevices3, uiIconLightbulb, uiIconStatusTriangle, uiIconVolumeDisabled, uiIconPuzzle, uiIconEmojiNeutral, uiIconEmojiDisappointed, uiIconHomeSolid, uiIconRinger, uiIconPDF, uiIconHeartBroken, uiIconStoreLogo16, uiIconMultiSelectMirrored, uiIconBroom, uiIconCocktails, uiIconWines, uiIconArticles, uiIconCycling, uiIconDietPlanNotebook, uiIconPill, uiIconExerciseTracker, uiIconHandsFree, uiIconMedical, uiIconRunning, uiIconWeights, uiIconTrackers, uiIconAddNotes, uiIconAllCurrency, uiIconBarChart4, uiIconCirclePlus, uiIconCoffee, uiIconCotton, uiIconMarket, uiIconMoney, uiIconPieDouble, uiIconPieSingle, uiIconRemoveFilter, uiIconSavings, uiIconSell, uiIconStockDown, uiIconStockUp, uiIconLamp, uiIconSource, uiIconMSNVideos, uiIconCricket, uiIconGolf, uiIconBaseball, uiIconSoccer, uiIconMoreSports, uiIconAutoRacing, uiIconCollegeHoops, uiIconCollegeFootball, uiIconProFootball, uiIconProHockey, uiIconRugby, uiIconSubstitutionsIn, uiIconTennis, uiIconArrivals, uiIconDesign, uiIconWebsite, uiIconDrop, uiIconSkiResorts, uiIconSnowflake, uiIconBusSolid, uiIconFerrySolid, uiIconAirplaneSolid, uiIconTrainSolid, uiIconTicket, uiIconDevices4, uiIconAzureLogo, uiIconBingLogo, uiIconMSNLogo, uiIconOutlookLogoInverse, uiIconOfficeLogo, uiIconSkypeLogo, uiIconDoor, uiIconEditMirrored, uiIconGiftCard, uiIconDoubleBookmark, uiIconStatusErrorFull, uiIconCertificate, uiIconFastForward, uiIconRewind, uiIconPhoto2, uiIconOpenSource, uiIconMovers, uiIconCloudDownload, uiIconFamily, uiIconWindDirection, uiIconBug, uiIconSiteScan, uiIconBrowserScreenShot, uiIconF12DevTools, uiIconCSS, uiIconJS, uiIconDeliveryTruck, uiIconReminderPerson, uiIconReminderGroup, uiIconTabletMode, uiIconUmbrella, uiIconNetworkTower, uiIconCityNext, uiIconSection, uiIconOneNoteLogoInverse, uiIconToggleFilled, uiIconToggleBorder, uiIconSliderThumb, uiIconToggleThumb, uiIconDocumentation, uiIconBadge, uiIconGiftbox, uiIconVisualStudioLogo, uiIconExcelLogoInverse, uiIconWordLogoInverse, uiIconPowerPointLogoInverse, uiIconCafe, uiIconSpeedHigh, uiIconCommitments, uiIconThisPC, uiIconMusicNote, uiIconMicOff, uiIconEdgeLogo, uiIconCompletedSolid, uiIconAlbumRemove, uiIconMessageFill, uiIconTabletSelected, uiIconMobileSelected, uiIconLaptopSelected, uiIconTVMonitorSelected, uiIconDeveloperTools, uiIconInsertTextBox, uiIconLowerBrightness, uiIconDOM, uiIconCloudUpload, uiIconScrollUpDown, uiIconDateTime, uiIconEvent, uiIconCake, uiIconOrg, uiIconPartyLeader, uiIconDRM, uiIconCloudAdd, uiIconAppIconDefault, uiIconPhoto2Add, uiIconPhoto2Remove, uiIconPOI, uiIconAddTo, uiIconRadioBtnOff, uiIconRadioBtnOn, uiIconExploreContent, uiIconProduct, uiIconProgressLoopInner, uiIconProgressLoopOuter, uiIconBlocked2, uiIconFangBody, uiIconChatInviteFriend, uiIconCrown, uiIconDiamond, uiIconScaleUp, uiIconFeedback, uiIconSharepointLogoInverse, uiIconYammerLogo, uiIconHide, uiIconUneditable, uiIconReturnToSession, uiIconOpenFolderHorizontal, uiIconCalendarMirrored, uiIconSwayLogoInverse, uiIconOutOfOffice, uiIconTrophy, uiIconReopenPages, uiIconEmojiTabSymbols, uiIconAADLogo, uiIconAccessLogo, uiIconAdminALogoInverse32, uiIconAdminCLogoInverse32, uiIconAdminDLogoInverse32, uiIconAdminELogoInverse32, uiIconAdminLLogoInverse32, uiIconAdminMLogoInverse32, uiIconAdminOLogoInverse32, uiIconAdminPLogoInverse32, uiIconAdminSLogoInverse32, uiIconAdminYLogoInverse32, uiIconDelveLogoInverse, uiIconExchangeLogoInverse, uiIconLyncLogo, uiIconOfficeVideoLogoInverse, uiIconSocialListeningLogo, uiIconVisioLogoInverse, uiIconBalloons, uiIconCat, uiIconMailAlert, uiIconMailCheck, uiIconMailLowImportance, uiIconMailPause, uiIconMailRepeat, uiIconSecurityGroup, uiIconTable, uiIconVoicemailForward, uiIconVoicemailReply, uiIconWaffle, uiIconRemoveEvent, uiIconEventInfo, uiIconForwardEvent, uiIconWipePhone, uiIconAddOnlineMeeting, uiIconJoinOnlineMeeting, uiIconRemoveLink, uiIconPeopleBlock, uiIconPeopleRepeat, uiIconPeopleAlert, uiIconPeoplePause, uiIconTransferCall, uiIconAddPhone, uiIconUnknownCall, uiIconNoteReply, uiIconNoteForward, uiIconNotePinned, uiIconRemoveOccurrence, uiIconTimeline, uiIconEditNote, uiIconCircleHalfFull, uiIconRoom, uiIconUnsubscribe, uiIconSubscribe, uiIconHardDrive, uiIconRecurringTask, uiIconTaskManager, uiIconTaskManagerMirrored, uiIconCombine, uiIconSplit, uiIconDoubleChevronUp, uiIconDoubleChevronLeft, uiIconDoubleChevronRight, uiIconTextBox, uiIconTextField, uiIconNumberField, uiIconDropdown, uiIconBookingsLogo, uiIconClassNotebookLogoInverse, uiIconDelveAnalyticsLogo, uiIconDocsLogoInverse, uiIconDynamics365Logo, uiIconDynamicSMBLogo, uiIconOfficeAssistantLogo, uiIconOfficeStoreLogo, uiIconOneNoteEduLogoInverse, uiIconPlannerLogo, uiIconPowerApps, uiIconSuitcase, uiIconProjectLogoInverse, uiIconCaretLeft8, uiIconCaretRight8, uiIconCaretUp8, uiIconCaretDown8, uiIconCaretLeftSolid8, uiIconCaretRightSolid8, uiIconCaretUpSolid8, uiIconCaretDownSolid8, uiIconClearFormatting, uiIconSuperscript, uiIconSubscript, uiIconStrikethrough, uiIconExport, uiIconExportMirrored, uiIconSingleBookmark, uiIconSingleBookmarkSolid, uiIconDoubleChevronDown, uiIconFollowUser, uiIconReplyAll, uiIconWorkforceManagement, uiIconRecruitmentManagement, uiIconQuestionnaire, uiIconManagerSelfService, uiIconReplyMirrored, uiIconReplyAllMirrored, uiIconMedal, uiIconAddGroup, uiIconQuestionnaireMirrored, uiIconTemporaryUser, uiIconCaretSolid16, uiIconGroupedDescending, uiIconGroupedAscending, uiIconAwayStatus, uiIconMyMoviesTV, uiIconGenericScan, uiIconAustralianRules, uiIconWifiEthernet, uiIconTrackersMirrored, uiIconDateTimeMirrored, uiIconStopSolid, uiIconDoubleChevronUp12, uiIconDoubleChevronDown12, uiIconDoubleChevronLeft12, uiIconDoubleChevronRight12, uiIconCalendarAgenda, uiIconAddEvent, uiIconAssetLibrary, uiIconDataConnectionLibrary, uiIconDocLibrary, uiIconFormLibrary, uiIconFormLibraryMirrored, uiIconReportLibrary, uiIconReportLibraryMirrored, uiIconContactCard, uiIconCustomList, uiIconCustomListMirrored, uiIconIssueTracking, uiIconIssueTrackingMirrored, uiIconPictureLibrary, uiIconOfficeAddinsLogo, uiIconOfflineOneDriveParachute, uiIconOfflineOneDriveParachuteDisabled, uiIconTriangleSolidUp12, uiIconTriangleSolidDown12, uiIconTriangleSolidLeft12, uiIconTriangleSolidRight12, uiIconTriangleUp12, uiIconTriangleDown12, uiIconTriangleLeft12, uiIconTriangleRight12, uiIconArrowUpRight8, uiIconArrowDownRight8, uiIconDocumentSet, uiIconDelveAnalytics, uiIconArrowUpRightMirrored8, uiIconArrowDownRightMirrored8, uiIconCompanyDirectory, uiIconCompanyDirectoryMirrored, uiIconOneDriveAdd, uiIconProfileSearch, uiIconHeader2, uiIconHeader3, uiIconHeader4, uiIconEyedropper, uiIconMarketDown, uiIconCalendarWorkWeek, uiIconSidePanel, uiIconGlobeFavorite, uiIconCaretTopLeftSolid8, uiIconCaretTopRightSolid8, uiIconViewAll2, uiIconDocumentReply, uiIconPlayerSettings, uiIconReceiptForward, uiIconReceiptReply, uiIconReceiptCheck, uiIconFax, uiIconRecurringEvent, uiIconReplyAlt, uiIconReplyAllAlt, uiIconEditStyle, uiIconEditMail, uiIconLifesaver, uiIconLifesaverLock, uiIconInboxCheck, uiIconFolderSearch, uiIconCollapseMenu, uiIconExpandMenu, uiIconBoards, uiIconSunAdd, uiIconSunQuestionMark, uiIconLandscapeOrientation, uiIconDocumentSearch, uiIconPublicCalendar, uiIconPublicContactCard, uiIconPublicEmail, uiIconPublicFolder, uiIconWordDocument, uiIconPowerPointDocument, uiIconExcelDocument, uiIconGroupedList, uiIconClassroomLogo, uiIconSections, uiIconEditPhoto, uiIconStarburst, uiIconShareiOS, uiIconAirTickets, uiIconPencilReply, uiIconTiles2, uiIconSkypeCircleCheck, uiIconSkypeCircleClock, uiIconSkypeCircleMinus, uiIconSkypeMessage, uiIconClosedCaption, uiIconATPLogo, uiIconOfficeFormsLogoInverse, uiIconRecycleBin, uiIconEmptyRecycleBin, uiIconHide2, uiIconBreadcrumb, uiIconBirthdayCake, uiIconTimeEntry, uiIconPageEdit, uiIconPageRemove, uiIconDatabase, uiIconEditContact, uiIconConnectContacts, uiIconActivateOrders, uiIconDeactivateOrders, uiIconDocumentManagement, uiIconCRMReport, uiIconZipFolder, uiIconSurveyQuestions, uiIconTextDocument, uiIconTextDocumentShared, uiIconPageCheckedOut, uiIconSaveAndClose, uiIconScript, uiIconArchive, uiIconActivityFeed, uiIconEventDate, uiIconArrowUpRight, uiIconCaretRight, uiIconSetAction, uiIconCaretSolidLeft, uiIconCaretSolidDown, uiIconCaretSolidRight, uiIconCaretSolidUp, uiIconPowerAppsLogo, uiIconPowerApps2Logo, uiIconSearchIssue, uiIconSearchIssueMirrored, uiIconFabricAssetLibrary, uiIconFabricDataConnectionLibrary, uiIconFabricDocLibrary, uiIconFabricFormLibrary, uiIconFabricFormLibraryMirrored, uiIconFabricReportLibrary, uiIconFabricReportLibraryMirrored, uiIconFabricPublicFolder, uiIconFabricFolderSearch, uiIconFabricMovetoFolder, uiIconFabricUnsyncFolder, uiIconFabricSyncFolder, uiIconFabricOpenFolderHorizontal, uiIconFabricFolder, uiIconFabricFolderFill, uiIconFabricNewFolder, uiIconFabricPictureLibrary, uiIconAddFavorite, uiIconAddFavoriteFill, uiIconBufferTimeBefore, uiIconBufferTimeAfter, uiIconBufferTimeBoth, uiIconCannedChat, uiIconSkypeForBusinessLogo, uiIconPageCheckedin, uiIconReadOutLoud, uiIconCaretBottomLeftSolid8, uiIconCaretBottomRightSolid8, uiIconFolderHorizontal, uiIconMicrosoftStaffhubLogo, uiIconGiftboxOpen, uiIconStatusCircleOuter, uiIconStatusCircleInner, uiIconStatusCircleRing, uiIconStatusTriangleOuter, uiIconStatusTriangleInner, uiIconStatusTriangleExclamation, uiIconStatusCircleExclamation, uiIconStatusCircleErrorX, uiIconStatusCircleInfo, uiIconStatusCircleBlock2, uiIconStatusCircleQuestionMark, uiIconToll, uiIconExploreContentSingle, uiIconCollapseContent, uiIconCollapseContentSingle, uiIconInfoSolid, uiIconProgressRingDots, uiIconCaloriesAdd, uiIconBranchFork, uiIconMobileReport, uiIconHardDriveGroup, uiIconFastMode, uiIconToggleOn, uiIconToggleOff, uiIconTrophy2, uiIconBucketColor, uiIconBucketColorFill, uiIconTaskboard, uiIconSingleColumn, uiIconDoubleColumn, uiIconTripleColumn, uiIconColumnLeftTwoThirds, uiIconColumnRightTwoThirds, uiIconAccessLogoFill, uiIconAnalyticsLogo, uiIconAnalyticsQuery, uiIconNewAnalyticsQuery, uiIconAnalyticsReport, uiIconWordLogo, uiIconWordLogoFill, uiIconExcelLogo, uiIconExcelLogoFill, uiIconOneNoteLogo, uiIconOneNoteLogoFill, uiIconOutlookLogo, uiIconOutlookLogoFill, uiIconPowerPointLogo, uiIconPowerPointLogoFill, uiIconPublisherLogo, uiIconPublisherLogoFill, uiIconScheduleEventAction, uiIconFlameSolid, uiIconServerProcesses, uiIconServer, uiIconSaveAll, uiIconLinkedInLogo, uiIconDecimals, uiIconSidePanelMirrored, uiIconProtectRestrict, uiIconUnknownMirrored, uiIconPublicContactCardMirrored, uiIconGridViewSmall, uiIconGridViewMedium, uiIconGridViewLarge, uiIconStep, uiIconStepInsert, uiIconStepShared, uiIconStepSharedAdd, uiIconStepSharedInsert, uiIconViewDashboard, uiIconViewList, uiIconViewListGroup, uiIconViewListTree, uiIconTriggerAuto, uiIconTriggerUser, uiIconPivotChart, uiIconStackedBarChart, uiIconStackedLineChart, uiIconBuildQueue, uiIconBuildQueueNew, uiIconUserFollowed, uiIconContactLink, uiIconStack, uiIconBullseye, uiIconVennDiagram, uiIconFiveTileGrid, uiIconFocalPoint, uiIconRingerRemove, uiIconTeamsLogoInverse, uiIconTeamsLogo, uiIconTeamsLogoFill, uiIconSkypeForBusinessLogoFill, uiIconSharepointLogo, uiIconSharepointLogoFill, uiIconDelveLogo, uiIconDelveLogoFill, uiIconOfficeVideoLogo, uiIconOfficeVideoLogoFill, uiIconExchangeLogo, uiIconExchangeLogoFill, uiIconDocumentApproval, uiIconCloneToDesktop, uiIconInstallToDrive, uiIconBlur, uiIconBuild, uiIconProcessMetaTask, uiIconBranchFork2, uiIconBranchLocked, uiIconBranchCommit, uiIconBranchCompare, uiIconBranchMerge, uiIconBranchPullRequest, uiIconBranchSearch, uiIconBranchShelveset, uiIconRawSource, uiIconMergeDuplicate, uiIconRowsGroup, uiIconRowsChild, uiIconDeploy, uiIconRedeploy, uiIconServerEnviroment, uiIconVisioDiagram, uiIconHighlightMappedShapes, uiIconTextCallout, uiIconIconSetsFlag, uiIconVisioLogo, uiIconVisioLogoFill, uiIconVisioDocument, uiIconTimelineProgress, uiIconTimelineDelivery, uiIconBacklog, uiIconTeamFavorite, uiIconTaskGroup, uiIconTaskGroupMirrored, uiIconScopeTemplate, uiIconAssessmentGroupTemplate, uiIconNewTeamProject, uiIconCommentAdd, uiIconCommentNext, uiIconCommentPrevious, uiIconShopServer, uiIconLocaleLanguage, uiIconQueryList, uiIconUserSync, uiIconUserPause, uiIconStreamingOff, uiIconArrowTallUpLeft, uiIconArrowTallUpRight, uiIconArrowTallDownLeft, uiIconArrowTallDownRight, uiIconFieldEmpty, uiIconFieldFilled, uiIconFieldChanged, uiIconFieldNotChanged, uiIconRingerOff, uiIconPlayResume, uiIconBulletedList2, uiIconBulletedList2Mirrored, uiIconImageCrosshair, uiIconGitGraph, uiIconRepo, uiIconRepoSolid, uiIconFolderQuery, uiIconFolderList, uiIconFolderListMirrored, uiIconLocationOutline, uiIconPOISolid, uiIconCalculatorNotEqualTo, uiIconBoxSubtractSolid, uiIconBoxAdditionSolid, uiIconBoxMultiplySolid, uiIconBoxPlaySolid, uiIconBoxCheckmarkSolid, uiIconCirclePauseSolid, uiIconCirclePause, uiIconMSNVideosSolid, uiIconCircleStopSolid, uiIconCircleStop, uiIconNavigateBack, uiIconNavigateBackMirrored, uiIconNavigateForward, uiIconNavigateForwardMirrored, uiIconUnknownSolid, uiIconUnknownMirroredSolid, uiIconCircleAddition, uiIconCircleAdditionSolid, uiIconFilePDB, uiIconFileTemplate, uiIconFileSQL, uiIconFileJAVA, uiIconFileASPX, uiIconFileCSS, uiIconFileSass, uiIconFileLess, uiIconFileHTML, uiIconJavaScriptLanguage, uiIconCSharpLanguage, uiIconCSharp, uiIconVisualBasicLanguage, uiIconVB, uiIconCPlusPlusLanguage, uiIconCPlusPlus, uiIconFSharpLanguage, uiIconFSharp, uiIconTypeScriptLanguage, uiIconPythonLanguage, uiIconPY, uiIconCoffeeScript, uiIconMarkDownLanguage, uiIconFullWidth, uiIconFullWidthEdit, uiIconPlug, uiIconPlugSolid, uiIconPlugConnected, uiIconPlugDisconnected, uiIconUnlockSolid, uiIconVariable, uiIconParameter, uiIconCommentUrgent, uiIconStoryboard, uiIconDiffInline, uiIconDiffSideBySide, uiIconImageDiff, uiIconImagePixel, uiIconFileBug, uiIconFileCode, uiIconFileComment, uiIconBusinessHoursSign, uiIconFileImage, uiIconFileSymlink, uiIconAutoFillTemplate, uiIconWorkItem, uiIconWorkItemBug, uiIconLogRemove, uiIconColumnOptions, uiIconPackages, uiIconBuildIssue, uiIconAssessmentGroup, uiIconVariableGroup, uiIconFullHistory, uiIconSingleColumnEdit, uiIconDoubleColumnEdit, uiIconTripleColumnEdit, uiIconColumnLeftTwoThirdsEdit, uiIconColumnRightTwoThirdsEdit, uiIconStreamLogo, uiIconPassiveAuthentication, uiIconAlertSolid, uiIconMegaphoneSolid, uiIconTaskSolid, uiIconConfigurationSolid, uiIconBugSolid, uiIconCrownSolid, uiIconTrophy2Solid, uiIconQuickNoteSolid, uiIconConstructionConeSolid, uiIconPageListSolid, uiIconPageListMirroredSolid, uiIconStarburstSolid, uiIconReadingModeSolid, uiIconSadSolid, uiIconHealthSolid, uiIconShieldSolid, uiIconGiftBoxSolid, uiIconShoppingCartSolid, uiIconMailSolid, uiIconChatSolid, uiIconRibbonSolid, uiIconFinancialSolid, uiIconFinancialMirroredSolid, uiIconHeadsetSolid, uiIconPermissionsSolid, uiIconParkingSolid, uiIconParkingMirroredSolid, uiIconDiamondSolid, uiIconAsteriskSolid, uiIconOfflineStorageSolid, uiIconBankSolid, uiIconDecisionSolid, uiIconParachute, uiIconParachuteSolid, uiIconFiltersSolid, uiIconColorSolid, uiIconReviewSolid, uiIconReviewRequestSolid, uiIconReviewRequestMirroredSolid, uiIconReviewResponseSolid, uiIconFeedbackRequestSolid, uiIconFeedbackRequestMirroredSolid, uiIconFeedbackResponseSolid, uiIconWorkItemBar, uiIconWorkItemBarSolid, uiIconSeparator, uiIconNavigateExternalInline, uiIconPlanView, uiIconTimelineMatrixView, uiIconEngineeringGroup, uiIconProjectCollection, uiIconCaretBottomRightCenter8, uiIconCaretBottomLeftCenter8, uiIconCaretTopRightCenter8, uiIconCaretTopLeftCenter8, uiIconDonutChart, uiIconChevronUnfold10, uiIconChevronFold10, uiIconDoubleChevronDown8, uiIconDoubleChevronUp8, uiIconDoubleChevronLeft8, uiIconDoubleChevronRight8, uiIconChevronDownEnd6, uiIconChevronUpEnd6, uiIconChevronLeftEnd6, uiIconChevronRightEnd6, uiIconContextMenu, uiIconAzureAPIManagement, uiIconAzureServiceEndpoint, uiIconVSTSLogo, uiIconVSTSAltLogo1, uiIconVSTSAltLogo2, uiIconFileTypeSolution, uiIconWordLogoInverse16, uiIconWordLogo16, uiIconWordLogoFill16, uiIconPowerPointLogoInverse16, uiIconPowerPointLogo16, uiIconPowerPointLogoFill16, uiIconExcelLogoInverse16, uiIconExcelLogo16, uiIconExcelLogoFill16, uiIconOneNoteLogoInverse16, uiIconOneNoteLogo16, uiIconOneNoteLogoFill16, uiIconOutlookLogoInverse16, uiIconOutlookLogo16, uiIconOutlookLogoFill16, uiIconPublisherLogoInverse16, uiIconPublisherLogo16, uiIconPublisherLogoFill16, uiIconVisioLogoInverse16, uiIconVisioLogo16, uiIconVisioLogoFill16, uiIconTestBeaker, uiIconTestBeakerSolid, uiIconTestExploreSolid, uiIconTestAutoSolid, uiIconTestUserSolid, uiIconTestImpactSolid, uiIconTestPlan, uiIconTestStep, uiIconTestParameter, uiIconTestSuite, uiIconTestCase, uiIconSprint, uiIconSignOut, uiIconTriggerApproval, uiIconRocket, uiIconAzureKeyVault, uiIconTransition, uiIconLikeSolid, uiIconDislikeSolid, uiIconUnSetColor, uiIconDeclineCall, uiIconRectangularClipping, uiIconTeamsLogo16, uiIconTeamsLogoFill16, uiIconSpacer, uiIconSkypeLogo16, uiIconSkypeForBusinessLogo16, uiIconSkypeForBusinessLogoFill16, uiIconFilterSolid, uiIconMailUndelivered, uiIconMailTentative, uiIconMailTentativeMirrored, uiIconMailReminder, uiIconReceiptUndelivered, uiIconReceiptTentative, uiIconReceiptTentativeMirrored, uiIconInbox, uiIconIRMReply, uiIconIRMReplyMirrored, uiIconIRMForward, uiIconIRMForwardMirrored, uiIconVoicemailIRM, uiIconEventAccepted, uiIconEventTentative, uiIconEventTentativeMirrored, uiIconEventDeclined, uiIconIDBadge, uiIconBackgroundColor, uiIconOfficeFormsLogoInverse16, uiIconOfficeFormsLogo, uiIconOfficeFormsLogoFill, uiIconOfficeFormsLogo16, uiIconOfficeFormsLogoFill16, uiIconOfficeFormsLogoInverse24, uiIconOfficeFormsLogo24, uiIconOfficeFormsLogoFill24, uiIconPageLock, uiIconNotExecuted, uiIconNotImpactedSolid, uiIconFieldReadOnly, uiIconFieldRequired, uiIconBacklogBoard, uiIconExternalBuild, uiIconExternalTFVC, uiIconExternalXAML, uiIconIssueSolid, uiIconDefectSolid, uiIconLadybugSolid, uiIconNugetLogo, uiIconTFVCLogo, uiIconProjectLogo32, uiIconProjectLogoFill32, uiIconProjectLogo16, uiIconProjectLogoFill16, uiIconSwayLogo32, uiIconSwayLogoFill32, uiIconSwayLogo16, uiIconSwayLogoFill16, uiIconClassNotebookLogo32, uiIconClassNotebookLogoFill32, uiIconClassNotebookLogo16, uiIconClassNotebookLogoFill16, uiIconClassNotebookLogoInverse32, uiIconClassNotebookLogoInverse16, uiIconStaffNotebookLogo32, uiIconStaffNotebookLogoFill32, uiIconStaffNotebookLogo16, uiIconStaffNotebookLogoFill16, uiIconStaffNotebookLogoInverted32, uiIconStaffNotebookLogoInverted16, uiIconKaizalaLogo, uiIconTaskLogo, uiIconProtectionCenterLogo32, uiIconGallatinLogo, uiIconGlobe2, uiIconGuitar, uiIconBreakfast, uiIconBrunch, uiIconBeerMug, uiIconVacation, uiIconTeeth, uiIconTaxi, uiIconChopsticks, uiIconSyncOccurence, uiIconUnsyncOccurence, uiIconPrimaryCalendar, uiIconSearchCalendar, uiIconVideoOff, uiIconMicrosoftFlowLogo, uiIconBusinessCenterLogo, uiIconToDoLogoBottom, uiIconToDoLogoTop, uiIconEditSolid12, uiIconEditSolidMirrored12, uiIconUneditableSolid12, uiIconUneditableSolidMirrored12, uiIconUneditableMirrored, uiIconAdminALogo32, uiIconAdminALogoFill32, uiIconToDoLogoInverse, uiIconSnooze, uiIconWaffleOffice365, uiIconImageSearch, uiIconNewsSearch, uiIconVideoSearch, uiIconR, uiIconFontColorA, uiIconFontColorSwatch, uiIconLightWeight, uiIconNormalWeight, uiIconSemiboldWeight, uiIconGroupObject, uiIconUngroupObject, uiIconAlignHorizontalLeft, uiIconAlignHorizontalCenter, uiIconAlignHorizontalRight, uiIconAlignVerticalTop, uiIconAlignVerticalCenter, uiIconAlignVerticalBottom, uiIconHorizontalDistributeCenter, uiIconVerticalDistributeCenter, uiIconEllipse, uiIconLine, uiIconOctagon, uiIconHexagon, uiIconPentagon, uiIconRightTriangle, uiIconHalfCircle, uiIconQuarterCircle, uiIconThreeQuarterCircle, uiIcon6PointStar, uiIcon12PointStar, uiIconArrangeBringToFront, uiIconArrangeSendToBack, uiIconArrangeSendBackward, uiIconArrangeBringForward, uiIconBorderDash, uiIconBorderDot, uiIconLineStyle, uiIconLineThickness, uiIconWindowEdit, uiIconHintText, uiIconMediaAdd, uiIconAnchorLock, uiIconAutoHeight, uiIconChartSeries, uiIconChartXAngle, uiIconChartYAngle, uiIconCombobox, uiIconLineSpacing, uiIconPadding, uiIconPaddingTop, uiIconPaddingBottom, uiIconPaddingLeft, uiIconPaddingRight, uiIconNavigationFlipper, uiIconAlignJustify, uiIconTextOverflow, uiIconVisualsFolder, uiIconVisualsStore, uiIconPictureCenter, uiIconPictureFill, uiIconPicturePosition, uiIconPictureStretch, uiIconPictureTile, uiIconSlider, uiIconSliderHandleSize, uiIconDefaultRatio, uiIconNumberSequence, uiIconGUID, uiIconReportAdd, uiIconDashboardAdd, uiIconMapPinSolid, uiIconWebPublish, uiIconPieSingleSolid, uiIconBlockedSolid, uiIconDrillDown, uiIconDrillDownSolid, uiIconDrillExpand, uiIconDrillShow, uiIconOneDriveFolder16, uiIconFunctionalManagerDashboard, uiIconBIDashboard, uiIconCodeEdit, uiIconRenewalCurrent, uiIconRenewalFuture, uiIconSplitObject, uiIconBulkUpload, uiIconDownloadDocument, uiIconWaitlistConfirm, uiIconWaitlistConfirmMirrored, uiIconLaptopSecure, uiIconDragObject, uiIconEntryView, uiIconEntryDecline, uiIconContactCardSettings, uiIconContactCardSettingsMirrored, uiIconCalendarSettings, uiIconCalendarSettingsMirrored, uiIconHardDriveLock, uiIconHardDriveUnlock, uiIconAccountManagement, uiIconTransitionPop, uiIconTransitionPush, uiIconTransitionEffect, uiIconLookupEntities, uiIconExploreData, uiIconAddBookmark, uiIconSearchBookmark, uiIconDrillThrough, uiIconMasterDatabase, uiIconCertifiedDatabase, uiIconMaximumValue, uiIconMinimumValue, uiIconVisualStudioIDELogo32, uiIconPasteAsText, uiIconPasteAsCode, uiIconBrowserTab, uiIconBrowserTabScreenshot, uiIconDesktopScreenshot, uiIconFileYML, uiIconClipboardSolid, uiIconAnalyticsView, uiIconLeave, uiIconTrending12, uiIconBlocked12, uiIconWarning12, uiIconCheckedOutByOther12, uiIconCheckedOutByYou12, uiIconCircleShapeSolid, uiIconSquareShapeSolid, uiIconTriangleShapeSolid, uiIconDropShapeSolid, uiIconRectangleShapeSolid, uiIconInsertColumnsLeft, uiIconInsertColumnsRight, uiIconInsertRowsAbove, uiIconInsertRowsBelow, uiIconDeleteColumns, uiIconDeleteRows, uiIconDeleteRowsMirrored, uiIconDeleteTable, uiIconVersionControlPush, uiIconWhiteBoardApp16, uiIconWhiteBoardApp32, uiIconInsertSignatureLine, uiIconArrangeByFrom, uiIconPhishing, uiIconCreateMailRule, uiIconPublishCourse, uiIconDictionaryRemove, uiIconUserRemove, uiIconUserEvent, uiIconEncryption, uiIconD365TalentLearn, uiIconD365TalentInsight, uiIconD365TalentHRCore, uiIconBacklogList, uiIconButtonControl, uiIconTableGroup, uiIconMountainClimbing, uiIconTagUnknown, uiIconTagUnknownMirror, uiIconTagUnknown12, uiIconTagUnknown12Mirror, uiIconLink12, uiIconPresentation, uiIconPresentation12, uiIconLock12, uiIconBuildDefinition, uiIconReleaseDefinition, uiIconSaveTemplate, uiIconUserGauge, uiIconBlockedSiteSolid12, uiIconTagSolid, uiIconOfficeChat, uiIconOfficeChatSolid, uiIconMailSchedule };
+      for (var i = this.yearStart; i < this.yearEnd; i++) {
+        rtn.push(i);
+      }
+
+      return rtn;
+    },
+    yearStart: {
+      get: function get() {
+        return this.yearEnd - 12;
+      },
+      set: function set(val) {
+        this.yearEnd = val + 12;
+      }
+    },
+    currentMonth: function currentMonth() {
+      return this.localeObj.months[this.pickerDate.getMonth()] + " " + this.pickerDate.getFullYear(); // return ['Januar', 'Februar', 'Marts', 'April', 'Maj', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'December'][this.pickerDate.getMonth()]
+      // + " " + this.pickerDate.getFullYear();// TODO
+    },
+    months: function months() {
+      return this.localeObj.short; // return ['Jan', 'Feb', 'Mar', 'Apr', 'Maj', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec'];
+    },
+    daysOfWeek: function daysOfWeek() {
+      return this.localeObj.days; // ["M","T","O","T","F","L","S"]
+    },
+    blankDaysStart: function blankDaysStart() {
+      var dObj = new Date(this.pickerDate.getFullYear(), this.pickerDate.getMonth(), 1, this.pickerDate.getHours(), this.pickerDate.getMinutes()); // if (this.mondayFirst) {
+
+      if (this.localeObj.firstDay == 1) {
+        return dObj.getDay() > 0 ? dObj.getDay() - 1 : 6;
+      }
+
+      return dObj.getDay();
+    },
+    blankDaysEnd: function blankDaysEnd() {
+      return 7 - (this.blankDaysStart + this.days.length) % 7;
+    },
+    days: function days() {
+      var d = this.pickerDate;
+      var days = [];
+      var dObj = new Date(this.pickerDate.getFullYear(), this.pickerDate.getMonth(), 1, this.pickerDate.getHours(), this.pickerDate.getMinutes());
+      var daysInMonth = dateUtils.daysInMonth(dObj.getFullYear(), dObj.getMonth());
+
+      for (var i = 0; i < daysInMonth; i++) {
+        days.push({
+          date: dObj.getDate(),
+          timestamp: dObj.getTime(),
+          isSelected: this.value && dateUtils.compareDates(dObj, this.value),
+          // isDisabled: this.isDisabledDate(dObj),
+          // isHighlighted: this.isHighlightedDate(dObj),
+          // isHighlightStart: this.isHighlightStart(dObj),
+          // isHighlightEnd: this.isHighlightEnd(dObj),
+          isToday: dateUtils.compareDates(dObj, new Date()),
+          isWeekend: dObj.getDay() === 0 || dObj.getDay() === 6,
+          isSaturday: dObj.getDay() === 6,
+          isSunday: dObj.getDay() === 0
+        });
+        dObj.setDate(dObj.getDate() + 1);
+      }
+
+      return days;
+    }
+  },
+  methods: {
+    parseTypedDate: function parseTypedDate() {
+      if (!this.inputVal || this.inputVal == "") {
+        this.$emit("input", "");
+        return;
+      }
+
+      try {
+        var parsed = parse(this.inputVal, this.localeObj.format); // this.pickerDate = parsed;
+
+        if (parsed != "Invalid Date" && !dateUtils.compareDates(parsed, this.value)) this.$emit("input", parsed);
+      } catch (ex) {} // var parsed = Moment(this.inputVal, this.localeObj.format.toUpperCase());
+      // if(parsed.isValid()){
+      //     // this.pickerDate = parsed.toDate();
+      //     if(!dateUtils.compareDates(parsed.toDate(), this.value))
+      //         this.$emit("input", parsed.toDate());
+      // }
+      // console.log("parsed", parsed);
+
+    },
+    selectDate: function selectDate(val) {
+      var _this = this;
+
+      this.$emit("input", new Date(val.timestamp));
+      this.inputVal = dateUtils.formatDate(new Date(val.timestamp), this.localeObj); // this.showPicker = false;
+
+      this.$refs.popper.doClose();
+      this.$nextTick(function () {
+        _this.$refs.popper.doClose();
+      }); // console.log("inputval", this.inputVal);
+    },
+    selectYear: function selectYear(year) {
+      this.year = year;
+      this.showYear = false;
+    },
+    selectMonth: function selectMonth(index) {
+      this.pickerDate.setMonth(index);
+      this.pickerDate.setFullYear(this.year);
+      this.pickerDate = new Date(this.pickerDate); // fire off change detection
+    },
+    getDayClasses: function getDayClasses(day) {
+      return {
+        'selectable': true,
+        'selected': day.isSelected,
+        // 'disabled': day.isDisabled,
+        // 'highlighted': day.isHighlighted,
+        'today': day.isToday,
+        'weekend': day.isWeekend,
+        'sat': day.isSaturday,
+        'sun': day.isSunday // 'highlight-start': day.isHighlightStart,
+        // 'highlight-end': day.isHighlightEnd
+
+      };
+    },
+    // inputBlurred(){
+    //     setTimeout(()=>{
+    //         if(!this.cancelBlur)
+    //             this.showPicker = false;
+    //         this.cancelBlur = false;
+    //     },500);            
+    // },
+    monthUp: function monthUp() {
+      this.pickerDate.setMonth(this.pickerDate.getMonth() + 1);
+      this.pickerDate = new Date(this.pickerDate); // fire off change detection
+    },
+    monthDown: function monthDown() {
+      this.pickerDate.setMonth(this.pickerDate.getMonth() - 1);
+      this.pickerDate = new Date(this.pickerDate); // fire off change detection
+    },
+    goToToday: function goToToday() {
+      this.year = new Date().getFullYear();
+      this.pickerDate = new Date();
+    }
+  },
+  data: function data() {
+    return {
+      // showPicker : true, // TODO
+      // cancelBlur : false,
+      inputVal: "",
+      showYear: false,
+      pickerDate: this.value || new Date(),
+      year: (this.value || new Date()).getFullYear(),
+      yearEnd: new Date().getFullYear() - new Date().getFullYear() % 12 + 12
+    };
+  }
+};
+
+/* script */
+const __vue_script__$$ = script$$;
+
+/* template */
+var __vue_render__$B = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"uiDatePicker"},[_c('popper',{ref:"popper",attrs:{"trigger":"click","options":_vm.popperOptions}},[_c('div',{staticClass:"popper foldout"},[_c('div',{staticClass:"dayPicker"},[_c('div',{staticClass:"header"},[_c('span',{staticClass:"current"},[_vm._v(_vm._s(_vm.currentMonth))]),_vm._v(" "),_c('span',{staticClass:"navigate"},[_c('span',{staticClass:"up",on:{"click":function($event){return _vm.monthUp()}}},[_c('uiIconUp')],1),_vm._v(" "),_c('span',{staticClass:"down",on:{"click":function($event){return _vm.monthDown()}}},[_c('uiIconDown')],1)])]),_vm._v(" "),_c('div',{staticClass:"days"},_vm._l((_vm.daysOfWeek),function(day,index){return _c('span',{key:index},[_vm._v(_vm._s(day))])}),0),_vm._v(" "),_c('div',{staticClass:"days"},[(_vm.blankDaysStart > 0)?_vm._l((_vm.blankDaysStart),function(d){return _c('span',{key:d.timestamp})}):_vm._e(),_vm._v(" "),_vm._l((_vm.days),function(day){return _c('span',{key:day.timestamp,class:_vm.getDayClasses(day),on:{"click":function($event){return _vm.selectDate(day)}}},[_vm._v(_vm._s(day.date))])}),_vm._v(" "),(_vm.blankDaysEnd > 0)?_vm._l((_vm.blankDaysEnd),function(d){return _c('span',{key:d.timestamp})}):_vm._e()],2)]),_vm._v(" "),(!_vm.showYear)?_c('div',{staticClass:"monthPicker"},[_c('div',{staticClass:"header"},[_c('span',{staticClass:"current pointer",on:{"click":function($event){_vm.showYear=true;}}},[_vm._v(_vm._s(_vm.year))]),_vm._v(" "),_c('span',{staticClass:"navigate"},[_c('span',{staticClass:"up",on:{"click":function($event){_vm.year++;}}},[_c('uiIconUp')],1),_vm._v(" "),_c('span',{staticClass:"down",on:{"click":function($event){_vm.year--;}}},[_c('uiIconDown')],1)])]),_vm._v(" "),_c('div',{staticClass:"months"},_vm._l((_vm.months),function(month,index){return _c('span',{key:index,on:{"click":function($event){return _vm.selectMonth(index)}}},[_vm._v("\n                        "+_vm._s(month)+"\n                    ")])}),0),_vm._v(" "),_c('div',{staticClass:"goToToday"},[_c('span',{on:{"click":function($event){return _vm.goToToday()}}},[_vm._v(_vm._s(_vm.localeObj.goToToday))])])]):_vm._e(),_vm._v(" "),(_vm.showYear)?_c('div',{staticClass:"yearPicker"},[_c('div',{staticClass:"header"},[_c('span',{staticClass:"current pointer",on:{"click":function($event){_vm.showYear=false;}}},[_vm._v(_vm._s(_vm.yearStart)+" - "+_vm._s(_vm.yearEnd-1))]),_vm._v(" "),_c('span',{staticClass:"navigate"},[_c('span',{staticClass:"up",on:{"click":function($event){_vm.yearStart+=12;}}},[_c('uiIconUp')],1),_vm._v(" "),_c('span',{staticClass:"down",on:{"click":function($event){_vm.yearStart-=12;}}},[_c('uiIconDown')],1)])]),_vm._v(" "),_c('div',{staticClass:"years"},_vm._l((_vm.years),function(year){return _c('span',{key:year,on:{"click":function($event){return _vm.selectYear(year)}}},[_vm._v("\n                        "+_vm._s(year)+"\n                    ")])}),0),_vm._v(" "),_c('div',{staticClass:"goToToday"},[_c('span',{on:{"click":function($event){return _vm.goToToday()}}},[_vm._v(_vm._s(_vm.localeObj.goToToday))])])]):_vm._e()]),_vm._v(" "),_c('div',{staticClass:"inputGroup",attrs:{"slot":"reference"},slot:"reference"},[_c('div',{staticClass:"inputContainer"},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.inputVal),expression:"inputVal"}],attrs:{"type":"text"},domProps:{"value":(_vm.inputVal)},on:{"blur":_vm.parseTypedDate,"input":function($event){if($event.target.composing){ return; }_vm.inputVal=$event.target.value;}}})]),_vm._v(" "),_c('div',{staticClass:"iconContainer"},[_c('uiIconCalendar')],1)])])],1)};
+var __vue_staticRenderFns__$B = [];
+
+  /* style */
+  const __vue_inject_styles__$$ = function (inject) {
+    if (!inject) return
+    inject("data-v-575173de_0", { source: ".popper[data-v-575173de]{width:auto;background-color:#fafafa;color:#212121;text-align:center;padding:2px;display:inline-block;border-radius:3px;position:absolute;font-size:14px;font-weight:400;border:1px #ebebeb solid;z-index:200000;-moz-box-shadow:#3a3a3a 0 0 6px 0;-webkit-box-shadow:#3a3a3a 0 0 6px 0;box-shadow:#3a3a3a 0 0 6px 0}.popper .popper__arrow[data-v-575173de]{width:0;height:0;border-style:solid;position:absolute;margin:5px}.popper[x-placement^=top][data-v-575173de]{margin-bottom:5px}.popper[x-placement^=top] .popper__arrow[data-v-575173de]{border-width:5px 5px 0 5px;border-color:#fafafa transparent transparent transparent;bottom:-5px;left:calc(50% - 5px);margin-top:0;margin-bottom:0}.popper[x-placement^=bottom][data-v-575173de]{margin-top:5px}.popper[x-placement^=bottom] .popper__arrow[data-v-575173de]{border-width:0 5px 5px 5px;border-color:transparent transparent #fafafa transparent;top:-5px;left:calc(50% - 5px);margin-top:0;margin-bottom:0}.popper[x-placement^=right][data-v-575173de]{margin-left:5px}.popper[x-placement^=right] .popper__arrow[data-v-575173de]{border-width:5px 5px 5px 0;border-color:transparent #fafafa transparent transparent;left:-5px;top:calc(50% - 5px);margin-left:0;margin-right:0}.popper[x-placement^=left][data-v-575173de]{margin-right:5px}.popper[x-placement^=left] .popper__arrow[data-v-575173de]{border-width:5px 0 5px 5px;border-color:transparent transparent transparent #fafafa;right:-5px;top:calc(50% - 5px);margin-left:0;margin-right:0}.uiDatePicker[data-v-575173de]{font-family:\"Segoe UI WestEuropean\",\"Segoe UI\",-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif;-webkit-font-smoothing:antialiased;box-sizing:border-box;margin:0;padding:0;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;color:\"[theme:neutralPrimary, default: #333333]\";font-size:12px;font-weight:400}.foldout[data-v-575173de]{background-color:#fff;width:420px;box-shadow:1px 1px 5px 0 rgba(0,0,0,.75);user-select:none}.foldout>div[data-v-575173de]{display:table-cell;vertical-align:top}.header[data-v-575173de]{padding:7px;display:flex;justify-content:space-between}.header .current[data-v-575173de]{font-weight:700}.header .navigate[data-v-575173de]{cursor:pointer}.header .navigate .up[data-v-575173de]{padding:6px 8px}.header .navigate .up[data-v-575173de]:hover{background-color:#d3d3d3}.header .navigate .down[data-v-575173de]{padding:6px 8px}.header .navigate .down[data-v-575173de]:hover{background-color:#d3d3d3}.monthPicker[data-v-575173de],.yearPicker[data-v-575173de]{width:210px;padding:5px}.monthPicker .months[data-v-575173de],.monthPicker .years[data-v-575173de],.yearPicker .months[data-v-575173de],.yearPicker .years[data-v-575173de]{width:200px;display:flex;flex-wrap:wrap;justify-content:space-between}.monthPicker .months span[data-v-575173de],.monthPicker .years span[data-v-575173de],.yearPicker .months span[data-v-575173de],.yearPicker .years span[data-v-575173de]{flex-basis:40px;padding:12px 2px;text-align:center;margin-bottom:12px;cursor:pointer}.monthPicker .months span[data-v-575173de]:hover,.monthPicker .years span[data-v-575173de]:hover,.yearPicker .months span[data-v-575173de]:hover,.yearPicker .years span[data-v-575173de]:hover{background-color:#d3d3d3}.monthPicker .goToToday[data-v-575173de],.yearPicker .goToToday[data-v-575173de]{text-align:right;padding:5px}.monthPicker .goToToday span[data-v-575173de],.yearPicker .goToToday span[data-v-575173de]{cursor:pointer}.dayPicker[data-v-575173de]{width:210px;padding:5px;border-right:solid 1px #edebe9}.dayPicker .days[data-v-575173de]{width:200px;display:flex;flex-wrap:wrap;justify-content:space-between}.dayPicker .days span[data-v-575173de]{flex-basis:20px;padding:4px;text-align:center}.dayPicker .days span.selectable[data-v-575173de]{cursor:pointer}.dayPicker .days span.selectable[data-v-575173de]:hover{background-color:#d3d3d3}.dayPicker .days span.today[data-v-575173de]{background-color:\"[theme:themePrimary, default: #0078d7]\";color:\"[theme:white, default: #ffffff]\"}.dayPicker .days span.selected[data-v-575173de]{background-color:\"[theme:themeLight, default: #c7e0f4]\"}.pointer[data-v-575173de]{cursor:pointer}.inputGroup[data-v-575173de]{display:inline-block;padding-right:8px;border:1px solid \"[theme:neutralTertiaryAlt, default: #c8c8c8]\";border-radius:2px}.inputGroup .inputContainer[data-v-575173de]{display:table-cell;width:100%}.inputGroup .inputContainer input[data-v-575173de]{height:30px;width:100%;box-sizing:border-box;padding:0 8px;border:none;font-weight:300;font-size:14px;color:\"[theme:neutralPrimary, default: #333333]\"}.inputGroup .inputContainer input[data-v-575173de]:focus{outline:0}.inputGroup .iconContainer[data-v-575173de]{display:table-cell}.inputGroup .iconContainer .ms-Icon[data-v-575173de]{vertical-align:-4px;font-size:18px}@media screen and (max-width:450px){.monthPicker[data-v-575173de],.yearPicker[data-v-575173de]{display:none!important}.dayPicker[data-v-575173de]{border-right:none!important}.foldout[data-v-575173de]{width:210px}}", map: undefined, media: undefined });
+
+  };
+  /* scoped */
+  const __vue_scope_id__$$ = "data-v-575173de";
+  /* module identifier */
+  const __vue_module_identifier__$$ = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$$ = false;
+  /* style inject */
+  const __vue_create_injector__$q = function(context){ return function(scopeId, data){__vue_script__$$.loadStyles && __vue_script__$$.loadStyles(data.source);}};
+  /* style inject SSR */
+  
+
+  
+  var uiDatePicker = normalizeComponent_1(
+    { render: __vue_render__$B, staticRenderFns: __vue_staticRenderFns__$B },
+    __vue_inject_styles__$$,
+    __vue_script__$$,
+    __vue_scope_id__$$,
+    __vue_is_functional_template__$$,
+    __vue_module_identifier__$$,
+    __vue_create_injector__$q,
+    undefined
+  );
+
+//
+var script$10 = {
+  loadStyles: loadStyles,
+  components: {
+    uiTextfield: uiTextfield,
+    uiIconChevronDownMed: uiIconChevronDownMed,
+    Popper: vuePopper_min
+  },
+  props: ['options', //Array of available options to display in dropdown
+  'display', //String that decides what attribute on the options is used for display and typeahead
+  'placeholderText', //String to use as placeholder text
+  'label', //Label
+  'autoselectOff'],
+  data: function data() {
+    return {
+      selected: null,
+      userInput: ''
+    };
+  },
+  methods: {
+    selectOption: function selectOption(option) {
+      this.selected = option;
+      this.userInput = option[this.display];
+    },
+    //Autoselects an option if userinput matches display attribute
+    autoselectMatch: debounce$1(function () {
+      var _this = this;
+
+      if (this.autoselectOff == true) {
+        return;
+      }
+
+      this.options.forEach(function (option) {
+        //Regex for exact match but case insensitive
+        var regex = new RegExp('^' + _this.userInput + '$', 'i');
+
+        if (regex.test(option[_this.display])) {
+          _this.selectOption(option);
+        }
+      });
+    }, 500),
+    setUserInput: function setUserInput(newInput) {
+      this.userInput = newInput;
+    },
+    inputBlurred: function inputBlurred() {
+      this.$refs.popper.doClose();
+    }
+  },
+  computed: {
+    popperOptions: function popperOptions() {
+      return {
+        placement: "bottom-end",
+        positionFixed: true,
+        modifiers: {
+          preventOverflow: {
+            enabled: true
+          },
+          flip: {
+            enabled: true
+          },
+          autoSizing: {
+            enabled: true,
+            fn: function autoSizing(data) {
+              data.styles.width = data.offsets.reference.width - 2;
+              return data;
+            },
+            order: 840
+          }
+        }
+      };
+    }
+  },
+  watch: {
+    "userInput": debounce$1(function (newVal) {
+      if (this.selected == null || this.selected[this.display] != newVal) {
+        this.$refs.popper.doShow();
+      }
+      this.autoselectMatch();
+      this.$emit('inputChanged', newVal);
+    }, 500),
+    "selected": function selected(newVal) {
+      this.$refs.popper.doClose();
+      this.$emit('optionSelected', newVal);
+    }
+  }
+};
+
+/* script */
+const __vue_script__$10 = script$10;
+
+/* template */
+var __vue_render__$C = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"uiTypeAhead"},[_c('popper',{ref:"popper",attrs:{"trigger":"click","options":_vm.popperOptions}},[_c('div',{staticClass:"popper foldout"},[_c('div',{staticClass:"optionlist"},_vm._l((_vm.options),function(option){return _c('div',{key:option.id,staticClass:"option",class:{ 'selectedOption' : _vm.selected != null && option.id == _vm.selected.id },on:{"click":function($event){return _vm.selectOption(option)},"mousedown":function($event){$event.preventDefault();}}},[_vm._v("\n                    "+_vm._s(option[_vm.display])+"\n                ")])}),0)]),_vm._v(" "),_c('div',{staticClass:"inputGroup",attrs:{"slot":"reference"},slot:"reference"},[_c('div',{staticClass:"inputContainer"},[_c('uiTextfield',{attrs:{"label":_vm.label,"placeholder":_vm.placeholderText},on:{"blur":function($event){return _vm.inputBlurred()}},model:{value:(_vm.userInput),callback:function ($$v) {_vm.userInput=$$v;},expression:"userInput"}}),_vm._v(" "),_c('uiIconChevronDownMed',{staticClass:"chevronIcon"})],1)])])],1)};
+var __vue_staticRenderFns__$C = [];
+
+  /* style */
+  const __vue_inject_styles__$10 = function (inject) {
+    if (!inject) return
+    inject("data-v-59d1ae7c_0", { source: ".popper[data-v-59d1ae7c]{width:auto;background-color:#fafafa;color:#212121;text-align:center;padding:2px;display:inline-block;border-radius:3px;position:absolute;font-size:14px;font-weight:400;border:1px #ebebeb solid;z-index:200000;-moz-box-shadow:#3a3a3a 0 0 6px 0;-webkit-box-shadow:#3a3a3a 0 0 6px 0;box-shadow:#3a3a3a 0 0 6px 0}.popper .popper__arrow[data-v-59d1ae7c]{width:0;height:0;border-style:solid;position:absolute;margin:5px}.popper[x-placement^=top][data-v-59d1ae7c]{margin-bottom:5px}.popper[x-placement^=top] .popper__arrow[data-v-59d1ae7c]{border-width:5px 5px 0 5px;border-color:#fafafa transparent transparent transparent;bottom:-5px;left:calc(50% - 5px);margin-top:0;margin-bottom:0}.popper[x-placement^=bottom][data-v-59d1ae7c]{margin-top:5px}.popper[x-placement^=bottom] .popper__arrow[data-v-59d1ae7c]{border-width:0 5px 5px 5px;border-color:transparent transparent #fafafa transparent;top:-5px;left:calc(50% - 5px);margin-top:0;margin-bottom:0}.popper[x-placement^=right][data-v-59d1ae7c]{margin-left:5px}.popper[x-placement^=right] .popper__arrow[data-v-59d1ae7c]{border-width:5px 5px 5px 0;border-color:transparent #fafafa transparent transparent;left:-5px;top:calc(50% - 5px);margin-left:0;margin-right:0}.popper[x-placement^=left][data-v-59d1ae7c]{margin-right:5px}.popper[x-placement^=left] .popper__arrow[data-v-59d1ae7c]{border-width:5px 0 5px 5px;border-color:transparent transparent transparent #fafafa;right:-5px;top:calc(50% - 5px);margin-left:0;margin-right:0}.inputGroup[data-v-59d1ae7c]{position:relative}.inputGroup .chevronIcon[data-v-59d1ae7c]{color:\"[theme:neutralDark, default: #212121]\";font-size:12px;position:absolute;right:13px;bottom:7px;pointer-events:none}.inputGroup[data-v-59d1ae7c]  .ms-TextField-field{padding-right:32px}.foldout[data-v-59d1ae7c]{background-color:#fff;margin:0!important;padding:0;box-shadow:1px 1px 5px 0 \"[theme:neutralQuaternaryAlt, default: #dadada]\";border-radius:2px}.optionlist[data-v-59d1ae7c]{max-height:200px;overflow:auto}.option[data-v-59d1ae7c]{height:19px;font-weight:400;padding:7px 10px 7px 10px;text-align:left;white-space:nowrap;cursor:pointer;color:\"[theme:neutralPrimary, default: #333333]\"}.option[data-v-59d1ae7c]:hover{color:\"[theme:black, default: #000000]\";background-color:\"[theme:neutralLight, default: #eaeaea]\"}.selectedOption[data-v-59d1ae7c]{color:\"[theme:black, default: #000000]\";background-color:\"[theme:themeLight, default: #c7e0f4]\"}.selectedOption[data-v-59d1ae7c]:hover{background-color:\"[theme:themeLight, default: #c7e0f4]\"}", map: undefined, media: undefined });
+
+  };
+  /* scoped */
+  const __vue_scope_id__$10 = "data-v-59d1ae7c";
+  /* module identifier */
+  const __vue_module_identifier__$10 = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$10 = false;
+  /* style inject */
+  const __vue_create_injector__$r = function(context){ return function(scopeId, data){__vue_script__$10.loadStyles && __vue_script__$10.loadStyles(data.source);}};
+  /* style inject SSR */
+  
+
+  
+  var uiTypeAhead = normalizeComponent_1(
+    { render: __vue_render__$C, staticRenderFns: __vue_staticRenderFns__$C },
+    __vue_inject_styles__$10,
+    __vue_script__$10,
+    __vue_scope_id__$10,
+    __vue_is_functional_template__$10,
+    __vue_module_identifier__$10,
+    __vue_create_injector__$r,
+    undefined
+  );
+
+export { uiButton, uiCallout, uiCheckbox, uiChoiceField, uiChoiceFieldGroup, uiCommandBar, uiCommandButton, uiContextualMenu, uiContextualMenuItem, uiDatePicker, uiDialog, uiDropdown, uiDropdownItem, uiDynamicIcon, uiIcon12PointStar, uiIcon6PointStar, uiIconAADLogo, uiIconATPLogo, uiIconAccept, uiIconAccessLogo, uiIconAccessLogoFill, uiIconAccountManagement, uiIconAccounts, uiIconActivateOrders, uiIconActivityFeed, uiIconAdd, uiIconAddBookmark, uiIconAddEvent, uiIconAddFavorite, uiIconAddFavoriteFill, uiIconAddFriend, uiIconAddGroup, uiIconAddNotes, uiIconAddOnlineMeeting, uiIconAddPhone, uiIconAddTo, uiIconAdmin, uiIconAdminALogo32, uiIconAdminALogoFill32, uiIconAdminALogoInverse32, uiIconAdminCLogoInverse32, uiIconAdminDLogoInverse32, uiIconAdminELogoInverse32, uiIconAdminLLogoInverse32, uiIconAdminMLogoInverse32, uiIconAdminOLogoInverse32, uiIconAdminPLogoInverse32, uiIconAdminSLogoInverse32, uiIconAdminYLogoInverse32, uiIconAirTickets, uiIconAirplane, uiIconAirplaneSolid, uiIconAlarmClock, uiIconAlbum, uiIconAlbumRemove, uiIconAlertSolid, uiIconAlignCenter, uiIconAlignHorizontalCenter, uiIconAlignHorizontalLeft, uiIconAlignHorizontalRight, uiIconAlignJustify, uiIconAlignLeft, uiIconAlignRight, uiIconAlignVerticalBottom, uiIconAlignVerticalCenter, uiIconAlignVerticalTop, uiIconAllApps, uiIconAllAppsMirrored, uiIconAllCurrency, uiIconAnalyticsLogo, uiIconAnalyticsQuery, uiIconAnalyticsReport, uiIconAnalyticsView, uiIconAnchorLock, uiIconAnnotation, uiIconAppIconDefault, uiIconArchive, uiIconAreaChart, uiIconArrangeBringForward, uiIconArrangeBringToFront, uiIconArrangeByFrom, uiIconArrangeSendBackward, uiIconArrangeSendToBack, uiIconArrivals, uiIconArrowDownRight8, uiIconArrowDownRightMirrored8, uiIconArrowTallDownLeft, uiIconArrowTallDownRight, uiIconArrowTallUpLeft, uiIconArrowTallUpRight, uiIconArrowUpRight, uiIconArrowUpRight8, uiIconArrowUpRightMirrored8, uiIconArticles, uiIconAscending, uiIconAspectRatio, uiIconAssessmentGroup, uiIconAssessmentGroupTemplate, uiIconAssetLibrary, uiIconAssign, uiIconAsterisk, uiIconAsteriskSolid, uiIconAttach, uiIconAustralianRules, uiIconAutoEnhanceOff, uiIconAutoEnhanceOn, uiIconAutoFillTemplate, uiIconAutoHeight, uiIconAutoRacing, uiIconAwayStatus, uiIconAzureAPIManagement, uiIconAzureKeyVault, uiIconAzureLogo, uiIconAzureServiceEndpoint, uiIconBIDashboard, uiIconBack, uiIconBackToWindow, uiIconBackgroundColor, uiIconBacklog, uiIconBacklogBoard, uiIconBacklogList, uiIconBadge, uiIconBalloons, uiIconBankSolid, uiIconBarChart4, uiIconBarChartHorizontal, uiIconBarChartVertical, uiIconBaseball, uiIconBeerMug, uiIconBidiLtr, uiIconBidiRtl, uiIconBingLogo, uiIconBirthdayCake, uiIconBlockContact, uiIconBlocked, uiIconBlocked12, uiIconBlocked2, uiIconBlockedSite, uiIconBlockedSiteSolid12, uiIconBlockedSolid, uiIconBlowingSnow, uiIconBlur, uiIconBoards, uiIconBold, uiIconBookingsLogo, uiIconBookmarks, uiIconBookmarksMirrored, uiIconBorderDash, uiIconBorderDot, uiIconBoxAdditionSolid, uiIconBoxCheckmarkSolid, uiIconBoxMultiplySolid, uiIconBoxPlaySolid, uiIconBoxSubtractSolid, uiIconBranchCommit, uiIconBranchCompare, uiIconBranchFork, uiIconBranchFork2, uiIconBranchLocked, uiIconBranchMerge, uiIconBranchPullRequest, uiIconBranchSearch, uiIconBranchShelveset, uiIconBreadcrumb, uiIconBreakfast, uiIconBrightness, uiIconBroom, uiIconBrowserScreenShot, uiIconBrowserTab, uiIconBrowserTabScreenshot, uiIconBrunch, uiIconBucketColor, uiIconBucketColorFill, uiIconBufferTimeAfter, uiIconBufferTimeBefore, uiIconBufferTimeBoth, uiIconBug, uiIconBugSolid, uiIconBuild, uiIconBuildDefinition, uiIconBuildIssue, uiIconBuildQueue, uiIconBuildQueueNew, uiIconBulkUpload, uiIconBulletedList, uiIconBulletedList2, uiIconBulletedList2Mirrored, uiIconBulletedListMirrored, uiIconBullseye, uiIconBus, uiIconBusSolid, uiIconBusinessCenterLogo, uiIconBusinessHoursSign, uiIconButtonControl, uiIconCPlusPlus, uiIconCPlusPlusLanguage, uiIconCRMReport, uiIconCSS, uiIconCSharp, uiIconCSharpLanguage, uiIconCafe, uiIconCake, uiIconCalculator, uiIconCalculatorAddition, uiIconCalculatorEqualTo, uiIconCalculatorMultiply, uiIconCalculatorNotEqualTo, uiIconCalculatorSubtract, uiIconCalendar, uiIconCalendarAgenda, uiIconCalendarDay, uiIconCalendarMirrored, uiIconCalendarReply, uiIconCalendarSettings, uiIconCalendarSettingsMirrored, uiIconCalendarWeek, uiIconCalendarWorkWeek, uiIconCaloriesAdd, uiIconCamera, uiIconCancel, uiIconCannedChat, uiIconCar, uiIconCaretBottomLeftCenter8, uiIconCaretBottomLeftSolid8, uiIconCaretBottomRightCenter8, uiIconCaretBottomRightSolid8, uiIconCaretDown8, uiIconCaretDownSolid8, uiIconCaretHollow, uiIconCaretHollowMirrored, uiIconCaretLeft8, uiIconCaretLeftSolid8, uiIconCaretRight, uiIconCaretRight8, uiIconCaretRightSolid8, uiIconCaretSolid, uiIconCaretSolid16, uiIconCaretSolidDown, uiIconCaretSolidLeft, uiIconCaretSolidMirrored, uiIconCaretSolidRight, uiIconCaretSolidUp, uiIconCaretTopLeftCenter8, uiIconCaretTopLeftSolid8, uiIconCaretTopRightCenter8, uiIconCaretTopRightSolid8, uiIconCaretUp8, uiIconCaretUpSolid8, uiIconCat, uiIconCellPhone, uiIconCertificate, uiIconCertifiedDatabase, uiIconChart, uiIconChartSeries, uiIconChartXAngle, uiIconChartYAngle, uiIconChat, uiIconChatInviteFriend, uiIconChatSolid, uiIconCheckList, uiIconCheckMark, uiIconCheckbox, uiIconCheckboxComposite, uiIconCheckboxCompositeReversed, uiIconCheckboxIndeterminate, uiIconCheckedOutByOther12, uiIconCheckedOutByYou12, uiIconChevronDown, uiIconChevronDownEnd6, uiIconChevronDownMed, uiIconChevronDownSmall, uiIconChevronFold10, uiIconChevronLeft, uiIconChevronLeftEnd6, uiIconChevronLeftMed, uiIconChevronLeftSmall, uiIconChevronRight, uiIconChevronRightEnd6, uiIconChevronRightMed, uiIconChevronRightSmall, uiIconChevronUnfold10, uiIconChevronUp, uiIconChevronUpEnd6, uiIconChevronUpMed, uiIconChevronUpSmall, uiIconChopsticks, uiIconChromeBack, uiIconChromeBackMirrored, uiIconChromeClose, uiIconChromeMinimize, uiIconCircleAddition, uiIconCircleAdditionSolid, uiIconCircleFill, uiIconCircleHalfFull, uiIconCirclePause, uiIconCirclePauseSolid, uiIconCirclePlus, uiIconCircleRing, uiIconCircleShapeSolid, uiIconCircleStop, uiIconCircleStopSolid, uiIconCityNext, uiIconClassNotebookLogo16, uiIconClassNotebookLogo32, uiIconClassNotebookLogoFill16, uiIconClassNotebookLogoFill32, uiIconClassNotebookLogoInverse, uiIconClassNotebookLogoInverse16, uiIconClassNotebookLogoInverse32, uiIconClassroomLogo, uiIconClear, uiIconClearFilter, uiIconClearFormatting, uiIconClearNight, uiIconClipboardSolid, uiIconClock, uiIconCloneToDesktop, uiIconClosePane, uiIconClosePaneMirrored, uiIconClosedCaption, uiIconCloud, uiIconCloudAdd, uiIconCloudDownload, uiIconCloudUpload, uiIconCloudWeather, uiIconCloudy, uiIconCocktails, uiIconCode, uiIconCodeEdit, uiIconCoffee, uiIconCoffeeScript, uiIconCollapseContent, uiIconCollapseContentSingle, uiIconCollapseMenu, uiIconCollegeFootball, uiIconCollegeHoops, uiIconColor, uiIconColorSolid, uiIconColumnLeftTwoThirds, uiIconColumnLeftTwoThirdsEdit, uiIconColumnOptions, uiIconColumnRightTwoThirds, uiIconColumnRightTwoThirdsEdit, uiIconCombine, uiIconCombobox, uiIconCommandPrompt, uiIconComment, uiIconCommentAdd, uiIconCommentNext, uiIconCommentPrevious, uiIconCommentUrgent, uiIconCommitments, uiIconCommunications, uiIconCompanyDirectory, uiIconCompanyDirectoryMirrored, uiIconCompassNW, uiIconCompleted, uiIconCompletedSolid, uiIconConfigurationSolid, uiIconConnectContacts, uiIconConstructionCone, uiIconConstructionConeSolid, uiIconContact, uiIconContactCard, uiIconContactCardSettings, uiIconContactCardSettingsMirrored, uiIconContactInfo, uiIconContactLink, uiIconContextMenu, uiIconContrast, uiIconCopy, uiIconCotton, uiIconCreateMailRule, uiIconCricket, uiIconCrop, uiIconCrown, uiIconCrownSolid, uiIconCustomList, uiIconCustomListMirrored, uiIconCut, uiIconCycling, uiIconD365TalentHRCore, uiIconD365TalentInsight, uiIconD365TalentLearn, uiIconDOM, uiIconDRM, uiIconDashboardAdd, uiIconDataConnectionLibrary, uiIconDatabase, uiIconDateTime, uiIconDateTime2, uiIconDateTimeMirrored, uiIconDeactivateOrders, uiIconDecimals, uiIconDecisionSolid, uiIconDeclineCall, uiIconDecreaseIndentLegacy, uiIconDefaultRatio, uiIconDefectSolid, uiIconDelete, uiIconDeleteColumns, uiIconDeleteRows, uiIconDeleteRowsMirrored, uiIconDeleteTable, uiIconDeliveryTruck, uiIconDelveAnalytics, uiIconDelveAnalyticsLogo, uiIconDelveLogo, uiIconDelveLogoFill, uiIconDelveLogoInverse, uiIconDeploy, uiIconDescending, uiIconDesign, uiIconDesktopScreenshot, uiIconDeveloperTools, uiIconDevices3, uiIconDevices4, uiIconDiagnostic, uiIconDialpad, uiIconDiamond, uiIconDiamondSolid, uiIconDictionary, uiIconDictionaryRemove, uiIconDietPlanNotebook, uiIconDiffInline, uiIconDiffSideBySide, uiIconDisableUpdates, uiIconDislike, uiIconDislikeSolid, uiIconDocLibrary, uiIconDockLeft, uiIconDockLeftMirrored, uiIconDockRight, uiIconDocsLogoInverse, uiIconDocument, uiIconDocumentApproval, uiIconDocumentManagement, uiIconDocumentReply, uiIconDocumentSearch, uiIconDocumentSet, uiIconDocumentation, uiIconDonutChart, uiIconDoor, uiIconDoubleBookmark, uiIconDoubleChevronDown, uiIconDoubleChevronDown12, uiIconDoubleChevronDown8, uiIconDoubleChevronLeft, uiIconDoubleChevronLeft12, uiIconDoubleChevronLeft8, uiIconDoubleChevronLeftMed, uiIconDoubleChevronLeftMedMirrored, uiIconDoubleChevronRight, uiIconDoubleChevronRight12, uiIconDoubleChevronRight8, uiIconDoubleChevronUp, uiIconDoubleChevronUp12, uiIconDoubleChevronUp8, uiIconDoubleColumn, uiIconDoubleColumnEdit, uiIconDown, uiIconDownload, uiIconDownloadDocument, uiIconDragObject, uiIconDrillDown, uiIconDrillDownSolid, uiIconDrillExpand, uiIconDrillShow, uiIconDrillThrough, uiIconDrop, uiIconDropShapeSolid, uiIconDropdown, uiIconDuststorm, uiIconDynamicSMBLogo, uiIconDynamics365Logo, uiIconEMI, uiIconEatDrink, uiIconEdgeLogo, uiIconEdit, uiIconEditContact, uiIconEditMail, uiIconEditMirrored, uiIconEditNote, uiIconEditPhoto, uiIconEditSolid12, uiIconEditSolidMirrored12, uiIconEditStyle, uiIconEducation, uiIconEllipse, uiIconEmbed, uiIconEmoji, uiIconEmoji2, uiIconEmojiDisappointed, uiIconEmojiNeutral, uiIconEmojiTabSymbols, uiIconEmptyRecycleBin, uiIconEncryption, uiIconEngineeringGroup, uiIconEntryDecline, uiIconEntryView, uiIconEqualizer, uiIconEraseTool, uiIconError, uiIconErrorBadge, uiIconEvent, uiIconEventAccepted, uiIconEventDate, uiIconEventDeclined, uiIconEventInfo, uiIconEventTentative, uiIconEventTentativeMirrored, uiIconExcelDocument, uiIconExcelLogo, uiIconExcelLogo16, uiIconExcelLogoFill, uiIconExcelLogoFill16, uiIconExcelLogoInverse, uiIconExcelLogoInverse16, uiIconExchangeLogo, uiIconExchangeLogoFill, uiIconExchangeLogoInverse, uiIconExerciseTracker, uiIconExpandMenu, uiIconExploreContent, uiIconExploreContentSingle, uiIconExploreData, uiIconExport, uiIconExportMirrored, uiIconExternalBuild, uiIconExternalTFVC, uiIconExternalXAML, uiIconEyedropper, uiIconF12DevTools, uiIconFSharp, uiIconFSharpLanguage, uiIconFabricAssetLibrary, uiIconFabricDataConnectionLibrary, uiIconFabricDocLibrary, uiIconFabricFolder, uiIconFabricFolderFill, uiIconFabricFolderSearch, uiIconFabricFormLibrary, uiIconFabricFormLibraryMirrored, uiIconFabricMovetoFolder, uiIconFabricNewFolder, uiIconFabricOpenFolderHorizontal, uiIconFabricPictureLibrary, uiIconFabricPublicFolder, uiIconFabricReportLibrary, uiIconFabricReportLibraryMirrored, uiIconFabricSyncFolder, uiIconFabricUnsyncFolder, uiIconFamily, uiIconFangBody, uiIconFastForward, uiIconFastMode, uiIconFavicon, uiIconFavoriteList, uiIconFavoriteStar, uiIconFavoriteStarFill, uiIconFax, uiIconFeedback, uiIconFeedbackRequestMirroredSolid, uiIconFeedbackRequestSolid, uiIconFeedbackResponseSolid, uiIconFerry, uiIconFerrySolid, uiIconFieldChanged, uiIconFieldEmpty, uiIconFieldFilled, uiIconFieldNotChanged, uiIconFieldReadOnly, uiIconFieldRequired, uiIconFileASPX, uiIconFileBug, uiIconFileCSS, uiIconFileCode, uiIconFileComment, uiIconFileHTML, uiIconFileImage, uiIconFileJAVA, uiIconFileLess, uiIconFilePDB, uiIconFileSQL, uiIconFileSass, uiIconFileSymlink, uiIconFileTemplate, uiIconFileTypeSolution, uiIconFileYML, uiIconFilter, uiIconFilterSolid, uiIconFilters, uiIconFiltersSolid, uiIconFinancial, uiIconFinancialMirroredSolid, uiIconFinancialSolid, uiIconFingerprint, uiIconFiveTileGrid, uiIconFlag, uiIconFlameSolid, uiIconFlickDown, uiIconFlickLeft, uiIconFlickRight, uiIconFlickUp, uiIconFlow, uiIconFocalPoint, uiIconFog, uiIconFolder, uiIconFolderFill, uiIconFolderHorizontal, uiIconFolderList, uiIconFolderListMirrored, uiIconFolderOpen, uiIconFolderQuery, uiIconFolderSearch, uiIconFollowUser, uiIconFont, uiIconFontColor, uiIconFontColorA, uiIconFontColorSwatch, uiIconFontDecrease, uiIconFontIncrease, uiIconFontSize, uiIconFormLibrary, uiIconFormLibraryMirrored, uiIconForward, uiIconForwardEvent, uiIconFreezing, uiIconFrigid, uiIconFullCircleMask, uiIconFullHistory, uiIconFullScreen, uiIconFullWidth, uiIconFullWidthEdit, uiIconFunctionalManagerDashboard, uiIconGUID, uiIconGallatinLogo, uiIconGenerate, uiIconGenericScan, uiIconGiftBoxSolid, uiIconGiftCard, uiIconGiftbox, uiIconGiftboxOpen, uiIconGitGraph, uiIconGlasses, uiIconGlimmer, uiIconGlobalNavButton, uiIconGlobe, uiIconGlobe2, uiIconGlobeFavorite, uiIconGolf, uiIconGotoToday, uiIconGridViewLarge, uiIconGridViewMedium, uiIconGridViewSmall, uiIconGripperBarHorizontal, uiIconGripperBarVertical, uiIconGripperTool, uiIconGroup, uiIconGroupObject, uiIconGroupedAscending, uiIconGroupedDescending, uiIconGroupedList, uiIconGuitar, uiIconHailDay, uiIconHailNight, uiIconHalfAlpha, uiIconHalfCircle, uiIconHandsFree, uiIconHandwriting, uiIconHardDrive, uiIconHardDriveGroup, uiIconHardDriveLock, uiIconHardDriveUnlock, uiIconHeader1, uiIconHeader2, uiIconHeader3, uiIconHeader4, uiIconHeadset, uiIconHeadsetSolid, uiIconHealth, uiIconHealthSolid, uiIconHeart, uiIconHeartBroken, uiIconHeartFill, uiIconHelp, uiIconHelpMirrored, uiIconHexagon, uiIconHide, uiIconHide2, uiIconHighlight, uiIconHighlightMappedShapes, uiIconHintText, uiIconHistory, uiIconHome, uiIconHomeSolid, uiIconHorizontalDistributeCenter, uiIconHospital, uiIconHotel, uiIconHourGlass, uiIconIDBadge, uiIconIRMForward, uiIconIRMForwardMirrored, uiIconIRMReply, uiIconIRMReplyMirrored, uiIconIconSetsFlag, uiIconImageCrosshair, uiIconImageDiff, uiIconImagePixel, uiIconImageSearch, uiIconImport, uiIconImportMirrored, uiIconImportant, uiIconInbox, uiIconInboxCheck, uiIconIncidentTriangle, uiIconIncreaseIndentLegacy, uiIconInfo, uiIconInfo2, uiIconInfoSolid, uiIconInsertColumnsLeft, uiIconInsertColumnsRight, uiIconInsertRowsAbove, uiIconInsertRowsBelow, uiIconInsertSignatureLine, uiIconInsertTextBox, uiIconInstallToDrive, uiIconInternetSharing, uiIconIssueSolid, uiIconIssueTracking, uiIconIssueTrackingMirrored, uiIconItalic, uiIconJS, uiIconJavaScriptLanguage, uiIconJoinOnlineMeeting, uiIconKaizalaLogo, uiIconKeyboardClassic, uiIconLabel, uiIconLadybugSolid, uiIconLamp, uiIconLandscapeOrientation, uiIconLaptopSecure, uiIconLaptopSelected, uiIconLargeGrid, uiIconLeave, uiIconLibrary, uiIconLifesaver, uiIconLifesaverLock, uiIconLight, uiIconLightWeight, uiIconLightbulb, uiIconLightningBolt, uiIconLike, uiIconLikeSolid, uiIconLine, uiIconLineChart, uiIconLineSpacing, uiIconLineStyle, uiIconLineThickness, uiIconLink, uiIconLink12, uiIconLinkedInLogo, uiIconList, uiIconListMirrored, uiIconLocaleLanguage, uiIconLocation, uiIconLocationCircle, uiIconLocationDot, uiIconLocationFill, uiIconLocationOutline, uiIconLock, uiIconLock12, uiIconLockSolid, uiIconLogRemove, uiIconLookupEntities, uiIconLowerBrightness, uiIconLyncLogo, uiIconMSNLogo, uiIconMSNVideos, uiIconMSNVideosSolid, uiIconMail, uiIconMailAlert, uiIconMailCheck, uiIconMailFill, uiIconMailForward, uiIconMailForwardMirrored, uiIconMailLowImportance, uiIconMailPause, uiIconMailReminder, uiIconMailRepeat, uiIconMailReply, uiIconMailReplyAll, uiIconMailReplyAllMirrored, uiIconMailReplyMirrored, uiIconMailSchedule, uiIconMailSolid, uiIconMailTentative, uiIconMailTentativeMirrored, uiIconMailUndelivered, uiIconManagerSelfService, uiIconManufacturing, uiIconMapDirections, uiIconMapPin, uiIconMapPinSolid, uiIconMarkDownLanguage, uiIconMarket, uiIconMarketDown, uiIconMasterDatabase, uiIconMaximumValue, uiIconMedal, uiIconMediaAdd, uiIconMedical, uiIconMegaphone, uiIconMegaphoneSolid, uiIconMemo, uiIconMerge, uiIconMergeDuplicate, uiIconMessage, uiIconMessageFill, uiIconMicOff, uiIconMicrophone, uiIconMicrosoftFlowLogo, uiIconMicrosoftStaffhubLogo, uiIconMiniContract, uiIconMiniExpand, uiIconMiniLink, uiIconMinimumValue, uiIconMobileReport, uiIconMobileSelected, uiIconMoney, uiIconMore, uiIconMoreSports, uiIconMoreVertical, uiIconMountainClimbing, uiIconMove, uiIconMoveToFolder, uiIconMovers, uiIconMultiSelect, uiIconMultiSelectMirrored, uiIconMusicInCollection, uiIconMusicInCollectionFill, uiIconMusicNote, uiIconMyMoviesTV, uiIconNav2DMapView, uiIconNavigateBack, uiIconNavigateBackMirrored, uiIconNavigateExternalInline, uiIconNavigateForward, uiIconNavigateForwardMirrored, uiIconNavigationFlipper, uiIconNetworkTower, uiIconNewAnalyticsQuery, uiIconNewFolder, uiIconNewTeamProject, uiIconNews, uiIconNewsSearch, uiIconNext, uiIconNormalWeight, uiIconNotExecuted, uiIconNotImpactedSolid, uiIconNoteForward, uiIconNotePinned, uiIconNoteReply, uiIconNugetLogo, uiIconNumberField, uiIconNumberSequence, uiIconNumberedList, uiIconOEM, uiIconOctagon, uiIconOfficeAddinsLogo, uiIconOfficeAssistantLogo, uiIconOfficeChat, uiIconOfficeChatSolid, uiIconOfficeFormsLogo, uiIconOfficeFormsLogo16, uiIconOfficeFormsLogo24, uiIconOfficeFormsLogoFill, uiIconOfficeFormsLogoFill16, uiIconOfficeFormsLogoFill24, uiIconOfficeFormsLogoInverse, uiIconOfficeFormsLogoInverse16, uiIconOfficeFormsLogoInverse24, uiIconOfficeLogo, uiIconOfficeStoreLogo, uiIconOfficeVideoLogo, uiIconOfficeVideoLogoFill, uiIconOfficeVideoLogoInverse, uiIconOfflineOneDriveParachute, uiIconOfflineOneDriveParachuteDisabled, uiIconOfflineStorageSolid, uiIconOneDriveAdd, uiIconOneDriveFolder16, uiIconOneDriveLogo, uiIconOneNoteEduLogoInverse, uiIconOneNoteLogo, uiIconOneNoteLogo16, uiIconOneNoteLogoFill, uiIconOneNoteLogoFill16, uiIconOneNoteLogoInverse, uiIconOneNoteLogoInverse16, uiIconOpenFile, uiIconOpenFolderHorizontal, uiIconOpenInNewWindow, uiIconOpenPane, uiIconOpenPaneMirrored, uiIconOpenSource, uiIconOrg, uiIconOrientation, uiIconOutOfOffice, uiIconOutlookLogo, uiIconOutlookLogo16, uiIconOutlookLogoFill, uiIconOutlookLogoFill16, uiIconOutlookLogoInverse, uiIconOutlookLogoInverse16, uiIconPC1, uiIconPDF, uiIconPOI, uiIconPOISolid, uiIconPY, uiIconPackage, uiIconPackages, uiIconPadding, uiIconPaddingBottom, uiIconPaddingLeft, uiIconPaddingRight, uiIconPaddingTop, uiIconPage, uiIconPageAdd, uiIconPageCheckedOut, uiIconPageCheckedin, uiIconPageEdit, uiIconPageLeft, uiIconPageListMirroredSolid, uiIconPageListSolid, uiIconPageLock, uiIconPageRemove, uiIconPageRight, uiIconPageSolid, uiIconPanoIndicator, uiIconParachute, uiIconParachuteSolid, uiIconParameter, uiIconParkingLocation, uiIconParkingLocationMirrored, uiIconParkingMirroredSolid, uiIconParkingSolid, uiIconPartlyCloudyDay, uiIconPartlyCloudyNight, uiIconPartyLeader, uiIconPassiveAuthentication, uiIconPaste, uiIconPasteAsCode, uiIconPasteAsText, uiIconPause, uiIconPaymentCard, uiIconPencilReply, uiIconPentagon, uiIconPeople, uiIconPeopleAdd, uiIconPeopleAlert, uiIconPeopleBlock, uiIconPeoplePause, uiIconPeopleRepeat, uiIconPermissions, uiIconPermissionsSolid, uiIconPersonalize, uiIconPhishing, uiIconPhone, uiIconPhoto, uiIconPhoto2, uiIconPhoto2Add, uiIconPhoto2Remove, uiIconPhotoCollection, uiIconPicture, uiIconPictureCenter, uiIconPictureFill, uiIconPictureLibrary, uiIconPicturePosition, uiIconPictureStretch, uiIconPictureTile, uiIconPieDouble, uiIconPieSingle, uiIconPieSingleSolid, uiIconPill, uiIconPin, uiIconPinned, uiIconPinnedFill, uiIconPivotChart, uiIconPlanView, uiIconPlannerLogo, uiIconPlay, uiIconPlayResume, uiIconPlayerSettings, uiIconPlug, uiIconPlugConnected, uiIconPlugDisconnected, uiIconPlugSolid, uiIconPostUpdate, uiIconPowerApps, uiIconPowerApps2Logo, uiIconPowerAppsLogo, uiIconPowerBILogo, uiIconPowerButton, uiIconPowerPointDocument, uiIconPowerPointLogo, uiIconPowerPointLogo16, uiIconPowerPointLogoFill, uiIconPowerPointLogoFill16, uiIconPowerPointLogoInverse, uiIconPowerPointLogoInverse16, uiIconPrecipitation, uiIconPresenceChickletVideo, uiIconPresentation, uiIconPresentation12, uiIconPreview, uiIconPreviewLink, uiIconPrevious, uiIconPrimaryCalendar, uiIconPrint, uiIconPrintfaxPrinterFile, uiIconProFootball, uiIconProHockey, uiIconProcessMetaTask, uiIconProcessing, uiIconProduct, uiIconProfileSearch, uiIconProgressLoopInner, uiIconProgressLoopOuter, uiIconProgressRingDots, uiIconProjectCollection, uiIconProjectLogo16, uiIconProjectLogo32, uiIconProjectLogoFill16, uiIconProjectLogoFill32, uiIconProjectLogoInverse, uiIconProtectRestrict, uiIconProtectedDocument, uiIconProtectionCenterLogo32, uiIconPublicCalendar, uiIconPublicContactCard, uiIconPublicContactCardMirrored, uiIconPublicEmail, uiIconPublicFolder, uiIconPublishCourse, uiIconPublisherLogo, uiIconPublisherLogo16, uiIconPublisherLogoFill, uiIconPublisherLogoFill16, uiIconPublisherLogoInverse16, uiIconPuzzle, uiIconPythonLanguage, uiIconQuarterCircle, uiIconQueryList, uiIconQuestionnaire, uiIconQuestionnaireMirrored, uiIconQuickNote, uiIconQuickNoteSolid, uiIconR, uiIconRadioBtnOff, uiIconRadioBtnOn, uiIconRadioBullet, uiIconRain, uiIconRainShowersDay, uiIconRainShowersNight, uiIconRainSnow, uiIconRawSource, uiIconRead, uiIconReadOutLoud, uiIconReadingMode, uiIconReadingModeSolid, uiIconReceiptCheck, uiIconReceiptForward, uiIconReceiptReply, uiIconReceiptTentative, uiIconReceiptTentativeMirrored, uiIconReceiptUndelivered, uiIconRecent, uiIconRecord2, uiIconRecruitmentManagement, uiIconRectangleShapeSolid, uiIconRectangularClipping, uiIconRecurringEvent, uiIconRecurringTask, uiIconRecycleBin, uiIconRedEye, uiIconRedeploy, uiIconRedo, uiIconRefresh, uiIconReleaseDefinition, uiIconReminderGroup, uiIconReminderPerson, uiIconRemote, uiIconRemove, uiIconRemoveEvent, uiIconRemoveFilter, uiIconRemoveLink, uiIconRemoveOccurrence, uiIconRename, uiIconRenewalCurrent, uiIconRenewalFuture, uiIconReopenPages, uiIconRepair, uiIconReply, uiIconReplyAll, uiIconReplyAllAlt, uiIconReplyAllMirrored, uiIconReplyAlt, uiIconReplyMirrored, uiIconRepo, uiIconRepoSolid, uiIconReportAdd, uiIconReportHacked, uiIconReportLibrary, uiIconReportLibraryMirrored, uiIconReturnToSession, uiIconRevToggleKey, uiIconReviewRequestMirroredSolid, uiIconReviewRequestSolid, uiIconReviewResponseSolid, uiIconReviewSolid, uiIconRewind, uiIconRibbon, uiIconRibbonSolid, uiIconRightDoubleQuote, uiIconRightTriangle, uiIconRinger, uiIconRingerOff, uiIconRingerRemove, uiIconRobot, uiIconRocket, uiIconRoom, uiIconRotate, uiIconRowsChild, uiIconRowsGroup, uiIconRugby, uiIconRunning, uiIconSIPMove, uiIconSad, uiIconSadSolid, uiIconSave, uiIconSaveAll, uiIconSaveAndClose, uiIconSaveAs, uiIconSaveTemplate, uiIconSavings, uiIconScaleUp, uiIconScheduleEventAction, uiIconScopeTemplate, uiIconScript, uiIconScrollUpDown, uiIconSearch, uiIconSearchAndApps, uiIconSearchBookmark, uiIconSearchCalendar, uiIconSearchIssue, uiIconSearchIssueMirrored, uiIconSection, uiIconSections, uiIconSecurityGroup, uiIconSelectAll, uiIconSell, uiIconSemiboldWeight, uiIconSend, uiIconSendMirrored, uiIconSeparator, uiIconServer, uiIconServerEnviroment, uiIconServerProcesses, uiIconSetAction, uiIconSettings, uiIconShare, uiIconShareiOS, uiIconSharepointLogo, uiIconSharepointLogoFill, uiIconSharepointLogoInverse, uiIconShield, uiIconShieldSolid, uiIconShop, uiIconShopServer, uiIconShoppingCart, uiIconShoppingCartSolid, uiIconShowResults, uiIconShowResultsMirrored, uiIconSidePanel, uiIconSidePanelMirrored, uiIconSignOut, uiIconSingleBookmark, uiIconSingleBookmarkSolid, uiIconSingleColumn, uiIconSingleColumnEdit, uiIconSiteScan, uiIconSizeLegacy, uiIconSkiResorts, uiIconSkypeCheck, uiIconSkypeCircleCheck, uiIconSkypeCircleClock, uiIconSkypeCircleMinus, uiIconSkypeClock, uiIconSkypeForBusinessLogo, uiIconSkypeForBusinessLogo16, uiIconSkypeForBusinessLogoFill, uiIconSkypeForBusinessLogoFill16, uiIconSkypeLogo, uiIconSkypeLogo16, uiIconSkypeMessage, uiIconSkypeMinus, uiIconSlider, uiIconSliderHandleSize, uiIconSliderThumb, uiIconSnooze, uiIconSnow, uiIconSnowShowerDay, uiIconSnowShowerNight, uiIconSnowflake, uiIconSoccer, uiIconSocialListeningLogo, uiIconSort, uiIconSortDown, uiIconSortLines, uiIconSortUp, uiIconSource, uiIconSpacer, uiIconSpeakers, uiIconSpeedHigh, uiIconSplit, uiIconSplitObject, uiIconSprint, uiIconSqualls, uiIconSquareShapeSolid, uiIconStack, uiIconStackIndicator, uiIconStackedBarChart, uiIconStackedLineChart, uiIconStaffNotebookLogo16, uiIconStaffNotebookLogo32, uiIconStaffNotebookLogoFill16, uiIconStaffNotebookLogoFill32, uiIconStaffNotebookLogoInverted16, uiIconStaffNotebookLogoInverted32, uiIconStarburst, uiIconStarburstSolid, uiIconStatusCircleBlock2, uiIconStatusCircleCheckmark, uiIconStatusCircleErrorX, uiIconStatusCircleExclamation, uiIconStatusCircleInfo, uiIconStatusCircleInner, uiIconStatusCircleOuter, uiIconStatusCircleQuestionMark, uiIconStatusCircleRing, uiIconStatusErrorFull, uiIconStatusTriangle, uiIconStatusTriangleExclamation, uiIconStatusTriangleInner, uiIconStatusTriangleOuter, uiIconStep, uiIconStepInsert, uiIconStepShared, uiIconStepSharedAdd, uiIconStepSharedInsert, uiIconStockDown, uiIconStockUp, uiIconStop, uiIconStopSolid, uiIconStopwatch, uiIconStoreLogo16, uiIconStoreLogoMed20, uiIconStoryboard, uiIconStreamLogo, uiIconStreaming, uiIconStreamingOff, uiIconStrikethrough, uiIconSubscribe, uiIconSubscript, uiIconSubstitutionsIn, uiIconSuitcase, uiIconSunAdd, uiIconSunQuestionMark, uiIconSunny, uiIconSuperscript, uiIconSurveyQuestions, uiIconSwayLogo16, uiIconSwayLogo32, uiIconSwayLogoFill16, uiIconSwayLogoFill32, uiIconSwayLogoInverse, uiIconSwitch, uiIconSwitcherStartEnd, uiIconSync, uiIconSyncFolder, uiIconSyncOccurence, uiIconSyncToPC, uiIconSystem, uiIconTFVCLogo, uiIconTVMonitor, uiIconTVMonitorSelected, uiIconTab, uiIconTable, uiIconTableGroup, uiIconTablet, uiIconTabletMode, uiIconTabletSelected, uiIconTag, uiIconTagSolid, uiIconTagUnknown, uiIconTagUnknown12, uiIconTagUnknown12Mirror, uiIconTagUnknownMirror, uiIconTaskGroup, uiIconTaskGroupMirrored, uiIconTaskLogo, uiIconTaskManager, uiIconTaskManagerMirrored, uiIconTaskSolid, uiIconTaskboard, uiIconTaxi, uiIconTeamFavorite, uiIconTeamsLogo, uiIconTeamsLogo16, uiIconTeamsLogoFill, uiIconTeamsLogoFill16, uiIconTeamsLogoInverse, uiIconTeamwork, uiIconTeeth, uiIconTemporaryUser, uiIconTennis, uiIconTestAutoSolid, uiIconTestBeaker, uiIconTestBeakerSolid, uiIconTestCase, uiIconTestExploreSolid, uiIconTestImpactSolid, uiIconTestParameter, uiIconTestPlan, uiIconTestStep, uiIconTestSuite, uiIconTestUserSolid, uiIconTextBox, uiIconTextCallout, uiIconTextDocument, uiIconTextDocumentShared, uiIconTextField, uiIconTextOverflow, uiIconThisPC, uiIconThreeQuarterCircle, uiIconThumbnailView, uiIconThumbnailViewMirrored, uiIconThunderstorms, uiIconTicket, uiIconTiles, uiIconTiles2, uiIconTimeEntry, uiIconTimeSheet, uiIconTimeline, uiIconTimelineDelivery, uiIconTimelineMatrixView, uiIconTimelineProgress, uiIconTimer, uiIconToDoLogoBottom, uiIconToDoLogoInverse, uiIconToDoLogoTop, uiIconToggleBorder, uiIconToggleFilled, uiIconToggleOff, uiIconToggleOn, uiIconToggleThumb, uiIconToll, uiIconTouch, uiIconTouchPointer, uiIconTrackers, uiIconTrackersMirrored, uiIconTrain, uiIconTrainSolid, uiIconTransferCall, uiIconTransition, uiIconTransitionEffect, uiIconTransitionPop, uiIconTransitionPush, uiIconTrending12, uiIconTriangleDown12, uiIconTriangleLeft12, uiIconTriangleRight12, uiIconTriangleShapeSolid, uiIconTriangleSolid, uiIconTriangleSolidDown12, uiIconTriangleSolidLeft12, uiIconTriangleSolidRight12, uiIconTriangleSolidUp12, uiIconTriangleUp12, uiIconTriggerApproval, uiIconTriggerAuto, uiIconTriggerUser, uiIconTripleColumn, uiIconTripleColumnEdit, uiIconTrophy, uiIconTrophy2, uiIconTrophy2Solid, uiIconTurnRight, uiIconTypeScriptLanguage, uiIconUmbrella, uiIconUnSetColor, uiIconUnderline, uiIconUndo, uiIconUneditable, uiIconUneditableMirrored, uiIconUneditableSolid12, uiIconUneditableSolidMirrored12, uiIconUnfavorite, uiIconUngroupObject, uiIconUnknown, uiIconUnknownCall, uiIconUnknownMirrored, uiIconUnknownMirroredSolid, uiIconUnknownSolid, uiIconUnlock, uiIconUnlockSolid, uiIconUnpin, uiIconUnsubscribe, uiIconUnsyncFolder, uiIconUnsyncOccurence, uiIconUp, uiIconUpload, uiIconUserEvent, uiIconUserFollowed, uiIconUserGauge, uiIconUserPause, uiIconUserRemove, uiIconUserSync, uiIconVB, uiIconVSTSAltLogo1, uiIconVSTSAltLogo2, uiIconVSTSLogo, uiIconVacation, uiIconVariable, uiIconVariableGroup, uiIconVennDiagram, uiIconVersionControlPush, uiIconVerticalDistributeCenter, uiIconVideo, uiIconVideoOff, uiIconVideoSearch, uiIconVideoSolid, uiIconView, uiIconViewAll, uiIconViewAll2, uiIconViewDashboard, uiIconViewList, uiIconViewListGroup, uiIconViewListTree, uiIconVisioDiagram, uiIconVisioDocument, uiIconVisioLogo, uiIconVisioLogo16, uiIconVisioLogoFill, uiIconVisioLogoFill16, uiIconVisioLogoInverse, uiIconVisioLogoInverse16, uiIconVisualBasicLanguage, uiIconVisualStudioIDELogo32, uiIconVisualStudioLogo, uiIconVisualsFolder, uiIconVisualsStore, uiIconVoicemailForward, uiIconVoicemailIRM, uiIconVoicemailReply, uiIconVolume0, uiIconVolume1, uiIconVolume2, uiIconVolume3, uiIconVolumeDisabled, uiIconWaffle, uiIconWaffleOffice365, uiIconWaitlistConfirm, uiIconWaitlistConfirmMirrored, uiIconWarning, uiIconWarning12, uiIconWebPublish, uiIconWebsite, uiIconWeights, uiIconWhiteBoardApp16, uiIconWhiteBoardApp32, uiIconWifiEthernet, uiIconWindDirection, uiIconWindowEdit, uiIconWindowsLogo, uiIconWines, uiIconWipePhone, uiIconWordDocument, uiIconWordLogo, uiIconWordLogo16, uiIconWordLogoFill, uiIconWordLogoFill16, uiIconWordLogoInverse, uiIconWordLogoInverse16, uiIconWork, uiIconWorkFlow, uiIconWorkItem, uiIconWorkItemBar, uiIconWorkItemBarSolid, uiIconWorkItemBug, uiIconWorkforceManagement, uiIconWorld, uiIconWorldClock, uiIconYammerLogo, uiIconZipFolder, uiIconZoom, uiIconZoomIn, uiIconZoomOut, uiLabel, uiLink, uiList, uiListActionItem, uiListActions, uiListItem, uiMessageBanner, uiMessagebar as uiMessageBar, uiOverlay, uiPanel, uiPersona, uiPivot, uiPivotItem, uiProgressIndicator, uiSearchbox as uiSearchBox, uiSpinner, uiTextfield, uiTimePicker, uiToggle, uiTypeAhead };

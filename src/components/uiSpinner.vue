@@ -1,9 +1,10 @@
 <script>
+import { loadStyles } from '@microsoft/load-themed-styles';
 import Spinner from "office-ui-fabric-vue/src/components/Spinner/Spinner.vue";
 import { Spinner as fabricSpinner } from "office-ui-fabric-js/src/components/Spinner/Spinner"
 
 export default {
-    injectCss,
+    loadStyles,
     beforeMount(){
         this.$fabric = {
             Spinner : fabricSpinner

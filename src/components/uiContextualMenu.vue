@@ -1,10 +1,11 @@
 <script>
+import { loadStyles } from '@microsoft/load-themed-styles';
 import ContextualMenu from "office-ui-fabric-vue/src/components/contextual_menu/ContextualMenu.vue";
 import { ContextualMenu as fabricContextualMenu } from "office-ui-fabric-js/src/components/ContextualMenu/ContextualMenu";
 import { ContextualHost as fabricContextualHost } from "office-ui-fabric-js/src/components/ContextualHost/ContextualHost";
 
 export default {
-    injectCss,
+    loadStyles,
     beforeMount(){
         this.$fabric = {
             ContextualMenu : fabricContextualMenu
@@ -20,14 +21,14 @@ export default {
             }
 
             // set scopeId for contextualhost
-            setScopeIdForContextualHost(this$1.$refs.contextualMenu.parentElement.parentElement);
+            setScopeIdForContextualHost(this.$refs.contextualMenu.parentElement.parentElement);
 
             // scopeId for menuItems
             var menuItems = this.$refs.contextualMenu.querySelectorAll("[class^='ms-ContextualMenu']");
             Array.prototype.slice.call(menuItems).map(menuItem=>menuItem.setAttribute(this.$options._scopeId, ""));
             // Array.from(menuItems).map(menuItem=>menuItem.setAttribute(this.$options._scopeId, ""));
 
-            var subItems = this$1.contextualMenuInstance._container.querySelectorAll(".ms-ContextualMenu-item.ms-ContextualMenu-item--hasMenu");
+            var subItems = this.contextualMenuInstance._container.querySelectorAll(".ms-ContextualMenu-item.ms-ContextualMenu-item--hasMenu");
             // Array.from(subItems).map((subItem)=>{
             Array.prototype.slice.call(menuItems).map((subItem)=>{
                 subItem.addEventListener("click", ()=>{

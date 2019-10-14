@@ -110,8 +110,9 @@ const dateUtils = {
 }
 import { uiIconUp, uiIconDown, uiIconCalendar } from "../uiIcon";
 import Popper from 'vue-popperjs';
-import Moment from "moment";
-
+// import Moment from "moment";
+import parse from 'date-fns/parse'
+import { loadStyles } from '@microsoft/load-themed-styles';
 const locale = {
     "da" : {
         goToToday : "Gå til idag",
@@ -203,7 +204,7 @@ const locale = {
     }
 }
 export default {
-    injectCss, 
+    loadStyles, 
     components:{
         uiIconUp, 
         uiIconDown,
@@ -360,12 +361,21 @@ export default {
                 this.$emit("input", "");
                 return;
             }
-            var parsed = Moment(this.inputVal, this.localeObj.format.toUpperCase());
-            if(parsed.isValid()){
-                // this.pickerDate = parsed.toDate();
-                if(!dateUtils.compareDates(parsed.toDate(), this.value))
-                    this.$emit("input", parsed.toDate());
+
+            try{
+                var parsed = parse(this.inputVal, this.localeObj.format);
+                // this.pickerDate = parsed;
+                if(parsed != "Invalid Date" && !dateUtils.compareDates(parsed, this.value))
+                    this.$emit("input", parsed);
             }
+            catch(ex){}
+
+            // var parsed = Moment(this.inputVal, this.localeObj.format.toUpperCase());
+            // if(parsed.isValid()){
+            //     // this.pickerDate = parsed.toDate();
+            //     if(!dateUtils.compareDates(parsed.toDate(), this.value))
+            //         this.$emit("input", parsed.toDate());
+            // }
             // console.log("parsed", parsed);
         },
         selectDate(val){

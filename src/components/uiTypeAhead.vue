@@ -25,13 +25,14 @@
 </template>
 
 <script>
+import { loadStyles } from '@microsoft/load-themed-styles';
 import uiTextfield from "./uiTextfield.vue";
 import { uiIconChevronDownMed } from "./uiIcon";
 import Popper from 'vue-popperjs';
 import debounce from 'lodash.debounce';
 
 export default {
-    injectCss, 
+    loadStyles, 
     components:{
         uiTextfield, 
         uiIconChevronDownMed,
@@ -130,7 +131,7 @@ export default {
             pointer-events: none;
         }
 
-        /deep/ .ms-TextField-field {
+        ::v-deep .ms-TextField-field {
             padding-right: 32px;
         }
 

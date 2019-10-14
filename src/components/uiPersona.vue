@@ -1,9 +1,10 @@
 <script>
+import { loadStyles } from '@microsoft/load-themed-styles';
 import persona from "office-ui-fabric-vue/src/components/persona/persona.vue";
 import { Persona as fabricPersona } from "office-ui-fabric-js/src/components/persona/persona"
 
 export default {
-    injectCss,
+    loadStyles,
     beforeMount(){
         this.$fabric = {
             Persona : fabricPersona

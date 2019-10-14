@@ -1,9 +1,10 @@
 <script>
+import { loadStyles } from '@microsoft/load-themed-styles';
 import overlay from "office-ui-fabric-vue/src/components/Overlay/Overlay.vue";
 import { Overlay as fabricOverlay } from "office-ui-fabric-js/src/components/Overlay/Overlay"
 
 export default {
-    injectCss,
+    loadStyles,
     beforeMount(){
         this.$fabric = {
             Overlay : fabricOverlay

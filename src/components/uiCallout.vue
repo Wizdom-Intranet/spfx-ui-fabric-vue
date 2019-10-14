@@ -1,9 +1,10 @@
 <script>
+import { loadStyles } from '@microsoft/load-themed-styles';
 import callout from "office-ui-fabric-vue/src/components/callout/callout.vue";
 import { Callout as fabricCallout } from "office-ui-fabric-js/src/components/callout/callout"
 
 export default {
-    injectCss,
+    loadStyles,
     beforeMount(){
         this.$fabric = {
             Callout : fabricCallout
@@ -11,11 +12,11 @@ export default {
     },
     mounted(){
         this.$refs.calloutTrigger.addEventListener("click", ()=>{
-            var contextualHostElm = this$1.$refs.callout.parentElement.parentElement;
+            var contextualHostElm = this.$refs.callout.parentElement.parentElement;
             contextualHostElm.setAttribute(this.$options._scopeId,"");
             for(var i=0;i<contextualHostElm.children.length;i++)
                 contextualHostElm.children[i].setAttribute(this.$options._scopeId,"");
-            this$1.calloutInstance._contextualHost._openModal(); // recalculate position
+            this.calloutInstance._contextualHost._openModal(); // recalculate position
         });
     },
     extends :  callout
