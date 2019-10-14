@@ -5,7 +5,7 @@ import commonjs from 'rollup-plugin-commonjs';
 
 var configs = [
     {
-        input: ['./index.js'],
+        input: ['src/index.js'],
         output:[
             {
                 format:"es",
@@ -14,7 +14,7 @@ var configs = [
         ]
     },
     {
-        input: ['./index.js'],
+        input: ['src/index.js'],
         output:[
             {
                 format:"esm",
