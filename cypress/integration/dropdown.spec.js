@@ -9,7 +9,7 @@ context("Dropdown", () =>{
 
     it("Should be possible to change selection", ()=>{
         cy.get(".ms-Dropdown-title").first().click();
-        cy.get(".ms-Dropdown-item:nth-of-type(4)").click();
+        cy.get(".ms-Dropdown-item:nth-of-type(4)").first().click();
         cy.get("body").vrt("Dropdown - cow should be selected");
     });
 });

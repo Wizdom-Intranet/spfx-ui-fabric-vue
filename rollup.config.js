@@ -5,7 +5,7 @@ import commonjs from 'rollup-plugin-commonjs';
 
 var configs = [
     {
-        input: ['src/index.js'],
+        input: ['./index.js'],
         output:[
             {
                 format:"es",
@@ -14,7 +14,7 @@ var configs = [
         ]
     },
     {
-        input: ['src/index.js'],
+        input: ['./index.js'],
         output:[
             {
                 format:"esm",
@@ -50,6 +50,6 @@ export default configs.map(config=>({
                 "@babel/plugin-transform-object-assign",
                 "babel-plugin-array-includes"
             ]
-        })
+        }),
     ],
 }));
