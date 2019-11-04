@@ -20,7 +20,9 @@ var script = {
         src: "url(https://spoprod-a.akamaihd.net/files/fabric/assets/icons/fabric-icons-" + this.bundle + ".woff) format(\"woff\")"
       });
       window["wizstyle-font-" + this.bundle] = true;
-    } else console.log("skip loading font: " + this.bundle);
+    } // else
+    //     console.log("skip loading font: " + this.bundle);
+
 
     this.cl = window["wizstyle-class-" + this.bundle + this.name] || mergeStyles({
       displayName: this.$options._scopeId,

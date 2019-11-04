@@ -24,7 +24,6 @@ var __vue_staticRenderFns__ = [function () {var _vm=this;var _h=_vm.$createEleme
   const __vue_create_injector__ = function(context){ 
                 return function(scopeId, data)
                 {
-                    console.log("style inject");
                     if(window['wizstyle-'+scopeId])
                         return;
                     if(__vue_script__.loadStyles)

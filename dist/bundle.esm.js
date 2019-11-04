@@ -241,7 +241,6 @@ const __vue_script__$1 = script$1;
   const __vue_create_injector__ = function(context){ 
                 return function(scopeId, data)
                 {
-                    console.log("style inject");
                     if(window['wizstyle-'+scopeId])
                         return;
                     if(__vue_script__$1.loadStyles)
@@ -867,7 +866,6 @@ const __vue_script__$3 = script$3;
   const __vue_create_injector__$1 = function(context){ 
                 return function(scopeId, data)
                 {
-                    console.log("style inject");
                     if(window['wizstyle-'+scopeId])
                         return;
                     if(__vue_script__$3.loadStyles)
@@ -1088,7 +1086,6 @@ const __vue_script__$5 = script$5;
   const __vue_create_injector__$2 = function(context){ 
                 return function(scopeId, data)
                 {
-                    console.log("style inject");
                     if(window['wizstyle-'+scopeId])
                         return;
                     if(__vue_script__$5.loadStyles)
@@ -1471,7 +1468,6 @@ const __vue_script__$9 = script$9;
   const __vue_create_injector__$3 = function(context){ 
                 return function(scopeId, data)
                 {
-                    console.log("style inject");
                     if(window['wizstyle-'+scopeId])
                         return;
                     if(__vue_script__$9.loadStyles)
@@ -1579,7 +1575,6 @@ var __vue_staticRenderFns__$5 = [];
   const __vue_create_injector__$4 = function(context){ 
                 return function(scopeId, data)
                 {
-                    console.log("style inject");
                     if(window['wizstyle-'+scopeId])
                         return;
                     if(__vue_script__$a.loadStyles)
@@ -1797,7 +1792,6 @@ const __vue_script__$b = script$b;
   const __vue_create_injector__$5 = function(context){ 
                 return function(scopeId, data)
                 {
-                    console.log("style inject");
                     if(window['wizstyle-'+scopeId])
                         return;
                     if(__vue_script__$b.loadStyles)
@@ -2715,7 +2709,6 @@ const __vue_script__$f = script$f;
   const __vue_create_injector__$6 = function(context){ 
                 return function(scopeId, data)
                 {
-                    console.log("style inject");
                     if(window['wizstyle-'+scopeId])
                         return;
                     if(__vue_script__$f.loadStyles)
@@ -2828,7 +2821,6 @@ var __vue_staticRenderFns__$9 = [];
   const __vue_create_injector__$7 = function(context){ 
                 return function(scopeId, data)
                 {
-                    console.log("style inject");
                     if(window['wizstyle-'+scopeId])
                         return;
                     if(__vue_script__$h.loadStyles)
@@ -3092,7 +3084,6 @@ const __vue_script__$j = script$j;
   const __vue_create_injector__$8 = function(context){ 
                 return function(scopeId, data)
                 {
-                    console.log("style inject");
                     if(window['wizstyle-'+scopeId])
                         return;
                     if(__vue_script__$j.loadStyles)
@@ -3612,7 +3603,6 @@ const __vue_script__$l = script$l;
   const __vue_create_injector__$9 = function(context){ 
                 return function(scopeId, data)
                 {
-                    console.log("style inject");
                     if(window['wizstyle-'+scopeId])
                         return;
                     if(__vue_script__$l.loadStyles)
@@ -3806,7 +3796,6 @@ const __vue_script__$p = script$p;
   const __vue_create_injector__$a = function(context){ 
                 return function(scopeId, data)
                 {
-                    console.log("style inject");
                     if(window['wizstyle-'+scopeId])
                         return;
                     if(__vue_script__$p.loadStyles)
@@ -3905,7 +3894,6 @@ const __vue_script__$r = script$r;
   const __vue_create_injector__$b = function(context){ 
                 return function(scopeId, data)
                 {
-                    console.log("style inject");
                     if(window['wizstyle-'+scopeId])
                         return;
                     if(__vue_script__$r.loadStyles)
@@ -3993,7 +3981,6 @@ const __vue_script__$t = script$t;
   const __vue_create_injector__$c = function(context){ 
                 return function(scopeId, data)
                 {
-                    console.log("style inject");
                     if(window['wizstyle-'+scopeId])
                         return;
                     if(__vue_script__$t.loadStyles)
@@ -4266,7 +4253,6 @@ const __vue_script__$z = script$z;
   const __vue_create_injector__$d = function(context){ 
                 return function(scopeId, data)
                 {
-                    console.log("style inject");
                     if(window['wizstyle-'+scopeId])
                         return;
                     if(__vue_script__$z.loadStyles)
@@ -4365,7 +4351,6 @@ var __vue_staticRenderFns__$l = [];
   const __vue_create_injector__$e = function(context){ 
                 return function(scopeId, data)
                 {
-                    console.log("style inject");
                     if(window['wizstyle-'+scopeId])
                         return;
                     if(__vue_script__$B.loadStyles)
@@ -4630,7 +4615,6 @@ var __vue_staticRenderFns__$n = [function () {var _vm=this;var _h=_vm.$createEle
   const __vue_create_injector__$f = function(context){ 
                 return function(scopeId, data)
                 {
-                    console.log("style inject");
                     if(window['wizstyle-'+scopeId])
                         return;
                     if(__vue_script__$D.loadStyles)
@@ -4772,7 +4756,6 @@ const __vue_script__$F = script$F;
   const __vue_create_injector__$g = function(context){ 
                 return function(scopeId, data)
                 {
-                    console.log("style inject");
                     if(window['wizstyle-'+scopeId])
                         return;
                     if(__vue_script__$F.loadStyles)
@@ -4959,7 +4942,6 @@ const __vue_script__$H = script$H;
   const __vue_create_injector__$h = function(context){ 
                 return function(scopeId, data)
                 {
-                    console.log("style inject");
                     if(window['wizstyle-'+scopeId])
                         return;
                     if(__vue_script__$H.loadStyles)
@@ -5577,7 +5559,6 @@ const __vue_script__$J = script$J;
   const __vue_create_injector__$i = function(context){ 
                 return function(scopeId, data)
                 {
-                    console.log("style inject");
                     if(window['wizstyle-'+scopeId])
                         return;
                     if(__vue_script__$J.loadStyles)
@@ -5767,7 +5748,6 @@ const __vue_script__$L = script$L;
   const __vue_create_injector__$j = function(context){ 
                 return function(scopeId, data)
                 {
-                    console.log("style inject");
                     if(window['wizstyle-'+scopeId])
                         return;
                     if(__vue_script__$L.loadStyles)
@@ -6019,7 +5999,6 @@ const __vue_script__$P = script$P;
   const __vue_create_injector__$k = function(context){ 
                 return function(scopeId, data)
                 {
-                    console.log("style inject");
                     if(window['wizstyle-'+scopeId])
                         return;
                     if(__vue_script__$P.loadStyles)
@@ -6169,7 +6148,6 @@ const __vue_script__$R = script$R;
   const __vue_create_injector__$l = function(context){ 
                 return function(scopeId, data)
                 {
-                    console.log("style inject");
                     if(window['wizstyle-'+scopeId])
                         return;
                     if(__vue_script__$R.loadStyles)
@@ -6417,7 +6395,6 @@ const __vue_script__$T = script$T;
   const __vue_create_injector__$m = function(context){ 
                 return function(scopeId, data)
                 {
-                    console.log("style inject");
                     if(window['wizstyle-'+scopeId])
                         return;
                     if(__vue_script__$T.loadStyles)
@@ -6611,7 +6588,6 @@ const __vue_script__$V = script$V;
   const __vue_create_injector__$n = function(context){ 
                 return function(scopeId, data)
                 {
-                    console.log("style inject");
                     if(window['wizstyle-'+scopeId])
                         return;
                     if(__vue_script__$V.loadStyles)
@@ -6754,7 +6730,6 @@ const __vue_script__$X = script$X;
   const __vue_create_injector__$o = function(context){ 
                 return function(scopeId, data)
                 {
-                    console.log("style inject");
                     if(window['wizstyle-'+scopeId])
                         return;
                     if(__vue_script__$X.loadStyles)
@@ -8510,7 +8485,6 @@ var __vue_staticRenderFns__$z = [];
   const __vue_create_injector__$p = function(context){ 
                 return function(scopeId, data)
                 {
-                    console.log("style inject");
                     if(window['wizstyle-'+scopeId])
                         return;
                     if(__vue_script__$Z.loadStyles)
@@ -8553,7 +8527,9 @@ var script$_ = {
         src: "url(https://spoprod-a.akamaihd.net/files/fabric/assets/icons/fabric-icons-" + this.bundle + ".woff) format(\"woff\")"
       });
       window["wizstyle-font-" + this.bundle] = true;
-    } else console.log("skip loading font: " + this.bundle);
+    } // else
+    //     console.log("skip loading font: " + this.bundle);
+
 
     this.cl = window["wizstyle-class-" + this.bundle + this.name] || mergeStyles({
       displayName: this.$options._scopeId,
@@ -29846,7 +29822,6 @@ var __vue_staticRenderFns__$B = [];
   const __vue_create_injector__$q = function(context){ 
                 return function(scopeId, data)
                 {
-                    console.log("style inject");
                     if(window['wizstyle-'+scopeId])
                         return;
                     if(__vue_script__$$.loadStyles)
@@ -29979,7 +29954,6 @@ var __vue_staticRenderFns__$C = [];
   const __vue_create_injector__$r = function(context){ 
                 return function(scopeId, data)
                 {
-                    console.log("style inject");
                     if(window['wizstyle-'+scopeId])
                         return;
                     if(__vue_script__$10.loadStyles)

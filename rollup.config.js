@@ -42,7 +42,6 @@ export default configs.map(config=>({
             styleInjector:`function(context){ 
                 return function(scopeId, data)
                 {
-                    console.log("style inject");
                     if(window['wizstyle-'+scopeId])
                         return;
                     if(__vue_script__.loadStyles)
