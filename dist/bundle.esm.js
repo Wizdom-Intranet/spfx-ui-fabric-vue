@@ -238,7 +238,17 @@ const __vue_script__$1 = script$1;
   /* functional template */
   const __vue_is_functional_template__$1 = undefined;
   /* style inject */
-  const __vue_create_injector__ = function(context){ return function(scopeId, data){__vue_script__$1.loadStyles && __vue_script__$1.loadStyles(data.source);}};
+  const __vue_create_injector__ = function(context){ 
+                return function(scopeId, data)
+                {
+                    console.log("style inject");
+                    if(window['wizstyle-'+scopeId])
+                        return;
+                    if(__vue_script__$1.loadStyles)
+                        __vue_script__$1.loadStyles(data.source);
+                    window['wizstyle-'+scopeId]=true;
+                }
+            };
   /* style inject SSR */
   
 
@@ -854,7 +864,17 @@ const __vue_script__$3 = script$3;
   /* functional template */
   const __vue_is_functional_template__$3 = undefined;
   /* style inject */
-  const __vue_create_injector__$1 = function(context){ return function(scopeId, data){__vue_script__$3.loadStyles && __vue_script__$3.loadStyles(data.source);}};
+  const __vue_create_injector__$1 = function(context){ 
+                return function(scopeId, data)
+                {
+                    console.log("style inject");
+                    if(window['wizstyle-'+scopeId])
+                        return;
+                    if(__vue_script__$3.loadStyles)
+                        __vue_script__$3.loadStyles(data.source);
+                    window['wizstyle-'+scopeId]=true;
+                }
+            };
   /* style inject SSR */
   
 
@@ -1065,7 +1085,17 @@ const __vue_script__$5 = script$5;
   /* functional template */
   const __vue_is_functional_template__$5 = undefined;
   /* style inject */
-  const __vue_create_injector__$2 = function(context){ return function(scopeId, data){__vue_script__$5.loadStyles && __vue_script__$5.loadStyles(data.source);}};
+  const __vue_create_injector__$2 = function(context){ 
+                return function(scopeId, data)
+                {
+                    console.log("style inject");
+                    if(window['wizstyle-'+scopeId])
+                        return;
+                    if(__vue_script__$5.loadStyles)
+                        __vue_script__$5.loadStyles(data.source);
+                    window['wizstyle-'+scopeId]=true;
+                }
+            };
   /* style inject SSR */
   
 
@@ -1438,7 +1468,17 @@ const __vue_script__$9 = script$9;
   /* functional template */
   const __vue_is_functional_template__$9 = undefined;
   /* style inject */
-  const __vue_create_injector__$3 = function(context){ return function(scopeId, data){__vue_script__$9.loadStyles && __vue_script__$9.loadStyles(data.source);}};
+  const __vue_create_injector__$3 = function(context){ 
+                return function(scopeId, data)
+                {
+                    console.log("style inject");
+                    if(window['wizstyle-'+scopeId])
+                        return;
+                    if(__vue_script__$9.loadStyles)
+                        __vue_script__$9.loadStyles(data.source);
+                    window['wizstyle-'+scopeId]=true;
+                }
+            };
   /* style inject SSR */
   
 
@@ -1536,7 +1576,17 @@ var __vue_staticRenderFns__$5 = [];
   /* functional template */
   const __vue_is_functional_template__$a = false;
   /* style inject */
-  const __vue_create_injector__$4 = function(context){ return function(scopeId, data){__vue_script__$a.loadStyles && __vue_script__$a.loadStyles(data.source);}};
+  const __vue_create_injector__$4 = function(context){ 
+                return function(scopeId, data)
+                {
+                    console.log("style inject");
+                    if(window['wizstyle-'+scopeId])
+                        return;
+                    if(__vue_script__$a.loadStyles)
+                        __vue_script__$a.loadStyles(data.source);
+                    window['wizstyle-'+scopeId]=true;
+                }
+            };
   /* style inject SSR */
   
 
@@ -1744,7 +1794,17 @@ const __vue_script__$b = script$b;
   /* functional template */
   const __vue_is_functional_template__$b = undefined;
   /* style inject */
-  const __vue_create_injector__$5 = function(context){ return function(scopeId, data){__vue_script__$b.loadStyles && __vue_script__$b.loadStyles(data.source);}};
+  const __vue_create_injector__$5 = function(context){ 
+                return function(scopeId, data)
+                {
+                    console.log("style inject");
+                    if(window['wizstyle-'+scopeId])
+                        return;
+                    if(__vue_script__$b.loadStyles)
+                        __vue_script__$b.loadStyles(data.source);
+                    window['wizstyle-'+scopeId]=true;
+                }
+            };
   /* style inject SSR */
   
 
@@ -2652,7 +2712,17 @@ const __vue_script__$f = script$f;
   /* functional template */
   const __vue_is_functional_template__$f = undefined;
   /* style inject */
-  const __vue_create_injector__$6 = function(context){ return function(scopeId, data){__vue_script__$f.loadStyles && __vue_script__$f.loadStyles(data.source);}};
+  const __vue_create_injector__$6 = function(context){ 
+                return function(scopeId, data)
+                {
+                    console.log("style inject");
+                    if(window['wizstyle-'+scopeId])
+                        return;
+                    if(__vue_script__$f.loadStyles)
+                        __vue_script__$f.loadStyles(data.source);
+                    window['wizstyle-'+scopeId]=true;
+                }
+            };
   /* style inject SSR */
   
 
@@ -2755,7 +2825,17 @@ var __vue_staticRenderFns__$9 = [];
   /* functional template */
   const __vue_is_functional_template__$h = false;
   /* style inject */
-  const __vue_create_injector__$7 = function(context){ return function(scopeId, data){__vue_script__$h.loadStyles && __vue_script__$h.loadStyles(data.source);}};
+  const __vue_create_injector__$7 = function(context){ 
+                return function(scopeId, data)
+                {
+                    console.log("style inject");
+                    if(window['wizstyle-'+scopeId])
+                        return;
+                    if(__vue_script__$h.loadStyles)
+                        __vue_script__$h.loadStyles(data.source);
+                    window['wizstyle-'+scopeId]=true;
+                }
+            };
   /* style inject SSR */
   
 
@@ -3009,7 +3089,17 @@ const __vue_script__$j = script$j;
   /* functional template */
   const __vue_is_functional_template__$j = undefined;
   /* style inject */
-  const __vue_create_injector__$8 = function(context){ return function(scopeId, data){__vue_script__$j.loadStyles && __vue_script__$j.loadStyles(data.source);}};
+  const __vue_create_injector__$8 = function(context){ 
+                return function(scopeId, data)
+                {
+                    console.log("style inject");
+                    if(window['wizstyle-'+scopeId])
+                        return;
+                    if(__vue_script__$j.loadStyles)
+                        __vue_script__$j.loadStyles(data.source);
+                    window['wizstyle-'+scopeId]=true;
+                }
+            };
   /* style inject SSR */
   
 
@@ -3519,7 +3609,17 @@ const __vue_script__$l = script$l;
   /* functional template */
   const __vue_is_functional_template__$l = undefined;
   /* style inject */
-  const __vue_create_injector__$9 = function(context){ return function(scopeId, data){__vue_script__$l.loadStyles && __vue_script__$l.loadStyles(data.source);}};
+  const __vue_create_injector__$9 = function(context){ 
+                return function(scopeId, data)
+                {
+                    console.log("style inject");
+                    if(window['wizstyle-'+scopeId])
+                        return;
+                    if(__vue_script__$l.loadStyles)
+                        __vue_script__$l.loadStyles(data.source);
+                    window['wizstyle-'+scopeId]=true;
+                }
+            };
   /* style inject SSR */
   
 
@@ -3703,7 +3803,17 @@ const __vue_script__$p = script$p;
   /* functional template */
   const __vue_is_functional_template__$p = undefined;
   /* style inject */
-  const __vue_create_injector__$a = function(context){ return function(scopeId, data){__vue_script__$p.loadStyles && __vue_script__$p.loadStyles(data.source);}};
+  const __vue_create_injector__$a = function(context){ 
+                return function(scopeId, data)
+                {
+                    console.log("style inject");
+                    if(window['wizstyle-'+scopeId])
+                        return;
+                    if(__vue_script__$p.loadStyles)
+                        __vue_script__$p.loadStyles(data.source);
+                    window['wizstyle-'+scopeId]=true;
+                }
+            };
   /* style inject SSR */
   
 
@@ -3792,7 +3902,17 @@ const __vue_script__$r = script$r;
   /* functional template */
   const __vue_is_functional_template__$r = undefined;
   /* style inject */
-  const __vue_create_injector__$b = function(context){ return function(scopeId, data){__vue_script__$r.loadStyles && __vue_script__$r.loadStyles(data.source);}};
+  const __vue_create_injector__$b = function(context){ 
+                return function(scopeId, data)
+                {
+                    console.log("style inject");
+                    if(window['wizstyle-'+scopeId])
+                        return;
+                    if(__vue_script__$r.loadStyles)
+                        __vue_script__$r.loadStyles(data.source);
+                    window['wizstyle-'+scopeId]=true;
+                }
+            };
   /* style inject SSR */
   
 
@@ -3870,7 +3990,17 @@ const __vue_script__$t = script$t;
   /* functional template */
   const __vue_is_functional_template__$t = undefined;
   /* style inject */
-  const __vue_create_injector__$c = function(context){ return function(scopeId, data){__vue_script__$t.loadStyles && __vue_script__$t.loadStyles(data.source);}};
+  const __vue_create_injector__$c = function(context){ 
+                return function(scopeId, data)
+                {
+                    console.log("style inject");
+                    if(window['wizstyle-'+scopeId])
+                        return;
+                    if(__vue_script__$t.loadStyles)
+                        __vue_script__$t.loadStyles(data.source);
+                    window['wizstyle-'+scopeId]=true;
+                }
+            };
   /* style inject SSR */
   
 
@@ -4133,7 +4263,17 @@ const __vue_script__$z = script$z;
   /* functional template */
   const __vue_is_functional_template__$z = undefined;
   /* style inject */
-  const __vue_create_injector__$d = function(context){ return function(scopeId, data){__vue_script__$z.loadStyles && __vue_script__$z.loadStyles(data.source);}};
+  const __vue_create_injector__$d = function(context){ 
+                return function(scopeId, data)
+                {
+                    console.log("style inject");
+                    if(window['wizstyle-'+scopeId])
+                        return;
+                    if(__vue_script__$z.loadStyles)
+                        __vue_script__$z.loadStyles(data.source);
+                    window['wizstyle-'+scopeId]=true;
+                }
+            };
   /* style inject SSR */
   
 
@@ -4222,7 +4362,17 @@ var __vue_staticRenderFns__$l = [];
   /* functional template */
   const __vue_is_functional_template__$B = false;
   /* style inject */
-  const __vue_create_injector__$e = function(context){ return function(scopeId, data){__vue_script__$B.loadStyles && __vue_script__$B.loadStyles(data.source);}};
+  const __vue_create_injector__$e = function(context){ 
+                return function(scopeId, data)
+                {
+                    console.log("style inject");
+                    if(window['wizstyle-'+scopeId])
+                        return;
+                    if(__vue_script__$B.loadStyles)
+                        __vue_script__$B.loadStyles(data.source);
+                    window['wizstyle-'+scopeId]=true;
+                }
+            };
   /* style inject SSR */
   
 
@@ -4477,7 +4627,17 @@ var __vue_staticRenderFns__$n = [function () {var _vm=this;var _h=_vm.$createEle
   /* functional template */
   const __vue_is_functional_template__$D = false;
   /* style inject */
-  const __vue_create_injector__$f = function(context){ return function(scopeId, data){__vue_script__$D.loadStyles && __vue_script__$D.loadStyles(data.source);}};
+  const __vue_create_injector__$f = function(context){ 
+                return function(scopeId, data)
+                {
+                    console.log("style inject");
+                    if(window['wizstyle-'+scopeId])
+                        return;
+                    if(__vue_script__$D.loadStyles)
+                        __vue_script__$D.loadStyles(data.source);
+                    window['wizstyle-'+scopeId]=true;
+                }
+            };
   /* style inject SSR */
   
 
@@ -4609,7 +4769,17 @@ const __vue_script__$F = script$F;
   /* functional template */
   const __vue_is_functional_template__$F = undefined;
   /* style inject */
-  const __vue_create_injector__$g = function(context){ return function(scopeId, data){__vue_script__$F.loadStyles && __vue_script__$F.loadStyles(data.source);}};
+  const __vue_create_injector__$g = function(context){ 
+                return function(scopeId, data)
+                {
+                    console.log("style inject");
+                    if(window['wizstyle-'+scopeId])
+                        return;
+                    if(__vue_script__$F.loadStyles)
+                        __vue_script__$F.loadStyles(data.source);
+                    window['wizstyle-'+scopeId]=true;
+                }
+            };
   /* style inject SSR */
   
 
@@ -4786,7 +4956,17 @@ const __vue_script__$H = script$H;
   /* functional template */
   const __vue_is_functional_template__$H = undefined;
   /* style inject */
-  const __vue_create_injector__$h = function(context){ return function(scopeId, data){__vue_script__$H.loadStyles && __vue_script__$H.loadStyles(data.source);}};
+  const __vue_create_injector__$h = function(context){ 
+                return function(scopeId, data)
+                {
+                    console.log("style inject");
+                    if(window['wizstyle-'+scopeId])
+                        return;
+                    if(__vue_script__$H.loadStyles)
+                        __vue_script__$H.loadStyles(data.source);
+                    window['wizstyle-'+scopeId]=true;
+                }
+            };
   /* style inject SSR */
   
 
@@ -5394,7 +5574,17 @@ const __vue_script__$J = script$J;
   /* functional template */
   const __vue_is_functional_template__$J = undefined;
   /* style inject */
-  const __vue_create_injector__$i = function(context){ return function(scopeId, data){__vue_script__$J.loadStyles && __vue_script__$J.loadStyles(data.source);}};
+  const __vue_create_injector__$i = function(context){ 
+                return function(scopeId, data)
+                {
+                    console.log("style inject");
+                    if(window['wizstyle-'+scopeId])
+                        return;
+                    if(__vue_script__$J.loadStyles)
+                        __vue_script__$J.loadStyles(data.source);
+                    window['wizstyle-'+scopeId]=true;
+                }
+            };
   /* style inject SSR */
   
 
@@ -5574,7 +5764,17 @@ const __vue_script__$L = script$L;
   /* functional template */
   const __vue_is_functional_template__$L = undefined;
   /* style inject */
-  const __vue_create_injector__$j = function(context){ return function(scopeId, data){__vue_script__$L.loadStyles && __vue_script__$L.loadStyles(data.source);}};
+  const __vue_create_injector__$j = function(context){ 
+                return function(scopeId, data)
+                {
+                    console.log("style inject");
+                    if(window['wizstyle-'+scopeId])
+                        return;
+                    if(__vue_script__$L.loadStyles)
+                        __vue_script__$L.loadStyles(data.source);
+                    window['wizstyle-'+scopeId]=true;
+                }
+            };
   /* style inject SSR */
   
 
@@ -5816,7 +6016,17 @@ const __vue_script__$P = script$P;
   /* functional template */
   const __vue_is_functional_template__$P = undefined;
   /* style inject */
-  const __vue_create_injector__$k = function(context){ return function(scopeId, data){__vue_script__$P.loadStyles && __vue_script__$P.loadStyles(data.source);}};
+  const __vue_create_injector__$k = function(context){ 
+                return function(scopeId, data)
+                {
+                    console.log("style inject");
+                    if(window['wizstyle-'+scopeId])
+                        return;
+                    if(__vue_script__$P.loadStyles)
+                        __vue_script__$P.loadStyles(data.source);
+                    window['wizstyle-'+scopeId]=true;
+                }
+            };
   /* style inject SSR */
   
 
@@ -5956,7 +6166,17 @@ const __vue_script__$R = script$R;
   /* functional template */
   const __vue_is_functional_template__$R = undefined;
   /* style inject */
-  const __vue_create_injector__$l = function(context){ return function(scopeId, data){__vue_script__$R.loadStyles && __vue_script__$R.loadStyles(data.source);}};
+  const __vue_create_injector__$l = function(context){ 
+                return function(scopeId, data)
+                {
+                    console.log("style inject");
+                    if(window['wizstyle-'+scopeId])
+                        return;
+                    if(__vue_script__$R.loadStyles)
+                        __vue_script__$R.loadStyles(data.source);
+                    window['wizstyle-'+scopeId]=true;
+                }
+            };
   /* style inject SSR */
   
 
@@ -6194,7 +6414,17 @@ const __vue_script__$T = script$T;
   /* functional template */
   const __vue_is_functional_template__$T = undefined;
   /* style inject */
-  const __vue_create_injector__$m = function(context){ return function(scopeId, data){__vue_script__$T.loadStyles && __vue_script__$T.loadStyles(data.source);}};
+  const __vue_create_injector__$m = function(context){ 
+                return function(scopeId, data)
+                {
+                    console.log("style inject");
+                    if(window['wizstyle-'+scopeId])
+                        return;
+                    if(__vue_script__$T.loadStyles)
+                        __vue_script__$T.loadStyles(data.source);
+                    window['wizstyle-'+scopeId]=true;
+                }
+            };
   /* style inject SSR */
   
 
@@ -6378,7 +6608,17 @@ const __vue_script__$V = script$V;
   /* functional template */
   const __vue_is_functional_template__$V = undefined;
   /* style inject */
-  const __vue_create_injector__$n = function(context){ return function(scopeId, data){__vue_script__$V.loadStyles && __vue_script__$V.loadStyles(data.source);}};
+  const __vue_create_injector__$n = function(context){ 
+                return function(scopeId, data)
+                {
+                    console.log("style inject");
+                    if(window['wizstyle-'+scopeId])
+                        return;
+                    if(__vue_script__$V.loadStyles)
+                        __vue_script__$V.loadStyles(data.source);
+                    window['wizstyle-'+scopeId]=true;
+                }
+            };
   /* style inject SSR */
   
 
@@ -6511,7 +6751,17 @@ const __vue_script__$X = script$X;
   /* functional template */
   const __vue_is_functional_template__$X = undefined;
   /* style inject */
-  const __vue_create_injector__$o = function(context){ return function(scopeId, data){__vue_script__$X.loadStyles && __vue_script__$X.loadStyles(data.source);}};
+  const __vue_create_injector__$o = function(context){ 
+                return function(scopeId, data)
+                {
+                    console.log("style inject");
+                    if(window['wizstyle-'+scopeId])
+                        return;
+                    if(__vue_script__$X.loadStyles)
+                        __vue_script__$X.loadStyles(data.source);
+                    window['wizstyle-'+scopeId]=true;
+                }
+            };
   /* style inject SSR */
   
 
@@ -8257,7 +8507,17 @@ var __vue_staticRenderFns__$z = [];
   /* functional template */
   const __vue_is_functional_template__$Z = false;
   /* style inject */
-  const __vue_create_injector__$p = function(context){ return function(scopeId, data){__vue_script__$Z.loadStyles && __vue_script__$Z.loadStyles(data.source);}};
+  const __vue_create_injector__$p = function(context){ 
+                return function(scopeId, data)
+                {
+                    console.log("style inject");
+                    if(window['wizstyle-'+scopeId])
+                        return;
+                    if(__vue_script__$Z.loadStyles)
+                        __vue_script__$Z.loadStyles(data.source);
+                    window['wizstyle-'+scopeId]=true;
+                }
+            };
   /* style inject SSR */
   
 
@@ -8287,11 +8547,15 @@ var script$_ = {
   },
   mounted: function mounted() {
 
-    fontFace({
-      fontFamily: "FabricMDL2Icons-" + this.bundle,
-      src: "url(https://spoprod-a.akamaihd.net/files/fabric/assets/icons/fabric-icons-" + this.bundle + ".woff) format(\"woff\")"
-    });
-    this.cl = mergeStyles({
+    if (!window["wizstyle-font-" + this.bundle]) {
+      fontFace({
+        fontFamily: "FabricMDL2Icons-" + this.bundle,
+        src: "url(https://spoprod-a.akamaihd.net/files/fabric/assets/icons/fabric-icons-" + this.bundle + ".woff) format(\"woff\")"
+      });
+      window["wizstyle-font-" + this.bundle] = true;
+    } else console.log("skip loading font: " + this.bundle);
+
+    this.cl = window["wizstyle-class-" + this.bundle + this.name] || mergeStyles({
       displayName: this.$options._scopeId,
       display: 'inline-block',
       fontStyle: 'normal',
@@ -8304,6 +8568,7 @@ var script$_ = {
         }
       }
     });
+    window["wizstyle-class-" + this.bundle + this.name] = this.cl;
   }
 };
 
@@ -29578,7 +29843,17 @@ var __vue_staticRenderFns__$B = [];
   /* functional template */
   const __vue_is_functional_template__$$ = false;
   /* style inject */
-  const __vue_create_injector__$q = function(context){ return function(scopeId, data){__vue_script__$$.loadStyles && __vue_script__$$.loadStyles(data.source);}};
+  const __vue_create_injector__$q = function(context){ 
+                return function(scopeId, data)
+                {
+                    console.log("style inject");
+                    if(window['wizstyle-'+scopeId])
+                        return;
+                    if(__vue_script__$$.loadStyles)
+                        __vue_script__$$.loadStyles(data.source);
+                    window['wizstyle-'+scopeId]=true;
+                }
+            };
   /* style inject SSR */
   
 
@@ -29701,7 +29976,17 @@ var __vue_staticRenderFns__$C = [];
   /* functional template */
   const __vue_is_functional_template__$10 = false;
   /* style inject */
-  const __vue_create_injector__$r = function(context){ return function(scopeId, data){__vue_script__$10.loadStyles && __vue_script__$10.loadStyles(data.source);}};
+  const __vue_create_injector__$r = function(context){ 
+                return function(scopeId, data)
+                {
+                    console.log("style inject");
+                    if(window['wizstyle-'+scopeId])
+                        return;
+                    if(__vue_script__$10.loadStyles)
+                        __vue_script__$10.loadStyles(data.source);
+                    window['wizstyle-'+scopeId]=true;
+                }
+            };
   /* style inject SSR */
   
 

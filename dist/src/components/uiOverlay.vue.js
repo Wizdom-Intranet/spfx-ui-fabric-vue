@@ -19,7 +19,17 @@ const __vue_script__ = script;
   /* functional template */
   const __vue_is_functional_template__ = undefined;
   /* style inject */
-  const __vue_create_injector__ = function(context){ return function(scopeId, data){__vue_script__.loadStyles && __vue_script__.loadStyles(data.source);}};
+  const __vue_create_injector__ = function(context){ 
+                return function(scopeId, data)
+                {
+                    console.log("style inject");
+                    if(window['wizstyle-'+scopeId])
+                        return;
+                    if(__vue_script__.loadStyles)
+                        __vue_script__.loadStyles(data.source);
+                    window['wizstyle-'+scopeId]=true;
+                }
+            };
   /* style inject SSR */
   
 
