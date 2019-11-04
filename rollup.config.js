@@ -37,7 +37,19 @@ export default configs.map(config=>({
             ]
         }),
         vue({ 
-            styleInjector:"function(context){ return function(scopeId, data){__vue_script__.loadStyles && __vue_script__.loadStyles(data.source)}}",
+            // styleInjector:"function(context){ return function(scopeId, data){__vue_script__.loadStyles && __vue_script__.loadStyles(data.source)}}",
+            //styleInjector:"function(context){ return function(scopeId, data){if(window['wizstyle'+scopeId])return;__vue_script__.loadStyles && __vue_script__.loadStyles(data.source);window['wizstyle'+scopeId]=true}}",
+            styleInjector:`function(context){ 
+                return function(scopeId, data)
+                {
+                    console.log("style inject");
+                    if(window['wizstyle-'+scopeId])
+                        return;
+                    if(__vue_script__.loadStyles)
+                        __vue_script__.loadStyles(data.source);
+                    window['wizstyle-'+scopeId]=true;
+                }
+            }`,
             template:{
                 isProduction:true,
             }
