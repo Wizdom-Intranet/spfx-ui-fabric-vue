@@ -22,7 +22,6 @@ const __vue_script__ = script;
   const __vue_create_injector__ = function(context){ 
                 return function(scopeId, data)
                 {
-                    console.log("style inject");
                     if(window['wizstyle-'+scopeId])
                         return;
                     if(__vue_script__.loadStyles)
