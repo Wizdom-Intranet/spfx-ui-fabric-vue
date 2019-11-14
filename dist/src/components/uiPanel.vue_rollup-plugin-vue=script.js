@@ -19,7 +19,7 @@ var script = {
   beforeDestroy: function beforeDestroy() {
     if (this.panelInstance != null) this.panelInstance.dismiss();
   },
-  extends: panel
+  "extends": panel
 };
 
 export default script;

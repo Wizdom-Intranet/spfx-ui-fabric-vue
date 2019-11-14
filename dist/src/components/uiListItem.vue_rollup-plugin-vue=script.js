@@ -3,7 +3,7 @@ import ListItem from '../../node_modules/office-ui-fabric-vue/src/components/Lis
 
 var script = {
   loadStyles: loadStyles,
-  extends: ListItem
+  "extends": ListItem
 };
 
 export default script;

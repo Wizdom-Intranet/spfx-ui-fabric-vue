@@ -16,7 +16,8 @@ var script = {
   'display', //String that decides what attribute on the options is used for display and typeahead
   'placeholderText', //String to use as placeholder text
   'label', //Label
-  'autoselectOff'],
+  'autoselectOff' //Whether to autoselect a matching option on user input, without user must click in the dropdown. Autoselect on by default.
+  ],
   data: function data() {
     return {
       selected: null,

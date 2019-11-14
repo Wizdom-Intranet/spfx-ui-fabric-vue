@@ -9,7 +9,7 @@ var script = {
       return !!this.$slots['icon'];
     }
   },
-  extends: MessageBar
+  "extends": MessageBar
 };
 
 export default script;

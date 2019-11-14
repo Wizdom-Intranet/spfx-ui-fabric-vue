@@ -9,7 +9,7 @@ var script = {
       CommandBar: CommandBar
     };
   },
-  extends: commandbar
+  "extends": commandbar
 };
 
 export default script;

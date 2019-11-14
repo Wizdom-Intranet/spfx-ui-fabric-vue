@@ -9,7 +9,7 @@ var script = {
       TextField: TextField
     };
   },
-  extends: textField
+  "extends": textField
 };
 
 export default script;
