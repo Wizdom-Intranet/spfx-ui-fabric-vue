@@ -33,7 +33,7 @@
     "office-ui-fabric-js": "git+https://github.com/Wizdom-Intranet/office-ui-fabric-js.git",
     "office-ui-fabric-vue": "git+https://github.com/Wizdom-Intranet/office-ui-fabric-vue.git",
     "spfx-uifabric-themes": "^0.2.1",
-    "vue-popperjs": "^2.0.4",
+    "vue-popperjs": "^2.2.0",
     "vuejs-datepicker": "^1.5.4"
   },
   "devDependencies": {

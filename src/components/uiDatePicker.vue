@@ -272,15 +272,9 @@ export default {
                             // left or rightside of the input
                             var right = 0;
                             
-                            if(input.width + input.x - popper.width > 0)
+                            if (popper.x + popper.width + input.width >= windowWidth)
                                 right = 0-popper.width + input.width;
-
-                            // if it still overflows the right side of the screen, move it left, until it dosnt
-                            if(right == 0 && input.x + popper.width > windowWidth)
-                            {
-                                right = 0-(input.x + popper.width-windowWidth);
-                            }
-
+    
                             // apply style
                             data.instance.popper.style.transform = "translate(" + right + "px, " + top + "px)";
                         }
@@ -450,7 +444,7 @@ export default {
     @import '../misc/fixThemeVars';
     @import 'node_modules/vue-popperjs/dist/vue-popper';
     .uiDatePicker{
-        // position:relative;
+        position:relative;
         @include ms-baseFont;
         @include ms-u-normalize;
         color: $ms-color-neutralPrimary;
