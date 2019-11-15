@@ -108,7 +108,7 @@ const dateUtils = {
         return str
     }
 }
-import { uiIconUp, uiIconDown, uiIconCalendar } from "../uiIcon";
+import { uiIconUp, uiIconDown, uiIconCalendar } from "./uiIcon";
 import Popper from 'vue-popperjs';
 // import Moment from "moment";
 import parse from 'date-fns/parse'
@@ -447,7 +447,7 @@ export default {
 
 <style lang="scss" scoped>
     @import 'node_modules/office-ui-fabric-core/src/sass/_Fabric.Common';
-    @import '../../misc/fixThemeVars';
+    @import '../misc/fixThemeVars';
     @import 'node_modules/vue-popperjs/dist/vue-popper';
     .uiDatePicker{
         // position:relative;

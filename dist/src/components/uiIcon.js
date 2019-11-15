@@ -2,7 +2,7 @@ import Icon from './uiIcon.vue.js';
 
 function uiIconGlobalNavButton(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "GlobalNavButton",
@@ -14,7 +14,7 @@ function uiIconGlobalNavButton(resolve) {
 }
 function uiIconChevronDown(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ChevronDown",
@@ -26,7 +26,7 @@ function uiIconChevronDown(resolve) {
 }
 function uiIconChevronUp(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ChevronUp",
@@ -38,7 +38,7 @@ function uiIconChevronUp(resolve) {
 }
 function uiIconEdit(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Edit",
@@ -50,7 +50,7 @@ function uiIconEdit(resolve) {
 }
 function uiIconAdd(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Add",
@@ -62,7 +62,7 @@ function uiIconAdd(resolve) {
 }
 function uiIconCancel(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Cancel",
@@ -74,7 +74,7 @@ function uiIconCancel(resolve) {
 }
 function uiIconMore(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "More",
@@ -86,7 +86,7 @@ function uiIconMore(resolve) {
 }
 function uiIconSettings(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Settings",
@@ -98,7 +98,7 @@ function uiIconSettings(resolve) {
 }
 function uiIconMail(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Mail",
@@ -110,7 +110,7 @@ function uiIconMail(resolve) {
 }
 function uiIconFilter(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Filter",
@@ -122,7 +122,7 @@ function uiIconFilter(resolve) {
 }
 function uiIconSearch(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Search",
@@ -134,7 +134,7 @@ function uiIconSearch(resolve) {
 }
 function uiIconShare(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Share",
@@ -146,7 +146,7 @@ function uiIconShare(resolve) {
 }
 function uiIconBlockedSite(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BlockedSite",
@@ -158,7 +158,7 @@ function uiIconBlockedSite(resolve) {
 }
 function uiIconFavoriteStar(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FavoriteStar",
@@ -170,7 +170,7 @@ function uiIconFavoriteStar(resolve) {
 }
 function uiIconFavoriteStarFill(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FavoriteStarFill",
@@ -182,7 +182,7 @@ function uiIconFavoriteStarFill(resolve) {
 }
 function uiIconCheckMark(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CheckMark",
@@ -194,7 +194,7 @@ function uiIconCheckMark(resolve) {
 }
 function uiIconDelete(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Delete",
@@ -206,7 +206,7 @@ function uiIconDelete(resolve) {
 }
 function uiIconChevronLeft(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ChevronLeft",
@@ -218,7 +218,7 @@ function uiIconChevronLeft(resolve) {
 }
 function uiIconChevronRight(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ChevronRight",
@@ -230,7 +230,7 @@ function uiIconChevronRight(resolve) {
 }
 function uiIconCalendar(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Calendar",
@@ -242,7 +242,7 @@ function uiIconCalendar(resolve) {
 }
 function uiIconMegaphone(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Megaphone",
@@ -254,7 +254,7 @@ function uiIconMegaphone(resolve) {
 }
 function uiIconUndo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Undo",
@@ -266,7 +266,7 @@ function uiIconUndo(resolve) {
 }
 function uiIconFlag(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Flag",
@@ -278,7 +278,7 @@ function uiIconFlag(resolve) {
 }
 function uiIconPage(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Page",
@@ -290,7 +290,7 @@ function uiIconPage(resolve) {
 }
 function uiIconPinned(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Pinned",
@@ -302,7 +302,7 @@ function uiIconPinned(resolve) {
 }
 function uiIconView(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "View",
@@ -314,7 +314,7 @@ function uiIconView(resolve) {
 }
 function uiIconClear(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Clear",
@@ -326,7 +326,7 @@ function uiIconClear(resolve) {
 }
 function uiIconDownload(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Download",
@@ -338,7 +338,7 @@ function uiIconDownload(resolve) {
 }
 function uiIconUpload(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Upload",
@@ -350,7 +350,7 @@ function uiIconUpload(resolve) {
 }
 function uiIconFolder(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Folder",
@@ -362,7 +362,7 @@ function uiIconFolder(resolve) {
 }
 function uiIconSort(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Sort",
@@ -374,7 +374,7 @@ function uiIconSort(resolve) {
 }
 function uiIconAlignRight(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AlignRight",
@@ -386,7 +386,7 @@ function uiIconAlignRight(resolve) {
 }
 function uiIconAlignLeft(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AlignLeft",
@@ -398,7 +398,7 @@ function uiIconAlignLeft(resolve) {
 }
 function uiIconTag(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Tag",
@@ -410,7 +410,7 @@ function uiIconTag(resolve) {
 }
 function uiIconAddFriend(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AddFriend",
@@ -422,7 +422,7 @@ function uiIconAddFriend(resolve) {
 }
 function uiIconInfo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Info",
@@ -434,7 +434,7 @@ function uiIconInfo(resolve) {
 }
 function uiIconSortLines(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SortLines",
@@ -446,7 +446,7 @@ function uiIconSortLines(resolve) {
 }
 function uiIconList(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "List",
@@ -458,7 +458,7 @@ function uiIconList(resolve) {
 }
 function uiIconCircleRing(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CircleRing",
@@ -470,7 +470,7 @@ function uiIconCircleRing(resolve) {
 }
 function uiIconHeart(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Heart",
@@ -482,7 +482,7 @@ function uiIconHeart(resolve) {
 }
 function uiIconHeartFill(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "HeartFill",
@@ -494,7 +494,7 @@ function uiIconHeartFill(resolve) {
 }
 function uiIconTiles(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Tiles",
@@ -506,7 +506,7 @@ function uiIconTiles(resolve) {
 }
 function uiIconEmbed(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Embed",
@@ -518,7 +518,7 @@ function uiIconEmbed(resolve) {
 }
 function uiIconGlimmer(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Glimmer",
@@ -530,7 +530,7 @@ function uiIconGlimmer(resolve) {
 }
 function uiIconAscending(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Ascending",
@@ -542,7 +542,7 @@ function uiIconAscending(resolve) {
 }
 function uiIconDescending(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Descending",
@@ -554,7 +554,7 @@ function uiIconDescending(resolve) {
 }
 function uiIconSortUp(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SortUp",
@@ -566,7 +566,7 @@ function uiIconSortUp(resolve) {
 }
 function uiIconSortDown(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SortDown",
@@ -578,7 +578,7 @@ function uiIconSortDown(resolve) {
 }
 function uiIconSyncToPC(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SyncToPC",
@@ -590,7 +590,7 @@ function uiIconSyncToPC(resolve) {
 }
 function uiIconLargeGrid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "LargeGrid",
@@ -602,7 +602,7 @@ function uiIconLargeGrid(resolve) {
 }
 function uiIconSkypeCheck(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SkypeCheck",
@@ -614,7 +614,7 @@ function uiIconSkypeCheck(resolve) {
 }
 function uiIconSkypeClock(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SkypeClock",
@@ -626,7 +626,7 @@ function uiIconSkypeClock(resolve) {
 }
 function uiIconSkypeMinus(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SkypeMinus",
@@ -638,7 +638,7 @@ function uiIconSkypeMinus(resolve) {
 }
 function uiIconClearFilter(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ClearFilter",
@@ -650,7 +650,7 @@ function uiIconClearFilter(resolve) {
 }
 function uiIconFlow(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Flow",
@@ -662,7 +662,7 @@ function uiIconFlow(resolve) {
 }
 function uiIconStatusCircleCheckmark(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "StatusCircleCheckmark",
@@ -674,7 +674,7 @@ function uiIconStatusCircleCheckmark(resolve) {
 }
 function uiIconMoreVertical(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MoreVertical",
@@ -686,7 +686,7 @@ function uiIconMoreVertical(resolve) {
 }
 function uiIconDecreaseIndentLegacy(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DecreaseIndentLegacy",
@@ -698,7 +698,7 @@ function uiIconDecreaseIndentLegacy(resolve) {
 }
 function uiIconIncreaseIndentLegacy(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "IncreaseIndentLegacy",
@@ -710,7 +710,7 @@ function uiIconIncreaseIndentLegacy(resolve) {
 }
 function uiIconSizeLegacy(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SizeLegacy",
@@ -722,7 +722,7 @@ function uiIconSizeLegacy(resolve) {
 }
 function uiIconInternetSharing(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "InternetSharing",
@@ -734,7 +734,7 @@ function uiIconInternetSharing(resolve) {
 }
 function uiIconBrightness(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Brightness",
@@ -746,7 +746,7 @@ function uiIconBrightness(resolve) {
 }
 function uiIconMapPin(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MapPin",
@@ -758,7 +758,7 @@ function uiIconMapPin(resolve) {
 }
 function uiIconAirplane(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Airplane",
@@ -770,7 +770,7 @@ function uiIconAirplane(resolve) {
 }
 function uiIconTablet(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Tablet",
@@ -782,7 +782,7 @@ function uiIconTablet(resolve) {
 }
 function uiIconQuickNote(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "QuickNote",
@@ -794,7 +794,7 @@ function uiIconQuickNote(resolve) {
 }
 function uiIconVideo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Video",
@@ -806,7 +806,7 @@ function uiIconVideo(resolve) {
 }
 function uiIconPeople(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "People",
@@ -818,7 +818,7 @@ function uiIconPeople(resolve) {
 }
 function uiIconPhone(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Phone",
@@ -830,7 +830,7 @@ function uiIconPhone(resolve) {
 }
 function uiIconPin(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Pin",
@@ -842,7 +842,7 @@ function uiIconPin(resolve) {
 }
 function uiIconShop(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Shop",
@@ -854,7 +854,7 @@ function uiIconShop(resolve) {
 }
 function uiIconStop(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Stop",
@@ -866,7 +866,7 @@ function uiIconStop(resolve) {
 }
 function uiIconLink(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Link",
@@ -878,7 +878,7 @@ function uiIconLink(resolve) {
 }
 function uiIconAllApps(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AllApps",
@@ -890,7 +890,7 @@ function uiIconAllApps(resolve) {
 }
 function uiIconZoom(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Zoom",
@@ -902,7 +902,7 @@ function uiIconZoom(resolve) {
 }
 function uiIconZoomOut(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ZoomOut",
@@ -914,7 +914,7 @@ function uiIconZoomOut(resolve) {
 }
 function uiIconMicrophone(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Microphone",
@@ -926,7 +926,7 @@ function uiIconMicrophone(resolve) {
 }
 function uiIconCamera(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Camera",
@@ -938,7 +938,7 @@ function uiIconCamera(resolve) {
 }
 function uiIconAttach(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Attach",
@@ -950,7 +950,7 @@ function uiIconAttach(resolve) {
 }
 function uiIconSend(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Send",
@@ -962,7 +962,7 @@ function uiIconSend(resolve) {
 }
 function uiIconFavoriteList(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FavoriteList",
@@ -974,7 +974,7 @@ function uiIconFavoriteList(resolve) {
 }
 function uiIconPageSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PageSolid",
@@ -986,7 +986,7 @@ function uiIconPageSolid(resolve) {
 }
 function uiIconForward(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Forward",
@@ -998,7 +998,7 @@ function uiIconForward(resolve) {
 }
 function uiIconBack(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Back",
@@ -1010,7 +1010,7 @@ function uiIconBack(resolve) {
 }
 function uiIconRefresh(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Refresh",
@@ -1022,7 +1022,7 @@ function uiIconRefresh(resolve) {
 }
 function uiIconLock(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Lock",
@@ -1034,7 +1034,7 @@ function uiIconLock(resolve) {
 }
 function uiIconReportHacked(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ReportHacked",
@@ -1046,7 +1046,7 @@ function uiIconReportHacked(resolve) {
 }
 function uiIconEMI(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "EMI",
@@ -1058,7 +1058,7 @@ function uiIconEMI(resolve) {
 }
 function uiIconMiniLink(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MiniLink",
@@ -1070,7 +1070,7 @@ function uiIconMiniLink(resolve) {
 }
 function uiIconBlocked(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Blocked",
@@ -1082,7 +1082,7 @@ function uiIconBlocked(resolve) {
 }
 function uiIconReadingMode(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ReadingMode",
@@ -1094,7 +1094,7 @@ function uiIconReadingMode(resolve) {
 }
 function uiIconFavicon(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Favicon",
@@ -1106,7 +1106,7 @@ function uiIconFavicon(resolve) {
 }
 function uiIconRemove(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Remove",
@@ -1118,7 +1118,7 @@ function uiIconRemove(resolve) {
 }
 function uiIconCheckbox(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Checkbox",
@@ -1130,7 +1130,7 @@ function uiIconCheckbox(resolve) {
 }
 function uiIconCheckboxComposite(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CheckboxComposite",
@@ -1142,7 +1142,7 @@ function uiIconCheckboxComposite(resolve) {
 }
 function uiIconCheckboxIndeterminate(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CheckboxIndeterminate",
@@ -1154,7 +1154,7 @@ function uiIconCheckboxIndeterminate(resolve) {
 }
 function uiIconCheckboxCompositeReversed(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CheckboxCompositeReversed",
@@ -1166,7 +1166,7 @@ function uiIconCheckboxCompositeReversed(resolve) {
 }
 function uiIconBackToWindow(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BackToWindow",
@@ -1178,7 +1178,7 @@ function uiIconBackToWindow(resolve) {
 }
 function uiIconFullScreen(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FullScreen",
@@ -1190,7 +1190,7 @@ function uiIconFullScreen(resolve) {
 }
 function uiIconPrint(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Print",
@@ -1202,7 +1202,7 @@ function uiIconPrint(resolve) {
 }
 function uiIconUp(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Up",
@@ -1214,7 +1214,7 @@ function uiIconUp(resolve) {
 }
 function uiIconDown(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Down",
@@ -1226,7 +1226,7 @@ function uiIconDown(resolve) {
 }
 function uiIconOEM(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OEM",
@@ -1238,7 +1238,7 @@ function uiIconOEM(resolve) {
 }
 function uiIconSave(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Save",
@@ -1250,7 +1250,7 @@ function uiIconSave(resolve) {
 }
 function uiIconCloud(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Cloud",
@@ -1262,7 +1262,7 @@ function uiIconCloud(resolve) {
 }
 function uiIconCommandPrompt(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CommandPrompt",
@@ -1274,7 +1274,7 @@ function uiIconCommandPrompt(resolve) {
 }
 function uiIconSad(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Sad",
@@ -1286,7 +1286,7 @@ function uiIconSad(resolve) {
 }
 function uiIconSIPMove(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SIPMove",
@@ -1298,7 +1298,7 @@ function uiIconSIPMove(resolve) {
 }
 function uiIconEraseTool(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "EraseTool",
@@ -1310,7 +1310,7 @@ function uiIconEraseTool(resolve) {
 }
 function uiIconGripperTool(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "GripperTool",
@@ -1322,7 +1322,7 @@ function uiIconGripperTool(resolve) {
 }
 function uiIconDialpad(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Dialpad",
@@ -1334,7 +1334,7 @@ function uiIconDialpad(resolve) {
 }
 function uiIconPageLeft(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PageLeft",
@@ -1346,7 +1346,7 @@ function uiIconPageLeft(resolve) {
 }
 function uiIconPageRight(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PageRight",
@@ -1358,7 +1358,7 @@ function uiIconPageRight(resolve) {
 }
 function uiIconMultiSelect(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MultiSelect",
@@ -1370,7 +1370,7 @@ function uiIconMultiSelect(resolve) {
 }
 function uiIconKeyboardClassic(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "KeyboardClassic",
@@ -1382,7 +1382,7 @@ function uiIconKeyboardClassic(resolve) {
 }
 function uiIconPlay(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Play",
@@ -1394,7 +1394,7 @@ function uiIconPlay(resolve) {
 }
 function uiIconPause(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Pause",
@@ -1406,7 +1406,7 @@ function uiIconPause(resolve) {
 }
 function uiIconEmoji2(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Emoji2",
@@ -1418,7 +1418,7 @@ function uiIconEmoji2(resolve) {
 }
 function uiIconGripperBarHorizontal(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "GripperBarHorizontal",
@@ -1430,7 +1430,7 @@ function uiIconGripperBarHorizontal(resolve) {
 }
 function uiIconSystem(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "System",
@@ -1442,7 +1442,7 @@ function uiIconSystem(resolve) {
 }
 function uiIconPersonalize(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Personalize",
@@ -1454,7 +1454,7 @@ function uiIconPersonalize(resolve) {
 }
 function uiIconSearchAndApps(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SearchAndApps",
@@ -1466,7 +1466,7 @@ function uiIconSearchAndApps(resolve) {
 }
 function uiIconGlobe(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Globe",
@@ -1478,7 +1478,7 @@ function uiIconGlobe(resolve) {
 }
 function uiIconContactInfo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ContactInfo",
@@ -1490,7 +1490,7 @@ function uiIconContactInfo(resolve) {
 }
 function uiIconUnpin(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Unpin",
@@ -1502,7 +1502,7 @@ function uiIconUnpin(resolve) {
 }
 function uiIconContact(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Contact",
@@ -1514,7 +1514,7 @@ function uiIconContact(resolve) {
 }
 function uiIconMemo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Memo",
@@ -1526,7 +1526,7 @@ function uiIconMemo(resolve) {
 }
 function uiIconPaste(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Paste",
@@ -1538,7 +1538,7 @@ function uiIconPaste(resolve) {
 }
 function uiIconWindowsLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "WindowsLogo",
@@ -1550,7 +1550,7 @@ function uiIconWindowsLogo(resolve) {
 }
 function uiIconError(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Error",
@@ -1562,7 +1562,7 @@ function uiIconError(resolve) {
 }
 function uiIconGripperBarVertical(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "GripperBarVertical",
@@ -1574,7 +1574,7 @@ function uiIconGripperBarVertical(resolve) {
 }
 function uiIconUnlock(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Unlock",
@@ -1586,7 +1586,7 @@ function uiIconUnlock(resolve) {
 }
 function uiIconAutoEnhanceOn(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AutoEnhanceOn",
@@ -1598,7 +1598,7 @@ function uiIconAutoEnhanceOn(resolve) {
 }
 function uiIconAutoEnhanceOff(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AutoEnhanceOff",
@@ -1610,7 +1610,7 @@ function uiIconAutoEnhanceOff(resolve) {
 }
 function uiIconColor(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Color",
@@ -1622,7 +1622,7 @@ function uiIconColor(resolve) {
 }
 function uiIconSaveAs(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SaveAs",
@@ -1634,7 +1634,7 @@ function uiIconSaveAs(resolve) {
 }
 function uiIconLight(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Light",
@@ -1646,7 +1646,7 @@ function uiIconLight(resolve) {
 }
 function uiIconFilters(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Filters",
@@ -1658,7 +1658,7 @@ function uiIconFilters(resolve) {
 }
 function uiIconAspectRatio(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AspectRatio",
@@ -1670,7 +1670,7 @@ function uiIconAspectRatio(resolve) {
 }
 function uiIconContrast(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Contrast",
@@ -1682,7 +1682,7 @@ function uiIconContrast(resolve) {
 }
 function uiIconRedo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Redo",
@@ -1694,7 +1694,7 @@ function uiIconRedo(resolve) {
 }
 function uiIconCrop(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Crop",
@@ -1706,7 +1706,7 @@ function uiIconCrop(resolve) {
 }
 function uiIconPhotoCollection(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PhotoCollection",
@@ -1718,7 +1718,7 @@ function uiIconPhotoCollection(resolve) {
 }
 function uiIconAlbum(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Album",
@@ -1730,7 +1730,7 @@ function uiIconAlbum(resolve) {
 }
 function uiIconRotate(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Rotate",
@@ -1742,7 +1742,7 @@ function uiIconRotate(resolve) {
 }
 function uiIconPanoIndicator(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PanoIndicator",
@@ -1754,7 +1754,7 @@ function uiIconPanoIndicator(resolve) {
 }
 function uiIconRedEye(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "RedEye",
@@ -1766,7 +1766,7 @@ function uiIconRedEye(resolve) {
 }
 function uiIconThumbnailView(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ThumbnailView",
@@ -1778,7 +1778,7 @@ function uiIconThumbnailView(resolve) {
 }
 function uiIconPackage(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Package",
@@ -1790,7 +1790,7 @@ function uiIconPackage(resolve) {
 }
 function uiIconWarning(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Warning",
@@ -1802,7 +1802,7 @@ function uiIconWarning(resolve) {
 }
 function uiIconFinancial(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Financial",
@@ -1814,7 +1814,7 @@ function uiIconFinancial(resolve) {
 }
 function uiIconEducation(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Education",
@@ -1826,7 +1826,7 @@ function uiIconEducation(resolve) {
 }
 function uiIconShoppingCart(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ShoppingCart",
@@ -1838,7 +1838,7 @@ function uiIconShoppingCart(resolve) {
 }
 function uiIconTrain(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Train",
@@ -1850,7 +1850,7 @@ function uiIconTrain(resolve) {
 }
 function uiIconMove(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Move",
@@ -1862,7 +1862,7 @@ function uiIconMove(resolve) {
 }
 function uiIconTouchPointer(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TouchPointer",
@@ -1874,7 +1874,7 @@ function uiIconTouchPointer(resolve) {
 }
 function uiIconMerge(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Merge",
@@ -1886,7 +1886,7 @@ function uiIconMerge(resolve) {
 }
 function uiIconTurnRight(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TurnRight",
@@ -1898,7 +1898,7 @@ function uiIconTurnRight(resolve) {
 }
 function uiIconFerry(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Ferry",
@@ -1910,7 +1910,7 @@ function uiIconFerry(resolve) {
 }
 function uiIconHighlight(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Highlight",
@@ -1922,7 +1922,7 @@ function uiIconHighlight(resolve) {
 }
 function uiIconPowerButton(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PowerButton",
@@ -1934,7 +1934,7 @@ function uiIconPowerButton(resolve) {
 }
 function uiIconTab(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Tab",
@@ -1946,7 +1946,7 @@ function uiIconTab(resolve) {
 }
 function uiIconAdmin(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Admin",
@@ -1958,7 +1958,7 @@ function uiIconAdmin(resolve) {
 }
 function uiIconTVMonitor(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TVMonitor",
@@ -1970,7 +1970,7 @@ function uiIconTVMonitor(resolve) {
 }
 function uiIconSpeakers(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Speakers",
@@ -1982,7 +1982,7 @@ function uiIconSpeakers(resolve) {
 }
 function uiIconStackIndicator(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "StackIndicator",
@@ -1994,7 +1994,7 @@ function uiIconStackIndicator(resolve) {
 }
 function uiIconNav2DMapView(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Nav2DMapView",
@@ -2006,7 +2006,7 @@ function uiIconNav2DMapView(resolve) {
 }
 function uiIconCar(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Car",
@@ -2018,7 +2018,7 @@ function uiIconCar(resolve) {
 }
 function uiIconBus(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Bus",
@@ -2030,7 +2030,7 @@ function uiIconBus(resolve) {
 }
 function uiIconEatDrink(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "EatDrink",
@@ -2042,7 +2042,7 @@ function uiIconEatDrink(resolve) {
 }
 function uiIconLocationCircle(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "LocationCircle",
@@ -2054,7 +2054,7 @@ function uiIconLocationCircle(resolve) {
 }
 function uiIconHome(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Home",
@@ -2066,7 +2066,7 @@ function uiIconHome(resolve) {
 }
 function uiIconSwitcherStartEnd(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SwitcherStartEnd",
@@ -2078,7 +2078,7 @@ function uiIconSwitcherStartEnd(resolve) {
 }
 function uiIconParkingLocation(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ParkingLocation",
@@ -2090,7 +2090,7 @@ function uiIconParkingLocation(resolve) {
 }
 function uiIconIncidentTriangle(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "IncidentTriangle",
@@ -2102,7 +2102,7 @@ function uiIconIncidentTriangle(resolve) {
 }
 function uiIconTouch(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Touch",
@@ -2114,7 +2114,7 @@ function uiIconTouch(resolve) {
 }
 function uiIconMapDirections(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MapDirections",
@@ -2126,7 +2126,7 @@ function uiIconMapDirections(resolve) {
 }
 function uiIconCaretHollow(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CaretHollow",
@@ -2138,7 +2138,7 @@ function uiIconCaretHollow(resolve) {
 }
 function uiIconCaretSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CaretSolid",
@@ -2150,7 +2150,7 @@ function uiIconCaretSolid(resolve) {
 }
 function uiIconHistory(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "History",
@@ -2162,7 +2162,7 @@ function uiIconHistory(resolve) {
 }
 function uiIconLocation(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Location",
@@ -2174,7 +2174,7 @@ function uiIconLocation(resolve) {
 }
 function uiIconWork(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Work",
@@ -2186,7 +2186,7 @@ function uiIconWork(resolve) {
 }
 function uiIconRecent(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Recent",
@@ -2198,7 +2198,7 @@ function uiIconRecent(resolve) {
 }
 function uiIconHotel(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Hotel",
@@ -2210,7 +2210,7 @@ function uiIconHotel(resolve) {
 }
 function uiIconLocationDot(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "LocationDot",
@@ -2222,7 +2222,7 @@ function uiIconLocationDot(resolve) {
 }
 function uiIconDictionary(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Dictionary",
@@ -2234,7 +2234,7 @@ function uiIconDictionary(resolve) {
 }
 function uiIconChromeBack(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ChromeBack",
@@ -2246,7 +2246,7 @@ function uiIconChromeBack(resolve) {
 }
 function uiIconFolderOpen(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FolderOpen",
@@ -2258,7 +2258,7 @@ function uiIconFolderOpen(resolve) {
 }
 function uiIconPinnedFill(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PinnedFill",
@@ -2270,7 +2270,7 @@ function uiIconPinnedFill(resolve) {
 }
 function uiIconRevToggleKey(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "RevToggleKey",
@@ -2282,7 +2282,7 @@ function uiIconRevToggleKey(resolve) {
 }
 function uiIconPrevious(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Previous",
@@ -2294,7 +2294,7 @@ function uiIconPrevious(resolve) {
 }
 function uiIconNext(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Next",
@@ -2306,7 +2306,7 @@ function uiIconNext(resolve) {
 }
 function uiIconSync(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Sync",
@@ -2318,7 +2318,7 @@ function uiIconSync(resolve) {
 }
 function uiIconHelp(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Help",
@@ -2330,7 +2330,7 @@ function uiIconHelp(resolve) {
 }
 function uiIconEmoji(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Emoji",
@@ -2342,7 +2342,7 @@ function uiIconEmoji(resolve) {
 }
 function uiIconMailForward(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MailForward",
@@ -2354,7 +2354,7 @@ function uiIconMailForward(resolve) {
 }
 function uiIconClosePane(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ClosePane",
@@ -2366,7 +2366,7 @@ function uiIconClosePane(resolve) {
 }
 function uiIconOpenPane(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OpenPane",
@@ -2378,7 +2378,7 @@ function uiIconOpenPane(resolve) {
 }
 function uiIconPreviewLink(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PreviewLink",
@@ -2390,7 +2390,7 @@ function uiIconPreviewLink(resolve) {
 }
 function uiIconZoomIn(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ZoomIn",
@@ -2402,7 +2402,7 @@ function uiIconZoomIn(resolve) {
 }
 function uiIconBookmarks(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Bookmarks",
@@ -2414,7 +2414,7 @@ function uiIconBookmarks(resolve) {
 }
 function uiIconDocument(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Document",
@@ -2426,7 +2426,7 @@ function uiIconDocument(resolve) {
 }
 function uiIconProtectedDocument(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ProtectedDocument",
@@ -2438,7 +2438,7 @@ function uiIconProtectedDocument(resolve) {
 }
 function uiIconOpenInNewWindow(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OpenInNewWindow",
@@ -2450,7 +2450,7 @@ function uiIconOpenInNewWindow(resolve) {
 }
 function uiIconMailFill(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MailFill",
@@ -2462,7 +2462,7 @@ function uiIconMailFill(resolve) {
 }
 function uiIconViewAll(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ViewAll",
@@ -2474,7 +2474,7 @@ function uiIconViewAll(resolve) {
 }
 function uiIconSwitch(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Switch",
@@ -2486,7 +2486,7 @@ function uiIconSwitch(resolve) {
 }
 function uiIconRename(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Rename",
@@ -2498,7 +2498,7 @@ function uiIconRename(resolve) {
 }
 function uiIconRemote(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Remote",
@@ -2510,7 +2510,7 @@ function uiIconRemote(resolve) {
 }
 function uiIconSelectAll(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SelectAll",
@@ -2522,7 +2522,7 @@ function uiIconSelectAll(resolve) {
 }
 function uiIconOrientation(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Orientation",
@@ -2534,7 +2534,7 @@ function uiIconOrientation(resolve) {
 }
 function uiIconImport(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Import",
@@ -2546,7 +2546,7 @@ function uiIconImport(resolve) {
 }
 function uiIconPicture(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Picture",
@@ -2558,7 +2558,7 @@ function uiIconPicture(resolve) {
 }
 function uiIconChromeClose(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ChromeClose",
@@ -2570,7 +2570,7 @@ function uiIconChromeClose(resolve) {
 }
 function uiIconShowResults(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ShowResults",
@@ -2582,7 +2582,7 @@ function uiIconShowResults(resolve) {
 }
 function uiIconMessage(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Message",
@@ -2594,7 +2594,7 @@ function uiIconMessage(resolve) {
 }
 function uiIconCalendarDay(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CalendarDay",
@@ -2606,7 +2606,7 @@ function uiIconCalendarDay(resolve) {
 }
 function uiIconCalendarWeek(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CalendarWeek",
@@ -2618,7 +2618,7 @@ function uiIconCalendarWeek(resolve) {
 }
 function uiIconMailReplyAll(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MailReplyAll",
@@ -2630,7 +2630,7 @@ function uiIconMailReplyAll(resolve) {
 }
 function uiIconRead(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Read",
@@ -2642,7 +2642,7 @@ function uiIconRead(resolve) {
 }
 function uiIconCut(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Cut",
@@ -2654,7 +2654,7 @@ function uiIconCut(resolve) {
 }
 function uiIconPaymentCard(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PaymentCard",
@@ -2666,7 +2666,7 @@ function uiIconPaymentCard(resolve) {
 }
 function uiIconCopy(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Copy",
@@ -2678,7 +2678,7 @@ function uiIconCopy(resolve) {
 }
 function uiIconImportant(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Important",
@@ -2690,7 +2690,7 @@ function uiIconImportant(resolve) {
 }
 function uiIconMailReply(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MailReply",
@@ -2702,7 +2702,7 @@ function uiIconMailReply(resolve) {
 }
 function uiIconGotoToday(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "GotoToday",
@@ -2714,7 +2714,7 @@ function uiIconGotoToday(resolve) {
 }
 function uiIconFont(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Font",
@@ -2726,7 +2726,7 @@ function uiIconFont(resolve) {
 }
 function uiIconFontColor(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FontColor",
@@ -2738,7 +2738,7 @@ function uiIconFontColor(resolve) {
 }
 function uiIconFolderFill(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FolderFill",
@@ -2750,7 +2750,7 @@ function uiIconFolderFill(resolve) {
 }
 function uiIconPermissions(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Permissions",
@@ -2762,7 +2762,7 @@ function uiIconPermissions(resolve) {
 }
 function uiIconDisableUpdates(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DisableUpdates",
@@ -2774,7 +2774,7 @@ function uiIconDisableUpdates(resolve) {
 }
 function uiIconUnfavorite(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Unfavorite",
@@ -2786,7 +2786,7 @@ function uiIconUnfavorite(resolve) {
 }
 function uiIconItalic(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Italic",
@@ -2798,7 +2798,7 @@ function uiIconItalic(resolve) {
 }
 function uiIconUnderline(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Underline",
@@ -2810,7 +2810,7 @@ function uiIconUnderline(resolve) {
 }
 function uiIconBold(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Bold",
@@ -2822,7 +2822,7 @@ function uiIconBold(resolve) {
 }
 function uiIconMoveToFolder(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MoveToFolder",
@@ -2834,7 +2834,7 @@ function uiIconMoveToFolder(resolve) {
 }
 function uiIconDislike(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Dislike",
@@ -2846,7 +2846,7 @@ function uiIconDislike(resolve) {
 }
 function uiIconLike(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Like",
@@ -2858,7 +2858,7 @@ function uiIconLike(resolve) {
 }
 function uiIconAlignCenter(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AlignCenter",
@@ -2870,7 +2870,7 @@ function uiIconAlignCenter(resolve) {
 }
 function uiIconOpenFile(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OpenFile",
@@ -2882,7 +2882,7 @@ function uiIconOpenFile(resolve) {
 }
 function uiIconFontDecrease(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FontDecrease",
@@ -2894,7 +2894,7 @@ function uiIconFontDecrease(resolve) {
 }
 function uiIconFontIncrease(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FontIncrease",
@@ -2906,7 +2906,7 @@ function uiIconFontIncrease(resolve) {
 }
 function uiIconFontSize(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FontSize",
@@ -2918,7 +2918,7 @@ function uiIconFontSize(resolve) {
 }
 function uiIconCellPhone(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CellPhone",
@@ -2930,7 +2930,7 @@ function uiIconCellPhone(resolve) {
 }
 function uiIconCalculator(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Calculator",
@@ -2942,7 +2942,7 @@ function uiIconCalculator(resolve) {
 }
 function uiIconLibrary(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Library",
@@ -2954,7 +2954,7 @@ function uiIconLibrary(resolve) {
 }
 function uiIconPostUpdate(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PostUpdate",
@@ -2966,7 +2966,7 @@ function uiIconPostUpdate(resolve) {
 }
 function uiIconNewFolder(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "NewFolder",
@@ -2978,7 +2978,7 @@ function uiIconNewFolder(resolve) {
 }
 function uiIconCalendarReply(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CalendarReply",
@@ -2990,7 +2990,7 @@ function uiIconCalendarReply(resolve) {
 }
 function uiIconUnsyncFolder(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "UnsyncFolder",
@@ -3002,7 +3002,7 @@ function uiIconUnsyncFolder(resolve) {
 }
 function uiIconSyncFolder(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SyncFolder",
@@ -3014,7 +3014,7 @@ function uiIconSyncFolder(resolve) {
 }
 function uiIconBlockContact(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BlockContact",
@@ -3026,7 +3026,7 @@ function uiIconBlockContact(resolve) {
 }
 function uiIconAccept(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Accept",
@@ -3038,7 +3038,7 @@ function uiIconAccept(resolve) {
 }
 function uiIconBulletedList(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BulletedList",
@@ -3050,7 +3050,7 @@ function uiIconBulletedList(resolve) {
 }
 function uiIconPreview(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Preview",
@@ -3062,7 +3062,7 @@ function uiIconPreview(resolve) {
 }
 function uiIconNews(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "News",
@@ -3074,7 +3074,7 @@ function uiIconNews(resolve) {
 }
 function uiIconChat(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Chat",
@@ -3086,7 +3086,7 @@ function uiIconChat(resolve) {
 }
 function uiIconGroup(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Group",
@@ -3098,7 +3098,7 @@ function uiIconGroup(resolve) {
 }
 function uiIconWorld(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "World",
@@ -3110,7 +3110,7 @@ function uiIconWorld(resolve) {
 }
 function uiIconComment(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Comment",
@@ -3122,7 +3122,7 @@ function uiIconComment(resolve) {
 }
 function uiIconDockLeft(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DockLeft",
@@ -3134,7 +3134,7 @@ function uiIconDockLeft(resolve) {
 }
 function uiIconDockRight(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DockRight",
@@ -3146,7 +3146,7 @@ function uiIconDockRight(resolve) {
 }
 function uiIconRepair(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Repair",
@@ -3158,7 +3158,7 @@ function uiIconRepair(resolve) {
 }
 function uiIconAccounts(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Accounts",
@@ -3170,7 +3170,7 @@ function uiIconAccounts(resolve) {
 }
 function uiIconRadioBullet(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "RadioBullet",
@@ -3182,7 +3182,7 @@ function uiIconRadioBullet(resolve) {
 }
 function uiIconStopwatch(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Stopwatch",
@@ -3194,7 +3194,7 @@ function uiIconStopwatch(resolve) {
 }
 function uiIconClock(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Clock",
@@ -3206,7 +3206,7 @@ function uiIconClock(resolve) {
 }
 function uiIconWorldClock(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "WorldClock",
@@ -3218,7 +3218,7 @@ function uiIconWorldClock(resolve) {
 }
 function uiIconAlarmClock(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AlarmClock",
@@ -3230,7 +3230,7 @@ function uiIconAlarmClock(resolve) {
 }
 function uiIconPhoto(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Photo",
@@ -3242,7 +3242,7 @@ function uiIconPhoto(resolve) {
 }
 function uiIconHospital(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Hospital",
@@ -3254,7 +3254,7 @@ function uiIconHospital(resolve) {
 }
 function uiIconTimer(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Timer",
@@ -3266,7 +3266,7 @@ function uiIconTimer(resolve) {
 }
 function uiIconFullCircleMask(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FullCircleMask",
@@ -3278,7 +3278,7 @@ function uiIconFullCircleMask(resolve) {
 }
 function uiIconLocationFill(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "LocationFill",
@@ -3290,7 +3290,7 @@ function uiIconLocationFill(resolve) {
 }
 function uiIconChromeMinimize(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ChromeMinimize",
@@ -3302,7 +3302,7 @@ function uiIconChromeMinimize(resolve) {
 }
 function uiIconAnnotation(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Annotation",
@@ -3314,7 +3314,7 @@ function uiIconAnnotation(resolve) {
 }
 function uiIconFingerprint(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Fingerprint",
@@ -3326,7 +3326,7 @@ function uiIconFingerprint(resolve) {
 }
 function uiIconHandwriting(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Handwriting",
@@ -3338,7 +3338,7 @@ function uiIconHandwriting(resolve) {
 }
 function uiIconCompleted(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Completed",
@@ -3350,7 +3350,7 @@ function uiIconCompleted(resolve) {
 }
 function uiIconLabel(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Label",
@@ -3362,7 +3362,7 @@ function uiIconLabel(resolve) {
 }
 function uiIconFlickDown(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FlickDown",
@@ -3374,7 +3374,7 @@ function uiIconFlickDown(resolve) {
 }
 function uiIconFlickUp(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FlickUp",
@@ -3386,7 +3386,7 @@ function uiIconFlickUp(resolve) {
 }
 function uiIconFlickLeft(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FlickLeft",
@@ -3398,7 +3398,7 @@ function uiIconFlickLeft(resolve) {
 }
 function uiIconFlickRight(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FlickRight",
@@ -3410,7 +3410,7 @@ function uiIconFlickRight(resolve) {
 }
 function uiIconMiniExpand(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MiniExpand",
@@ -3422,7 +3422,7 @@ function uiIconMiniExpand(resolve) {
 }
 function uiIconMiniContract(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MiniContract",
@@ -3434,7 +3434,7 @@ function uiIconMiniContract(resolve) {
 }
 function uiIconStreaming(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Streaming",
@@ -3446,7 +3446,7 @@ function uiIconStreaming(resolve) {
 }
 function uiIconMusicInCollection(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MusicInCollection",
@@ -3458,7 +3458,7 @@ function uiIconMusicInCollection(resolve) {
 }
 function uiIconOneDriveLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OneDriveLogo",
@@ -3470,7 +3470,7 @@ function uiIconOneDriveLogo(resolve) {
 }
 function uiIconCompassNW(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CompassNW",
@@ -3482,7 +3482,7 @@ function uiIconCompassNW(resolve) {
 }
 function uiIconCode(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Code",
@@ -3494,7 +3494,7 @@ function uiIconCode(resolve) {
 }
 function uiIconLightningBolt(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "LightningBolt",
@@ -3506,7 +3506,7 @@ function uiIconLightningBolt(resolve) {
 }
 function uiIconCalculatorMultiply(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CalculatorMultiply",
@@ -3518,7 +3518,7 @@ function uiIconCalculatorMultiply(resolve) {
 }
 function uiIconCalculatorAddition(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CalculatorAddition",
@@ -3530,7 +3530,7 @@ function uiIconCalculatorAddition(resolve) {
 }
 function uiIconCalculatorSubtract(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CalculatorSubtract",
@@ -3542,7 +3542,7 @@ function uiIconCalculatorSubtract(resolve) {
 }
 function uiIconCalculatorEqualTo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CalculatorEqualTo",
@@ -3554,7 +3554,7 @@ function uiIconCalculatorEqualTo(resolve) {
 }
 function uiIconPrintfaxPrinterFile(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PrintfaxPrinterFile",
@@ -3566,7 +3566,7 @@ function uiIconPrintfaxPrinterFile(resolve) {
 }
 function uiIconCommunications(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Communications",
@@ -3578,7 +3578,7 @@ function uiIconCommunications(resolve) {
 }
 function uiIconHeadset(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Headset",
@@ -3590,7 +3590,7 @@ function uiIconHeadset(resolve) {
 }
 function uiIconHealth(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Health",
@@ -3602,7 +3602,7 @@ function uiIconHealth(resolve) {
 }
 function uiIconChevronUpSmall(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ChevronUpSmall",
@@ -3614,7 +3614,7 @@ function uiIconChevronUpSmall(resolve) {
 }
 function uiIconChevronDownSmall(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ChevronDownSmall",
@@ -3626,7 +3626,7 @@ function uiIconChevronDownSmall(resolve) {
 }
 function uiIconChevronLeftSmall(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ChevronLeftSmall",
@@ -3638,7 +3638,7 @@ function uiIconChevronLeftSmall(resolve) {
 }
 function uiIconChevronRightSmall(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ChevronRightSmall",
@@ -3650,7 +3650,7 @@ function uiIconChevronRightSmall(resolve) {
 }
 function uiIconChevronUpMed(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ChevronUpMed",
@@ -3662,7 +3662,7 @@ function uiIconChevronUpMed(resolve) {
 }
 function uiIconChevronDownMed(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ChevronDownMed",
@@ -3674,7 +3674,7 @@ function uiIconChevronDownMed(resolve) {
 }
 function uiIconChevronLeftMed(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ChevronLeftMed",
@@ -3686,7 +3686,7 @@ function uiIconChevronLeftMed(resolve) {
 }
 function uiIconChevronRightMed(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ChevronRightMed",
@@ -3698,7 +3698,7 @@ function uiIconChevronRightMed(resolve) {
 }
 function uiIconPC1(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PC1",
@@ -3710,7 +3710,7 @@ function uiIconPC1(resolve) {
 }
 function uiIconPresenceChickletVideo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PresenceChickletVideo",
@@ -3722,7 +3722,7 @@ function uiIconPresenceChickletVideo(resolve) {
 }
 function uiIconReply(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Reply",
@@ -3734,7 +3734,7 @@ function uiIconReply(resolve) {
 }
 function uiIconHalfAlpha(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "HalfAlpha",
@@ -3746,7 +3746,7 @@ function uiIconHalfAlpha(resolve) {
 }
 function uiIconConstructionCone(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ConstructionCone",
@@ -3758,7 +3758,7 @@ function uiIconConstructionCone(resolve) {
 }
 function uiIconDoubleChevronLeftMed(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DoubleChevronLeftMed",
@@ -3770,7 +3770,7 @@ function uiIconDoubleChevronLeftMed(resolve) {
 }
 function uiIconVolume0(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Volume0",
@@ -3782,7 +3782,7 @@ function uiIconVolume0(resolve) {
 }
 function uiIconVolume1(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Volume1",
@@ -3794,7 +3794,7 @@ function uiIconVolume1(resolve) {
 }
 function uiIconVolume2(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Volume2",
@@ -3806,7 +3806,7 @@ function uiIconVolume2(resolve) {
 }
 function uiIconVolume3(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Volume3",
@@ -3818,7 +3818,7 @@ function uiIconVolume3(resolve) {
 }
 function uiIconChart(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Chart",
@@ -3830,7 +3830,7 @@ function uiIconChart(resolve) {
 }
 function uiIconRobot(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Robot",
@@ -3842,7 +3842,7 @@ function uiIconRobot(resolve) {
 }
 function uiIconManufacturing(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Manufacturing",
@@ -3854,7 +3854,7 @@ function uiIconManufacturing(resolve) {
 }
 function uiIconLockSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "LockSolid",
@@ -3866,7 +3866,7 @@ function uiIconLockSolid(resolve) {
 }
 function uiIconBidiLtr(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BidiLtr",
@@ -3878,7 +3878,7 @@ function uiIconBidiLtr(resolve) {
 }
 function uiIconBidiRtl(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BidiRtl",
@@ -3890,7 +3890,7 @@ function uiIconBidiRtl(resolve) {
 }
 function uiIconRightDoubleQuote(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "RightDoubleQuote",
@@ -3902,7 +3902,7 @@ function uiIconRightDoubleQuote(resolve) {
 }
 function uiIconSunny(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Sunny",
@@ -3914,7 +3914,7 @@ function uiIconSunny(resolve) {
 }
 function uiIconCloudWeather(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CloudWeather",
@@ -3926,7 +3926,7 @@ function uiIconCloudWeather(resolve) {
 }
 function uiIconCloudy(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Cloudy",
@@ -3938,7 +3938,7 @@ function uiIconCloudy(resolve) {
 }
 function uiIconPartlyCloudyDay(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PartlyCloudyDay",
@@ -3950,7 +3950,7 @@ function uiIconPartlyCloudyDay(resolve) {
 }
 function uiIconPartlyCloudyNight(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PartlyCloudyNight",
@@ -3962,7 +3962,7 @@ function uiIconPartlyCloudyNight(resolve) {
 }
 function uiIconClearNight(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ClearNight",
@@ -3974,7 +3974,7 @@ function uiIconClearNight(resolve) {
 }
 function uiIconRainShowersDay(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "RainShowersDay",
@@ -3986,7 +3986,7 @@ function uiIconRainShowersDay(resolve) {
 }
 function uiIconRain(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Rain",
@@ -3998,7 +3998,7 @@ function uiIconRain(resolve) {
 }
 function uiIconThunderstorms(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Thunderstorms",
@@ -4010,7 +4010,7 @@ function uiIconThunderstorms(resolve) {
 }
 function uiIconRainSnow(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "RainSnow",
@@ -4022,7 +4022,7 @@ function uiIconRainSnow(resolve) {
 }
 function uiIconSnow(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Snow",
@@ -4034,7 +4034,7 @@ function uiIconSnow(resolve) {
 }
 function uiIconBlowingSnow(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BlowingSnow",
@@ -4046,7 +4046,7 @@ function uiIconBlowingSnow(resolve) {
 }
 function uiIconFrigid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Frigid",
@@ -4058,7 +4058,7 @@ function uiIconFrigid(resolve) {
 }
 function uiIconFog(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Fog",
@@ -4070,7 +4070,7 @@ function uiIconFog(resolve) {
 }
 function uiIconSqualls(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Squalls",
@@ -4082,7 +4082,7 @@ function uiIconSqualls(resolve) {
 }
 function uiIconDuststorm(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Duststorm",
@@ -4094,7 +4094,7 @@ function uiIconDuststorm(resolve) {
 }
 function uiIconUnknown(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Unknown",
@@ -4106,7 +4106,7 @@ function uiIconUnknown(resolve) {
 }
 function uiIconPrecipitation(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Precipitation",
@@ -4118,7 +4118,7 @@ function uiIconPrecipitation(resolve) {
 }
 function uiIconRibbon(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Ribbon",
@@ -4130,7 +4130,7 @@ function uiIconRibbon(resolve) {
 }
 function uiIconAreaChart(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AreaChart",
@@ -4142,7 +4142,7 @@ function uiIconAreaChart(resolve) {
 }
 function uiIconAssign(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Assign",
@@ -4154,7 +4154,7 @@ function uiIconAssign(resolve) {
 }
 function uiIconCheckList(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CheckList",
@@ -4166,7 +4166,7 @@ function uiIconCheckList(resolve) {
 }
 function uiIconDiagnostic(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Diagnostic",
@@ -4178,7 +4178,7 @@ function uiIconDiagnostic(resolve) {
 }
 function uiIconGenerate(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Generate",
@@ -4190,7 +4190,7 @@ function uiIconGenerate(resolve) {
 }
 function uiIconLineChart(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "LineChart",
@@ -4202,7 +4202,7 @@ function uiIconLineChart(resolve) {
 }
 function uiIconEqualizer(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Equalizer",
@@ -4214,7 +4214,7 @@ function uiIconEqualizer(resolve) {
 }
 function uiIconBarChartHorizontal(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BarChartHorizontal",
@@ -4226,7 +4226,7 @@ function uiIconBarChartHorizontal(resolve) {
 }
 function uiIconBarChartVertical(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BarChartVertical",
@@ -4238,7 +4238,7 @@ function uiIconBarChartVertical(resolve) {
 }
 function uiIconFreezing(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Freezing",
@@ -4250,7 +4250,7 @@ function uiIconFreezing(resolve) {
 }
 function uiIconProcessing(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Processing",
@@ -4262,7 +4262,7 @@ function uiIconProcessing(resolve) {
 }
 function uiIconSnowShowerDay(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SnowShowerDay",
@@ -4274,7 +4274,7 @@ function uiIconSnowShowerDay(resolve) {
 }
 function uiIconHailDay(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "HailDay",
@@ -4286,7 +4286,7 @@ function uiIconHailDay(resolve) {
 }
 function uiIconWorkFlow(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "WorkFlow",
@@ -4298,7 +4298,7 @@ function uiIconWorkFlow(resolve) {
 }
 function uiIconHourGlass(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "HourGlass",
@@ -4310,7 +4310,7 @@ function uiIconHourGlass(resolve) {
 }
 function uiIconStoreLogoMed20(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "StoreLogoMed20",
@@ -4322,7 +4322,7 @@ function uiIconStoreLogoMed20(resolve) {
 }
 function uiIconTimeSheet(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TimeSheet",
@@ -4334,7 +4334,7 @@ function uiIconTimeSheet(resolve) {
 }
 function uiIconTriangleSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TriangleSolid",
@@ -4346,7 +4346,7 @@ function uiIconTriangleSolid(resolve) {
 }
 function uiIconVideoSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "VideoSolid",
@@ -4358,7 +4358,7 @@ function uiIconVideoSolid(resolve) {
 }
 function uiIconRainShowersNight(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "RainShowersNight",
@@ -4370,7 +4370,7 @@ function uiIconRainShowersNight(resolve) {
 }
 function uiIconSnowShowerNight(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SnowShowerNight",
@@ -4382,7 +4382,7 @@ function uiIconSnowShowerNight(resolve) {
 }
 function uiIconTeamwork(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Teamwork",
@@ -4394,7 +4394,7 @@ function uiIconTeamwork(resolve) {
 }
 function uiIconHailNight(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "HailNight",
@@ -4406,7 +4406,7 @@ function uiIconHailNight(resolve) {
 }
 function uiIconPeopleAdd(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PeopleAdd",
@@ -4418,7 +4418,7 @@ function uiIconPeopleAdd(resolve) {
 }
 function uiIconGlasses(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Glasses",
@@ -4430,7 +4430,7 @@ function uiIconGlasses(resolve) {
 }
 function uiIconDateTime2(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DateTime2",
@@ -4442,7 +4442,7 @@ function uiIconDateTime2(resolve) {
 }
 function uiIconShield(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Shield",
@@ -4454,7 +4454,7 @@ function uiIconShield(resolve) {
 }
 function uiIconHeader1(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Header1",
@@ -4466,7 +4466,7 @@ function uiIconHeader1(resolve) {
 }
 function uiIconPageAdd(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PageAdd",
@@ -4478,7 +4478,7 @@ function uiIconPageAdd(resolve) {
 }
 function uiIconNumberedList(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "NumberedList",
@@ -4490,7 +4490,7 @@ function uiIconNumberedList(resolve) {
 }
 function uiIconPowerBILogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PowerBILogo",
@@ -4502,7 +4502,7 @@ function uiIconPowerBILogo(resolve) {
 }
 function uiIconInfo2(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Info2",
@@ -4514,7 +4514,7 @@ function uiIconInfo2(resolve) {
 }
 function uiIconMusicInCollectionFill(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MusicInCollectionFill",
@@ -4526,7 +4526,7 @@ function uiIconMusicInCollectionFill(resolve) {
 }
 function uiIconAsterisk(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Asterisk",
@@ -4538,7 +4538,7 @@ function uiIconAsterisk(resolve) {
 }
 function uiIconErrorBadge(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ErrorBadge",
@@ -4550,7 +4550,7 @@ function uiIconErrorBadge(resolve) {
 }
 function uiIconCircleFill(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CircleFill",
@@ -4562,7 +4562,7 @@ function uiIconCircleFill(resolve) {
 }
 function uiIconRecord2(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Record2",
@@ -4574,7 +4574,7 @@ function uiIconRecord2(resolve) {
 }
 function uiIconAllAppsMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AllAppsMirrored",
@@ -4586,7 +4586,7 @@ function uiIconAllAppsMirrored(resolve) {
 }
 function uiIconBookmarksMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BookmarksMirrored",
@@ -4598,7 +4598,7 @@ function uiIconBookmarksMirrored(resolve) {
 }
 function uiIconBulletedListMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BulletedListMirrored",
@@ -4610,7 +4610,7 @@ function uiIconBulletedListMirrored(resolve) {
 }
 function uiIconCaretHollowMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CaretHollowMirrored",
@@ -4622,7 +4622,7 @@ function uiIconCaretHollowMirrored(resolve) {
 }
 function uiIconCaretSolidMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CaretSolidMirrored",
@@ -4634,7 +4634,7 @@ function uiIconCaretSolidMirrored(resolve) {
 }
 function uiIconChromeBackMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ChromeBackMirrored",
@@ -4646,7 +4646,7 @@ function uiIconChromeBackMirrored(resolve) {
 }
 function uiIconClosePaneMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ClosePaneMirrored",
@@ -4658,7 +4658,7 @@ function uiIconClosePaneMirrored(resolve) {
 }
 function uiIconDockLeftMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DockLeftMirrored",
@@ -4670,7 +4670,7 @@ function uiIconDockLeftMirrored(resolve) {
 }
 function uiIconDoubleChevronLeftMedMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DoubleChevronLeftMedMirrored",
@@ -4682,7 +4682,7 @@ function uiIconDoubleChevronLeftMedMirrored(resolve) {
 }
 function uiIconHelpMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "HelpMirrored",
@@ -4694,7 +4694,7 @@ function uiIconHelpMirrored(resolve) {
 }
 function uiIconImportMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ImportMirrored",
@@ -4706,7 +4706,7 @@ function uiIconImportMirrored(resolve) {
 }
 function uiIconListMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ListMirrored",
@@ -4718,7 +4718,7 @@ function uiIconListMirrored(resolve) {
 }
 function uiIconMailForwardMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MailForwardMirrored",
@@ -4730,7 +4730,7 @@ function uiIconMailForwardMirrored(resolve) {
 }
 function uiIconMailReplyMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MailReplyMirrored",
@@ -4742,7 +4742,7 @@ function uiIconMailReplyMirrored(resolve) {
 }
 function uiIconMailReplyAllMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MailReplyAllMirrored",
@@ -4754,7 +4754,7 @@ function uiIconMailReplyAllMirrored(resolve) {
 }
 function uiIconOpenPaneMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OpenPaneMirrored",
@@ -4766,7 +4766,7 @@ function uiIconOpenPaneMirrored(resolve) {
 }
 function uiIconParkingLocationMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ParkingLocationMirrored",
@@ -4778,7 +4778,7 @@ function uiIconParkingLocationMirrored(resolve) {
 }
 function uiIconSendMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SendMirrored",
@@ -4790,7 +4790,7 @@ function uiIconSendMirrored(resolve) {
 }
 function uiIconShowResultsMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ShowResultsMirrored",
@@ -4802,7 +4802,7 @@ function uiIconShowResultsMirrored(resolve) {
 }
 function uiIconThumbnailViewMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ThumbnailViewMirrored",
@@ -4814,7 +4814,7 @@ function uiIconThumbnailViewMirrored(resolve) {
 }
 function uiIconDevices3(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Devices3",
@@ -4826,7 +4826,7 @@ function uiIconDevices3(resolve) {
 }
 function uiIconLightbulb(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Lightbulb",
@@ -4838,7 +4838,7 @@ function uiIconLightbulb(resolve) {
 }
 function uiIconStatusTriangle(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "StatusTriangle",
@@ -4850,7 +4850,7 @@ function uiIconStatusTriangle(resolve) {
 }
 function uiIconVolumeDisabled(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "VolumeDisabled",
@@ -4862,7 +4862,7 @@ function uiIconVolumeDisabled(resolve) {
 }
 function uiIconPuzzle(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Puzzle",
@@ -4874,7 +4874,7 @@ function uiIconPuzzle(resolve) {
 }
 function uiIconEmojiNeutral(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "EmojiNeutral",
@@ -4886,7 +4886,7 @@ function uiIconEmojiNeutral(resolve) {
 }
 function uiIconEmojiDisappointed(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "EmojiDisappointed",
@@ -4898,7 +4898,7 @@ function uiIconEmojiDisappointed(resolve) {
 }
 function uiIconHomeSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "HomeSolid",
@@ -4910,7 +4910,7 @@ function uiIconHomeSolid(resolve) {
 }
 function uiIconRinger(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Ringer",
@@ -4922,7 +4922,7 @@ function uiIconRinger(resolve) {
 }
 function uiIconPDF(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PDF",
@@ -4934,7 +4934,7 @@ function uiIconPDF(resolve) {
 }
 function uiIconHeartBroken(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "HeartBroken",
@@ -4946,7 +4946,7 @@ function uiIconHeartBroken(resolve) {
 }
 function uiIconStoreLogo16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "StoreLogo16",
@@ -4958,7 +4958,7 @@ function uiIconStoreLogo16(resolve) {
 }
 function uiIconMultiSelectMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MultiSelectMirrored",
@@ -4970,7 +4970,7 @@ function uiIconMultiSelectMirrored(resolve) {
 }
 function uiIconBroom(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Broom",
@@ -4982,7 +4982,7 @@ function uiIconBroom(resolve) {
 }
 function uiIconCocktails(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Cocktails",
@@ -4994,7 +4994,7 @@ function uiIconCocktails(resolve) {
 }
 function uiIconWines(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Wines",
@@ -5006,7 +5006,7 @@ function uiIconWines(resolve) {
 }
 function uiIconArticles(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Articles",
@@ -5018,7 +5018,7 @@ function uiIconArticles(resolve) {
 }
 function uiIconCycling(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Cycling",
@@ -5030,7 +5030,7 @@ function uiIconCycling(resolve) {
 }
 function uiIconDietPlanNotebook(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DietPlanNotebook",
@@ -5042,7 +5042,7 @@ function uiIconDietPlanNotebook(resolve) {
 }
 function uiIconPill(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Pill",
@@ -5054,7 +5054,7 @@ function uiIconPill(resolve) {
 }
 function uiIconExerciseTracker(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ExerciseTracker",
@@ -5066,7 +5066,7 @@ function uiIconExerciseTracker(resolve) {
 }
 function uiIconHandsFree(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "HandsFree",
@@ -5078,7 +5078,7 @@ function uiIconHandsFree(resolve) {
 }
 function uiIconMedical(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Medical",
@@ -5090,7 +5090,7 @@ function uiIconMedical(resolve) {
 }
 function uiIconRunning(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Running",
@@ -5102,7 +5102,7 @@ function uiIconRunning(resolve) {
 }
 function uiIconWeights(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Weights",
@@ -5114,7 +5114,7 @@ function uiIconWeights(resolve) {
 }
 function uiIconTrackers(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Trackers",
@@ -5126,7 +5126,7 @@ function uiIconTrackers(resolve) {
 }
 function uiIconAddNotes(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AddNotes",
@@ -5138,7 +5138,7 @@ function uiIconAddNotes(resolve) {
 }
 function uiIconAllCurrency(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AllCurrency",
@@ -5150,7 +5150,7 @@ function uiIconAllCurrency(resolve) {
 }
 function uiIconBarChart4(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BarChart4",
@@ -5162,7 +5162,7 @@ function uiIconBarChart4(resolve) {
 }
 function uiIconCirclePlus(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CirclePlus",
@@ -5174,7 +5174,7 @@ function uiIconCirclePlus(resolve) {
 }
 function uiIconCoffee(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Coffee",
@@ -5186,7 +5186,7 @@ function uiIconCoffee(resolve) {
 }
 function uiIconCotton(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Cotton",
@@ -5198,7 +5198,7 @@ function uiIconCotton(resolve) {
 }
 function uiIconMarket(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Market",
@@ -5210,7 +5210,7 @@ function uiIconMarket(resolve) {
 }
 function uiIconMoney(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Money",
@@ -5222,7 +5222,7 @@ function uiIconMoney(resolve) {
 }
 function uiIconPieDouble(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PieDouble",
@@ -5234,7 +5234,7 @@ function uiIconPieDouble(resolve) {
 }
 function uiIconPieSingle(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PieSingle",
@@ -5246,7 +5246,7 @@ function uiIconPieSingle(resolve) {
 }
 function uiIconRemoveFilter(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "RemoveFilter",
@@ -5258,7 +5258,7 @@ function uiIconRemoveFilter(resolve) {
 }
 function uiIconSavings(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Savings",
@@ -5270,7 +5270,7 @@ function uiIconSavings(resolve) {
 }
 function uiIconSell(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Sell",
@@ -5282,7 +5282,7 @@ function uiIconSell(resolve) {
 }
 function uiIconStockDown(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "StockDown",
@@ -5294,7 +5294,7 @@ function uiIconStockDown(resolve) {
 }
 function uiIconStockUp(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "StockUp",
@@ -5306,7 +5306,7 @@ function uiIconStockUp(resolve) {
 }
 function uiIconLamp(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Lamp",
@@ -5318,7 +5318,7 @@ function uiIconLamp(resolve) {
 }
 function uiIconSource(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Source",
@@ -5330,7 +5330,7 @@ function uiIconSource(resolve) {
 }
 function uiIconMSNVideos(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MSNVideos",
@@ -5342,7 +5342,7 @@ function uiIconMSNVideos(resolve) {
 }
 function uiIconCricket(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Cricket",
@@ -5354,7 +5354,7 @@ function uiIconCricket(resolve) {
 }
 function uiIconGolf(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Golf",
@@ -5366,7 +5366,7 @@ function uiIconGolf(resolve) {
 }
 function uiIconBaseball(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Baseball",
@@ -5378,7 +5378,7 @@ function uiIconBaseball(resolve) {
 }
 function uiIconSoccer(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Soccer",
@@ -5390,7 +5390,7 @@ function uiIconSoccer(resolve) {
 }
 function uiIconMoreSports(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MoreSports",
@@ -5402,7 +5402,7 @@ function uiIconMoreSports(resolve) {
 }
 function uiIconAutoRacing(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AutoRacing",
@@ -5414,7 +5414,7 @@ function uiIconAutoRacing(resolve) {
 }
 function uiIconCollegeHoops(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CollegeHoops",
@@ -5426,7 +5426,7 @@ function uiIconCollegeHoops(resolve) {
 }
 function uiIconCollegeFootball(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CollegeFootball",
@@ -5438,7 +5438,7 @@ function uiIconCollegeFootball(resolve) {
 }
 function uiIconProFootball(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ProFootball",
@@ -5450,7 +5450,7 @@ function uiIconProFootball(resolve) {
 }
 function uiIconProHockey(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ProHockey",
@@ -5462,7 +5462,7 @@ function uiIconProHockey(resolve) {
 }
 function uiIconRugby(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Rugby",
@@ -5474,7 +5474,7 @@ function uiIconRugby(resolve) {
 }
 function uiIconSubstitutionsIn(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SubstitutionsIn",
@@ -5486,7 +5486,7 @@ function uiIconSubstitutionsIn(resolve) {
 }
 function uiIconTennis(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Tennis",
@@ -5498,7 +5498,7 @@ function uiIconTennis(resolve) {
 }
 function uiIconArrivals(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Arrivals",
@@ -5510,7 +5510,7 @@ function uiIconArrivals(resolve) {
 }
 function uiIconDesign(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Design",
@@ -5522,7 +5522,7 @@ function uiIconDesign(resolve) {
 }
 function uiIconWebsite(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Website",
@@ -5534,7 +5534,7 @@ function uiIconWebsite(resolve) {
 }
 function uiIconDrop(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Drop",
@@ -5546,7 +5546,7 @@ function uiIconDrop(resolve) {
 }
 function uiIconSkiResorts(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SkiResorts",
@@ -5558,7 +5558,7 @@ function uiIconSkiResorts(resolve) {
 }
 function uiIconSnowflake(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Snowflake",
@@ -5570,7 +5570,7 @@ function uiIconSnowflake(resolve) {
 }
 function uiIconBusSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BusSolid",
@@ -5582,7 +5582,7 @@ function uiIconBusSolid(resolve) {
 }
 function uiIconFerrySolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FerrySolid",
@@ -5594,7 +5594,7 @@ function uiIconFerrySolid(resolve) {
 }
 function uiIconAirplaneSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AirplaneSolid",
@@ -5606,7 +5606,7 @@ function uiIconAirplaneSolid(resolve) {
 }
 function uiIconTrainSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TrainSolid",
@@ -5618,7 +5618,7 @@ function uiIconTrainSolid(resolve) {
 }
 function uiIconTicket(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Ticket",
@@ -5630,7 +5630,7 @@ function uiIconTicket(resolve) {
 }
 function uiIconDevices4(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Devices4",
@@ -5642,7 +5642,7 @@ function uiIconDevices4(resolve) {
 }
 function uiIconAzureLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AzureLogo",
@@ -5654,7 +5654,7 @@ function uiIconAzureLogo(resolve) {
 }
 function uiIconBingLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BingLogo",
@@ -5666,7 +5666,7 @@ function uiIconBingLogo(resolve) {
 }
 function uiIconMSNLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MSNLogo",
@@ -5678,7 +5678,7 @@ function uiIconMSNLogo(resolve) {
 }
 function uiIconOutlookLogoInverse(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OutlookLogoInverse",
@@ -5690,7 +5690,7 @@ function uiIconOutlookLogoInverse(resolve) {
 }
 function uiIconOfficeLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OfficeLogo",
@@ -5702,7 +5702,7 @@ function uiIconOfficeLogo(resolve) {
 }
 function uiIconSkypeLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SkypeLogo",
@@ -5714,7 +5714,7 @@ function uiIconSkypeLogo(resolve) {
 }
 function uiIconDoor(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Door",
@@ -5726,7 +5726,7 @@ function uiIconDoor(resolve) {
 }
 function uiIconEditMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "EditMirrored",
@@ -5738,7 +5738,7 @@ function uiIconEditMirrored(resolve) {
 }
 function uiIconGiftCard(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "GiftCard",
@@ -5750,7 +5750,7 @@ function uiIconGiftCard(resolve) {
 }
 function uiIconDoubleBookmark(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DoubleBookmark",
@@ -5762,7 +5762,7 @@ function uiIconDoubleBookmark(resolve) {
 }
 function uiIconStatusErrorFull(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "StatusErrorFull",
@@ -5774,7 +5774,7 @@ function uiIconStatusErrorFull(resolve) {
 }
 function uiIconCertificate(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Certificate",
@@ -5786,7 +5786,7 @@ function uiIconCertificate(resolve) {
 }
 function uiIconFastForward(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FastForward",
@@ -5798,7 +5798,7 @@ function uiIconFastForward(resolve) {
 }
 function uiIconRewind(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Rewind",
@@ -5810,7 +5810,7 @@ function uiIconRewind(resolve) {
 }
 function uiIconPhoto2(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Photo2",
@@ -5822,7 +5822,7 @@ function uiIconPhoto2(resolve) {
 }
 function uiIconOpenSource(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OpenSource",
@@ -5834,7 +5834,7 @@ function uiIconOpenSource(resolve) {
 }
 function uiIconMovers(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Movers",
@@ -5846,7 +5846,7 @@ function uiIconMovers(resolve) {
 }
 function uiIconCloudDownload(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CloudDownload",
@@ -5858,7 +5858,7 @@ function uiIconCloudDownload(resolve) {
 }
 function uiIconFamily(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Family",
@@ -5870,7 +5870,7 @@ function uiIconFamily(resolve) {
 }
 function uiIconWindDirection(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "WindDirection",
@@ -5882,7 +5882,7 @@ function uiIconWindDirection(resolve) {
 }
 function uiIconBug(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Bug",
@@ -5894,7 +5894,7 @@ function uiIconBug(resolve) {
 }
 function uiIconSiteScan(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SiteScan",
@@ -5906,7 +5906,7 @@ function uiIconSiteScan(resolve) {
 }
 function uiIconBrowserScreenShot(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BrowserScreenShot",
@@ -5918,7 +5918,7 @@ function uiIconBrowserScreenShot(resolve) {
 }
 function uiIconF12DevTools(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "F12DevTools",
@@ -5930,7 +5930,7 @@ function uiIconF12DevTools(resolve) {
 }
 function uiIconCSS(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CSS",
@@ -5942,7 +5942,7 @@ function uiIconCSS(resolve) {
 }
 function uiIconJS(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "JS",
@@ -5954,7 +5954,7 @@ function uiIconJS(resolve) {
 }
 function uiIconDeliveryTruck(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DeliveryTruck",
@@ -5966,7 +5966,7 @@ function uiIconDeliveryTruck(resolve) {
 }
 function uiIconReminderPerson(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ReminderPerson",
@@ -5978,7 +5978,7 @@ function uiIconReminderPerson(resolve) {
 }
 function uiIconReminderGroup(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ReminderGroup",
@@ -5990,7 +5990,7 @@ function uiIconReminderGroup(resolve) {
 }
 function uiIconTabletMode(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TabletMode",
@@ -6002,7 +6002,7 @@ function uiIconTabletMode(resolve) {
 }
 function uiIconUmbrella(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Umbrella",
@@ -6014,7 +6014,7 @@ function uiIconUmbrella(resolve) {
 }
 function uiIconNetworkTower(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "NetworkTower",
@@ -6026,7 +6026,7 @@ function uiIconNetworkTower(resolve) {
 }
 function uiIconCityNext(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CityNext",
@@ -6038,7 +6038,7 @@ function uiIconCityNext(resolve) {
 }
 function uiIconSection(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Section",
@@ -6050,7 +6050,7 @@ function uiIconSection(resolve) {
 }
 function uiIconOneNoteLogoInverse(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OneNoteLogoInverse",
@@ -6062,7 +6062,7 @@ function uiIconOneNoteLogoInverse(resolve) {
 }
 function uiIconToggleFilled(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ToggleFilled",
@@ -6074,7 +6074,7 @@ function uiIconToggleFilled(resolve) {
 }
 function uiIconToggleBorder(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ToggleBorder",
@@ -6086,7 +6086,7 @@ function uiIconToggleBorder(resolve) {
 }
 function uiIconSliderThumb(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SliderThumb",
@@ -6098,7 +6098,7 @@ function uiIconSliderThumb(resolve) {
 }
 function uiIconToggleThumb(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ToggleThumb",
@@ -6110,7 +6110,7 @@ function uiIconToggleThumb(resolve) {
 }
 function uiIconDocumentation(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Documentation",
@@ -6122,7 +6122,7 @@ function uiIconDocumentation(resolve) {
 }
 function uiIconBadge(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Badge",
@@ -6134,7 +6134,7 @@ function uiIconBadge(resolve) {
 }
 function uiIconGiftbox(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Giftbox",
@@ -6146,7 +6146,7 @@ function uiIconGiftbox(resolve) {
 }
 function uiIconVisualStudioLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "VisualStudioLogo",
@@ -6158,7 +6158,7 @@ function uiIconVisualStudioLogo(resolve) {
 }
 function uiIconExcelLogoInverse(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ExcelLogoInverse",
@@ -6170,7 +6170,7 @@ function uiIconExcelLogoInverse(resolve) {
 }
 function uiIconWordLogoInverse(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "WordLogoInverse",
@@ -6182,7 +6182,7 @@ function uiIconWordLogoInverse(resolve) {
 }
 function uiIconPowerPointLogoInverse(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PowerPointLogoInverse",
@@ -6194,7 +6194,7 @@ function uiIconPowerPointLogoInverse(resolve) {
 }
 function uiIconCafe(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Cafe",
@@ -6206,7 +6206,7 @@ function uiIconCafe(resolve) {
 }
 function uiIconSpeedHigh(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SpeedHigh",
@@ -6218,7 +6218,7 @@ function uiIconSpeedHigh(resolve) {
 }
 function uiIconCommitments(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Commitments",
@@ -6230,7 +6230,7 @@ function uiIconCommitments(resolve) {
 }
 function uiIconThisPC(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ThisPC",
@@ -6242,7 +6242,7 @@ function uiIconThisPC(resolve) {
 }
 function uiIconMusicNote(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MusicNote",
@@ -6254,7 +6254,7 @@ function uiIconMusicNote(resolve) {
 }
 function uiIconMicOff(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MicOff",
@@ -6266,7 +6266,7 @@ function uiIconMicOff(resolve) {
 }
 function uiIconEdgeLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "EdgeLogo",
@@ -6278,7 +6278,7 @@ function uiIconEdgeLogo(resolve) {
 }
 function uiIconCompletedSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CompletedSolid",
@@ -6290,7 +6290,7 @@ function uiIconCompletedSolid(resolve) {
 }
 function uiIconAlbumRemove(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AlbumRemove",
@@ -6302,7 +6302,7 @@ function uiIconAlbumRemove(resolve) {
 }
 function uiIconMessageFill(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MessageFill",
@@ -6314,7 +6314,7 @@ function uiIconMessageFill(resolve) {
 }
 function uiIconTabletSelected(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TabletSelected",
@@ -6326,7 +6326,7 @@ function uiIconTabletSelected(resolve) {
 }
 function uiIconMobileSelected(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MobileSelected",
@@ -6338,7 +6338,7 @@ function uiIconMobileSelected(resolve) {
 }
 function uiIconLaptopSelected(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "LaptopSelected",
@@ -6350,7 +6350,7 @@ function uiIconLaptopSelected(resolve) {
 }
 function uiIconTVMonitorSelected(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TVMonitorSelected",
@@ -6362,7 +6362,7 @@ function uiIconTVMonitorSelected(resolve) {
 }
 function uiIconDeveloperTools(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DeveloperTools",
@@ -6374,7 +6374,7 @@ function uiIconDeveloperTools(resolve) {
 }
 function uiIconInsertTextBox(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "InsertTextBox",
@@ -6386,7 +6386,7 @@ function uiIconInsertTextBox(resolve) {
 }
 function uiIconLowerBrightness(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "LowerBrightness",
@@ -6398,7 +6398,7 @@ function uiIconLowerBrightness(resolve) {
 }
 function uiIconDOM(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DOM",
@@ -6410,7 +6410,7 @@ function uiIconDOM(resolve) {
 }
 function uiIconCloudUpload(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CloudUpload",
@@ -6422,7 +6422,7 @@ function uiIconCloudUpload(resolve) {
 }
 function uiIconScrollUpDown(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ScrollUpDown",
@@ -6434,7 +6434,7 @@ function uiIconScrollUpDown(resolve) {
 }
 function uiIconDateTime(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DateTime",
@@ -6446,7 +6446,7 @@ function uiIconDateTime(resolve) {
 }
 function uiIconEvent(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Event",
@@ -6458,7 +6458,7 @@ function uiIconEvent(resolve) {
 }
 function uiIconCake(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Cake",
@@ -6470,7 +6470,7 @@ function uiIconCake(resolve) {
 }
 function uiIconOrg(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Org",
@@ -6482,7 +6482,7 @@ function uiIconOrg(resolve) {
 }
 function uiIconPartyLeader(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PartyLeader",
@@ -6494,7 +6494,7 @@ function uiIconPartyLeader(resolve) {
 }
 function uiIconDRM(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DRM",
@@ -6506,7 +6506,7 @@ function uiIconDRM(resolve) {
 }
 function uiIconCloudAdd(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CloudAdd",
@@ -6518,7 +6518,7 @@ function uiIconCloudAdd(resolve) {
 }
 function uiIconAppIconDefault(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AppIconDefault",
@@ -6530,7 +6530,7 @@ function uiIconAppIconDefault(resolve) {
 }
 function uiIconPhoto2Add(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Photo2Add",
@@ -6542,7 +6542,7 @@ function uiIconPhoto2Add(resolve) {
 }
 function uiIconPhoto2Remove(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Photo2Remove",
@@ -6554,7 +6554,7 @@ function uiIconPhoto2Remove(resolve) {
 }
 function uiIconPOI(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "POI",
@@ -6566,7 +6566,7 @@ function uiIconPOI(resolve) {
 }
 function uiIconAddTo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AddTo",
@@ -6578,7 +6578,7 @@ function uiIconAddTo(resolve) {
 }
 function uiIconRadioBtnOff(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "RadioBtnOff",
@@ -6590,7 +6590,7 @@ function uiIconRadioBtnOff(resolve) {
 }
 function uiIconRadioBtnOn(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "RadioBtnOn",
@@ -6602,7 +6602,7 @@ function uiIconRadioBtnOn(resolve) {
 }
 function uiIconExploreContent(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ExploreContent",
@@ -6614,7 +6614,7 @@ function uiIconExploreContent(resolve) {
 }
 function uiIconProduct(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Product",
@@ -6626,7 +6626,7 @@ function uiIconProduct(resolve) {
 }
 function uiIconProgressLoopInner(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ProgressLoopInner",
@@ -6638,7 +6638,7 @@ function uiIconProgressLoopInner(resolve) {
 }
 function uiIconProgressLoopOuter(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ProgressLoopOuter",
@@ -6650,7 +6650,7 @@ function uiIconProgressLoopOuter(resolve) {
 }
 function uiIconBlocked2(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Blocked2",
@@ -6662,7 +6662,7 @@ function uiIconBlocked2(resolve) {
 }
 function uiIconFangBody(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FangBody",
@@ -6674,7 +6674,7 @@ function uiIconFangBody(resolve) {
 }
 function uiIconChatInviteFriend(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ChatInviteFriend",
@@ -6686,7 +6686,7 @@ function uiIconChatInviteFriend(resolve) {
 }
 function uiIconCrown(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Crown",
@@ -6698,7 +6698,7 @@ function uiIconCrown(resolve) {
 }
 function uiIconDiamond(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Diamond",
@@ -6710,7 +6710,7 @@ function uiIconDiamond(resolve) {
 }
 function uiIconScaleUp(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ScaleUp",
@@ -6722,7 +6722,7 @@ function uiIconScaleUp(resolve) {
 }
 function uiIconFeedback(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Feedback",
@@ -6734,7 +6734,7 @@ function uiIconFeedback(resolve) {
 }
 function uiIconSharepointLogoInverse(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SharepointLogoInverse",
@@ -6746,7 +6746,7 @@ function uiIconSharepointLogoInverse(resolve) {
 }
 function uiIconYammerLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "YammerLogo",
@@ -6758,7 +6758,7 @@ function uiIconYammerLogo(resolve) {
 }
 function uiIconHide(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Hide",
@@ -6770,7 +6770,7 @@ function uiIconHide(resolve) {
 }
 function uiIconUneditable(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Uneditable",
@@ -6782,7 +6782,7 @@ function uiIconUneditable(resolve) {
 }
 function uiIconReturnToSession(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ReturnToSession",
@@ -6794,7 +6794,7 @@ function uiIconReturnToSession(resolve) {
 }
 function uiIconOpenFolderHorizontal(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OpenFolderHorizontal",
@@ -6806,7 +6806,7 @@ function uiIconOpenFolderHorizontal(resolve) {
 }
 function uiIconCalendarMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CalendarMirrored",
@@ -6818,7 +6818,7 @@ function uiIconCalendarMirrored(resolve) {
 }
 function uiIconSwayLogoInverse(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SwayLogoInverse",
@@ -6830,7 +6830,7 @@ function uiIconSwayLogoInverse(resolve) {
 }
 function uiIconOutOfOffice(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OutOfOffice",
@@ -6842,7 +6842,7 @@ function uiIconOutOfOffice(resolve) {
 }
 function uiIconTrophy(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Trophy",
@@ -6854,7 +6854,7 @@ function uiIconTrophy(resolve) {
 }
 function uiIconReopenPages(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ReopenPages",
@@ -6866,7 +6866,7 @@ function uiIconReopenPages(resolve) {
 }
 function uiIconEmojiTabSymbols(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "EmojiTabSymbols",
@@ -6878,7 +6878,7 @@ function uiIconEmojiTabSymbols(resolve) {
 }
 function uiIconAADLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AADLogo",
@@ -6890,7 +6890,7 @@ function uiIconAADLogo(resolve) {
 }
 function uiIconAccessLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AccessLogo",
@@ -6902,7 +6902,7 @@ function uiIconAccessLogo(resolve) {
 }
 function uiIconAdminALogoInverse32(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AdminALogoInverse32",
@@ -6914,7 +6914,7 @@ function uiIconAdminALogoInverse32(resolve) {
 }
 function uiIconAdminCLogoInverse32(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AdminCLogoInverse32",
@@ -6926,7 +6926,7 @@ function uiIconAdminCLogoInverse32(resolve) {
 }
 function uiIconAdminDLogoInverse32(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AdminDLogoInverse32",
@@ -6938,7 +6938,7 @@ function uiIconAdminDLogoInverse32(resolve) {
 }
 function uiIconAdminELogoInverse32(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AdminELogoInverse32",
@@ -6950,7 +6950,7 @@ function uiIconAdminELogoInverse32(resolve) {
 }
 function uiIconAdminLLogoInverse32(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AdminLLogoInverse32",
@@ -6962,7 +6962,7 @@ function uiIconAdminLLogoInverse32(resolve) {
 }
 function uiIconAdminMLogoInverse32(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AdminMLogoInverse32",
@@ -6974,7 +6974,7 @@ function uiIconAdminMLogoInverse32(resolve) {
 }
 function uiIconAdminOLogoInverse32(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AdminOLogoInverse32",
@@ -6986,7 +6986,7 @@ function uiIconAdminOLogoInverse32(resolve) {
 }
 function uiIconAdminPLogoInverse32(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AdminPLogoInverse32",
@@ -6998,7 +6998,7 @@ function uiIconAdminPLogoInverse32(resolve) {
 }
 function uiIconAdminSLogoInverse32(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AdminSLogoInverse32",
@@ -7010,7 +7010,7 @@ function uiIconAdminSLogoInverse32(resolve) {
 }
 function uiIconAdminYLogoInverse32(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AdminYLogoInverse32",
@@ -7022,7 +7022,7 @@ function uiIconAdminYLogoInverse32(resolve) {
 }
 function uiIconDelveLogoInverse(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DelveLogoInverse",
@@ -7034,7 +7034,7 @@ function uiIconDelveLogoInverse(resolve) {
 }
 function uiIconExchangeLogoInverse(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ExchangeLogoInverse",
@@ -7046,7 +7046,7 @@ function uiIconExchangeLogoInverse(resolve) {
 }
 function uiIconLyncLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "LyncLogo",
@@ -7058,7 +7058,7 @@ function uiIconLyncLogo(resolve) {
 }
 function uiIconOfficeVideoLogoInverse(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OfficeVideoLogoInverse",
@@ -7070,7 +7070,7 @@ function uiIconOfficeVideoLogoInverse(resolve) {
 }
 function uiIconSocialListeningLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SocialListeningLogo",
@@ -7082,7 +7082,7 @@ function uiIconSocialListeningLogo(resolve) {
 }
 function uiIconVisioLogoInverse(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "VisioLogoInverse",
@@ -7094,7 +7094,7 @@ function uiIconVisioLogoInverse(resolve) {
 }
 function uiIconBalloons(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Balloons",
@@ -7106,7 +7106,7 @@ function uiIconBalloons(resolve) {
 }
 function uiIconCat(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Cat",
@@ -7118,7 +7118,7 @@ function uiIconCat(resolve) {
 }
 function uiIconMailAlert(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MailAlert",
@@ -7130,7 +7130,7 @@ function uiIconMailAlert(resolve) {
 }
 function uiIconMailCheck(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MailCheck",
@@ -7142,7 +7142,7 @@ function uiIconMailCheck(resolve) {
 }
 function uiIconMailLowImportance(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MailLowImportance",
@@ -7154,7 +7154,7 @@ function uiIconMailLowImportance(resolve) {
 }
 function uiIconMailPause(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MailPause",
@@ -7166,7 +7166,7 @@ function uiIconMailPause(resolve) {
 }
 function uiIconMailRepeat(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MailRepeat",
@@ -7178,7 +7178,7 @@ function uiIconMailRepeat(resolve) {
 }
 function uiIconSecurityGroup(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SecurityGroup",
@@ -7190,7 +7190,7 @@ function uiIconSecurityGroup(resolve) {
 }
 function uiIconTable(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Table",
@@ -7202,7 +7202,7 @@ function uiIconTable(resolve) {
 }
 function uiIconVoicemailForward(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "VoicemailForward",
@@ -7214,7 +7214,7 @@ function uiIconVoicemailForward(resolve) {
 }
 function uiIconVoicemailReply(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "VoicemailReply",
@@ -7226,7 +7226,7 @@ function uiIconVoicemailReply(resolve) {
 }
 function uiIconWaffle(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Waffle",
@@ -7238,7 +7238,7 @@ function uiIconWaffle(resolve) {
 }
 function uiIconRemoveEvent(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "RemoveEvent",
@@ -7250,7 +7250,7 @@ function uiIconRemoveEvent(resolve) {
 }
 function uiIconEventInfo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "EventInfo",
@@ -7262,7 +7262,7 @@ function uiIconEventInfo(resolve) {
 }
 function uiIconForwardEvent(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ForwardEvent",
@@ -7274,7 +7274,7 @@ function uiIconForwardEvent(resolve) {
 }
 function uiIconWipePhone(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "WipePhone",
@@ -7286,7 +7286,7 @@ function uiIconWipePhone(resolve) {
 }
 function uiIconAddOnlineMeeting(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AddOnlineMeeting",
@@ -7298,7 +7298,7 @@ function uiIconAddOnlineMeeting(resolve) {
 }
 function uiIconJoinOnlineMeeting(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "JoinOnlineMeeting",
@@ -7310,7 +7310,7 @@ function uiIconJoinOnlineMeeting(resolve) {
 }
 function uiIconRemoveLink(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "RemoveLink",
@@ -7322,7 +7322,7 @@ function uiIconRemoveLink(resolve) {
 }
 function uiIconPeopleBlock(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PeopleBlock",
@@ -7334,7 +7334,7 @@ function uiIconPeopleBlock(resolve) {
 }
 function uiIconPeopleRepeat(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PeopleRepeat",
@@ -7346,7 +7346,7 @@ function uiIconPeopleRepeat(resolve) {
 }
 function uiIconPeopleAlert(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PeopleAlert",
@@ -7358,7 +7358,7 @@ function uiIconPeopleAlert(resolve) {
 }
 function uiIconPeoplePause(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PeoplePause",
@@ -7370,7 +7370,7 @@ function uiIconPeoplePause(resolve) {
 }
 function uiIconTransferCall(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TransferCall",
@@ -7382,7 +7382,7 @@ function uiIconTransferCall(resolve) {
 }
 function uiIconAddPhone(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AddPhone",
@@ -7394,7 +7394,7 @@ function uiIconAddPhone(resolve) {
 }
 function uiIconUnknownCall(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "UnknownCall",
@@ -7406,7 +7406,7 @@ function uiIconUnknownCall(resolve) {
 }
 function uiIconNoteReply(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "NoteReply",
@@ -7418,7 +7418,7 @@ function uiIconNoteReply(resolve) {
 }
 function uiIconNoteForward(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "NoteForward",
@@ -7430,7 +7430,7 @@ function uiIconNoteForward(resolve) {
 }
 function uiIconNotePinned(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "NotePinned",
@@ -7442,7 +7442,7 @@ function uiIconNotePinned(resolve) {
 }
 function uiIconRemoveOccurrence(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "RemoveOccurrence",
@@ -7454,7 +7454,7 @@ function uiIconRemoveOccurrence(resolve) {
 }
 function uiIconTimeline(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Timeline",
@@ -7466,7 +7466,7 @@ function uiIconTimeline(resolve) {
 }
 function uiIconEditNote(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "EditNote",
@@ -7478,7 +7478,7 @@ function uiIconEditNote(resolve) {
 }
 function uiIconCircleHalfFull(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CircleHalfFull",
@@ -7490,7 +7490,7 @@ function uiIconCircleHalfFull(resolve) {
 }
 function uiIconRoom(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Room",
@@ -7502,7 +7502,7 @@ function uiIconRoom(resolve) {
 }
 function uiIconUnsubscribe(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Unsubscribe",
@@ -7514,7 +7514,7 @@ function uiIconUnsubscribe(resolve) {
 }
 function uiIconSubscribe(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Subscribe",
@@ -7526,7 +7526,7 @@ function uiIconSubscribe(resolve) {
 }
 function uiIconHardDrive(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "HardDrive",
@@ -7538,7 +7538,7 @@ function uiIconHardDrive(resolve) {
 }
 function uiIconRecurringTask(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "RecurringTask",
@@ -7550,7 +7550,7 @@ function uiIconRecurringTask(resolve) {
 }
 function uiIconTaskManager(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TaskManager",
@@ -7562,7 +7562,7 @@ function uiIconTaskManager(resolve) {
 }
 function uiIconTaskManagerMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TaskManagerMirrored",
@@ -7574,7 +7574,7 @@ function uiIconTaskManagerMirrored(resolve) {
 }
 function uiIconCombine(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Combine",
@@ -7586,7 +7586,7 @@ function uiIconCombine(resolve) {
 }
 function uiIconSplit(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Split",
@@ -7598,7 +7598,7 @@ function uiIconSplit(resolve) {
 }
 function uiIconDoubleChevronUp(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DoubleChevronUp",
@@ -7610,7 +7610,7 @@ function uiIconDoubleChevronUp(resolve) {
 }
 function uiIconDoubleChevronLeft(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DoubleChevronLeft",
@@ -7622,7 +7622,7 @@ function uiIconDoubleChevronLeft(resolve) {
 }
 function uiIconDoubleChevronRight(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DoubleChevronRight",
@@ -7634,7 +7634,7 @@ function uiIconDoubleChevronRight(resolve) {
 }
 function uiIconTextBox(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TextBox",
@@ -7646,7 +7646,7 @@ function uiIconTextBox(resolve) {
 }
 function uiIconTextField(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TextField",
@@ -7658,7 +7658,7 @@ function uiIconTextField(resolve) {
 }
 function uiIconNumberField(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "NumberField",
@@ -7670,7 +7670,7 @@ function uiIconNumberField(resolve) {
 }
 function uiIconDropdown(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Dropdown",
@@ -7682,7 +7682,7 @@ function uiIconDropdown(resolve) {
 }
 function uiIconBookingsLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BookingsLogo",
@@ -7694,7 +7694,7 @@ function uiIconBookingsLogo(resolve) {
 }
 function uiIconClassNotebookLogoInverse(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ClassNotebookLogoInverse",
@@ -7706,7 +7706,7 @@ function uiIconClassNotebookLogoInverse(resolve) {
 }
 function uiIconDelveAnalyticsLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DelveAnalyticsLogo",
@@ -7718,7 +7718,7 @@ function uiIconDelveAnalyticsLogo(resolve) {
 }
 function uiIconDocsLogoInverse(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DocsLogoInverse",
@@ -7730,7 +7730,7 @@ function uiIconDocsLogoInverse(resolve) {
 }
 function uiIconDynamics365Logo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Dynamics365Logo",
@@ -7742,7 +7742,7 @@ function uiIconDynamics365Logo(resolve) {
 }
 function uiIconDynamicSMBLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DynamicSMBLogo",
@@ -7754,7 +7754,7 @@ function uiIconDynamicSMBLogo(resolve) {
 }
 function uiIconOfficeAssistantLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OfficeAssistantLogo",
@@ -7766,7 +7766,7 @@ function uiIconOfficeAssistantLogo(resolve) {
 }
 function uiIconOfficeStoreLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OfficeStoreLogo",
@@ -7778,7 +7778,7 @@ function uiIconOfficeStoreLogo(resolve) {
 }
 function uiIconOneNoteEduLogoInverse(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OneNoteEduLogoInverse",
@@ -7790,7 +7790,7 @@ function uiIconOneNoteEduLogoInverse(resolve) {
 }
 function uiIconPlannerLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PlannerLogo",
@@ -7802,7 +7802,7 @@ function uiIconPlannerLogo(resolve) {
 }
 function uiIconPowerApps(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PowerApps",
@@ -7814,7 +7814,7 @@ function uiIconPowerApps(resolve) {
 }
 function uiIconSuitcase(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Suitcase",
@@ -7826,7 +7826,7 @@ function uiIconSuitcase(resolve) {
 }
 function uiIconProjectLogoInverse(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ProjectLogoInverse",
@@ -7838,7 +7838,7 @@ function uiIconProjectLogoInverse(resolve) {
 }
 function uiIconCaretLeft8(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CaretLeft8",
@@ -7850,7 +7850,7 @@ function uiIconCaretLeft8(resolve) {
 }
 function uiIconCaretRight8(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CaretRight8",
@@ -7862,7 +7862,7 @@ function uiIconCaretRight8(resolve) {
 }
 function uiIconCaretUp8(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CaretUp8",
@@ -7874,7 +7874,7 @@ function uiIconCaretUp8(resolve) {
 }
 function uiIconCaretDown8(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CaretDown8",
@@ -7886,7 +7886,7 @@ function uiIconCaretDown8(resolve) {
 }
 function uiIconCaretLeftSolid8(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CaretLeftSolid8",
@@ -7898,7 +7898,7 @@ function uiIconCaretLeftSolid8(resolve) {
 }
 function uiIconCaretRightSolid8(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CaretRightSolid8",
@@ -7910,7 +7910,7 @@ function uiIconCaretRightSolid8(resolve) {
 }
 function uiIconCaretUpSolid8(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CaretUpSolid8",
@@ -7922,7 +7922,7 @@ function uiIconCaretUpSolid8(resolve) {
 }
 function uiIconCaretDownSolid8(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CaretDownSolid8",
@@ -7934,7 +7934,7 @@ function uiIconCaretDownSolid8(resolve) {
 }
 function uiIconClearFormatting(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ClearFormatting",
@@ -7946,7 +7946,7 @@ function uiIconClearFormatting(resolve) {
 }
 function uiIconSuperscript(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Superscript",
@@ -7958,7 +7958,7 @@ function uiIconSuperscript(resolve) {
 }
 function uiIconSubscript(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Subscript",
@@ -7970,7 +7970,7 @@ function uiIconSubscript(resolve) {
 }
 function uiIconStrikethrough(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Strikethrough",
@@ -7982,7 +7982,7 @@ function uiIconStrikethrough(resolve) {
 }
 function uiIconExport(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Export",
@@ -7994,7 +7994,7 @@ function uiIconExport(resolve) {
 }
 function uiIconExportMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ExportMirrored",
@@ -8006,7 +8006,7 @@ function uiIconExportMirrored(resolve) {
 }
 function uiIconSingleBookmark(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SingleBookmark",
@@ -8018,7 +8018,7 @@ function uiIconSingleBookmark(resolve) {
 }
 function uiIconSingleBookmarkSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SingleBookmarkSolid",
@@ -8030,7 +8030,7 @@ function uiIconSingleBookmarkSolid(resolve) {
 }
 function uiIconDoubleChevronDown(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DoubleChevronDown",
@@ -8042,7 +8042,7 @@ function uiIconDoubleChevronDown(resolve) {
 }
 function uiIconFollowUser(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FollowUser",
@@ -8054,7 +8054,7 @@ function uiIconFollowUser(resolve) {
 }
 function uiIconReplyAll(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ReplyAll",
@@ -8066,7 +8066,7 @@ function uiIconReplyAll(resolve) {
 }
 function uiIconWorkforceManagement(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "WorkforceManagement",
@@ -8078,7 +8078,7 @@ function uiIconWorkforceManagement(resolve) {
 }
 function uiIconRecruitmentManagement(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "RecruitmentManagement",
@@ -8090,7 +8090,7 @@ function uiIconRecruitmentManagement(resolve) {
 }
 function uiIconQuestionnaire(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Questionnaire",
@@ -8102,7 +8102,7 @@ function uiIconQuestionnaire(resolve) {
 }
 function uiIconManagerSelfService(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ManagerSelfService",
@@ -8114,7 +8114,7 @@ function uiIconManagerSelfService(resolve) {
 }
 function uiIconReplyMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ReplyMirrored",
@@ -8126,7 +8126,7 @@ function uiIconReplyMirrored(resolve) {
 }
 function uiIconReplyAllMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ReplyAllMirrored",
@@ -8138,7 +8138,7 @@ function uiIconReplyAllMirrored(resolve) {
 }
 function uiIconMedal(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Medal",
@@ -8150,7 +8150,7 @@ function uiIconMedal(resolve) {
 }
 function uiIconAddGroup(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AddGroup",
@@ -8162,7 +8162,7 @@ function uiIconAddGroup(resolve) {
 }
 function uiIconQuestionnaireMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "QuestionnaireMirrored",
@@ -8174,7 +8174,7 @@ function uiIconQuestionnaireMirrored(resolve) {
 }
 function uiIconTemporaryUser(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TemporaryUser",
@@ -8186,7 +8186,7 @@ function uiIconTemporaryUser(resolve) {
 }
 function uiIconCaretSolid16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CaretSolid16",
@@ -8198,7 +8198,7 @@ function uiIconCaretSolid16(resolve) {
 }
 function uiIconGroupedDescending(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "GroupedDescending",
@@ -8210,7 +8210,7 @@ function uiIconGroupedDescending(resolve) {
 }
 function uiIconGroupedAscending(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "GroupedAscending",
@@ -8222,7 +8222,7 @@ function uiIconGroupedAscending(resolve) {
 }
 function uiIconAwayStatus(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AwayStatus",
@@ -8234,7 +8234,7 @@ function uiIconAwayStatus(resolve) {
 }
 function uiIconMyMoviesTV(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MyMoviesTV",
@@ -8246,7 +8246,7 @@ function uiIconMyMoviesTV(resolve) {
 }
 function uiIconGenericScan(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "GenericScan",
@@ -8258,7 +8258,7 @@ function uiIconGenericScan(resolve) {
 }
 function uiIconAustralianRules(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AustralianRules",
@@ -8270,7 +8270,7 @@ function uiIconAustralianRules(resolve) {
 }
 function uiIconWifiEthernet(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "WifiEthernet",
@@ -8282,7 +8282,7 @@ function uiIconWifiEthernet(resolve) {
 }
 function uiIconTrackersMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TrackersMirrored",
@@ -8294,7 +8294,7 @@ function uiIconTrackersMirrored(resolve) {
 }
 function uiIconDateTimeMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DateTimeMirrored",
@@ -8306,7 +8306,7 @@ function uiIconDateTimeMirrored(resolve) {
 }
 function uiIconStopSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "StopSolid",
@@ -8318,7 +8318,7 @@ function uiIconStopSolid(resolve) {
 }
 function uiIconDoubleChevronUp12(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DoubleChevronUp12",
@@ -8330,7 +8330,7 @@ function uiIconDoubleChevronUp12(resolve) {
 }
 function uiIconDoubleChevronDown12(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DoubleChevronDown12",
@@ -8342,7 +8342,7 @@ function uiIconDoubleChevronDown12(resolve) {
 }
 function uiIconDoubleChevronLeft12(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DoubleChevronLeft12",
@@ -8354,7 +8354,7 @@ function uiIconDoubleChevronLeft12(resolve) {
 }
 function uiIconDoubleChevronRight12(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DoubleChevronRight12",
@@ -8366,7 +8366,7 @@ function uiIconDoubleChevronRight12(resolve) {
 }
 function uiIconCalendarAgenda(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CalendarAgenda",
@@ -8378,7 +8378,7 @@ function uiIconCalendarAgenda(resolve) {
 }
 function uiIconAddEvent(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AddEvent",
@@ -8390,7 +8390,7 @@ function uiIconAddEvent(resolve) {
 }
 function uiIconAssetLibrary(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AssetLibrary",
@@ -8402,7 +8402,7 @@ function uiIconAssetLibrary(resolve) {
 }
 function uiIconDataConnectionLibrary(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DataConnectionLibrary",
@@ -8414,7 +8414,7 @@ function uiIconDataConnectionLibrary(resolve) {
 }
 function uiIconDocLibrary(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DocLibrary",
@@ -8426,7 +8426,7 @@ function uiIconDocLibrary(resolve) {
 }
 function uiIconFormLibrary(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FormLibrary",
@@ -8438,7 +8438,7 @@ function uiIconFormLibrary(resolve) {
 }
 function uiIconFormLibraryMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FormLibraryMirrored",
@@ -8450,7 +8450,7 @@ function uiIconFormLibraryMirrored(resolve) {
 }
 function uiIconReportLibrary(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ReportLibrary",
@@ -8462,7 +8462,7 @@ function uiIconReportLibrary(resolve) {
 }
 function uiIconReportLibraryMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ReportLibraryMirrored",
@@ -8474,7 +8474,7 @@ function uiIconReportLibraryMirrored(resolve) {
 }
 function uiIconContactCard(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ContactCard",
@@ -8486,7 +8486,7 @@ function uiIconContactCard(resolve) {
 }
 function uiIconCustomList(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CustomList",
@@ -8498,7 +8498,7 @@ function uiIconCustomList(resolve) {
 }
 function uiIconCustomListMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CustomListMirrored",
@@ -8510,7 +8510,7 @@ function uiIconCustomListMirrored(resolve) {
 }
 function uiIconIssueTracking(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "IssueTracking",
@@ -8522,7 +8522,7 @@ function uiIconIssueTracking(resolve) {
 }
 function uiIconIssueTrackingMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "IssueTrackingMirrored",
@@ -8534,7 +8534,7 @@ function uiIconIssueTrackingMirrored(resolve) {
 }
 function uiIconPictureLibrary(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PictureLibrary",
@@ -8546,7 +8546,7 @@ function uiIconPictureLibrary(resolve) {
 }
 function uiIconOfficeAddinsLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OfficeAddinsLogo",
@@ -8558,7 +8558,7 @@ function uiIconOfficeAddinsLogo(resolve) {
 }
 function uiIconOfflineOneDriveParachute(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OfflineOneDriveParachute",
@@ -8570,7 +8570,7 @@ function uiIconOfflineOneDriveParachute(resolve) {
 }
 function uiIconOfflineOneDriveParachuteDisabled(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OfflineOneDriveParachuteDisabled",
@@ -8582,7 +8582,7 @@ function uiIconOfflineOneDriveParachuteDisabled(resolve) {
 }
 function uiIconTriangleSolidUp12(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TriangleSolidUp12",
@@ -8594,7 +8594,7 @@ function uiIconTriangleSolidUp12(resolve) {
 }
 function uiIconTriangleSolidDown12(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TriangleSolidDown12",
@@ -8606,7 +8606,7 @@ function uiIconTriangleSolidDown12(resolve) {
 }
 function uiIconTriangleSolidLeft12(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TriangleSolidLeft12",
@@ -8618,7 +8618,7 @@ function uiIconTriangleSolidLeft12(resolve) {
 }
 function uiIconTriangleSolidRight12(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TriangleSolidRight12",
@@ -8630,7 +8630,7 @@ function uiIconTriangleSolidRight12(resolve) {
 }
 function uiIconTriangleUp12(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TriangleUp12",
@@ -8642,7 +8642,7 @@ function uiIconTriangleUp12(resolve) {
 }
 function uiIconTriangleDown12(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TriangleDown12",
@@ -8654,7 +8654,7 @@ function uiIconTriangleDown12(resolve) {
 }
 function uiIconTriangleLeft12(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TriangleLeft12",
@@ -8666,7 +8666,7 @@ function uiIconTriangleLeft12(resolve) {
 }
 function uiIconTriangleRight12(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TriangleRight12",
@@ -8678,7 +8678,7 @@ function uiIconTriangleRight12(resolve) {
 }
 function uiIconArrowUpRight8(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ArrowUpRight8",
@@ -8690,7 +8690,7 @@ function uiIconArrowUpRight8(resolve) {
 }
 function uiIconArrowDownRight8(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ArrowDownRight8",
@@ -8702,7 +8702,7 @@ function uiIconArrowDownRight8(resolve) {
 }
 function uiIconDocumentSet(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DocumentSet",
@@ -8714,7 +8714,7 @@ function uiIconDocumentSet(resolve) {
 }
 function uiIconDelveAnalytics(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DelveAnalytics",
@@ -8726,7 +8726,7 @@ function uiIconDelveAnalytics(resolve) {
 }
 function uiIconArrowUpRightMirrored8(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ArrowUpRightMirrored8",
@@ -8738,7 +8738,7 @@ function uiIconArrowUpRightMirrored8(resolve) {
 }
 function uiIconArrowDownRightMirrored8(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ArrowDownRightMirrored8",
@@ -8750,7 +8750,7 @@ function uiIconArrowDownRightMirrored8(resolve) {
 }
 function uiIconCompanyDirectory(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CompanyDirectory",
@@ -8762,7 +8762,7 @@ function uiIconCompanyDirectory(resolve) {
 }
 function uiIconCompanyDirectoryMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CompanyDirectoryMirrored",
@@ -8774,7 +8774,7 @@ function uiIconCompanyDirectoryMirrored(resolve) {
 }
 function uiIconOneDriveAdd(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OneDriveAdd",
@@ -8786,7 +8786,7 @@ function uiIconOneDriveAdd(resolve) {
 }
 function uiIconProfileSearch(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ProfileSearch",
@@ -8798,7 +8798,7 @@ function uiIconProfileSearch(resolve) {
 }
 function uiIconHeader2(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Header2",
@@ -8810,7 +8810,7 @@ function uiIconHeader2(resolve) {
 }
 function uiIconHeader3(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Header3",
@@ -8822,7 +8822,7 @@ function uiIconHeader3(resolve) {
 }
 function uiIconHeader4(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Header4",
@@ -8834,7 +8834,7 @@ function uiIconHeader4(resolve) {
 }
 function uiIconEyedropper(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Eyedropper",
@@ -8846,7 +8846,7 @@ function uiIconEyedropper(resolve) {
 }
 function uiIconMarketDown(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MarketDown",
@@ -8858,7 +8858,7 @@ function uiIconMarketDown(resolve) {
 }
 function uiIconCalendarWorkWeek(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CalendarWorkWeek",
@@ -8870,7 +8870,7 @@ function uiIconCalendarWorkWeek(resolve) {
 }
 function uiIconSidePanel(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SidePanel",
@@ -8882,7 +8882,7 @@ function uiIconSidePanel(resolve) {
 }
 function uiIconGlobeFavorite(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "GlobeFavorite",
@@ -8894,7 +8894,7 @@ function uiIconGlobeFavorite(resolve) {
 }
 function uiIconCaretTopLeftSolid8(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CaretTopLeftSolid8",
@@ -8906,7 +8906,7 @@ function uiIconCaretTopLeftSolid8(resolve) {
 }
 function uiIconCaretTopRightSolid8(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CaretTopRightSolid8",
@@ -8918,7 +8918,7 @@ function uiIconCaretTopRightSolid8(resolve) {
 }
 function uiIconViewAll2(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ViewAll2",
@@ -8930,7 +8930,7 @@ function uiIconViewAll2(resolve) {
 }
 function uiIconDocumentReply(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DocumentReply",
@@ -8942,7 +8942,7 @@ function uiIconDocumentReply(resolve) {
 }
 function uiIconPlayerSettings(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PlayerSettings",
@@ -8954,7 +8954,7 @@ function uiIconPlayerSettings(resolve) {
 }
 function uiIconReceiptForward(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ReceiptForward",
@@ -8966,7 +8966,7 @@ function uiIconReceiptForward(resolve) {
 }
 function uiIconReceiptReply(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ReceiptReply",
@@ -8978,7 +8978,7 @@ function uiIconReceiptReply(resolve) {
 }
 function uiIconReceiptCheck(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ReceiptCheck",
@@ -8990,7 +8990,7 @@ function uiIconReceiptCheck(resolve) {
 }
 function uiIconFax(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Fax",
@@ -9002,7 +9002,7 @@ function uiIconFax(resolve) {
 }
 function uiIconRecurringEvent(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "RecurringEvent",
@@ -9014,7 +9014,7 @@ function uiIconRecurringEvent(resolve) {
 }
 function uiIconReplyAlt(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ReplyAlt",
@@ -9026,7 +9026,7 @@ function uiIconReplyAlt(resolve) {
 }
 function uiIconReplyAllAlt(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ReplyAllAlt",
@@ -9038,7 +9038,7 @@ function uiIconReplyAllAlt(resolve) {
 }
 function uiIconEditStyle(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "EditStyle",
@@ -9050,7 +9050,7 @@ function uiIconEditStyle(resolve) {
 }
 function uiIconEditMail(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "EditMail",
@@ -9062,7 +9062,7 @@ function uiIconEditMail(resolve) {
 }
 function uiIconLifesaver(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Lifesaver",
@@ -9074,7 +9074,7 @@ function uiIconLifesaver(resolve) {
 }
 function uiIconLifesaverLock(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "LifesaverLock",
@@ -9086,7 +9086,7 @@ function uiIconLifesaverLock(resolve) {
 }
 function uiIconInboxCheck(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "InboxCheck",
@@ -9098,7 +9098,7 @@ function uiIconInboxCheck(resolve) {
 }
 function uiIconFolderSearch(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FolderSearch",
@@ -9110,7 +9110,7 @@ function uiIconFolderSearch(resolve) {
 }
 function uiIconCollapseMenu(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CollapseMenu",
@@ -9122,7 +9122,7 @@ function uiIconCollapseMenu(resolve) {
 }
 function uiIconExpandMenu(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ExpandMenu",
@@ -9134,7 +9134,7 @@ function uiIconExpandMenu(resolve) {
 }
 function uiIconBoards(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Boards",
@@ -9146,7 +9146,7 @@ function uiIconBoards(resolve) {
 }
 function uiIconSunAdd(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SunAdd",
@@ -9158,7 +9158,7 @@ function uiIconSunAdd(resolve) {
 }
 function uiIconSunQuestionMark(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SunQuestionMark",
@@ -9170,7 +9170,7 @@ function uiIconSunQuestionMark(resolve) {
 }
 function uiIconLandscapeOrientation(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "LandscapeOrientation",
@@ -9182,7 +9182,7 @@ function uiIconLandscapeOrientation(resolve) {
 }
 function uiIconDocumentSearch(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DocumentSearch",
@@ -9194,7 +9194,7 @@ function uiIconDocumentSearch(resolve) {
 }
 function uiIconPublicCalendar(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PublicCalendar",
@@ -9206,7 +9206,7 @@ function uiIconPublicCalendar(resolve) {
 }
 function uiIconPublicContactCard(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PublicContactCard",
@@ -9218,7 +9218,7 @@ function uiIconPublicContactCard(resolve) {
 }
 function uiIconPublicEmail(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PublicEmail",
@@ -9230,7 +9230,7 @@ function uiIconPublicEmail(resolve) {
 }
 function uiIconPublicFolder(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PublicFolder",
@@ -9242,7 +9242,7 @@ function uiIconPublicFolder(resolve) {
 }
 function uiIconWordDocument(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "WordDocument",
@@ -9254,7 +9254,7 @@ function uiIconWordDocument(resolve) {
 }
 function uiIconPowerPointDocument(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PowerPointDocument",
@@ -9266,7 +9266,7 @@ function uiIconPowerPointDocument(resolve) {
 }
 function uiIconExcelDocument(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ExcelDocument",
@@ -9278,7 +9278,7 @@ function uiIconExcelDocument(resolve) {
 }
 function uiIconGroupedList(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "GroupedList",
@@ -9290,7 +9290,7 @@ function uiIconGroupedList(resolve) {
 }
 function uiIconClassroomLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ClassroomLogo",
@@ -9302,7 +9302,7 @@ function uiIconClassroomLogo(resolve) {
 }
 function uiIconSections(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Sections",
@@ -9314,7 +9314,7 @@ function uiIconSections(resolve) {
 }
 function uiIconEditPhoto(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "EditPhoto",
@@ -9326,7 +9326,7 @@ function uiIconEditPhoto(resolve) {
 }
 function uiIconStarburst(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Starburst",
@@ -9338,7 +9338,7 @@ function uiIconStarburst(resolve) {
 }
 function uiIconShareiOS(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ShareiOS",
@@ -9350,7 +9350,7 @@ function uiIconShareiOS(resolve) {
 }
 function uiIconAirTickets(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AirTickets",
@@ -9362,7 +9362,7 @@ function uiIconAirTickets(resolve) {
 }
 function uiIconPencilReply(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PencilReply",
@@ -9374,7 +9374,7 @@ function uiIconPencilReply(resolve) {
 }
 function uiIconTiles2(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Tiles2",
@@ -9386,7 +9386,7 @@ function uiIconTiles2(resolve) {
 }
 function uiIconSkypeCircleCheck(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SkypeCircleCheck",
@@ -9398,7 +9398,7 @@ function uiIconSkypeCircleCheck(resolve) {
 }
 function uiIconSkypeCircleClock(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SkypeCircleClock",
@@ -9410,7 +9410,7 @@ function uiIconSkypeCircleClock(resolve) {
 }
 function uiIconSkypeCircleMinus(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SkypeCircleMinus",
@@ -9422,7 +9422,7 @@ function uiIconSkypeCircleMinus(resolve) {
 }
 function uiIconSkypeMessage(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SkypeMessage",
@@ -9434,7 +9434,7 @@ function uiIconSkypeMessage(resolve) {
 }
 function uiIconClosedCaption(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ClosedCaption",
@@ -9446,7 +9446,7 @@ function uiIconClosedCaption(resolve) {
 }
 function uiIconATPLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ATPLogo",
@@ -9458,7 +9458,7 @@ function uiIconATPLogo(resolve) {
 }
 function uiIconOfficeFormsLogoInverse(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OfficeFormsLogoInverse",
@@ -9470,7 +9470,7 @@ function uiIconOfficeFormsLogoInverse(resolve) {
 }
 function uiIconRecycleBin(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "RecycleBin",
@@ -9482,7 +9482,7 @@ function uiIconRecycleBin(resolve) {
 }
 function uiIconEmptyRecycleBin(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "EmptyRecycleBin",
@@ -9494,7 +9494,7 @@ function uiIconEmptyRecycleBin(resolve) {
 }
 function uiIconHide2(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Hide2",
@@ -9506,7 +9506,7 @@ function uiIconHide2(resolve) {
 }
 function uiIconBreadcrumb(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Breadcrumb",
@@ -9518,7 +9518,7 @@ function uiIconBreadcrumb(resolve) {
 }
 function uiIconBirthdayCake(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BirthdayCake",
@@ -9530,7 +9530,7 @@ function uiIconBirthdayCake(resolve) {
 }
 function uiIconTimeEntry(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TimeEntry",
@@ -9542,7 +9542,7 @@ function uiIconTimeEntry(resolve) {
 }
 function uiIconPageEdit(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PageEdit",
@@ -9554,7 +9554,7 @@ function uiIconPageEdit(resolve) {
 }
 function uiIconPageRemove(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PageRemove",
@@ -9566,7 +9566,7 @@ function uiIconPageRemove(resolve) {
 }
 function uiIconDatabase(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Database",
@@ -9578,7 +9578,7 @@ function uiIconDatabase(resolve) {
 }
 function uiIconEditContact(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "EditContact",
@@ -9590,7 +9590,7 @@ function uiIconEditContact(resolve) {
 }
 function uiIconConnectContacts(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ConnectContacts",
@@ -9602,7 +9602,7 @@ function uiIconConnectContacts(resolve) {
 }
 function uiIconActivateOrders(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ActivateOrders",
@@ -9614,7 +9614,7 @@ function uiIconActivateOrders(resolve) {
 }
 function uiIconDeactivateOrders(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DeactivateOrders",
@@ -9626,7 +9626,7 @@ function uiIconDeactivateOrders(resolve) {
 }
 function uiIconDocumentManagement(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DocumentManagement",
@@ -9638,7 +9638,7 @@ function uiIconDocumentManagement(resolve) {
 }
 function uiIconCRMReport(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CRMReport",
@@ -9650,7 +9650,7 @@ function uiIconCRMReport(resolve) {
 }
 function uiIconZipFolder(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ZipFolder",
@@ -9662,7 +9662,7 @@ function uiIconZipFolder(resolve) {
 }
 function uiIconSurveyQuestions(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SurveyQuestions",
@@ -9674,7 +9674,7 @@ function uiIconSurveyQuestions(resolve) {
 }
 function uiIconTextDocument(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TextDocument",
@@ -9686,7 +9686,7 @@ function uiIconTextDocument(resolve) {
 }
 function uiIconTextDocumentShared(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TextDocumentShared",
@@ -9698,7 +9698,7 @@ function uiIconTextDocumentShared(resolve) {
 }
 function uiIconPageCheckedOut(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PageCheckedOut",
@@ -9710,7 +9710,7 @@ function uiIconPageCheckedOut(resolve) {
 }
 function uiIconSaveAndClose(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SaveAndClose",
@@ -9722,7 +9722,7 @@ function uiIconSaveAndClose(resolve) {
 }
 function uiIconScript(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Script",
@@ -9734,7 +9734,7 @@ function uiIconScript(resolve) {
 }
 function uiIconArchive(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Archive",
@@ -9746,7 +9746,7 @@ function uiIconArchive(resolve) {
 }
 function uiIconActivityFeed(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ActivityFeed",
@@ -9758,7 +9758,7 @@ function uiIconActivityFeed(resolve) {
 }
 function uiIconEventDate(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "EventDate",
@@ -9770,7 +9770,7 @@ function uiIconEventDate(resolve) {
 }
 function uiIconArrowUpRight(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ArrowUpRight",
@@ -9782,7 +9782,7 @@ function uiIconArrowUpRight(resolve) {
 }
 function uiIconCaretRight(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CaretRight",
@@ -9794,7 +9794,7 @@ function uiIconCaretRight(resolve) {
 }
 function uiIconSetAction(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SetAction",
@@ -9806,7 +9806,7 @@ function uiIconSetAction(resolve) {
 }
 function uiIconCaretSolidLeft(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CaretSolidLeft",
@@ -9818,7 +9818,7 @@ function uiIconCaretSolidLeft(resolve) {
 }
 function uiIconCaretSolidDown(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CaretSolidDown",
@@ -9830,7 +9830,7 @@ function uiIconCaretSolidDown(resolve) {
 }
 function uiIconCaretSolidRight(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CaretSolidRight",
@@ -9842,7 +9842,7 @@ function uiIconCaretSolidRight(resolve) {
 }
 function uiIconCaretSolidUp(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CaretSolidUp",
@@ -9854,7 +9854,7 @@ function uiIconCaretSolidUp(resolve) {
 }
 function uiIconPowerAppsLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PowerAppsLogo",
@@ -9866,7 +9866,7 @@ function uiIconPowerAppsLogo(resolve) {
 }
 function uiIconPowerApps2Logo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PowerApps2Logo",
@@ -9878,7 +9878,7 @@ function uiIconPowerApps2Logo(resolve) {
 }
 function uiIconSearchIssue(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SearchIssue",
@@ -9890,7 +9890,7 @@ function uiIconSearchIssue(resolve) {
 }
 function uiIconSearchIssueMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SearchIssueMirrored",
@@ -9902,7 +9902,7 @@ function uiIconSearchIssueMirrored(resolve) {
 }
 function uiIconFabricAssetLibrary(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FabricAssetLibrary",
@@ -9914,7 +9914,7 @@ function uiIconFabricAssetLibrary(resolve) {
 }
 function uiIconFabricDataConnectionLibrary(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FabricDataConnectionLibrary",
@@ -9926,7 +9926,7 @@ function uiIconFabricDataConnectionLibrary(resolve) {
 }
 function uiIconFabricDocLibrary(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FabricDocLibrary",
@@ -9938,7 +9938,7 @@ function uiIconFabricDocLibrary(resolve) {
 }
 function uiIconFabricFormLibrary(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FabricFormLibrary",
@@ -9950,7 +9950,7 @@ function uiIconFabricFormLibrary(resolve) {
 }
 function uiIconFabricFormLibraryMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FabricFormLibraryMirrored",
@@ -9962,7 +9962,7 @@ function uiIconFabricFormLibraryMirrored(resolve) {
 }
 function uiIconFabricReportLibrary(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FabricReportLibrary",
@@ -9974,7 +9974,7 @@ function uiIconFabricReportLibrary(resolve) {
 }
 function uiIconFabricReportLibraryMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FabricReportLibraryMirrored",
@@ -9986,7 +9986,7 @@ function uiIconFabricReportLibraryMirrored(resolve) {
 }
 function uiIconFabricPublicFolder(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FabricPublicFolder",
@@ -9998,7 +9998,7 @@ function uiIconFabricPublicFolder(resolve) {
 }
 function uiIconFabricFolderSearch(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FabricFolderSearch",
@@ -10010,7 +10010,7 @@ function uiIconFabricFolderSearch(resolve) {
 }
 function uiIconFabricMovetoFolder(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FabricMovetoFolder",
@@ -10022,7 +10022,7 @@ function uiIconFabricMovetoFolder(resolve) {
 }
 function uiIconFabricUnsyncFolder(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FabricUnsyncFolder",
@@ -10034,7 +10034,7 @@ function uiIconFabricUnsyncFolder(resolve) {
 }
 function uiIconFabricSyncFolder(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FabricSyncFolder",
@@ -10046,7 +10046,7 @@ function uiIconFabricSyncFolder(resolve) {
 }
 function uiIconFabricOpenFolderHorizontal(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FabricOpenFolderHorizontal",
@@ -10058,7 +10058,7 @@ function uiIconFabricOpenFolderHorizontal(resolve) {
 }
 function uiIconFabricFolder(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FabricFolder",
@@ -10070,7 +10070,7 @@ function uiIconFabricFolder(resolve) {
 }
 function uiIconFabricFolderFill(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FabricFolderFill",
@@ -10082,7 +10082,7 @@ function uiIconFabricFolderFill(resolve) {
 }
 function uiIconFabricNewFolder(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FabricNewFolder",
@@ -10094,7 +10094,7 @@ function uiIconFabricNewFolder(resolve) {
 }
 function uiIconFabricPictureLibrary(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FabricPictureLibrary",
@@ -10106,7 +10106,7 @@ function uiIconFabricPictureLibrary(resolve) {
 }
 function uiIconAddFavorite(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AddFavorite",
@@ -10118,7 +10118,7 @@ function uiIconAddFavorite(resolve) {
 }
 function uiIconAddFavoriteFill(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AddFavoriteFill",
@@ -10130,7 +10130,7 @@ function uiIconAddFavoriteFill(resolve) {
 }
 function uiIconBufferTimeBefore(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BufferTimeBefore",
@@ -10142,7 +10142,7 @@ function uiIconBufferTimeBefore(resolve) {
 }
 function uiIconBufferTimeAfter(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BufferTimeAfter",
@@ -10154,7 +10154,7 @@ function uiIconBufferTimeAfter(resolve) {
 }
 function uiIconBufferTimeBoth(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BufferTimeBoth",
@@ -10166,7 +10166,7 @@ function uiIconBufferTimeBoth(resolve) {
 }
 function uiIconCannedChat(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CannedChat",
@@ -10178,7 +10178,7 @@ function uiIconCannedChat(resolve) {
 }
 function uiIconSkypeForBusinessLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SkypeForBusinessLogo",
@@ -10190,7 +10190,7 @@ function uiIconSkypeForBusinessLogo(resolve) {
 }
 function uiIconPageCheckedin(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PageCheckedin",
@@ -10202,7 +10202,7 @@ function uiIconPageCheckedin(resolve) {
 }
 function uiIconReadOutLoud(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ReadOutLoud",
@@ -10214,7 +10214,7 @@ function uiIconReadOutLoud(resolve) {
 }
 function uiIconCaretBottomLeftSolid8(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CaretBottomLeftSolid8",
@@ -10226,7 +10226,7 @@ function uiIconCaretBottomLeftSolid8(resolve) {
 }
 function uiIconCaretBottomRightSolid8(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CaretBottomRightSolid8",
@@ -10238,7 +10238,7 @@ function uiIconCaretBottomRightSolid8(resolve) {
 }
 function uiIconFolderHorizontal(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FolderHorizontal",
@@ -10250,7 +10250,7 @@ function uiIconFolderHorizontal(resolve) {
 }
 function uiIconMicrosoftStaffhubLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MicrosoftStaffhubLogo",
@@ -10262,7 +10262,7 @@ function uiIconMicrosoftStaffhubLogo(resolve) {
 }
 function uiIconGiftboxOpen(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "GiftboxOpen",
@@ -10274,7 +10274,7 @@ function uiIconGiftboxOpen(resolve) {
 }
 function uiIconStatusCircleOuter(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "StatusCircleOuter",
@@ -10286,7 +10286,7 @@ function uiIconStatusCircleOuter(resolve) {
 }
 function uiIconStatusCircleInner(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "StatusCircleInner",
@@ -10298,7 +10298,7 @@ function uiIconStatusCircleInner(resolve) {
 }
 function uiIconStatusCircleRing(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "StatusCircleRing",
@@ -10310,7 +10310,7 @@ function uiIconStatusCircleRing(resolve) {
 }
 function uiIconStatusTriangleOuter(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "StatusTriangleOuter",
@@ -10322,7 +10322,7 @@ function uiIconStatusTriangleOuter(resolve) {
 }
 function uiIconStatusTriangleInner(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "StatusTriangleInner",
@@ -10334,7 +10334,7 @@ function uiIconStatusTriangleInner(resolve) {
 }
 function uiIconStatusTriangleExclamation(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "StatusTriangleExclamation",
@@ -10346,7 +10346,7 @@ function uiIconStatusTriangleExclamation(resolve) {
 }
 function uiIconStatusCircleExclamation(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "StatusCircleExclamation",
@@ -10358,7 +10358,7 @@ function uiIconStatusCircleExclamation(resolve) {
 }
 function uiIconStatusCircleErrorX(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "StatusCircleErrorX",
@@ -10370,7 +10370,7 @@ function uiIconStatusCircleErrorX(resolve) {
 }
 function uiIconStatusCircleInfo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "StatusCircleInfo",
@@ -10382,7 +10382,7 @@ function uiIconStatusCircleInfo(resolve) {
 }
 function uiIconStatusCircleBlock2(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "StatusCircleBlock2",
@@ -10394,7 +10394,7 @@ function uiIconStatusCircleBlock2(resolve) {
 }
 function uiIconStatusCircleQuestionMark(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "StatusCircleQuestionMark",
@@ -10406,7 +10406,7 @@ function uiIconStatusCircleQuestionMark(resolve) {
 }
 function uiIconToll(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Toll",
@@ -10418,7 +10418,7 @@ function uiIconToll(resolve) {
 }
 function uiIconExploreContentSingle(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ExploreContentSingle",
@@ -10430,7 +10430,7 @@ function uiIconExploreContentSingle(resolve) {
 }
 function uiIconCollapseContent(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CollapseContent",
@@ -10442,7 +10442,7 @@ function uiIconCollapseContent(resolve) {
 }
 function uiIconCollapseContentSingle(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CollapseContentSingle",
@@ -10454,7 +10454,7 @@ function uiIconCollapseContentSingle(resolve) {
 }
 function uiIconInfoSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "InfoSolid",
@@ -10466,7 +10466,7 @@ function uiIconInfoSolid(resolve) {
 }
 function uiIconProgressRingDots(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ProgressRingDots",
@@ -10478,7 +10478,7 @@ function uiIconProgressRingDots(resolve) {
 }
 function uiIconCaloriesAdd(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CaloriesAdd",
@@ -10490,7 +10490,7 @@ function uiIconCaloriesAdd(resolve) {
 }
 function uiIconBranchFork(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BranchFork",
@@ -10502,7 +10502,7 @@ function uiIconBranchFork(resolve) {
 }
 function uiIconMobileReport(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MobileReport",
@@ -10514,7 +10514,7 @@ function uiIconMobileReport(resolve) {
 }
 function uiIconHardDriveGroup(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "HardDriveGroup",
@@ -10526,7 +10526,7 @@ function uiIconHardDriveGroup(resolve) {
 }
 function uiIconFastMode(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FastMode",
@@ -10538,7 +10538,7 @@ function uiIconFastMode(resolve) {
 }
 function uiIconToggleOn(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ToggleOn",
@@ -10550,7 +10550,7 @@ function uiIconToggleOn(resolve) {
 }
 function uiIconToggleOff(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ToggleOff",
@@ -10562,7 +10562,7 @@ function uiIconToggleOff(resolve) {
 }
 function uiIconTrophy2(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Trophy2",
@@ -10574,7 +10574,7 @@ function uiIconTrophy2(resolve) {
 }
 function uiIconBucketColor(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BucketColor",
@@ -10586,7 +10586,7 @@ function uiIconBucketColor(resolve) {
 }
 function uiIconBucketColorFill(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BucketColorFill",
@@ -10598,7 +10598,7 @@ function uiIconBucketColorFill(resolve) {
 }
 function uiIconTaskboard(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Taskboard",
@@ -10610,7 +10610,7 @@ function uiIconTaskboard(resolve) {
 }
 function uiIconSingleColumn(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SingleColumn",
@@ -10622,7 +10622,7 @@ function uiIconSingleColumn(resolve) {
 }
 function uiIconDoubleColumn(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DoubleColumn",
@@ -10634,7 +10634,7 @@ function uiIconDoubleColumn(resolve) {
 }
 function uiIconTripleColumn(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TripleColumn",
@@ -10646,7 +10646,7 @@ function uiIconTripleColumn(resolve) {
 }
 function uiIconColumnLeftTwoThirds(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ColumnLeftTwoThirds",
@@ -10658,7 +10658,7 @@ function uiIconColumnLeftTwoThirds(resolve) {
 }
 function uiIconColumnRightTwoThirds(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ColumnRightTwoThirds",
@@ -10670,7 +10670,7 @@ function uiIconColumnRightTwoThirds(resolve) {
 }
 function uiIconAccessLogoFill(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AccessLogoFill",
@@ -10682,7 +10682,7 @@ function uiIconAccessLogoFill(resolve) {
 }
 function uiIconAnalyticsLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AnalyticsLogo",
@@ -10694,7 +10694,7 @@ function uiIconAnalyticsLogo(resolve) {
 }
 function uiIconAnalyticsQuery(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AnalyticsQuery",
@@ -10706,7 +10706,7 @@ function uiIconAnalyticsQuery(resolve) {
 }
 function uiIconNewAnalyticsQuery(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "NewAnalyticsQuery",
@@ -10718,7 +10718,7 @@ function uiIconNewAnalyticsQuery(resolve) {
 }
 function uiIconAnalyticsReport(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AnalyticsReport",
@@ -10730,7 +10730,7 @@ function uiIconAnalyticsReport(resolve) {
 }
 function uiIconWordLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "WordLogo",
@@ -10742,7 +10742,7 @@ function uiIconWordLogo(resolve) {
 }
 function uiIconWordLogoFill(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "WordLogoFill",
@@ -10754,7 +10754,7 @@ function uiIconWordLogoFill(resolve) {
 }
 function uiIconExcelLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ExcelLogo",
@@ -10766,7 +10766,7 @@ function uiIconExcelLogo(resolve) {
 }
 function uiIconExcelLogoFill(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ExcelLogoFill",
@@ -10778,7 +10778,7 @@ function uiIconExcelLogoFill(resolve) {
 }
 function uiIconOneNoteLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OneNoteLogo",
@@ -10790,7 +10790,7 @@ function uiIconOneNoteLogo(resolve) {
 }
 function uiIconOneNoteLogoFill(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OneNoteLogoFill",
@@ -10802,7 +10802,7 @@ function uiIconOneNoteLogoFill(resolve) {
 }
 function uiIconOutlookLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OutlookLogo",
@@ -10814,7 +10814,7 @@ function uiIconOutlookLogo(resolve) {
 }
 function uiIconOutlookLogoFill(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OutlookLogoFill",
@@ -10826,7 +10826,7 @@ function uiIconOutlookLogoFill(resolve) {
 }
 function uiIconPowerPointLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PowerPointLogo",
@@ -10838,7 +10838,7 @@ function uiIconPowerPointLogo(resolve) {
 }
 function uiIconPowerPointLogoFill(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PowerPointLogoFill",
@@ -10850,7 +10850,7 @@ function uiIconPowerPointLogoFill(resolve) {
 }
 function uiIconPublisherLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PublisherLogo",
@@ -10862,7 +10862,7 @@ function uiIconPublisherLogo(resolve) {
 }
 function uiIconPublisherLogoFill(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PublisherLogoFill",
@@ -10874,7 +10874,7 @@ function uiIconPublisherLogoFill(resolve) {
 }
 function uiIconScheduleEventAction(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ScheduleEventAction",
@@ -10886,7 +10886,7 @@ function uiIconScheduleEventAction(resolve) {
 }
 function uiIconFlameSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FlameSolid",
@@ -10898,7 +10898,7 @@ function uiIconFlameSolid(resolve) {
 }
 function uiIconServerProcesses(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ServerProcesses",
@@ -10910,7 +10910,7 @@ function uiIconServerProcesses(resolve) {
 }
 function uiIconServer(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Server",
@@ -10922,7 +10922,7 @@ function uiIconServer(resolve) {
 }
 function uiIconSaveAll(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SaveAll",
@@ -10934,7 +10934,7 @@ function uiIconSaveAll(resolve) {
 }
 function uiIconLinkedInLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "LinkedInLogo",
@@ -10946,7 +10946,7 @@ function uiIconLinkedInLogo(resolve) {
 }
 function uiIconDecimals(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Decimals",
@@ -10958,7 +10958,7 @@ function uiIconDecimals(resolve) {
 }
 function uiIconSidePanelMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SidePanelMirrored",
@@ -10970,7 +10970,7 @@ function uiIconSidePanelMirrored(resolve) {
 }
 function uiIconProtectRestrict(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ProtectRestrict",
@@ -10982,7 +10982,7 @@ function uiIconProtectRestrict(resolve) {
 }
 function uiIconUnknownMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "UnknownMirrored",
@@ -10994,7 +10994,7 @@ function uiIconUnknownMirrored(resolve) {
 }
 function uiIconPublicContactCardMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PublicContactCardMirrored",
@@ -11006,7 +11006,7 @@ function uiIconPublicContactCardMirrored(resolve) {
 }
 function uiIconGridViewSmall(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "GridViewSmall",
@@ -11018,7 +11018,7 @@ function uiIconGridViewSmall(resolve) {
 }
 function uiIconGridViewMedium(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "GridViewMedium",
@@ -11030,7 +11030,7 @@ function uiIconGridViewMedium(resolve) {
 }
 function uiIconGridViewLarge(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "GridViewLarge",
@@ -11042,7 +11042,7 @@ function uiIconGridViewLarge(resolve) {
 }
 function uiIconStep(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Step",
@@ -11054,7 +11054,7 @@ function uiIconStep(resolve) {
 }
 function uiIconStepInsert(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "StepInsert",
@@ -11066,7 +11066,7 @@ function uiIconStepInsert(resolve) {
 }
 function uiIconStepShared(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "StepShared",
@@ -11078,7 +11078,7 @@ function uiIconStepShared(resolve) {
 }
 function uiIconStepSharedAdd(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "StepSharedAdd",
@@ -11090,7 +11090,7 @@ function uiIconStepSharedAdd(resolve) {
 }
 function uiIconStepSharedInsert(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "StepSharedInsert",
@@ -11102,7 +11102,7 @@ function uiIconStepSharedInsert(resolve) {
 }
 function uiIconViewDashboard(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ViewDashboard",
@@ -11114,7 +11114,7 @@ function uiIconViewDashboard(resolve) {
 }
 function uiIconViewList(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ViewList",
@@ -11126,7 +11126,7 @@ function uiIconViewList(resolve) {
 }
 function uiIconViewListGroup(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ViewListGroup",
@@ -11138,7 +11138,7 @@ function uiIconViewListGroup(resolve) {
 }
 function uiIconViewListTree(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ViewListTree",
@@ -11150,7 +11150,7 @@ function uiIconViewListTree(resolve) {
 }
 function uiIconTriggerAuto(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TriggerAuto",
@@ -11162,7 +11162,7 @@ function uiIconTriggerAuto(resolve) {
 }
 function uiIconTriggerUser(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TriggerUser",
@@ -11174,7 +11174,7 @@ function uiIconTriggerUser(resolve) {
 }
 function uiIconPivotChart(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PivotChart",
@@ -11186,7 +11186,7 @@ function uiIconPivotChart(resolve) {
 }
 function uiIconStackedBarChart(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "StackedBarChart",
@@ -11198,7 +11198,7 @@ function uiIconStackedBarChart(resolve) {
 }
 function uiIconStackedLineChart(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "StackedLineChart",
@@ -11210,7 +11210,7 @@ function uiIconStackedLineChart(resolve) {
 }
 function uiIconBuildQueue(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BuildQueue",
@@ -11222,7 +11222,7 @@ function uiIconBuildQueue(resolve) {
 }
 function uiIconBuildQueueNew(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BuildQueueNew",
@@ -11234,7 +11234,7 @@ function uiIconBuildQueueNew(resolve) {
 }
 function uiIconUserFollowed(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "UserFollowed",
@@ -11246,7 +11246,7 @@ function uiIconUserFollowed(resolve) {
 }
 function uiIconContactLink(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ContactLink",
@@ -11258,7 +11258,7 @@ function uiIconContactLink(resolve) {
 }
 function uiIconStack(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Stack",
@@ -11270,7 +11270,7 @@ function uiIconStack(resolve) {
 }
 function uiIconBullseye(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Bullseye",
@@ -11282,7 +11282,7 @@ function uiIconBullseye(resolve) {
 }
 function uiIconVennDiagram(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "VennDiagram",
@@ -11294,7 +11294,7 @@ function uiIconVennDiagram(resolve) {
 }
 function uiIconFiveTileGrid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FiveTileGrid",
@@ -11306,7 +11306,7 @@ function uiIconFiveTileGrid(resolve) {
 }
 function uiIconFocalPoint(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FocalPoint",
@@ -11318,7 +11318,7 @@ function uiIconFocalPoint(resolve) {
 }
 function uiIconRingerRemove(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "RingerRemove",
@@ -11330,7 +11330,7 @@ function uiIconRingerRemove(resolve) {
 }
 function uiIconTeamsLogoInverse(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TeamsLogoInverse",
@@ -11342,7 +11342,7 @@ function uiIconTeamsLogoInverse(resolve) {
 }
 function uiIconTeamsLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TeamsLogo",
@@ -11354,7 +11354,7 @@ function uiIconTeamsLogo(resolve) {
 }
 function uiIconTeamsLogoFill(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TeamsLogoFill",
@@ -11366,7 +11366,7 @@ function uiIconTeamsLogoFill(resolve) {
 }
 function uiIconSkypeForBusinessLogoFill(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SkypeForBusinessLogoFill",
@@ -11378,7 +11378,7 @@ function uiIconSkypeForBusinessLogoFill(resolve) {
 }
 function uiIconSharepointLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SharepointLogo",
@@ -11390,7 +11390,7 @@ function uiIconSharepointLogo(resolve) {
 }
 function uiIconSharepointLogoFill(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SharepointLogoFill",
@@ -11402,7 +11402,7 @@ function uiIconSharepointLogoFill(resolve) {
 }
 function uiIconDelveLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DelveLogo",
@@ -11414,7 +11414,7 @@ function uiIconDelveLogo(resolve) {
 }
 function uiIconDelveLogoFill(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DelveLogoFill",
@@ -11426,7 +11426,7 @@ function uiIconDelveLogoFill(resolve) {
 }
 function uiIconOfficeVideoLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OfficeVideoLogo",
@@ -11438,7 +11438,7 @@ function uiIconOfficeVideoLogo(resolve) {
 }
 function uiIconOfficeVideoLogoFill(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OfficeVideoLogoFill",
@@ -11450,7 +11450,7 @@ function uiIconOfficeVideoLogoFill(resolve) {
 }
 function uiIconExchangeLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ExchangeLogo",
@@ -11462,7 +11462,7 @@ function uiIconExchangeLogo(resolve) {
 }
 function uiIconExchangeLogoFill(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ExchangeLogoFill",
@@ -11474,7 +11474,7 @@ function uiIconExchangeLogoFill(resolve) {
 }
 function uiIconDocumentApproval(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DocumentApproval",
@@ -11486,7 +11486,7 @@ function uiIconDocumentApproval(resolve) {
 }
 function uiIconCloneToDesktop(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CloneToDesktop",
@@ -11498,7 +11498,7 @@ function uiIconCloneToDesktop(resolve) {
 }
 function uiIconInstallToDrive(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "InstallToDrive",
@@ -11510,7 +11510,7 @@ function uiIconInstallToDrive(resolve) {
 }
 function uiIconBlur(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Blur",
@@ -11522,7 +11522,7 @@ function uiIconBlur(resolve) {
 }
 function uiIconBuild(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Build",
@@ -11534,7 +11534,7 @@ function uiIconBuild(resolve) {
 }
 function uiIconProcessMetaTask(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ProcessMetaTask",
@@ -11546,7 +11546,7 @@ function uiIconProcessMetaTask(resolve) {
 }
 function uiIconBranchFork2(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BranchFork2",
@@ -11558,7 +11558,7 @@ function uiIconBranchFork2(resolve) {
 }
 function uiIconBranchLocked(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BranchLocked",
@@ -11570,7 +11570,7 @@ function uiIconBranchLocked(resolve) {
 }
 function uiIconBranchCommit(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BranchCommit",
@@ -11582,7 +11582,7 @@ function uiIconBranchCommit(resolve) {
 }
 function uiIconBranchCompare(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BranchCompare",
@@ -11594,7 +11594,7 @@ function uiIconBranchCompare(resolve) {
 }
 function uiIconBranchMerge(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BranchMerge",
@@ -11606,7 +11606,7 @@ function uiIconBranchMerge(resolve) {
 }
 function uiIconBranchPullRequest(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BranchPullRequest",
@@ -11618,7 +11618,7 @@ function uiIconBranchPullRequest(resolve) {
 }
 function uiIconBranchSearch(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BranchSearch",
@@ -11630,7 +11630,7 @@ function uiIconBranchSearch(resolve) {
 }
 function uiIconBranchShelveset(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BranchShelveset",
@@ -11642,7 +11642,7 @@ function uiIconBranchShelveset(resolve) {
 }
 function uiIconRawSource(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "RawSource",
@@ -11654,7 +11654,7 @@ function uiIconRawSource(resolve) {
 }
 function uiIconMergeDuplicate(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MergeDuplicate",
@@ -11666,7 +11666,7 @@ function uiIconMergeDuplicate(resolve) {
 }
 function uiIconRowsGroup(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "RowsGroup",
@@ -11678,7 +11678,7 @@ function uiIconRowsGroup(resolve) {
 }
 function uiIconRowsChild(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "RowsChild",
@@ -11690,7 +11690,7 @@ function uiIconRowsChild(resolve) {
 }
 function uiIconDeploy(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Deploy",
@@ -11702,7 +11702,7 @@ function uiIconDeploy(resolve) {
 }
 function uiIconRedeploy(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Redeploy",
@@ -11714,7 +11714,7 @@ function uiIconRedeploy(resolve) {
 }
 function uiIconServerEnviroment(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ServerEnviroment",
@@ -11726,7 +11726,7 @@ function uiIconServerEnviroment(resolve) {
 }
 function uiIconVisioDiagram(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "VisioDiagram",
@@ -11738,7 +11738,7 @@ function uiIconVisioDiagram(resolve) {
 }
 function uiIconHighlightMappedShapes(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "HighlightMappedShapes",
@@ -11750,7 +11750,7 @@ function uiIconHighlightMappedShapes(resolve) {
 }
 function uiIconTextCallout(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TextCallout",
@@ -11762,7 +11762,7 @@ function uiIconTextCallout(resolve) {
 }
 function uiIconIconSetsFlag(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "IconSetsFlag",
@@ -11774,7 +11774,7 @@ function uiIconIconSetsFlag(resolve) {
 }
 function uiIconVisioLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "VisioLogo",
@@ -11786,7 +11786,7 @@ function uiIconVisioLogo(resolve) {
 }
 function uiIconVisioLogoFill(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "VisioLogoFill",
@@ -11798,7 +11798,7 @@ function uiIconVisioLogoFill(resolve) {
 }
 function uiIconVisioDocument(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "VisioDocument",
@@ -11810,7 +11810,7 @@ function uiIconVisioDocument(resolve) {
 }
 function uiIconTimelineProgress(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TimelineProgress",
@@ -11822,7 +11822,7 @@ function uiIconTimelineProgress(resolve) {
 }
 function uiIconTimelineDelivery(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TimelineDelivery",
@@ -11834,7 +11834,7 @@ function uiIconTimelineDelivery(resolve) {
 }
 function uiIconBacklog(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Backlog",
@@ -11846,7 +11846,7 @@ function uiIconBacklog(resolve) {
 }
 function uiIconTeamFavorite(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TeamFavorite",
@@ -11858,7 +11858,7 @@ function uiIconTeamFavorite(resolve) {
 }
 function uiIconTaskGroup(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TaskGroup",
@@ -11870,7 +11870,7 @@ function uiIconTaskGroup(resolve) {
 }
 function uiIconTaskGroupMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TaskGroupMirrored",
@@ -11882,7 +11882,7 @@ function uiIconTaskGroupMirrored(resolve) {
 }
 function uiIconScopeTemplate(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ScopeTemplate",
@@ -11894,7 +11894,7 @@ function uiIconScopeTemplate(resolve) {
 }
 function uiIconAssessmentGroupTemplate(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AssessmentGroupTemplate",
@@ -11906,7 +11906,7 @@ function uiIconAssessmentGroupTemplate(resolve) {
 }
 function uiIconNewTeamProject(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "NewTeamProject",
@@ -11918,7 +11918,7 @@ function uiIconNewTeamProject(resolve) {
 }
 function uiIconCommentAdd(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CommentAdd",
@@ -11930,7 +11930,7 @@ function uiIconCommentAdd(resolve) {
 }
 function uiIconCommentNext(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CommentNext",
@@ -11942,7 +11942,7 @@ function uiIconCommentNext(resolve) {
 }
 function uiIconCommentPrevious(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CommentPrevious",
@@ -11954,7 +11954,7 @@ function uiIconCommentPrevious(resolve) {
 }
 function uiIconShopServer(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ShopServer",
@@ -11966,7 +11966,7 @@ function uiIconShopServer(resolve) {
 }
 function uiIconLocaleLanguage(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "LocaleLanguage",
@@ -11978,7 +11978,7 @@ function uiIconLocaleLanguage(resolve) {
 }
 function uiIconQueryList(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "QueryList",
@@ -11990,7 +11990,7 @@ function uiIconQueryList(resolve) {
 }
 function uiIconUserSync(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "UserSync",
@@ -12002,7 +12002,7 @@ function uiIconUserSync(resolve) {
 }
 function uiIconUserPause(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "UserPause",
@@ -12014,7 +12014,7 @@ function uiIconUserPause(resolve) {
 }
 function uiIconStreamingOff(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "StreamingOff",
@@ -12026,7 +12026,7 @@ function uiIconStreamingOff(resolve) {
 }
 function uiIconArrowTallUpLeft(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ArrowTallUpLeft",
@@ -12038,7 +12038,7 @@ function uiIconArrowTallUpLeft(resolve) {
 }
 function uiIconArrowTallUpRight(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ArrowTallUpRight",
@@ -12050,7 +12050,7 @@ function uiIconArrowTallUpRight(resolve) {
 }
 function uiIconArrowTallDownLeft(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ArrowTallDownLeft",
@@ -12062,7 +12062,7 @@ function uiIconArrowTallDownLeft(resolve) {
 }
 function uiIconArrowTallDownRight(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ArrowTallDownRight",
@@ -12074,7 +12074,7 @@ function uiIconArrowTallDownRight(resolve) {
 }
 function uiIconFieldEmpty(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FieldEmpty",
@@ -12086,7 +12086,7 @@ function uiIconFieldEmpty(resolve) {
 }
 function uiIconFieldFilled(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FieldFilled",
@@ -12098,7 +12098,7 @@ function uiIconFieldFilled(resolve) {
 }
 function uiIconFieldChanged(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FieldChanged",
@@ -12110,7 +12110,7 @@ function uiIconFieldChanged(resolve) {
 }
 function uiIconFieldNotChanged(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FieldNotChanged",
@@ -12122,7 +12122,7 @@ function uiIconFieldNotChanged(resolve) {
 }
 function uiIconRingerOff(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "RingerOff",
@@ -12134,7 +12134,7 @@ function uiIconRingerOff(resolve) {
 }
 function uiIconPlayResume(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PlayResume",
@@ -12146,7 +12146,7 @@ function uiIconPlayResume(resolve) {
 }
 function uiIconBulletedList2(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BulletedList2",
@@ -12158,7 +12158,7 @@ function uiIconBulletedList2(resolve) {
 }
 function uiIconBulletedList2Mirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BulletedList2Mirrored",
@@ -12170,7 +12170,7 @@ function uiIconBulletedList2Mirrored(resolve) {
 }
 function uiIconImageCrosshair(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ImageCrosshair",
@@ -12182,7 +12182,7 @@ function uiIconImageCrosshair(resolve) {
 }
 function uiIconGitGraph(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "GitGraph",
@@ -12194,7 +12194,7 @@ function uiIconGitGraph(resolve) {
 }
 function uiIconRepo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Repo",
@@ -12206,7 +12206,7 @@ function uiIconRepo(resolve) {
 }
 function uiIconRepoSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "RepoSolid",
@@ -12218,7 +12218,7 @@ function uiIconRepoSolid(resolve) {
 }
 function uiIconFolderQuery(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FolderQuery",
@@ -12230,7 +12230,7 @@ function uiIconFolderQuery(resolve) {
 }
 function uiIconFolderList(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FolderList",
@@ -12242,7 +12242,7 @@ function uiIconFolderList(resolve) {
 }
 function uiIconFolderListMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FolderListMirrored",
@@ -12254,7 +12254,7 @@ function uiIconFolderListMirrored(resolve) {
 }
 function uiIconLocationOutline(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "LocationOutline",
@@ -12266,7 +12266,7 @@ function uiIconLocationOutline(resolve) {
 }
 function uiIconPOISolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "POISolid",
@@ -12278,7 +12278,7 @@ function uiIconPOISolid(resolve) {
 }
 function uiIconCalculatorNotEqualTo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CalculatorNotEqualTo",
@@ -12290,7 +12290,7 @@ function uiIconCalculatorNotEqualTo(resolve) {
 }
 function uiIconBoxSubtractSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BoxSubtractSolid",
@@ -12302,7 +12302,7 @@ function uiIconBoxSubtractSolid(resolve) {
 }
 function uiIconBoxAdditionSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BoxAdditionSolid",
@@ -12314,7 +12314,7 @@ function uiIconBoxAdditionSolid(resolve) {
 }
 function uiIconBoxMultiplySolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BoxMultiplySolid",
@@ -12326,7 +12326,7 @@ function uiIconBoxMultiplySolid(resolve) {
 }
 function uiIconBoxPlaySolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BoxPlaySolid",
@@ -12338,7 +12338,7 @@ function uiIconBoxPlaySolid(resolve) {
 }
 function uiIconBoxCheckmarkSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BoxCheckmarkSolid",
@@ -12350,7 +12350,7 @@ function uiIconBoxCheckmarkSolid(resolve) {
 }
 function uiIconCirclePauseSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CirclePauseSolid",
@@ -12362,7 +12362,7 @@ function uiIconCirclePauseSolid(resolve) {
 }
 function uiIconCirclePause(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CirclePause",
@@ -12374,7 +12374,7 @@ function uiIconCirclePause(resolve) {
 }
 function uiIconMSNVideosSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MSNVideosSolid",
@@ -12386,7 +12386,7 @@ function uiIconMSNVideosSolid(resolve) {
 }
 function uiIconCircleStopSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CircleStopSolid",
@@ -12398,7 +12398,7 @@ function uiIconCircleStopSolid(resolve) {
 }
 function uiIconCircleStop(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CircleStop",
@@ -12410,7 +12410,7 @@ function uiIconCircleStop(resolve) {
 }
 function uiIconNavigateBack(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "NavigateBack",
@@ -12422,7 +12422,7 @@ function uiIconNavigateBack(resolve) {
 }
 function uiIconNavigateBackMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "NavigateBackMirrored",
@@ -12434,7 +12434,7 @@ function uiIconNavigateBackMirrored(resolve) {
 }
 function uiIconNavigateForward(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "NavigateForward",
@@ -12446,7 +12446,7 @@ function uiIconNavigateForward(resolve) {
 }
 function uiIconNavigateForwardMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "NavigateForwardMirrored",
@@ -12458,7 +12458,7 @@ function uiIconNavigateForwardMirrored(resolve) {
 }
 function uiIconUnknownSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "UnknownSolid",
@@ -12470,7 +12470,7 @@ function uiIconUnknownSolid(resolve) {
 }
 function uiIconUnknownMirroredSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "UnknownMirroredSolid",
@@ -12482,7 +12482,7 @@ function uiIconUnknownMirroredSolid(resolve) {
 }
 function uiIconCircleAddition(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CircleAddition",
@@ -12494,7 +12494,7 @@ function uiIconCircleAddition(resolve) {
 }
 function uiIconCircleAdditionSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CircleAdditionSolid",
@@ -12506,7 +12506,7 @@ function uiIconCircleAdditionSolid(resolve) {
 }
 function uiIconFilePDB(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FilePDB",
@@ -12518,7 +12518,7 @@ function uiIconFilePDB(resolve) {
 }
 function uiIconFileTemplate(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FileTemplate",
@@ -12530,7 +12530,7 @@ function uiIconFileTemplate(resolve) {
 }
 function uiIconFileSQL(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FileSQL",
@@ -12542,7 +12542,7 @@ function uiIconFileSQL(resolve) {
 }
 function uiIconFileJAVA(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FileJAVA",
@@ -12554,7 +12554,7 @@ function uiIconFileJAVA(resolve) {
 }
 function uiIconFileASPX(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FileASPX",
@@ -12566,7 +12566,7 @@ function uiIconFileASPX(resolve) {
 }
 function uiIconFileCSS(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FileCSS",
@@ -12578,7 +12578,7 @@ function uiIconFileCSS(resolve) {
 }
 function uiIconFileSass(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FileSass",
@@ -12590,7 +12590,7 @@ function uiIconFileSass(resolve) {
 }
 function uiIconFileLess(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FileLess",
@@ -12602,7 +12602,7 @@ function uiIconFileLess(resolve) {
 }
 function uiIconFileHTML(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FileHTML",
@@ -12614,7 +12614,7 @@ function uiIconFileHTML(resolve) {
 }
 function uiIconJavaScriptLanguage(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "JavaScriptLanguage",
@@ -12626,7 +12626,7 @@ function uiIconJavaScriptLanguage(resolve) {
 }
 function uiIconCSharpLanguage(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CSharpLanguage",
@@ -12638,7 +12638,7 @@ function uiIconCSharpLanguage(resolve) {
 }
 function uiIconCSharp(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CSharp",
@@ -12650,7 +12650,7 @@ function uiIconCSharp(resolve) {
 }
 function uiIconVisualBasicLanguage(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "VisualBasicLanguage",
@@ -12662,7 +12662,7 @@ function uiIconVisualBasicLanguage(resolve) {
 }
 function uiIconVB(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "VB",
@@ -12674,7 +12674,7 @@ function uiIconVB(resolve) {
 }
 function uiIconCPlusPlusLanguage(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CPlusPlusLanguage",
@@ -12686,7 +12686,7 @@ function uiIconCPlusPlusLanguage(resolve) {
 }
 function uiIconCPlusPlus(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CPlusPlus",
@@ -12698,7 +12698,7 @@ function uiIconCPlusPlus(resolve) {
 }
 function uiIconFSharpLanguage(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FSharpLanguage",
@@ -12710,7 +12710,7 @@ function uiIconFSharpLanguage(resolve) {
 }
 function uiIconFSharp(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FSharp",
@@ -12722,7 +12722,7 @@ function uiIconFSharp(resolve) {
 }
 function uiIconTypeScriptLanguage(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TypeScriptLanguage",
@@ -12734,7 +12734,7 @@ function uiIconTypeScriptLanguage(resolve) {
 }
 function uiIconPythonLanguage(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PythonLanguage",
@@ -12746,7 +12746,7 @@ function uiIconPythonLanguage(resolve) {
 }
 function uiIconPY(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PY",
@@ -12758,7 +12758,7 @@ function uiIconPY(resolve) {
 }
 function uiIconCoffeeScript(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CoffeeScript",
@@ -12770,7 +12770,7 @@ function uiIconCoffeeScript(resolve) {
 }
 function uiIconMarkDownLanguage(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MarkDownLanguage",
@@ -12782,7 +12782,7 @@ function uiIconMarkDownLanguage(resolve) {
 }
 function uiIconFullWidth(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FullWidth",
@@ -12794,7 +12794,7 @@ function uiIconFullWidth(resolve) {
 }
 function uiIconFullWidthEdit(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FullWidthEdit",
@@ -12806,7 +12806,7 @@ function uiIconFullWidthEdit(resolve) {
 }
 function uiIconPlug(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Plug",
@@ -12818,7 +12818,7 @@ function uiIconPlug(resolve) {
 }
 function uiIconPlugSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PlugSolid",
@@ -12830,7 +12830,7 @@ function uiIconPlugSolid(resolve) {
 }
 function uiIconPlugConnected(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PlugConnected",
@@ -12842,7 +12842,7 @@ function uiIconPlugConnected(resolve) {
 }
 function uiIconPlugDisconnected(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PlugDisconnected",
@@ -12854,7 +12854,7 @@ function uiIconPlugDisconnected(resolve) {
 }
 function uiIconUnlockSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "UnlockSolid",
@@ -12866,7 +12866,7 @@ function uiIconUnlockSolid(resolve) {
 }
 function uiIconVariable(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Variable",
@@ -12878,7 +12878,7 @@ function uiIconVariable(resolve) {
 }
 function uiIconParameter(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Parameter",
@@ -12890,7 +12890,7 @@ function uiIconParameter(resolve) {
 }
 function uiIconCommentUrgent(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CommentUrgent",
@@ -12902,7 +12902,7 @@ function uiIconCommentUrgent(resolve) {
 }
 function uiIconStoryboard(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Storyboard",
@@ -12914,7 +12914,7 @@ function uiIconStoryboard(resolve) {
 }
 function uiIconDiffInline(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DiffInline",
@@ -12926,7 +12926,7 @@ function uiIconDiffInline(resolve) {
 }
 function uiIconDiffSideBySide(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DiffSideBySide",
@@ -12938,7 +12938,7 @@ function uiIconDiffSideBySide(resolve) {
 }
 function uiIconImageDiff(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ImageDiff",
@@ -12950,7 +12950,7 @@ function uiIconImageDiff(resolve) {
 }
 function uiIconImagePixel(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ImagePixel",
@@ -12962,7 +12962,7 @@ function uiIconImagePixel(resolve) {
 }
 function uiIconFileBug(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FileBug",
@@ -12974,7 +12974,7 @@ function uiIconFileBug(resolve) {
 }
 function uiIconFileCode(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FileCode",
@@ -12986,7 +12986,7 @@ function uiIconFileCode(resolve) {
 }
 function uiIconFileComment(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FileComment",
@@ -12998,7 +12998,7 @@ function uiIconFileComment(resolve) {
 }
 function uiIconBusinessHoursSign(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BusinessHoursSign",
@@ -13010,7 +13010,7 @@ function uiIconBusinessHoursSign(resolve) {
 }
 function uiIconFileImage(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FileImage",
@@ -13022,7 +13022,7 @@ function uiIconFileImage(resolve) {
 }
 function uiIconFileSymlink(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FileSymlink",
@@ -13034,7 +13034,7 @@ function uiIconFileSymlink(resolve) {
 }
 function uiIconAutoFillTemplate(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AutoFillTemplate",
@@ -13046,7 +13046,7 @@ function uiIconAutoFillTemplate(resolve) {
 }
 function uiIconWorkItem(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "WorkItem",
@@ -13058,7 +13058,7 @@ function uiIconWorkItem(resolve) {
 }
 function uiIconWorkItemBug(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "WorkItemBug",
@@ -13070,7 +13070,7 @@ function uiIconWorkItemBug(resolve) {
 }
 function uiIconLogRemove(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "LogRemove",
@@ -13082,7 +13082,7 @@ function uiIconLogRemove(resolve) {
 }
 function uiIconColumnOptions(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ColumnOptions",
@@ -13094,7 +13094,7 @@ function uiIconColumnOptions(resolve) {
 }
 function uiIconPackages(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Packages",
@@ -13106,7 +13106,7 @@ function uiIconPackages(resolve) {
 }
 function uiIconBuildIssue(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BuildIssue",
@@ -13118,7 +13118,7 @@ function uiIconBuildIssue(resolve) {
 }
 function uiIconAssessmentGroup(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AssessmentGroup",
@@ -13130,7 +13130,7 @@ function uiIconAssessmentGroup(resolve) {
 }
 function uiIconVariableGroup(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "VariableGroup",
@@ -13142,7 +13142,7 @@ function uiIconVariableGroup(resolve) {
 }
 function uiIconFullHistory(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FullHistory",
@@ -13154,7 +13154,7 @@ function uiIconFullHistory(resolve) {
 }
 function uiIconSingleColumnEdit(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SingleColumnEdit",
@@ -13166,7 +13166,7 @@ function uiIconSingleColumnEdit(resolve) {
 }
 function uiIconDoubleColumnEdit(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DoubleColumnEdit",
@@ -13178,7 +13178,7 @@ function uiIconDoubleColumnEdit(resolve) {
 }
 function uiIconTripleColumnEdit(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TripleColumnEdit",
@@ -13190,7 +13190,7 @@ function uiIconTripleColumnEdit(resolve) {
 }
 function uiIconColumnLeftTwoThirdsEdit(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ColumnLeftTwoThirdsEdit",
@@ -13202,7 +13202,7 @@ function uiIconColumnLeftTwoThirdsEdit(resolve) {
 }
 function uiIconColumnRightTwoThirdsEdit(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ColumnRightTwoThirdsEdit",
@@ -13214,7 +13214,7 @@ function uiIconColumnRightTwoThirdsEdit(resolve) {
 }
 function uiIconStreamLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "StreamLogo",
@@ -13226,7 +13226,7 @@ function uiIconStreamLogo(resolve) {
 }
 function uiIconPassiveAuthentication(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PassiveAuthentication",
@@ -13238,7 +13238,7 @@ function uiIconPassiveAuthentication(resolve) {
 }
 function uiIconAlertSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AlertSolid",
@@ -13250,7 +13250,7 @@ function uiIconAlertSolid(resolve) {
 }
 function uiIconMegaphoneSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MegaphoneSolid",
@@ -13262,7 +13262,7 @@ function uiIconMegaphoneSolid(resolve) {
 }
 function uiIconTaskSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TaskSolid",
@@ -13274,7 +13274,7 @@ function uiIconTaskSolid(resolve) {
 }
 function uiIconConfigurationSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ConfigurationSolid",
@@ -13286,7 +13286,7 @@ function uiIconConfigurationSolid(resolve) {
 }
 function uiIconBugSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BugSolid",
@@ -13298,7 +13298,7 @@ function uiIconBugSolid(resolve) {
 }
 function uiIconCrownSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CrownSolid",
@@ -13310,7 +13310,7 @@ function uiIconCrownSolid(resolve) {
 }
 function uiIconTrophy2Solid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Trophy2Solid",
@@ -13322,7 +13322,7 @@ function uiIconTrophy2Solid(resolve) {
 }
 function uiIconQuickNoteSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "QuickNoteSolid",
@@ -13334,7 +13334,7 @@ function uiIconQuickNoteSolid(resolve) {
 }
 function uiIconConstructionConeSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ConstructionConeSolid",
@@ -13346,7 +13346,7 @@ function uiIconConstructionConeSolid(resolve) {
 }
 function uiIconPageListSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PageListSolid",
@@ -13358,7 +13358,7 @@ function uiIconPageListSolid(resolve) {
 }
 function uiIconPageListMirroredSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PageListMirroredSolid",
@@ -13370,7 +13370,7 @@ function uiIconPageListMirroredSolid(resolve) {
 }
 function uiIconStarburstSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "StarburstSolid",
@@ -13382,7 +13382,7 @@ function uiIconStarburstSolid(resolve) {
 }
 function uiIconReadingModeSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ReadingModeSolid",
@@ -13394,7 +13394,7 @@ function uiIconReadingModeSolid(resolve) {
 }
 function uiIconSadSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SadSolid",
@@ -13406,7 +13406,7 @@ function uiIconSadSolid(resolve) {
 }
 function uiIconHealthSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "HealthSolid",
@@ -13418,7 +13418,7 @@ function uiIconHealthSolid(resolve) {
 }
 function uiIconShieldSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ShieldSolid",
@@ -13430,7 +13430,7 @@ function uiIconShieldSolid(resolve) {
 }
 function uiIconGiftBoxSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "GiftBoxSolid",
@@ -13442,7 +13442,7 @@ function uiIconGiftBoxSolid(resolve) {
 }
 function uiIconShoppingCartSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ShoppingCartSolid",
@@ -13454,7 +13454,7 @@ function uiIconShoppingCartSolid(resolve) {
 }
 function uiIconMailSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MailSolid",
@@ -13466,7 +13466,7 @@ function uiIconMailSolid(resolve) {
 }
 function uiIconChatSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ChatSolid",
@@ -13478,7 +13478,7 @@ function uiIconChatSolid(resolve) {
 }
 function uiIconRibbonSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "RibbonSolid",
@@ -13490,7 +13490,7 @@ function uiIconRibbonSolid(resolve) {
 }
 function uiIconFinancialSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FinancialSolid",
@@ -13502,7 +13502,7 @@ function uiIconFinancialSolid(resolve) {
 }
 function uiIconFinancialMirroredSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FinancialMirroredSolid",
@@ -13514,7 +13514,7 @@ function uiIconFinancialMirroredSolid(resolve) {
 }
 function uiIconHeadsetSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "HeadsetSolid",
@@ -13526,7 +13526,7 @@ function uiIconHeadsetSolid(resolve) {
 }
 function uiIconPermissionsSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PermissionsSolid",
@@ -13538,7 +13538,7 @@ function uiIconPermissionsSolid(resolve) {
 }
 function uiIconParkingSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ParkingSolid",
@@ -13550,7 +13550,7 @@ function uiIconParkingSolid(resolve) {
 }
 function uiIconParkingMirroredSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ParkingMirroredSolid",
@@ -13562,7 +13562,7 @@ function uiIconParkingMirroredSolid(resolve) {
 }
 function uiIconDiamondSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DiamondSolid",
@@ -13574,7 +13574,7 @@ function uiIconDiamondSolid(resolve) {
 }
 function uiIconAsteriskSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AsteriskSolid",
@@ -13586,7 +13586,7 @@ function uiIconAsteriskSolid(resolve) {
 }
 function uiIconOfflineStorageSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OfflineStorageSolid",
@@ -13598,7 +13598,7 @@ function uiIconOfflineStorageSolid(resolve) {
 }
 function uiIconBankSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BankSolid",
@@ -13610,7 +13610,7 @@ function uiIconBankSolid(resolve) {
 }
 function uiIconDecisionSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DecisionSolid",
@@ -13622,7 +13622,7 @@ function uiIconDecisionSolid(resolve) {
 }
 function uiIconParachute(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Parachute",
@@ -13634,7 +13634,7 @@ function uiIconParachute(resolve) {
 }
 function uiIconParachuteSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ParachuteSolid",
@@ -13646,7 +13646,7 @@ function uiIconParachuteSolid(resolve) {
 }
 function uiIconFiltersSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FiltersSolid",
@@ -13658,7 +13658,7 @@ function uiIconFiltersSolid(resolve) {
 }
 function uiIconColorSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ColorSolid",
@@ -13670,7 +13670,7 @@ function uiIconColorSolid(resolve) {
 }
 function uiIconReviewSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ReviewSolid",
@@ -13682,7 +13682,7 @@ function uiIconReviewSolid(resolve) {
 }
 function uiIconReviewRequestSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ReviewRequestSolid",
@@ -13694,7 +13694,7 @@ function uiIconReviewRequestSolid(resolve) {
 }
 function uiIconReviewRequestMirroredSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ReviewRequestMirroredSolid",
@@ -13706,7 +13706,7 @@ function uiIconReviewRequestMirroredSolid(resolve) {
 }
 function uiIconReviewResponseSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ReviewResponseSolid",
@@ -13718,7 +13718,7 @@ function uiIconReviewResponseSolid(resolve) {
 }
 function uiIconFeedbackRequestSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FeedbackRequestSolid",
@@ -13730,7 +13730,7 @@ function uiIconFeedbackRequestSolid(resolve) {
 }
 function uiIconFeedbackRequestMirroredSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FeedbackRequestMirroredSolid",
@@ -13742,7 +13742,7 @@ function uiIconFeedbackRequestMirroredSolid(resolve) {
 }
 function uiIconFeedbackResponseSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FeedbackResponseSolid",
@@ -13754,7 +13754,7 @@ function uiIconFeedbackResponseSolid(resolve) {
 }
 function uiIconWorkItemBar(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "WorkItemBar",
@@ -13766,7 +13766,7 @@ function uiIconWorkItemBar(resolve) {
 }
 function uiIconWorkItemBarSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "WorkItemBarSolid",
@@ -13778,7 +13778,7 @@ function uiIconWorkItemBarSolid(resolve) {
 }
 function uiIconSeparator(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Separator",
@@ -13790,7 +13790,7 @@ function uiIconSeparator(resolve) {
 }
 function uiIconNavigateExternalInline(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "NavigateExternalInline",
@@ -13802,7 +13802,7 @@ function uiIconNavigateExternalInline(resolve) {
 }
 function uiIconPlanView(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PlanView",
@@ -13814,7 +13814,7 @@ function uiIconPlanView(resolve) {
 }
 function uiIconTimelineMatrixView(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TimelineMatrixView",
@@ -13826,7 +13826,7 @@ function uiIconTimelineMatrixView(resolve) {
 }
 function uiIconEngineeringGroup(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "EngineeringGroup",
@@ -13838,7 +13838,7 @@ function uiIconEngineeringGroup(resolve) {
 }
 function uiIconProjectCollection(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ProjectCollection",
@@ -13850,7 +13850,7 @@ function uiIconProjectCollection(resolve) {
 }
 function uiIconCaretBottomRightCenter8(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CaretBottomRightCenter8",
@@ -13862,7 +13862,7 @@ function uiIconCaretBottomRightCenter8(resolve) {
 }
 function uiIconCaretBottomLeftCenter8(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CaretBottomLeftCenter8",
@@ -13874,7 +13874,7 @@ function uiIconCaretBottomLeftCenter8(resolve) {
 }
 function uiIconCaretTopRightCenter8(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CaretTopRightCenter8",
@@ -13886,7 +13886,7 @@ function uiIconCaretTopRightCenter8(resolve) {
 }
 function uiIconCaretTopLeftCenter8(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CaretTopLeftCenter8",
@@ -13898,7 +13898,7 @@ function uiIconCaretTopLeftCenter8(resolve) {
 }
 function uiIconDonutChart(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DonutChart",
@@ -13910,7 +13910,7 @@ function uiIconDonutChart(resolve) {
 }
 function uiIconChevronUnfold10(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ChevronUnfold10",
@@ -13922,7 +13922,7 @@ function uiIconChevronUnfold10(resolve) {
 }
 function uiIconChevronFold10(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ChevronFold10",
@@ -13934,7 +13934,7 @@ function uiIconChevronFold10(resolve) {
 }
 function uiIconDoubleChevronDown8(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DoubleChevronDown8",
@@ -13946,7 +13946,7 @@ function uiIconDoubleChevronDown8(resolve) {
 }
 function uiIconDoubleChevronUp8(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DoubleChevronUp8",
@@ -13958,7 +13958,7 @@ function uiIconDoubleChevronUp8(resolve) {
 }
 function uiIconDoubleChevronLeft8(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DoubleChevronLeft8",
@@ -13970,7 +13970,7 @@ function uiIconDoubleChevronLeft8(resolve) {
 }
 function uiIconDoubleChevronRight8(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DoubleChevronRight8",
@@ -13982,7 +13982,7 @@ function uiIconDoubleChevronRight8(resolve) {
 }
 function uiIconChevronDownEnd6(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ChevronDownEnd6",
@@ -13994,7 +13994,7 @@ function uiIconChevronDownEnd6(resolve) {
 }
 function uiIconChevronUpEnd6(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ChevronUpEnd6",
@@ -14006,7 +14006,7 @@ function uiIconChevronUpEnd6(resolve) {
 }
 function uiIconChevronLeftEnd6(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ChevronLeftEnd6",
@@ -14018,7 +14018,7 @@ function uiIconChevronLeftEnd6(resolve) {
 }
 function uiIconChevronRightEnd6(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ChevronRightEnd6",
@@ -14030,7 +14030,7 @@ function uiIconChevronRightEnd6(resolve) {
 }
 function uiIconContextMenu(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ContextMenu",
@@ -14042,7 +14042,7 @@ function uiIconContextMenu(resolve) {
 }
 function uiIconAzureAPIManagement(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AzureAPIManagement",
@@ -14054,7 +14054,7 @@ function uiIconAzureAPIManagement(resolve) {
 }
 function uiIconAzureServiceEndpoint(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AzureServiceEndpoint",
@@ -14066,7 +14066,7 @@ function uiIconAzureServiceEndpoint(resolve) {
 }
 function uiIconVSTSLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "VSTSLogo",
@@ -14078,7 +14078,7 @@ function uiIconVSTSLogo(resolve) {
 }
 function uiIconVSTSAltLogo1(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "VSTSAltLogo1",
@@ -14090,7 +14090,7 @@ function uiIconVSTSAltLogo1(resolve) {
 }
 function uiIconVSTSAltLogo2(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "VSTSAltLogo2",
@@ -14102,7 +14102,7 @@ function uiIconVSTSAltLogo2(resolve) {
 }
 function uiIconFileTypeSolution(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FileTypeSolution",
@@ -14114,7 +14114,7 @@ function uiIconFileTypeSolution(resolve) {
 }
 function uiIconWordLogoInverse16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "WordLogoInverse16",
@@ -14126,7 +14126,7 @@ function uiIconWordLogoInverse16(resolve) {
 }
 function uiIconWordLogo16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "WordLogo16",
@@ -14138,7 +14138,7 @@ function uiIconWordLogo16(resolve) {
 }
 function uiIconWordLogoFill16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "WordLogoFill16",
@@ -14150,7 +14150,7 @@ function uiIconWordLogoFill16(resolve) {
 }
 function uiIconPowerPointLogoInverse16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PowerPointLogoInverse16",
@@ -14162,7 +14162,7 @@ function uiIconPowerPointLogoInverse16(resolve) {
 }
 function uiIconPowerPointLogo16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PowerPointLogo16",
@@ -14174,7 +14174,7 @@ function uiIconPowerPointLogo16(resolve) {
 }
 function uiIconPowerPointLogoFill16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PowerPointLogoFill16",
@@ -14186,7 +14186,7 @@ function uiIconPowerPointLogoFill16(resolve) {
 }
 function uiIconExcelLogoInverse16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ExcelLogoInverse16",
@@ -14198,7 +14198,7 @@ function uiIconExcelLogoInverse16(resolve) {
 }
 function uiIconExcelLogo16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ExcelLogo16",
@@ -14210,7 +14210,7 @@ function uiIconExcelLogo16(resolve) {
 }
 function uiIconExcelLogoFill16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ExcelLogoFill16",
@@ -14222,7 +14222,7 @@ function uiIconExcelLogoFill16(resolve) {
 }
 function uiIconOneNoteLogoInverse16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OneNoteLogoInverse16",
@@ -14234,7 +14234,7 @@ function uiIconOneNoteLogoInverse16(resolve) {
 }
 function uiIconOneNoteLogo16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OneNoteLogo16",
@@ -14246,7 +14246,7 @@ function uiIconOneNoteLogo16(resolve) {
 }
 function uiIconOneNoteLogoFill16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OneNoteLogoFill16",
@@ -14258,7 +14258,7 @@ function uiIconOneNoteLogoFill16(resolve) {
 }
 function uiIconOutlookLogoInverse16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OutlookLogoInverse16",
@@ -14270,7 +14270,7 @@ function uiIconOutlookLogoInverse16(resolve) {
 }
 function uiIconOutlookLogo16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OutlookLogo16",
@@ -14282,7 +14282,7 @@ function uiIconOutlookLogo16(resolve) {
 }
 function uiIconOutlookLogoFill16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OutlookLogoFill16",
@@ -14294,7 +14294,7 @@ function uiIconOutlookLogoFill16(resolve) {
 }
 function uiIconPublisherLogoInverse16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PublisherLogoInverse16",
@@ -14306,7 +14306,7 @@ function uiIconPublisherLogoInverse16(resolve) {
 }
 function uiIconPublisherLogo16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PublisherLogo16",
@@ -14318,7 +14318,7 @@ function uiIconPublisherLogo16(resolve) {
 }
 function uiIconPublisherLogoFill16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PublisherLogoFill16",
@@ -14330,7 +14330,7 @@ function uiIconPublisherLogoFill16(resolve) {
 }
 function uiIconVisioLogoInverse16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "VisioLogoInverse16",
@@ -14342,7 +14342,7 @@ function uiIconVisioLogoInverse16(resolve) {
 }
 function uiIconVisioLogo16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "VisioLogo16",
@@ -14354,7 +14354,7 @@ function uiIconVisioLogo16(resolve) {
 }
 function uiIconVisioLogoFill16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "VisioLogoFill16",
@@ -14366,7 +14366,7 @@ function uiIconVisioLogoFill16(resolve) {
 }
 function uiIconTestBeaker(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TestBeaker",
@@ -14378,7 +14378,7 @@ function uiIconTestBeaker(resolve) {
 }
 function uiIconTestBeakerSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TestBeakerSolid",
@@ -14390,7 +14390,7 @@ function uiIconTestBeakerSolid(resolve) {
 }
 function uiIconTestExploreSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TestExploreSolid",
@@ -14402,7 +14402,7 @@ function uiIconTestExploreSolid(resolve) {
 }
 function uiIconTestAutoSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TestAutoSolid",
@@ -14414,7 +14414,7 @@ function uiIconTestAutoSolid(resolve) {
 }
 function uiIconTestUserSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TestUserSolid",
@@ -14426,7 +14426,7 @@ function uiIconTestUserSolid(resolve) {
 }
 function uiIconTestImpactSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TestImpactSolid",
@@ -14438,7 +14438,7 @@ function uiIconTestImpactSolid(resolve) {
 }
 function uiIconTestPlan(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TestPlan",
@@ -14450,7 +14450,7 @@ function uiIconTestPlan(resolve) {
 }
 function uiIconTestStep(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TestStep",
@@ -14462,7 +14462,7 @@ function uiIconTestStep(resolve) {
 }
 function uiIconTestParameter(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TestParameter",
@@ -14474,7 +14474,7 @@ function uiIconTestParameter(resolve) {
 }
 function uiIconTestSuite(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TestSuite",
@@ -14486,7 +14486,7 @@ function uiIconTestSuite(resolve) {
 }
 function uiIconTestCase(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TestCase",
@@ -14498,7 +14498,7 @@ function uiIconTestCase(resolve) {
 }
 function uiIconSprint(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Sprint",
@@ -14510,7 +14510,7 @@ function uiIconSprint(resolve) {
 }
 function uiIconSignOut(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SignOut",
@@ -14522,7 +14522,7 @@ function uiIconSignOut(resolve) {
 }
 function uiIconTriggerApproval(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TriggerApproval",
@@ -14534,7 +14534,7 @@ function uiIconTriggerApproval(resolve) {
 }
 function uiIconRocket(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Rocket",
@@ -14546,7 +14546,7 @@ function uiIconRocket(resolve) {
 }
 function uiIconAzureKeyVault(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AzureKeyVault",
@@ -14558,7 +14558,7 @@ function uiIconAzureKeyVault(resolve) {
 }
 function uiIconTransition(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Transition",
@@ -14570,7 +14570,7 @@ function uiIconTransition(resolve) {
 }
 function uiIconLikeSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "LikeSolid",
@@ -14582,7 +14582,7 @@ function uiIconLikeSolid(resolve) {
 }
 function uiIconDislikeSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DislikeSolid",
@@ -14594,7 +14594,7 @@ function uiIconDislikeSolid(resolve) {
 }
 function uiIconUnSetColor(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "UnSetColor",
@@ -14606,7 +14606,7 @@ function uiIconUnSetColor(resolve) {
 }
 function uiIconDeclineCall(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DeclineCall",
@@ -14618,7 +14618,7 @@ function uiIconDeclineCall(resolve) {
 }
 function uiIconRectangularClipping(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "RectangularClipping",
@@ -14630,7 +14630,7 @@ function uiIconRectangularClipping(resolve) {
 }
 function uiIconTeamsLogo16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TeamsLogo16",
@@ -14642,7 +14642,7 @@ function uiIconTeamsLogo16(resolve) {
 }
 function uiIconTeamsLogoFill16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TeamsLogoFill16",
@@ -14654,7 +14654,7 @@ function uiIconTeamsLogoFill16(resolve) {
 }
 function uiIconSpacer(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Spacer",
@@ -14666,7 +14666,7 @@ function uiIconSpacer(resolve) {
 }
 function uiIconSkypeLogo16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SkypeLogo16",
@@ -14678,7 +14678,7 @@ function uiIconSkypeLogo16(resolve) {
 }
 function uiIconSkypeForBusinessLogo16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SkypeForBusinessLogo16",
@@ -14690,7 +14690,7 @@ function uiIconSkypeForBusinessLogo16(resolve) {
 }
 function uiIconSkypeForBusinessLogoFill16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SkypeForBusinessLogoFill16",
@@ -14702,7 +14702,7 @@ function uiIconSkypeForBusinessLogoFill16(resolve) {
 }
 function uiIconFilterSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FilterSolid",
@@ -14714,7 +14714,7 @@ function uiIconFilterSolid(resolve) {
 }
 function uiIconMailUndelivered(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MailUndelivered",
@@ -14726,7 +14726,7 @@ function uiIconMailUndelivered(resolve) {
 }
 function uiIconMailTentative(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MailTentative",
@@ -14738,7 +14738,7 @@ function uiIconMailTentative(resolve) {
 }
 function uiIconMailTentativeMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MailTentativeMirrored",
@@ -14750,7 +14750,7 @@ function uiIconMailTentativeMirrored(resolve) {
 }
 function uiIconMailReminder(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MailReminder",
@@ -14762,7 +14762,7 @@ function uiIconMailReminder(resolve) {
 }
 function uiIconReceiptUndelivered(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ReceiptUndelivered",
@@ -14774,7 +14774,7 @@ function uiIconReceiptUndelivered(resolve) {
 }
 function uiIconReceiptTentative(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ReceiptTentative",
@@ -14786,7 +14786,7 @@ function uiIconReceiptTentative(resolve) {
 }
 function uiIconReceiptTentativeMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ReceiptTentativeMirrored",
@@ -14798,7 +14798,7 @@ function uiIconReceiptTentativeMirrored(resolve) {
 }
 function uiIconInbox(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Inbox",
@@ -14810,7 +14810,7 @@ function uiIconInbox(resolve) {
 }
 function uiIconIRMReply(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "IRMReply",
@@ -14822,7 +14822,7 @@ function uiIconIRMReply(resolve) {
 }
 function uiIconIRMReplyMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "IRMReplyMirrored",
@@ -14834,7 +14834,7 @@ function uiIconIRMReplyMirrored(resolve) {
 }
 function uiIconIRMForward(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "IRMForward",
@@ -14846,7 +14846,7 @@ function uiIconIRMForward(resolve) {
 }
 function uiIconIRMForwardMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "IRMForwardMirrored",
@@ -14858,7 +14858,7 @@ function uiIconIRMForwardMirrored(resolve) {
 }
 function uiIconVoicemailIRM(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "VoicemailIRM",
@@ -14870,7 +14870,7 @@ function uiIconVoicemailIRM(resolve) {
 }
 function uiIconEventAccepted(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "EventAccepted",
@@ -14882,7 +14882,7 @@ function uiIconEventAccepted(resolve) {
 }
 function uiIconEventTentative(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "EventTentative",
@@ -14894,7 +14894,7 @@ function uiIconEventTentative(resolve) {
 }
 function uiIconEventTentativeMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "EventTentativeMirrored",
@@ -14906,7 +14906,7 @@ function uiIconEventTentativeMirrored(resolve) {
 }
 function uiIconEventDeclined(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "EventDeclined",
@@ -14918,7 +14918,7 @@ function uiIconEventDeclined(resolve) {
 }
 function uiIconIDBadge(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "IDBadge",
@@ -14930,7 +14930,7 @@ function uiIconIDBadge(resolve) {
 }
 function uiIconBackgroundColor(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BackgroundColor",
@@ -14942,7 +14942,7 @@ function uiIconBackgroundColor(resolve) {
 }
 function uiIconOfficeFormsLogoInverse16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OfficeFormsLogoInverse16",
@@ -14954,7 +14954,7 @@ function uiIconOfficeFormsLogoInverse16(resolve) {
 }
 function uiIconOfficeFormsLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OfficeFormsLogo",
@@ -14966,7 +14966,7 @@ function uiIconOfficeFormsLogo(resolve) {
 }
 function uiIconOfficeFormsLogoFill(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OfficeFormsLogoFill",
@@ -14978,7 +14978,7 @@ function uiIconOfficeFormsLogoFill(resolve) {
 }
 function uiIconOfficeFormsLogo16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OfficeFormsLogo16",
@@ -14990,7 +14990,7 @@ function uiIconOfficeFormsLogo16(resolve) {
 }
 function uiIconOfficeFormsLogoFill16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OfficeFormsLogoFill16",
@@ -15002,7 +15002,7 @@ function uiIconOfficeFormsLogoFill16(resolve) {
 }
 function uiIconOfficeFormsLogoInverse24(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OfficeFormsLogoInverse24",
@@ -15014,7 +15014,7 @@ function uiIconOfficeFormsLogoInverse24(resolve) {
 }
 function uiIconOfficeFormsLogo24(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OfficeFormsLogo24",
@@ -15026,7 +15026,7 @@ function uiIconOfficeFormsLogo24(resolve) {
 }
 function uiIconOfficeFormsLogoFill24(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OfficeFormsLogoFill24",
@@ -15038,7 +15038,7 @@ function uiIconOfficeFormsLogoFill24(resolve) {
 }
 function uiIconPageLock(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PageLock",
@@ -15050,7 +15050,7 @@ function uiIconPageLock(resolve) {
 }
 function uiIconNotExecuted(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "NotExecuted",
@@ -15062,7 +15062,7 @@ function uiIconNotExecuted(resolve) {
 }
 function uiIconNotImpactedSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "NotImpactedSolid",
@@ -15074,7 +15074,7 @@ function uiIconNotImpactedSolid(resolve) {
 }
 function uiIconFieldReadOnly(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FieldReadOnly",
@@ -15086,7 +15086,7 @@ function uiIconFieldReadOnly(resolve) {
 }
 function uiIconFieldRequired(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FieldRequired",
@@ -15098,7 +15098,7 @@ function uiIconFieldRequired(resolve) {
 }
 function uiIconBacklogBoard(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BacklogBoard",
@@ -15110,7 +15110,7 @@ function uiIconBacklogBoard(resolve) {
 }
 function uiIconExternalBuild(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ExternalBuild",
@@ -15122,7 +15122,7 @@ function uiIconExternalBuild(resolve) {
 }
 function uiIconExternalTFVC(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ExternalTFVC",
@@ -15134,7 +15134,7 @@ function uiIconExternalTFVC(resolve) {
 }
 function uiIconExternalXAML(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ExternalXAML",
@@ -15146,7 +15146,7 @@ function uiIconExternalXAML(resolve) {
 }
 function uiIconIssueSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "IssueSolid",
@@ -15158,7 +15158,7 @@ function uiIconIssueSolid(resolve) {
 }
 function uiIconDefectSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DefectSolid",
@@ -15170,7 +15170,7 @@ function uiIconDefectSolid(resolve) {
 }
 function uiIconLadybugSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "LadybugSolid",
@@ -15182,7 +15182,7 @@ function uiIconLadybugSolid(resolve) {
 }
 function uiIconNugetLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "NugetLogo",
@@ -15194,7 +15194,7 @@ function uiIconNugetLogo(resolve) {
 }
 function uiIconTFVCLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TFVCLogo",
@@ -15206,7 +15206,7 @@ function uiIconTFVCLogo(resolve) {
 }
 function uiIconProjectLogo32(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ProjectLogo32",
@@ -15218,7 +15218,7 @@ function uiIconProjectLogo32(resolve) {
 }
 function uiIconProjectLogoFill32(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ProjectLogoFill32",
@@ -15230,7 +15230,7 @@ function uiIconProjectLogoFill32(resolve) {
 }
 function uiIconProjectLogo16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ProjectLogo16",
@@ -15242,7 +15242,7 @@ function uiIconProjectLogo16(resolve) {
 }
 function uiIconProjectLogoFill16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ProjectLogoFill16",
@@ -15254,7 +15254,7 @@ function uiIconProjectLogoFill16(resolve) {
 }
 function uiIconSwayLogo32(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SwayLogo32",
@@ -15266,7 +15266,7 @@ function uiIconSwayLogo32(resolve) {
 }
 function uiIconSwayLogoFill32(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SwayLogoFill32",
@@ -15278,7 +15278,7 @@ function uiIconSwayLogoFill32(resolve) {
 }
 function uiIconSwayLogo16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SwayLogo16",
@@ -15290,7 +15290,7 @@ function uiIconSwayLogo16(resolve) {
 }
 function uiIconSwayLogoFill16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SwayLogoFill16",
@@ -15302,7 +15302,7 @@ function uiIconSwayLogoFill16(resolve) {
 }
 function uiIconClassNotebookLogo32(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ClassNotebookLogo32",
@@ -15314,7 +15314,7 @@ function uiIconClassNotebookLogo32(resolve) {
 }
 function uiIconClassNotebookLogoFill32(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ClassNotebookLogoFill32",
@@ -15326,7 +15326,7 @@ function uiIconClassNotebookLogoFill32(resolve) {
 }
 function uiIconClassNotebookLogo16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ClassNotebookLogo16",
@@ -15338,7 +15338,7 @@ function uiIconClassNotebookLogo16(resolve) {
 }
 function uiIconClassNotebookLogoFill16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ClassNotebookLogoFill16",
@@ -15350,7 +15350,7 @@ function uiIconClassNotebookLogoFill16(resolve) {
 }
 function uiIconClassNotebookLogoInverse32(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ClassNotebookLogoInverse32",
@@ -15362,7 +15362,7 @@ function uiIconClassNotebookLogoInverse32(resolve) {
 }
 function uiIconClassNotebookLogoInverse16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ClassNotebookLogoInverse16",
@@ -15374,7 +15374,7 @@ function uiIconClassNotebookLogoInverse16(resolve) {
 }
 function uiIconStaffNotebookLogo32(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "StaffNotebookLogo32",
@@ -15386,7 +15386,7 @@ function uiIconStaffNotebookLogo32(resolve) {
 }
 function uiIconStaffNotebookLogoFill32(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "StaffNotebookLogoFill32",
@@ -15398,7 +15398,7 @@ function uiIconStaffNotebookLogoFill32(resolve) {
 }
 function uiIconStaffNotebookLogo16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "StaffNotebookLogo16",
@@ -15410,7 +15410,7 @@ function uiIconStaffNotebookLogo16(resolve) {
 }
 function uiIconStaffNotebookLogoFill16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "StaffNotebookLogoFill16",
@@ -15422,7 +15422,7 @@ function uiIconStaffNotebookLogoFill16(resolve) {
 }
 function uiIconStaffNotebookLogoInverted32(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "StaffNotebookLogoInverted32",
@@ -15434,7 +15434,7 @@ function uiIconStaffNotebookLogoInverted32(resolve) {
 }
 function uiIconStaffNotebookLogoInverted16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "StaffNotebookLogoInverted16",
@@ -15446,7 +15446,7 @@ function uiIconStaffNotebookLogoInverted16(resolve) {
 }
 function uiIconKaizalaLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "KaizalaLogo",
@@ -15458,7 +15458,7 @@ function uiIconKaizalaLogo(resolve) {
 }
 function uiIconTaskLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TaskLogo",
@@ -15470,7 +15470,7 @@ function uiIconTaskLogo(resolve) {
 }
 function uiIconProtectionCenterLogo32(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ProtectionCenterLogo32",
@@ -15482,7 +15482,7 @@ function uiIconProtectionCenterLogo32(resolve) {
 }
 function uiIconGallatinLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "GallatinLogo",
@@ -15494,7 +15494,7 @@ function uiIconGallatinLogo(resolve) {
 }
 function uiIconGlobe2(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Globe2",
@@ -15506,7 +15506,7 @@ function uiIconGlobe2(resolve) {
 }
 function uiIconGuitar(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Guitar",
@@ -15518,7 +15518,7 @@ function uiIconGuitar(resolve) {
 }
 function uiIconBreakfast(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Breakfast",
@@ -15530,7 +15530,7 @@ function uiIconBreakfast(resolve) {
 }
 function uiIconBrunch(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Brunch",
@@ -15542,7 +15542,7 @@ function uiIconBrunch(resolve) {
 }
 function uiIconBeerMug(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BeerMug",
@@ -15554,7 +15554,7 @@ function uiIconBeerMug(resolve) {
 }
 function uiIconVacation(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Vacation",
@@ -15566,7 +15566,7 @@ function uiIconVacation(resolve) {
 }
 function uiIconTeeth(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Teeth",
@@ -15578,7 +15578,7 @@ function uiIconTeeth(resolve) {
 }
 function uiIconTaxi(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Taxi",
@@ -15590,7 +15590,7 @@ function uiIconTaxi(resolve) {
 }
 function uiIconChopsticks(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Chopsticks",
@@ -15602,7 +15602,7 @@ function uiIconChopsticks(resolve) {
 }
 function uiIconSyncOccurence(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SyncOccurence",
@@ -15614,7 +15614,7 @@ function uiIconSyncOccurence(resolve) {
 }
 function uiIconUnsyncOccurence(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "UnsyncOccurence",
@@ -15626,7 +15626,7 @@ function uiIconUnsyncOccurence(resolve) {
 }
 function uiIconPrimaryCalendar(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PrimaryCalendar",
@@ -15638,7 +15638,7 @@ function uiIconPrimaryCalendar(resolve) {
 }
 function uiIconSearchCalendar(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SearchCalendar",
@@ -15650,7 +15650,7 @@ function uiIconSearchCalendar(resolve) {
 }
 function uiIconVideoOff(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "VideoOff",
@@ -15662,7 +15662,7 @@ function uiIconVideoOff(resolve) {
 }
 function uiIconMicrosoftFlowLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MicrosoftFlowLogo",
@@ -15674,7 +15674,7 @@ function uiIconMicrosoftFlowLogo(resolve) {
 }
 function uiIconBusinessCenterLogo(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BusinessCenterLogo",
@@ -15686,7 +15686,7 @@ function uiIconBusinessCenterLogo(resolve) {
 }
 function uiIconToDoLogoBottom(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ToDoLogoBottom",
@@ -15698,7 +15698,7 @@ function uiIconToDoLogoBottom(resolve) {
 }
 function uiIconToDoLogoTop(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ToDoLogoTop",
@@ -15710,7 +15710,7 @@ function uiIconToDoLogoTop(resolve) {
 }
 function uiIconEditSolid12(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "EditSolid12",
@@ -15722,7 +15722,7 @@ function uiIconEditSolid12(resolve) {
 }
 function uiIconEditSolidMirrored12(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "EditSolidMirrored12",
@@ -15734,7 +15734,7 @@ function uiIconEditSolidMirrored12(resolve) {
 }
 function uiIconUneditableSolid12(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "UneditableSolid12",
@@ -15746,7 +15746,7 @@ function uiIconUneditableSolid12(resolve) {
 }
 function uiIconUneditableSolidMirrored12(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "UneditableSolidMirrored12",
@@ -15758,7 +15758,7 @@ function uiIconUneditableSolidMirrored12(resolve) {
 }
 function uiIconUneditableMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "UneditableMirrored",
@@ -15770,7 +15770,7 @@ function uiIconUneditableMirrored(resolve) {
 }
 function uiIconAdminALogo32(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AdminALogo32",
@@ -15782,7 +15782,7 @@ function uiIconAdminALogo32(resolve) {
 }
 function uiIconAdminALogoFill32(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AdminALogoFill32",
@@ -15794,7 +15794,7 @@ function uiIconAdminALogoFill32(resolve) {
 }
 function uiIconToDoLogoInverse(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ToDoLogoInverse",
@@ -15806,7 +15806,7 @@ function uiIconToDoLogoInverse(resolve) {
 }
 function uiIconSnooze(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Snooze",
@@ -15818,7 +15818,7 @@ function uiIconSnooze(resolve) {
 }
 function uiIconWaffleOffice365(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "WaffleOffice365",
@@ -15830,7 +15830,7 @@ function uiIconWaffleOffice365(resolve) {
 }
 function uiIconImageSearch(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ImageSearch",
@@ -15842,7 +15842,7 @@ function uiIconImageSearch(resolve) {
 }
 function uiIconNewsSearch(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "NewsSearch",
@@ -15854,7 +15854,7 @@ function uiIconNewsSearch(resolve) {
 }
 function uiIconVideoSearch(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "VideoSearch",
@@ -15866,7 +15866,7 @@ function uiIconVideoSearch(resolve) {
 }
 function uiIconR(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "R",
@@ -15878,7 +15878,7 @@ function uiIconR(resolve) {
 }
 function uiIconFontColorA(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FontColorA",
@@ -15890,7 +15890,7 @@ function uiIconFontColorA(resolve) {
 }
 function uiIconFontColorSwatch(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FontColorSwatch",
@@ -15902,7 +15902,7 @@ function uiIconFontColorSwatch(resolve) {
 }
 function uiIconLightWeight(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "LightWeight",
@@ -15914,7 +15914,7 @@ function uiIconLightWeight(resolve) {
 }
 function uiIconNormalWeight(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "NormalWeight",
@@ -15926,7 +15926,7 @@ function uiIconNormalWeight(resolve) {
 }
 function uiIconSemiboldWeight(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SemiboldWeight",
@@ -15938,7 +15938,7 @@ function uiIconSemiboldWeight(resolve) {
 }
 function uiIconGroupObject(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "GroupObject",
@@ -15950,7 +15950,7 @@ function uiIconGroupObject(resolve) {
 }
 function uiIconUngroupObject(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "UngroupObject",
@@ -15962,7 +15962,7 @@ function uiIconUngroupObject(resolve) {
 }
 function uiIconAlignHorizontalLeft(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AlignHorizontalLeft",
@@ -15974,7 +15974,7 @@ function uiIconAlignHorizontalLeft(resolve) {
 }
 function uiIconAlignHorizontalCenter(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AlignHorizontalCenter",
@@ -15986,7 +15986,7 @@ function uiIconAlignHorizontalCenter(resolve) {
 }
 function uiIconAlignHorizontalRight(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AlignHorizontalRight",
@@ -15998,7 +15998,7 @@ function uiIconAlignHorizontalRight(resolve) {
 }
 function uiIconAlignVerticalTop(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AlignVerticalTop",
@@ -16010,7 +16010,7 @@ function uiIconAlignVerticalTop(resolve) {
 }
 function uiIconAlignVerticalCenter(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AlignVerticalCenter",
@@ -16022,7 +16022,7 @@ function uiIconAlignVerticalCenter(resolve) {
 }
 function uiIconAlignVerticalBottom(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AlignVerticalBottom",
@@ -16034,7 +16034,7 @@ function uiIconAlignVerticalBottom(resolve) {
 }
 function uiIconHorizontalDistributeCenter(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "HorizontalDistributeCenter",
@@ -16046,7 +16046,7 @@ function uiIconHorizontalDistributeCenter(resolve) {
 }
 function uiIconVerticalDistributeCenter(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "VerticalDistributeCenter",
@@ -16058,7 +16058,7 @@ function uiIconVerticalDistributeCenter(resolve) {
 }
 function uiIconEllipse(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Ellipse",
@@ -16070,7 +16070,7 @@ function uiIconEllipse(resolve) {
 }
 function uiIconLine(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Line",
@@ -16082,7 +16082,7 @@ function uiIconLine(resolve) {
 }
 function uiIconOctagon(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Octagon",
@@ -16094,7 +16094,7 @@ function uiIconOctagon(resolve) {
 }
 function uiIconHexagon(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Hexagon",
@@ -16106,7 +16106,7 @@ function uiIconHexagon(resolve) {
 }
 function uiIconPentagon(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Pentagon",
@@ -16118,7 +16118,7 @@ function uiIconPentagon(resolve) {
 }
 function uiIconRightTriangle(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "RightTriangle",
@@ -16130,7 +16130,7 @@ function uiIconRightTriangle(resolve) {
 }
 function uiIconHalfCircle(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "HalfCircle",
@@ -16142,7 +16142,7 @@ function uiIconHalfCircle(resolve) {
 }
 function uiIconQuarterCircle(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "QuarterCircle",
@@ -16154,7 +16154,7 @@ function uiIconQuarterCircle(resolve) {
 }
 function uiIconThreeQuarterCircle(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ThreeQuarterCircle",
@@ -16166,7 +16166,7 @@ function uiIconThreeQuarterCircle(resolve) {
 }
 function uiIcon6PointStar(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "6PointStar",
@@ -16178,7 +16178,7 @@ function uiIcon6PointStar(resolve) {
 }
 function uiIcon12PointStar(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "12PointStar",
@@ -16190,7 +16190,7 @@ function uiIcon12PointStar(resolve) {
 }
 function uiIconArrangeBringToFront(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ArrangeBringToFront",
@@ -16202,7 +16202,7 @@ function uiIconArrangeBringToFront(resolve) {
 }
 function uiIconArrangeSendToBack(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ArrangeSendToBack",
@@ -16214,7 +16214,7 @@ function uiIconArrangeSendToBack(resolve) {
 }
 function uiIconArrangeSendBackward(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ArrangeSendBackward",
@@ -16226,7 +16226,7 @@ function uiIconArrangeSendBackward(resolve) {
 }
 function uiIconArrangeBringForward(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ArrangeBringForward",
@@ -16238,7 +16238,7 @@ function uiIconArrangeBringForward(resolve) {
 }
 function uiIconBorderDash(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BorderDash",
@@ -16250,7 +16250,7 @@ function uiIconBorderDash(resolve) {
 }
 function uiIconBorderDot(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BorderDot",
@@ -16262,7 +16262,7 @@ function uiIconBorderDot(resolve) {
 }
 function uiIconLineStyle(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "LineStyle",
@@ -16274,7 +16274,7 @@ function uiIconLineStyle(resolve) {
 }
 function uiIconLineThickness(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "LineThickness",
@@ -16286,7 +16286,7 @@ function uiIconLineThickness(resolve) {
 }
 function uiIconWindowEdit(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "WindowEdit",
@@ -16298,7 +16298,7 @@ function uiIconWindowEdit(resolve) {
 }
 function uiIconHintText(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "HintText",
@@ -16310,7 +16310,7 @@ function uiIconHintText(resolve) {
 }
 function uiIconMediaAdd(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MediaAdd",
@@ -16322,7 +16322,7 @@ function uiIconMediaAdd(resolve) {
 }
 function uiIconAnchorLock(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AnchorLock",
@@ -16334,7 +16334,7 @@ function uiIconAnchorLock(resolve) {
 }
 function uiIconAutoHeight(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AutoHeight",
@@ -16346,7 +16346,7 @@ function uiIconAutoHeight(resolve) {
 }
 function uiIconChartSeries(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ChartSeries",
@@ -16358,7 +16358,7 @@ function uiIconChartSeries(resolve) {
 }
 function uiIconChartXAngle(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ChartXAngle",
@@ -16370,7 +16370,7 @@ function uiIconChartXAngle(resolve) {
 }
 function uiIconChartYAngle(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ChartYAngle",
@@ -16382,7 +16382,7 @@ function uiIconChartYAngle(resolve) {
 }
 function uiIconCombobox(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Combobox",
@@ -16394,7 +16394,7 @@ function uiIconCombobox(resolve) {
 }
 function uiIconLineSpacing(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "LineSpacing",
@@ -16406,7 +16406,7 @@ function uiIconLineSpacing(resolve) {
 }
 function uiIconPadding(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Padding",
@@ -16418,7 +16418,7 @@ function uiIconPadding(resolve) {
 }
 function uiIconPaddingTop(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PaddingTop",
@@ -16430,7 +16430,7 @@ function uiIconPaddingTop(resolve) {
 }
 function uiIconPaddingBottom(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PaddingBottom",
@@ -16442,7 +16442,7 @@ function uiIconPaddingBottom(resolve) {
 }
 function uiIconPaddingLeft(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PaddingLeft",
@@ -16454,7 +16454,7 @@ function uiIconPaddingLeft(resolve) {
 }
 function uiIconPaddingRight(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PaddingRight",
@@ -16466,7 +16466,7 @@ function uiIconPaddingRight(resolve) {
 }
 function uiIconNavigationFlipper(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "NavigationFlipper",
@@ -16478,7 +16478,7 @@ function uiIconNavigationFlipper(resolve) {
 }
 function uiIconAlignJustify(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AlignJustify",
@@ -16490,7 +16490,7 @@ function uiIconAlignJustify(resolve) {
 }
 function uiIconTextOverflow(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TextOverflow",
@@ -16502,7 +16502,7 @@ function uiIconTextOverflow(resolve) {
 }
 function uiIconVisualsFolder(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "VisualsFolder",
@@ -16514,7 +16514,7 @@ function uiIconVisualsFolder(resolve) {
 }
 function uiIconVisualsStore(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "VisualsStore",
@@ -16526,7 +16526,7 @@ function uiIconVisualsStore(resolve) {
 }
 function uiIconPictureCenter(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PictureCenter",
@@ -16538,7 +16538,7 @@ function uiIconPictureCenter(resolve) {
 }
 function uiIconPictureFill(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PictureFill",
@@ -16550,7 +16550,7 @@ function uiIconPictureFill(resolve) {
 }
 function uiIconPicturePosition(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PicturePosition",
@@ -16562,7 +16562,7 @@ function uiIconPicturePosition(resolve) {
 }
 function uiIconPictureStretch(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PictureStretch",
@@ -16574,7 +16574,7 @@ function uiIconPictureStretch(resolve) {
 }
 function uiIconPictureTile(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PictureTile",
@@ -16586,7 +16586,7 @@ function uiIconPictureTile(resolve) {
 }
 function uiIconSlider(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Slider",
@@ -16598,7 +16598,7 @@ function uiIconSlider(resolve) {
 }
 function uiIconSliderHandleSize(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SliderHandleSize",
@@ -16610,7 +16610,7 @@ function uiIconSliderHandleSize(resolve) {
 }
 function uiIconDefaultRatio(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DefaultRatio",
@@ -16622,7 +16622,7 @@ function uiIconDefaultRatio(resolve) {
 }
 function uiIconNumberSequence(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "NumberSequence",
@@ -16634,7 +16634,7 @@ function uiIconNumberSequence(resolve) {
 }
 function uiIconGUID(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "GUID",
@@ -16646,7 +16646,7 @@ function uiIconGUID(resolve) {
 }
 function uiIconReportAdd(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ReportAdd",
@@ -16658,7 +16658,7 @@ function uiIconReportAdd(resolve) {
 }
 function uiIconDashboardAdd(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DashboardAdd",
@@ -16670,7 +16670,7 @@ function uiIconDashboardAdd(resolve) {
 }
 function uiIconMapPinSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MapPinSolid",
@@ -16682,7 +16682,7 @@ function uiIconMapPinSolid(resolve) {
 }
 function uiIconWebPublish(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "WebPublish",
@@ -16694,7 +16694,7 @@ function uiIconWebPublish(resolve) {
 }
 function uiIconPieSingleSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PieSingleSolid",
@@ -16706,7 +16706,7 @@ function uiIconPieSingleSolid(resolve) {
 }
 function uiIconBlockedSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BlockedSolid",
@@ -16718,7 +16718,7 @@ function uiIconBlockedSolid(resolve) {
 }
 function uiIconDrillDown(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DrillDown",
@@ -16730,7 +16730,7 @@ function uiIconDrillDown(resolve) {
 }
 function uiIconDrillDownSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DrillDownSolid",
@@ -16742,7 +16742,7 @@ function uiIconDrillDownSolid(resolve) {
 }
 function uiIconDrillExpand(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DrillExpand",
@@ -16754,7 +16754,7 @@ function uiIconDrillExpand(resolve) {
 }
 function uiIconDrillShow(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DrillShow",
@@ -16766,7 +16766,7 @@ function uiIconDrillShow(resolve) {
 }
 function uiIconOneDriveFolder16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OneDriveFolder16",
@@ -16778,7 +16778,7 @@ function uiIconOneDriveFolder16(resolve) {
 }
 function uiIconFunctionalManagerDashboard(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FunctionalManagerDashboard",
@@ -16790,7 +16790,7 @@ function uiIconFunctionalManagerDashboard(resolve) {
 }
 function uiIconBIDashboard(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BIDashboard",
@@ -16802,7 +16802,7 @@ function uiIconBIDashboard(resolve) {
 }
 function uiIconCodeEdit(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CodeEdit",
@@ -16814,7 +16814,7 @@ function uiIconCodeEdit(resolve) {
 }
 function uiIconRenewalCurrent(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "RenewalCurrent",
@@ -16826,7 +16826,7 @@ function uiIconRenewalCurrent(resolve) {
 }
 function uiIconRenewalFuture(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "RenewalFuture",
@@ -16838,7 +16838,7 @@ function uiIconRenewalFuture(resolve) {
 }
 function uiIconSplitObject(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SplitObject",
@@ -16850,7 +16850,7 @@ function uiIconSplitObject(resolve) {
 }
 function uiIconBulkUpload(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BulkUpload",
@@ -16862,7 +16862,7 @@ function uiIconBulkUpload(resolve) {
 }
 function uiIconDownloadDocument(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DownloadDocument",
@@ -16874,7 +16874,7 @@ function uiIconDownloadDocument(resolve) {
 }
 function uiIconWaitlistConfirm(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "WaitlistConfirm",
@@ -16886,7 +16886,7 @@ function uiIconWaitlistConfirm(resolve) {
 }
 function uiIconWaitlistConfirmMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "WaitlistConfirmMirrored",
@@ -16898,7 +16898,7 @@ function uiIconWaitlistConfirmMirrored(resolve) {
 }
 function uiIconLaptopSecure(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "LaptopSecure",
@@ -16910,7 +16910,7 @@ function uiIconLaptopSecure(resolve) {
 }
 function uiIconDragObject(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DragObject",
@@ -16922,7 +16922,7 @@ function uiIconDragObject(resolve) {
 }
 function uiIconEntryView(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "EntryView",
@@ -16934,7 +16934,7 @@ function uiIconEntryView(resolve) {
 }
 function uiIconEntryDecline(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "EntryDecline",
@@ -16946,7 +16946,7 @@ function uiIconEntryDecline(resolve) {
 }
 function uiIconContactCardSettings(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ContactCardSettings",
@@ -16958,7 +16958,7 @@ function uiIconContactCardSettings(resolve) {
 }
 function uiIconContactCardSettingsMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ContactCardSettingsMirrored",
@@ -16970,7 +16970,7 @@ function uiIconContactCardSettingsMirrored(resolve) {
 }
 function uiIconCalendarSettings(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CalendarSettings",
@@ -16982,7 +16982,7 @@ function uiIconCalendarSettings(resolve) {
 }
 function uiIconCalendarSettingsMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CalendarSettingsMirrored",
@@ -16994,7 +16994,7 @@ function uiIconCalendarSettingsMirrored(resolve) {
 }
 function uiIconHardDriveLock(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "HardDriveLock",
@@ -17006,7 +17006,7 @@ function uiIconHardDriveLock(resolve) {
 }
 function uiIconHardDriveUnlock(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "HardDriveUnlock",
@@ -17018,7 +17018,7 @@ function uiIconHardDriveUnlock(resolve) {
 }
 function uiIconAccountManagement(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AccountManagement",
@@ -17030,7 +17030,7 @@ function uiIconAccountManagement(resolve) {
 }
 function uiIconTransitionPop(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TransitionPop",
@@ -17042,7 +17042,7 @@ function uiIconTransitionPop(resolve) {
 }
 function uiIconTransitionPush(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TransitionPush",
@@ -17054,7 +17054,7 @@ function uiIconTransitionPush(resolve) {
 }
 function uiIconTransitionEffect(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TransitionEffect",
@@ -17066,7 +17066,7 @@ function uiIconTransitionEffect(resolve) {
 }
 function uiIconLookupEntities(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "LookupEntities",
@@ -17078,7 +17078,7 @@ function uiIconLookupEntities(resolve) {
 }
 function uiIconExploreData(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ExploreData",
@@ -17090,7 +17090,7 @@ function uiIconExploreData(resolve) {
 }
 function uiIconAddBookmark(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AddBookmark",
@@ -17102,7 +17102,7 @@ function uiIconAddBookmark(resolve) {
 }
 function uiIconSearchBookmark(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SearchBookmark",
@@ -17114,7 +17114,7 @@ function uiIconSearchBookmark(resolve) {
 }
 function uiIconDrillThrough(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DrillThrough",
@@ -17126,7 +17126,7 @@ function uiIconDrillThrough(resolve) {
 }
 function uiIconMasterDatabase(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MasterDatabase",
@@ -17138,7 +17138,7 @@ function uiIconMasterDatabase(resolve) {
 }
 function uiIconCertifiedDatabase(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CertifiedDatabase",
@@ -17150,7 +17150,7 @@ function uiIconCertifiedDatabase(resolve) {
 }
 function uiIconMaximumValue(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MaximumValue",
@@ -17162,7 +17162,7 @@ function uiIconMaximumValue(resolve) {
 }
 function uiIconMinimumValue(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MinimumValue",
@@ -17174,7 +17174,7 @@ function uiIconMinimumValue(resolve) {
 }
 function uiIconVisualStudioIDELogo32(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "VisualStudioIDELogo32",
@@ -17186,7 +17186,7 @@ function uiIconVisualStudioIDELogo32(resolve) {
 }
 function uiIconPasteAsText(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PasteAsText",
@@ -17198,7 +17198,7 @@ function uiIconPasteAsText(resolve) {
 }
 function uiIconPasteAsCode(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PasteAsCode",
@@ -17210,7 +17210,7 @@ function uiIconPasteAsCode(resolve) {
 }
 function uiIconBrowserTab(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BrowserTab",
@@ -17222,7 +17222,7 @@ function uiIconBrowserTab(resolve) {
 }
 function uiIconBrowserTabScreenshot(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BrowserTabScreenshot",
@@ -17234,7 +17234,7 @@ function uiIconBrowserTabScreenshot(resolve) {
 }
 function uiIconDesktopScreenshot(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DesktopScreenshot",
@@ -17246,7 +17246,7 @@ function uiIconDesktopScreenshot(resolve) {
 }
 function uiIconFileYML(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "FileYML",
@@ -17258,7 +17258,7 @@ function uiIconFileYML(resolve) {
 }
 function uiIconClipboardSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ClipboardSolid",
@@ -17270,7 +17270,7 @@ function uiIconClipboardSolid(resolve) {
 }
 function uiIconAnalyticsView(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "AnalyticsView",
@@ -17282,7 +17282,7 @@ function uiIconAnalyticsView(resolve) {
 }
 function uiIconLeave(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Leave",
@@ -17294,7 +17294,7 @@ function uiIconLeave(resolve) {
 }
 function uiIconTrending12(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Trending12",
@@ -17306,7 +17306,7 @@ function uiIconTrending12(resolve) {
 }
 function uiIconBlocked12(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Blocked12",
@@ -17318,7 +17318,7 @@ function uiIconBlocked12(resolve) {
 }
 function uiIconWarning12(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Warning12",
@@ -17330,7 +17330,7 @@ function uiIconWarning12(resolve) {
 }
 function uiIconCheckedOutByOther12(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CheckedOutByOther12",
@@ -17342,7 +17342,7 @@ function uiIconCheckedOutByOther12(resolve) {
 }
 function uiIconCheckedOutByYou12(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CheckedOutByYou12",
@@ -17354,7 +17354,7 @@ function uiIconCheckedOutByYou12(resolve) {
 }
 function uiIconCircleShapeSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CircleShapeSolid",
@@ -17366,7 +17366,7 @@ function uiIconCircleShapeSolid(resolve) {
 }
 function uiIconSquareShapeSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SquareShapeSolid",
@@ -17378,7 +17378,7 @@ function uiIconSquareShapeSolid(resolve) {
 }
 function uiIconTriangleShapeSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TriangleShapeSolid",
@@ -17390,7 +17390,7 @@ function uiIconTriangleShapeSolid(resolve) {
 }
 function uiIconDropShapeSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DropShapeSolid",
@@ -17402,7 +17402,7 @@ function uiIconDropShapeSolid(resolve) {
 }
 function uiIconRectangleShapeSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "RectangleShapeSolid",
@@ -17414,7 +17414,7 @@ function uiIconRectangleShapeSolid(resolve) {
 }
 function uiIconInsertColumnsLeft(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "InsertColumnsLeft",
@@ -17426,7 +17426,7 @@ function uiIconInsertColumnsLeft(resolve) {
 }
 function uiIconInsertColumnsRight(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "InsertColumnsRight",
@@ -17438,7 +17438,7 @@ function uiIconInsertColumnsRight(resolve) {
 }
 function uiIconInsertRowsAbove(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "InsertRowsAbove",
@@ -17450,7 +17450,7 @@ function uiIconInsertRowsAbove(resolve) {
 }
 function uiIconInsertRowsBelow(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "InsertRowsBelow",
@@ -17462,7 +17462,7 @@ function uiIconInsertRowsBelow(resolve) {
 }
 function uiIconDeleteColumns(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DeleteColumns",
@@ -17474,7 +17474,7 @@ function uiIconDeleteColumns(resolve) {
 }
 function uiIconDeleteRows(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DeleteRows",
@@ -17486,7 +17486,7 @@ function uiIconDeleteRows(resolve) {
 }
 function uiIconDeleteRowsMirrored(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DeleteRowsMirrored",
@@ -17498,7 +17498,7 @@ function uiIconDeleteRowsMirrored(resolve) {
 }
 function uiIconDeleteTable(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DeleteTable",
@@ -17510,7 +17510,7 @@ function uiIconDeleteTable(resolve) {
 }
 function uiIconVersionControlPush(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "VersionControlPush",
@@ -17522,7 +17522,7 @@ function uiIconVersionControlPush(resolve) {
 }
 function uiIconWhiteBoardApp16(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "WhiteBoardApp16",
@@ -17534,7 +17534,7 @@ function uiIconWhiteBoardApp16(resolve) {
 }
 function uiIconWhiteBoardApp32(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "WhiteBoardApp32",
@@ -17546,7 +17546,7 @@ function uiIconWhiteBoardApp32(resolve) {
 }
 function uiIconInsertSignatureLine(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "InsertSignatureLine",
@@ -17558,7 +17558,7 @@ function uiIconInsertSignatureLine(resolve) {
 }
 function uiIconArrangeByFrom(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ArrangeByFrom",
@@ -17570,7 +17570,7 @@ function uiIconArrangeByFrom(resolve) {
 }
 function uiIconPhishing(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Phishing",
@@ -17582,7 +17582,7 @@ function uiIconPhishing(resolve) {
 }
 function uiIconCreateMailRule(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "CreateMailRule",
@@ -17594,7 +17594,7 @@ function uiIconCreateMailRule(resolve) {
 }
 function uiIconPublishCourse(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "PublishCourse",
@@ -17606,7 +17606,7 @@ function uiIconPublishCourse(resolve) {
 }
 function uiIconDictionaryRemove(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "DictionaryRemove",
@@ -17618,7 +17618,7 @@ function uiIconDictionaryRemove(resolve) {
 }
 function uiIconUserRemove(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "UserRemove",
@@ -17630,7 +17630,7 @@ function uiIconUserRemove(resolve) {
 }
 function uiIconUserEvent(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "UserEvent",
@@ -17642,7 +17642,7 @@ function uiIconUserEvent(resolve) {
 }
 function uiIconEncryption(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Encryption",
@@ -17654,7 +17654,7 @@ function uiIconEncryption(resolve) {
 }
 function uiIconD365TalentLearn(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "D365TalentLearn",
@@ -17666,7 +17666,7 @@ function uiIconD365TalentLearn(resolve) {
 }
 function uiIconD365TalentInsight(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "D365TalentInsight",
@@ -17678,7 +17678,7 @@ function uiIconD365TalentInsight(resolve) {
 }
 function uiIconD365TalentHRCore(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "D365TalentHRCore",
@@ -17690,7 +17690,7 @@ function uiIconD365TalentHRCore(resolve) {
 }
 function uiIconBacklogList(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BacklogList",
@@ -17702,7 +17702,7 @@ function uiIconBacklogList(resolve) {
 }
 function uiIconButtonControl(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ButtonControl",
@@ -17714,7 +17714,7 @@ function uiIconButtonControl(resolve) {
 }
 function uiIconTableGroup(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TableGroup",
@@ -17726,7 +17726,7 @@ function uiIconTableGroup(resolve) {
 }
 function uiIconMountainClimbing(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MountainClimbing",
@@ -17738,7 +17738,7 @@ function uiIconMountainClimbing(resolve) {
 }
 function uiIconTagUnknown(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TagUnknown",
@@ -17750,7 +17750,7 @@ function uiIconTagUnknown(resolve) {
 }
 function uiIconTagUnknownMirror(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TagUnknownMirror",
@@ -17762,7 +17762,7 @@ function uiIconTagUnknownMirror(resolve) {
 }
 function uiIconTagUnknown12(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TagUnknown12",
@@ -17774,7 +17774,7 @@ function uiIconTagUnknown12(resolve) {
 }
 function uiIconTagUnknown12Mirror(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TagUnknown12Mirror",
@@ -17786,7 +17786,7 @@ function uiIconTagUnknown12Mirror(resolve) {
 }
 function uiIconLink12(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Link12",
@@ -17798,7 +17798,7 @@ function uiIconLink12(resolve) {
 }
 function uiIconPresentation(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Presentation",
@@ -17810,7 +17810,7 @@ function uiIconPresentation(resolve) {
 }
 function uiIconPresentation12(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Presentation12",
@@ -17822,7 +17822,7 @@ function uiIconPresentation12(resolve) {
 }
 function uiIconLock12(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "Lock12",
@@ -17834,7 +17834,7 @@ function uiIconLock12(resolve) {
 }
 function uiIconBuildDefinition(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BuildDefinition",
@@ -17846,7 +17846,7 @@ function uiIconBuildDefinition(resolve) {
 }
 function uiIconReleaseDefinition(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "ReleaseDefinition",
@@ -17858,7 +17858,7 @@ function uiIconReleaseDefinition(resolve) {
 }
 function uiIconSaveTemplate(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "SaveTemplate",
@@ -17870,7 +17870,7 @@ function uiIconSaveTemplate(resolve) {
 }
 function uiIconUserGauge(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "UserGauge",
@@ -17882,7 +17882,7 @@ function uiIconUserGauge(resolve) {
 }
 function uiIconBlockedSiteSolid12(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "BlockedSiteSolid12",
@@ -17894,7 +17894,7 @@ function uiIconBlockedSiteSolid12(resolve) {
 }
 function uiIconTagSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "TagSolid",
@@ -17906,7 +17906,7 @@ function uiIconTagSolid(resolve) {
 }
 function uiIconOfficeChat(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OfficeChat",
@@ -17918,7 +17918,7 @@ function uiIconOfficeChat(resolve) {
 }
 function uiIconOfficeChatSolid(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "OfficeChatSolid",
@@ -17930,7 +17930,7 @@ function uiIconOfficeChatSolid(resolve) {
 }
 function uiIconMailSchedule(resolve) {
   resolve({
-    extends: Icon,
+    "extends": Icon,
     data: function data() {
       return {
         name: "MailSchedule",

@@ -9,7 +9,7 @@ var script = {
       Toggle: Toggle
     };
   },
-  extends: toggle
+  "extends": toggle
 };
 
 export default script;

@@ -9,7 +9,7 @@ var script = {
       ChoiceFieldGroup: ChoiceFieldGroup
     };
   },
-  extends: ChoiceFieldGroup$1
+  "extends": ChoiceFieldGroup$1
 };
 
 export default script;

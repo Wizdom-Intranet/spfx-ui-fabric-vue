@@ -42,7 +42,7 @@ var script = {
       });
     });
   },
-  extends: ContextualMenu$1
+  "extends": ContextualMenu$1
 };
 
 export default script;

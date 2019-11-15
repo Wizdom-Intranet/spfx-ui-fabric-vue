@@ -9,7 +9,7 @@ var script = {
       CheckBox: CheckBox
     };
   },
-  extends: checkbox
+  "extends": checkbox
 };
 
 export default script;

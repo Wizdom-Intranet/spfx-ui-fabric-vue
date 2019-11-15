@@ -24,7 +24,7 @@ var script = {
 
     });
   },
-  extends: callout
+  "extends": callout
 };
 
 export default script;

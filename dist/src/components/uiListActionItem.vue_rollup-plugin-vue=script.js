@@ -2,7 +2,7 @@ import ListActionItem from '../../node_modules/office-ui-fabric-vue/src/componen
 
 //
 var script = {
-  extends: ListActionItem,
+  "extends": ListActionItem,
   created: function created() {
     this.$options._scopeId = this.$parent.$options._scopeId;
   }

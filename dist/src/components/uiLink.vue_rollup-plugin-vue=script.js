@@ -3,7 +3,7 @@ import link from '../../node_modules/office-ui-fabric-vue/src/components/Link/Li
 
 var script = {
   loadStyles: loadStyles,
-  extends: link
+  "extends": link
 };
 
 export default script;

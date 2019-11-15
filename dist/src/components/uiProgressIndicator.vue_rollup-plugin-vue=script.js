@@ -9,7 +9,7 @@ var script = {
       ProgressIndicator: ProgressIndicator
     };
   },
-  extends: ProgressIndicator$1
+  "extends": ProgressIndicator$1
 };
 
 export default script;

@@ -15,7 +15,7 @@ var script = {
       CommandButton: CommandButton
     };
   },
-  extends: commandbutton
+  "extends": commandbutton
 };
 
 export default script;

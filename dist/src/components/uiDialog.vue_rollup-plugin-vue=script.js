@@ -38,7 +38,7 @@ var script = {
   beforeDestroy: function beforeDestroy() {
     this.ensureOverlayIsClosed();
   },
-  extends: dialog
+  "extends": dialog
 };
 
 export default script;

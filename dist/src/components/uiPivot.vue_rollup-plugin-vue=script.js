@@ -9,7 +9,7 @@ var script = {
       Pivot: Pivot
     };
   },
-  extends: pivot
+  "extends": pivot
 };
 
 export default script;

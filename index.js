@@ -32,7 +32,7 @@ export { default as uiDynamicIcon } from "./src/components/uiDynamicIcon.vue";
 
 // our own components
 export { default as uiTimePicker } from "./src/components/uiTimePicker.vue";
-export { default as uiDatePicker } from "./src/components/uiDatePicker/uiDatePicker.vue";
+export { default as uiDatePicker } from "./src/components/uiDatePicker.vue";
 export { default as uiTypeAhead } from "./src/components/uiTypeAhead.vue";
 
 export *  from "./src/components/uiIcon";

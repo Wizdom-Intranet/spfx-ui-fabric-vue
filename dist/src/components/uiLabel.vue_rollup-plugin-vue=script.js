@@ -3,7 +3,7 @@ import label from '../../node_modules/office-ui-fabric-vue/src/components/Label/
 
 var script = {
   loadStyles: loadStyles,
-  extends: label
+  "extends": label
 };
 
 export default script;

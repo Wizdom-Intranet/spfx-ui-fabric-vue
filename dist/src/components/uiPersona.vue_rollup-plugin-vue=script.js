@@ -9,7 +9,7 @@ var script = {
       Persona: Persona
     };
   },
-  extends: persona
+  "extends": persona
 };
 
 export default script;

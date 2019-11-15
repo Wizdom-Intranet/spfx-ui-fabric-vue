@@ -32,7 +32,7 @@ var script = {
       return c.setAttribute(_this.$options._scopeId, "");
     }); // Array.from(childs).map(c=>c.setAttribute(this.$options._scopeId, ""));
   },
-  extends: Dropdown$1
+  "extends": Dropdown$1
 };
 
 export default script;

@@ -9,7 +9,7 @@ var script = {
       SearchBox: SearchBox
     };
   },
-  extends: searchBox
+  "extends": searchBox
 };
 
 export default script;

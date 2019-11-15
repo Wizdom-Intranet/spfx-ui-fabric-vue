@@ -19,7 +19,7 @@ var script = {
   // props : {
   //     useDarkOverlay: Boolean
   // },
-  extends: overlay
+  "extends": overlay
 };
 
 export default script;

@@ -3,7 +3,7 @@ import button from '../../node_modules/office-ui-fabric-vue/src/components/butto
 
 var script = {
   loadStyles: loadStyles,
-  extends: button
+  "extends": button
 };
 
 export default script;

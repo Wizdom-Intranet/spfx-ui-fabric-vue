@@ -1,4 +1,4 @@
-import __vue_normalize__ from '../../node_modules/vue-runtime-helpers/dist/normalize-component.js';
+import __vue_normalize__ from '../../node_modules/vue-runtime-helpers/dist/normalize-component.mjs.js';
 import script from './uiContextualMenuItem.vue_rollup-plugin-vue=script.js';
 
 /* script */
@@ -18,6 +18,8 @@ const __vue_script__ = script;
   
   /* style inject SSR */
   
+  /* style inject shadow dom */
+  
 
   
   var uiContextualMenuItem = __vue_normalize__(
@@ -27,6 +29,8 @@ const __vue_script__ = script;
     __vue_scope_id__,
     __vue_is_functional_template__,
     __vue_module_identifier__,
+    false,
+    undefined,
     undefined,
     undefined
   );
