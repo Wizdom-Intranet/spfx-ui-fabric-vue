@@ -1,6 +1,0 @@
-import { getCjsExportFromNamespace } from './_commonjsHelpers.js';
-import * as popper from '../node_modules/popper.js/dist/esm/popper.js';
-
-var require$$0 = getCjsExportFromNamespace(popper);
-
-export default require$$0;
