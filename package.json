@@ -1,6 +1,6 @@
 {
   "name": "@wizdom-intranet/spfx-ui-fabric-vue",
-  "version": "1.1.9",
+  "version": "1.1.10",
   "description": "Office ui fabric components made specific for SPFx.",
   "main": "dist/bundle.esm.js",
   "module": "dist/src/index.js",
