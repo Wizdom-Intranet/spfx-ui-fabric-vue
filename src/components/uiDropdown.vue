@@ -39,11 +39,19 @@ export default {
     @import '../misc/fixThemeVars';
     @import "node_modules/office-ui-fabric-js/src/components/Dropdown/Dropdown";
 
-    .ms-Dropdown-caretDown{
-        bottom: 7px;
-        &.ms-Icon.ms-Icon--ChevronDown::before
+    @font-face {
+        font-family: "FabricMDL2Icons-a13498cf";
+        src: url(https://spoprod-a.akamaihd.net/files/fabric/assets/icons/fabric-icons-a13498cf.woff) format('woff')
+    }
+
+    .ms-Icon{
+        display: "inline-block";
+        font-style: "normal";
+        font-weight: 400;
+        &.ms-Icon--ChevronDown::before
         {
-            content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2048 2048" width="12" height="12" version="1.1" xmlns="http://www.w3.org/2000/svg"><path transform="translate(0, 2048) scale(1, -1)" d="M1939 1581l90 -90l-1005 -1005l-1005 1005l90 90l915 -915z" fill="black" stroke="none"/></svg>');
+            font-family: 'FabricMDL2Icons-a13498cf';
+            content: '\E70D';
         }
     }
 

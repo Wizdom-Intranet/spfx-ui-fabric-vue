@@ -65,9 +65,19 @@ export default {
     @import 'node_modules/office-ui-fabric-core/src/sass/Fabric.Animations.Output';
     @import '../misc/fixThemeVars';
     @import "node_modules/office-ui-fabric-js/src/components/MessageBanner/MessageBanner";
+    @font-face {
+        font-family: "FabricMDL2Icons-a13498cf";
+        src: url(https://spoprod-a.akamaihd.net/files/fabric/assets/icons/fabric-icons-a13498cf.woff) format('woff')
+    }
 
-    .ms-Icon.ms-Icon--Clear
-    {
-        content: url('data:image/svg+xml;utf8,<svg viewBox="0 -0 2048 2048" width="16" height="16" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M1115 1024l690 -691l-90 -90l-691 690l-691 -690l-90 90l690 691l-690 691l90 90l691 -690l691 690l90 -90z" fill="black" stroke="none"/></svg>');
+    .ms-Icon{
+        display: "inline-block";
+        font-style: "normal";
+        font-weight: 400;
+        &.ms-Icon--Clear::before
+        {
+            font-family: 'FabricMDL2Icons-a13498cf';
+            content: '\E894';
+        }
     }
 </style>
