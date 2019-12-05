@@ -10,10 +10,16 @@ export default {
             CheckBox : fabricCheckbox 
         } 
     },
-    extends :  checkbox
+    extends :  checkbox,
+    mounted: function() {
+        if(this.value) {
+            this.checkboxInstance.check();
+        }
+    }
 }
 </script>
 <style lang="scss" scoped>
+    
     @import 'node_modules/office-ui-fabric-core/src/sass/_Fabric.Common';
     @import '../misc/fixThemeVars';
     @import "node_modules/office-ui-fabric-js/src/components/checkbox/Checkbox";
@@ -31,4 +37,12 @@ export default {
         font-family: 'FabricMDL2Icons-a13498cf' !important;
         // content: '\E73E' !important;
     }
+
+    .ms-CheckBox-field.is-disabled.is-checked::before  {
+        background-color: "[theme:neutralTertiaryAlt, default:#c8c8c8]";
+        border-color: "[theme:neutralTertiaryAlt, default:#c8c8c8]";
+    }
+
+
+
 </style>
