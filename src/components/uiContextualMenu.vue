@@ -12,12 +12,20 @@ export default {
         };
     },
     mounted(){
+
         this.$refs.contextualMenuTrigger.addEventListener("click", ()=>{
-            
+
             var setScopeIdForContextualHost = contextualhost => {
+
                 contextualhost.setAttribute(this.$options._scopeId,"");
                 Array.prototype.slice.call(contextualhost.children).map(c=>c.setAttribute(this.$options._scopeId, ""));
                 // Array.from(contextualhost.children).map(c=>c.setAttribute(this.$options._scopeId,""));
+
+                // if contextmenu is out of window to the right - we change left to right orientation.
+                if(this.isOutOfViewport(contextualhost).right) {
+                    contextualhost.style.left = "auto";
+                    contextualhost.style.right = "10px";
+                }
             }
 
             // set scopeId for contextualhost
@@ -41,6 +49,25 @@ export default {
             });
 
         });
+    },
+    methods: {
+        isOutOfViewport(elem) {
+
+            // Get element bounding
+            var bounding = elem.getBoundingClientRect();
+
+            // Check if it is out of the viewport on each side
+            var out = {};
+            out.top = bounding.top < 0;
+            out.left = bounding.left < 0;
+            out.bottom = bounding.bottom > (window.innerHeight || document.documentElement.clientHeight);
+            out.right = bounding.right > (window.innerWidth || document.documentElement.clientWidth);
+            out.any = out.top || out.left || out.bottom || out.right;
+            out.all = out.top && out.left && out.bottom && out.right;
+
+            return out;
+
+        }
     },
     extends :  ContextualMenu
 }
