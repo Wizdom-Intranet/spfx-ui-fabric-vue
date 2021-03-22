@@ -26,6 +26,8 @@ export default {
                     contextualhost.style.left = "auto";
                     contextualhost.style.right = 0;
                 }
+
+                contextualhost.style.position = "fixed";
             }
 
             // set scopeId for contextualhost
