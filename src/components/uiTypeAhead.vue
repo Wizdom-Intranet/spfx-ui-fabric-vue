@@ -19,8 +19,7 @@
             </div>
             <div class="inputGroup" slot="reference"
                 @keydown.down="down"
-                @keydown.up="up"
-                @keydown.enter="selectOption(options[current])">
+                @keydown.up="up">
                 <div class="inputContainer">
                     <uiTextfield 
                         v-model="userInput"
@@ -211,10 +210,5 @@ export default {
             background-color:  $ms-color-themeLight; //To overwrite unselected hover
         }
     } 
-
-    .selected {
-        color: $ms-color-black;
-        background-color: rgb(123, 152, 207);
-    }  
 
 </style>
