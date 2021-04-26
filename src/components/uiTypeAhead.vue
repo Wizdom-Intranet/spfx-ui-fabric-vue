@@ -5,22 +5,32 @@
             ref="popper"
             :options="popperOptions">
             <div class="popper foldout">
-
-                <div class="optionlist">
-                    <div v-for="option in options" :key="option.id" class="option" :class="{ 'selectedOption' : selected != null && option.id == selected.id }" @click="selectOption(option)" @mousedown.prevent> <!-- @mousedown.prevent is needed so @blur on input doesn't trigger, otherwise this @click wont be run -->
+                <div class="optionlist" ref="optionlist">
+                    <div v-for="(option, index) in options" 
+                    ref="option"
+                    :key="option.id" 
+                    class="option" 
+                    :class="{'selectedOption' : index == current}"
+                    @click="selectOption(option)" 
+                    >
                         {{option[display]}}
                     </div>
                 </div>
-
             </div>
-            <div class="inputGroup" slot="reference">
+            <div class="inputGroup" slot="reference"
+                @keydown.down="down"
+                @keydown.up="up"
+                @keydown.enter="selectOption(options[current])">
                 <div class="inputContainer">
-                    <uiTextfield v-model="userInput" :label="label" :placeholder="placeholderText" @blur="inputBlurred()" />
+                    <uiTextfield 
+                        v-model="userInput"
+                        :label="label" 
+                        :placeholder="placeholderText"
+                     />
                     <uiIconChevronDownMed class="chevronIcon"/>
                 </div>
             </div>
         </popper>
-
     </div>
 </template>
 
@@ -49,14 +59,44 @@ export default {
         return {
             selected: null,
             userInput: '',
+            current: 0
         }
     },
     methods: {
+        up() {
+            if(this.options.length) {
+                if(!this.$refs.popper.showPopper) {
+                    this.$refs.popper.doShow();
+                }
+                else if(this.current > 0 && this.$refs.popper.showPopper) {
+                    this.current--;
+                    this.updateScroll();
+                }  
+            }  
+        },
+
+        down() {
+            if(this.options.length) {
+                if(!this.$refs.popper.showPopper) {
+                    this.$refs.popper.doShow();
+                }
+                else if(this.current < this.options.length - 1) {
+                    this.current++;
+                    this.updateScroll();
+                } 
+            } 
+        },
+
+        updateScroll(){
+            this.$refs.option[this.current].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+        },
+
         selectOption(option) {
             this.selected = option;
             this.userInput = option[this.display];
         },
-        //Autoselects an option if userinput matches display attribute
+        
+        // Autoselects an option if userinput matches display attribute
         autoselectMatch: debounce(function() {
             if(this.autoselectOff == true) { return; }
 
@@ -67,19 +107,17 @@ export default {
                     this.selectOption(option);
                 }
             })
-
         }, 500),
+
         setUserInput(newInput) {
             this.userInput = newInput;
-        },
-        inputBlurred() {
-            this.$refs.popper.doClose();
-        },
+        }
     },
     computed: {
         popperOptions(){
             return {
                 placement: "bottom-end",
+                trigger: "focus",
                 positionFixed: true,
                 modifiers: { 
                     preventOverflow: { enabled: true },
@@ -172,7 +210,11 @@ export default {
         &:hover{
             background-color:  $ms-color-themeLight; //To overwrite unselected hover
         }
-    }
-   
+    } 
+
+    .selected {
+        color: $ms-color-black;
+        background-color: rgb(123, 152, 207);
+    }  
 
 </style>
