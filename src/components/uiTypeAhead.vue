@@ -19,7 +19,8 @@
             </div>
             <div class="inputGroup" slot="reference"
                 @keydown.down="down"
-                @keydown.up="up">
+                @keydown.up="up"
+                @keydown.enter="selectOption(options[current])">
                 <div class="inputContainer">
                     <uiTextfield 
                         v-model="userInput"
@@ -87,7 +88,9 @@ export default {
         },
 
         updateScroll(){
-            this.$refs.option[this.current].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+            if(this.$refs.option[this.current]) {
+                this.$refs.option[this.current].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+            }
         },
 
         selectOption(option) {
