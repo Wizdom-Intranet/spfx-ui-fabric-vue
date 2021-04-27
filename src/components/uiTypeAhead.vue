@@ -5,22 +5,28 @@
             ref="popper"
             :options="popperOptions">
             <div class="popper foldout">
-                <div class="optionlist" ref="optionlist">
+                <div class="optionlist" ref="optionlist" role="listbox">
                     <div v-for="(option, index) in options" 
-                    ref="option"
-                    :key="option.id" 
-                    class="option" 
-                    :class="{'selectedOption' : index == current}"
-                    @click="selectOption(option)" 
+                        ref="option"
+                        :key="option.id" 
+                        class="option" 
+                        :class="{'selectedOption' : index == current}"
+                        @click="selectOption(option)" 
+                        :aria-selected="(index == current) ? 'true' : 'false'"
+                        role="option"
+                        tabindex="-1"
                     >
                         {{option[display]}}
                     </div>
                 </div>
             </div>
-            <div class="inputGroup" slot="reference"
-                @keydown.down="down"
-                @keydown.up="up"
-                @keydown.enter="selectOption(options[current])">
+            <div class="inputGroup" 
+                slot="reference" 
+                @keydown.down="arrowDown"
+                @keydown.up="arrowUp"
+                @keydown.enter="selectOption(options[current])"
+                autocomplete="off" 
+                aria-autocomplete="list">
                 <div class="inputContainer">
                     <uiTextfield 
                         v-model="userInput"
@@ -63,7 +69,7 @@ export default {
         }
     },
     methods: {
-        up() {
+        arrowUp() {
             if(this.options.length) {
                 if(!this.$refs.popper.showPopper) {
                     this.$refs.popper.doShow();
@@ -75,7 +81,7 @@ export default {
             }  
         },
 
-        down() {
+        arrowDown() {
             if(this.options.length) {
                 if(!this.$refs.popper.showPopper) {
                     this.$refs.popper.doShow();
