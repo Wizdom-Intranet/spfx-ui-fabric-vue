@@ -96,7 +96,7 @@ export default {
             }
         },
         inputBlurred() {
-            // this.$refs.popper.doClose();
+            this.$refs.popper.doClose();
         },
         selectOption(option) {
             this.selected = option;
