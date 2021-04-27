@@ -72,26 +72,23 @@ export default {
     },
     methods: {
         arrowUp() {
-            if(this.options.length) {
-                if(!this.$refs.popper.showPopper) {
-                    this.$refs.popper.doShow();
-                }
-                else if(this.current > 0 && this.$refs.popper.showPopper) {
-                    this.current--;
-                    this.updateScroll();
-                }  
+            if(this.options.length && this.current > 0 && this.$refs.popper.showPopper) {
+                this.current--;
+                this.showDropdown();
+                this.updateScroll();
             }  
         },
         arrowDown() {
-            if(this.options.length) {
-                if(!this.$refs.popper.showPopper) {
-                    this.$refs.popper.doShow();
-                }
-                else if(this.current < this.options.length - 1) {
-                    this.current++;
-                    this.updateScroll();
-                } 
+            if(this.options.length && (this.current < this.options.length - 1)) {
+                this.current++;
+                this.showDropdown();
+                this.updateScroll();
             } 
+        },
+        showDropdown() {
+            if(!this.$refs.popper.showPopper) {
+                this.$refs.popper.doShow();
+            }
         },
         updateScroll(){
             if(this.$refs.option[this.current]) {
@@ -99,7 +96,7 @@ export default {
             }
         },
         inputBlurred() {
-            this.$refs.popper.doClose();
+            // this.$refs.popper.doClose();
         },
         selectOption(option) {
             this.selected = option;
@@ -174,7 +171,7 @@ export default {
             font-size: 12px;
             position: absolute;
             right: 13px;
-            bottom: 7px;
+            bottom: 9px;
             pointer-events: none;
         }
 
@@ -198,11 +195,8 @@ export default {
     }
 
     .option {
-        height: 19px;
-        font-weight: 400;
         padding: 7px 10px 7px 10px;
         text-align: left;
-        white-space: nowrap;
         cursor: pointer;
         color: $ms-color-neutralPrimary;
 
