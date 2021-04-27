@@ -12,6 +12,7 @@
                         class="option" 
                         :class="{'selectedOption' : index == current}"
                         @click="selectOption(option)" 
+                        @mousedown.prevent
                         :aria-selected="(index == current) ? 'true' : 'false'"
                         role="option"
                         tabindex="-1"
@@ -32,6 +33,7 @@
                         v-model="userInput"
                         :label="label" 
                         :placeholder="placeholderText"
+                        @blur="inputBlurred()"
                      />
                     <uiIconChevronDownMed class="chevronIcon"/>
                 </div>
@@ -80,7 +82,6 @@ export default {
                 }  
             }  
         },
-
         arrowDown() {
             if(this.options.length) {
                 if(!this.$refs.popper.showPopper) {
@@ -92,18 +93,18 @@ export default {
                 } 
             } 
         },
-
         updateScroll(){
             if(this.$refs.option[this.current]) {
                 this.$refs.option[this.current].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
             }
         },
-
+        inputBlurred() {
+            this.$refs.popper.doClose();
+        },
         selectOption(option) {
             this.selected = option;
             this.userInput = option[this.display];
         },
-        
         // Autoselects an option if userinput matches display attribute
         autoselectMatch: debounce(function() {
             if(this.autoselectOff == true) { return; }
