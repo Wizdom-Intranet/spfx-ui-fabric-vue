@@ -1,5 +1,5 @@
 # spfx-ui-fabric-vue
-Office ui fabric components made specific for SPFx.
+DEPRECATED Office ui fabric components made specific for SPFx.
 
 ## Component status - Done
 Component         | Uses ui-fabric-js | Uses ui-fabric-vue | Uses ui-fabric-core styles  | Notes
