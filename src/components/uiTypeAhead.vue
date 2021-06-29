@@ -5,22 +5,40 @@
             ref="popper"
             :options="popperOptions">
             <div class="popper foldout">
-
-                <div class="optionlist">
-                    <div v-for="option in options" :key="option.id" class="option" :class="{ 'selectedOption' : selected != null && option.id == selected.id }" @click="selectOption(option)" @mousedown.prevent> <!-- @mousedown.prevent is needed so @blur on input doesn't trigger, otherwise this @click wont be run -->
+                <div class="optionlist" ref="optionlist" role="listbox">
+                    <div v-for="(option, index) in options" 
+                        ref="option"
+                        :key="option.id" 
+                        class="option" 
+                        :class="{'selectedOption' : index == current}"
+                        @click="selectOption(option)" 
+                        @mousedown.prevent
+                        :aria-selected="(index == current) ? 'true' : 'false'"
+                        role="option"
+                        tabindex="-1"
+                    >
                         {{option[display]}}
                     </div>
                 </div>
-
             </div>
-            <div class="inputGroup" slot="reference">
+            <div class="inputGroup" 
+                slot="reference" 
+                @keydown.down="arrowDown"
+                @keydown.up="arrowUp"
+                @keydown.enter="selectOption(options[current])"
+                autocomplete="off" 
+                aria-autocomplete="list">
                 <div class="inputContainer">
-                    <uiTextfield v-model="userInput" :label="label" :placeholder="placeholderText" @blur="inputBlurred()" />
+                    <uiTextfield 
+                        v-model="userInput"
+                        :label="label" 
+                        :placeholder="placeholderText"
+                        @blur="inputBlurred()"
+                     />
                     <uiIconChevronDownMed class="chevronIcon"/>
                 </div>
             </div>
         </popper>
-
     </div>
 </template>
 
@@ -49,14 +67,42 @@ export default {
         return {
             selected: null,
             userInput: '',
+            current: 0
         }
     },
     methods: {
+        arrowUp() {
+            if(this.options.length && this.current > 0 && this.$refs.popper.showPopper) {
+                this.current--;
+                this.showDropdown();
+                this.updateScroll();
+            }  
+        },
+        arrowDown() {
+            if(this.options.length && (this.current < this.options.length - 1)) {
+                this.current++;
+                this.showDropdown();
+                this.updateScroll();
+            } 
+        },
+        showDropdown() {
+            if(!this.$refs.popper.showPopper) {
+                this.$refs.popper.doShow();
+            }
+        },
+        updateScroll(){
+            if(this.$refs.option[this.current]) {
+                this.$refs.option[this.current].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+            }
+        },
+        inputBlurred() {
+            this.$refs.popper.doClose();
+        },
         selectOption(option) {
             this.selected = option;
             this.userInput = option[this.display];
         },
-        //Autoselects an option if userinput matches display attribute
+        // Autoselects an option if userinput matches display attribute
         autoselectMatch: debounce(function() {
             if(this.autoselectOff == true) { return; }
 
@@ -67,19 +113,17 @@ export default {
                     this.selectOption(option);
                 }
             })
-
         }, 500),
+
         setUserInput(newInput) {
             this.userInput = newInput;
-        },
-        inputBlurred() {
-            this.$refs.popper.doClose();
-        },
+        }
     },
     computed: {
         popperOptions(){
             return {
                 placement: "bottom-end",
+                trigger: "focus",
                 positionFixed: true,
                 modifiers: { 
                     preventOverflow: { enabled: true },
@@ -127,7 +171,7 @@ export default {
             font-size: 12px;
             position: absolute;
             right: 13px;
-            bottom: 7px;
+            bottom: 9px;
             pointer-events: none;
         }
 
@@ -151,11 +195,8 @@ export default {
     }
 
     .option {
-        height: 19px;
-        font-weight: 400;
         padding: 7px 10px 7px 10px;
         text-align: left;
-        white-space: nowrap;
         cursor: pointer;
         color: $ms-color-neutralPrimary;
 
@@ -172,7 +213,6 @@ export default {
         &:hover{
             background-color:  $ms-color-themeLight; //To overwrite unselected hover
         }
-    }
-   
+    } 
 
 </style>
